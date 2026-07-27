@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Academy | Live Masterclass</title>
+<!-- Google Fonts: Playfair Display & Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "surface-variant": "#e5e2e1",
+                    "on-surface-variant": "#4d4638",
+                    "on-primary-container": "#513c00",
+                    "surface-dim": "#dcd9d9",
+                    "surface": "#fcf9f8",
+                    "on-primary-fixed": "#251a00",
+                    "primary-fixed": "#ffdf9a",
+                    "inverse-surface": "#313030",
+                    "primary-fixed-dim": "#e5c273",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f0edec",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#ebe7e7",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary-fixed": "#251a00",
+                    "tertiary-fixed": "#e4e2de",
+                    "secondary": "#6e5c32",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary": "#755b15",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "outline": "#7f7667",
+                    "secondary-fixed-dim": "#dbc491",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "secondary-container": "#f6dda8",
+                    "primary-container": "#c8a75b",
+                    "on-secondary-container": "#726136",
+                    "background": "#fcf9f8",
+                    "surface-bright": "#fcf9f8",
+                    "outline-variant": "#d0c5b3",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "tertiary": "#5e5e5c",
+                    "secondary-fixed": "#f8e0ab",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "on-tertiary-container": "#3f403d",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "inverse-primary": "#e5c273",
+                    "tertiary-container": "#acaba8",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#755b15",
+                    "surface-container-low": "#f6f3f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-padding": "120px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px",
+                    "gutter": "32px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "display-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-xl": ["Manrope"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .luxury-shadow {
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+        }
+        .video-gradient-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 40%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d0c5b3;
+            border-radius: 10px;
+        }
+        @keyframes pulse-gold {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .live-dot {
+            animation: pulse-gold 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-display-md text-display-md tracking-widest text-primary uppercase">
+                AURA OF SILK
+            </div>
+<nav class="hidden md:flex items-center space-y-0 space-x-12">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="#">Atelier</a>
+<a class="text-primary border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase tracking-widest" href="#">Academy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="#">Orders</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">shopping_bag</button>
+<div class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated professional portrait of a woman in an elite hair academy environment, wearing a minimalist black silk blazer, softly lit with golden hour studio lighting to highlight the smooth texture of the background and her polished appearance. Elegant and exclusive aesthetic consistent with Aura of Silk branding." src="/stitch/img-034.jpg"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-margin-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
+<!-- Live Header Info -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary live-dot"></span>
+<span class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-primary">Live Now</span>
+</div>
+<span class="font-label-caps text-[11px] uppercase tracking-widest text-on-surface-variant/60">Elite Access: 142 Members Viewing</span>
+</div>
+<h1 class="font-display-md text-display-md text-on-surface">Advanced Strands: The 12-Point Grading System</h1>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-2xl">Master the art of silk-press hair assessment with Founder Chi. Today's focus: Tensile strength and cuticle alignment in high-fidelity hair grading.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-on-background text-surface rounded-lg font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary transition-all duration-400">Invite Peer</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- CINEMATIC VIDEO INTERFACE (8/12 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="relative aspect-video rounded-xl overflow-hidden group luxury-shadow bg-on-background">
+<img class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700" data-alt="A cinematic close-up shot of a professional hair stylist's hands gently inspecting a luxurious bundle of premium, high-gloss silk hair against a minimalist ivory studio background. Soft, directional key lighting emphasizes the shimmering strands and the precise technique of hair grading. Professional academy masterclass aesthetic with high contrast and golden highlights." src="/stitch/img-076.jpg"/>
+<!-- Video Overlay Controls -->
+<div class="absolute inset-0 video-gradient-overlay flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-6 text-surface">
+<button class="material-symbols-outlined text-[32px] hover:text-primary-container transition-colors">play_arrow</button>
+<button class="material-symbols-outlined text-[24px] hover:text-primary-container transition-colors">volume_up</button>
+<span class="font-label-caps text-xs">42:18 / 01:30:00</span>
+</div>
+<div class="flex items-center gap-6 text-surface">
+<button class="material-symbols-outlined text-[24px] hover:text-primary-container transition-colors">closed_caption</button>
+<button class="material-symbols-outlined text-[24px] hover:text-primary-container transition-colors">settings</button>
+<button class="material-symbols-outlined text-[24px] hover:text-primary-container transition-colors">fullscreen</button>
+</div>
+</div>
+<div class="w-full h-1 bg-surface/20 mt-6 rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-primary-container w-[45%]"></div>
+</div>
+</div>
+<!-- Watermark -->
+<div class="absolute top-8 right-8 opacity-40">
+<div class="font-display-md text-body-md text-surface uppercase tracking-[0.4em]">ByChi Academy</div>
+</div>
+</div>
+<!-- STUDENT WORKSPACE (Collapsible / Note Taking) -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/30 luxury-shadow">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h3 class="font-headline-lg text-[20px] text-on-surface">Session Notes</h3>
+</div>
+<button class="text-primary font-label-caps text-[10px] uppercase tracking-widest border-b border-primary/30">Auto-Sync Enabled</button>
+</div>
+<div class="relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-body-md text-on-surface placeholder:text-outline-variant p-0 min-h-[120px] resize-none" placeholder="Type your notes here... They will be automatically timestamped to 42:18."></textarea>
+<div class="mt-4 flex flex-wrap gap-3">
+<div class="px-3 py-1 bg-surface-container rounded-lg flex items-center gap-2 border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="text-[10px] text-primary font-bold">41:05</span>
+<span class="text-[12px] text-on-surface-variant group-hover:text-primary transition-colors">Cuticle Assessment</span>
+</div>
+<div class="px-3 py-1 bg-surface-container rounded-lg flex items-center gap-2 border border-outline-variant/20 hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="text-[10px] text-primary font-bold">38:12</span>
+<span class="text-[12px] text-on-surface-variant group-hover:text-primary transition-colors">Moisture Levels</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE SIDEBAR (4/12 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-gutter h-full">
+<!-- Live Concierge Chat -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl luxury-shadow border border-outline-variant/20 overflow-hidden min-h-[500px]">
+<div class="p-6 border-b border-outline-variant/10 flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Concierge Chat</h3>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar" id="chat-container">
+<!-- Message 1 -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-[10px] uppercase tracking-tighter text-outline">System</span>
+<p class="text-body-sm text-on-surface-variant italic">Welcome to the Academy Lounge, Elena. Expert facilitators are on standby.</p>
+</div>
+<!-- Message 2 -->
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex-shrink-0 flex items-center justify-center">
+<span class="text-[10px] font-bold text-on-secondary-container">MJ</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[11px] font-bold">Marcus J.</span>
+<span class="text-[9px] text-outline">14:40</span>
+</div>
+<p class="text-body-sm bg-surface-container p-3 rounded-lg rounded-tl-none">Could we revisit the distinction between Grade 11A and 12A tensile strength? </p>
+</div>
+</div>
+<!-- Message 3 (Instructor) -->
+<div class="flex gap-3 justify-end">
+<div class="flex flex-col gap-1 items-end">
+<div class="flex items-center gap-2">
+<span class="text-[9px] text-outline">14:42</span>
+<span class="font-label-caps text-[11px] font-bold text-primary">Concierge Chi</span>
+<span class="material-symbols-outlined text-[12px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-body-sm bg-primary-container/20 text-on-primary-container p-3 rounded-lg rounded-tr-none border border-primary/10">Absolutely, Marcus. The main differentiator is the 'Snap-Back' elasticity. I'll demonstrate this live in 2 minutes.</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low border-t border-outline-variant/10">
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-0 rounded-lg py-3 px-4 pr-12 text-body-sm" placeholder="Inquire elegantly..." type="text"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary hover:scale-110 transition-transform">send</button>
+</div>
+</div>
+</div>
+<!-- Session Resources -->
+<div class="bg-surface rounded-xl p-6 border border-outline-variant/30">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface mb-4">Elite Resources</h3>
+<div class="space-y-3">
+<a class="group flex items-center justify-between p-3 bg-surface-container-low rounded-lg hover:bg-primary-container/10 transition-all border border-transparent hover:border-primary/20" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-body-sm font-medium">12-Point Grading Guide.pdf</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-sm">download</span>
+</a>
+<a class="group flex items-center justify-between p-3 bg-surface-container-low rounded-lg hover:bg-primary-container/10 transition-all border border-transparent hover:border-primary/20" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="text-body-sm font-medium">Texture Analysis Chart.xlsx</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-sm">download</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-16 bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-display-md text-display-md text-primary">AURA</div>
+<div class="flex gap-8">
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Privacy</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Terms</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Support</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Heritage</a>
+</div>
+<div class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">
+                © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- Simple Interactivity for Chat -->
+<script>
+        const chatContainer = document.getElementById('chat-container');
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        // Micro-interaction for video hover
+        const videoContainer = document.querySelector('.aspect-video');
+        videoContainer.addEventListener('mousemove', (e) => {
+            const rect = videoContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            // Add subtle lighting effect could be done here
+        });
+
+        // Toggle focus on workspace notes
+        const workspace = document.querySelector('textarea');
+        workspace.addEventListener('focus', () => {
+            workspace.parentElement.parentElement.classList.add('ring-1', 'ring-primary/20');
+        });
+        workspace.addEventListener('blur', () => {
+            workspace.parentElement.parentElement.classList.remove('ring-1', 'ring-primary/20');
+        });
+    </script>
+</body></html>

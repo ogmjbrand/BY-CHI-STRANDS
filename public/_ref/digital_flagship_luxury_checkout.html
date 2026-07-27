@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | ByChi Strands</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .input-focus-effect:focus-within label {
+            color: #C8A75B;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f6f3f2;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d0c5b3;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#7f7667",
+                    "tertiary": "#5e5e5c",
+                    "surface": "#fcf9f8",
+                    "primary-fixed": "#ffdf9a",
+                    "outline-variant": "#d0c5b3",
+                    "on-surface-variant": "#4d4638",
+                    "on-primary-container": "#513c00",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#755b15",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary": "#ffffff",
+                    "background": "#fcf9f8",
+                    "surface-container": "#f0edec",
+                    "secondary-fixed": "#f8e0ab",
+                    "secondary-fixed-dim": "#dbc491",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "primary-fixed-dim": "#e5c273",
+                    "surface-dim": "#dcd9d9",
+                    "secondary": "#6e5c32",
+                    "primary": "#755b15",
+                    "on-tertiary-container": "#3f403d",
+                    "primary-container": "#c8a75b",
+                    "on-background": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#726136",
+                    "inverse-primary": "#e5c273",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "surface-bright": "#fcf9f8",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#ebe7e7",
+                    "on-secondary-fixed": "#251a00",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "tertiary-fixed": "#e4e2de",
+                    "tertiary-container": "#acaba8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-primary-fixed": "#251a00",
+                    "secondary-container": "#f6dda8",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-padding": "120px",
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-xl": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "label-caps": ["Manrope"],
+                    "display-md": ["Playfair Display"],
+                    "body-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky border-b border-outline-variant/30 z-50 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="flex-1 flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+</div>
+<div class="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright flex-none">
+                ByChi Strands
+            </div>
+<div class="flex-1 flex justify-end gap-6 items-center">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all duration-500">shopping_bag</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 text-label-caps hover:bg-primary transition-colors duration-300">
+                    Book Appointment
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12 md:py-24">
+<!-- Progress Indicator -->
+<div class="flex flex-col items-center mb-16 md:mb-24 fade-in">
+<div class="flex items-center gap-4 md:gap-12">
+<div class="flex flex-col items-center gap-2">
+<span class="text-label-caps text-outline">Bag</span>
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div class="w-16 h-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="text-label-caps text-primary font-bold">Shipping</span>
+<div class="w-2 h-2 rounded-full bg-primary ring-4 ring-primary-fixed/30"></div>
+</div>
+<div class="w-16 h-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="text-label-caps text-outline-variant">Payment</span>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<div class="w-16 h-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="text-label-caps text-outline-variant">Review</span>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Shipping & Payment -->
+<div class="lg:col-span-7 space-y-16 fade-in" style="animation-delay: 0.1s;">
+<!-- Section: Shipping Address -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Shipping Address</h2>
+<span class="text-body-sm text-outline">Step 1 of 2</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-6">
+<div class="md:col-span-2 relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-2 transition-all duration-300" placeholder="E.g. Elena Vakhromeeva" type="text"/>
+</div>
+<div class="md:col-span-2 relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">Address Line 1</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-2 transition-all duration-300" placeholder="Suite, House Number, Street Name" type="text"/>
+</div>
+<div class="relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">City</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-2 transition-all duration-300" placeholder="Paris" type="text"/>
+</div>
+<div class="relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">Postal Code</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-2 transition-all duration-300" placeholder="75001" type="text"/>
+</div>
+</div>
+</section>
+<!-- Section: Shipping Method -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Shipping Method</h2>
+<div class="space-y-4">
+<label class="flex items-center justify-between p-6 bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 cursor-pointer transition-all duration-300 group">
+<div class="flex items-center gap-4">
+<input checked="" class="text-primary focus:ring-primary w-4 h-4" name="shipping" type="radio"/>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Standard Delivery</p>
+<p class="text-body-sm text-outline">5-7 Business Days. Signature Required.</p>
+</div>
+</div>
+<span class="text-on-surface font-semibold">Free</span>
+</label>
+<label class="flex items-center justify-between p-6 bg-surface border border-outline-variant/30 hover:border-primary cursor-pointer transition-all duration-300 group">
+<div class="flex items-center gap-4">
+<input class="text-primary focus:ring-primary w-4 h-4" name="shipping" type="radio"/>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Atelier Express</p>
+<p class="text-body-sm text-outline">2-3 Business Days. White-glove handling.</p>
+</div>
+</div>
+<span class="text-on-surface font-semibold">$45.00</span>
+</label>
+</div>
+</section>
+<!-- Section: Payment -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Payment Details</h2>
+<div class="bg-surface-container-low p-8 border border-outline-variant/30">
+<div class="flex gap-4 mb-10">
+<button class="flex-1 py-4 border border-on-surface bg-on-surface text-surface text-label-caps flex items-center justify-center gap-2 hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined text-sm">credit_card</span>
+                                Credit Card
+                            </button>
+<button class="flex-1 py-4 border border-outline-variant bg-surface text-on-surface text-label-caps flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">file_download</span>
+                                Apple Pay
+                            </button>
+</div>
+<div class="space-y-8">
+<div class="relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">Card Number</label>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 py-2 transition-all" placeholder="0000 0000 0000 0000" type="text"/>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 flex gap-2">
+<div class="w-8 h-5 bg-outline-variant/20 rounded-sm"></div>
+<div class="w-8 h-5 bg-outline-variant/20 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">Expiry Date</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 py-2 transition-all" placeholder="MM/YY" type="text"/>
+</div>
+<div class="relative input-focus-effect">
+<label class="block text-label-caps text-outline mb-2 uppercase tracking-widest">CVV</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 py-2 transition-all" placeholder="***" type="password"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex flex-wrap gap-8 items-center py-6 border-y border-outline-variant/20">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<span class="text-label-caps text-[10px]">Secure SSL Encryption</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="text-label-caps text-[10px]">Atelier Guarantee</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-primary text-[20px]">package_2</span>
+<span class="text-label-caps text-[10px]">Discrete Packaging</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary -->
+<div class="lg:col-span-5 fade-in" style="animation-delay: 0.2s;">
+<div class="sticky top-32 space-y-12 bg-white border border-outline-variant/20 p-8 shadow-sm">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-8">Your Atelier Bag</h3>
+<!-- Product Item -->
+<div class="flex gap-6 items-start pb-8 border-b border-outline-variant/20">
+<div class="w-32 aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic, high-fashion close-up of a premium silk-base wig styled in cascading dark waves. The hair is set against a soft ivory backdrop with warm, golden studio lighting that highlights the luxurious texture and natural sheen of the strands. The composition is minimalist and editorial, capturing the essence of high-end beauty artistry." src="/stitch/img-119.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-2">
+<div>
+<h4 class="font-body-md font-bold text-on-surface mb-1">Signature Custom Silk-Base Wig</h4>
+<div class="space-y-1">
+<p class="text-body-sm text-outline">Length: 22"</p>
+<p class="text-body-sm text-outline">Density: 180%</p>
+<p class="text-body-sm text-outline">Cap Size: Medium</p>
+</div>
+</div>
+<p class="text-body-md font-semibold text-primary mt-4">$1,850.00</p>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="space-y-4">
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Subtotal</span>
+<span class="text-on-surface">$1,850.00</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Shipping</span>
+<span class="text-on-surface">Calculated next step</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Estimated Tax</span>
+<span class="text-on-surface">$148.00</span>
+</div>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-baseline">
+<span class="font-headline-lg text-headline-lg">Total</span>
+<span class="font-display-md text-headline-lg text-on-surface">$1,998.00</span>
+</div>
+</div>
+<!-- Main CTA -->
+<div class="space-y-4">
+<button class="w-full bg-on-surface text-surface py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-primary transition-all duration-500 hover:scale-[1.02] active:scale-100 uppercase">
+                            Complete Purchase
+                        </button>
+<p class="text-center text-[10px] text-outline px-4 leading-relaxed">
+                            By clicking complete purchase, you agree to the ByChi Strands Terms of Service and Privacy Policy. All bespoke orders are final sale.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<h3 class="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h3>
+<p class="text-body-sm text-on-surface-variant max-w-xs">
+                    Curating the world's most exquisite silk-base hair artistry for the discerning individual.
+                </p>
+</div>
+<div>
+<h4 class="text-label-caps text-on-surface mb-6 uppercase tracking-widest">Boutique</h4>
+<ul class="space-y-3">
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Collections</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Academy</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Book Appointment</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-caps text-on-surface mb-6 uppercase tracking-widest">Connect</h4>
+<ul class="space-y-3">
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Instagram</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">TikTok</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">WhatsApp</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-caps text-on-surface mb-6 uppercase tracking-widest">Client Service</h4>
+<ul class="space-y-3">
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 px-margin-desktop py-8 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-body-sm text-outline">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline">payments</span>
+<span class="material-symbols-outlined text-outline">shopping_bag</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('active');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('active');
+            });
+        });
+
+        // Simple shipping price toggle logic for UX feel
+        const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+        const totalDisplay = document.querySelector('.font-display-md.text-headline-lg');
+        
+        shippingOptions.forEach(option => {
+            option.addEventListener('change', (e) => {
+                let baseTotal = 1998.00;
+                if(e.target.parentElement.nextElementSibling.innerText === '$45.00') {
+                    totalDisplay.innerText = '$' + (baseTotal + 45.00).toFixed(2);
+                } else {
+                    totalDisplay.innerText = '$' + baseTotal.toFixed(2);
+                }
+            });
+        });
+    </script>
+</body></html>

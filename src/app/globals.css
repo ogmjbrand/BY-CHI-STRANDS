@@ -1,0 +1,805 @@
+/*
+ * Tailwind is imported in its parts so the screens' own CSS can sit *inside*
+ * the utilities layer, ahead of the generated utilities. That reproduces the
+ * export's cascade exactly: the CDN build injects Tailwind after each screen's
+ * <style> block, so a utility beats a screen rule of equal specificity, while
+ * a more specific screen rule (e.g. `input:checked + label`) still wins.
+ * Putting the screen CSS in its own lower layer would lose both contests.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "./stitch-screens.css" layer(utilities);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/*
+ * The Stitch screens load Tailwind as
+ * `cdn.tailwindcss.com?plugins=forms,container-queries`, so every input,
+ * select and checkbox inherits the forms plugin's base styling. Container
+ * queries are built into Tailwind v4.
+ */
+@plugin "@tailwindcss/forms";
+
+/*
+ * Material Symbols is self-hosted rather than pulled from Google's
+ * stylesheet. That stylesheet sets `font-size: 24px` on
+ * `.material-symbols-outlined`; delivered unlayered it outranks Tailwind's
+ * layered utilities and pins every icon to 24px. The Stitch screens load
+ * Tailwind from the CDN (unlayered, injected last) so `text-4xl` wins
+ * there — declaring the helper in `base` reproduces that cascade.
+ */
+/*
+ * Every distinct Google Fonts request the 35 screens make is self-hosted as
+ * its own CSS family (Pf1-4 Playfair, Mr1-8 Manrope). The screens disagree
+ * on which weights and axes to load, and a weight a screen did not load is
+ * synthesised by the browser with different metrics — so a single superset
+ * family would silently restyle pages. stitch-screens.css points each
+ * screen at the families its own export requested.
+ */
+@font-face {
+  font-family: "Pf1";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pf1-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf1";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/pf1-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf1";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/pf1-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf1";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pf1-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf2";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pf2-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf2";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pf2-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf2";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/pf2-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf2";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/pf2-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf2";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pf2-4.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf3";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/pf3-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf3";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/pf3-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pf4-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pf4-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pf4-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/pf4-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/pf4-4.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Pf4";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pf4-5.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr1";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr1-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr1";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr1-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr1";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr1-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr1";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/mr1-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr2";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr2-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr2";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr2-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr2";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/mr2-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr2";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr2-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr2";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/mr2-4.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr3";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr3-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr3";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr3-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr3";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/mr3-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr3";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr3-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/fonts/mr4-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr4-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr4-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/mr4-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr4-4.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr4";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/mr4-5.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr5";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/mr5-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr6";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr6-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr6";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr6-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr6";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr6-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr6";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/mr6-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr7";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr7-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr7";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr7-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr7";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr7-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr8";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/fonts/mr8-0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr8";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/mr8-1.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr8";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mr8-2.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr8";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/mr8-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Mr8";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/mr8-4.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url("/fonts/material-symbols-outlined.woff2") format("woff2");
+}
+
+@layer base {
+  /*
+   * Tailwind v4's preflight zeroes table-cell padding; v3 — which the screens
+   * render on — leaves the browser's 1px, so cells styled with only `py-*`
+   * keep 1px horizontally and lay out fractionally wider. Declared in `base`
+   * so the screens' own padding utilities still win.
+   */
+  th,
+  td {
+    padding: 1px;
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AURA OF SILK — design tokens exported from the BY CHI STRANDS
+   Stitch project. Values mirror the project's tailwind.config
+   verbatim; do not "tidy" them.
+   ═══════════════════════════════════════════════════════════════ */
+
+/*
+ * The Stitch config sets `darkMode: "class"`. Tailwind v4 defaults to the
+ * prefers-color-scheme media query instead, which would fire every `dark:`
+ * utility (60+ across the screens) for visitors on a dark OS and invert the
+ * palette. Restore opt-in, class-driven dark mode.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Default to the roman-only family (23 of the 35 screens); the screens whose
+ * export requested the italic axis override this in stitch-screens.css.
+ */
+:root {
+  --font-playfair: "Pf1";
+  --font-manrope: "Mr3";
+}
+
+@theme {
+  /* ── Colour roles ──────────────────────────────────────────── */
+  --color-background: #fcf9f8;
+  --color-on-background: #1c1b1b;
+
+  --color-surface: #fcf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fcf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0edec;
+  --color-surface-container-high: #ebe7e7;
+  --color-surface-container-highest: #e5e2e1;
+  --color-surface-variant: #e5e2e1;
+  --color-surface-tint: #755b15;
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #4d4638;
+  --color-inverse-surface: #313030;
+  --color-inverse-on-surface: #f3f0ef;
+
+  --color-outline: #7f7667;
+  --color-outline-variant: #d0c5b3;
+
+  --color-primary: #755b15;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #c8a75b;
+  --color-on-primary-container: #513c00;
+  --color-inverse-primary: #e5c273;
+  --color-primary-fixed: #ffdf9a;
+  --color-primary-fixed-dim: #e5c273;
+  --color-on-primary-fixed: #251a00;
+  --color-on-primary-fixed-variant: #5a4300;
+
+  --color-secondary: #6e5c32;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f6dda8;
+  --color-on-secondary-container: #726136;
+  --color-secondary-fixed: #f8e0ab;
+  --color-secondary-fixed-dim: #dbc491;
+  --color-on-secondary-fixed: #251a00;
+  --color-on-secondary-fixed-variant: #55451d;
+
+  --color-tertiary: #5e5e5c;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #acaba8;
+  --color-on-tertiary-container: #3f403d;
+  --color-tertiary-fixed: #e4e2de;
+  --color-tertiary-fixed-dim: #c8c6c3;
+  --color-on-tertiary-fixed: #1b1c1a;
+  --color-on-tertiary-fixed-variant: #474744;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ── Spacing scale ─────────────────────────────────────────── */
+  --spacing-unit: 8px;
+  --spacing-gutter: 32px;
+  --spacing-margin-mobile: 24px;
+  --spacing-margin-desktop: 80px;
+  --spacing-section-padding: 120px;
+  --spacing-container-max: 1440px;
+
+  /* max-w-container-max resolves through the container scale */
+  --container-container-max: 1440px;
+
+  /* ── Corner radii (Stitch overrides Tailwind's defaults) ───── */
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /*
+   * The default sans stack, matched to the CDN build the screens render on.
+   * Elements without a font-* utility inherit this, and a different stack
+   * changes their measured width — which shifts flex/justify-between rows.
+   */
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* ── Font families ─────────────────────────────────────────── */
+  --font-display-lg: var(--font-playfair), Georgia, serif;
+  --font-display-md: var(--font-playfair), Georgia, serif;
+  --font-headline-lg: var(--font-playfair), Georgia, serif;
+  --font-headline-lg-mobile: var(--font-playfair), Georgia, serif;
+  --font-body-xl: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-body-md: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-body-sm: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-label-caps: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Type scale ────────────────────────────────────────────── */
+  --text-display-lg: 64px;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--font-weight: 700;
+
+  --text-display-md: 48px;
+  --text-display-md--line-height: 1.2;
+  --text-display-md--font-weight: 600;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 1.3;
+  --text-headline-lg--font-weight: 500;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 1.3;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-body-xl: 20px;
+  --text-body-xl--line-height: 1.6;
+  --text-body-xl--font-weight: 300;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 1;
+  --text-label-caps--font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Base — mirrors the Stitch <body> and shared <style> block
+   ═══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+ * Base typography is deliberately left to Tailwind's preflight — the Stitch
+ * screens style <body> entirely through utility classes, and overriding
+ * font-size or line-height here shifts every paragraph off the design.
+ */
+
+
+/*
+ * Tailwind v4 reimplemented space-x/space-y as a margin on every child that
+ * is not :last-child. v3 — which the screens render on — put the margin on
+ * each child preceded by a visible sibling. The two differ whenever the last
+ * child is hidden at the current breakpoint: v4 leaves a trailing margin that
+ * widens the row. These rules are unlayered so they outrank the utilities.
+ */
+.space-x-2 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.5rem; }
+.space-x-3 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-3 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.75rem; }
+.space-x-4 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+.space-x-6 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.5rem; }
+.space-x-8 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 2rem; }
+.space-x-10 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-10 > :not([hidden]) ~ :not([hidden]) { margin-left: 2.5rem; }
+.space-x-12 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-x-12 > :not([hidden]) ~ :not([hidden]) { margin-left: 3rem; }
+.space-y-0 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0px; }
+.space-y-1 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }
+.space-y-2 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+.space-y-3 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+.space-y-4 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+.space-y-6 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; }
+.space-y-8 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+.space-y-10 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.5rem; }
+.space-y-12 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-12 > :not([hidden]) ~ :not([hidden]) { margin-top: 3rem; }
+.space-y-16 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem; }
+.space-y-24 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; }
+
+/* the breakpoint-scoped space utilities the screens use */
+@media (width >= 48rem) {
+  .md\:space-y-0 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0px; }
+  .md\:space-x-12 > :not(:last-child) { margin-inline-end: 0; margin-block-end: 0; }
+  .md\:space-x-12 > :not([hidden]) ~ :not([hidden]) { margin-left: 3rem; }
+}
+
+/* Scroll-reveal — the transition every Stitch screen ships with */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The only icon rule the Stitch screens add on top of Google's stylesheet. */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 249, 248, 0) 0%,
+    rgba(252, 249, 248, 1) 100%
+  );
+}
+
+.nav-blur {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Screens that use a sidebar/drawer lock the page behind them */
+.drawer-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-container);
+  outline-offset: 3px;
+}

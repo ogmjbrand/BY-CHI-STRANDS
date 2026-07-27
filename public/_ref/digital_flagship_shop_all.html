@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Collection | ByChi Strands</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "secondary": "#6e5c32",
+                    "primary-fixed": "#ffdf9a",
+                    "primary-container": "#c8a75b",
+                    "secondary-fixed": "#f8e0ab",
+                    "on-tertiary-container": "#3f403d",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "tertiary-container": "#acaba8",
+                    "primary-fixed-dim": "#e5c273",
+                    "surface-container-high": "#ebe7e7",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#251a00",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "background": "#fcf9f8",
+                    "surface-tint": "#755b15",
+                    "surface-bright": "#fcf9f8",
+                    "outline-variant": "#d0c5b3",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface": "#fcf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "surface-variant": "#e5e2e1",
+                    "outline": "#7f7667",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e4e2de",
+                    "on-primary-container": "#513c00",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#f6dda8",
+                    "on-secondary-container": "#726136",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f6f3f2",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#251a00",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#dbc491",
+                    "tertiary": "#5e5e5c",
+                    "primary": "#755b15",
+                    "surface-container": "#f0edec",
+                    "inverse-surface": "#313030",
+                    "on-surface-variant": "#4d4638",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "inverse-primary": "#e5c273"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-padding": "120px",
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Manrope"],
+                    "body-xl": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-md": ["Playfair Display"],
+                    "body-sm": ["Manrope"],
+                    "label-caps": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fcf9f8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .luxury-shadow { box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04); }
+        .clip-path-oblique { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .product-card-overlay {
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover .product-card-overlay { opacity: 1; }
+        .product-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-12">
+<a class="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="#">ByChi Strands</a>
+<div class="hidden md:flex gap-8 font-body-md text-body-sm uppercase tracking-widest">
+<a class="text-primary font-semibold border-b border-primary pb-1" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Academy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden lg:block font-body-md text-body-sm uppercase tracking-widest text-on-surface hover:text-primary transition-all">Book Appointment</button>
+<button class="relative hover:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+</button>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-section-padding">
+<!-- Editorial Header -->
+<header class="mb-20">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">The Collection</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl">
+                Elevate your presence with our meticulously curated selection of premium Vietnamese hair. Each strand is a testament to timeless sophistication and editorial excellence.
+            </p>
+</header>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Filters Sidebar (Sticky) -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-32 space-y-10">
+<div>
+<h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Hair Grade</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Raw Vietnamese (13A)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Virgin Luxury (12A)</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Length</h3>
+<div class="grid grid-cols-3 gap-2">
+<button class="border border-outline-variant py-2 font-body-sm text-body-sm hover:border-primary hover:text-primary transition-all">18"</button>
+<button class="border border-outline-variant py-2 font-body-sm text-body-sm hover:border-primary hover:text-primary transition-all">22"</button>
+<button class="border border-outline-variant py-2 font-body-sm text-body-sm hover:border-primary hover:text-primary transition-all">26"</button>
+<button class="border border-primary bg-primary-fixed/20 py-2 font-body-sm text-body-sm text-primary transition-all">30"</button>
+<button class="border border-outline-variant py-2 font-body-sm text-body-sm hover:border-primary hover:text-primary transition-all">34"</button>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Texture</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-outline text-primary focus:ring-primary w-4 h-4" name="texture" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Silk Straight</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-outline text-primary focus:ring-primary w-4 h-4" name="texture" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Loose Wave</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-outline text-primary focus:ring-primary w-4 h-4" name="texture" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Deep Curl</span>
+</label>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/30">
+<button class="w-full text-left font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all flex justify-between items-center">
+                            Lace Type
+                            <span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing 12 of 48 results</p>
+<div class="flex items-center gap-4">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sort by:</span>
+<select class="border-none bg-transparent font-body-sm text-body-sm focus:ring-0 cursor-pointer">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
+<!-- Product 1: Custom Wig -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A luxurious custom wig made of sleek black Vietnamese hair, styled in a long straight cut. The hair has a high-gloss silk finish and is displayed on a minimalist cream-colored mannequin bust against a soft ivory background. High-key lighting highlights the impeccable quality and texture of the hair." src="/stitch/img-098.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">Signature Silk Straight Wig</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">HD Lace Frontal · 24 Inches</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$1,250.00</p>
+</div>
+</div>
+<!-- Product 2: Raw Bundles -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Three bundles of premium raw Vietnamese hair in a deep wavy texture, arranged elegantly on a white silk cloth. The lighting is soft and cinematic, casting delicate shadows that emphasize the organic waves and natural luster of the hair. The scene evokes luxury and craftsmanship." src="/stitch/img-029.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">Raw Vietnamese Bundles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Natural Deep Wave · 3 Bundle Set</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$480.00</p>
+</div>
+</div>
+<!-- Product 3: Frontal -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Close-up shot of a high-definition 13x6 lace frontal with a natural hairline and baby hairs. The lace is nearly invisible against a neutral skin tone background, showcasing the meticulous craftsmanship of ByChi Strands. The lighting is crisp, highlighting the detail of the hand-tied strands." src="/stitch/img-011.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">HD Invisible Lace Frontal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">13x6 Hand-Tied · Natural Black</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$220.00</p>
+</div>
+</div>
+<!-- Product 4: Colored Custom Wig -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A vibrant copper-colored custom wig with voluminous waves, displayed in a studio setting. The lighting is warm and golden, complementing the hair's rich tones. The composition is artistic, focusing on the movement and flow of the curls, set against a minimalist gray backdrop for maximum contrast." src="/stitch/img-094.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">Sunset Copper Wave Unit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Custom Colored · Luxury 12A Grade</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$1,450.00</p>
+</div>
+</div>
+<!-- Product 5: Bob Wig -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A sharp, asymmetrical bob wig in a deep espresso color. The hair is styled to a mirror-like shine. The photograph is shot from a low angle to emphasize the architectural lines of the cut. The background is a clean, bright ivory, maintaining the editorial luxury aesthetic." src="/stitch/img-080.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">Architectural Bob Unit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pre-Cut Lace · Silk Finish</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$890.00</p>
+</div>
+</div>
+<!-- Product 6: Raw Bulk Hair -->
+<div class="product-card group relative">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Bundles of raw Vietnamese bulk hair, unwefted and loose, showcasing the pure quality of the strands. The hair is draped over a polished wooden surface, with soft morning light streaming in from a window, highlighting the natural brown undertones and raw texture of the hair." src="/stitch/img-106.jpg"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+<button class="w-full bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">Quick View</button>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="mt-6 space-y-1">
+<h3 class="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">Raw Vietnamese Bulk Hair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Braiding &amp; Custom Ventilating · 100g</p>
+<p class="font-body-md text-body-md font-semibold text-secondary pt-2">$180.00</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-section-padding flex justify-center items-center gap-4">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 bg-primary text-white flex items-center justify-center">1</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary transition-all">2</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary transition-all">3</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest full-width border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">
+                    Defining the pinnacle of Vietnamese hair artistry. Timeless, sophisticated, and uncompromising in quality.
+                </p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-on-surface mb-6">Discover</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:underline decoration-primary transition-all" href="#">Collections</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">Raw Bundles</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">Custom Units</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">Lace Systems</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-on-surface mb-6">Support</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:underline decoration-primary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:underline decoration-primary transition-all" href="#">WhatsApp</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-on-surface mb-6">Social</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="camera">camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="videocam">videocam</span>
+</a>
+</div>
+<div class="mt-8">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-2">Newsletter</p>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary font-body-sm text-body-sm" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 bottom-2">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-8 border-t border-outline-variant/10 text-center">
+<p class="font-body-sm text-[12px] text-on-surface-variant opacity-60">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for Product Cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const title = card.querySelector('h3');
+                title.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const title = card.querySelector('h3');
+                title.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Wishlist Toggle
+        document.querySelectorAll('[data-icon="favorite"]').forEach(btn => {
+            btn.closest('button').addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+                icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                icon.classList.toggle('text-primary');
+            });
+        });
+    </script>
+</body></html>

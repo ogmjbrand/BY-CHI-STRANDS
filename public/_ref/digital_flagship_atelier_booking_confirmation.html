@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmation | Aura of Silk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Shared Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#313030",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container": "#f0edec",
+                    "on-background": "#1c1b1b",
+                    "primary-fixed-dim": "#e5c273",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#ffdf9a",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#755b15",
+                    "on-secondary-container": "#726136",
+                    "secondary-fixed-dim": "#dbc491",
+                    "secondary-container": "#f6dda8",
+                    "primary-container": "#c8a75b",
+                    "secondary": "#6e5c32",
+                    "on-tertiary-container": "#3f403d",
+                    "tertiary-fixed": "#e4e2de",
+                    "on-surface-variant": "#4d4638",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error": "#ba1a1a",
+                    "tertiary": "#5e5e5c",
+                    "secondary-fixed": "#f8e0ab",
+                    "inverse-primary": "#e5c273",
+                    "background": "#fcf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "primary": "#755b15",
+                    "on-surface": "#1c1b1b",
+                    "surface-bright": "#fcf9f8",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-fixed": "#251a00",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#513c00",
+                    "surface-container-high": "#ebe7e7",
+                    "surface": "#fcf9f8",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "outline": "#7f7667",
+                    "on-primary-fixed": "#251a00",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "outline-variant": "#d0c5b3",
+                    "tertiary-container": "#acaba8",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "container-max": "1440px",
+                    "section-padding": "120px",
+                    "unit": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "display-lg": ["Playfair Display"],
+                    "body-sm": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-md": ["Playfair Display"],
+                    "body-xl": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-subtle {
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes revealUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline/20 shadow-sm transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center w-full px-8 md:px-20 py-4 max-w-[1440px] mx-auto">
+<div class="font-display-md text-[24px] md:text-display-md text-primary tracking-tighter cursor-pointer">Aura of Silk</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Atelier</a>
+<a class="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Academy</a>
+<a class="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-70 transition-opacity duration-300 text-primary">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-padding">
+<!-- Hero Confirmation Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 text-center">
+<div class="reveal-up" style="animation-delay: 0.1s;">
+<span class="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-[0.3em]">Confirmation Confirmed</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">Your Transformation<br/>is Secured</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl mx-auto opacity-80">We are preparing for your arrival at the Mayfair Atelier. A master artisan is awaiting to curate your new look.</p>
+</div>
+</section>
+<!-- Summary & Details Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Details Card -->
+<div class="lg:col-span-7 reveal-up" style="animation-delay: 0.2s;">
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 md:p-12 relative overflow-hidden group shadow-[0px_20px_50px_rgba(0,0,0,0.02)]">
+<!-- Subtle Accent -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-outline-variant/20 pb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1">Signature Tonal Glaze</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+                                90 Minutes Professional Service
+                            </p>
+</div>
+<div class="mt-4 md:mt-0 text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">TOTAL INVESTMENT</span>
+<span class="font-display-md text-[32px] text-primary">$185.00</span>
+<span class="font-body-sm text-[12px] block text-primary/70 italic">Deposit Paid</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Artisan -->
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">ARTISAN</span>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female hair stylist named Elena Vance, looking elegant and sophisticated. She has sleek hair and is wearing a minimalist black designer blazer. The background is a blurred high-end hair salon with soft warm lighting and ivory tones, consistent with a luxury hair maison aesthetic." src="/stitch/img-015.jpg"/>
+</div>
+<div>
+<p class="font-headline-lg text-body-xl leading-tight">Elena Vance</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Colour Specialist</p>
+</div>
+</div>
+</div>
+<!-- Schedule -->
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">SCHEDULE</span>
+<div>
+<p class="font-headline-lg text-body-xl leading-tight">Saturday, Oct 5</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">at 11:30 AM</p>
+</div>
+</div>
+<!-- Location -->
+<div class="space-y-4 md:col-span-2 border-t border-outline-variant/10 pt-8">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">LOCATION</span>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<div>
+<p class="font-headline-lg text-body-xl leading-tight">The London Atelier</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">12 Brook Street, Mayfair, London W1K 5DB</p>
+</div>
+</div>
+<div class="h-48 w-full mt-4 bg-surface-container-high rounded overflow-hidden">
+<div class="w-full h-full grayscale opacity-70 hover:grayscale-0 transition-all duration-700 cursor-crosshair" data-alt="A minimalist architectural map of the Mayfair district in London, showing the area around Brook Street. The map uses a sophisticated monochrome palette with champagne gold accents for landmarks. The style is clean, editorial, and highly legible, appearing like a section of a high-end travel magazine." data-location="London Mayfair" style="background-image: url('/stitch/img-088.jpg')"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8 flex flex-wrap gap-4">
+<button class="bg-[#111111] text-white px-8 py-4 font-label-caps text-label-caps flex items-center gap-2 hover:bg-[#C8A75B] transition-all duration-400 ease-in-out">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_add_on">calendar_add_on</span>
+                        ADD TO CALENDAR
+                    </button>
+<button class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary-container hover:text-white transition-all duration-400">
+                        VIEW DIRECTIONS
+                    </button>
+<button class="text-on-surface-variant hover:text-primary px-8 py-4 font-label-caps text-label-caps transition-colors duration-300 underline underline-offset-8 decoration-outline-variant">
+                        MODIFY APPOINTMENT
+                    </button>
+</div>
+</div>
+<!-- Right Column: Concierge & Visual -->
+<div class="lg:col-span-5 space-y-gutter reveal-up" style="animation-delay: 0.3s;">
+<!-- Preparation Card -->
+<div class="bg-surface-container p-8 md:p-10 border border-outline-variant/10">
+<h3 class="font-headline-lg text-[24px] mb-8 border-b border-outline-variant pb-4">Concierge Preparation</h3>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<span class="font-display-md text-[32px] text-primary/30 leading-none">01</span>
+<p class="font-body-md text-on-surface-variant">Arrive with clean, dry hair to allow for optimal pigment absorption during your glaze treatment.</p>
+</li>
+<li class="flex gap-4">
+<span class="font-display-md text-[32px] text-primary/30 leading-none">02</span>
+<p class="font-body-md text-on-surface-variant">Consultation will begin with a signature silk assessment to determine the ideal tonal balance.</p>
+</li>
+<li class="flex gap-4">
+<span class="font-display-md text-[32px] text-primary/30 leading-none">03</span>
+<p class="font-body-md text-on-surface-variant">Private suite and seasonal refreshments are reserved for your arrival.</p>
+</li>
+</ul>
+</div>
+<!-- Atmospheric Image -->
+<div class="relative group h-[400px] overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, close-up shot of liquid silk-like hair catching the light. The hair has a luminous glaze, showing incredible shine and smooth texture. Soft, warm sunlight streams into a minimalist ivory studio, creating deep shadows and high-key highlights. The mood is calm, luxurious, and evokes the feeling of a premium beauty treatment." src="/stitch/img-126.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label-caps text-[10px] tracking-[0.2em] mb-2">EXPERIENCE</p>
+<p class="font-headline-lg text-white">The Aura Signature</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative border-t border-outline-variant/30 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-8 md:px-20 py-24 max-w-[1440px] mx-auto">
+<div class="lg:col-span-1">
+<div class="font-display-lg text-display-lg text-primary mb-6">Aura of Silk</div>
+<p class="font-body-sm text-on-surface-variant/70 max-w-xs">Elevating the art of hair through scientific precision and editorial excellence.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary mb-2">DISCOVER</span>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Sustainability</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Global Boutiques</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary mb-2">SUPPORT</span>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Privacy</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shipping</a>
+</div>
+<div class="flex flex-col justify-between items-start md:items-end lg:items-end">
+<div class="flex gap-4 mb-8 md:mb-0">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant/50">© 2024 Aura of Silk. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

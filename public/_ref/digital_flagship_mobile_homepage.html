@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ByChi Strands | Aura of Silk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-tertiary-container": "#3f403d",
+                    "on-secondary-fixed": "#251a00",
+                    "surface-tint": "#755b15",
+                    "on-primary-container": "#513c00",
+                    "on-primary-fixed": "#251a00",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "surface-container": "#f0edec",
+                    "secondary-container": "#f6dda8",
+                    "tertiary-fixed": "#e4e2de",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "inverse-primary": "#e5c273",
+                    "tertiary": "#5e5e5c",
+                    "on-surface": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf9f8",
+                    "primary-fixed-dim": "#e5c273",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface-variant": "#4d4638",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "tertiary-container": "#acaba8",
+                    "primary-container": "#c8a75b",
+                    "inverse-surface": "#313030",
+                    "primary": "#755b15",
+                    "surface-container-high": "#ebe7e7",
+                    "outline-variant": "#d0c5b3",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary": "#6e5c32",
+                    "on-background": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "secondary-fixed-dim": "#dbc491",
+                    "primary-fixed": "#ffdf9a",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary-fixed": "#f8e0ab",
+                    "surface-bright": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "outline": "#7f7667",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#726136",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "section-padding": "120px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "display-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-caps": ["Manrope"],
+                    "body-xl": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-luxury {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .silk-gradient {
+            background: linear-gradient(135deg, #fcf9f8 0%, #f6f3f2 100%);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
+<div class="md:hidden">
+<button class="p-2"><span class="material-symbols-outlined text-primary">menu</span></button>
+</div>
+<div class="font-display-lg text-[24px] md:text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright">
+                ByChi Strands
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="#">Shop</a>
+<a class="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Academy</a>
+<a class="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps transition-all duration-300 hover:bg-secondary active:scale-95">
+                    Book Appointment
+                </button>
+<button class="p-2 relative">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="High-end luxury hair editorial showcase" class="w-full h-full object-cover" src="/stitch/img-049.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20"></div>
+</div>
+<div class="relative z-10 flex flex-col justify-end h-full px-margin-mobile pb-section-padding text-white max-w-container-max mx-auto">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight mb-4 drop-shadow-xl">
+                    The Aura of <br/><span class="italic font-normal">Authentic Silk</span>
+</h1>
+<p class="font-body-xl text-body-xl max-w-md mb-8 opacity-90">
+                    Premium Vietnamese hair artistry for the modern connoisseur of elegance.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-[0.2em] transition-all hover:bg-secondary">
+                        EXPLORE COLLECTIONS
+                    </button>
+</div>
+</div>
+</section>
+<!-- The Three Pillars -->
+<section class="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">Our Philosophy</span>
+<h2 class="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface">The Three Pillars of Excellence</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Pillar 1 -->
+<div class="p-8 border border-outline-variant/30 flex flex-col items-center text-center group transition-all duration-500 hover:border-primary-container">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-size: 32px;">verified_user</span>
+</div>
+<h3 class="font-display-md text-body-xl mb-4">Ethically Sourced</h3>
+<p class="font-body-md text-body-sm text-on-surface-variant">Traceable origin stories from the highlands of Vietnam, ensuring fair practices and premium purity.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="p-8 border border-outline-variant/30 flex flex-col items-center text-center group transition-all duration-500 hover:border-primary-container">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-size: 32px;">person_celebrate</span>
+</div>
+<h3 class="font-display-md text-body-xl mb-4">Single Donor</h3>
+<p class="font-body-md text-body-sm text-on-surface-variant">Maintaining cuticle alignment and natural luster by sourcing each piece from a single individual.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="p-8 border border-outline-variant/30 flex flex-col items-center text-center group transition-all duration-500 hover:border-primary-container">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-size: 32px;">auto_awesome</span>
+</div>
+<h3 class="font-display-md text-body-xl mb-4">Artisan Crafted</h3>
+<p class="font-body-md text-body-sm text-on-surface-variant">Hand-ventilated and meticulously styled by master artisans to replicate natural scalp movement.</p>
+</div>
+</div>
+</section>
+<!-- Signature Masterpieces -->
+<section class="bg-surface-container-low py-section-padding">
+<div class="px-margin-mobile max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">Exquisite Selection</span>
+<h2 class="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface">Signature Masterpieces</h2>
+</div>
+<a class="font-label-caps text-label-caps text-primary hover:underline underline-offset-8 transition-all" href="#">VIEW ALL PRODUCTS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Product 1 -->
+<div class="group relative overflow-hidden bg-background">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional close-up of premium raw Vietnamese silk hair extensions, showcasing an incredibly smooth texture and deep obsidian shine. The lighting is editorial and high-contrast, highlighting the individual strands of hair like threads of liquid silk against a warm ivory background. The composition is artistic and minimalist, reflecting the luxury and exclusivity of the ByChi Strands brand identity." src="/stitch/img-093.jpg"/>
+</div>
+<div class="p-8">
+<h3 class="font-display-md text-headline-lg mb-2">Raw Vietnamese Silk</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Our purest grade of natural hair, untreated and full of life.</p>
+<button class="border border-primary text-primary px-6 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-white transition-all">SHOP THE TEXTURE</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group relative overflow-hidden bg-background">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant custom luxury wig displayed on a high-end designer mannequin head. The wig features a complex, layered style with warm golden highlights blending seamlessly into deep mahogany tones. The setting is a sophisticated boutique studio with soft focus background elements of designer books and gold accents. The mood is opulent, emphasizing the artisan craftsmanship and bespoke quality of the hair artistry." src="/stitch/img-117.jpg"/>
+</div>
+<div class="p-8">
+<h3 class="font-display-md text-headline-lg mb-2">Custom Wigs</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Bespoke units tailored to your head shape and style preference.</p>
+<button class="border border-primary text-primary px-6 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-white transition-all">DESIGN YOUR OWN</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Aura Stories (Client Narratives) -->
+<section class="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
+<div class="flex flex-col mb-12">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">Aura Stories</span>
+<h2 class="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface">Echoes of Elegance</h2>
+</div>
+<!-- Mobile Optimized Vertical/Horizontal Scroll -->
+<div class="flex md:grid md:grid-cols-4 gap-gutter overflow-x-auto no-scrollbar pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Testimonial 1 -->
+<div class="min-w-[280px] md:min-w-0 group cursor-pointer">
+<div class="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+<img class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A beautiful woman with voluminous, flowing dark hair smiling radiantly while looking at her reflection in a luxury mirror. She is wearing a soft silk robe in a champagne color, and the bathroom background is bright with white marble and gold fixtures. The scene captures the genuine joy and confidence of a satisfied ByChi Strands client. The lighting is soft, warm, and highly professional, resembling a premium beauty commercial." src="/stitch/img-065.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white fill-current">play_arrow</span>
+</div>
+</div>
+</div>
+<h4 class="font-body-md font-bold text-on-surface">Imisiola's Journey</h4>
+<p class="text-body-sm text-on-surface-variant italic">"Transformed my confidence..."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[280px] md:min-w-0 group cursor-pointer">
+<div class="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+<img class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A high-fashion portrait of a woman with sleek, long hair styled in a high-gloss finish. She is posing in a modern, minimalist apartment with large windows letting in soft natural light. The color palette is composed of neutrals, ivories, and blacks, perfectly matching the ByChi Strands aesthetic. Her expression is calm and empowered, showcasing how the hair extensions integrate flawlessly with her natural look." src="/stitch/img-035.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white fill-current">play_arrow</span>
+</div>
+</div>
+</div>
+<h4 class="font-body-md font-bold text-on-surface">The Wedding Edit</h4>
+<p class="text-body-sm text-on-surface-variant italic">"The perfect bridal crown."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="min-w-[280px] md:min-w-0 group cursor-pointer">
+<div class="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+<img class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A stylish woman walking down a bright, sun-drenched city street, her luxury hair extensions blowing gracefully in the wind. She is wearing a modern black blazer and gold jewelry. The photography is dynamic, capturing motion and the natural luster of the hair. The mood is urban chic and sophisticated, highlighting the versatility of ByChi Strands for daily high-end fashion looks." src="/stitch/img-060.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white fill-current">play_arrow</span>
+</div>
+</div>
+</div>
+<h4 class="font-body-md font-bold text-on-surface">Everyday Luxury</h4>
+<p class="text-body-sm text-on-surface-variant italic">"Silk that feels like my own."</p>
+</div>
+<!-- Testimonial 4 -->
+<div class="min-w-[280px] md:min-w-0 group cursor-pointer">
+<div class="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+<img class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A close-up artistic shot of a woman running her fingers through her incredibly thick and shiny hair. The lighting focuses on the texture and the healthy glow of the strands. The background is a soft-focus velvet curtain in a rich mahogany color. The image exudes a sense of sensory luxury and premium quality. The overall feel is that of an exclusive beauty campaign for a high-end global brand." src="/stitch/img-039.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white fill-current">play_arrow</span>
+</div>
+</div>
+</div>
+<h4 class="font-body-md font-bold text-on-surface">Artisan Feedback</h4>
+<p class="text-body-sm text-on-surface-variant italic">"Beyond my expectations."</p>
+</div>
+</div>
+</section>
+<!-- Newsletter Opt-in -->
+<section class="bg-primary text-on-primary py-section-padding text-center">
+<div class="px-margin-mobile max-w-2xl mx-auto">
+<h2 class="font-display-md text-headline-lg mb-4">Join the Inner Circle</h2>
+<p class="font-body-md mb-8 opacity-80">Be the first to receive exclusive drops and hair care rituals curated by our master stylists.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-transparent border-0 border-b border-white/40 text-white placeholder:text-white/60 focus:ring-0 focus:border-white py-4 font-body-md" placeholder="Your email address" type="email"/>
+<button class="bg-white text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest hover:bg-surface-variant transition-colors">SUBSCRIBE</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-display-md text-headline-lg text-primary">ByChi Strands</div>
+<p class="font-body-md text-body-sm text-on-surface-variant">Defining timeless Vietnamese artistry in hair luxury. Based in the heart of fashion.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Discover</h5>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Shop All</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Raw Collection</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Signature Wigs</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Gift Cards</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Social</h5>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">TikTok</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">WhatsApp</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Legal</h5>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop pb-unit text-center max-w-container-max mx-auto">
+<p class="text-on-surface-variant text-[12px] pb-8">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
+</div>
+</footer>
+<!-- FAB for Appointment - Supressed on Mobile Scroll but active on interaction -->
+<div class="fixed bottom-8 right-8 z-40 transition-all duration-500 transform translate-y-0 opacity-100" id="fab">
+<button class="bg-primary text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-secondary transition-all active:scale-95 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">calendar_month</span>
+</button>
+</div>
+<script>
+        // Simple scroll behavior for the FAB
+        let lastScrollTop = 0;
+        const fab = document.getElementById('fab');
+        
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                fab.classList.add('translate-y-24', 'opacity-0');
+            } else {
+                fab.classList.remove('translate-y-24', 'opacity-0');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+
+        // Smooth interaction for testimonial thumbnails
+        document.querySelectorAll('.group.cursor-pointer').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            });
+        });
+    </script>
+</body></html>

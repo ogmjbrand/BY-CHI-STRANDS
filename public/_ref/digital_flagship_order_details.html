@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details | VIET LUXE HAIR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#c8a75b",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary-container": "#f6dda8",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#6e5c32",
+                    "outline-variant": "#d0c5b3",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#313030",
+                    "outline": "#7f7667",
+                    "secondary-fixed": "#f8e0ab",
+                    "surface-variant": "#e5e2e1",
+                    "primary-fixed": "#ffdf9a",
+                    "tertiary-container": "#acaba8",
+                    "surface": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface-variant": "#4d4638",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "on-tertiary-container": "#3f403d",
+                    "surface-tint": "#755b15",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "tertiary-fixed": "#e4e2de",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "primary-fixed-dim": "#e5c273",
+                    "on-secondary-container": "#726136",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#251a00",
+                    "secondary-fixed-dim": "#dbc491",
+                    "inverse-primary": "#e5c273",
+                    "surface-container-high": "#ebe7e7",
+                    "on-surface": "#1c1b1b",
+                    "on-primary-container": "#513c00",
+                    "tertiary": "#5e5e5c",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "primary": "#755b15",
+                    "surface-bright": "#fcf9f8",
+                    "surface-container": "#f0edec",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "on-primary-fixed": "#251a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px",
+                    "unit": "8px",
+                    "gutter": "32px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-xl": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "display-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+        }
+        .soft-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Anchor -->
+<nav class="h-screen w-80 fixed left-0 top-0 z-40 bg-surface border-r border-outline-variant/30 flex flex-col py-12 px-6">
+<div class="mb-12 px-6">
+<h1 class="font-display-lg text-headline-lg text-primary tracking-tight">VIET LUXE</h1>
+<p class="font-body-sm text-on-surface-variant mt-1">Client Portal</p>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors hover:translate-x-1 duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Overview</span>
+</a>
+<!-- Active Tab: My Orders -->
+<a class="flex items-center gap-4 bg-secondary-container/30 text-primary font-semibold px-6 py-4 rounded-lg" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span class="font-body-md">My Orders</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors hover:translate-x-1 duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-body-md">Bookings</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors hover:translate-x-1 duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-body-md">Certifications</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors hover:translate-x-1 duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</div>
+<div class="pt-8 border-t border-outline-variant/20 space-y-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-body-md">Support</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-80 min-h-screen px-margin-desktop py-16 max-w-[1200px]">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-16">
+<div>
+<a class="flex items-center gap-2 text-primary font-label-caps mb-6 group" href="#">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    BACK TO ORDERS
+                </a>
+<h2 class="font-display-md text-display-md text-on-surface mb-2">Order #AS-8821</h2>
+<p class="font-body-md text-on-surface-variant">Placed on October 24, 2023 • 10:42 AM</p>
+</div>
+<div class="flex flex-col items-end gap-4">
+<span class="bg-secondary-container text-secondary font-label-caps px-6 py-2 rounded-full border border-primary-container/20">ARTISANAL PREPARATION</span>
+<button class="flex items-center gap-2 text-primary font-label-caps hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">receipt_long</span>
+                    DOWNLOAD INVOICE
+                </button>
+</div>
+</header>
+<!-- Shipment Tracking (Editorial Timeline) -->
+<section class="mb-20">
+<div class="relative py-12">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-0 w-1/2 h-[2px] bg-primary-container -translate-y-1/2"></div>
+<div class="relative z-10 flex justify-between">
+<!-- Milestone 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-4 h-4 rounded-full bg-primary-container ring-4 ring-surface mb-4"></div>
+<span class="font-label-caps text-on-surface">ORDER PLACED</span>
+<span class="font-body-sm text-on-surface-variant mt-1">Oct 24</span>
+</div>
+<!-- Milestone 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-4 h-4 rounded-full bg-primary-container ring-4 ring-surface mb-4"></div>
+<span class="font-label-caps text-on-surface">ARTISANAL PREP</span>
+<span class="font-body-sm text-on-surface-variant mt-1">In Progress</span>
+</div>
+<!-- Milestone 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-surface mb-4"></div>
+<span class="font-label-caps text-on-surface-variant">QUALITY INSPECTION</span>
+<span class="font-body-sm text-on-surface-variant mt-1">Pending</span>
+</div>
+<!-- Milestone 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-surface mb-4"></div>
+<span class="font-label-caps text-on-surface-variant">SHIPPED</span>
+<span class="font-body-sm text-on-surface-variant mt-1">—</span>
+</div>
+<!-- Milestone 5 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-surface mb-4"></div>
+<span class="font-label-caps text-on-surface-variant">DELIVERED</span>
+<span class="font-body-sm text-on-surface-variant mt-1">—</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-12">
+<!-- Left Column: Items & Care -->
+<div class="col-span-8 space-y-12">
+<!-- Item Breakdown -->
+<div class="bg-white border border-outline-variant/20 p-8 flex gap-8 luxury-shadow rounded-lg">
+<div class="w-48 h-64 bg-surface-container overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="A high-end editorial product shot of a luxury silk-base lace wig on a minimalist stand. The lighting is soft and cinematic, highlighting the natural texture and luster of the premium hair. The background is a clean ivory studio setting, maintaining a sophisticated and exclusive boutique feel in light-mode." src="/stitch/img-046.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-on-surface">Signature Silk-Base Wig</h3>
+<span class="font-headline-lg text-primary">$1,850.00</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="font-label-caps text-on-surface-variant text-[10px] mb-1">LENGTH</p>
+<p class="font-body-md text-on-surface">22 Inches</p>
+</div>
+<div>
+<p class="font-label-caps text-on-surface-variant text-[10px] mb-1">DENSITY</p>
+<p class="font-body-md text-on-surface">180% Ultra-Full</p>
+</div>
+<div>
+<p class="font-label-caps text-on-surface-variant text-[10px] mb-1">LACE TYPE</p>
+<p class="font-body-md text-on-surface">HD Invisible Lace</p>
+</div>
+<div>
+<p class="font-label-caps text-on-surface-variant text-[10px] mb-1">COLOR</p>
+<p class="font-body-md text-on-surface">Natural Obsidian</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/10 flex gap-4">
+<button class="font-label-caps text-primary underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity">MODIFY CUSTOMIZATION</button>
+<span class="text-outline-variant/30">|</span>
+<button class="font-label-caps text-primary underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity">VIEW FULL SPECS</button>
+</div>
+</div>
+</div>
+<!-- Atelier Care Guide Snippet -->
+<div class="bg-surface-container-low p-10 border border-primary-container/10 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">spa</span>
+</div>
+<h4 class="font-display-md text-[24px] text-primary mb-4">Atelier Care Guide</h4>
+<p class="font-body-md text-on-surface-variant max-w-2xl mb-8 leading-relaxed">
+                        Your Signature investment deserves meticulous care. As a premier member, your first <span class="text-primary font-semibold">'Wig Laundry'</span> deep-conditioning and restyling service is included with this purchase.
+                    </p>
+<div class="flex items-center gap-6">
+<button class="px-8 py-3 bg-primary text-white font-label-caps text-[11px] rounded-lg hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">SCHEDULE CARE SERVICE</button>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+                            CARE MANUAL (PDF)
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: Logistics & Support -->
+<div class="col-span-4 space-y-8">
+<!-- Logistics Card -->
+<div class="bg-white border border-outline-variant/20 p-8 rounded-lg luxury-shadow">
+<div class="mb-10">
+<h5 class="font-label-caps text-on-surface mb-6 border-b border-outline-variant/20 pb-4">SHIPPING ADDRESS</h5>
+<p class="font-body-md text-on-surface leading-loose">
+                            Julianne Sterling<br/>
+                            1200 Avenue of the Stars, Suite 402<br/>
+                            Century City, CA 90067<br/>
+                            United States
+                        </p>
+</div>
+<div class="mb-10">
+<h5 class="font-label-caps text-on-surface mb-6 border-b border-outline-variant/20 pb-4">BILLING &amp; PAYMENT</h5>
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<p class="font-body-md text-on-surface">•••• 8812 (Visa)</p>
+</div>
+<p class="font-body-sm text-on-surface-variant">Billing matches shipping address</p>
+</div>
+<div class="mb-10">
+<h5 class="font-label-caps text-on-surface mb-6 border-b border-outline-variant/20 pb-4">DELIVERY METHOD</h5>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-on-surface">Atelier Express</p>
+<span class="font-body-sm text-primary font-semibold">FREE</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">Est. arrival: Oct 30 - Nov 02</p>
+</div>
+<div class="pt-6 border-t border-outline-variant/30 space-y-4">
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface">$1,850.00</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">Tax</span>
+<span class="text-on-surface">$148.00</span>
+</div>
+<div class="flex justify-between font-headline-lg border-t border-outline-variant/10 pt-4">
+<span>Total</span>
+<span class="text-primary">$1,998.00</span>
+</div>
+</div>
+</div>
+<!-- Support Card -->
+<div class="bg-primary text-white p-8 rounded-lg text-center luxury-shadow">
+<span class="material-symbols-outlined text-[48px] mb-4" style="font-variation-settings: 'wght' 200;">support_agent</span>
+<h5 class="font-headline-lg text-[20px] mb-2">Personal Concierge</h5>
+<p class="font-body-sm text-white/80 mb-8 px-4">Our artisans are available for real-time updates on your preparation.</p>
+<button class="w-full py-4 bg-white text-primary font-label-caps rounded hover:bg-surface-container-highest transition-colors active:scale-95">CONTACT CONCIERGE</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="ml-80 w-[calc(100%-320px)] mt-section-padding border-t border-outline-variant/50 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<h3 class="font-display-md text-[24px] text-primary mb-2">VIET LUXE HAIR</h3>
+<p class="font-body-sm text-on-surface-variant">© 2024 VIET LUXE HAIR. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for tracking milestones
+        document.querySelectorAll('.milestone-dot').forEach(dot => {
+            dot.addEventListener('mouseenter', () => {
+                dot.classList.add('scale-125');
+            });
+            dot.addEventListener('mouseleave', () => {
+                dot.classList.remove('scale-125');
+            });
+        });
+
+        // Soft fade on tab elements
+        window.addEventListener('load', () => {
+            document.querySelector('main').style.opacity = '0';
+            document.querySelector('main').style.transition = 'opacity 0.8s ease-out';
+            setTimeout(() => {
+                document.querySelector('main').style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body></html>

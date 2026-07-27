@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura of Silk | Share Your Story</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ebe7e7",
+                    "on-primary-container": "#513c00",
+                    "on-error": "#ffffff",
+                    "primary": "#755b15",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "primary-fixed-dim": "#e5c273",
+                    "primary-container": "#c8a75b",
+                    "surface-variant": "#e5e2e1",
+                    "primary-fixed": "#ffdf9a",
+                    "on-secondary-fixed": "#251a00",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f0edec",
+                    "tertiary-fixed": "#e4e2de",
+                    "outline-variant": "#d0c5b3",
+                    "on-surface": "#1c1b1b",
+                    "on-primary-fixed": "#251a00",
+                    "surface-bright": "#fcf9f8",
+                    "secondary-fixed": "#f8e0ab",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf9f8",
+                    "on-secondary-container": "#726136",
+                    "tertiary": "#5e5e5c",
+                    "on-surface-variant": "#4d4638",
+                    "surface-tint": "#755b15",
+                    "background": "#fcf9f8",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "on-error-container": "#93000a",
+                    "outline": "#7f7667",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "on-tertiary-container": "#3f403d",
+                    "inverse-surface": "#313030",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-primary": "#ffffff",
+                    "secondary": "#6e5c32",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#acaba8",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#f6dda8",
+                    "inverse-primary": "#e5c273",
+                    "secondary-fixed-dim": "#dbc491",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-background": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px",
+                    "section-padding": "120px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Playfair Display"],
+                    "display-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-xl": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .star-rating .material-symbols-outlined {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(217, 194, 143, 0.2);
+        }
+        .text-underline-luxury {
+            position: relative;
+        }
+        .text-underline-luxury::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #755b15;
+            transition: width 0.4s ease;
+        }
+        .text-underline-luxury:hover::after {
+            width: 100%;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #755b15 !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
+<div class="font-display-md text-display-md tracking-tighter text-on-surface dark:text-surface-bright">AURA OF SILK</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Academy</a>
+<a class="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Atelier</a>
+<a class="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Boutique</a>
+<a class="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Mentorship</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity duration-400" data-icon="shopping_bag">shopping_bag</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity duration-400" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[160px] pb-section-padding px-margin-mobile md:px-0">
+<div class="max-w-[1100px] mx-auto">
+<!-- Bespoke Header Section -->
+<header class="text-center mb-16 space-y-6">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase block">Guest Registry</span>
+<h1 class="font-display-lg text-display-lg leading-tight">Share Your Aura Story</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl mx-auto italic">
+                    "True elegance is the harmony of movement and light. Tell us how your Silk crown transforms your everyday."
+                </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Media & Selection -->
+<div class="lg:col-span-5 space-y-12">
+<!-- Product Selection -->
+<section class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-primary uppercase">Confirmed Acquisition</h3>
+<div class="flex items-center p-6 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="w-20 h-20 overflow-hidden rounded flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro studio photograph of a premium, high-shine brunette lace front wig displayed on a minimalist marble stand. The lighting is soft and cinematic, highlighting the individual strands and the natural silk-like movement of the hair. The background is a clean, ivory-toned studio setting with warm gold undertones, echoing luxury fashion house aesthetics." src="/stitch/img-032.jpg"/>
+</div>
+<div class="ml-6">
+<h4 class="font-headline-lg text-body-xl font-semibold mb-1">The Midnight Seraphina</h4>
+<p class="text-body-sm text-on-surface-variant">Lustrous HD Lace • 22" Virgin Silk</p>
+</div>
+</div>
+</section>
+<!-- Rating System -->
+<section class="space-y-6">
+<h3 class="font-label-caps text-label-caps text-primary uppercase">The Aura Scale</h3>
+<div class="flex flex-col space-y-2">
+<div class="flex space-x-3 star-rating">
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-sm italic text-on-surface-variant">Superior Glow &amp; Resilience</p>
+</div>
+</section>
+<!-- Video Upload Module -->
+<section class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-primary uppercase">High-Fidelity Captures</h3>
+<div class="relative group cursor-pointer h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-outline-variant/50 hover:border-primary transition-colors duration-500 flex flex-col items-center justify-center p-8 text-center bg-surface-container-low/50">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity">
+
+</div>
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" data-icon="videocam">videocam</span>
+<h4 class="font-headline-lg text-body-xl font-medium mb-2">Drag Narrative Here</h4>
+<p class="text-body-sm text-on-surface-variant max-w-xs">
+                                Share the movement of your hair. We recommend 4K captures in natural daylight for our Atelier gallery.
+                            </p>
+<button class="mt-6 px-8 py-3 border border-primary text-primary font-label-caps text-[10px] tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">Select File</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Narrative Form -->
+<div class="lg:col-span-7">
+<div class="glass-panel p-12 rounded-2xl shadow-sm">
+<form class="space-y-10">
+<!-- Narrative Text -->
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Your Silk Experience</label>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Editorial Narrative</span>
+</div>
+<textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-body-md font-body-md placeholder:text-on-surface-variant/40 resize-none" placeholder="Describe the tactile sensation, the way the light catches the silk, and the confidence found in your new silhouette..." rows="10"></textarea>
+</div>
+<!-- Additional Prompt -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-2">
+<label class="font-label-caps text-[10px] text-primary uppercase">The Glow Factor</label>
+<input class="w-full bg-transparent border-b border-outline-variant/30 border-t-0 border-l-0 border-r-0 px-0 py-2 focus:ring-0 placeholder:text-on-surface-variant/30" placeholder="e.g. Luminous, Radiant" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-[10px] text-primary uppercase">The Occasion</label>
+<input class="w-full bg-transparent border-b border-outline-variant/30 border-t-0 border-l-0 border-r-0 px-0 py-2 focus:ring-0 placeholder:text-on-surface-variant/30" placeholder="e.g. Gala, Daily Ritual" type="text"/>
+</div>
+</div>
+<!-- Privacy & Usage Note -->
+<div class="p-6 bg-primary-container/10 border-l-2 border-primary rounded-r-lg">
+<div class="flex items-start">
+<span class="material-symbols-outlined text-primary text-sm mr-3 mt-0.5" data-icon="verified_user">verified_user</span>
+<div>
+<h5 class="text-label-caps font-bold text-primary mb-1">THE ATELIER PROMISE</h5>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+                                            By sharing your narrative, you permit Aura of Silk to curate your experience within our 'Client Narratives' gallery. Your story becomes a thread in our collective tapestry of elegance.
+                                        </p>
+</div>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-6 pt-6">
+<button class="w-full sm:w-auto px-12 py-5 bg-on-surface text-white font-label-caps text-label-caps tracking-widest uppercase rounded hover:bg-primary transition-all duration-500" type="submit">
+                                    Publish to the Atelier
+                                </button>
+<button class="text-on-surface font-label-caps text-label-caps tracking-widest uppercase text-underline-luxury" type="button">
+                                    Save as Draft
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative mt-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="font-display-lg text-[24px] text-on-surface mb-6 md:mb-0">AURA OF SILK</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">The Silk Ethos</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Privacy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Membership Terms</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Contact</a>
+</div>
+<p class="font-body-sm text-[10px] text-on-surface-variant tracking-widest uppercase">
+                © 2024 AURA OF SILK ATELIER. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the star rating
+        const stars = document.querySelectorAll('.star-rating .material-symbols-outlined');
+        stars.forEach((star, index) => {
+            star.addEventListener('mouseover', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.style.color = '#C8A75B';
+                        s.style.fontVariationSettings = "'FILL' 1";
+                    } else {
+                        s.style.color = '#755b15';
+                        s.style.fontVariationSettings = "'FILL' 0";
+                    }
+                });
+            });
+            star.addEventListener('click', () => {
+                // Fixed rating logic could go here
+                console.log(`Rated ${index + 1} stars`);
+            });
+        });
+
+        // Form submission animation
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = 'Submitting to Gallery...';
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            setTimeout(() => {
+                alert('Thank you for sharing your Aura Story. Your narrative is being curated.');
+                btn.innerHTML = 'Publish to the Atelier';
+                btn.classList.remove('opacity-50', 'pointer-events-none');
+            }, 1500);
+        });
+    </script>
+</body></html>

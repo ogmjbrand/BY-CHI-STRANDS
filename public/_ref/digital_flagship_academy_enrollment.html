@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academy Enrollment | BYCHI STRANDS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#f0edec",
+                      "outline": "#7f7667",
+                      "surface-variant": "#e5e2e1",
+                      "surface-bright": "#fcf9f8",
+                      "on-primary-fixed-variant": "#5a4300",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-surface-variant": "#4d4638",
+                      "tertiary-fixed": "#e4e2de",
+                      "on-tertiary-fixed": "#1b1c1a",
+                      "tertiary": "#5e5e5c",
+                      "primary-fixed-dim": "#e5c273",
+                      "secondary-fixed": "#f8e0ab",
+                      "primary-container": "#c8a75b",
+                      "on-tertiary-fixed-variant": "#474744",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#ffdf9a",
+                      "outline-variant": "#d0c5b3",
+                      "on-secondary-fixed-variant": "#55451d",
+                      "tertiary-fixed-dim": "#c8c6c3",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-fixed": "#251a00",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1c1b1b",
+                      "primary": "#755b15",
+                      "tertiary-container": "#acaba8",
+                      "surface-tint": "#755b15",
+                      "on-tertiary-container": "#3f403d",
+                      "on-primary-container": "#513c00",
+                      "inverse-surface": "#313030",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#dbc491",
+                      "background": "#fcf9f8",
+                      "secondary-container": "#f6dda8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-container": "#726136",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-background": "#1c1b1b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "secondary": "#6e5c32",
+                      "on-primary-fixed": "#251a00",
+                      "surface-container-high": "#ebe7e7",
+                      "inverse-primary": "#e5c273",
+                      "surface": "#fcf9f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "24px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "section-padding": "120px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "body-md": ["Manrope"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-xl": ["Manrope"],
+                      "label-caps": ["Manrope"],
+                      "body-sm": ["Manrope"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-xl": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            shadow-[0px_20px_50px_rgba(0,0,0,0.04)];
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.5s ease-out; }
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .btn-primary {
+            background-color: #111111;
+            color: #ffffff;
+            transition: background-color 400ms ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #c8a75b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 nav-blur shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-display-md text-display-md tracking-widest text-primary dark:text-primary-fixed uppercase">AURA OF SILK</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Atelier</a>
+<a class="text-primary dark:text-primary-fixed border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase" href="#">Academy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Orders</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity duration-400">shopping_bag</button>
+<button class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity duration-400">person</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[2000ms] scale-105" data-alt="A high-fashion, editorial photograph of a successful entrepreneur in a bright, minimalist studio surrounded by premium bundles of glossy Vietnamese silk hair. The lighting is soft and cinematic, highlighting the rich textures of the hair and the elegant, professional attire of the subject. The background is a clean ivory tone, maintaining a luxury boutique atmosphere with deep gold accents and refined shadows." style="background-image: url('/stitch/img-072.jpg')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl fade-in">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase mb-6 block">The Masterclass</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-8">Secure Your Future in <span class="italic text-primary">Luxury Hair.</span></h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant mb-12 max-w-xl">
+                    Apply for the next intake of our globally recognized Vietnam Hair Importation Masterclass. Learn the art of sourcing and the science of scaling.
+                </p>
+<a class="inline-block px-12 py-5 btn-primary font-label-caps text-label-caps uppercase tracking-widest rounded-lg" href="#apply">Start Application</a>
+</div>
+</div>
+</section>
+<!-- The Curriculum -->
+<section class="py-section-padding bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+<div class="max-w-xl">
+<h2 class="font-display-md text-display-md text-on-surface mb-6">The Four Pillars of Mastery</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">An intensive curriculum designed to take you from admirer to industry authority, guided by the ByChi standard of excellence.</p>
+</div>
+<div class="h-[1px] flex-1 bg-outline-variant/30 mb-4 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Sourcing -->
+<div class="group border border-outline-variant/20 p-10 hover:bg-surface-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform">glass</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Sourcing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-80 mb-6">Direct access to the heart of Vietnam's elite collection centers. Learn to identify raw donor quality from processed imitation.</p>
+<div class="w-12 h-[1px] bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+<!-- Grading -->
+<div class="group border border-outline-variant/20 p-10 hover:bg-surface-container transition-all duration-500 lg:mt-12">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform">verified</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Grading</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-80 mb-6">The technical science of alignment, density, and cuticle integrity. Master the metrics that define world-class silk strands.</p>
+<div class="w-12 h-[1px] bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+<!-- Marketing -->
+<div class="group border border-outline-variant/20 p-10 hover:bg-surface-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform">style</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Marketing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-80 mb-6">Positioning your brand within the luxury echelon. From high-fidelity content strategy to elite client acquisition.</p>
+<div class="w-12 h-[1px] bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+<!-- Scaling -->
+<div class="group border border-outline-variant/20 p-10 hover:bg-surface-container transition-all duration-500 lg:mt-12">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform">trending_up</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Scaling</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-80 mb-6">Supply chain optimization and global fulfillment. Building a sustainable architecture for high-volume luxury distribution.</p>
+<div class="w-12 h-[1px] bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Investment Section -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">The Investment</span>
+<h2 class="font-display-md text-display-md text-on-surface">Choose Your Path</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+<!-- Digital Access -->
+<div class="bg-surface p-12 shadow-[0px_20px_50px_rgba(0,0,0,0.02)] flex flex-col items-center text-center">
+<h3 class="font-headline-lg text-headline-lg mb-2">Digital Access</h3>
+<div class="text-primary font-display-md text-display-md mb-8">$2,450</div>
+<ul class="space-y-6 mb-12 text-on-surface-variant font-body-sm w-full text-left">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check</span> 12 Pre-recorded HD Modules</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check</span> Verified Vendor Contacts List</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check</span> Digital Marketing Templates</li>
+<li class="flex items-center gap-3 text-outline/40"><span class="material-symbols-outlined">close</span> Direct 1-on-1 Mentorship</li>
+</ul>
+<button class="w-full py-4 border border-primary text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-white transition-all">Select Plan</button>
+</div>
+<!-- Elite Mentorship -->
+<div class="bg-white p-12 shadow-[0px_20px_50px_rgba(0,0,0,0.06)] flex flex-col items-center text-center border-t-4 border-primary relative overflow-hidden">
+<div class="absolute top-8 right-[-35px] bg-primary text-white font-label-caps text-[10px] py-1 px-12 rotate-45 uppercase">Limited Capacity</div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Elite Mentorship</h3>
+<div class="text-primary font-display-md text-display-md mb-8">$8,000</div>
+<ul class="space-y-6 mb-12 text-on-surface-variant font-body-sm w-full text-left">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check</span> All Digital Access Content</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check</span> 5-Day Vietnam Factory Tour</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check</span> Direct Weekly Strategy Calls</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check</span> Lifetime Alumni Support</li>
+</ul>
+<button class="w-full py-4 btn-primary font-label-caps text-label-caps uppercase">Request Invite</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signals / Testimonials -->
+<section class="py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-sm" data-alt="A beautiful, embossed certification document with gold leaf accents laying on a dark velvet surface. Beside the certificate is a premium box of hair products. The lighting is focused and dramatic, highlighting the 'Certification of Excellence' text and the intricate patterns of the paper, creating an aura of prestigious accomplishment and luxury hair education." style="background-image: url('/stitch/img-074.jpg')">
+</div>
+<div class="absolute -bottom-10 -right-10 bg-white p-10 max-w-xs shadow-xl hidden md:block">
+<p class="font-headline-lg italic text-primary leading-tight mb-4">"The only roadmap that truly bridges the gap between sourcing and branding."</p>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">— Elena Thorne, CEO of Silk Noir</span>
+</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-6 block">Alumni Voices</span>
+<h2 class="font-display-md text-display-md mb-12">The Standard of Success</h2>
+<div class="space-y-12">
+<div class="border-b border-outline-variant/30 pb-8">
+<p class="font-body-md text-on-surface-variant mb-4 italic">"I wasted thousands on low-quality vendors before this masterclass. The sourcing pillar alone saved my business and allowed me to scale to six figures in under 8 months."</p>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Marcus J. | Independent Importer</span>
+</div>
+<div class="border-b border-outline-variant/30 pb-8">
+<p class="font-body-md text-on-surface-variant mb-4 italic">"The mentorship program's factory visit changed my perspective. Seeing the grading process in person gave me the confidence to charge premium prices for my product."</p>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Sarah Chen | Brand Founder</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Enrollment Form -->
+<section class="py-section-padding bg-surface-container-highest" id="apply">
+<div class="max-w-3xl mx-auto px-margin-mobile">
+<div class="bg-white p-12 md:p-20 shadow-[0px_40px_100px_rgba(0,0,0,0.06)] rounded-sm">
+<div class="text-center mb-12">
+<h2 class="font-display-md text-display-md text-on-surface mb-2">The Application</h2>
+<p class="font-body-md text-on-surface-variant">Selection is based on vision and readiness for the elite market.</p>
+</div>
+<form class="space-y-12" id="enrollmentForm">
+<!-- Step 1: Identity -->
+<div class="form-step active" id="step1">
+<div class="space-y-10">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 transition-all py-4 font-body-md text-on-surface placeholder-on-surface/30" id="name" placeholder="FULL NAME" type="text"/>
+<label class="absolute -top-4 left-0 font-label-caps text-[10px] text-primary tracking-widest uppercase" for="name">Personal Identity</label>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 transition-all py-4 font-body-md text-on-surface placeholder-on-surface/30" id="email" placeholder="EMAIL ADDRESS" type="email"/>
+<label class="absolute -top-4 left-0 font-label-caps text-[10px] text-primary tracking-widest uppercase" for="email">Contact Line</label>
+</div>
+<button class="w-full py-5 btn-primary font-label-caps text-label-caps uppercase tracking-widest" onclick="nextStep(2)" type="button">Next Step</button>
+</div>
+</div>
+<!-- Step 2: Context -->
+<div class="form-step" id="step2">
+<div class="space-y-10">
+<div class="relative">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 transition-all py-4 font-body-md text-on-surface appearance-none" id="status">
+<option disabled="" selected="" value="">CURRENT BUSINESS STATUS</option>
+<option value="aspiring">Aspiring Entrepreneur</option>
+<option value="existing">Existing Hair Business Owner</option>
+<option value="investor">Corporate Investor</option>
+</select>
+<label class="absolute -top-4 left-0 font-label-caps text-[10px] text-primary tracking-widest uppercase" for="status">Professional Context</label>
+</div>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 transition-all py-4 font-body-md text-on-surface placeholder-on-surface/30" id="why" placeholder="WHY ARE YOU READY FOR THE BYCHI STANDARD?" rows="4"></textarea>
+<label class="absolute -top-4 left-0 font-label-caps text-[10px] text-primary tracking-widest uppercase" for="why">Vision Statement</label>
+</div>
+<div class="flex gap-4">
+<button class="w-1/3 py-5 border border-outline text-on-surface font-label-caps text-label-caps uppercase hover:bg-surface-container transition-all" onclick="nextStep(1)" type="button">Back</button>
+<button class="w-2/3 py-5 btn-primary font-label-caps text-label-caps uppercase tracking-widest" type="submit">Submit Application</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-display-md text-display-md text-primary">AURA</div>
+<div class="flex gap-12">
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Privacy</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Terms</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Support</a>
+<a class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">Heritage</a>
+</div>
+<p class="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        function nextStep(stepNum) {
+            document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+            document.getElementById('step' + stepNum).classList.add('active');
+        }
+
+        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.textContent = "Application Sent";
+            btn.style.backgroundColor = "#c8a75b";
+            setTimeout(() => {
+                alert('Your elite application has been received. Our admissions board will reach out shortly.');
+            }, 500);
+        });
+
+        // Soft scroll reveal
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.add('py-6');
+                nav.classList.remove('py-4');
+            }
+        });
+    </script>
+</body></html>

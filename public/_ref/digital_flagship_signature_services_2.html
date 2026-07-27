@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HD Lace Customization | Aura of Silk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-high": "#ebe7e7",
+                    "on-secondary-fixed-variant": "#55451d",
+                    "surface-dim": "#dcd9d9",
+                    "primary-container": "#c8a75b",
+                    "primary": "#755b15",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313030",
+                    "on-error": "#ffffff",
+                    "tertiary": "#5e5e5c",
+                    "on-secondary-container": "#726136",
+                    "on-primary": "#ffffff",
+                    "outline": "#7f7667",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#251a00",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "inverse-primary": "#e5c273",
+                    "on-surface-variant": "#4d4638",
+                    "secondary-fixed": "#f8e0ab",
+                    "on-primary-fixed-variant": "#5a4300",
+                    "secondary-fixed-dim": "#dbc491",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary-container": "#acaba8",
+                    "background": "#fcf9f8",
+                    "surface-tint": "#755b15",
+                    "primary-fixed-dim": "#e5c273",
+                    "on-primary-fixed": "#251a00",
+                    "on-tertiary-container": "#3f403d",
+                    "surface": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdf9a",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary-fixed": "#e4e2de",
+                    "on-background": "#1c1b1b",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#f6dda8",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f0edec",
+                    "on-surface": "#1c1b1b",
+                    "secondary": "#6e5c32",
+                    "outline-variant": "#d0c5b3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#513c00",
+                    "on-tertiary-fixed-variant": "#474744"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "margin-mobile": "24px",
+                    "container-max": "1440px",
+                    "section-padding": "120px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "label-caps": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-xl": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Playfair Display"],
+                    "display-md": ["Playfair Display"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+        }
+        .editorial-line {
+            height: 1px;
+            background: linear-gradient(to right, #d9c28f, transparent);
+        }
+        .hero-zoom {
+            animation: slowZoom 20s infinite alternate linear;
+        }
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-70 transition-opacity duration-500" href="/">
+                Aura of Silk
+            </a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Collections</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Atelier</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Academy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary scale-105 transition-transform duration-500 ease-out">shopping_bag</button>
+<button class="material-symbols-outlined text-primary scale-105 transition-transform duration-500 ease-out">person</button>
+</div>
+</div>
+</nav>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative h-screen overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-full h-full hero-zoom" data-alt="An extreme close-up of ultra-thin, high-definition lace merging seamlessly with a model's scalp. The lighting is soft and cinematic, highlighting the intricate texture of the hair follicles and the invisible bond. The overall aesthetic is high-fashion and ethereal, using a warm ivory and gold color palette to convey luxury and sophistication." style="background-image: url('/stitch/img-055.jpg')"></div>
+<div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile fade-in-up">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block tracking-[0.3em]">Couture Customization</span>
+<h1 class="font-display-lg text-display-lg text-white mb-8">The Art of the Invisible</h1>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-white mb-12">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">schedule</span>
+<p class="font-body-md text-body-md uppercase tracking-widest">120 Minutes</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<p class="font-body-md text-body-md uppercase tracking-widest">Starting at $350</p>
+</div>
+</div>
+<a class="inline-block bg-white text-on-surface px-12 py-5 font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all duration-400 border border-transparent" href="#booking">
+                    Secure Your Transformation
+                </a>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- The Transformation -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-8">
+<h2 class="font-display-md text-display-md text-primary">Technical <br/>Mastery</h2>
+<div class="editorial-line w-32"></div>
+<p class="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+                        HD Lace Customization is not merely a service; it is a molecular-level integration of heritage craftsmanship and modern scalp-tinting science. 
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant/80">
+                        Our process begins with hand-tied HD Swiss lace, calibrated for the highest degree of transparency. Through our proprietary scalp-match tinting, we neutralize the grid-pattern to create the illusion of hair growing directly from the root.
+                    </p>
+<ul class="space-y-4 pt-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps">Precision Hairline Architecture</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps">Spectral Tone Calibration</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps">Seamless Bond Integrity</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-7 relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-end editorial photograph of a master artisan's hands meticulously tinting a delicate piece of Swiss lace. The setting is a clean, bright studio with gold accents and professional lighting. The artisan is using a fine brush to apply pigment, focusing on achieving a natural skin-tone transition. The image is crisp, with a shallow depth of field to emphasize the detail of the lace." src="/stitch/img-031.jpg"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-64 h-80 hidden lg:block bg-surface-container-high border border-outline-variant/30 luxury-shadow overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a woman with a flawlessly customized HD lace hairline. The lighting is soft and golden, mimicking a sunset. The hair looks completely natural, and the transition from the forehead to the hair is invisible. The overall look is one of quiet luxury and absolute confidence." src="/stitch/img-023.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisan Selection -->
+<section class="bg-surface-container-low py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] block mb-4">THE CURATED PANEL</span>
+<h2 class="font-display-md text-display-md">Master Artisans</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Artisan 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional portrait of a senior hair artisan in a luxury salon environment. He is dressed in refined, minimalist attire. The background is a blurred high-end atelier with warm lighting. He has a focused and welcoming expression, representing expertise and prestige in the hair industry." src="/stitch/img-005.jpg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Julian V.</h3>
+<p class="font-label-caps text-label-caps text-primary mb-4">Lead Artisan | London &amp; Paris Trained</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Specializing in micro-knotting techniques and custom color gradients for seamless HD integration.</p>
+</div>
+<!-- Artisan 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A portrait of a female master hair technician in a sophisticated, well-lit studio. She exudes elegance and professional authority. She is holding a specialized hair tool. The lighting is soft and flattering, highlighting her features and the luxury environment she works in." src="/stitch/img-059.jpg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Elena Rossi</h3>
+<p class="font-label-caps text-label-caps text-primary mb-4">Senior Consultant | Milan Heritage</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Expert in spectral tone matching and scalp-replica artistry for high-profile visual productions.</p>
+</div>
+<!-- Artisan 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused portrait of a diverse hair artisan working in a high-tech luxury salon. The background includes modern, minimalist design elements and sleek professional equipment. The artisan's expression is one of meticulous care and artistic passion, fitting the Aura of Silk brand's focus on excellence." src="/stitch/img-122.jpg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Marcus Chen</h3>
+<p class="font-label-caps text-label-caps text-primary mb-4">Artistic Director | Tokyo Global</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Pioneer of the 'Invisible Bond' method, focusing on scalp health and long-term lace preservation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Concierge Experience -->
+<section class="py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-gutter items-stretch">
+<div class="lg:w-1/2 bg-surface-container-lowest p-16 luxury-shadow border border-outline-variant/20 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-6">THE SUITE EXPERIENCE</span>
+<h2 class="font-display-md text-display-md mb-8">Personalized <br/>Serenity</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">meeting_room</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-2">Private Sanctuary</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Each customization takes place in a climate-controlled private suite designed for complete discretion and comfort.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">local_cafe</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-2">Seasonal Curation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Enjoy a curated menu of organic refreshments, rare teas, and light artisan snacks during your transformation.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-2">Visonary Consult</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">A comprehensive analysis of scalp health, hair movement, and lifestyle to ensure your look is truly yours.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 relative min-h-[600px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A minimalist, high-end private salon suite featuring ivory-colored leather seating, gold-framed mirrors, and soft ambient lighting. Large windows show a glimpse of a serene, manicured garden. The room is spacious and uncluttered, emphasizing a sense of calm, exclusivity, and ultra-premium service. The vibe is that of a quiet, luxury spa." src="/stitch/img-107.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Seamless Booking -->
+<section class="py-section-padding bg-on-surface text-white text-center overflow-hidden relative" id="booking">
+
+<div class="relative z-10 max-w-2xl mx-auto px-margin-mobile">
+<h2 class="font-display-md text-display-md mb-8">Begin Your Legacy</h2>
+<p class="font-body-xl text-body-xl mb-12 opacity-80 leading-relaxed">
+                    Transformation is a dialogue. Select your preferred artisan and date to enter the Aura of Silk ecosystem.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-white px-12 py-5 font-label-caps text-label-caps uppercase hover:bg-primary transition-colors duration-300">
+                        Secure Transformation
+                    </button>
+<button class="border border-white/30 text-white px-12 py-5 font-label-caps text-label-caps uppercase hover:bg-white/10 transition-colors duration-300">
+                        Inquiry Concierge
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface dark:bg-surface border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-section-padding gap-gutter max-w-container-max mx-auto">
+<div class="space-y-8 max-w-sm">
+<h2 class="font-headline-lg text-headline-lg text-primary">Aura of Silk</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Celebrating the intersection of artisan heritage and modern hair science. Based in the heart of the luxury district, serving the global vanguard.
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/60">
+                    © 2024 Aura of Silk. Defined by Vietnamese Heritage.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">The Studio</h4>
+<ul class="space-y-4">
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300" href="#">The Atelier</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Masterclasses</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Artisan Care</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Terms</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Privacy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Scroll Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+
+        // Simple smooth scroll behavior fallback
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
