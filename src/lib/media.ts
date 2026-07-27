@@ -67,8 +67,8 @@ const MEDIA: Record<string, Media[]> = {
   "sdd-honey-deep-curls": [
     img("IMG-20260727-WA0017", "Honey deep curl frontal unit on a studio stand"),
   ],
-  "natural-kinky-curl-wig": [
-    vid("products", "VID-20260727-WA0049", "Client wearing the natural kinky curl unit"),
+  "sdd-vietnam-pixie-curls": [
+    vid("products", "VID-20260727-WA0049", "Client wearing the Vietnam pixie curl unit"),
   ],
   "rose-bob-wig": [
     vid("products", "VID-20260726-WA0020", "Client wearing the rose pink blunt bob"),
