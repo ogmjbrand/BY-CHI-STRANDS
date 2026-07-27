@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_order_confirmation
- * "Order Confirmation | Aura of Silk"
+ * "Order Confirmation | ByChi Strands"
  */
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function OrderConfirmationPage() {
       <div className="md:hidden scr-mobile-order-confirmation bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
         {/* TopAppBar */}
         <header className="sticky top-0 z-50 flex justify-between items-center px-margin-mobile py-6 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
-          <h1 className="font-display-lg text-headline-lg-mobile text-on-background">Aura of Silk</h1>
+          <h1 className="font-display-lg text-headline-lg-mobile text-on-background">ByChi Strands</h1>
           {" "}
           <div className="flex items-center gap-4">
             <button className="text-on-surface-variant hover:text-primary transition-colors duration-400">
@@ -161,7 +161,7 @@ export default function OrderConfirmationPage() {
         {/* Footer */}
         <footer className="border-t border-outline-variant/20 bg-surface mt-24">
           <div className="max-w-container-max mx-auto px-margin-mobile py-section-padding flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-            <div className="font-display-md text-headline-lg text-primary">Aura of Silk</div>
+            <div className="font-display-md text-headline-lg text-primary">ByChi Strands</div>
             {" "}
             <div className="flex gap-8">
               <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/about">
@@ -177,7 +177,7 @@ export default function OrderConfirmationPage() {
               </Link>
             </div>
             {" "}
-            <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 Aura of Silk. The Art of Luxury Hair.</div>
+            <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 ByChi Strands. The Art of Luxury Hair.</div>
           </div>
         </footer>
       </div>
@@ -188,7 +188,7 @@ export default function OrderConfirmationPage() {
         <header className="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto bg-surface/80 dark:bg-on-background/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-500 ease-out">
           <div className="flex items-center">
             <span className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-surface-container-lowest">
-              Aura of Silk
+              ByChi Strands
             </span>
           </div>
           {" "}
@@ -252,7 +252,7 @@ export default function OrderConfirmationPage() {
               {/* Abstract Visual Anchor */}
               <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex justify-end items-center">
                 <div className="w-full aspect-[4/5] bg-surface-container relative overflow-hidden rounded-lg">
-                  <img className="w-full h-full object-cover" data-alt="A high-fashion, editorial close-up of flowing, liquid-smooth black hair being touched by a hand wearing a white silk glove. The lighting is dramatic and moody, using soft Rembrandt lighting to highlight the glossy texture of the hair. The background is a minimalist ivory studio set with warm gold undertones, echoing the Aura of Silk brand identity." src="/stitch/img-083.jpg" />
+                  <img className="w-full h-full object-cover" data-alt="A high-fashion, editorial close-up of flowing, liquid-smooth black hair being touched by a hand wearing a white silk glove. The lighting is dramatic and moody, using soft Rembrandt lighting to highlight the glossy texture of the hair. The background is a minimalist ivory studio set with warm gold undertones, echoing the ByChi Strands brand identity." src="/stitch/img-083.jpg" />
                   {" "}
                   <div className="absolute inset-0 bg-gradient-to-t from-on-background/20 to-transparent"></div>
                 </div>
@@ -369,10 +369,10 @@ export default function OrderConfirmationPage() {
         <footer className="bg-surface dark:bg-on-background border-t border-outline-variant/20">
           <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto space-y-8 md:space-y-0">
             <div className="flex flex-col items-center md:items-start space-y-4">
-              <span className="font-display-md text-headline-lg text-primary dark:text-primary-fixed">Aura of Silk</span>
+              <span className="font-display-md text-headline-lg text-primary dark:text-primary-fixed">ByChi Strands</span>
               {" "}
               <p className="font-body-sm text-body-sm text-on-surface-variant dark:text-tertiary-fixed-dim">
-                © 2024 Aura of Silk. The Art of Luxury Hair.
+                © 2024 ByChi Strands. The Art of Luxury Hair.
               </p>
             </div>
             {" "}

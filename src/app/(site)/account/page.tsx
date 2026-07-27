@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_customer_dashboard
- * "Aura of Silk | Client Dashboard"
+ * "ByChi Strands | Client Dashboard"
  */
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function CustomerDashboardPage() {
       {/* TopNavBar (Global Actions) */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
+          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <nav className="hidden md:flex space-x-10">
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps uppercase text-label-caps tracking-[0.15em]" href="/services">
@@ -312,7 +312,7 @@ export default function CustomerDashboardPage() {
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </p>
         </div>
       </footer>

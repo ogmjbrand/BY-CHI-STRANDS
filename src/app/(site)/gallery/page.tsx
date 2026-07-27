@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_aura_stories_gallery
- * "Aura Stories | Aura of Silk Digital Flagship"
+ * "Aura Stories | ByChi Strands Digital Flagship"
  */
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function AuraStoriesGalleryPage() {
           </div>
           {" "}
           <div className="flex-shrink-0">
-            <h1 className="font-display-md text-display-md text-primary tracking-tight leading-none">Aura of Silk</h1>
+            <h1 className="font-display-md text-display-md text-primary tracking-tight leading-none">ByChi Strands</h1>
           </div>
           {" "}
           <div className="flex-1 flex justify-end items-center gap-6">
@@ -247,7 +247,7 @@ export default function AuraStoriesGalleryPage() {
         <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 w-full max-w-container-max mx-auto">
           <div className="mb-8 md:mb-0">
             <h2 className="font-display-lg text-display-lg text-on-surface leading-none tracking-[-0.02em]">
-              Aura of Silk
+              ByChi Strands
             </h2>
             {" "}
             <p className="font-body-sm text-on-surface-variant mt-2">Crafting timeless legacies since 1984.</p>
@@ -271,7 +271,7 @@ export default function AuraStoriesGalleryPage() {
             </Link>
           </div>
           {" "}
-          <p className="font-body-sm text-secondary-fixed-dim">© 2024 Aura of Silk. All rights reserved.</p>
+          <p className="font-body-sm text-secondary-fixed-dim">© 2024 ByChi Strands. All rights reserved.</p>
         </div>
       </footer>
     </div>

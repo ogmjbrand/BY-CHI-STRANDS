@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shopping_bag_sidebar
- * "Aura of Silk | Shopping Bag"
+ * "ByChi Strands | Shopping Bag"
  */
 
 export const metadata: Metadata = {

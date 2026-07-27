@@ -129,7 +129,7 @@ export default function PostPurchaseConciergePage() {
                 <div className="w-12 h-[1px] bg-primary mb-8"></div>
                 {" "}
                 <p className="font-body-xl italic text-on-surface-variant mb-6 leading-relaxed">
-                  "Your Signature Wig is currently being hand-calibrated for tone and texture. Every strand is meticulously tied to ensure the Aura of Silk remains unparalleled."
+                  "Your Signature Wig is currently being hand-calibrated for tone and texture. Every strand is meticulously tied to ensure the ByChi Strands remains unparalleled."
                 </p>
                 {" "}
                 <p className="font-manrope text-label-caps text-primary tracking-[0.15em]">— Master Artisan chi</p>

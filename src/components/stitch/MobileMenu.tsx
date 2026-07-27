@@ -100,7 +100,7 @@ export function MobileMenu() {
       >
         <div className="flex justify-between items-center px-margin-mobile pt-10 pb-6 border-b border-outline-variant/10">
           <span className="font-display-md text-headline-lg tracking-widest text-primary uppercase">
-            Aura of Silk
+            ByChi Strands
           </span>
           <button
             onClick={() => setOpen(false)}

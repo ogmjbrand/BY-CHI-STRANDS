@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy_live_session_3
- * "Live Session | AURA OF SILK Academy"
+ * "Live Session | ByChi Strands Academy"
  */
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function AcademyLiveSession3Page() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
+          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-[0.15em]" href="/services">
@@ -73,7 +73,7 @@ export default function AcademyLiveSession3Page() {
           </div>
           {/* Video Player */}
           <div className="relative aspect-video w-full bg-surface-container overflow-hidden group">
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, professionally lit cinematography shot of a luxury hair specialist meticulously examining long, lustrous strands of raw hair. The lighting is soft and cinematic, casting elegant shadows in a minimalist white-walled studio. The focus is sharp on the texture of the hair, reflecting a champagne gold sheen. The aesthetic is extremely premium, clean, and high-fashion, mirroring the Aura of Silk visual identity." style={{ backgroundImage: "url('/stitch/img-001.jpg')" }}></div>
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, professionally lit cinematography shot of a luxury hair specialist meticulously examining long, lustrous strands of raw hair. The lighting is soft and cinematic, casting elegant shadows in a minimalist white-walled studio. The focus is sharp on the texture of the hair, reflecting a champagne gold sheen. The aesthetic is extremely premium, clean, and high-fashion, mirroring the ByChi Strands visual identity." style={{ backgroundImage: "url('/stitch/img-001.jpg')" }}></div>
             {/* Playback Overlay (Visual only) */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
               <button className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 hover:bg-white/40 transition-all">
@@ -232,7 +232,7 @@ export default function AcademyLiveSession3Page() {
       {/* Footer */}
       <footer className="w-full py-16 bg-surface-container border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="font-display-md text-display-md text-primary opacity-50 tracking-[-0.01em]">AURA OF SILK</div>
+          <div className="font-display-md text-display-md text-primary opacity-50 tracking-[-0.01em]">ByChi Strands</div>
           {" "}
           <div className="flex gap-12">
             <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/about">
@@ -253,7 +253,7 @@ export default function AcademyLiveSession3Page() {
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-40">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </p>
         </div>
       </footer>

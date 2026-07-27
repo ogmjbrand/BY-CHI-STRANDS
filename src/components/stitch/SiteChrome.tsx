@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * The canonical Aura of Silk header and footer, lifted verbatim from the
+ * The canonical ByChi Strands header and footer, lifted verbatim from the
  * homepage screen. Screens that ship their own chrome keep theirs; these
  * are used by the routes the design links to but does not itself specify
  * (legal, contact, journal, wishlist).
@@ -177,7 +177,7 @@ export function StitchFooter() {
 }
 
 /**
- * Editorial page shell in the Aura of Silk idiom — used for routes the
+ * Editorial page shell in the ByChi Strands idiom — used for routes the
  * Stitch footer links to but that the project does not draw.
  */
 export function StitchPageShell({

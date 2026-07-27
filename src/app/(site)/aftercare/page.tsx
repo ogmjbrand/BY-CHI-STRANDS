@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_aftercare_portal
- * "Aftercare Portal | AURA OF SILK"
+ * "Aftercare Portal | ByChi Strands"
  */
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function AftercarePortalPage() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <Link className="font-display-md text-[24px] md:text-display-md tracking-tight text-on-surface dark:text-surface-bright md:tracking-[-0.01em]" href="/">
-            AURA OF SILK
+            ByChi Strands
           </Link>
           {" "}
           <div className="hidden md:flex gap-8 items-center">
@@ -374,7 +374,7 @@ export default function AftercarePortalPage() {
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
           <div className="flex flex-col items-center md:items-start gap-4">
             <span className="font-display-lg text-[32px] md:text-display-lg text-primary md:tracking-[-0.02em]">
-              AURA OF SILK
+              ByChi Strands
             </span>
             {" "}
             <p className="font-body-sm text-on-surface-variant text-center md:text-left">Elevating hair care to a meditative art form.</p>
@@ -398,7 +398,7 @@ export default function AftercarePortalPage() {
             </Link>
           </div>
           {" "}
-          <p className="font-body-sm text-on-surface-variant opacity-50 uppercase tracking-widest">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</p>
+          <p className="font-body-sm text-on-surface-variant opacity-50 uppercase tracking-widest">© 2024 ByChi Strands. ALL RIGHTS RESERVED.</p>
         </div>
       </footer>
       {/* Interactive Scripts */}

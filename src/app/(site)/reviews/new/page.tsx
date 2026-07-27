@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_review_submission_form
- * "Aura of Silk | Share Your Story"
+ * "ByChi Strands | Share Your Story"
  */
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function ReviewSubmissionFormPage() {
         {/* Top Navigation Anchor (As per JSON) */}
         <header className="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto bg-surface/80 dark:bg-on-background/80 backdrop-blur-xl border-b border-outline-variant/30">
           <Link className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-surface-container-lowest" href="/">
-            Aura of Silk
+            ByChi Strands
           </Link>
           {" "}
           <div className="flex gap-6 items-center">
@@ -35,7 +35,7 @@ export default function ReviewSubmissionFormPage() {
             <h1 className="font-display-md text-display-md mb-4 text-on-surface tracking-[-0.01em]">Share Your Narrative</h1>
             {" "}
             <p className="font-body-md text-on-surface-variant max-w-md mx-auto leading-relaxed">
-              Your journey is the thread that weaves our legacy. Contribute your experience to the Aura of Silk heritage collection.
+              Your journey is the thread that weaves our legacy. Contribute your experience to the ByChi Strands heritage collection.
             </p>
           </header>
           {" "}
@@ -174,7 +174,7 @@ export default function ReviewSubmissionFormPage() {
         {/* Footer Anchor (As per JSON) */}
         <footer className="mt-24 border-t border-outline-variant/20 bg-surface dark:bg-on-background">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-            <div className="font-display-md text-headline-lg text-primary">Aura of Silk</div>
+            <div className="font-display-md text-headline-lg text-primary">ByChi Strands</div>
             {" "}
             <div className="flex gap-12">
               <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/about">
@@ -190,7 +190,7 @@ export default function ReviewSubmissionFormPage() {
               </Link>
             </div>
             {" "}
-            <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 Aura of Silk. The Art of Luxury Hair.</div>
+            <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 ByChi Strands. The Art of Luxury Hair.</div>
           </div>
         </footer>
       </div>
@@ -201,7 +201,7 @@ export default function ReviewSubmissionFormPage() {
         <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
           <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
             <div className="font-display-md text-display-md tracking-tighter text-on-surface dark:text-surface-bright">
-              AURA OF SILK
+              ByChi Strands
             </div>
             {" "}
             <div className="hidden md:flex items-center space-x-12">
@@ -358,7 +358,7 @@ export default function ReviewSubmissionFormPage() {
                           <h5 className="text-label-caps font-bold text-primary mb-1 tracking-[0.15em]">THE ATELIER PROMISE</h5>
                           {" "}
                           <p className="text-body-sm text-on-surface-variant leading-relaxed">
-                            By sharing your narrative, you permit Aura of Silk to curate your experience within our 'Client Narratives' gallery. Your story becomes a thread in our collective tapestry of elegance.
+                            By sharing your narrative, you permit ByChi Strands to curate your experience within our 'Client Narratives' gallery. Your story becomes a thread in our collective tapestry of elegance.
                           </p>
                         </div>
                       </div>
@@ -382,7 +382,7 @@ export default function ReviewSubmissionFormPage() {
         {/* Footer */}
         <footer className="w-full relative mt-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
           <div className="w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
-            <div className="font-display-lg text-[24px] text-on-surface mb-6 md:mb-0">AURA OF SILK</div>
+            <div className="font-display-lg text-[24px] text-on-surface mb-6 md:mb-0">ByChi Strands</div>
             {" "}
             <div className="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
               <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="/about">
@@ -402,7 +402,7 @@ export default function ReviewSubmissionFormPage() {
               </Link>
             </div>
             {" "}
-            <p className="font-body-sm text-[10px] text-on-surface-variant tracking-widest uppercase">© 2024 AURA OF SILK ATELIER. ALL RIGHTS RESERVED.</p>
+            <p className="font-body-sm text-[10px] text-on-surface-variant tracking-widest uppercase">© 2024 ByChi Strands ATELIER. ALL RIGHTS RESERVED.</p>
           </div>
         </footer>
       </div>

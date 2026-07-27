@@ -17,7 +17,7 @@ export default function StudentWelcomeKitPage() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary dark:text-primary-fixed uppercase">
-            AURA OF SILK
+            ByChi Strands
           </div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -111,7 +111,7 @@ export default function StudentWelcomeKitPage() {
             {/* Card 1 */}
             <div className="group relative bg-surface border border-outline-variant/30 p-2 overflow-hidden hover:border-primary-container transition-all duration-500">
               <div className="aspect-[4/5] overflow-hidden mb-6">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A curated flat lay of the 'Raw Hair Sample Kit'. Multiple bundles of premium dark hair extensions are neatly arranged on an ivory silk cloth. A small gold card with 'AURA OF SILK' is visible. The lighting is high-contrast, creating deep, elegant shadows and highlighting the luster of the hair. Luxury editorial photography style." src="/stitch/img-036.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A curated flat lay of the 'Raw Hair Sample Kit'. Multiple bundles of premium dark hair extensions are neatly arranged on an ivory silk cloth. A small gold card with 'ByChi Strands' is visible. The lighting is high-contrast, creating deep, elegant shadows and highlighting the luster of the hair. Luxury editorial photography style." src="/stitch/img-036.jpg" />
               </div>
               {" "}
               <div className="p-4">
@@ -388,7 +388,7 @@ export default function StudentWelcomeKitPage() {
       <footer className="bg-surface-container dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <div className="font-display-md text-display-md text-primary mb-2 tracking-[-0.01em]">AURA OF SILK</div>
+            <div className="font-display-md text-display-md text-primary mb-2 tracking-[-0.01em]">ByChi Strands</div>
             {" "}
             <p className="font-body-sm text-body-sm text-on-surface-variant opacity-60">Architects of Hair Excellence</p>
           </div>
@@ -412,7 +412,7 @@ export default function StudentWelcomeKitPage() {
           </div>
           {" "}
           <div className="mt-8 md:mt-0 font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </div>
         </div>
       </footer>

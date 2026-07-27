@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_the_boutique
- * "Aura of Silk | The Boutique"
+ * "ByChi Strands | The Boutique"
  */
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function TheBoutiquePage() {
           </div>
           {" "}
           <Link className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]" href="/">
-            AURA OF SILK
+            ByChi Strands
           </Link>
           {" "}
           <div className="flex items-center gap-6">
@@ -375,7 +375,7 @@ export default function TheBoutiquePage() {
       <footer className="bg-background border-t border-outline-variant/20">
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-[32px] text-primary">AURA OF SILK</span>
+            <span className="font-display-lg text-[32px] text-primary">ByChi Strands</span>
             {" "}
             <p className="font-body-sm text-on-surface-variant text-center md:text-left">Redefining the standard of luxury hair through artisan excellence.</p>
           </div>
@@ -399,7 +399,7 @@ export default function TheBoutiquePage() {
           </div>
           {" "}
           <div className="text-secondary dark:text-secondary-fixed font-body-sm text-body-sm tracking-wide">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </div>
         </div>
       </footer>

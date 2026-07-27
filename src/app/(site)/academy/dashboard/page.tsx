@@ -15,7 +15,7 @@ export default function StudentDashboardPage() {
     <div className="scr-student-dashboard font-body-md text-on-surface">
       {/* TopNavBar (Fixed) */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/50 shadow-sm flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0">
-        <div className="font-display-md text-display-md text-primary tracking-tight">Aura of Silk</div>
+        <div className="font-display-md text-display-md text-primary tracking-tight">ByChi Strands</div>
         {" "}
         <div className="hidden md:flex items-center gap-8 font-manrope text-body-md">
           <a className="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Overview</a>

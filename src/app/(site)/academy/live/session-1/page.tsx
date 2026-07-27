@@ -16,7 +16,7 @@ export default function AcademyLiveSession1Page() {
       {/* TopNavBar (Shared Component) */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
+          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <nav className="hidden md:flex items-center space-y-0 space-x-12">
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="/services">
@@ -38,7 +38,7 @@ export default function AcademyLiveSession1Page() {
             </button>
             {" "}
             <div className="w-10 h-10 rounded-full bg-surface-container border border-outline-variant/30 flex items-center justify-center overflow-hidden">
-              <img className="w-full h-full object-cover" data-alt="A sophisticated professional portrait of a woman in an elite hair academy environment, wearing a minimalist black silk blazer, softly lit with golden hour studio lighting to highlight the smooth texture of the background and her polished appearance. Elegant and exclusive aesthetic consistent with Aura of Silk branding." src="/stitch/img-034.jpg" />
+              <img className="w-full h-full object-cover" data-alt="A sophisticated professional portrait of a woman in an elite hair academy environment, wearing a minimalist black silk blazer, softly lit with golden hour studio lighting to highlight the smooth texture of the background and her polished appearance. Elegant and exclusive aesthetic consistent with ByChi Strands branding." src="/stitch/img-034.jpg" />
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@ export default function AcademyLiveSession1Page() {
             </Link>
           </div>
           {" "}
-          <div className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</div>
+          <div className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">© 2024 ByChi Strands. ALL RIGHTS RESERVED.</div>
         </div>
       </footer>
       {/* Simple Interactivity for Chat */}

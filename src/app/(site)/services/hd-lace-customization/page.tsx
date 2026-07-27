@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_signature_services_2
- * "HD Lace Customization | Aura of Silk"
+ * "HD Lace Customization | ByChi Strands"
  */
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function SignatureServices2Page() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
           <Link className="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-70 transition-opacity duration-500" href="/">
-            Aura of Silk
+            ByChi Strands
           </Link>
           {" "}
           <div className="hidden md:flex items-center gap-10">
@@ -192,7 +192,7 @@ export default function SignatureServices2Page() {
               {/* Artisan 3 */}
               <div className="group cursor-pointer">
                 <div className="aspect-[3/4] bg-surface-container mb-6 overflow-hidden relative">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused portrait of a diverse hair artisan working in a high-tech luxury salon. The background includes modern, minimalist design elements and sleek professional equipment. The artisan's expression is one of meticulous care and artistic passion, fitting the Aura of Silk brand's focus on excellence." src="/stitch/img-122.jpg" />
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused portrait of a diverse hair artisan working in a high-tech luxury salon. The background includes modern, minimalist design elements and sleek professional equipment. The artisan's expression is one of meticulous care and artistic passion, fitting the ByChi Strands brand's focus on excellence." src="/stitch/img-122.jpg" />
                   {" "}
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
@@ -273,7 +273,7 @@ export default function SignatureServices2Page() {
             <h2 className="font-display-md text-display-md mb-8 tracking-[-0.01em]">Begin Your Legacy</h2>
             {" "}
             <p className="font-body-xl text-body-xl mb-12 opacity-80 leading-relaxed">
-              Transformation is a dialogue. Select your preferred artisan and date to enter the Aura of Silk ecosystem.
+              Transformation is a dialogue. Select your preferred artisan and date to enter the ByChi Strands ecosystem.
             </p>
             {" "}
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -292,13 +292,13 @@ export default function SignatureServices2Page() {
       <footer className="w-full bg-surface dark:bg-surface border-t border-outline-variant/20">
         <div className="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-section-padding gap-gutter max-w-container-max mx-auto">
           <div className="space-y-8 max-w-sm">
-            <h2 className="font-headline-lg text-headline-lg text-primary">Aura of Silk</h2>
+            <h2 className="font-headline-lg text-headline-lg text-primary">ByChi Strands</h2>
             {" "}
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Celebrating the intersection of artisan heritage and modern hair science. Based in the heart of the luxury district, serving the global vanguard.
             </p>
             {" "}
-            <p className="font-body-sm text-body-sm text-on-surface-variant/60">© 2024 Aura of Silk. Defined by Vietnamese Heritage.</p>
+            <p className="font-body-sm text-body-sm text-on-surface-variant/60">© 2024 ByChi Strands. Defined by Vietnamese Heritage.</p>
           </div>
           {" "}
           <div className="grid grid-cols-2 gap-16">

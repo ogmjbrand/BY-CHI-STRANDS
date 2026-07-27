@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_mentorship_confirmation
- * "Mentorship Confirmation | AURA OF SILK Academy"
+ * "Mentorship Confirmation | ByChi Strands Academy"
  */
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function MentorshipConfirmationPage() {
       {/* TopNavBar Shell */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <nav className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
+          <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
             <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
@@ -74,7 +74,7 @@ export default function MentorshipConfirmationPage() {
           {" "}
           <div className="w-full md:w-1/2 relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
-              <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" data-alt="A high-fashion, editorial style portrait of a luxury brand mentor in a minimalist ivory studio. The lighting is soft and cinematic, highlighting the elegant textures of a silk scarf and a sophisticated, modern professional atmosphere. The color palette is dominated by warm ivory, champagne gold, and deep blacks, reflecting the Aura of Silk design system." src="/stitch/img-064.jpg" />
+              <img className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" data-alt="A high-fashion, editorial style portrait of a luxury brand mentor in a minimalist ivory studio. The lighting is soft and cinematic, highlighting the elegant textures of a silk scarf and a sophisticated, modern professional atmosphere. The color palette is dominated by warm ivory, champagne gold, and deep blacks, reflecting the ByChi Strands design system." src="/stitch/img-064.jpg" />
             </div>
             {" "}
             <div className="absolute -bottom-10 -left-10 bg-white p-8 border border-outline-variant/30 shadow-xl max-w-xs hidden lg:block">
@@ -229,7 +229,7 @@ export default function MentorshipConfirmationPage() {
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </p>
         </div>
       </footer>

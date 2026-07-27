@@ -17,7 +17,7 @@ export default function AcademyEnrollmentPage() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 nav-blur shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary dark:text-primary-fixed uppercase">
-            AURA OF SILK
+            ByChi Strands
           </div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -392,7 +392,7 @@ export default function AcademyEnrollmentPage() {
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">
-            © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
           </p>
         </div>
       </footer>

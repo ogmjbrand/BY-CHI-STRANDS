@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_atelier_service_booking
- * "Atelier Services | AURA OF SILK"
+ * "Atelier Services | ByChi Strands"
  */
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function AtelierServiceBookingPage() {
       {/* Top Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
         <nav className="max-w-container-max mx-auto px-margin-desktop py-6 flex justify-between items-center">
-          <div className="font-display-md text-[24px] tracking-widest text-primary uppercase">AURA OF SILK</div>
+          <div className="font-display-md text-[24px] tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
             <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="/services">
@@ -371,7 +371,7 @@ export default function AtelierServiceBookingPage() {
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary scale-75 origin-left mb-8 md:mb-0 tracking-[-0.01em]">
-            AURA OF SILK
+            ByChi Strands
           </div>
           {" "}
           <div className="flex flex-col items-center md:items-end space-y-4">
@@ -393,7 +393,7 @@ export default function AtelierServiceBookingPage() {
               </Link>
             </div>
             {" "}
-            <p className="font-body-sm text-on-surface-variant opacity-40 text-[10px]">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</p>
+            <p className="font-body-sm text-on-surface-variant opacity-40 text-[10px]">© 2024 ByChi Strands. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </footer>

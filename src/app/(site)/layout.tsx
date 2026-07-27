@@ -7,7 +7,7 @@ import { MobileMenu } from "@/components/stitch/MobileMenu";
 import { MotionSystem } from "@/components/stitch/MotionSystem";
 
 /**
- * The Aura of Silk screens each ship their own header and footer, so this
+ * The ByChi Strands screens each ship their own header and footer, so this
  * layout adds no chrome. It mounts the behaviour the screens' inline scripts
  * described, plus the cart drawer they reference. Screen CSS is imported from
  * globals.css, which controls its cascade position.

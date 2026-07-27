@@ -234,7 +234,7 @@ export default function LuxuryCheckoutPage() {
             </div>
             {" "}
             <p className="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant opacity-50">
-              © 2024 AURA OF SILK. ALL RIGHTS RESERVED.
+              © 2024 ByChi Strands. ALL RIGHTS RESERVED.
             </p>
           </div>
         </main>

@@ -21,7 +21,7 @@ export function AdminNav() {
         className="flex items-center gap-3 px-6 py-6 transition-opacity hover:opacity-80"
       >
         <span className="font-display-md text-headline-lg tracking-widest text-primary-container uppercase">
-          Aura of Silk
+          ByChi Strands
         </span>
       </Link>
       <p className="font-label-caps text-label-caps uppercase tracking-widest border-y border-surface/10 px-6 py-3 text-primary-fixed-dim">

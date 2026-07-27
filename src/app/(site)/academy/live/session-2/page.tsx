@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy_live_session_2
- * "Aura of Silk Academy | Live Masterclass"
+ * "ByChi Strands Academy | Live Masterclass"
  */
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function AcademyLiveSession2Page() {
         <div className="flex justify-between items-center px-8 md:px-margin-desktop py-4 max-w-container-max mx-auto">
           <div className="flex items-center gap-8">
             <h1 className="font-display-md text-[24px] text-primary-fixed-dim tracking-tighter uppercase">
-              AURA OF SILK
+              ByChi Strands
             </h1>
             {" "}
             <div className="hidden md:flex gap-6 items-center">
