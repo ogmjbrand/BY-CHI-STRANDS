@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -18,25 +19,25 @@ export default function AcademyPage() {
           <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface">ByChi Strands</div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
               Shop
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
               Collections
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
               Services
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="#">
+            <Link className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               About
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center space-x-6">
@@ -421,19 +422,19 @@ export default function AcademyPage() {
             {" "}
             <ul className="space-y-4">
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://instagram.com/bychistrands2">
                   Instagram
                 </a>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://tiktok.com/@bychistrands">
                   TikTok
                 </a>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://wa.me/2340000000000">
                   WhatsApp
                 </a>
               </li>
@@ -445,21 +446,21 @@ export default function AcademyPage() {
             {" "}
             <ul className="space-y-4">
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <Link className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="/privacy">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <Link className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="/terms">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="#">
+                <Link className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="/shipping">
                   Shipping & Returns
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

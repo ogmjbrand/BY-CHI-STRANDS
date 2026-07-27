@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -27,11 +28,11 @@ export default function OrderDetailsPage() {
             <span className="font-body-md">Overview</span>
           </a>
           {/* Active Tab: My Orders */}
-          <a className="flex items-center gap-4 bg-secondary-container/30 text-primary font-semibold px-6 py-4 rounded-lg" href="#">
+          <Link className="flex items-center gap-4 bg-secondary-container/30 text-primary font-semibold px-6 py-4 rounded-lg" href="/account">
             <span className="material-symbols-outlined">package_2</span>
             {" "}
             <span className="font-body-md">My Orders</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors hover:translate-x-1 duration-300 rounded-lg" href="#">
             <span className="material-symbols-outlined">calendar_today</span>
@@ -53,11 +54,11 @@ export default function OrderDetailsPage() {
         </div>
         {" "}
         <div className="pt-8 border-t border-outline-variant/20 space-y-2">
-          <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+          <Link className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors rounded-lg" href="/faqs">
             <span className="material-symbols-outlined">help_outline</span>
             {" "}
             <span className="font-body-md">Support</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-colors rounded-lg" href="#">
             <span className="material-symbols-outlined">logout</span>
@@ -227,11 +228,11 @@ export default function OrderDetailsPage() {
                   SCHEDULE CARE SERVICE
                 </button>
                 {" "}
-                <a className="font-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+                <Link className="font-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="/aftercare">
                   CARE MANUAL (PDF)
                   {" "}
                   <span className="material-symbols-outlined text-sm">open_in_new</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -327,21 +328,21 @@ export default function OrderDetailsPage() {
           </div>
           {" "}
           <div className="flex gap-8">
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="/about">
               Sustainability
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="/shipping">
               Shipping & Returns
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="/terms">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

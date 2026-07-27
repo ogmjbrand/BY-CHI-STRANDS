@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -18,17 +19,17 @@ export default function CustomerDashboardPage() {
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
           {" "}
           <nav className="hidden md:flex space-x-10">
-            <a className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps uppercase text-label-caps tracking-[0.15em]" href="#">
+            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps uppercase text-label-caps tracking-[0.15em]" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps uppercase text-label-caps tracking-[0.15em]" href="#">
+            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps uppercase text-label-caps tracking-[0.15em]" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="text-primary border-b border-primary/50 font-medium font-label-caps uppercase text-label-caps tracking-[0.15em]" href="#">
+            <Link className="text-primary border-b border-primary/50 font-medium font-label-caps uppercase text-label-caps tracking-[0.15em]" href="/account">
               Orders
-            </a>
+            </Link>
           </nav>
           {" "}
           <div className="flex items-center space-x-6">
@@ -67,11 +68,11 @@ export default function CustomerDashboardPage() {
             <span className="font-label-caps text-label-caps uppercase tracking-widest">My Atelier</span>
           </a>
           {" "}
-          <a className="text-on-tertiary-fixed-variant pl-8 flex items-center group hover:text-primary transition-all duration-300" href="#">
+          <Link className="text-on-tertiary-fixed-variant pl-8 flex items-center group hover:text-primary transition-all duration-300" href="/academy">
             <span className="material-symbols-outlined mr-3">school</span>
             {" "}
             <span className="font-label-caps text-label-caps uppercase tracking-widest">Academy</span>
-          </a>
+          </Link>
           {" "}
           <a className="text-on-tertiary-fixed-variant pl-8 flex items-center group hover:text-primary transition-all duration-300" href="#">
             <span className="material-symbols-outlined mr-3">settings</span>
@@ -126,9 +127,9 @@ export default function CustomerDashboardPage() {
                 <div className="flex justify-between items-end mb-8">
                   <h2 className="font-headline-lg text-headline-lg">Recent Orders</h2>
                   {" "}
-                  <a className="text-primary font-label-caps text-[10px] uppercase tracking-widest border-b border-primary/20 hover:border-primary transition-all" href="#">
+                  <Link className="text-primary font-label-caps text-[10px] uppercase tracking-widest border-b border-primary/20 hover:border-primary transition-all" href="/shop">
                     View All
-                  </a>
+                  </Link>
                 </div>
                 {" "}
                 <div className="space-y-6">
@@ -196,9 +197,9 @@ export default function CustomerDashboardPage() {
                       Skip the 4-month waitlist for all atelier services and refresh appointments.
                     </p>
                     {" "}
-                    <a className="font-label-caps text-label-caps uppercase tracking-widest border-b border-white/40 group-hover:border-white transition-all inline-block" href="#">
+                    <Link className="font-label-caps text-label-caps uppercase tracking-widest border-b border-white/40 group-hover:border-white transition-all inline-block" href="/book">
                       Check Availability
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 {" "}
@@ -210,9 +211,9 @@ export default function CustomerDashboardPage() {
                     {" "}
                     <p className="font-body-sm text-on-surface-variant mb-6">Complimentary same-day wig laundry and styling for all Elite members.</p>
                     {" "}
-                    <a className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary/20 hover:border-primary transition-all inline-block" href="#">
+                    <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary/20 hover:border-primary transition-all inline-block" href="/book">
                       Request Courier
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </section>
@@ -293,21 +294,21 @@ export default function CustomerDashboardPage() {
           <div className="font-display-md text-display-md text-primary mb-8 md:mb-0 tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex space-x-8 mb-8 md:mb-0">
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/privacy">
               Privacy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/terms">
               Terms
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/faqs">
               Support
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/about">
               Heritage
-            </a>
+            </Link>
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">

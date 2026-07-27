@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -15,26 +16,26 @@ export default function SignatureServices2Page() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-          <a className="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-70 transition-opacity duration-500" href="/">
+          <Link className="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-70 transition-opacity duration-500" href="/">
             Aura of Silk
-          </a>
+          </Link>
           {" "}
           <div className="hidden md:flex items-center gap-10">
-            <a className="font-label-caps text-label-caps text-primary border-b border-primary pb-1 tracking-[0.15em]" href="#">
+            <Link className="font-label-caps text-label-caps text-primary border-b border-primary pb-1 tracking-[0.15em]" href="/collections">
               Collections
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="#">
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="#">
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="#">
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 tracking-[0.15em]" href="/about">
               Heritage
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center gap-6">
@@ -306,15 +307,15 @@ export default function SignatureServices2Page() {
               {" "}
               <ul className="space-y-4">
                 <li>
-                  <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+                  <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/services">
                     The Atelier
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+                  <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/academy/resources">
                     Masterclasses
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
@@ -330,15 +331,15 @@ export default function SignatureServices2Page() {
               {" "}
               <ul className="space-y-4">
                 <li>
-                  <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+                  <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/terms">
                     Terms
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+                  <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/privacy">
                     Privacy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

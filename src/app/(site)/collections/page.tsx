@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,26 +17,26 @@ export default function TheBoutiquePage() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="hidden md:flex gap-8">
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/aftercare">
               Aftercare
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               The Maison
-            </a>
+            </Link>
           </div>
           {" "}
-          <a className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]" href="/">
+          <Link className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]" href="/">
             AURA OF SILK
-          </a>
+          </Link>
           {" "}
           <div className="flex items-center gap-6">
             <button className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
@@ -380,21 +381,21 @@ export default function TheBoutiquePage() {
           </div>
           {" "}
           <div className="flex gap-8">
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/terms">
               Terms of Service
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               Sustainability
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
               Contact Atelier
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="text-secondary dark:text-secondary-fixed font-body-sm text-body-sm tracking-wide">

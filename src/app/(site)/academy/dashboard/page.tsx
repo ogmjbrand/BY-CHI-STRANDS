@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -19,7 +20,7 @@ export default function StudentDashboardPage() {
         <div className="hidden md:flex items-center gap-8 font-manrope text-body-md">
           <a className="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Overview</a>
           {" "}
-          <a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Curriculum</a>
+          <Link className="text-on-surface-variant hover:text-primary transition-colors" href="/academy">Curriculum</Link>
           {" "}
           <a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Resource Library</a>
         </div>
@@ -53,11 +54,11 @@ export default function StudentDashboardPage() {
             <span>Overview</span>
           </a>
           {" "}
-          <a className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="#">
+          <Link className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="/academy">
             <span className="material-symbols-outlined group-hover:scale-110 transition-transform">auto_stories</span>
             {" "}
             <span>Curriculum</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="#">
             <span className="material-symbols-outlined group-hover:scale-110 transition-transform">folder_shared</span>
@@ -65,11 +66,11 @@ export default function StudentDashboardPage() {
             <span>Resource Library</span>
           </a>
           {" "}
-          <a className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="#">
+          <Link className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="/academy/mentorship">
             <span className="material-symbols-outlined group-hover:scale-110 transition-transform">diversity_3</span>
             {" "}
             <span>Mentorship</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all duration-300 group" href="#">
             <span className="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
@@ -396,17 +397,17 @@ export default function StudentDashboardPage() {
         </p>
         {" "}
         <div className="flex gap-8">
-          <a className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="#">
+          <Link className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="/privacy">
             Privacy Policy
-          </a>
+          </Link>
           {" "}
-          <a className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="#">
+          <Link className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="/terms">
             Terms of Service
-          </a>
+          </Link>
           {" "}
-          <a className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="#">
+          <Link className="font-manrope text-label-caps text-on-tertiary-fixed-variant hover:text-primary hover:underline transition-all tracking-[0.15em]" href="/faqs">
             Support
-          </a>
+          </Link>
         </div>
       </footer>
       {/* Mobile Nav (Visible only on small screens) */}

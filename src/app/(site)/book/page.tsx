@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -18,17 +19,17 @@ export default function AtelierServiceBookingPage() {
           <div className="font-display-md text-[24px] tracking-widest text-primary uppercase">AURA OF SILK</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
-            <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="#">
+            <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="#">
+            <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-primary border-b border-primary/50 font-medium text-sm uppercase tracking-widest" href="#">
+            <Link className="font-body-md text-primary border-b border-primary/50 font-medium text-sm uppercase tracking-widest" href="/book">
               Book Appointment
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center space-x-6">
@@ -375,21 +376,21 @@ export default function AtelierServiceBookingPage() {
           {" "}
           <div className="flex flex-col items-center md:items-end space-y-4">
             <div className="flex space-x-8">
-              <a className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="#">
+              <Link className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="#">
+              <Link className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="/terms">
                 Terms
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="#">
+              <Link className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="/faqs">
                 Support
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="#">
+              <Link className="font-body-sm text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity uppercase tracking-tighter" href="/about">
                 Heritage
-              </a>
+              </Link>
             </div>
             {" "}
             <p className="font-body-sm text-on-surface-variant opacity-40 text-[10px]">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</p>

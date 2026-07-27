@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,26 +17,26 @@ export default function PostPurchaseConciergePage() {
       <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl">
         <nav className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
-            <a className="font-display-lg text-[32px] text-primary dark:text-primary-fixed-dim tracking-tight italic" href="#">
+            <Link className="font-display-lg text-[32px] text-primary dark:text-primary-fixed-dim tracking-tight italic" href="/">
               ByChi Strands
-            </a>
+            </Link>
             {" "}
             <div className="hidden md:flex items-center gap-8">
-              <a className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/collections">
                 Boutique
-              </a>
+              </Link>
               {" "}
-              <a className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/academy">
                 Academy
-              </a>
+              </Link>
               {" "}
-              <a className="font-manrope text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">
+              <Link className="font-manrope text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/account/journey">
                 Concierge
-              </a>
+              </Link>
               {" "}
-              <a className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-manrope text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/about">
                 Heritage
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -201,9 +202,9 @@ export default function PostPurchaseConciergePage() {
                   </li>
                 </ul>
                 {" "}
-                <a className="inline-block px-10 py-5 bg-black text-white font-manrope text-label-caps tracking-widest hover:bg-primary transition-all duration-500" href="#">
+                <Link className="inline-block px-10 py-5 bg-black text-white font-manrope text-label-caps tracking-widest hover:bg-primary transition-all duration-500" href="/academy/live/session-1">
                   START MASTERCLASS
-                </a>
+                </Link>
               </div>
               {" "}
               <div className="relative group cursor-pointer overflow-hidden aspect-video shadow-2xl">
@@ -303,9 +304,9 @@ export default function PostPurchaseConciergePage() {
       <footer className="bg-surface-container dark:bg-surface-dim border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-1">
-            <a className="font-display-md text-display-md text-primary dark:text-primary-fixed mb-6 block tracking-[-0.01em]" href="#">
+            <Link className="font-display-md text-display-md text-primary dark:text-primary-fixed mb-6 block tracking-[-0.01em]" href="/">
               ByChi Strands
-            </a>
+            </Link>
             {" "}
             <p className="font-manrope text-body-sm opacity-80 leading-relaxed max-w-xs">
               Curating excellence in hair craftsmanship since 2014. A testament to beauty, heritage, and the soul of silk.
@@ -315,33 +316,33 @@ export default function PostPurchaseConciergePage() {
           <div className="md:col-span-1 space-y-4">
             <h5 className="font-manrope text-label-caps text-secondary mb-6 tracking-[0.15em]">Concierge</h5>
             {" "}
-            <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+            <Link className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="/contact">
               Contact Us
-            </a>
+            </Link>
             {" "}
             <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
               Appointments
             </a>
             {" "}
-            <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+            <Link className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="/contact">
               White-Glove Support
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="md:col-span-1 space-y-4">
             <h5 className="font-manrope text-label-caps text-secondary mb-6 tracking-[0.15em]">Legal</h5>
             {" "}
-            <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+            <Link className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="/about">
               Sustainability
-            </a>
+            </Link>
             {" "}
-            <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+            <Link className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+            <Link className="block font-manrope text-body-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="/terms">
               Terms of Service
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="md:col-span-1 space-y-4">

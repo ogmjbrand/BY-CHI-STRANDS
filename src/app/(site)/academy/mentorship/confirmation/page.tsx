@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -18,17 +19,17 @@ export default function MentorshipConfirmationPage() {
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary/50 font-medium" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary/50 font-medium" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/account">
               Orders
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center space-x-6">
@@ -210,21 +211,21 @@ export default function MentorshipConfirmationPage() {
           <div className="font-display-md text-display-md text-primary mb-8 md:mb-0 tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/privacy">
               Privacy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/terms">
               Terms
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/faqs">
               Support
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/about">
               Heritage
-            </a>
+            </Link>
           </div>
           {" "}
           <p className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60">

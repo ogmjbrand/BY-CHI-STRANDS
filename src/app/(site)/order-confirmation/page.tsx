@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -152,9 +153,9 @@ export default function OrderConfirmationPage() {
               Visit the Academy
             </button>
             {" "}
-            <a className="font-label-caps text-label-caps text-on-surface-variant underline decoration-outline-variant/50 hover:text-primary transition-colors mt-4 tracking-[0.15em]" href="#">
+            <Link className="font-label-caps text-label-caps text-on-surface-variant underline decoration-outline-variant/50 hover:text-primary transition-colors mt-4 tracking-[0.15em]" href="/contact">
               NEED ASSISTANCE? CONTACT ATELIER
-            </a>
+            </Link>
           </section>
         </main>
         {/* Footer */}
@@ -163,17 +164,17 @@ export default function OrderConfirmationPage() {
             <div className="font-display-md text-headline-lg text-primary">Aura of Silk</div>
             {" "}
             <div className="flex gap-8">
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/about">
                 Heritage
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/faqs">
                 Support
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 Aura of Silk. The Art of Luxury Hair.</div>
@@ -192,17 +193,17 @@ export default function OrderConfirmationPage() {
           </div>
           {" "}
           <nav className="hidden md:flex items-center space-x-12">
-            <a className="text-on-surface-variant dark:text-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors duration-400 ease-in-out" href="#">
+            <Link className="text-on-surface-variant dark:text-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors duration-400 ease-in-out" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant dark:text-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors duration-400 ease-in-out" href="#">
+            <Link className="text-on-surface-variant dark:text-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed transition-colors duration-400 ease-in-out" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="text-primary dark:text-primary-fixed-dim font-bold border-b border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-400 ease-in-out" href="#">
+            <Link className="text-primary dark:text-primary-fixed-dim font-bold border-b border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-400 ease-in-out" href="/account">
               Orders
-            </a>
+            </Link>
           </nav>
           {" "}
           <div className="flex items-center space-x-6">
@@ -347,15 +348,15 @@ export default function OrderConfirmationPage() {
               <h3 className="font-display-md text-display-md mb-8 tracking-[-0.01em]">What follows next?</h3>
               {" "}
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <a className="w-full md:w-auto px-12 py-5 bg-on-background text-white font-label-caps text-label-caps hover:bg-primary-container transition-all duration-400 ease-in-out uppercase tracking-[0.2em] rounded-[4px]" href="#">
+                <Link className="w-full md:w-auto px-12 py-5 bg-on-background text-white font-label-caps text-label-caps hover:bg-primary-container transition-all duration-400 ease-in-out uppercase tracking-[0.2em] rounded-[4px]" href="/account">
                   View Dashboard
-                </a>
+                </Link>
                 {" "}
-                <a className="group relative py-2 font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]" href="#">
+                <Link className="group relative py-2 font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]" href="/academy">
                   Visit the Academy
                   {" "}
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-400 group-hover:w-full"></span>
-                </a>
+                </Link>
               </div>
               {" "}
               <p className="mt-12 text-on-surface-variant font-body-sm italic">
@@ -376,17 +377,17 @@ export default function OrderConfirmationPage() {
             </div>
             {" "}
             <div className="flex flex-wrap justify-center gap-8">
-              <a className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">
+              <Link className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="/about">
                 Heritage
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">
+              <Link className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">
+              <Link className="text-on-surface-variant dark:text-tertiary-fixed-dim font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300" href="/faqs">
                 Support
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="flex space-x-6">

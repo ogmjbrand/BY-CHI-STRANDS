@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -20,17 +21,17 @@ export default function StudentWelcomeKitPage() {
           </div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
-            <a className="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-[0.15em]" href="#">
+            <Link className="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-[0.15em]" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="text-primary dark:text-primary-fixed border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase tracking-[0.15em]" href="#">
+            <Link className="text-primary dark:text-primary-fixed border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase tracking-[0.15em]" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-[0.15em]" href="#">
+            <Link className="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-[0.15em]" href="/account">
               Orders
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center space-x-6">
@@ -393,21 +394,21 @@ export default function StudentWelcomeKitPage() {
           </div>
           {" "}
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-12">
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/privacy">
               Privacy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/terms">
               Terms
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/faqs">
               Support
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="/about">
               Heritage
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="mt-8 md:mt-0 font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">

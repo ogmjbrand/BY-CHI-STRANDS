@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -256,7 +257,7 @@ export default function LuxuryCheckoutPage() {
               <p className="text-[10px] text-center text-on-surface-variant px-4 leading-relaxed">
                 By completing your purchase, you agree to our
                 {" "}
-                <a className="underline" href="#">Terms of Service</a>
+                <Link className="underline" href="/terms">Terms of Service</Link>
                 {" "}
                 and
                 {" "}
@@ -272,17 +273,17 @@ export default function LuxuryCheckoutPage() {
           {/* Site Footer Links */}
           <div className="pt-8 pb-48 text-center space-y-6">
             <div className="flex justify-center gap-6">
-              <a className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+              <Link className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+              <Link className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/terms">
                 Terms
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+              <Link className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/about">
                 Heritage
-              </a>
+              </Link>
             </div>
             {" "}
             <p className="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant opacity-50">
@@ -298,13 +299,13 @@ export default function LuxuryCheckoutPage() {
         <nav className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky border-b border-outline-variant/30 z-50 transition-all duration-300">
           <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
             <div className="flex-1 flex gap-8 items-center">
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
                 Shop
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                 Collections
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright flex-none">
@@ -586,21 +587,21 @@ export default function LuxuryCheckoutPage() {
               {" "}
               <ul className="space-y-3">
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/collections">
                     Collections
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/academy">
                     Academy
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/book">
                     Book Appointment
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -610,19 +611,19 @@ export default function LuxuryCheckoutPage() {
               {" "}
               <ul className="space-y-3">
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="https://instagram.com/bychistrands2">
                     Instagram
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="https://tiktok.com/@bychistrands">
                     TikTok
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="https://wa.me/2340000000000">
                     WhatsApp
                   </a>
                 </li>
@@ -634,21 +635,21 @@ export default function LuxuryCheckoutPage() {
               {" "}
               <ul className="space-y-3">
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/shipping">
                     Shipping & Returns
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/privacy">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="#">
+                  <Link className="text-body-sm text-on-surface-variant hover:underline decoration-primary transition-all" href="/terms">
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

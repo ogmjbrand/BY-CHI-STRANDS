@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -20,17 +21,17 @@ export default function AtelierBookingConfirmationPage() {
           </div>
           {" "}
           <nav className="hidden md:flex gap-8 items-center">
-            <a className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
               Collections
-            </a>
+            </Link>
           </nav>
           {" "}
           <div className="flex items-center gap-6">
@@ -218,33 +219,33 @@ export default function AtelierBookingConfirmationPage() {
           <div className="flex flex-col gap-4">
             <span className="font-label-caps text-label-caps text-primary mb-2 tracking-[0.15em]">DISCOVER</span>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               Heritage
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               Sustainability
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
               Global Boutiques
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex flex-col gap-4">
             <span className="font-label-caps text-label-caps text-primary mb-2 tracking-[0.15em]">SUPPORT</span>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
               Contact
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
               Privacy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shipping">
               Shipping
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex flex-col justify-between items-start md:items-end lg:items-end">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,17 +17,17 @@ export default function AuraStoriesGalleryPage() {
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 ease-in-out">
         <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="flex-1 hidden md:flex gap-8">
-            <a className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+            <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/collections">
               Collections
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary/30 pb-1" href="#">
+            <Link className="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary/30 pb-1" href="/gallery">
               Stories
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+            <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/services">
               Atelier
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex-shrink-0">
@@ -34,9 +35,9 @@ export default function AuraStoriesGalleryPage() {
           </div>
           {" "}
           <div className="flex-1 flex justify-end items-center gap-6">
-            <a className="hidden md:block font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+            <Link className="hidden md:block font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
             <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="shopping_bag">
               shopping_bag
@@ -229,13 +230,13 @@ export default function AuraStoriesGalleryPage() {
               </p>
               {" "}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a className="px-10 py-5 bg-on-surface text-surface font-label-caps uppercase tracking-widest text-sm hover:bg-primary transition-colors duration-500 rounded-sm" href="#">
+                <Link className="px-10 py-5 bg-on-surface text-surface font-label-caps uppercase tracking-widest text-sm hover:bg-primary transition-colors duration-500 rounded-sm" href="/reviews/new">
                   Submit Story
-                </a>
+                </Link>
                 {" "}
-                <a className="px-10 py-5 border border-primary text-primary font-label-caps uppercase tracking-widest text-sm hover:bg-primary-fixed transition-all duration-500 rounded-sm" href="#">
+                <Link className="px-10 py-5 border border-primary text-primary font-label-caps uppercase tracking-widest text-sm hover:bg-primary-fixed transition-all duration-500 rounded-sm" href="/contact">
                   Inquiry Atelier
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -253,21 +254,21 @@ export default function AuraStoriesGalleryPage() {
           </div>
           {" "}
           <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
-            <a className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/terms">
               Terms of Service
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/contact">
               Contact
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/about">
               Press
-            </a>
+            </Link>
           </div>
           {" "}
           <p className="font-body-sm text-secondary-fixed-dim">© 2024 Aura of Silk. All rights reserved.</p>

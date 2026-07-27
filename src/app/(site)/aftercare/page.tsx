@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -15,26 +16,26 @@ export default function AftercarePortalPage() {
       {/* Top Navigation Bar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
-          <a className="font-display-md text-[24px] md:text-display-md tracking-tight text-on-surface dark:text-surface-bright md:tracking-[-0.01em]" href="#">
+          <Link className="font-display-md text-[24px] md:text-display-md tracking-tight text-on-surface dark:text-surface-bright md:tracking-[-0.01em]" href="/">
             AURA OF SILK
-          </a>
+          </Link>
           {" "}
           <div className="hidden md:flex gap-8 items-center">
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/aftercare">
               Aftercare
-            </a>
+            </Link>
             {" "}
-            <a className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               The Maison
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex items-center gap-6">
@@ -149,11 +150,11 @@ export default function AftercarePortalPage() {
                 Your current Silk Crown is maintained under the 'Luminous' tier. You have priority access to all seasonal refreshes.
               </p>
               {" "}
-              <a className="inline-flex items-center gap-3 font-label-caps text-label-caps text-primary hover:gap-5 transition-all tracking-[0.15em]" href="#">
+              <Link className="inline-flex items-center gap-3 font-label-caps text-label-caps text-primary hover:gap-5 transition-all tracking-[0.15em]" href="/academy/dashboard">
                 VIEW CERTIFICATE
                 {" "}
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -174,9 +175,9 @@ export default function AftercarePortalPage() {
                 </h2>
               </div>
               {" "}
-              <a className="font-label-caps text-label-caps uppercase border-b border-on-surface pb-1 mb-2 hover:text-primary hover:border-primary transition-all tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps uppercase border-b border-on-surface pb-1 mb-2 hover:text-primary hover:border-primary transition-all tracking-[0.15em]" href="/aftercare">
                 Explore All Rituals
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
@@ -291,9 +292,9 @@ export default function AftercarePortalPage() {
                 {" "}
                 <p className="font-body-sm text-on-surface-variant mb-4">Targeted repair for delicate silk ends. Apply bi-weekly.</p>
                 {" "}
-                <a className="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-0.5 tracking-[0.15em]" href="#">
+                <Link className="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-0.5 tracking-[0.15em]" href="/shop">
                   Shop — $120
-                </a>
+                </Link>
               </div>
             </div>
             {/* Secondary Product 2 */}
@@ -380,21 +381,21 @@ export default function AftercarePortalPage() {
           </div>
           {" "}
           <div className="flex flex-wrap justify-center gap-8">
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/terms">
               Terms of Service
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
               Sustainability
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
               Contact Atelier
-            </a>
+            </Link>
           </div>
           {" "}
           <p className="font-body-sm text-on-surface-variant opacity-50 uppercase tracking-widest">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</p>

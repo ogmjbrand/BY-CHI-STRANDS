@@ -1,3 +1,4 @@
+import Link from "next/link";
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
  * "ByChi Strands | The Gold Standard of Vietnamese Hair"
@@ -22,25 +23,25 @@ export default function HomepageWithClientNarrativesPage() {
             </div>
             {" "}
             <div className="hidden md:flex items-center gap-gutter">
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="/shop">
                 Shop
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                 Collections
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                 Services
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                 Academy
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
                 About
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="flex items-center gap-4">
@@ -153,9 +154,9 @@ export default function HomepageWithClientNarrativesPage() {
                   </h2>
                 </div>
                 {" "}
-                <a className="font-label-caps text-label-caps text-primary hover:underline underline-offset-8 transition-all tracking-[0.15em]" href="#">
+                <Link className="font-label-caps text-label-caps text-primary hover:underline underline-offset-8 transition-all tracking-[0.15em]" href="/shop">
                   VIEW ALL PRODUCTS
-                </a>
+                </Link>
               </div>
               {" "}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -306,35 +307,35 @@ export default function HomepageWithClientNarrativesPage() {
             <div className="flex flex-col gap-4">
               <h5 className="font-label-caps text-label-caps text-secondary tracking-[0.15em]">Discover</h5>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/shop">
                 Shop All
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/shop">
                 Raw Collection
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/shop">
                 Signature Wigs
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/shop">
                 Gift Cards
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="flex flex-col gap-4">
               <h5 className="font-label-caps text-label-caps text-secondary tracking-[0.15em]">Social</h5>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="https://instagram.com/bychistrands2">
                 Instagram
               </a>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="https://tiktok.com/@bychistrands">
                 TikTok
               </a>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="https://wa.me/2340000000000">
                 WhatsApp
               </a>
             </div>
@@ -342,17 +343,17 @@ export default function HomepageWithClientNarrativesPage() {
             <div className="flex flex-col gap-4">
               <h5 className="font-label-caps text-label-caps text-secondary tracking-[0.15em]">Legal</h5>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/privacy">
                 Privacy Policy
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/terms">
                 Terms of Service
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="#">
+              <Link className="text-on-surface-variant hover:text-on-surface transition-all hover:underline decoration-primary" href="/shipping">
                 Shipping & Returns
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -375,17 +376,17 @@ export default function HomepageWithClientNarrativesPage() {
           <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
             <div className="flex items-center gap-8">
               <nav className="hidden md:flex gap-8">
-                <a className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="#">
+                <Link className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="/shop">
                   Shop
-                </a>
+                </Link>
                 {" "}
-                <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                   Collections
-                </a>
+                </Link>
                 {" "}
-                <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                   Services
-                </a>
+                </Link>
               </nav>
             </div>
             {" "}
@@ -395,13 +396,13 @@ export default function HomepageWithClientNarrativesPage() {
             {" "}
             <div className="flex items-center gap-8">
               <nav className="hidden md:flex gap-8">
-                <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                   Academy
-                </a>
+                </Link>
                 {" "}
-                <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
                   About
-                </a>
+                </Link>
               </nav>
               {" "}
               <div className="flex items-center gap-4">
@@ -440,9 +441,9 @@ export default function HomepageWithClientNarrativesPage() {
                 Explore the Collection
               </a>
               {" "}
-              <a className="font-label-caps text-on-surface border-b border-primary pb-1 hover:text-primary transition-all" href="#">
+              <Link className="font-label-caps text-on-surface border-b border-primary pb-1 hover:text-primary transition-all" href="/book">
                 Request a Consultation
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -490,9 +491,9 @@ export default function HomepageWithClientNarrativesPage() {
                 <h2 className="font-display-md text-display-md tracking-[-0.01em]">Signature Masterpieces</h2>
               </div>
               {" "}
-              <a className="reveal font-label-caps text-on-surface border-b border-outline hover:text-primary transition-colors pb-1" href="#">
+              <Link className="reveal font-label-caps text-on-surface border-b border-outline hover:text-primary transition-colors pb-1" href="/shop">
                 View Full Catalog
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -509,13 +510,13 @@ export default function HomepageWithClientNarrativesPage() {
                     The pinnacle of hair quality. Unprocessed, high-luster strands that maintain their integrity for years, not months.
                   </p>
                   {" "}
-                  <a className="font-label-caps text-primary tracking-widest flex items-center gap-2 group/btn" href="#">
+                  <Link className="font-label-caps text-primary tracking-widest flex items-center gap-2 group/btn" href="/shop">
                     SHOP COLLECTION
                     {" "}
                     <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-2">
                       arrow_forward
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               {/* Collection 2 */}
@@ -531,13 +532,13 @@ export default function HomepageWithClientNarrativesPage() {
                     Bespoke luxury crafted to your exact specifications. From scalp-mimicking HD lace to perfectly matched density.
                   </p>
                   {" "}
-                  <a className="font-label-caps text-primary tracking-widest flex items-center gap-2 group/btn" href="#">
+                  <Link className="font-label-caps text-primary tracking-widest flex items-center gap-2 group/btn" href="/shop">
                     EXPLORE CUSTOM
                     {" "}
                     <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-2">
                       arrow_forward
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -561,13 +562,13 @@ export default function HomepageWithClientNarrativesPage() {
                 </p>
                 {" "}
                 <div className="flex flex-wrap gap-8 items-center">
-                  <a className="bg-primary text-on-primary-container px-10 py-4 rounded-lg font-label-caps tracking-widest hover:bg-primary-fixed-dim transition-all uppercase" href="#">
+                  <Link className="bg-primary text-on-primary-container px-10 py-4 rounded-lg font-label-caps tracking-widest hover:bg-primary-fixed-dim transition-all uppercase" href="/academy/enroll">
                     Enroll Now
-                  </a>
+                  </Link>
                   {" "}
-                  <a className="text-surface font-label-caps border-b border-primary-fixed pb-1 hover:text-primary-fixed transition-colors" href="#">
+                  <Link className="text-surface font-label-caps border-b border-primary-fixed pb-1 hover:text-primary-fixed transition-colors" href="/academy">
                     Course Overview
-                  </a>
+                  </Link>
                 </div>
               </div>
               {" "}
@@ -614,11 +615,11 @@ export default function HomepageWithClientNarrativesPage() {
                   Seamless bonding and styling that creates the illusion of natural growth. Expertly applied for longevity and comfort.
                 </p>
                 {" "}
-                <a className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="#">
+                <Link className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="/services">
                   BOOK SERVICE
                   {" "}
                   <span className="material-symbols-outlined text-sm">north_east</span>
-                </a>
+                </Link>
               </div>
               {" "}
               <div className="group reveal border border-outline-variant/30 p-12 hover:border-primary-container transition-colors duration-500 bg-surface-container-lowest" style={{ transitionDelay: "200ms" }}>
@@ -632,11 +633,11 @@ export default function HomepageWithClientNarrativesPage() {
                   Professional spa treatments for your hairpieces. Deep conditioning and cuticle sealing to revive original luster.
                 </p>
                 {" "}
-                <a className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="#">
+                <Link className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="/services">
                   BOOK SERVICE
                   {" "}
                   <span className="material-symbols-outlined text-sm">north_east</span>
-                </a>
+                </Link>
               </div>
               {" "}
               <div className="group reveal border border-outline-variant/30 p-12 hover:border-primary-container transition-colors duration-500 bg-surface-container-lowest" style={{ transitionDelay: "400ms" }}>
@@ -650,11 +651,11 @@ export default function HomepageWithClientNarrativesPage() {
                   Custom lifting and toning by our color specialists. From multidimensional balayage to high-fashion tones.
                 </p>
                 {" "}
-                <a className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="#">
+                <Link className="font-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="/services">
                   BOOK SERVICE
                   {" "}
                   <span className="material-symbols-outlined text-sm">north_east</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -779,27 +780,27 @@ export default function HomepageWithClientNarrativesPage() {
               {" "}
               <ul className="space-y-4">
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shop">
                     Raw Silk Bundles
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shop">
                     HD Lace Frontals
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shop">
                     Custom Closures
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shop">
                     Ready-to-Wear Wigs
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -809,27 +810,27 @@ export default function HomepageWithClientNarrativesPage() {
               {" "}
               <ul className="space-y-4">
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/about">
                     About Our Sourcing
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/academy">
                     Academy Training
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/services">
                     Boutique Services
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/contact">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -839,27 +840,27 @@ export default function HomepageWithClientNarrativesPage() {
               {" "}
               <ul className="space-y-4">
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shipping">
                     Shipping & Returns
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/privacy">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/terms">
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+                  <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/faqs">
                     FAQ
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -869,15 +870,15 @@ export default function HomepageWithClientNarrativesPage() {
             <p className="font-body-md text-body-sm text-on-surface-variant">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
             {" "}
             <div className="flex gap-8">
-              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="https://instagram.com/bychistrands2">
                 Instagram
               </a>
               {" "}
-              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="https://tiktok.com/@bychistrands">
                 TikTok
               </a>
               {" "}
-              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+              <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="https://wa.me/2340000000000">
                 WhatsApp
               </a>
             </div>

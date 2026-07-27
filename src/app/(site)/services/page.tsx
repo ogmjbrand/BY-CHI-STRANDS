@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,30 +17,30 @@ export default function SignatureServices1Page() {
       <nav className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
         <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
-            <a className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="#">
+            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
               ByChi Strands
-            </a>
+            </Link>
             {" "}
             <div className="hidden md:flex gap-8 items-center">
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
                 Shop
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                 Collections
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="/services">
                 Services
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                 Academy
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
                 About
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -376,43 +377,43 @@ export default function SignatureServices1Page() {
               About Our Craft
             </a>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/collections">
               Collections
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/academy">
               Academy
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex flex-col gap-4">
             <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Customer Care</h4>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shipping">
               Shipping & Returns
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/terms">
               Terms of Service
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="flex flex-col gap-4">
             <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Connect</h4>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://instagram.com/bychistrands2">
               Instagram
             </a>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://tiktok.com/@bychistrands">
               TikTok
             </a>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://wa.me/2340000000000">
               WhatsApp
             </a>
             {" "}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -18,17 +19,17 @@ export default function AcademyLiveSession1Page() {
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">AURA OF SILK</div>
           {" "}
           <nav className="hidden md:flex items-center space-y-0 space-x-12">
-            <a className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="#">
+            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="/services">
               Atelier
-            </a>
+            </Link>
             {" "}
-            <a className="text-primary border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase tracking-widest" href="#">
+            <Link className="text-primary border-b border-primary/50 font-medium font-label-caps text-label-caps uppercase tracking-widest" href="/academy">
               Academy
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="#">
+            <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-widest" href="/account">
               Orders
-            </a>
+            </Link>
           </nav>
           {" "}
           <div className="flex items-center gap-6">
@@ -261,21 +262,21 @@ export default function AcademyLiveSession1Page() {
           <div className="font-display-md text-display-md text-primary tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex gap-8">
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/privacy">
               Privacy
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/terms">
               Terms
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/faqs">
               Support
-            </a>
+            </Link>
             {" "}
-            <a className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="#">
+            <Link className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300" href="/about">
               Heritage
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="font-body-sm text-body-sm uppercase tracking-tighter text-on-surface-variant">© 2024 AURA OF SILK. ALL RIGHTS RESERVED.</div>

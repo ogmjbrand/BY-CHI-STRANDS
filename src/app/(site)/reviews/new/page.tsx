@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,9 +17,9 @@ export default function ReviewSubmissionFormPage() {
       <div className="md:hidden scr-mobile-review-submission-form bg-background text-on-surface font-body-md selection:bg-primary-fixed">
         {/* Top Navigation Anchor (As per JSON) */}
         <header className="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto bg-surface/80 dark:bg-on-background/80 backdrop-blur-xl border-b border-outline-variant/30">
-          <a className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-surface-container-lowest" href="#">
+          <Link className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-surface-container-lowest" href="/">
             Aura of Silk
-          </a>
+          </Link>
           {" "}
           <div className="flex gap-6 items-center">
             <span className="material-symbols-outlined text-on-surface-variant" data-icon="shopping_bag">shopping_bag</span>
@@ -176,17 +177,17 @@ export default function ReviewSubmissionFormPage() {
             <div className="font-display-md text-headline-lg text-primary">Aura of Silk</div>
             {" "}
             <div className="flex gap-12">
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/about">
                 Heritage
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="#">
+              <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-300 tracking-[0.15em]" href="/faqs">
                 Support
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="font-body-sm text-body-sm text-on-surface-variant">© 2024 Aura of Silk. The Art of Luxury Hair.</div>
@@ -204,21 +205,21 @@ export default function ReviewSubmissionFormPage() {
             </div>
             {" "}
             <div className="hidden md:flex items-center space-x-12">
-              <a className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                 Academy
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                 Atelier
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                 Boutique
-              </a>
+              </Link>
               {" "}
-              <a className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-label-caps text-label-caps tracking-[0.15em] uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy/mentorship">
                 Mentorship
-              </a>
+              </Link>
             </div>
             {" "}
             <div className="flex items-center space-x-6">
@@ -384,21 +385,21 @@ export default function ReviewSubmissionFormPage() {
             <div className="font-display-lg text-[24px] text-on-surface mb-6 md:mb-0">AURA OF SILK</div>
             {" "}
             <div className="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
-              <a className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="/about">
                 The Silk Ethos
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="/privacy">
                 Privacy
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="/terms">
                 Membership Terms
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">
+              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors duration-500" href="/contact">
                 Contact
-              </a>
+              </Link>
             </div>
             {" "}
             <p className="font-body-sm text-[10px] text-on-surface-variant tracking-widest uppercase">© 2024 AURA OF SILK ATELIER. ALL RIGHTS RESERVED.</p>

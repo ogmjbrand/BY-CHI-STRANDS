@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,28 +17,28 @@ export default function ShopAllPage() {
       <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
         <nav className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
           <div className="flex items-center gap-12">
-            <a className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="#">
+            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
               ByChi Strands
-            </a>
+            </Link>
             {" "}
             <div className="hidden md:flex gap-8 font-body-md text-body-sm uppercase tracking-widest">
-              <a className="text-primary font-semibold border-b border-primary pb-1" href="#">Shop</a>
+              <Link className="text-primary font-semibold border-b border-primary pb-1" href="/shop">Shop</Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                 Collections
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                 Services
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                 Academy
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
                 About
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -384,7 +385,7 @@ export default function ShopAllPage() {
             {" "}
             <ul className="space-y-4 font-body-sm text-body-sm text-on-surface-variant">
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="#">Collections</a>
+                <Link className="hover:underline decoration-primary transition-all" href="/collections">Collections</Link>
               </li>
               {" "}
               <li>
@@ -408,19 +409,21 @@ export default function ShopAllPage() {
             {" "}
             <ul className="space-y-4 font-body-sm text-body-sm text-on-surface-variant">
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="#">Privacy Policy</a>
+                <Link className="hover:underline decoration-primary transition-all" href="/privacy">Privacy Policy</Link>
               </li>
               {" "}
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="#">Terms of Service</a>
+                <Link className="hover:underline decoration-primary transition-all" href="/terms">Terms of Service</Link>
               </li>
               {" "}
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="#">Shipping & Returns</a>
+                <Link className="hover:underline decoration-primary transition-all" href="/shipping">Shipping & Returns</Link>
               </li>
               {" "}
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="#">WhatsApp</a>
+                <a className="hover:underline decoration-primary transition-all" href="https://wa.me/2340000000000">
+                  WhatsApp
+                </a>
               </li>
             </ul>
           </div>

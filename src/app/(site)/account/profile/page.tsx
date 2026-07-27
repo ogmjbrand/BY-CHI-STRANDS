@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -16,24 +17,24 @@ export default function ClientProfilePage() {
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
         <nav className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="flex items-center gap-8">
-            <a className="font-display-md text-headline-lg text-on-surface tracking-tight" href="#">VIET LUXE HAIR</a>
+            <Link className="font-display-md text-headline-lg text-on-surface tracking-tight" href="/">VIET LUXE HAIR</Link>
             {" "}
             <div className="hidden md:flex items-center gap-6">
-              <a className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/gallery">
                 STORY
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
                 SHOP
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                 SERVICES
-              </a>
+              </Link>
               {" "}
-              <a className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              <Link className="font-body-md text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                 ACADEMY
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -67,11 +68,11 @@ export default function ClientProfilePage() {
             <span className="font-body-md">Overview</span>
           </a>
           {" "}
-          <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-all hover:translate-x-1" href="#">
+          <Link className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-all hover:translate-x-1" href="/account">
             <span className="material-symbols-outlined">package_2</span>
             {" "}
             <span className="font-body-md">My Orders</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-container-low transition-all hover:translate-x-1" href="#">
             <span className="material-symbols-outlined">calendar_today</span>
@@ -93,11 +94,11 @@ export default function ClientProfilePage() {
         </nav>
         {" "}
         <div className="pt-8 border-t border-outline-variant/30">
-          <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-primary transition-colors" href="#">
+          <Link className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-primary transition-colors" href="/faqs">
             <span className="material-symbols-outlined">help_outline</span>
             {" "}
             <span>Support</span>
-          </a>
+          </Link>
           {" "}
           <a className="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-error transition-colors" href="#">
             <span className="material-symbols-outlined">logout</span>
@@ -155,9 +156,9 @@ export default function ClientProfilePage() {
           <div className="flex justify-between items-center mb-12">
             <h2 className="font-display-lg text-headline-lg">The Collection</h2>
             {" "}
-            <a className="font-body-md text-label-caps text-on-surface-variant hover:text-primary border-b border-transparent hover:border-primary transition-all pb-1 tracking-[0.15em]" href="#">
+            <Link className="font-body-md text-label-caps text-on-surface-variant hover:text-primary border-b border-transparent hover:border-primary transition-all pb-1 tracking-[0.15em]" href="/academy/resources">
               View Full Vault
-            </a>
+            </Link>
           </div>
           {" "}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
@@ -242,9 +243,9 @@ export default function ClientProfilePage() {
               <div className="flex items-center justify-between">
                 <span className="text-label-caps tracking-[0.15em]">Published 12 Nov 2023</span>
                 {" "}
-                <a className="text-primary text-label-caps border-b border-primary pb-1 tracking-[0.15em]" href="#">
+                <Link className="text-primary text-label-caps border-b border-primary pb-1 tracking-[0.15em]" href="/reviews/new">
                   Edit Narrative
-                </a>
+                </Link>
               </div>
             </article>
             {" "}
@@ -352,9 +353,9 @@ export default function ClientProfilePage() {
       <footer className="w-full mt-section-padding bg-surface-container-lowest border-t border-outline-variant/50">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-4">
-            <a className="font-display-md text-display-md text-primary mb-8 block tracking-[-0.01em]" href="#">
+            <Link className="font-display-md text-display-md text-primary mb-8 block tracking-[-0.01em]" href="/">
               VIET LUXE HAIR
-            </a>
+            </Link>
             {" "}
             <p className="font-body-sm text-on-surface-variant max-w-xs mb-8">
               Crafting timeless elegance through the world's most exquisite hair artistry. Join our inner circle for exclusive atelier access.
@@ -366,21 +367,21 @@ export default function ClientProfilePage() {
             {" "}
             <ul className="space-y-4">
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/gallery">
                   Story
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/about">
                   Sustainability
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/services">
                   Atelier
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -390,21 +391,21 @@ export default function ClientProfilePage() {
             {" "}
             <ul className="space-y-4">
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/contact">
                   Contact Us
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/shipping">
                   Shipping
-                </a>
+                </Link>
               </li>
               {" "}
               <li>
-                <a className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="#">
+                <Link className="font-body-sm text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-all" href="/returns">
                   Returns
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -423,9 +424,9 @@ export default function ClientProfilePage() {
             <p className="font-body-sm text-on-surface-variant">© 2024 VIET LUXE HAIR. ALL RIGHTS RESERVED.</p>
             {" "}
             <div className="flex gap-8">
-              <a className="font-body-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+              <Link className="font-body-sm text-on-surface-variant hover:text-primary" href="/privacy">Privacy Policy</Link>
               {" "}
-              <a className="font-body-sm text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+              <Link className="font-body-sm text-on-surface-variant hover:text-primary" href="/terms">Terms of Service</Link>
             </div>
           </div>
         </div>

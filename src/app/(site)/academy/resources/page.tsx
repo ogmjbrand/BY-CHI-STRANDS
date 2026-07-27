@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 /**
@@ -21,21 +22,21 @@ export default function AcademyResourceLibraryPage() {
             </span>
             {" "}
             <div className="hidden md:flex gap-6">
-              <a className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="/academy">
                 Curriculum
-              </a>
+              </Link>
               {" "}
-              <a className="text-primary font-semibold border-b border-primary pb-1 font-body-md text-body-md uppercase tracking-widest" href="#">
+              <Link className="text-primary font-semibold border-b border-primary pb-1 font-body-md text-body-md uppercase tracking-widest" href="/collections">
                 Archive
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="/academy/mentorship">
                 Mentorship
-              </a>
+              </Link>
               {" "}
-              <a className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="#">
+              <Link className="text-on-surface-variant/70 font-medium pb-1 font-body-md text-body-md uppercase tracking-widest hover:text-primary transition-colors duration-300" href="/academy/resources">
                 Community
-              </a>
+              </Link>
             </div>
           </div>
           {" "}
@@ -106,7 +107,7 @@ export default function AcademyResourceLibraryPage() {
               <div className="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
                 <h2 className="font-headline-lg text-headline-lg">Masterclass Replays</h2>
                 {" "}
-                <a className="font-label-caps text-primary hover:underline" href="#">View All</a>
+                <Link className="font-label-caps text-primary hover:underline" href="/shop">View All</Link>
               </div>
               {" "}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -165,7 +166,7 @@ export default function AcademyResourceLibraryPage() {
               <div className="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
                 <h2 className="font-headline-lg text-headline-lg">PDF Guides & Toolkits</h2>
                 {" "}
-                <a className="font-label-caps text-primary hover:underline" href="#">Download All</a>
+                <Link className="font-label-caps text-primary hover:underline" href="/academy/resources">Download All</Link>
               </div>
               {" "}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -394,21 +395,21 @@ export default function AcademyResourceLibraryPage() {
           </div>
           {" "}
           <div className="flex gap-8">
-            <a className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="#">
+            <Link className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="/privacy">
               Privacy Policy
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="#">
+            <Link className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="/terms">
               Terms of Service
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="#">
+            <Link className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="/faqs">
               Support
-            </a>
+            </Link>
             {" "}
-            <a className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="#">
+            <Link className="text-on-surface-variant font-body-sm text-body-sm tracking-wide hover:text-primary underline transition-all" href="/academy/enroll">
               Institutional Access
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
