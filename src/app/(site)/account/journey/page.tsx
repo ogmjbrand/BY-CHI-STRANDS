@@ -309,7 +309,7 @@ export default function PostPurchaseConciergePage() {
             </Link>
             {" "}
             <p className="font-manrope text-body-sm opacity-80 leading-relaxed max-w-xs">
-              Curating excellence in hair craftsmanship since 2014. A testament to beauty, heritage, and the soul of silk.
+              Curating excellence in hair craftsmanship since 2021. A testament to beauty, heritage, and the soul of silk.
             </p>
           </div>
           {" "}

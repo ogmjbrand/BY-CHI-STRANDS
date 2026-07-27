@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { products, priceFrom, ORIGINS } from "@/lib/products";
+import { collections } from "@/lib/collections";
+import { heroFor } from "@/lib/media";
+import { formatPrice } from "@/lib/utils";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_the_boutique
@@ -21,7 +26,11 @@ export default function TheBoutiquePage() {
               Atelier
             </Link>
             {" "}
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/academy">
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/collections">
+              The Boutique
+            </Link>
+            {" "}
+            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
               Academy
             </Link>
             {" "}
@@ -73,21 +82,19 @@ export default function TheBoutiquePage() {
       <section className="sticky top-[88px] z-40 bg-surface/90 backdrop-blur-md border-y border-outline-variant/20 mb-16">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-wrap justify-center gap-8">
-            <button className="font-label-caps text-label-caps uppercase text-primary tracking-widest border-b-2 border-primary pb-1">
+            <span className="font-label-caps text-label-caps uppercase text-primary tracking-widest border-b-2 border-primary pb-1">
               All Creations
-            </button>
+            </span>
             {" "}
-            <button className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary tracking-widest transition-colors">
-              Signature Wigs
-            </button>
-            {" "}
-            <button className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary tracking-widest transition-colors">
-              Silk Essentials
-            </button>
-            {" "}
-            <button className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary tracking-widest transition-colors">
-              Masterpiece Series
-            </button>
+            {collections.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/collections/${c.slug}`}
+                className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary tracking-widest transition-colors"
+              >
+                {c.name}
+              </Link>
+            ))}
           </div>
           {" "}
           <div className="flex items-center gap-4">
@@ -108,154 +115,46 @@ export default function TheBoutiquePage() {
       {/* Curated Product Grid */}
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
-          {/* Product 1 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-fashion editorial portrait of a luxury mahogany-colored lace wig with soft, voluminous waves. The lighting is cinematic and warm, highlighting the silky texture and realistic hairline. The background is a minimalist ivory studio set, emphasizing the product's premium quality and deep, rich tones." src="/stitch/img-025.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Signature HD Lace
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Imperial Mahogany Wave
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$4,200.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
-          {/* Product 2 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up editorial photography of a sleek, platinum blonde straight silk wig. The hair has a mirror-like shine and fluid movement. The lighting is bright and ethereal, casting soft shadows. The atmosphere is clinical yet artistic, showcasing the hand-tied craftsmanship against a neutral grey silk backdrop." src="/stitch/img-082.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-              {" "}
-              <div className="absolute top-6 right-6 bg-white px-4 py-1">
-                <span className="font-label-caps text-[10px] uppercase tracking-tighter">Limited Edition</span>
-              </div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Masterpiece Series
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Alabaster Straight
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$5,850.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
-          {/* Product 3 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious product shot of an aftercare set featuring a glass bottle of silk-infused hair oil and a handmade wide-tooth comb. The bottle reflects soft amber light, and the comb is carved from dark sandalwood. The scene is set on a marble surface with delicate linen textures in the periphery, conveying a sense of quiet luxury and ritual." src="/stitch/img-041.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Aftercare Collective
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Silk Ritual Set
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$340.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
-          {/* Product 4 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial image of a voluminous, dark espresso curly wig with intricate hand-tied curls that look extremely natural. The hair is styled in a deep side part. The photography uses high-contrast shadows to emphasize the texture and depth of the curls. The model's skin is glowing, and the aesthetic is sophisticated and high-end fashion." src="/stitch/img-013.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Signature HD Lace
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Espresso Coil
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$3,900.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
-          {/* Product 5 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stunning product display of a copper-toned bob wig with sharp, architectural lines. The hair is perfectly smooth and has a brilliant sheen. The image is captured in a minimalist, bright white environment with champagne gold accents. The lighting is diffused and professional, showcasing the precision of the cut and the purity of the color." src="/stitch/img-114.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Silk Essentials
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Copper Precision Bob
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$2,450.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
-          {/* Product 6 */}
-          <article className="group cursor-pointer">
-            <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up artistic shot of a warm honey-blonde ponytail extension made of genuine silk-grade hair. The ponytail is sleek at the top with a soft, effortless wave at the end. The lighting is soft and golden, mimicking a late afternoon glow. The background consists of draped cream-colored silk fabrics, creating a luxurious and tactile atmosphere." src="/stitch/img-081.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-            </div>
-            {" "}
-            <div className="text-center md:text-left">
-              <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                Silk Essentials
-              </span>
-              {" "}
-              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                The Honey Glow Wrap
-              </h3>
-              {" "}
-              <p className="font-body-md text-primary font-semibold mb-6">$1,200.00</p>
-              {" "}
-              <button className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                View Masterpiece
-              </button>
-            </div>
-          </article>
+          {products.map((p) => {
+            const price = priceFrom(p);
+            return (
+              <Link key={p.slug} href={`/shop/${p.slug}`} className="group cursor-pointer">
+                <article>
+                  <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
+                    <ProductMedia
+                      media={heroFor(p.slug)}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {" "}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                    {p.badges?.includes("limited") ? (
+                      <div className="absolute top-6 right-6 bg-white px-4 py-1">
+                        <span className="font-label-caps text-[10px] uppercase tracking-tighter">Limited Edition</span>
+                      </div>
+                    ) : null}
+                  </div>
+                  {" "}
+                  <div className="text-center md:text-left">
+                    <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
+                      {ORIGINS[p.origin]} SDD
+                    </span>
+                    {" "}
+                    <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
+                      {p.name}
+                    </h3>
+                    {" "}
+                    <p className="font-body-md text-primary font-semibold mb-6">
+                      {price === null ? "Price on request" : formatPrice(price)}
+                    </p>
+                    {" "}
+                    <span className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
+                      View Piece
+                    </span>
+                  </div>
+                </article>
+              </Link>
+            );
+          })}
         </div>
       </main>
       {/* Artisan Curation Section */}
@@ -268,9 +167,7 @@ export default function TheBoutiquePage() {
               <img className="w-full aspect-square object-cover shadow-2xl" data-alt="A portrait of a skilled master artisan at work in a bright, modern atelier. The artisan is delicately hand-tying individual hair strands onto a fine lace base. The environment is organized and minimalist, with spools of fine thread and luxury hair samples nearby. The lighting is focused and warm, emphasizing the meticulous detail and craftsmanship involved in creating a masterpiece." src="/stitch/img-014.jpg" />
               {" "}
               <div className="absolute bottom-8 -right-8 bg-surface p-8 max-w-xs shadow-xl hidden md:block">
-                <p className="font-headline-lg text-primary italic mb-2">"The secret lies in the direction of every single knot."</p>
-                {" "}
-                <span className="font-label-caps text-label-caps uppercase text-outline tracking-[0.15em]">— Master Artisan Elena V.</span>
+                <p className="font-headline-lg text-primary italic">Hand-tied, strand by strand, in our atelier.</p>
               </div>
             </div>
             {" "}
@@ -278,55 +175,58 @@ export default function TheBoutiquePage() {
               <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.2em]">Curated Selection</span>
               {" "}
               <h2 className="font-display-md text-display-md-mobile md:text-display-md leading-tight md:leading-[1.2] md:tracking-[-0.01em]">
-                Master Artisan's Choice:
-                {" "}
-                <br />
-                The Golden Hour Edit
+                House Favourites
               </h2>
               {" "}
               <p className="font-body-xl text-on-surface-variant">
-                A curated collection hand-selected for their exceptional warmth and luminosity. These pieces represent our highest standard of silk-blending, designed to capture and reflect light as if it were natural sun-kissed hair.
+                The two pieces clients ask for most — Super Double Drawn quality, built and finished in our atelier.
               </p>
               {" "}
               <div className="flex flex-col gap-6 py-8">
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-20 h-20 overflow-hidden bg-surface-container">
-                    <img className="w-full h-full object-cover" data-alt="Small thumbnail of a golden blonde silk hair piece." src="/stitch/img-085.jpg" />
-                  </div>
-                  {" "}
-                  <div>
-                    <h4 className="font-label-caps text-label-caps uppercase mb-1 tracking-[0.15em]">01. Signature Lace Front 'Soleil'</h4>
-                    {" "}
-                    <span className="text-primary font-semibold">$3,400.00</span>
-                  </div>
-                </div>
-                {" "}
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-20 h-20 overflow-hidden bg-surface-container">
-                    <img className="w-full h-full object-cover" data-alt="Small thumbnail of a premium hair serum bottle." src="/stitch/img-108.jpg" />
-                  </div>
-                  {" "}
-                  <div>
-                    <h4 className="font-label-caps text-label-caps uppercase mb-1 tracking-[0.15em]">02. Liquid Silk Elixir</h4>
-                    {" "}
-                    <span className="text-primary font-semibold">$120.00</span>
-                  </div>
-                </div>
+                {products
+                  .filter((p) => p.badges?.includes("bestseller"))
+                  .map((p, i) => {
+                    const price = priceFrom(p);
+                    return (
+                      <Link
+                        key={p.slug}
+                        href={`/shop/${p.slug}`}
+                        className="flex items-center gap-6 group cursor-pointer"
+                      >
+                        <div className="w-20 h-20 overflow-hidden bg-surface-container shrink-0">
+                          <ProductMedia media={heroFor(p.slug)} className="w-full h-full object-cover" />
+                        </div>
+                        {" "}
+                        <div>
+                          <h4 className="font-label-caps text-label-caps uppercase mb-1 tracking-[0.15em] group-hover:text-primary transition-colors">
+                            {String(i + 1).padStart(2, "0")}. {p.name}
+                          </h4>
+                          {" "}
+                          <span className="text-primary font-semibold">
+                            {price === null ? "Price on request" : formatPrice(price)}
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
               </div>
               {" "}
-              <button className="bg-primary text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all duration-300">
-                Inquire About This Look
-              </button>
+              <Link
+                href="/shop"
+                className="inline-block bg-primary text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all duration-300"
+              >
+                Shop House Favourites
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      {/* The Aura Guarantee */}
+      {/* The ByChi Standard */}
       <section className="py-section-padding border-t border-outline-variant/30">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-20">
             <h2 className="font-display-md text-display-md-mobile md:text-display-md mb-4 md:tracking-[-0.01em]">
-              The Aura Guarantee
+              The ByChi Standard
             </h2>
             {" "}
             <div className="w-20 h-px bg-primary mx-auto"></div>
@@ -338,10 +238,11 @@ export default function TheBoutiquePage() {
                 <span className="material-symbols-outlined text-primary text-3xl">verified</span>
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-4">Silk-Grade Quality</h3>
+              <h3 className="font-headline-lg text-2xl mb-4">Super Double Drawn</h3>
               {" "}
               <p className="font-body-md text-on-surface-variant">
-                We only utilize 100% genuine, ethically sourced hair that meets our proprietary 'Silk-Grade' criteria for cuticle integrity and shine.
+                Every bundle is hand-sorted so it stays as full at the ends as it is at the root —
+                no thinning, no tapering.
               </p>
             </div>
             {" "}
@@ -350,10 +251,11 @@ export default function TheBoutiquePage() {
                 <span className="material-symbols-outlined text-primary text-3xl">eco</span>
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-4">Ethical Sourcing</h3>
+              <h3 className="font-headline-lg text-2xl mb-4">Vietnam, China & Mexico</h3>
               {" "}
               <p className="font-body-md text-on-surface-variant">
-                Full transparency from origin to atelier. We partner directly with donors and communities to ensure fair compensation and ethical practices.
+                Every unit is graded and traced back to one of our three import origins, named on
+                its product page.
               </p>
             </div>
             {" "}
@@ -362,10 +264,11 @@ export default function TheBoutiquePage() {
                 <span className="material-symbols-outlined text-primary text-3xl">front_hand</span>
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-4">Hand-Tied Mastery</h3>
+              <h3 className="font-headline-lg text-2xl mb-4">Hand-Finished In Atelier</h3>
               {" "}
               <p className="font-body-md text-on-surface-variant">
-                Every masterpiece is hand-tied by our master artisans, requiring over 120 hours of meticulous labor to ensure the most natural movement.
+                Closures, frontals and colour work are all finished by hand in-house, not
+                outsourced.
               </p>
             </div>
           </div>
