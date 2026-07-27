@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 
 /**
  * The screens draw a `menu` icon at small sizes but ship no drawer behind it.
@@ -31,6 +32,7 @@ const SECONDARY = [
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
 
   // close on navigation
   useEffect(() => setOpen(false), [pathname]);
@@ -73,20 +75,28 @@ export function MobileMenu() {
 
   return (
     <>
-      <div
+      <motion.div
         aria-hidden={!open}
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[65] transition-opacity duration-500 md:hidden ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        initial={false}
+        animate={{ opacity: open ? 1 : 0 }}
+        transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[65] md:hidden ${
+          open ? "" : "pointer-events-none"
         }`}
       />
 
-      <nav
+      <motion.nav
         aria-label="Menu"
         aria-hidden={!open}
-        className={`fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] transform transition-transform duration-700 ease-in-out border-r border-outline-variant/30 flex flex-col md:hidden ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
+        initial={false}
+        animate={{ x: open ? "0%" : "-100%" }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
+        }
+        className="fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col md:hidden"
       >
         <div className="flex justify-between items-center px-margin-mobile pt-10 pb-6 border-b border-outline-variant/10">
           <span className="font-display-md text-headline-lg tracking-widest text-primary uppercase">
@@ -139,7 +149,7 @@ export function MobileMenu() {
             Book Appointment
           </Link>
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 }

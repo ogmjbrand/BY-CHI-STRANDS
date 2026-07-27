@@ -4,6 +4,7 @@ import { StoreBridge } from "@/components/stitch/StoreBridge";
 import { Interactions } from "@/components/stitch/Interactions";
 import { ToastProvider } from "@/components/stitch/Toast";
 import { MobileMenu } from "@/components/stitch/MobileMenu";
+import { MotionSystem } from "@/components/stitch/MotionSystem";
 
 /**
  * The Aura of Silk screens each ship their own header and footer, so this
@@ -20,6 +21,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <Interactions />
         <StoreBridge />
         <MobileMenu />
+        <MotionSystem />
       </CartUiProvider>
     </ToastProvider>
   );

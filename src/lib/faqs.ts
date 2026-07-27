@@ -68,6 +68,15 @@ export const faqGroups: FaqGroup[] = [
     ],
   },
   {
+    title: "Home Service",
+    faqs: [
+      {
+        q: "Do you offer home service?",
+        a: "Yes. Home service is available for frontal installation. Please book in advance so we can confirm availability, location and any travel arrangements.",
+      },
+    ],
+  },
+  {
     title: "The Academy",
     faqs: [
       {

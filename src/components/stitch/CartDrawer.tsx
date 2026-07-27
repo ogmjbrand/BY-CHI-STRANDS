@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { useStore, linePrice } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
@@ -82,25 +83,32 @@ function CartDrawer() {
   const { cart, updateQty, removeLine, cartTotal, hydrated } = useStore();
   const open = ctx?.open ?? false;
   const close = ctx?.closeCart ?? (() => {});
+  const reduceMotion = useReducedMotion();
 
   return (
     <>
       {/* Backdrop */}
-      <div
+      <motion.div
         aria-hidden={!open}
         onClick={close}
-        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[55] transition-opacity duration-500 ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        initial={false}
+        animate={{ opacity: open ? 1 : 0 }}
+        transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[55] ${open ? "" : "pointer-events-none"}`}
       />
 
       {/* Sidebar */}
-      <aside
+      <motion.aside
         aria-label="Your Selection"
         aria-hidden={!open}
-        className={`fixed right-0 top-0 h-full w-full md:w-[500px] lg:w-[550px] bg-surface z-[60] transform transition-transform duration-700 ease-in-out shadow-[0px_20px_50px_rgba(0,0,0,0.04)] border-l border-outline-variant/30 flex flex-col ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
+        initial={false}
+        animate={{ x: open ? "0%" : "100%" }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
+        }
+        className="fixed right-0 top-0 h-full w-full md:w-[500px] lg:w-[550px] bg-surface z-[60] shadow-[0px_20px_50px_rgba(0,0,0,0.04)] border-l border-outline-variant/30 flex flex-col"
       >
         <header className="flex justify-between items-center px-6 md:px-10 pt-10 md:pt-12 pb-6 border-b border-outline-variant/10">
           <div>
@@ -281,7 +289,7 @@ function CartDrawer() {
             </button>
           </footer>
         ) : null}
-      </aside>
+      </motion.aside>
     </>
   );
 }

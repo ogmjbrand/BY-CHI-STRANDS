@@ -130,7 +130,7 @@ export default function SignatureServices1Page() {
               <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">The Service Suite</h2>
               {" "}
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Our menu is designed for the discerning client who understands that luxury hair is an investment requiring specialized maintenance and artistic execution.
+                Hair laundry, wig making, ventilation, frontal installation, hair importation support, professional hair tools and training, all delivered with the care luxury hair deserves.
               </p>
             </div>
             {" "}
@@ -198,13 +198,13 @@ export default function SignatureServices1Page() {
               {" "}
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">Custom Coloring</h3>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Wig Making</h3>
                   {" "}
                   <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
-                    Expert level color alchemy. From subtle babylights to dramatic transformations, tailored to complement your skin tone perfectly.
+                    Bespoke wig construction tailored to your preferred cap, fit, density and finish for a polished, ready-to-wear unit.
                   </p>
                   {" "}
-                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • PREMIUM DYES</span>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • CUSTOM FIT</span>
                 </div>
                 {" "}
                 <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
@@ -222,13 +222,13 @@ export default function SignatureServices1Page() {
               {" "}
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">Restoration</h3>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Ventilation</h3>
                   {" "}
                   <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
-                    Salvage your investment. Our restoration process repairs damaged lace, replaces thinning strands, and re-infuses moisture into older units.
+                    Precision hand ventilation that creates natural direction, realistic density and a refined finish for your custom unit.
                   </p>
                   {" "}
-                  <span className="font-label-caps text-primary tracking-widest">FROM $120 • CUSTOM QUOTE</span>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • HAND FINISHED</span>
                 </div>
                 {" "}
                 <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
@@ -296,11 +296,17 @@ export default function SignatureServices1Page() {
                     <select className="w-full bg-transparent border-b border-outline py-3 font-body-md focus:border-primary focus:ring-0 outline-none transition-all appearance-none cursor-pointer">
                       <option>Wig Laundry & Refresh</option>
                       {" "}
-                      <option>Bespoke Installation</option>
+                      <option>Hair Importation Service</option>
                       {" "}
-                      <option>Custom Color Alchemy</option>
+                      <option>Wig Making</option>
                       {" "}
-                      <option>Full Unit Restoration</option>
+                      <option>Ventilation</option>
+                      {" "}
+                      <option>Frontal Installation</option>
+                      {" "}
+                      <option>Sales of Hair Tools</option>
+                      {" "}
+                      <option>Training</option>
                     </select>
                   </div>
                   {" "}

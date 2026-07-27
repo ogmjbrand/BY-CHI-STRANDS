@@ -11,6 +11,86 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    slug: "hair-importation-service",
+    name: "Hair Importation Service",
+    duration: "By consultation",
+    price: 0,
+    deposit: 0,
+    short: "Guided sourcing and importation support for serious hair entrepreneurs.",
+    description:
+      "We guide clients through the practical stages of sourcing and importing hair, from supplier selection to planning a confident first order.",
+    includes: [
+      "Importation consultation",
+      "Supplier and product guidance",
+      "Order planning support",
+      "Shipping and receiving guidance",
+    ],
+  },
+  {
+    slug: "wig-making",
+    name: "Wig Making",
+    duration: "By consultation",
+    price: 0,
+    deposit: 0,
+    short: "Custom wig construction designed around your preferred fit and finish.",
+    description:
+      "We create bespoke wigs with careful construction, secure fitting and a finish tailored to the look you want to wear.",
+    includes: [
+      "Consultation and style planning",
+      "Custom cap construction",
+      "Hair preparation and fitting",
+      "Final styling guidance",
+    ],
+  },
+  {
+    slug: "ventilation",
+    name: "Ventilation",
+    duration: "By consultation",
+    price: 0,
+    deposit: 0,
+    short: "Precision hand ventilation for natural movement and a refined hairline.",
+    description:
+      "Our ventilation service focuses on a realistic distribution, direction and density for an exceptionally natural-looking unit.",
+    includes: [
+      "Hairline and density assessment",
+      "Hand ventilation service",
+      "Natural direction and placement",
+      "Final quality check",
+    ],
+  },
+  {
+    slug: "hair-tools",
+    name: "Sales of Hair Tools",
+    duration: "Available to shop",
+    price: 0,
+    deposit: 0,
+    short: "Professional hair tools selected for reliable salon and home care.",
+    description:
+      "Shop carefully selected tools to support installation, styling and the ongoing care of your hair investment.",
+    includes: [
+      "Professional styling tools",
+      "Installation essentials",
+      "Aftercare accessories",
+      "Product guidance",
+    ],
+  },
+  {
+    slug: "training",
+    name: "Professional Training",
+    duration: "Scheduled sessions",
+    price: 0,
+    deposit: 0,
+    short: "Practical education for stylists, wig makers and hair business owners.",
+    description:
+      "Our training covers the real-world techniques and business knowledge needed to work with confidence in luxury hair.",
+    includes: [
+      "Technique-led instruction",
+      "Hands-on practice",
+      "Hair business guidance",
+      "Certificate pathway where applicable",
+    ],
+  },
+  {
     slug: "frontal-installation",
     name: "Frontal Installation",
     duration: "2.5 hours",

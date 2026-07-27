@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 /**
  * A quiet confirmation strip, styled to the design system's ambient-shadow
@@ -28,6 +29,7 @@ interface Note {
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [notes, setNotes] = useState<Note[]>([]);
+  const reduceMotion = useReducedMotion();
 
   const notify = useCallback((message: string, detail?: string) => {
     const id = Date.now() + Math.random();
@@ -46,10 +48,19 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         aria-live="polite"
         className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] flex flex-col items-center gap-3 pointer-events-none px-4 w-full max-w-md"
       >
-        {notes.map((n) => (
-          <div
+        <AnimatePresence initial={false}>
+          {notes.map((n) => (
+          <motion.div
             key={n.id}
-            className="w-full bg-surface-container-lowest border border-outline-variant/40 shadow-[0px_20px_50px_rgba(0,0,0,0.08)] px-6 py-4 flex items-center gap-4 toast-in"
+            initial={reduceMotion ? false : { opacity: 0, y: 14, scale: 0.985 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.99 }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { type: "spring", stiffness: 440, damping: 30, mass: 0.55 }
+            }
+            className="w-full bg-surface-container-lowest border border-outline-variant/40 shadow-[0px_20px_50px_rgba(0,0,0,0.08)] px-6 py-4 flex items-center gap-4"
           >
             <span className="material-symbols-outlined text-primary text-xl shrink-0">
               check_circle
@@ -64,8 +75,9 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 </p>
               ) : null}
             </div>
-          </div>
-        ))}
+          </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </ToastContext.Provider>
   );

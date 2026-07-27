@@ -114,7 +114,18 @@ export default function BookMentorshipPopupPage() {
                 {/* Cinematic Card 1 */}
                 <div className="group cursor-pointer">
                   <div className="relative aspect-video overflow-hidden rounded-xl mb-4 bg-surface-variant">
-                    <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A portrait of the CEO of BY CHI STRANDS, exuding confidence and professionalism in a high-end atelier setting. Soft directional lighting highlights the textures of premium hair extensions in the background, set against a palette of ivory and deep charcoal." src="/stitch/img-052.jpg" />
+                    <video
+                      aria-label="ByChi Academy mentorship masterclass"
+                      autoPlay
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loop
+                      muted
+                      playsInline
+                      poster="/media/academy/mentorship-masterclass.jpg"
+                      preload="metadata"
+                    >
+                      <source src="/media/academy/mentorship-masterclass.mp4" type="video/mp4" />
+                    </video>
                     {" "}
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all flex items-center justify-center">
                       <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform">

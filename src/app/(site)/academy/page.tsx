@@ -60,7 +60,18 @@ export default function AcademyPage() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img alt="CEO of ByChi Strands presenting her luxury hair brand" className="w-full h-full object-cover brightness-[0.9]" src="/stitch/img-116.jpg" />
+          <video
+            aria-label="ByChi Strands Academy"
+            autoPlay
+            className="w-full h-full object-cover brightness-[0.9]"
+            loop
+            muted
+            playsInline
+            poster="/media/academy/academy-portrait.jpeg"
+            preload="metadata"
+          >
+            <source src="/media/academy/academy-hero.mp4" type="video/mp4" />
+          </video>
           {" "}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
         </div>
@@ -249,7 +260,7 @@ export default function AcademyPage() {
               {" "}
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
-                  <img className="w-full h-full object-cover" data-alt="A portrait of a confident African American woman with elegant, sleek hair and subtle gold jewelry. She is wearing a professional ivory blazer and looking warmly towards the camera. The background is a soft-focus luxury salon interior." src="/stitch/img-012.jpg" />
+                  <img alt="ByChi Strands Academy graduate" className="w-full h-full object-cover" src="/media/academy/chi-service.jpeg" />
                 </div>
                 {" "}
                 <div>
@@ -281,7 +292,7 @@ export default function AcademyPage() {
               {" "}
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
-                  <img className="w-full h-full object-cover" data-alt="A sophisticated woman with long, voluminous burgundy waves, similar to the CEO's style, wearing a chic red dress. She has a bright, successful smile. The background is a bright, high-end showroom with minimalist decor." src="/stitch/img-051.jpg" />
+                  <img alt="ByChi Strands Academy mentor" className="w-full h-full object-cover" src="/media/academy/chi-ceo.jpeg" />
                 </div>
                 {" "}
                 <div>

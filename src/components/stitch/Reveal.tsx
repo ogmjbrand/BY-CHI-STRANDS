@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { animate, useReducedMotion } from "framer-motion";
 
 /**
  * Ports the IntersectionObserver every Stitch screen ships in its inline
@@ -8,13 +9,14 @@ import { useEffect } from "react";
  * Mounted once per page from the site layout.
  */
 export function RevealObserver() {
+  const reduceMotion = useReducedMotion();
+
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
     if (!nodes.length) return;
 
     if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      reduceMotion
     ) {
       nodes.forEach((n) => n.classList.add("active"));
       return;
@@ -23,7 +25,15 @@ export function RevealObserver() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("active");
+        if (!entry.isIntersecting) return;
+        const target = entry.target as HTMLElement;
+        observer.unobserve(target);
+        target.classList.add("active");
+        void animate(
+          target,
+          { opacity: [0, 1], y: [24, 0] },
+          { duration: 0.62, ease: [0.22, 1, 0.36, 1] }
+        );
         });
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
@@ -31,7 +41,7 @@ export function RevealObserver() {
 
     nodes.forEach((n) => observer.observe(n));
     return () => observer.disconnect();
-  }, []);
+  }, [reduceMotion]);
 
   return null;
 }
