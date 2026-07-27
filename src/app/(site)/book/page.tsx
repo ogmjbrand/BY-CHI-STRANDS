@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { services } from "@/lib/services";
+import { whatsappLink } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_atelier_service_booking
