@@ -10,44 +10,36 @@ export interface Collection {
 
 export const collections: Collection[] = [
   {
-    slug: "raw-reserve",
-    name: "The Raw Reserve",
-    tagline: "Unprocessed. Uncompromised.",
+    slug: "vietnam-bone-straight",
+    name: "Vietnam Bone Straight",
+    tagline: "Flat as glass. Full to the ends.",
     description:
-      "Bundles cut from a single braid in Vietnam's northern highlands, steam-finished and never chemically touched. This is the hair everything else at ByChiStrands is built from.",
+      "The house staple. Super Double Drawn Vietnamese hair, hand-sorted so the bundle stays as thick at the hemline as it is at the root — which is why it hangs blunt and heavy instead of thinning into wisps.",
     tone: "noir",
   },
   {
-    slug: "single-donor-reserve",
-    name: "Single Donor Reserve",
-    tagline: "One donor. One cut. No blending.",
+    slug: "pixie-collection",
+    name: "The Pixie Collection",
+    tagline: "Curls that need nothing from you.",
     description:
-      "The rarest tier we import — every bundle traceable to a single braid, with a uniformity of tone and behaviour that blended hair can never reach. Strictly allocated.",
+      "Pixie and kinky curl units that hold their coil without setting, product or patience. Shake them out and wear them — including the original Mexican SDD pixie, the best grade the category has.",
     tone: "espresso",
   },
   {
-    slug: "wig-atelier",
-    name: "The Wig Atelier",
-    tagline: "Hand-made units that disappear at the hairline.",
+    slug: "funmi-collection",
+    name: "The Funmi Edit",
+    tagline: "Bounce that will not drop.",
     description:
-      "Each unit is ventilated by hand over days, pre-plucked into a graduated hairline and finished on Swiss HD lace. Built to be worn for years and rebuilt when you're ready.",
-    tone: "noir",
+      "Fringe units built with the curl set into Super Double Drawn hair, so the bounce survives washing. No lace to lay, no glue, no install appointment.",
+    tone: "honey",
   },
   {
     slug: "colour-editions",
     name: "Colour Editions",
     tagline: "Colour that keeps the cuticle sacred.",
     description:
-      "Copper, burgundy, honey and auburn — lifted slowly, bond-protected and glossed in-house, so raw Vietnamese shine survives the transformation.",
+      "Wine, copper, honey and rose — lifted in stages with bond protection between each, so the hair keeps the weight and shine that made it worth colouring.",
     tone: "copper",
-  },
-  {
-    slug: "lace-essentials",
-    name: "Lace Essentials",
-    tagline: "Closures and frontals that melt, not sit.",
-    description:
-      "Swiss HD lace closures and frontals matched strand-for-strand to our bundles, pre-plucked with graduated crowns and bleached knots.",
-    tone: "honey",
   },
 ];
 

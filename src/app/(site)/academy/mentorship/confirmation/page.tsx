@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_mentorship_confirmation

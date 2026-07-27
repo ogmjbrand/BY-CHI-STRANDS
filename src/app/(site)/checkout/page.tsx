@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { CheckoutSummary, MobileCheckoutSummary } from "@/components/stitch/CheckoutSummary";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_luxury_checkout
@@ -55,63 +56,9 @@ export default function LuxuryCheckoutPage() {
               <span className="font-label-caps text-[9px] uppercase tracking-widest opacity-40">Review</span>
             </div>
           </nav>
-          {/* Collapsible Order Summary */}
+          {/* Order Summary */}
           <section className="mb-10">
-            <button className="w-full flex items-center justify-between py-5 border-y border-outline-variant/20 focus:outline-none" id="summary-toggle">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
-                {" "}
-                <span className="font-label-caps text-label-caps uppercase tracking-[0.15em]">Show Summary</span>
-              </div>
-              {" "}
-              <div className="flex items-center gap-2">
-                <span className="font-headline-lg-mobile text-headline-lg-mobile text-primary">$4,250.00</span>
-                {" "}
-                <span className="material-symbols-outlined transition-transform duration-300" id="summary-icon">
-                  expand_more
-                </span>
-              </div>
-            </button>
-            {" "}
-            <div className="accordion-content bg-surface-container-low px-6" id="summary-content">
-              <div className="py-8 space-y-6">
-                <div className="flex gap-6">
-                  <div className="w-24 h-32 flex-shrink-0">
-                    <div className="w-full h-full bg-cover bg-center" data-alt="Close up studio photography of a high-end custom silk-base wig in a natural brunette shade. The hair is silky and lustrous, styled in soft waves. The lighting is editorial and warm, highlighting the intricate craftsmanship of the scalp base against a minimalist ivory background." style={{ backgroundImage: "url('/stitch/img-109.jpg')" }}></div>
-                  </div>
-                  {" "}
-                  <div className="flex flex-col justify-between">
-                    <div>
-                      <h3 className="font-headline-lg text-[20px] mb-1">Signature Custom Silk-Base Wig</h3>
-                      {" "}
-                      <p className="text-body-sm text-on-surface-variant italic">24-inch, Virgin Slavic Hair, Natural Chestnut</p>
-                    </div>
-                    {" "}
-                    <span className="font-label-caps text-label-caps tracking-[0.15em]">$4,250.00</span>
-                  </div>
-                </div>
-                {" "}
-                <div className="border-t border-outline-variant/20 pt-6 space-y-3">
-                  <div className="flex justify-between text-body-sm">
-                    <span className="text-on-surface-variant">Subtotal</span>
-                    {" "}
-                    <span>$4,250.00</span>
-                  </div>
-                  {" "}
-                  <div className="flex justify-between text-body-sm">
-                    <span className="text-on-surface-variant">Shipping</span>
-                    {" "}
-                    <span className="text-primary italic">Complimentary</span>
-                  </div>
-                  {" "}
-                  <div className="flex justify-between pt-3 border-t border-outline-variant/10">
-                    <span className="font-label-caps text-label-caps uppercase tracking-[0.15em]">Total Due</span>
-                    {" "}
-                    <span className="font-headline-lg text-headline-lg text-primary">$4,250.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <MobileCheckoutSummary />
           </section>
           {/* Shipping Section Form */}
           <section className="space-y-12 mb-16">
@@ -506,57 +453,7 @@ export default function LuxuryCheckoutPage() {
             {/* Right Column: Summary */}
             <div className="lg:col-span-5 fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="sticky top-32 space-y-12 bg-white border border-outline-variant/20 p-8 shadow-sm">
-                <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-8">Your Atelier Bag</h3>
-                  {/* Product Item */}
-                  <div className="flex gap-6 items-start pb-8 border-b border-outline-variant/20">
-                    <div className="w-32 aspect-[3/4] bg-surface-container overflow-hidden">
-                      <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic, high-fashion close-up of a premium silk-base wig styled in cascading dark waves. The hair is set against a soft ivory backdrop with warm, golden studio lighting that highlights the luxurious texture and natural sheen of the strands. The composition is minimalist and editorial, capturing the essence of high-end beauty artistry." src="/stitch/img-119.jpg" />
-                    </div>
-                    {" "}
-                    <div className="flex-1 flex flex-col justify-between py-2">
-                      <div>
-                        <h4 className="font-body-md font-bold text-on-surface mb-1">Signature Custom Silk-Base Wig</h4>
-                        {" "}
-                        <div className="space-y-1">
-                          <p className="text-body-sm text-outline">Length: 22"</p>
-                          {" "}
-                          <p className="text-body-sm text-outline">Density: 180%</p>
-                          {" "}
-                          <p className="text-body-sm text-outline">Cap Size: Medium</p>
-                        </div>
-                      </div>
-                      {" "}
-                      <p className="text-body-md font-semibold text-primary mt-4">$1,850.00</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Totals */}
-                <div className="space-y-4">
-                  <div className="flex justify-between text-body-md">
-                    <span className="text-outline">Subtotal</span>
-                    {" "}
-                    <span className="text-on-surface">$1,850.00</span>
-                  </div>
-                  {" "}
-                  <div className="flex justify-between text-body-md">
-                    <span className="text-outline">Shipping</span>
-                    {" "}
-                    <span className="text-on-surface">Calculated next step</span>
-                  </div>
-                  {" "}
-                  <div className="flex justify-between text-body-md">
-                    <span className="text-outline">Estimated Tax</span>
-                    {" "}
-                    <span className="text-on-surface">$148.00</span>
-                  </div>
-                  {" "}
-                  <div className="pt-6 border-t border-outline-variant flex justify-between items-baseline">
-                    <span className="font-headline-lg text-headline-lg">Total</span>
-                    {" "}
-                    <span className="font-display-md text-headline-lg text-on-surface">$1,998.00</span>
-                  </div>
-                </div>
+                <CheckoutSummary />
                 {/* Main CTA */}
                 <div className="space-y-4">
                   <button className="w-full bg-on-surface text-surface py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-primary transition-all duration-500 hover:scale-[1.02] active:scale-100 uppercase">

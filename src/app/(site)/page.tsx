@@ -1,7 +1,14 @@
 import Link from "next/link";
+import { testimonials } from "@/lib/testimonials";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { TestimonyRail } from "@/components/stitch/TestimonyRail";
+
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
  * "ByChi Strands | The Gold Standard of Vietnamese Hair"
+ *
+ * The client-narrative grid and the mobile testimonial scroller carry the
+ * house's own review footage in place of the export's stock imagery.
  */
 
 export default function HomepageWithClientNarrativesPage() {
@@ -208,70 +215,20 @@ export default function HomepageWithClientNarrativesPage() {
             </div>
             {/* Mobile Optimized Vertical/Horizontal Scroll */}
             <div className="flex md:grid md:grid-cols-4 gap-gutter overflow-x-auto no-scrollbar pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
-              {/* Testimonial 1 */}
-              <div className="min-w-[280px] md:min-w-0 group cursor-pointer">
-                <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
-                  <img className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A beautiful woman with voluminous, flowing dark hair smiling radiantly while looking at her reflection in a luxury mirror. She is wearing a soft silk robe in a champagne color, and the bathroom background is bright with white marble and gold fixtures. The scene captures the genuine joy and confidence of a satisfied ByChi Strands client. The lighting is soft, warm, and highly professional, resembling a premium beauty commercial." src="/stitch/img-065.jpg" />
-                  {" "}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-white fill-current">play_arrow</span>
-                    </div>
+              {testimonials.slice(0, 4).map((t) => (
+                <div key={t.clip.src} className="min-w-[280px] md:min-w-0 group cursor-pointer">
+                  <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+                    <ProductMedia
+                      media={t.clip}
+                      className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
+                    />
                   </div>
-                </div>
-                {" "}
-                <h4 className="font-body-md font-bold text-on-surface">Imisiola's Journey</h4>
-                {" "}
-                <p className="text-body-sm text-on-surface-variant italic">"Transformed my confidence..."</p>
-              </div>
-              {/* Testimonial 2 */}
-              <div className="min-w-[280px] md:min-w-0 group cursor-pointer">
-                <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
-                  <img className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A high-fashion portrait of a woman with sleek, long hair styled in a high-gloss finish. She is posing in a modern, minimalist apartment with large windows letting in soft natural light. The color palette is composed of neutrals, ivories, and blacks, perfectly matching the ByChi Strands aesthetic. Her expression is calm and empowered, showcasing how the hair extensions integrate flawlessly with her natural look." src="/stitch/img-035.jpg" />
                   {" "}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-white fill-current">play_arrow</span>
-                    </div>
-                  </div>
-                </div>
-                {" "}
-                <h4 className="font-body-md font-bold text-on-surface">The Wedding Edit</h4>
-                {" "}
-                <p className="text-body-sm text-on-surface-variant italic">"The perfect bridal crown."</p>
-              </div>
-              {/* Testimonial 3 */}
-              <div className="min-w-[280px] md:min-w-0 group cursor-pointer">
-                <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
-                  <img className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A stylish woman walking down a bright, sun-drenched city street, her luxury hair extensions blowing gracefully in the wind. She is wearing a modern black blazer and gold jewelry. The photography is dynamic, capturing motion and the natural luster of the hair. The mood is urban chic and sophisticated, highlighting the versatility of ByChi Strands for daily high-end fashion looks." src="/stitch/img-060.jpg" />
+                  <h4 className="font-body-md font-bold text-on-surface">{t.context}</h4>
                   {" "}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-white fill-current">play_arrow</span>
-                    </div>
-                  </div>
+                  <p className="text-body-sm text-on-surface-variant">{t.caption}</p>
                 </div>
-                {" "}
-                <h4 className="font-body-md font-bold text-on-surface">Everyday Luxury</h4>
-                {" "}
-                <p className="text-body-sm text-on-surface-variant italic">"Silk that feels like my own."</p>
-              </div>
-              {/* Testimonial 4 */}
-              <div className="min-w-[280px] md:min-w-0 group cursor-pointer">
-                <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
-                  <img className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100" data-alt="A close-up artistic shot of a woman running her fingers through her incredibly thick and shiny hair. The lighting focuses on the texture and the healthy glow of the strands. The background is a soft-focus velvet curtain in a rich mahogany color. The image exudes a sense of sensory luxury and premium quality. The overall feel is that of an exclusive beauty campaign for a high-end global brand." src="/stitch/img-039.jpg" />
-                  {" "}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-white fill-current">play_arrow</span>
-                    </div>
-                  </div>
-                </div>
-                {" "}
-                <h4 className="font-body-md font-bold text-on-surface">Artisan Feedback</h4>
-                {" "}
-                <p className="text-body-sm text-on-surface-variant italic">"Beyond my expectations."</p>
-              </div>
+              ))}
             </div>
           </section>
           {/* Newsletter Opt-in */}
@@ -698,59 +655,30 @@ export default function HomepageWithClientNarrativesPage() {
             </div>
             {" "}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-              {/* Story 1: Video Thumbnail */}
-              <div className="group relative reveal overflow-hidden aspect-[3/4] bg-surface-dim">
-                <img alt="Client Video Testimonial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/stitch/img-020.jpg" />
-                {" "}
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <button className="w-20 h-20 rounded-full bg-surface/80 nav-blur flex items-center justify-center text-primary transition-transform group-hover:scale-110">
-                    <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      play_arrow
-                    </span>
-                  </button>
-                </div>
-                {" "}
-                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
-                  <cite className="not-italic font-label-caps text-surface tracking-widest">SOPHIA CHEN</cite>
+              {testimonials.slice(0, 3).map((t, i) => (
+                <div
+                  key={t.clip.src}
+                  className="group relative reveal overflow-hidden aspect-[3/4] bg-surface-dim"
+                  style={i ? { transitionDelay: `${i * 200}ms` } : undefined}
+                >
+                  <ProductMedia
+                    media={t.clip}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   {" "}
-                  <p className="text-surface/80 text-sm uppercase tracking-tighter">London, UK</p>
+                  <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/70 to-transparent pointer-events-none">
+                    <cite className="not-italic font-label-caps text-surface tracking-widest">
+                      {t.context}
+                    </cite>
+                    {" "}
+                    <p className="text-surface/80 text-sm tracking-tight">{t.caption}</p>
+                  </div>
                 </div>
-              </div>
-              {/* Story 2: Text Quote */}
-              <div className="reveal flex flex-col justify-center p-12 bg-surface-container-low border border-outline-variant/20" style={{ transitionDelay: "200ms" }}>
-                <span className="material-symbols-outlined text-primary text-4xl mb-8 opacity-50">format_quote</span>
-                {" "}
-                <blockquote className="font-display-md text-headline-lg italic mb-8 leading-relaxed">
-                  "The luster of the Raw Silk collection is unmatched. It's not just hair; it's a statement of elegance that lasts."
-                </blockquote>
-                {" "}
-                <div>
-                  <cite className="not-italic font-label-caps text-on-surface tracking-widest">ISABELLA ROSSI</cite>
-                  {" "}
-                  <p className="text-on-surface-variant text-sm uppercase tracking-tighter">Milan, Italy</p>
-                </div>
-              </div>
-              {/* Story 3: Video Thumbnail */}
-              <div className="group relative reveal overflow-hidden aspect-[3/4] bg-surface-dim" style={{ transitionDelay: "400ms" }}>
-                <img alt="Client Video Testimonial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/stitch/img-112.jpg" />
-                {" "}
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <button className="w-20 h-20 rounded-full bg-surface/80 nav-blur flex items-center justify-center text-primary transition-transform group-hover:scale-110">
-                    <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      play_arrow
-                    </span>
-                  </button>
-                </div>
-                {" "}
-                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
-                  <cite className="not-italic font-label-caps text-surface tracking-widest">AMARA OKORO</cite>
-                  {" "}
-                  <p className="text-surface/80 text-sm uppercase tracking-tighter">Lagos, Nigeria</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
+        <TestimonyRail />
         <footer className="bg-surface-container-low dark:bg-surface-container-highest">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
             <div className="col-span-1 md:col-span-1">

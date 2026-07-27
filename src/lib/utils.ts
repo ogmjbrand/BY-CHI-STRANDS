@@ -22,8 +22,12 @@ export function seededRandom(seed: string): () => number {
   };
 }
 
-export function formatPrice(amount: number, currency: string = "USD"): string {
-  return new Intl.NumberFormat("en-US", {
+export function formatPrice(
+  amount: number | null,
+  currency: string = "NGN"
+): string {
+  if (amount === null) return "Price on request";
+  return new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency,
     minimumFractionDigits: 0,

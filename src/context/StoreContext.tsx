@@ -49,7 +49,8 @@ export function lineProduct(line: CartLine): Product | undefined {
 
 export function linePrice(line: CartLine): number {
   const p = getProduct(line.slug);
-  return p ? priceFor(p, line.length) : 0;
+  // Enquiry-only pieces never reach the bag, so a null price contributes 0.
+  return p ? priceFor(p, line.length, line.lace) ?? 0 : 0;
 }
 
 export function StoreProvider({ children }: { children: ReactNode }) {

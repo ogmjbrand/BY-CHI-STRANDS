@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { getProduct, products } from "@/lib/products";
+import { mediaFor } from "@/lib/media";
 import { notFound } from "next/navigation";
+import { ProductConfigurator } from "@/components/stitch/ProductConfigurator";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -28,7 +31,11 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  if (!getProduct(slug)) notFound();
+  const product = getProduct(slug);
+  if (!product) notFound();
+
+  const gallery = mediaFor(product.slug);
+  const [lead, ...supporting] = gallery;
 
   return (
     <>
@@ -54,39 +61,31 @@ export default async function ProductPage({
           {/* Image Gallery (Mobile Focused) */}
           <section className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low">
             <div className="flex snap-x snap-mandatory overflow-x-auto h-full scroll-smooth" id="gallery">
-              <div className="flex-shrink-0 w-full h-full snap-center relative">
-                <img className="w-full h-full object-cover" data-alt="A high-resolution, editorial close-up of a premium silk-base wig with natural hairline and soft, voluminous waves. The lighting is soft and golden, accentuating the realistic scalp detail and the high-shine finish of the dark hair. Luxurious minimalist background in ivory tones consistent with high-fashion beauty brands." src="/stitch/img-010.jpg" />
-              </div>
-              {" "}
-              <div className="flex-shrink-0 w-full h-full snap-center relative">
-                <img className="w-full h-full object-cover" data-alt="Side profile shot of the Signature Custom Silk-Base Wig showing the intricate lace detail and natural density flow. The hair is styled in loose, sophisticated curls. The lighting is bright and clean, typical of a luxury boutique, highlighting the craftsmanship of the wig construction." src="/stitch/img-128.jpg" />
-              </div>
-              {" "}
-              <div className="flex-shrink-0 w-full h-full snap-center relative">
-                <img className="w-full h-full object-cover" data-alt="Macro detail shot of the silk-base scalp construction, showing individual hair knots for a hyper-realistic appearance. The texture of the silk and the quality of the Vietnamese hair are clearly visible under soft, studio lighting. The color palette is composed of warm neutrals and deep blacks." src="/stitch/img-103.jpg" />
-              </div>
+              {gallery.map((m) => (
+                <div key={m.src} className="flex-shrink-0 w-full h-full snap-center relative">
+                  <ProductMedia media={m} className="w-full h-full object-cover" />
+                </div>
+              ))}
             </div>
             {/* Gallery Indicators */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 items-center">
-              <div className="active-dot"></div>
-              {" "}
-              <div className="inactive-dot"></div>
-              {" "}
-              <div className="inactive-dot"></div>
+              {gallery.map((m, i) => (
+                <div key={m.src} className={i === 0 ? "active-dot" : "inactive-dot"}></div>
+              ))}
             </div>
           </section>
           {/* Product Details */}
           <section className="px-margin-mobile pt-8 space-y-6">
             <div className="space-y-2">
               <div className="flex justify-between items-start">
-                <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Signature Custom Silk-Base Wig</h2>
+                <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">{product.name}</h2>
                 {" "}
                 <button className="p-2 hover:text-primary transition-colors">
                   <span className="material-symbols-outlined">favorite</span>
                 </button>
               </div>
               {" "}
-              <p className="font-body-md text-primary font-semibold text-xl">$1,850.00</p>
+
               {" "}
               <div className="flex items-center gap-1 text-secondary">
                 <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -116,88 +115,7 @@ export default async function ProductPage({
             <div className="h-px bg-outline-variant/30"></div>
             {/* Customization Options */}
             <div className="space-y-8">
-              {/* Length */}
-              <div className="space-y-4">
-                <label className="font-label-caps text-label-caps block tracking-[0.15em]">Select Length (Inches)</label>
-                {" "}
-                <div className="flex flex-wrap gap-2">
-                  <input defaultChecked className="hidden" id="l18" name="length" type="radio" />
-                  {" "}
-                  <label className="px-5 py-3 border border-outline-variant text-body-sm cursor-pointer transition-all active:scale-95" htmlFor="l18">
-                    18"
-                  </label>
-                  {" "}
-                  <input className="hidden" id="l22" name="length" type="radio" />
-                  {" "}
-                  <label className="px-5 py-3 border border-outline-variant text-body-sm cursor-pointer transition-all active:scale-95" htmlFor="l22">
-                    22"
-                  </label>
-                  {" "}
-                  <input className="hidden" id="l26" name="length" type="radio" />
-                  {" "}
-                  <label className="px-5 py-3 border border-outline-variant text-body-sm cursor-pointer transition-all active:scale-95" htmlFor="l26">
-                    26"
-                  </label>
-                  {" "}
-                  <input className="hidden" id="l30" name="length" type="radio" />
-                  {" "}
-                  <label className="px-5 py-3 border border-outline-variant text-body-sm cursor-pointer transition-all active:scale-95" htmlFor="l30">
-                    30"
-                  </label>
-                </div>
-              </div>
-              {/* Density */}
-              <div className="space-y-4">
-                <label className="font-label-caps text-label-caps block tracking-[0.15em]">Density Selection</label>
-                {" "}
-                <div className="grid grid-cols-2 gap-3">
-                  <input defaultChecked className="hidden" id="d150" name="density" type="radio" />
-                  {" "}
-                  <label className="flex flex-col p-4 border border-outline-variant cursor-pointer transition-all" htmlFor="d150">
-                    <span className="text-body-md font-semibold">150%</span>
-                    {" "}
-                    <span className="text-body-sm text-on-surface-variant">Natural Chic</span>
-                  </label>
-                  {" "}
-                  <input className="hidden" id="d180" name="density" type="radio" />
-                  {" "}
-                  <label className="flex flex-col p-4 border border-outline-variant cursor-pointer transition-all" htmlFor="d180">
-                    <span className="text-body-md font-semibold">180%</span>
-                    {" "}
-                    <span className="text-body-sm text-on-surface-variant">Signature Volume</span>
-                  </label>
-                </div>
-              </div>
-              {/* Lace Type */}
-              <div className="space-y-4">
-                <label className="font-label-caps text-label-caps block tracking-[0.15em]">Lace Selection</label>
-                {" "}
-                <div className="space-y-2">
-                  <input defaultChecked className="hidden" id="lace-hd" name="lace" type="radio" />
-                  {" "}
-                  <label className="flex items-center justify-between p-4 border border-outline-variant cursor-pointer transition-all" htmlFor="lace-hd">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      {" "}
-                      <span className="text-body-md">Invisible HD Lace</span>
-                    </div>
-                    {" "}
-                    <span className="text-body-sm text-primary">Included</span>
-                  </label>
-                  {" "}
-                  <input className="hidden" id="lace-film" name="lace" type="radio" />
-                  {" "}
-                  <label className="flex items-center justify-between p-4 border border-outline-variant cursor-pointer transition-all" htmlFor="lace-film">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-outline-variant"></div>
-                      {" "}
-                      <span className="text-body-md">Film Grade Lace</span>
-                    </div>
-                    {" "}
-                    <span className="text-body-sm text-on-surface-variant">+$150</span>
-                  </label>
-                </div>
-              </div>
+              <ProductConfigurator product={product} variant="mobile" />
             </div>
           </section>
           {/* Silk Verifications Section */}
@@ -339,21 +257,37 @@ export default async function ProductPage({
             <div className="lg:col-span-7 space-y-section-padding">
               {/* Hero Section */}
               <section className="space-y-unit">
-                <div className="relative overflow-hidden group">
-                  <img className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-fidelity fashion editorial photograph of a premium dark silk-base wig styled with effortless waves. The lighting is soft and cinematic, highlighting the natural luster and hand-tied scalp realism. Set against a minimalist ivory background with subtle champagne gold shadows. The composition is balanced and elegant, reflecting a luxury boutique aesthetic." src="/stitch/img-078.jpg" />
+                <div className="relative overflow-hidden group aspect-[4/5]">
+                  <ProductMedia
+                    media={lead}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   {" "}
-                  <div className="absolute top-8 left-8">
-                    <span className="bg-surface/90 backdrop-blur-md px-4 py-2 font-label-caps text-[10px] tracking-[0.2em] border border-outline-variant/30">
-                      EDITOR'S CHOICE
-                    </span>
-                  </div>
+                  {product.badges?.length ? (
+                    <div className="absolute top-8 left-8">
+                      <span className="bg-surface/90 backdrop-blur-md px-4 py-2 font-label-caps text-[10px] tracking-[0.2em] border border-outline-variant/30 uppercase">
+                        {product.badges[0] === "bestseller"
+                          ? "Bestseller"
+                          : product.badges[0] === "limited"
+                            ? "Limited"
+                            : "New in"}
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
                 {" "}
-                <div className="grid grid-cols-2 gap-4">
-                  <img className="w-full aspect-square object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="A macro close-up photograph of the HD invisible lace and silk-base construction of a high-end wig. The image reveals the meticulous hand-tied craftsmanship of individual hair strands, mimicking a natural scalp. The color palette is composed of warm neutral tones and ivory, showcasing the premium Vietnamese hair quality." src="/stitch/img-110.jpg" />
-                  {" "}
-                  <img className="w-full aspect-square object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="A detailed shot of a luxury wig being combed through with a golden wide-tooth comb. The hair reflects light with a healthy silk sheen. Soft, high-key lighting creates an atmosphere of pure luxury and hair health, emphasize the premium 'ByChi Strands' branding style." src="/stitch/img-061.jpg" />
-                </div>
+                {supporting.length ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    {supporting.slice(0, 4).map((m) => (
+                      <div key={m.src} className="aspect-square overflow-hidden">
+                        <ProductMedia
+                          media={m}
+                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </section>
               {/* Craftsmanship Section */}
               <section className="space-y-8 max-w-2xl">
@@ -455,94 +389,11 @@ export default async function ProductPage({
               <div className="space-y-2">
                 <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">HAND-TIED COLLECTIONS</p>
                 {" "}
-                <h1 className="font-display-lg text-4xl lg:text-5xl leading-tight lg:leading-[1]">Signature Custom Silk-Base Wig</h1>
+                <h1 className="font-display-lg text-4xl lg:text-5xl leading-tight lg:leading-[1]">{product.name}</h1>
                 {" "}
-                <p className="font-display-md text-2xl text-primary mt-4">$1,850.00</p>
               </div>
-              {" "}
               <div className="space-y-8">
-                {/* Length */}
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <label className="font-label-caps text-xs">LENGTH</label>
-                    {" "}
-                    <span className="text-xs text-on-surface-variant underline cursor-pointer">Sizing Guide</span>
-                  </div>
-                  {" "}
-                  <div className="flex flex-wrap gap-3">
-                    <button className="border border-primary bg-primary text-white px-6 py-2 text-xs font-label-caps">
-                      22"
-                    </button>
-                    {" "}
-                    <button className="border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors">
-                      24"
-                    </button>
-                    {" "}
-                    <button className="border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors">
-                      26"
-                    </button>
-                    {" "}
-                    <button className="border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors">
-                      30"
-                    </button>
-                  </div>
-                </div>
-                {/* Density */}
-                <div className="space-y-4">
-                  <label className="font-label-caps text-xs">DENSITY</label>
-                  {" "}
-                  <div className="flex flex-wrap gap-3">
-                    <button className="border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors">
-                      150%
-                    </button>
-                    {" "}
-                    <button className="border border-primary bg-primary text-white px-6 py-2 text-xs font-label-caps">
-                      180%
-                    </button>
-                    {" "}
-                    <button className="border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors">
-                      250%
-                    </button>
-                  </div>
-                </div>
-                {/* Lace */}
-                <div className="space-y-4">
-                  <label className="font-label-caps text-xs">LACE TYPE</label>
-                  {" "}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 border border-primary p-4 cursor-pointer group">
-                      <div className="w-4 h-4 rounded-full border border-primary flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      </div>
-                      {" "}
-                      <div>
-                        <p className="font-label-caps text-xs">HD Invisible Film Lace</p>
-                        {" "}
-                        <p className="text-[10px] text-on-surface-variant mt-1">Maximum realism for special occasions.</p>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="flex items-center gap-4 border border-outline-variant p-4 cursor-pointer hover:border-primary transition-colors">
-                      <div className="w-4 h-4 rounded-full border border-outline-variant"></div>
-                      {" "}
-                      <div>
-                        <p className="font-label-caps text-xs">Swiss Translucent Lace</p>
-                        {" "}
-                        <p className="text-[10px] text-on-surface-variant mt-1">Durable & breathable for daily luxury.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* CTA */}
-                <div className="pt-4 space-y-4">
-                  <button className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-all duration-500 scale-100 active:scale-95 flex items-center justify-center gap-3">
-                    ADD TO ATELIER BAG
-                    {" "}
-                    <span className="material-symbols-outlined text-lg">trending_flat</span>
-                  </button>
-                  {" "}
-                  <p className="text-center text-[10px] text-on-surface-variant tracking-wider uppercase">Ships within 14 business days via DHL Express.</p>
-                </div>
+                <ProductConfigurator product={product} />
                 {/* Upsell */}
                 <div className="pt-8 border-t border-outline-variant/30 space-y-4">
                   <p className="font-label-caps text-[10px] tracking-[0.2em] text-primary">COMPLEMENTARY CARE</p>

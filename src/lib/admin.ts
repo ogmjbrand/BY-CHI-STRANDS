@@ -1,4 +1,4 @@
-import { products, priceFor, CATEGORIES } from "./products";
+import { products, priceFor, CATEGORIES, ORIGINS } from "./products";
 import { articles } from "./journal";
 import { testimonials } from "./testimonials";
 
@@ -173,7 +173,7 @@ const inventory: Cell[][] = products.slice(0, 10).map((p) => {
   return [
     { text: p.name },
     { text: CATEGORIES[p.category].label, tone: "muted" as CellTone },
-    { text: `$${priceFor(p)}+` },
+    { text: priceFor(p) === null ? "On request" : `₦${priceFor(p)!.toLocaleString("en-NG")}+` },
     { text: `${stock} in stock` },
     stock < 8
       ? { text: "Reorder", tone: "warn" as CellTone }
@@ -220,12 +220,17 @@ export const adminSections: AdminSection[] = [
     slug: "products",
     title: "Products",
     blurb: "The live catalogue — pricing, category and standing.",
-    columns: ["Product", "Category", "From", "Rating", "Status"],
+    columns: ["Product", "Category", "From", "Origin", "Status"],
     rows: products.map((p) => [
       { text: p.name },
       { text: CATEGORIES[p.category].label, tone: "muted" as CellTone },
-      { text: `$${priceFor(p)}` },
-      { text: `${p.rating.toFixed(1)} ★ (${p.reviews})` },
+      {
+        text:
+          priceFor(p) === null
+            ? "On request"
+            : `₦${priceFor(p)!.toLocaleString("en-NG")}`,
+      },
+      { text: `${ORIGINS[p.origin]}${p.sdd ? " · SDD" : ""}`, tone: "muted" as CellTone },
       p.badges?.includes("limited")
         ? { text: "Limited", tone: "warn" as CellTone }
         : { text: "Published", tone: "success" as CellTone },
@@ -281,13 +286,13 @@ export const adminSections: AdminSection[] = [
   {
     slug: "testimonials",
     title: "Testimonials",
-    blurb: "Client words, approved for the storefront.",
-    columns: ["Client", "Context", "Rating", "Status"],
+    blurb: "Client footage, approved for the storefront.",
+    columns: ["Clip", "Context", "Type", "Status"],
     rows: testimonials.map((t) => [
-      { text: `${t.name} — ${t.role}` },
+      { text: t.caption },
       { text: t.context, tone: "muted" as CellTone },
-      { text: `${t.rating}.0 ★` },
-      { text: "Approved", tone: "success" as CellTone },
+      { text: "Video", tone: "muted" as CellTone },
+      { text: "Published", tone: "success" as CellTone },
     ]),
   },
 ];
