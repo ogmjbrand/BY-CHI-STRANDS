@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, whatsappLink } from "@/lib/site";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_signature_services_1
@@ -92,7 +93,7 @@ export default function SignatureServices1Page() {
           {" "}
           <div className="md:col-span-5 relative reveal-up active" style={{ transitionDelay: "200ms" }}>
             <div className="aspect-[4/5] bg-surface-container-high overflow-hidden rounded-lg">
-              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="A high-fashion editorial portrait of a woman with vibrant burgundy luxury hair, wearing a structured red garment. The lighting is soft and cinematic, highlighting the silky texture and deep sheen of the hair against a minimalist, ivory-toned architectural background with subtle gold accents. The atmosphere is sophisticated and exclusive." src="/stitch/img-077.jpg" />
+              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="The ByChi Strands founder wearing a burgundy lace-front unit styled in soft waves" src="/services/ceo-portrait-1.jpeg" />
             </div>
             {/* Floating Detail Card */}
             <div className="absolute -bottom-8 -left-8 glass-card p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
@@ -242,7 +243,7 @@ export default function SignatureServices1Page() {
             {/* Service 5 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Neatly organised bundles of raw hair being inspected and prepared for shipment, laid out on a clean studio table with shipping documentation nearby." src="/stitch/img-005.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Freshly imported curly raw hair bundles inspected at a wholesale supplier" src="/services/hair-importation-1.jpeg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -290,7 +291,15 @@ export default function SignatureServices1Page() {
             {/* Service 7 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stylist teaching a small group of trainees hands-on ventilation technique on a mannequin head in a bright studio." src="/stitch/img-016.jpg" />
+                <ProductMedia
+                  media={{
+                    type: "video",
+                    src: "/services/mentorship-video.mp4",
+                    poster: "/services/mentorship.jpeg",
+                    alt: "A trainee receiving her certificate of attendance at a ByChi Strands mentorship session",
+                  }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
