@@ -46,7 +46,7 @@ export function MotionSystem() {
 
     const revealTargets = Array.from(
       document.querySelectorAll<HTMLElement>(
-        ".reveal, .fade-up, [data-motion-reveal]"
+        ".reveal, .fade-up, .reveal-up, [data-motion-reveal]"
       )
     );
 

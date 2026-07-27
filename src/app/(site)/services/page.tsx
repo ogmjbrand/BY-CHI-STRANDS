@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { site, whatsappLink } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_signature_services_1
@@ -81,7 +82,7 @@ export default function SignatureServices1Page() {
                 Explore Services
               </a>
               {" "}
-              <a className="flex items-center gap-2 border border-outline px-10 py-5 font-label-caps hover:bg-surface-container transition-all duration-500" href="https://wa.me/yourlink" target="_blank">
+              <a className="flex items-center gap-2 border border-outline px-10 py-5 font-label-caps hover:bg-surface-container transition-all duration-500" href={whatsappLink("Hi ByChiStrands — I'd like a consultation about your services.")} target="_blank" rel="noopener noreferrer">
                 Consultation via WhatsApp
                 {" "}
                 <span className="material-symbols-outlined text-[18px]">chat</span>
@@ -150,13 +151,13 @@ export default function SignatureServices1Page() {
               {" "}
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">Wig Laundry</h3>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Hair Laundry</h3>
                   {" "}
                   <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
                     A deep-cleansing restorative treatment that revives luster, removes product build-up, and conditions the cuticles for lasting silkiness.
                   </p>
                   {" "}
-                  <span className="font-label-caps text-primary tracking-widest">FROM $75 • 48HR TURNAROUND</span>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • 24HR TURNAROUND</span>
                 </div>
                 {" "}
                 <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
@@ -180,7 +181,9 @@ export default function SignatureServices1Page() {
                     Bespoke scalp-mimicking techniques for a seamless, undetectable finish. Includes personalized hairline customization and secure bonding.
                   </p>
                   {" "}
-                  <span className="font-label-caps text-primary tracking-widest">FROM $150 • EXCLUSIVE BOOKING</span>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • EXCLUSIVE BOOKING</span>
+                  {" "}
+                  <p className="font-body-sm text-on-surface-variant mt-2">Home service available on request.</p>
                 </div>
                 {" "}
                 <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
@@ -229,6 +232,78 @@ export default function SignatureServices1Page() {
                   </p>
                   {" "}
                   <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • HAND FINISHED</span>
+                </div>
+                {" "}
+                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                  north_east
+                </button>
+              </div>
+            </div>
+            {/* Service 5 */}
+            <div className="flex flex-col gap-6 reveal-up">
+              <div className="aspect-video overflow-hidden bg-surface-container relative group">
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Neatly organised bundles of raw hair being inspected and prepared for shipment, laid out on a clean studio table with shipping documentation nearby." src="/stitch/img-005.jpg" />
+                {" "}
+                <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              {" "}
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Hair Importation</h3>
+                  {" "}
+                  <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
+                    Guided sourcing and importation support, from supplier selection to planning a confident first order.
+                  </p>
+                  {" "}
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • GUIDED SOURCING</span>
+                </div>
+                {" "}
+                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                  north_east
+                </button>
+              </div>
+            </div>
+            {/* Service 6 */}
+            <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
+              <div className="aspect-video overflow-hidden bg-surface-container relative group">
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A curated flat-lay of professional hair styling tools — combs, clamps and finishing sprays — arranged on a marble surface." src="/stitch/img-070.jpg" />
+                {" "}
+                <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              {" "}
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Sales of Hair Tools</h3>
+                  {" "}
+                  <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
+                    Professional tools selected to support installation, styling and the ongoing care of your hair investment.
+                  </p>
+                  {" "}
+                  <span className="font-label-caps text-primary tracking-widest">AVAILABLE TO SHOP • IN STORE</span>
+                </div>
+                {" "}
+                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                  north_east
+                </button>
+              </div>
+            </div>
+            {/* Service 7 */}
+            <div className="flex flex-col gap-6 reveal-up">
+              <div className="aspect-video overflow-hidden bg-surface-container relative group">
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stylist teaching a small group of trainees hands-on ventilation technique on a mannequin head in a bright studio." src="/stitch/img-016.jpg" />
+                {" "}
+                <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              {" "}
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-headline-lg text-headline-lg mb-2">Training</h3>
+                  {" "}
+                  <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
+                    Practical education for stylists, wig makers and hair business owners, covering technique and business guidance.
+                  </p>
+                  {" "}
+                  <span className="font-label-caps text-primary tracking-widest">SCHEDULED SESSIONS • BY CONSULTATION</span>
                 </div>
                 {" "}
                 <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
@@ -294,7 +369,7 @@ export default function SignatureServices1Page() {
                     <label className="font-label-caps text-[10px] mb-2 block text-on-surface-variant">Select Service Category</label>
                     {" "}
                     <select className="w-full bg-transparent border-b border-outline py-3 font-body-md focus:border-primary focus:ring-0 outline-none transition-all appearance-none cursor-pointer">
-                      <option>Wig Laundry & Refresh</option>
+                      <option>Hair Laundry</option>
                       {" "}
                       <option>Hair Importation Service</option>
                       {" "}
@@ -334,15 +409,15 @@ export default function SignatureServices1Page() {
                   {" "}
                   <div className="pt-8 space-y-4">
                     <div className="flex justify-between items-center text-body-sm text-on-surface-variant italic">
-                      <span>Base Service Fee</span>
+                      <span>Service Fee</span>
                       {" "}
-                      <span>$120.00</span>
+                      <span>Confirmed after consultation</span>
                     </div>
                     {" "}
                     <div className="flex justify-between items-center text-body-md font-bold">
-                      <span>Deposit Due Today</span>
+                      <span>Deposit</span>
                       {" "}
-                      <span className="text-primary">$36.00</span>
+                      <span className="text-primary">30% to confirm your slot</span>
                     </div>
                   </div>
                   {" "}
@@ -411,15 +486,15 @@ export default function SignatureServices1Page() {
           <div className="flex flex-col gap-4">
             <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Connect</h4>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://instagram.com/bychistrands2">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://tiktok.com/@bychistrands">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer">
               TikTok
             </a>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="https://wa.me/2340000000000">
+            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
             {" "}
