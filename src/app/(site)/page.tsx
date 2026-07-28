@@ -3,6 +3,7 @@ import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { TestimonyRail } from "@/components/stitch/TestimonyRail";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
+import { ProductServiceShowcase } from "@/components/stitch/ProductServiceShowcase";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -231,6 +232,17 @@ export default function HomepageWithClientNarrativesPage() {
                 </div>
               ))}
             </div>
+          </section>
+          {/* Testimonials */}
+          <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden text-center">
+            <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
+              In their words
+            </span>
+            {" "}
+            <h2 className="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface md:tracking-[-0.01em] mb-12">
+              Straight From Our Clients
+            </h2>
+            <ClientTestimonialsCarousel />
           </section>
           {/* Newsletter Opt-in */}
           <section className="bg-primary text-on-primary py-section-padding text-center">
@@ -499,6 +511,20 @@ export default function HomepageWithClientNarrativesPage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        {/* Products & Services Showcase */}
+        <section className="bg-primary-container py-section-padding overflow-hidden">
+          <div className="max-w-container-max mx-auto px-margin-desktop">
+            <div className="text-center mb-16 reveal">
+              <span className="font-label-caps text-on-surface tracking-widest block mb-4">HOVER TO EXPLORE</span>
+              {" "}
+              <h2 className="font-display-md text-display-md text-on-surface tracking-[-0.01em]">Products & Services</h2>
+            </div>
+            {" "}
+            <div className="reveal bg-white p-1.5">
+              <ProductServiceShowcase />
             </div>
           </div>
         </section>
