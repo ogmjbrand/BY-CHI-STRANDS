@@ -2,6 +2,7 @@ import Link from "next/link";
 import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { TestimonyRail } from "@/components/stitch/TestimonyRail";
+import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -620,23 +621,10 @@ export default function HomepageWithClientNarrativesPage() {
         {/* Testimonials */}
         <section className="bg-surface-container-low py-section-padding overflow-hidden">
           <div className="max-w-container-max mx-auto px-margin-desktop text-center reveal">
-            <span className="material-symbols-outlined text-primary text-5xl mb-12 opacity-50">format_quote</span>
+            <span className="font-label-caps text-primary tracking-widest mb-4 block uppercase">In their words</span>
             {" "}
-            <div className="max-w-4xl mx-auto">
-              <blockquote className="font-display-md text-headline-lg italic mb-12 leading-relaxed">
-                "The quality is truly beyond anything I've experienced in the luxury market. The hair behaves exactly like natural hair—full of life, movement, and a glow that never fades."
-              </blockquote>
-              {" "}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-surface-variant mb-4 overflow-hidden">
-                  <img className="w-full h-full object-cover" data-alt="Portrait of a sophisticated luxury consumer in a high-fashion setting, soft natural lighting, elegant style, minimalist aesthetic." src="/stitch/img-021.jpg" />
-                </div>
-                {" "}
-                <cite className="not-italic font-label-caps tracking-widest text-on-surface">ELENA VOGUE</cite>
-                {" "}
-                <span className="text-on-surface-variant text-sm mt-1 uppercase tracking-tighter">Verified Private Client</span>
-              </div>
-            </div>
+            <h2 className="font-display-md text-display-md tracking-[-0.01em] mb-12">Echoes of Elegance</h2>
+            <ClientTestimonialsCarousel />
           </div>
         </section>
         {/* Footer */}
