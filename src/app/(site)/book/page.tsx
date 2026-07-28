@@ -184,6 +184,29 @@ export default function AtelierServiceBookingPage() {
                 <textarea className="w-full bg-transparent border-b border-outline-variant py-4 resize-none transition-all placeholder:italic placeholder:opacity-50" placeholder="Please describe any sensitivities or specific requests for your appointment..." rows={4}></textarea>
               </div>
             </section>
+            {/* 05 Style Inspiration */}
+            <section id="inspiration">
+              <div className="flex items-baseline space-x-4 mb-10">
+                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">05</span>
+                {" "}
+                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
+                  Style Inspiration
+                </h2>
+              </div>
+              {" "}
+              <div className="bg-white p-8 luxury-shadow">
+                <p className="font-body-sm text-on-surface-variant opacity-80 mb-6 max-w-lg">
+                  Bring a reference photo to your appointment, or start with this one — a style saved for inspiration, not a ByChiStrands client photo. Mention it in your notes above if it's close to what you want.
+                </p>
+                <div className="max-w-xs aspect-[3/4] overflow-hidden bg-surface-container">
+                  <img
+                    src="/inspiration/updo-reference-01.jpg"
+                    alt="Reference photo of a curled updo style, saved for client inspiration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </section>
           </div>
           {/* Right Column: Sticky Summary */}
           <aside className="lg:col-span-4">

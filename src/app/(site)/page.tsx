@@ -3,7 +3,8 @@ import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { TestimonyRail } from "@/components/stitch/TestimonyRail";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
-import { ProductServiceShowcase } from "@/components/stitch/ProductServiceShowcase";
+import { ProductServiceShowcase, showcaseItems } from "@/components/stitch/ProductServiceShowcase";
+import { whatsappLink } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -70,7 +71,7 @@ export default function HomepageWithClientNarrativesPage() {
             <div className="absolute inset-0 z-0">
               <img alt="High-end luxury hair editorial showcase" className="w-full h-full object-cover" src="/stitch/img-049.jpg" />
               {" "}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-black/20"></div>
             </div>
             {" "}
             <div className="relative z-10 flex flex-col justify-end h-full px-margin-mobile pb-section-padding text-white max-w-container-max mx-auto">
@@ -171,7 +172,7 @@ export default function HomepageWithClientNarrativesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Product 1 */}
                 <div className="group relative overflow-hidden bg-background">
-                  <div className="aspect-[4/5] overflow-hidden">
+                  <div className="aspect-4/5 overflow-hidden">
                     <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional close-up of premium raw Vietnamese silk hair extensions, showcasing an incredibly smooth texture and deep obsidian shine. The lighting is editorial and high-contrast, highlighting the individual strands of hair like threads of liquid silk against a warm ivory background. The composition is artistic and minimalist, reflecting the luxury and exclusivity of the ByChi Strands brand identity." src="/stitch/img-093.jpg" />
                   </div>
                   {" "}
@@ -187,7 +188,7 @@ export default function HomepageWithClientNarrativesPage() {
                 </div>
                 {/* Product 2 */}
                 <div className="group relative overflow-hidden bg-background">
-                  <div className="aspect-[4/5] overflow-hidden">
+                  <div className="aspect-4/5 overflow-hidden">
                     <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant custom luxury wig displayed on a high-end designer mannequin head. The wig features a complex, layered style with warm golden highlights blending seamlessly into deep mahogany tones. The setting is a sophisticated boutique studio with soft focus background elements of designer books and gold accents. The mood is opulent, emphasizing the artisan craftsmanship and bespoke quality of the hair artistry." src="/stitch/img-117.jpg" />
                   </div>
                   {" "}
@@ -204,6 +205,46 @@ export default function HomepageWithClientNarrativesPage() {
               </div>
             </div>
           </section>
+          {/* Products & Services (mobile scroller) */}
+          <section className="bg-primary-container py-section-padding overflow-hidden">
+            <div className="px-margin-mobile mb-8">
+              <span className="font-label-caps text-label-caps text-on-surface tracking-widest uppercase mb-4 block">
+                Tap to Explore
+              </span>
+              {" "}
+              <h2 className="font-display-md text-headline-lg-mobile text-on-surface">Products & Services</h2>
+            </div>
+            {" "}
+            <div className="flex gap-gutter overflow-x-auto no-scrollbar pb-2 -mx-margin-mobile px-margin-mobile">
+              {[
+                ...showcaseItems.map((item) => ({ ...item, type: "video" as const })),
+                {
+                  type: "image" as const,
+                  video: "/stitch/img-070.jpg",
+                  poster: "/stitch/img-070.jpg",
+                  label: "Hair Tools",
+                  href: whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools."),
+                },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  target={item.label === "Hair Tools" ? "_blank" : undefined}
+                  rel={item.label === "Hair Tools" ? "noopener noreferrer" : undefined}
+                  className="min-w-[220px] group"
+                >
+                  <div className="aspect-square relative overflow-hidden bg-white mb-3">
+                    <ProductMedia
+                      media={{ type: item.type, src: item.video, poster: item.poster, alt: item.label }}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {" "}
+                  <p className="font-label-caps text-label-caps tracking-widest text-on-surface">{item.label}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
           {/* Aura Stories (Client Narratives) */}
           <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
             <div className="flex flex-col mb-12">
@@ -218,8 +259,8 @@ export default function HomepageWithClientNarrativesPage() {
             {/* Mobile Optimized Vertical/Horizontal Scroll */}
             <div className="flex md:grid md:grid-cols-4 gap-gutter overflow-x-auto no-scrollbar pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
               {testimonials.slice(0, 4).map((t) => (
-                <div key={t.clip.src} className="min-w-[280px] md:min-w-0 group cursor-pointer">
-                  <div className="aspect-[9/16] relative overflow-hidden rounded-lg mb-4 bg-surface-container">
+                <div key={t.clip.src} className="min-w-70 md:min-w-0 group cursor-pointer">
+                  <div className="aspect-9/16 relative overflow-hidden rounded-lg mb-4 bg-surface-container">
                     <ProductMedia
                       media={t.clip}
                       className="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
@@ -469,7 +510,7 @@ export default function HomepageWithClientNarrativesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Collection 1 */}
               <div className="group relative reveal overflow-hidden">
-                <div className="aspect-[4/5] overflow-hidden bg-surface-dim">
+                <div className="aspect-4/5 overflow-hidden bg-surface-dim">
                   <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/stitch/img-112.jpg" />
                 </div>
                 {" "}
@@ -491,7 +532,7 @@ export default function HomepageWithClientNarrativesPage() {
               </div>
               {/* Collection 2 */}
               <div className="group relative mt-0 lg:mt-32 reveal overflow-hidden" style={{ transitionDelay: "200ms" }}>
-                <div className="aspect-[4/5] overflow-hidden bg-surface-dim">
+                <div className="aspect-4/5 overflow-hidden bg-surface-dim">
                   <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/stitch/img-020.jpg" />
                 </div>
                 {" "}
@@ -557,7 +598,7 @@ export default function HomepageWithClientNarrativesPage() {
               </div>
               {" "}
               <div className="reveal relative flex justify-center md:justify-end" style={{ transitionDelay: "300ms" }}>
-                <div className="w-full max-w-md aspect-[3/4] bg-surface-container-highest/10 border border-surface-variant/20 relative p-8">
+                <div className="w-full max-w-md aspect-3/4 bg-surface-container-highest/10 border border-surface-variant/20 relative p-8">
                   <div className="absolute -top-4 -left-4 w-24 h-24 border-t border-l border-primary-container"></div>
                   {" "}
                   <div className="h-full border border-surface-variant/10 flex flex-col justify-center p-10 text-center">
@@ -672,7 +713,7 @@ export default function HomepageWithClientNarrativesPage() {
               {testimonials.slice(0, 3).map((t, i) => (
                 <div
                   key={t.clip.src}
-                  className="group relative reveal overflow-hidden aspect-[3/4] bg-surface-dim"
+                  className="group relative reveal overflow-hidden aspect-3/4 bg-surface-dim"
                   style={i ? { transitionDelay: `${i * 200}ms` } : undefined}
                 >
                   <ProductMedia
@@ -680,7 +721,7 @@ export default function HomepageWithClientNarrativesPage() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {" "}
-                  <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/70 to-transparent pointer-events-none">
+                  <div className="absolute bottom-0 left-0 w-full p-8 bg-linear-to-t from-black/70 to-transparent pointer-events-none">
                     <cite className="not-italic font-label-caps text-surface tracking-widest">
                       {t.context}
                     </cite>

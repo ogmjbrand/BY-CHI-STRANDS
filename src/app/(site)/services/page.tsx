@@ -283,9 +283,14 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">AVAILABLE TO SHOP • IN STORE</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <a
+                  href={whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </a>
               </div>
             </div>
             {/* Service 7 */}

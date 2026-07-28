@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ShopBrowser } from "@/components/stitch/ShopBrowser";
+import { TextureGuide } from "@/components/stitch/TextureGuide";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shop_all
@@ -72,6 +73,7 @@ export default function ShopAllPage() {
           </p>
         </header>
         {" "}
+        <TextureGuide />
         <div className="flex flex-col lg:flex-row gap-gutter">
           <ShopBrowser />
         </div>
