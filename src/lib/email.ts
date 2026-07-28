@@ -1,7 +1,14 @@
 import "server-only";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resend: Resend | null = null;
+
+function getResendClient() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export const FROM_EMAIL = "orders@bychistrands.com";
 export const FROM_NAME = "BY CHI STRANDS";
@@ -16,7 +23,7 @@ export async function sendEmail({
   html: string;
 }) {
   try {
-    const result = await resend.emails.send({
+    const result = await getResendClient().emails.send({
       from: `${FROM_NAME} <${FROM_EMAIL}>`,
       to,
       subject,
