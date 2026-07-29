@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShopBrowser } from "@/components/stitch/ShopBrowser";
 import { TextureGuide } from "@/components/stitch/TextureGuide";
+import { site, whatsappLink } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shop_all
@@ -132,7 +133,12 @@ export default function ShopAllPage() {
               </li>
               {" "}
               <li>
-                <a className="hover:underline decoration-primary transition-all" href="https://wa.me/2340000000000">
+                <a
+                  className="hover:underline decoration-primary transition-all"
+                  href={whatsappLink("Hi ByChiStrands — I have a question about an order.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   WhatsApp
                 </a>
               </li>
@@ -145,11 +151,23 @@ export default function ShopAllPage() {
             </h4>
             {" "}
             <div className="flex gap-4">
-              <a className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+              <a
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                href={site.socials.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <span className="material-symbols-outlined text-xl" data-icon="camera">camera</span>
               </a>
               {" "}
-              <a className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+              <a
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                href={site.socials.tiktok.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+              >
                 <span className="material-symbols-outlined text-xl" data-icon="videocam">videocam</span>
               </a>
             </div>

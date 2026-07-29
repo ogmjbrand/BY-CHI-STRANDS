@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getProduct, products } from "@/lib/products";
 import { mediaFor } from "@/lib/media";
 import { notFound } from "next/navigation";
 import { ProductConfigurator } from "@/components/stitch/ProductConfigurator";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { site } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -195,9 +197,9 @@ export default async function ProductPage({
           <h2 className="font-display-md text-[24px] text-primary mb-6">ByChi Strands</h2>
           {" "}
           <div className="flex justify-center gap-6 mb-8">
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">Instagram</a>
             {" "}
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href="#">TikTok</a>
+            <a className="text-on-surface-variant hover:text-primary transition-colors" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer">TikTok</a>
           </div>
           {" "}
           <p className="text-body-sm text-on-surface-variant/70 italic">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
@@ -211,28 +213,28 @@ export default async function ProductPage({
         <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
           <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
             <div className="flex items-center gap-gutter">
-              <a className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="#">
+              <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
                 ByChi Strands
-              </a>
+              </Link>
               {" "}
               <nav className="hidden md:flex gap-8">
-                <a className="text-primary font-semibold border-b border-primary pb-1" href="#">Shop</a>
+                <Link className="text-primary font-semibold border-b border-primary pb-1" href="/shop">Shop</Link>
                 {" "}
-                <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
                   Collections
-                </a>
+                </Link>
                 {" "}
-                <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
                   Services
-                </a>
+                </Link>
                 {" "}
-                <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
                   Academy
-                </a>
+                </Link>
                 {" "}
-                <a className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
                   About
-                </a>
+                </Link>
               </nav>
             </div>
             {" "}
@@ -532,7 +534,7 @@ export default async function ProductPage({
               <h2 className="font-display-md text-display-md tracking-[-0.01em]">The Boutique Selection</h2>
             </div>
             {" "}
-            <a className="font-label-caps text-xs border-b border-primary pb-1" href="#">Shop All Accessories</a>
+            <Link className="font-label-caps text-xs border-b border-primary pb-1" href="/shop">Shop All Pieces</Link>
           </div>
           {" "}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
@@ -607,19 +609,19 @@ export default async function ProductPage({
               {" "}
               <ul className="space-y-4 font-body-sm text-on-surface-variant">
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Our Story</a>
+                  <Link className="hover:text-primary transition-colors" href="/about">Our Story</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Craftsmanship</a>
+                  <Link className="hover:text-primary transition-colors" href="/about">Craftsmanship</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">The Sourcing</a>
+                  <Link className="hover:text-primary transition-colors" href="/about">The Sourcing</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Academy</a>
+                  <Link className="hover:text-primary transition-colors" href="/academy">Academy</Link>
                 </li>
               </ul>
             </div>
@@ -629,19 +631,19 @@ export default async function ProductPage({
               {" "}
               <ul className="space-y-4 font-body-sm text-on-surface-variant">
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Shipping & Returns</a>
+                  <Link className="hover:text-primary transition-colors" href="/shipping">Shipping & Returns</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Bespoke Consultations</a>
+                  <Link className="hover:text-primary transition-colors" href="/book">Bespoke Consultations</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Care Guide</a>
+                  <Link className="hover:text-primary transition-colors" href="/aftercare">Care Guide</Link>
                 </li>
                 {" "}
                 <li>
-                  <a className="hover:text-primary transition-colors" href="#">Wholesale Portfolio</a>
+                  <Link className="hover:text-primary transition-colors" href="/contact">Wholesale Portfolio</Link>
                 </li>
               </ul>
             </div>

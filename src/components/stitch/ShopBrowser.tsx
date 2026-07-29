@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   products,
   priceFrom,
@@ -18,6 +19,17 @@ import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { ProductMedia } from "./ProductMedia";
 import { useStore } from "@/context/StoreContext";
+
+const BADGE_LABEL: Record<string, string> = {
+  bestseller: "Bestseller",
+  new: "New Arrival",
+  limited: "Limited",
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 /**
  * The Shop All screen's filter rail and product grid, driven by the real
@@ -257,21 +269,42 @@ export function ShopBrowser() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
-            {visible.map((p) => {
+            {visible.map((p, i) => {
               const saved = hydrated && wishlist.includes(p.slug);
+              const featured = !filtersActive && i === 0;
               return (
-                <div
+                <motion.div
                   key={p.slug}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-60px" }}
                   data-slug={p.slug}
-                  className="product-card group relative"
+                  className={`product-card group relative ${featured ? "md:col-span-2 xl:col-span-2" : ""}`}
                 >
-                  <div className="relative aspect-[3/4] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+                  <div
+                    className={`relative overflow-hidden bg-surface-container-low border border-outline-variant/10 ${
+                      featured ? "aspect-[16/10] md:aspect-[21/9]" : "aspect-[3/4]"
+                    }`}
+                  >
                     <Link href={`/shop/${p.slug}`} className="block w-full h-full">
                       <ProductMedia
                         media={heroFor(p.slug)}
                         className="w-full h-full object-cover transition-transform duration-700"
                       />
                     </Link>
+                    {p.badges?.length ? (
+                      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                        {p.badges.map((b) => (
+                          <span
+                            key={b}
+                            className="bg-on-surface text-surface text-[10px] uppercase tracking-[0.14em] px-3 py-1.5 font-label-caps"
+                          >
+                            {BADGE_LABEL[b]}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
                     <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
                       <Link
                         href={`/shop/${p.slug}`}
@@ -294,8 +327,12 @@ export function ShopBrowser() {
                     </button>
                   </div>
 
-                  <div className="mt-6 space-y-1">
-                    <h3 className="font-headline-lg text-body-xl text-on-surface group-hover:text-primary transition-colors">
+                  <div className={`mt-6 space-y-1 ${featured ? "md:max-w-md" : ""}`}>
+                    <h3
+                      className={`font-headline-lg text-on-surface group-hover:text-primary transition-colors ${
+                        featured ? "text-headline-lg md:text-2xl" : "text-body-xl"
+                      }`}
+                    >
                       <Link href={`/shop/${p.slug}`}>{p.name}</Link>
                     </h3>
                     <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -314,7 +351,7 @@ export function ShopBrowser() {
                         : `From ${formatPrice(priceFrom(p))}`}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
