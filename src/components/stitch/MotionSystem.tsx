@@ -41,46 +41,7 @@ export function MotionSystem() {
     const main = document.querySelector("main");
     const hero = main?.querySelector<HTMLElement>("section");
     heroMedia.current = hero?.querySelector<HTMLElement>("img, video, [data-motion-parallax]") ?? null;
-
-    if (reduceMotion) return;
-
-    const revealTargets = Array.from(
-      document.querySelectorAll<HTMLElement>(
-        ".reveal, .fade-up, .reveal-up, [data-motion-reveal]"
-      )
-    );
-
-    // Some generated screens have no authored reveal marker. Give the first
-    // content group in each section the same reserved, low-cost entrance.
-    if (!revealTargets.length && main) {
-      main.querySelectorAll<HTMLElement>(":scope > section > div:not(.absolute)").forEach((node) => {
-        if (!node.closest("footer")) revealTargets.push(node);
-      });
-    }
-
-    const uniqueTargets = revealTargets.filter(
-      (node, index, all) => !all.some((other, otherIndex) => otherIndex < index && other.contains(node))
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const target = entry.target as HTMLElement;
-          observer.unobserve(target);
-          void animate(
-            target,
-            { opacity: [0, 1], y: [18, 0] },
-            { duration: 0.56, delay: Math.min(uniqueTargets.indexOf(target) % 4, 3) * 0.055, ease }
-          );
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-    );
-
-    uniqueTargets.forEach((target) => observer.observe(target));
-    return () => observer.disconnect();
-  }, [pathname, reduceMotion]);
+  }, [pathname]);
 
   useEffect(() => {
     if (reduceMotion) return;
