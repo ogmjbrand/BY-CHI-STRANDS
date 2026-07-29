@@ -17,7 +17,7 @@ export default function SignatureServices1Page() {
     <div className="scr-signature-services-1 bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
       {/* Top Navigation Bar */}
       <nav className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
             <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
               ByChi Strands
@@ -61,13 +61,13 @@ export default function SignatureServices1Page() {
           </div>
         </div>
       </nav>
-      <main className="max-w-container-max mx-auto px-margin-desktop">
+      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Hero Editorial Section */}
         <header className="py-section-padding grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-7 reveal-up active">
             <span className="font-label-caps text-primary mb-6 block">Artistry in every strand</span>
             {" "}
-            <h1 className="font-display-lg text-display-lg mb-8 leading-none tracking-[-0.02em]">
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 leading-none tracking-[-0.02em]">
               Professional Hair
               {" "}
               <br />
@@ -328,7 +328,7 @@ export default function SignatureServices1Page() {
           </div>
         </section>
         {/* Interactive Booking Widget */}
-        <section className="py-section-padding bg-surface-container-low mx-[-80px] px-margin-desktop mb-section-padding" id="booking">
+        <section className="py-section-padding bg-surface-container-low md:mx-[-80px] px-margin-mobile md:px-margin-desktop mb-section-padding" id="booking">
           <div className="max-w-container-max mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div className="reveal-up">
@@ -446,7 +446,7 @@ export default function SignatureServices1Page() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container-low dark:bg-surface-container-highest">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-1">
             <h3 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h3>
             {" "}

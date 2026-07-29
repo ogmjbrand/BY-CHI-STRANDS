@@ -15,7 +15,7 @@ export default function SignatureServices2Page() {
     <div className="scr-signature-services-2 bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <Link className="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-70 transition-opacity duration-500" href="/">
             ByChi Strands
           </Link>
@@ -63,7 +63,7 @@ export default function SignatureServices2Page() {
               Couture Customization
             </span>
             {" "}
-            <h1 className="font-display-lg text-display-lg text-white mb-8 tracking-[-0.02em]">The Art of the Invisible</h1>
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-white mb-8 tracking-[-0.02em]">The Art of the Invisible</h1>
             {" "}
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-white mb-12">
               <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function SignatureServices2Page() {
           </div>
         </section>
         {/* The Transformation */}
-        <section className="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+        <section className="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-5 space-y-8">
               <h2 className="font-display-md text-display-md text-primary tracking-[-0.01em]">
@@ -149,7 +149,7 @@ export default function SignatureServices2Page() {
         </section>
         {/* Artisan Selection */}
         <section className="bg-surface-container-low py-section-padding">
-          <div className="max-w-container-max mx-auto px-margin-desktop">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="text-center mb-20">
               <span className="font-label-caps text-label-caps text-primary tracking-[0.2em] block mb-4">THE CURATED PANEL</span>
               {" "}
@@ -210,7 +210,7 @@ export default function SignatureServices2Page() {
         </section>
         {/* Concierge Experience */}
         <section className="py-section-padding">
-          <div className="max-w-container-max mx-auto px-margin-desktop">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="flex flex-col lg:flex-row gap-gutter items-stretch">
               <div className="lg:w-1/2 bg-surface-container-lowest p-16 luxury-shadow border border-outline-variant/20 flex flex-col justify-center">
                 <span className="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-6">THE SUITE EXPERIENCE</span>
@@ -290,7 +290,7 @@ export default function SignatureServices2Page() {
       </main>
       {/* Footer */}
       <footer className="w-full bg-surface dark:bg-surface border-t border-outline-variant/20">
-        <div className="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-section-padding gap-gutter max-w-container-max mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-section-padding gap-gutter max-w-container-max mx-auto">
           <div className="space-y-8 max-w-sm">
             <h2 className="font-headline-lg text-headline-lg text-primary">ByChi Strands</h2>
             {" "}

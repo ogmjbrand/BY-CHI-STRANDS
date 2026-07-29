@@ -209,7 +209,7 @@ export default function AtelierBookingConfirmationPage() {
       <footer className="w-full relative border-t border-outline-variant/30 bg-surface">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-8 md:px-20 py-24 max-w-[1440px] mx-auto">
           <div className="lg:col-span-1">
-            <div className="font-display-lg text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi Strands</div>
+            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi Strands</div>
             {" "}
             <p className="font-body-sm text-on-surface-variant/70 max-w-xs">
               Elevating the art of hair through scientific precision and editorial excellence.

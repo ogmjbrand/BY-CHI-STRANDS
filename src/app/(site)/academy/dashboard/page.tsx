@@ -14,7 +14,7 @@ export default function StudentDashboardPage() {
   return (
     <div className="scr-student-dashboard font-body-md text-on-surface">
       {/* TopNavBar (Fixed) */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/50 shadow-sm flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0">
+      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/50 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0">
         <div className="font-display-md text-display-md text-primary tracking-tight">ByChi Strands</div>
         {" "}
         <div className="hidden md:flex items-center gap-8 font-manrope text-body-md">
@@ -96,7 +96,7 @@ export default function StudentDashboardPage() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             <span className="font-label-caps text-primary tracking-widest mb-4">MEMBER SINCE 2024</span>
             {" "}
-            <h1 className="font-display-lg text-display-lg text-on-surface mb-6 tracking-[-0.02em]">Welcome Back, Alexandra</h1>
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 tracking-[-0.02em]">Welcome Back, Alexandra</h1>
             {" "}
             <p className="font-body-xl text-body-xl text-on-surface-variant italic mb-8 max-w-lg border-l-2 border-primary-container pl-6">
               "Sophistication is not about being noticed, it's about being remembered." — The ByChi Philosophy
@@ -391,7 +391,7 @@ export default function StudentDashboardPage() {
         </section>
       </main>
       {/* Footer */}
-      <footer className="w-full py-8 mt-auto bg-surface-bright border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto">
+      <footer className="w-full py-8 mt-auto bg-surface-bright border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <p className="font-manrope text-label-caps text-on-surface-variant mb-4 md:mb-0 tracking-[0.15em]">
           © 2024 ByChi Strands Academy. All rights reserved.
         </p>

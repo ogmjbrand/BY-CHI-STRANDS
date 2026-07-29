@@ -15,7 +15,7 @@ export default function ClientProfilePage() {
     <div className="scr-client-profile bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
       {/* TopNavBar */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <nav className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="flex items-center gap-8">
             <Link className="font-display-md text-headline-lg text-on-surface tracking-tight" href="/">VIET LUXE HAIR</Link>
             {" "}
@@ -117,7 +117,7 @@ export default function ClientProfilePage() {
             <div>
               <span className="font-body-md text-label-caps text-primary mb-4 block tracking-[0.15em]">Exclusive Digital Archive</span>
               {" "}
-              <h1 className="font-display-lg text-display-lg text-on-surface mb-2 tracking-[-0.02em]">Julianne V. Sterling</h1>
+              <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-2 tracking-[-0.02em]">Julianne V. Sterling</h1>
               {" "}
               <p className="font-body-xl text-on-surface-variant max-w-xl">
                 Curating a legacy of hair artistry. Your personal portal to the world of VIET LUXE HAIR.
@@ -351,7 +351,7 @@ export default function ClientProfilePage() {
       </main>
       {/* Footer */}
       <footer className="w-full mt-section-padding bg-surface-container-lowest border-t border-outline-variant/50">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-4">
             <Link className="font-display-md text-display-md text-primary mb-8 block tracking-[-0.01em]" href="/">
               VIET LUXE HAIR

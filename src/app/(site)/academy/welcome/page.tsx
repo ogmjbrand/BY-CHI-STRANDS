@@ -15,7 +15,7 @@ export default function StudentWelcomeKitPage() {
     <div className="scr-student-welcome-kit bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary dark:text-primary-fixed uppercase">
             ByChi Strands
           </div>
@@ -50,13 +50,13 @@ export default function StudentWelcomeKitPage() {
             <div className="absolute inset-0 hero-gradient"></div>
           </div>
           {" "}
-          <div className="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
+          <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-4 block">
                 ByChi Strands Academy
               </span>
               {" "}
-              <h1 className="font-display-lg text-display-lg mb-8 leading-tight tracking-[-0.02em]">
+              <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 leading-tight tracking-[-0.02em]">
                 Welcome to the
                 {" "}
                 <br />
@@ -92,7 +92,7 @@ export default function StudentWelcomeKitPage() {
           </div>
         </section>
         {/* Section 2: The Starter Kit */}
-        <section className="py-section-padding max-w-container-max mx-auto px-margin-desktop">
+        <section className="py-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="flex justify-between items-end mb-16">
             <div>
               <h2 className="font-display-md text-display-md mb-4 uppercase tracking-[-0.01em]">The Starter Kit</h2>
@@ -178,7 +178,7 @@ export default function StudentWelcomeKitPage() {
         </section>
         {/* Section 3: Curriculum Roadmap */}
         <section className="bg-surface-container py-section-padding">
-          <div className="max-w-container-max mx-auto px-margin-desktop">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="text-center mb-20">
               <h2 className="font-display-md text-display-md uppercase tracking-tight mb-4">The Pillars of Mastery</h2>
               {" "}
@@ -274,7 +274,7 @@ export default function StudentWelcomeKitPage() {
           </div>
         </section>
         {/* Section 4: Mentorship & Exclusive Downloads */}
-        <section className="py-section-padding max-w-container-max mx-auto px-margin-desktop grid lg:grid-cols-2 gap-gutter">
+        <section className="py-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid lg:grid-cols-2 gap-gutter">
           {/* Mentorship Access */}
           <div className="bg-inverse-surface text-inverse-on-surface p-12 relative overflow-hidden">
             <div className="relative z-10">
@@ -386,7 +386,7 @@ export default function StudentWelcomeKitPage() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <div className="font-display-md text-display-md text-primary mb-2 tracking-[-0.01em]">ByChi Strands</div>
             {" "}

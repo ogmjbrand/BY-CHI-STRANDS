@@ -15,7 +15,7 @@ export default function AcademyLiveSession1Page() {
     <div className="scr-academy-live-session-1 bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
       {/* TopNavBar (Shared Component) */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <nav className="hidden md:flex items-center space-y-0 space-x-12">
@@ -258,7 +258,7 @@ export default function AcademyLiveSession1Page() {
       </main>
       {/* Footer (Shared Component) */}
       <footer className="w-full py-16 bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-display-md text-display-md text-primary tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex gap-8">

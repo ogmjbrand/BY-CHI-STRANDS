@@ -68,7 +68,7 @@ export default function OrderDetailsPage() {
         </div>
       </nav>
       {/* Main Content Area */}
-      <main className="ml-80 min-h-screen px-margin-desktop py-16 max-w-[1200px]">
+      <main className="ml-80 min-h-screen px-margin-mobile md:px-margin-desktop py-16 max-w-[1200px]">
         {/* Header Section */}
         <header className="flex justify-between items-end mb-16">
           <div>
@@ -320,7 +320,7 @@ export default function OrderDetailsPage() {
       </main>
       {/* Footer Anchor */}
       <footer className="ml-80 w-[calc(100%-320px)] mt-section-padding border-t border-outline-variant/50 bg-surface-container-lowest">
-        <div className="max-w-container-max mx-auto px-margin-desktop py-16 flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <h3 className="font-display-md text-[24px] text-primary mb-2">VIET LUXE HAIR</h3>
             {" "}

@@ -17,7 +17,7 @@ export default function ShopAllPage() {
     <div className="scr-shop-all bg-surface text-on-surface">
       {/* TopNavBar */}
       <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
-        <nav className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
           <div className="flex items-center gap-12">
             <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
               ByChi Strands
@@ -63,10 +63,10 @@ export default function ShopAllPage() {
           </div>
         </nav>
       </header>
-      <main className="max-w-container-max mx-auto px-margin-desktop py-section-padding">
+      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
         {/* Editorial Header */}
         <header className="mb-20">
-          <h1 className="font-display-lg text-display-lg text-on-surface mb-6 tracking-[-0.02em]">The Collection</h1>
+          <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 tracking-[-0.02em]">The Collection</h1>
           {" "}
           <p className="font-body-xl text-body-xl text-on-surface-variant max-w-2xl">
             Elevate your presence with our meticulously curated selection of premium Vietnamese hair. Each strand is a testament to timeless sophistication and editorial excellence.
@@ -80,7 +80,7 @@ export default function ShopAllPage() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container-low dark:bg-surface-container-highest full-width border-t border-outline-variant/30">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
             <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h2>
             {" "}
@@ -168,7 +168,7 @@ export default function ShopAllPage() {
           </div>
         </div>
         {" "}
-        <div className="px-margin-desktop py-8 border-t border-outline-variant/10 text-center">
+        <div className="px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 text-center">
           <p className="font-body-sm text-[12px] text-on-surface-variant opacity-60">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
         </div>
       </footer>

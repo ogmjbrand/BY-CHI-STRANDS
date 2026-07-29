@@ -15,7 +15,7 @@ export default function PostPurchaseConciergePage() {
     <div className="scr-post-purchase-concierge bg-background text-on-background font-body-md overflow-x-hidden">
       {/* TopNavBar */}
       <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl">
-        <nav className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
             <Link className="font-display-lg text-[32px] text-primary dark:text-primary-fixed-dim tracking-tight italic" href="/">
               ByChi Strands
@@ -49,12 +49,12 @@ export default function PostPurchaseConciergePage() {
       </header>
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="px-margin-desktop max-w-container-max mx-auto mb-section-padding">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-padding">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
             <div className="max-w-2xl">
               <p className="font-manrope text-label-caps text-primary mb-4 tracking-[0.15em]">ORDER #CS-992104</p>
               {" "}
-              <h1 className="font-display-lg text-display-lg italic tracking-[-0.02em]">The Journey of Your Transformation</h1>
+              <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg italic tracking-[-0.02em]">The Journey of Your Transformation</h1>
             </div>
             {" "}
             <div className="text-right">
@@ -115,7 +115,7 @@ export default function PostPurchaseConciergePage() {
           </div>
         </section>
         {/* Asymmetric Craftsmanship & Delivery Section */}
-        <section className="px-margin-desktop max-w-container-max mx-auto mb-section-padding grid md:grid-cols-12 gap-gutter items-stretch">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-padding grid md:grid-cols-12 gap-gutter items-stretch">
           {/* Craftsmanship Update Card */}
           <div className="md:col-span-7 bg-surface-container-low overflow-hidden group">
             <div className="flex flex-col md:flex-row h-full">
@@ -173,7 +173,7 @@ export default function PostPurchaseConciergePage() {
         </section>
         {/* While You Wait: Video Preview */}
         <section className="bg-surface-dim py-section-padding">
-          <div className="px-margin-desktop max-w-container-max mx-auto">
+          <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
             <div className="grid md:grid-cols-2 gap-24 items-center">
               <div>
                 <h2 className="font-display-lg text-display-md mb-8 tracking-[-0.01em]">While You Wait</h2>
@@ -224,7 +224,7 @@ export default function PostPurchaseConciergePage() {
           </div>
         </section>
         {/* Investment Summary (Accordion Style) */}
-        <section className="px-margin-desktop max-w-container-max mx-auto py-section-padding">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-padding">
           <div className="border-t border-outline-variant/30">
             <button className="w-full py-12 flex items-center justify-between group">
               <div className="text-left">
@@ -302,7 +302,7 @@ export default function PostPurchaseConciergePage() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container dark:bg-surface-dim border-t border-outline-variant/30">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-1">
             <Link className="font-display-md text-display-md text-primary dark:text-primary-fixed mb-6 block tracking-[-0.01em]" href="/">
               ByChi Strands
@@ -360,7 +360,7 @@ export default function PostPurchaseConciergePage() {
           </div>
         </div>
         {" "}
-        <div className="px-margin-desktop py-8 border-t border-outline-variant/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-manrope text-body-sm text-on-surface-variant">
             © 2024 ByChi Strands. All Rights Reserved. Heritage & Sustainability at our core.
           </p>

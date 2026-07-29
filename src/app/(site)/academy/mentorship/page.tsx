@@ -394,7 +394,7 @@ export default function BookMentorshipPopupPage() {
       </main>
       {/* Footer */}
       <footer className="w-full relative bg-surface dark:bg-inverse-surface border-t border-outline-variant/30 mt-section-padding">
-        <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto gap-unit">
+        <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max mx-auto gap-unit">
           <div className="flex flex-col gap-2">
             <span className="font-display-md text-display-md text-on-surface dark:text-surface-bright tracking-[-0.01em]">
               ByChi Strands

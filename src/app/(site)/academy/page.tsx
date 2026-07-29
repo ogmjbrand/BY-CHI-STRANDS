@@ -15,7 +15,7 @@ export default function AcademyPage() {
     <div className="scr-academy bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
       {/* Header / TopNavBar (Shared Component) */}
       <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface">ByChi Strands</div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -76,13 +76,13 @@ export default function AcademyPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
         </div>
         {" "}
-        <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop py-section-padding">
+        <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
           <div className="max-w-2xl fade-up" id="hero-content">
             <span className="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase block mb-6">
               Masterclass Enrollment Now Open
             </span>
             {" "}
-            <h1 className="font-display-lg text-display-lg text-on-surface mb-8 leading-tight tracking-[-0.02em]">
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-8 leading-tight tracking-[-0.02em]">
               The Art of
               {" "}
               <br />
@@ -109,7 +109,7 @@ export default function AcademyPage() {
       </section>
       {/* Academy Ethos / Subtle Branding */}
       <section className="ivory-bg py-section-padding border-y border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center items-center">
             <div className="fade-up">
               <h3 className="font-headline-lg text-headline-lg text-on-surface mb-4">Elite Sourcing</h3>
@@ -135,7 +135,7 @@ export default function AcademyPage() {
       </section>
       {/* Curriculum Grid */}
       <section className="py-section-padding bg-surface" id="curriculum">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
             <div className="max-w-xl">
               <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
@@ -228,7 +228,7 @@ export default function AcademyPage() {
       </section>
       {/* Social Proof / Testimonials */}
       <section className="ivory-bg py-section-padding">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-24">
             <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase block mb-4">
               The Success Circle
@@ -341,7 +341,7 @@ export default function AcademyPage() {
       <section className="py-section-padding bg-background overflow-hidden relative" id="enroll">
         <div className="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none hidden lg:block"></div>
         {" "}
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
             <div className="fade-up">
               <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
@@ -419,7 +419,7 @@ export default function AcademyPage() {
       </section>
       {/* Footer (Shared Component) */}
       <footer className="bg-surface-container-low border-t border-outline-variant/20 pt-section-padding pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
             <div className="font-display-md text-headline-lg text-primary mb-8">ByChi Strands</div>
             {" "}
@@ -491,7 +491,7 @@ export default function AcademyPage() {
           </div>
         </div>
         {" "}
-        <div className="max-w-container-max mx-auto px-margin-desktop pt-8 border-t border-outline-variant/10 text-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8 border-t border-outline-variant/10 text-center">
           <p className="font-body-md text-body-sm text-on-surface-variant/60">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
         </div>
       </footer>

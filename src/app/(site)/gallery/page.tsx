@@ -15,7 +15,7 @@ export default function AuraStoriesGalleryPage() {
     <div className="scr-aura-stories-gallery bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Shell */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 ease-in-out">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="flex-1 hidden md:flex gap-8">
             <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/collections">
               Collections
@@ -51,11 +51,11 @@ export default function AuraStoriesGalleryPage() {
       </nav>
       <main className="pt-32">
         {/* Editorial Header */}
-        <header className="max-w-container-max mx-auto px-margin-desktop mb-24 reveal-on-scroll">
+        <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 reveal-on-scroll">
           <div className="max-w-4xl">
             <p className="font-label-caps text-label-caps text-primary mb-4 tracking-[0.15em]">The Digital Archive</p>
             {" "}
-            <h1 className="font-display-lg text-display-lg mb-8 tracking-[-0.02em]">Aura Stories</h1>
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 tracking-[-0.02em]">Aura Stories</h1>
             {" "}
             <p className="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
               A cinematic testament to the heritage of transformation. Within these narratives lies the intersection of personal identity and the master craft of silk artistry. Explore the journeys that define our legacy.
@@ -63,7 +63,7 @@ export default function AuraStoriesGalleryPage() {
           </div>
         </header>
         {/* Featured Narrative */}
-        <section className="max-w-container-max mx-auto px-margin-desktop mb-section-padding reveal-on-scroll">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding reveal-on-scroll">
           <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer">
             <div className="absolute inset-0 image-zoom-container">
               <img className="w-full h-full object-cover" data-alt="A cinematic, high-fashion portrait of a woman with impeccably smooth, lustrous silk hair draped over her shoulders. The lighting is dramatic, high-contrast chiaroscuro, highlighting the golden reflections and fluid movement of the hair. She is set against a minimalist, warm-toned studio background that exudes quiet luxury and editorial sophistication." src="/stitch/img-095.jpg" />
@@ -93,7 +93,7 @@ export default function AuraStoriesGalleryPage() {
           </div>
         </section>
         {/* Narrative Filter */}
-        <section className="max-w-container-max mx-auto px-margin-desktop mb-16 reveal-on-scroll">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 reveal-on-scroll">
           <div className="flex flex-wrap items-center gap-12 border-b border-outline-variant/30 pb-6">
             <button className="font-label-caps text-primary border-b-2 border-primary pb-6 -mb-[26px] tracking-widest">
               All Stories
@@ -113,7 +113,7 @@ export default function AuraStoriesGalleryPage() {
           </div>
         </section>
         {/* Stories Grid */}
-        <section className="max-w-container-max mx-auto px-margin-desktop mb-section-padding">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
             {/* Large Editorial Tile */}
             <div className="md:col-span-8 group reveal-on-scroll">
@@ -221,7 +221,7 @@ export default function AuraStoriesGalleryPage() {
         </section>
         {/* CTA Section */}
         <section className="bg-surface-container-lowest py-section-padding border-t border-outline-variant/30 reveal-on-scroll">
-          <div className="max-w-container-max mx-auto px-margin-desktop text-center">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
             <div className="max-w-2xl mx-auto">
               <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">Share Your Narrative</h2>
               {" "}
@@ -244,9 +244,9 @@ export default function AuraStoriesGalleryPage() {
       </main>
       {/* Footer Shell */}
       <footer className="w-full mt-section-padding bg-surface-container-lowest border-t border-outline-variant/30">
-        <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 w-full max-w-container-max mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
           <div className="mb-8 md:mb-0">
-            <h2 className="font-display-lg text-display-lg text-on-surface leading-none tracking-[-0.02em]">
+            <h2 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-none tracking-[-0.02em]">
               ByChi Strands
             </h2>
             {" "}

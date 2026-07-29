@@ -15,7 +15,7 @@ export default function CustomerDashboardPage() {
     <div className="scr-customer-dashboard bg-surface text-on-surface font-body-md overflow-x-hidden">
       {/* TopNavBar (Global Actions) */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <nav className="hidden md:flex space-x-10">
@@ -92,7 +92,7 @@ export default function CustomerDashboardPage() {
         <div className="max-w-container-max mx-auto">
           {/* Welcome Header */}
           <section className="fade-in mb-16">
-            <h1 className="font-display-lg text-display-lg text-on-surface mb-4 tracking-[-0.02em]">Welcome back, Elena</h1>
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-4 tracking-[-0.02em]">Welcome back, Elena</h1>
             {" "}
             <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-12">
               <div className="flex items-center space-x-3">
@@ -290,7 +290,7 @@ export default function CustomerDashboardPage() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary mb-8 md:mb-0 tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex space-x-8 mb-8 md:mb-0">

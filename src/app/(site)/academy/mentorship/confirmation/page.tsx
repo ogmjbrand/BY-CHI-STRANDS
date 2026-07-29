@@ -15,7 +15,7 @@ export default function MentorshipConfirmationPage() {
     <div className="scr-mentorship-confirmation bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
       {/* TopNavBar Shell */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <nav className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -45,7 +45,7 @@ export default function MentorshipConfirmationPage() {
       </header>
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-section-padding flex flex-col md:flex-row items-center gap-16">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2 fade-in" style={{ animationDelay: "0.2s" }}>
             <span className="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase block mb-6">
               Confirmed: Inner Circle Access
@@ -86,7 +86,7 @@ export default function MentorshipConfirmationPage() {
         </section>
         {/* Session Details Bento */}
         <section className="bg-surface-container-low py-section-padding">
-          <div className="max-w-container-max mx-auto px-margin-desktop">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-unit">
               {/* Detail 1 */}
               <div className="bg-white p-12 flex flex-col justify-between border border-outline-variant/20 hover:border-primary-container transition-colors">
@@ -134,7 +134,7 @@ export default function MentorshipConfirmationPage() {
           </div>
         </section>
         {/* What to Prepare */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-section-padding">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
           <div className="text-center mb-16">
             <h2 className="font-display-md text-display-md text-on-surface tracking-[-0.01em]">The Ritual of Preparation</h2>
             {" "}
@@ -207,7 +207,7 @@ export default function MentorshipConfirmationPage() {
       </main>
       {/* Footer Shell */}
       <footer className="bg-surface-container-highest w-full py-16 border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary mb-8 md:mb-0 tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">

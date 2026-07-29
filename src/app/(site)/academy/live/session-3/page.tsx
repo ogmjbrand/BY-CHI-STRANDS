@@ -15,7 +15,7 @@ export default function AcademyLiveSession3Page() {
     <div className="scr-academy-live-session-3 bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -44,7 +44,7 @@ export default function AcademyLiveSession3Page() {
         </div>
       </nav>
       {/* SideNavBar (Suppressed for focused 'Live' mode, replaced by task-specific interaction) */}
-      <main className="pt-[112px] min-h-screen flex flex-col md:flex-row max-w-container-max mx-auto px-margin-desktop pb-12 gap-8">
+      <main className="pt-[112px] min-h-screen flex flex-col md:flex-row max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-12 gap-8">
         {/* Main Content Area: Video Broadcast */}
         <section className="flex-1 flex flex-col gap-6">
           {/* Header Section */}
@@ -231,7 +231,7 @@ export default function AcademyLiveSession3Page() {
       </main>
       {/* Footer */}
       <footer className="w-full py-16 bg-surface-container border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-display-md text-display-md text-primary opacity-50 tracking-[-0.01em]">ByChi Strands</div>
           {" "}
           <div className="flex gap-12">

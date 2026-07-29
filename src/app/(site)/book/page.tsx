@@ -17,7 +17,7 @@ export default function AtelierServiceBookingPage() {
     <div className="scr-atelier-service-booking bg-background text-on-surface font-body-md selection:bg-primary-container/30">
       {/* Top Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
-        <nav className="max-w-container-max mx-auto px-margin-desktop py-6 flex justify-between items-center">
+        <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
           <div className="font-display-md text-[24px] tracking-widest text-primary uppercase">ByChi Strands</div>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -41,10 +41,10 @@ export default function AtelierServiceBookingPage() {
           </div>
         </nav>
       </header>
-      <main className="pt-32 pb-section-padding max-w-container-max mx-auto px-margin-desktop">
+      <main className="pt-32 pb-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Hero Header */}
         <header className="mb-20 text-center md:text-left">
-          <h1 className="font-display-lg text-display-lg mb-4 text-primary tracking-[-0.02em]">Atelier Services</h1>
+          <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-4 text-primary tracking-[-0.02em]">Atelier Services</h1>
           {" "}
           <p className="font-body-xl text-body-xl text-on-surface-variant max-w-2xl italic">
             Schedule Your Transformation. Experience the pinnacle of silk artistry and bespoke hair tailoring.
@@ -261,7 +261,7 @@ export default function AtelierServiceBookingPage() {
       </main>
       {/* Footer */}
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary scale-75 origin-left mb-8 md:mb-0 tracking-[-0.01em]">
             ByChi Strands
           </div>

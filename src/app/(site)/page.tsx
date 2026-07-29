@@ -8,6 +8,8 @@ import { whatsappLink } from "@/lib/site";
 import { HomeHero } from "@/components/stitch/HomeHero";
 import { TrustBar } from "@/components/stitch/TrustBar";
 import { CollectionQuickNav } from "@/components/stitch/CollectionQuickNav";
+import { TextureMarquee } from "@/components/stitch/TextureMarquee";
+import { StatsBand } from "@/components/stitch/StatsBand";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -72,6 +74,7 @@ export default function HomepageWithClientNarrativesPage() {
           <HomeHero />
           <TrustBar />
           <CollectionQuickNav />
+          <TextureMarquee />
           {/* The Three Pillars */}
           <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
             <div className="text-center mb-16">
@@ -224,6 +227,7 @@ export default function HomepageWithClientNarrativesPage() {
               ))}
             </div>
           </section>
+          <StatsBand />
           {/* Aura Stories (Client Narratives) */}
           <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
             <div className="flex flex-col mb-12">
@@ -411,6 +415,7 @@ export default function HomepageWithClientNarrativesPage() {
         <HomeHero />
         <TrustBar />
         <CollectionQuickNav />
+        <TextureMarquee />
         {/* Trust Indicators */}
         <section className="bg-surface py-24 border-y border-outline-variant/20">
           <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
@@ -522,6 +527,7 @@ export default function HomepageWithClientNarrativesPage() {
             </div>
           </div>
         </section>
+        <StatsBand />
         {/* Academy Teaser */}
         <section className="relative bg-on-surface py-section-padding overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none"></div>

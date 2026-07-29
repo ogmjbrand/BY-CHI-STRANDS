@@ -15,7 +15,7 @@ export default function AcademyEnrollmentPage() {
     <div className="scr-academy-enrollment bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container font-body-md">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 nav-blur shadow-[0px_20px_50px_rgba(0,0,0,0.04)]">
-        <div className="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
           <div className="font-display-md text-display-md tracking-widest text-primary dark:text-primary-fixed uppercase">
             ByChi Strands
           </div>
@@ -53,13 +53,13 @@ export default function AcademyEnrollmentPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
         </div>
         {" "}
-        <div className="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+        <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
           <div className="max-w-2xl fade-in">
             <span className="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase mb-6 block">
               The Masterclass
             </span>
             {" "}
-            <h1 className="font-display-lg text-display-lg text-on-surface leading-tight mb-8 tracking-[-0.02em]">
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-tight mb-8 tracking-[-0.02em]">
               Secure Your Future in
               {" "}
               <span className="italic text-primary">Luxury Hair.</span>
@@ -77,7 +77,7 @@ export default function AcademyEnrollmentPage() {
       </section>
       {/* The Curriculum */}
       <section className="py-section-padding bg-surface-bright">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div className="max-w-xl">
               <h2 className="font-display-md text-display-md text-on-surface mb-6 tracking-[-0.01em]">The Four Pillars of Mastery</h2>
@@ -152,7 +152,7 @@ export default function AcademyEnrollmentPage() {
       </section>
       {/* Investment Section */}
       <section className="py-section-padding bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-24">
             <span className="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">
               The Investment
@@ -251,7 +251,7 @@ export default function AcademyEnrollmentPage() {
       </section>
       {/* Trust Signals / Testimonials */}
       <section className="py-section-padding">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="relative">
               <div className="w-full aspect-[4/5] bg-cover bg-center rounded-sm" data-alt="A beautiful, embossed certification document with gold leaf accents laying on a dark velvet surface. Beside the certificate is a premium box of hair products. The lighting is focused and dramatic, highlighting the 'Certification of Excellence' text and the intricate patterns of the paper, creating an aura of prestigious accomplishment and luxury hair education." style={{ backgroundImage: "url('/stitch/img-074.jpg')" }}></div>
@@ -370,7 +370,7 @@ export default function AcademyEnrollmentPage() {
       </section>
       {/* Footer */}
       <footer className="bg-surface-container dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/20">
-        <div className="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-display-md text-display-md text-primary tracking-[-0.01em]">AURA</div>
           {" "}
           <div className="flex gap-12">
