@@ -8,9 +8,10 @@ import { WordsPullUp } from "@/components/ui/words-pull-up";
  * Full-bleed video hero for the homepage. Adapted from a template built for
  * an art collective ("Prisma") — the floating pill navbar was dropped since
  * the site already has a real header (SiteChrome-equivalent markup) on every
- * page, and the background video is real ByChiStrands footage: the bestseller
- * bone straight unit worn by a client, not a stock/placeholder clip. Copy is
- * the site's existing hero line, not new marketing claims.
+ * page, and the background video is real ByChiStrands footage: the bone
+ * straight bestseller combed out to show the blunt hemline in-studio, not a
+ * stock/placeholder clip. Copy is the site's existing hero line, not new
+ * marketing claims.
  */
 export function HomeHero() {
   return (
@@ -20,9 +21,9 @@ export function HomeHero() {
         loop
         muted
         playsInline
-        poster="/media/posters/VID-20260727-WA0050.jpg"
+        poster="/media/posters/VID-20260727-WA0027.jpg"
         className="absolute inset-0 h-full w-full object-cover"
-        src="/products/VID-20260727-WA0050.mp4"
+        src="/products/VID-20260727-WA0027.mp4"
       />
 
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay" />
