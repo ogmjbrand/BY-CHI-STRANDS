@@ -23,11 +23,14 @@ export function StoreBridge() {
   useEffect(() => {
     if (!hydrated) return;
 
+    // `startsWith`, not `===`: on screens where the icon itself is the
+    // clickable trigger (no separate button/anchor wrapper), the badge is
+    // appended as the icon's own child, so its textContent becomes
+    // "shopping_bag1" etc. An exact-match filter would drop that icon from
+    // every future pass, freezing its badge at whatever count it first got.
     const icons = Array.from(
       document.querySelectorAll<HTMLElement>(".material-symbols-outlined")
-    ).filter((el) => el.textContent?.trim() === "shopping_bag");
-
-    const cleanups: Array<() => void> = [];
+    ).filter((el) => (el.textContent?.trim() ?? "").startsWith("shopping_bag"));
 
     for (const icon of icons) {
       // the clickable ancestor the design already provides, or the icon itself
@@ -36,15 +39,21 @@ export function StoreBridge() {
 
       // Bind once, but repaint the badge on every count change — an early
       // `continue` here would leave the counter frozen at its first value.
+      //
+      // This listener is intentionally never torn down on re-runs: this
+      // effect re-fires on every cartCount change (that's how the badge
+      // stays live), and a cleanup here would remove the listener each time
+      // while `cartBound` blocks it from ever being rebound — leaving the
+      // icon permanently unclickable after the first cart change. The
+      // element (and its listener) disappear together naturally if the page
+      // navigates away.
       if (trigger.dataset.cartBound !== "1") {
         trigger.dataset.cartBound = "1";
-        const onClick = (e: Event) => {
+        trigger.addEventListener("click", (e) => {
           e.preventDefault();
           openCart();
-        };
-        trigger.addEventListener("click", onClick);
+        });
         trigger.style.cursor = "pointer";
-        cleanups.push(() => trigger.removeEventListener("click", onClick));
       }
 
       // Reuse the badge some screens ship; otherwise mint one in the same style.
@@ -70,8 +79,6 @@ export function StoreBridge() {
       badge.style.opacity = cartCount > 0 ? "1" : "0";
       badge.style.transform = cartCount > 0 ? "scale(1)" : "scale(.6)";
     }
-
-    return () => cleanups.forEach((fn) => fn());
   }, [cartCount, hydrated, openCart, pathname]);
 
   /* ── heart buttons toggle the wishlist, filling as the design shows ── */
