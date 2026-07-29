@@ -6,6 +6,8 @@ import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonia
 import { ProductServiceShowcase, showcaseItems } from "@/components/stitch/ProductServiceShowcase";
 import { whatsappLink } from "@/lib/site";
 import { HomeHero } from "@/components/stitch/HomeHero";
+import { TrustBar } from "@/components/stitch/TrustBar";
+import { CollectionQuickNav } from "@/components/stitch/CollectionQuickNav";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -68,6 +70,8 @@ export default function HomepageWithClientNarrativesPage() {
         </header>
         <main>
           <HomeHero />
+          <TrustBar />
+          <CollectionQuickNav />
           {/* The Three Pillars */}
           <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
             <div className="text-center mb-16">
@@ -405,6 +409,8 @@ export default function HomepageWithClientNarrativesPage() {
         </header>
         {/* Luxury Hero */}
         <HomeHero />
+        <TrustBar />
+        <CollectionQuickNav />
         {/* Trust Indicators */}
         <section className="bg-surface py-24 border-y border-outline-variant/20">
           <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
