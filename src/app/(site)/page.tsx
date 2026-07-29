@@ -5,6 +5,7 @@ import { TestimonyRail } from "@/components/stitch/TestimonyRail";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
 import { ProductServiceShowcase, showcaseItems } from "@/components/stitch/ProductServiceShowcase";
 import { whatsappLink } from "@/lib/site";
+import { HomeHero } from "@/components/stitch/HomeHero";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_homepage_with_client_narratives
@@ -66,33 +67,7 @@ export default function HomepageWithClientNarrativesPage() {
           </nav>
         </header>
         <main>
-          {/* Hero Section */}
-          <section className="relative h-[85vh] w-full overflow-hidden">
-            <div className="absolute inset-0 z-0">
-              <img alt="High-end luxury hair editorial showcase" className="w-full h-full object-cover" src="/stitch/img-049.jpg" />
-              {" "}
-              <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-black/20"></div>
-            </div>
-            {" "}
-            <div className="relative z-10 flex flex-col justify-end h-full px-margin-mobile pb-section-padding text-white max-w-container-max mx-auto">
-              <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight mb-4 drop-shadow-xl md:leading-[1.1] md:tracking-[-0.02em]">
-                The Aura of
-                {" "}
-                <br />
-                <span className="italic font-normal">Authentic Silk</span>
-              </h1>
-              {" "}
-              <p className="font-body-xl text-body-xl max-w-md mb-8 opacity-90">
-                Premium Vietnamese hair artistry for the modern connoisseur of elegance.
-              </p>
-              {" "}
-              <div className="flex gap-4">
-                <button className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-[0.2em] transition-all hover:bg-secondary">
-                  EXPLORE COLLECTIONS
-                </button>
-              </div>
-            </div>
-          </section>
+          <HomeHero />
           {/* The Three Pillars */}
           <section className="py-section-padding px-margin-mobile max-w-container-max mx-auto overflow-hidden">
             <div className="text-center mb-16">
@@ -429,35 +404,7 @@ export default function HomepageWithClientNarrativesPage() {
           </div>
         </header>
         {/* Luxury Hero */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <img className="w-full h-full object-cover scale-105 transition-transform duration-[20s] ease-linear hover:scale-100" src="/stitch/img-116.jpg" />
-            {" "}
-            <div className="absolute inset-0 bg-black/10"></div>
-            {" "}
-            <div className="absolute inset-0 hero-gradient"></div>
-          </div>
-          {" "}
-          <div className="relative z-10 text-center px-margin-mobile reveal">
-            <span className="font-label-caps text-secondary tracking-[0.3em] block mb-6">ESTABLISHED IN ARTISTRY</span>
-            {" "}
-            <h1 className="font-display-lg text-display-lg text-on-surface max-w-4xl mx-auto mb-10 leading-tight tracking-[-0.02em]">
-              ByChiStrands: The Gold Standard of
-              {" "}
-              <span className="italic font-normal">Vietnamese Hair.</span>
-            </h1>
-            {" "}
-            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              <a className="bg-on-surface text-surface px-12 py-5 rounded-lg font-label-caps tracking-widest hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase" href="#collections">
-                Explore the Collection
-              </a>
-              {" "}
-              <Link className="font-label-caps text-on-surface border-b border-primary pb-1 hover:text-primary transition-all" href="/book">
-                Request a Consultation
-              </Link>
-            </div>
-          </div>
-        </section>
+        <HomeHero />
         {/* Trust Indicators */}
         <section className="bg-surface py-24 border-y border-outline-variant/20">
           <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">

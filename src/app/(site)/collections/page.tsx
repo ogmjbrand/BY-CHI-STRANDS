@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function TheBoutiquePage() {
   return (
-    <div className="scr-the-boutique font-body-md text-on-background">
+    <div className="scr-the-boutique bg-background font-body-md text-on-background">
       {/* Top Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">

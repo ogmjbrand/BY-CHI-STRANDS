@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AftercarePortalPage() {
   return (
-    <div className="scr-aftercare-portal font-body-md">
+    <div className="scr-aftercare-portal bg-background font-body-md">
       {/* Top Navigation Bar */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">

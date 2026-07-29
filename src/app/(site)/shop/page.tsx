@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ShopAllPage() {
   return (
-    <div className="scr-shop-all text-on-surface">
+    <div className="scr-shop-all bg-surface text-on-surface">
       {/* TopNavBar */}
       <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
         <nav className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">

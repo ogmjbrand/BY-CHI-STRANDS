@@ -538,55 +538,62 @@
 }
 
 @theme {
+  /*
+   * 60/30/10: gold is the dominant surface colour (page backgrounds), black
+   * carries primary/CTA/text emphasis, and the pre-existing white/cream
+   * container scale becomes the "other" 10% that content cards sit on top
+   * of. --color-error and its pair stay untouched — semantic, not brand.
+   */
+
   /* ── Colour roles ──────────────────────────────────────────── */
-  --color-background: #fcf9f8;
-  --color-on-background: #1c1b1b;
+  --color-background: #c8a75b;
+  --color-on-background: #141414;
 
-  --color-surface: #fcf9f8;
-  --color-surface-dim: #dcd9d9;
-  --color-surface-bright: #fcf9f8;
+  --color-surface: #c8a75b;
+  --color-surface-dim: #ad8a3f;
+  --color-surface-bright: #dac085;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f6f3f2;
-  --color-surface-container: #f0edec;
-  --color-surface-container-high: #ebe7e7;
-  --color-surface-container-highest: #e5e2e1;
-  --color-surface-variant: #e5e2e1;
-  --color-surface-tint: #755b15;
-  --color-on-surface: #1c1b1b;
-  --color-on-surface-variant: #4d4638;
-  --color-inverse-surface: #313030;
-  --color-inverse-on-surface: #f3f0ef;
+  --color-surface-container-low: #f8f3e7;
+  --color-surface-container: #f1e6cc;
+  --color-surface-container-high: #e9d8b0;
+  --color-surface-container-highest: #e0c994;
+  --color-surface-variant: #e0c994;
+  --color-surface-tint: #141414;
+  --color-on-surface: #141414;
+  --color-on-surface-variant: #3a2f17;
+  --color-inverse-surface: #141414;
+  --color-inverse-on-surface: #f1e6cc;
 
-  --color-outline: #7f7667;
-  --color-outline-variant: #d0c5b3;
+  --color-outline: #5c4a24;
+  --color-outline-variant: #a98a4c;
 
-  --color-primary: #755b15;
+  --color-primary: #141414;
   --color-on-primary: #ffffff;
   --color-primary-container: #c8a75b;
-  --color-on-primary-container: #513c00;
+  --color-on-primary-container: #141414;
   --color-inverse-primary: #e5c273;
   --color-primary-fixed: #ffdf9a;
   --color-primary-fixed-dim: #e5c273;
-  --color-on-primary-fixed: #251a00;
-  --color-on-primary-fixed-variant: #5a4300;
+  --color-on-primary-fixed: #141414;
+  --color-on-primary-fixed-variant: #3a2f17;
 
-  --color-secondary: #6e5c32;
+  --color-secondary: #8a6d3a;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #f6dda8;
-  --color-on-secondary-container: #726136;
+  --color-secondary-container: #f1e6cc;
+  --color-on-secondary-container: #3a2f17;
   --color-secondary-fixed: #f8e0ab;
   --color-secondary-fixed-dim: #dbc491;
-  --color-on-secondary-fixed: #251a00;
+  --color-on-secondary-fixed: #141414;
   --color-on-secondary-fixed-variant: #55451d;
 
-  --color-tertiary: #5e5e5c;
+  --color-tertiary: #565048;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #acaba8;
-  --color-on-tertiary-container: #3f403d;
-  --color-tertiary-fixed: #e4e2de;
-  --color-tertiary-fixed-dim: #c8c6c3;
-  --color-on-tertiary-fixed: #1b1c1a;
-  --color-on-tertiary-fixed-variant: #474744;
+  --color-tertiary-container: #e0c994;
+  --color-on-tertiary-container: #141414;
+  --color-tertiary-fixed: #f1e6cc;
+  --color-tertiary-fixed-dim: #e0c994;
+  --color-on-tertiary-fixed: #141414;
+  --color-on-tertiary-fixed-variant: #3a2f17;
 
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
@@ -765,8 +772,8 @@ html {
 .hero-gradient {
   background: linear-gradient(
     to bottom,
-    rgba(252, 249, 248, 0) 0%,
-    rgba(252, 249, 248, 1) 100%
+    color-mix(in srgb, var(--color-background) 0%, transparent) 0%,
+    var(--color-background) 100%
   );
 }
 
@@ -818,6 +825,12 @@ html {
 :focus-visible {
   outline: 2px solid var(--color-primary-container);
   outline-offset: 3px;
+}
+
+/* Subtle film-grain texture for full-bleed video/photo hero overlays. */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 /* Framer Motion writes this value from a spring-smoothed scroll position. */
