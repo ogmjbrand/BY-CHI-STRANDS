@@ -270,7 +270,7 @@ export default async function ProductPage({
                       No reviews yet — be the first to share how this piece wore for you.
                     </p>
                     <Link
-                      href="/reviews/new"
+                      href={`/reviews/new?product=${product.slug}`}
                       className="inline-block font-label-caps text-xs border-b border-primary text-primary pb-1"
                     >
                       Write a Review
