@@ -1,193 +1,208 @@
-import type { Metadata } from "next";
+"use client";
+
+import Link from "next/link";
+import { SiteHeader } from "@/components/stitch/SiteHeader";
+import { site, whatsappLink } from "@/lib/site";
+import { useStore, linePrice } from "@/context/StoreContext";
+import { getProduct } from "@/lib/products";
+import { posterFor } from "@/lib/media";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shopping_bag_sidebar
  * "ByChi Strands | Shopping Bag"
+ *
+ * Full-page equivalent of CartDrawer for visitors who land on /cart
+ * directly (several pages link here instead of opening the drawer) —
+ * reads the same real useStore() cart rather than a hardcoded mockup.
  */
 
-export const metadata: Metadata = {
-  title: "Your Selection",
-};
+const money = (n: number) =>
+  n.toLocaleString("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    maximumFractionDigits: 0,
+  });
 
-export default function ShoppingBagSidebarPage() {
+export default function ShoppingBagPage() {
+  const { cart, updateQty, removeLine, cartTotal, hydrated } = useStore();
+
   return (
-    <div className="scr-shopping-bag-sidebar bg-surface text-on-surface font-body-md overflow-x-hidden">
-      {/* Main Content Background (Mock Page) */}
-      <main className="min-h-screen w-full relative">
-        {/* Hero Section Mockup */}
-        <div className="h-screen w-full flex items-center justify-center bg-surface-container-low overflow-hidden">
-          <div className="absolute inset-0 opacity-20 pointer-events-none"></div>
-          {" "}
-          <div className="text-center z-10 px-margin-mobile">
-            <h1 className="font-display-lg text-display-lg text-primary mb-6 tracking-[-0.02em]">The Art of Pure Silk</h1>
-            {" "}
-            <p className="font-body-xl text-body-xl text-tertiary max-w-2xl mx-auto mb-12">
-              Experience the zenith of hair craftsmanship through our Masterpiece Series.
-            </p>
-            {" "}
-            <button className="px-12 py-4 bg-on-surface text-surface font-label-caps tracking-widest hover:bg-primary transition-all duration-500 rounded-lg">
-              View Curated Bag
-            </button>
-          </div>
-        </div>
-      </main>
-      {/* Shopping Bag Backdrop Overlay */}
-      <div className="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-500" id="bag-overlay"></div>
-      {/* Sidebar Component (Shared Component: SideNavBar inspired) */}
-      <aside className="fixed right-0 top-0 h-full w-full md:w-[500px] lg:w-[550px] bg-surface z-[60] transform translate-x-full transition-transform duration-700 ease-in-out shadow-[0px_20px_50px_rgba(0,0,0,0.04)] border-l border-outline-variant/30 flex flex-col" id="bag-sidebar">
-        {/* Header */}
-        <header className="flex justify-between items-center px-10 pt-12 pb-6 border-b border-outline-variant/10">
-          <div>
-            <h2 className="font-display-md text-headline-lg text-on-surface">Your Selection</h2>
-            {" "}
-            <p className="font-body-sm text-body-sm text-tertiary tracking-wide uppercase mt-1">Private Concierge Experience</p>
-          </div>
-          {" "}
-          <button className="group p-2 -mr-2">
-            <span className="material-symbols-outlined text-tertiary group-hover:text-primary transition-colors duration-300">
-              close
-            </span>
-          </button>
+    <div className="scr-shopping-bag-sidebar theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+      <SiteHeader dark />
+
+      <main className="flex-1 max-w-4xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-section-padding">
+        <header className="mb-12">
+          <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-2 tracking-[-0.02em]">
+            Your Selection
+          </h1>
+          <p className="font-body-sm text-body-sm text-tertiary tracking-wide uppercase">
+            Private Concierge Experience
+          </p>
         </header>
-        {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto px-10 py-8 space-y-12">
-          {/* Item List Section */}
-          <section className="space-y-10">
-            {/* Item 1: The Alabaster Straight */}
-            <div className="group flex gap-6">
-              <div className="w-32 h-44 bg-surface-container-high relative overflow-hidden flex-shrink-0">
-                <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-fashion studio photograph of a premium, waist-length straight hair piece with a subtle pearlescent sheen. The texture is impeccably smooth, draped against a soft beige silk background. Lighting is soft and directional, highlighting the natural-looking HD lace front and the luxurious quality of the hair. Neutral tones and elegant minimalist aesthetic." src="/stitch/img-047.jpg" />
-              </div>
-              {" "}
-              <div className="flex flex-col justify-between py-1">
-                <div>
-                  <p className="font-body-sm text-[11px] text-primary tracking-[0.2em] uppercase mb-1">Masterpiece Series</p>
-                  {" "}
-                  <h3 className="font-display-md text-body-xl font-medium mb-2">The Alabaster Straight</h3>
-                  {" "}
-                  <div className="space-y-1">
-                    <p className="font-body-sm text-tertiary">Length: 22"</p>
-                    {" "}
-                    <p className="font-body-sm text-tertiary">Cap: Signature HD Lace</p>
+
+        {!hydrated ? null : cart.length === 0 ? (
+          <div className="text-center py-24">
+            <span className="material-symbols-outlined text-primary text-5xl mb-8 block opacity-40">
+              shopping_bag
+            </span>
+            <p className="font-body-xl text-body-xl text-tertiary mb-10">
+              Your selection is empty.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-block px-12 py-4 bg-on-surface text-surface font-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 rounded-lg uppercase"
+            >
+              Explore the Collection
+            </Link>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-[1fr_360px] gap-16">
+            <section className="space-y-10">
+              {cart.map((line, i) => {
+                const product = getProduct(line.slug);
+                if (!product) return null;
+                return (
+                  <div
+                    key={`${line.slug}-${line.length}-${line.density ?? ""}-${line.lace ?? ""}`}
+                    className="group flex gap-6"
+                  >
+                    <Link
+                      href={`/shop/${product.slug}`}
+                      className="w-28 h-40 md:w-32 md:h-44 bg-surface-container-high relative overflow-hidden shrink-0"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src={posterFor(product.slug)}
+                      />
+                    </Link>
+
+                    <div className="flex flex-col justify-between py-1 flex-1">
+                      <div>
+                        <p className="font-body-sm text-[11px] text-primary tracking-[0.2em] uppercase mb-1">
+                          {product.collection.replace(/-/g, " ")}
+                        </p>
+                        <h3 className="font-display-md text-body-xl font-medium mb-2">
+                          <Link href={`/shop/${product.slug}`}>{product.name}</Link>
+                        </h3>
+                        <div className="space-y-1">
+                          <p className="font-body-sm text-tertiary">
+                            Length: {line.length}&quot;
+                          </p>
+                          {line.density ? (
+                            <p className="font-body-sm text-tertiary">Density: {line.density}</p>
+                          ) : null}
+                          {line.lace ? (
+                            <p className="font-body-sm text-tertiary">Cap: {line.lace}</p>
+                          ) : null}
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-end gap-4">
+                        <div className="flex items-center border border-outline-variant/40">
+                          <button
+                            onClick={() => updateQty(i, line.qty - 1)}
+                            className="w-8 h-8 flex items-center justify-center text-tertiary hover:text-primary transition-colors"
+                            aria-label="Decrease quantity"
+                          >
+                            <span className="material-symbols-outlined text-sm">remove</span>
+                          </button>
+                          <span className="w-8 text-center font-body-sm tabular-nums">
+                            {line.qty}
+                          </span>
+                          <button
+                            onClick={() => updateQty(i, line.qty + 1)}
+                            className="w-8 h-8 flex items-center justify-center text-tertiary hover:text-primary transition-colors"
+                            aria-label="Increase quantity"
+                          >
+                            <span className="material-symbols-outlined text-sm">add</span>
+                          </button>
+                        </div>
+
+                        <div className="text-right">
+                          <p className="font-body-md font-semibold text-on-surface">
+                            {money(linePrice(line) * line.qty)}
+                          </p>
+                          <button
+                            onClick={() => removeLine(i)}
+                            className="text-tertiary hover:text-error transition-colors text-xs font-label-caps border-b border-outline-variant/50 pb-0.5 mt-1"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                );
+              })}
+
+              <section className="space-y-4 pt-4">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-tertiary text-sm">
+                    auto_awesome
+                  </span>
+                  <h4 className="font-label-caps text-on-surface-variant">Concierge Notes</h4>
                 </div>
-                {" "}
-                <div className="flex justify-between items-end">
-                  <p className="font-body-md font-semibold text-on-surface">$5,850.00</p>
-                  {" "}
-                  <button className="text-tertiary hover:text-error transition-colors text-xs font-label-caps border-b border-outline-variant/50 pb-0.5">
-                    Remove
-                  </button>
+                <textarea
+                  className="w-full bg-surface-bright border border-outline-variant/30 p-4 font-body-sm focus:border-primary-container focus:ring-0 transition-colors placeholder:text-outline/50 resize-none h-24"
+                  placeholder="Add special requests for your stylist or concierge..."
+                />
+              </section>
+            </section>
+
+            <aside className="bg-surface-container-low border border-outline-variant/20 p-8 h-fit space-y-6">
+              <div className="space-y-3">
+                <div className="flex justify-between font-body-sm text-tertiary">
+                  <span>Subtotal</span>
+                  <span className="tabular-nums">{money(cartTotal)}</span>
                 </div>
-              </div>
-            </div>
-            {/* Item 2: Silk Essence No. 4 */}
-            <div className="group flex gap-6">
-              <div className="w-32 h-44 bg-surface-container-high relative overflow-hidden flex-shrink-0">
-                <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist product design of a sleek, white ceramic bottle of hair elixir named Silk Essence No. 4. The bottle features elegant gold typography and a minimalist label. It is placed on a textured ivory stone surface with soft shadows and a single shaft of light. High-end cosmetic photography, clean composition, sophisticated atmosphere." src="/stitch/img-123.jpg" />
-              </div>
-              {" "}
-              <div className="flex flex-col justify-between py-1">
-                <div>
-                  <p className="font-body-sm text-[11px] text-primary tracking-[0.2em] uppercase mb-1">Aftercare Collective</p>
-                  {" "}
-                  <h3 className="font-display-md text-body-xl font-medium mb-2">Silk Essence No. 4</h3>
-                  {" "}
-                  <div className="space-y-1">
-                    <p className="font-body-sm text-tertiary">Size: 100ml / 3.4 fl.oz</p>
-                    {" "}
-                    <p className="font-body-sm text-tertiary">Botanical Infusion</p>
-                  </div>
+                <div className="flex justify-between font-body-sm text-tertiary italic">
+                  <span>White-Glove Shipping</span>
+                  <span className="text-primary">Complimentary</span>
                 </div>
-                {" "}
-                <div className="flex justify-between items-end">
-                  <p className="font-body-md font-semibold text-on-surface">$120.00</p>
-                  {" "}
-                  <button className="text-tertiary hover:text-error transition-colors text-xs font-label-caps border-b border-outline-variant/50 pb-0.5">
-                    Remove
-                  </button>
+                <div className="flex justify-between items-baseline pt-3 border-t border-outline-variant/20">
+                  <span className="font-label-caps text-on-surface">Total</span>
+                  <span className="font-display-md text-headline-lg text-on-surface tabular-nums">
+                    {money(cartTotal)}
+                  </span>
                 </div>
               </div>
-            </div>
-          </section>
-          {/* Complementary Pairings */}
-          <section className="bg-surface-container-low p-6 border border-outline-variant/20">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="material-symbols-outlined text-primary text-sm">auto_fix_high</span>
-              {" "}
-              <h4 className="font-label-caps text-on-surface-variant">Complementary Pairing</h4>
-            </div>
-            {" "}
-            <div className="flex items-center gap-5">
-              <div className="w-20 h-20 bg-surface flex-shrink-0">
-                <img className="w-full h-full object-cover" data-alt="A curated gift set featuring a silk pillowcase, a delicate wide-tooth comb made of light wood, and a small glass jar of treatment cream. The items are arranged artfully on a draped silk fabric. Soft, high-key lighting, ivory and gold color palette, luxury lifestyle vibes." src="/stitch/img-002.jpg" />
+
+              <Link
+                href="/checkout"
+                className="block w-full text-center py-5 bg-on-surface text-surface font-label-caps tracking-[0.25em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500"
+              >
+                Complete Investment
+              </Link>
+
+              <div className="flex justify-center gap-8 pt-2">
+                <div className="flex items-center gap-2 opacity-60">
+                  <span className="material-symbols-outlined text-sm">security</span>
+                  <span className="text-[10px] uppercase font-label-caps">Secure Atelier</span>
+                </div>
+                <a
+                  href={whatsappLink("Hi ByChiStrands — I have a question about my bag.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity"
+                >
+                  <span className="material-symbols-outlined text-sm">help</span>
+                  <span className="text-[10px] uppercase font-label-caps">Concierge Help</span>
+                </a>
               </div>
-              {" "}
-              <div className="flex-1">
-                <h5 className="font-display-md text-body-md">The Silk Ritual Set</h5>
-                {" "}
-                <p className="font-body-sm text-tertiary text-xs mt-1">Enhance your investment with curated care.</p>
-                {" "}
-                <button className="mt-2 text-primary font-label-caps text-[10px] tracking-widest hover:text-secondary transition-colors">
-                  + Add to Bag
-                </button>
-              </div>
-            </div>
-          </section>
-          {/* Concierge Notes */}
-          <section className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-tertiary text-sm">auto_awesome</span>
-              {" "}
-              <h4 className="font-label-caps text-on-surface-variant">Concierge Notes</h4>
-            </div>
-            {" "}
-            <textarea className="w-full bg-surface-bright border border-outline-variant/30 p-4 font-body-sm focus:border-primary-container focus:ring-0 transition-colors placeholder:text-outline/50 resize-none h-24" placeholder="Add special requests for your stylist or concierge..."></textarea>
-          </section>
+            </aside>
+          </div>
+        )}
+      </main>
+
+      <footer className="bg-surface-container-low border-t border-outline-variant/30">
+        <div className="px-margin-mobile md:px-margin-desktop py-8 text-center">
+          <p className="font-body-sm text-[12px] text-on-surface-variant opacity-60">
+            © {new Date().getFullYear()} {site.name}. Timeless Vietnamese Artistry.
+          </p>
         </div>
-        {/* Investment Summary & CTA */}
-        <footer className="p-10 bg-surface border-t border-outline-variant/20 space-y-6">
-          <div className="space-y-3">
-            <div className="flex justify-between font-body-sm text-tertiary">
-              <span>Subtotal</span>
-              {" "}
-              <span>$5,970.00</span>
-            </div>
-            {" "}
-            <div className="flex justify-between font-body-sm text-tertiary italic">
-              <span>White-Glove Shipping</span>
-              {" "}
-              <span className="text-primary">Complimentary</span>
-            </div>
-            {" "}
-            <div className="pt-3 border-t border-outline-variant/10 flex justify-between">
-              <span className="font-label-caps text-on-surface">Total Investment</span>
-              {" "}
-              <span className="font-display-md text-body-xl font-bold">$5,970.00</span>
-            </div>
-          </div>
-          {" "}
-          <button className="w-full py-5 bg-on-surface text-surface font-label-caps tracking-[0.25em] relative group overflow-hidden">
-            <span className="relative z-10">Complete Investment</span>
-            {" "}
-            <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-          </button>
-          {" "}
-          <div className="flex justify-center gap-8 pt-2">
-            <div className="flex items-center gap-2 opacity-60">
-              <span className="material-symbols-outlined text-sm">security</span>
-              {" "}
-              <span className="text-[10px] uppercase font-label-caps">Secure Atelier</span>
-            </div>
-            {" "}
-            <div className="flex items-center gap-2 opacity-60">
-              <span className="material-symbols-outlined text-sm">help</span>
-              {" "}
-              <span className="text-[10px] uppercase font-label-caps">Concierge Help</span>
-            </div>
-          </div>
-        </footer>
-      </aside>
+      </footer>
     </div>
   );
 }
