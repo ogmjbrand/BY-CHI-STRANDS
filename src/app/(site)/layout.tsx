@@ -5,6 +5,8 @@ import { Interactions } from "@/components/stitch/Interactions";
 import { ToastProvider } from "@/components/stitch/Toast";
 import { MobileMenu } from "@/components/stitch/MobileMenu";
 import { MotionSystem } from "@/components/stitch/MotionSystem";
+import { LuxuryCursor } from "@/components/stitch/LuxuryCursor";
+import { SmoothScroll } from "@/components/stitch/SmoothScroll";
 
 /**
  * The ByChi Strands screens each ship their own header and footer, so this
@@ -22,6 +24,8 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <StoreBridge />
         <MobileMenu />
         <MotionSystem />
+        <LuxuryCursor />
+        <SmoothScroll />
       </CartUiProvider>
     </ToastProvider>
   );
