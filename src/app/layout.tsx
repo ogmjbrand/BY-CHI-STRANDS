@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { StoreProvider } from "@/context/StoreContext";
+import { QueryProvider } from "@/context/QueryProvider";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -67,7 +68,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         deliberately leave the font or background unset.
       */}
       <body>
-        <StoreProvider>{children}</StoreProvider>
+        <QueryProvider>
+          <StoreProvider>{children}</StoreProvider>
+        </QueryProvider>
       </body>
     </html>
   );
