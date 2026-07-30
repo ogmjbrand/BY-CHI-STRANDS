@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
 import { useToast } from "./Toast";
 import { priceFor, lengthsOf, lacesOf, type Product } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
 import { whatsappLink } from "@/lib/site";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 /**
  * The PDP sidebar — length and lace selection driving a live price and the Add
@@ -63,10 +65,20 @@ export function ProductConfigurator({
   return (
     <div className={compact ? "space-y-6" : "space-y-8"}>
       {/* Price */}
-      <div className="space-y-2">
-        <p className="font-display-md text-2xl text-primary" aria-live="polite">
-          {formatPrice(total)}
-        </p>
+      <div className="space-y-2 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={total ?? "enquiry"}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display-md text-2xl text-primary"
+            aria-live="polite"
+          >
+            {formatPrice(total)}
+          </motion.p>
+        </AnimatePresence>
         {total === null ? (
           <p className="font-body-sm text-body-sm text-on-surface-variant">
             This piece is quoted on enquiry — message us and we&apos;ll send the
@@ -141,23 +153,27 @@ export function ProductConfigurator({
       {/* CTA */}
       <div className="pt-4 space-y-4">
         {total === null ? (
-          <a
-            href={enquiry}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-all duration-500 scale-100 active:scale-95 flex items-center justify-center gap-3"
-          >
-            ENQUIRE ON WHATSAPP
-            <span className="material-symbols-outlined text-lg">trending_flat</span>
-          </a>
+          <MagneticButton className="w-full" strength={10}>
+            <a
+              href={enquiry}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-colors duration-500 flex items-center justify-center gap-3"
+            >
+              ENQUIRE ON WHATSAPP
+              <span className="material-symbols-outlined text-lg">trending_flat</span>
+            </a>
+          </MagneticButton>
         ) : (
-          <button
-            onClick={add}
-            className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-all duration-500 scale-100 active:scale-95 flex items-center justify-center gap-3"
-          >
-            ADD TO ATELIER BAG
-            <span className="material-symbols-outlined text-lg">trending_flat</span>
-          </button>
+          <MagneticButton className="w-full" strength={10}>
+            <button
+              onClick={add}
+              className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
+            >
+              ADD TO ATELIER BAG
+              <span className="material-symbols-outlined text-lg">trending_flat</span>
+            </button>
+          </MagneticButton>
         )}
 
         <button

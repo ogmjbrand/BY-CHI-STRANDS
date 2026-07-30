@@ -32,7 +32,6 @@ const MEDIA: Record<string, Media[]> = {
     img("IMG-20260726-WA0015", "Natural black bone straight closure wig on a studio stand"),
     vid("products", "VID-20260727-WA0027", "Bone straight unit combed through to show the blunt hemline"),
     vid("products", "VID-20260727-WA0050", "Client wearing a long bone straight unit"),
-    img("IMG-20260727-WA0042", "Espresso bone straight unit on a mannequin in the studio"),
     vid("products", "VID-20260727-WA0054", "Client wearing the shorter bone straight length"),
     vid("products", "VID-20260727-WA0057", "Bone straight bob worn out"),
     img("IMG-20260726-WA0012", "Client wearing the bone straight bob length"),

@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { ProductConfigurator } from "@/components/stitch/ProductConfigurator";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { ProductBadges } from "@/components/stitch/ProductBadges";
+import { ProductGallery } from "@/components/stitch/ProductGallery";
+import { ImageReveal } from "@/components/ui/image-reveal";
 import { getProductReviews } from "@/lib/product-api";
 import { formatPrice } from "@/lib/utils";
 import { testimonials } from "@/lib/testimonials";
@@ -57,7 +59,6 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const gallery = mediaFor(product.slug);
-  const [lead, ...supporting] = gallery;
   const related = relatedTo(product);
   const clips = testimonials.slice(0, 2);
 
@@ -232,29 +233,7 @@ export default async function ProductPage({
             <div className="lg:col-span-7 space-y-section-padding">
               {/* Hero Section */}
               <section className="space-y-unit reveal">
-                <div className="relative overflow-hidden group aspect-[4/5]">
-                  <ProductMedia
-                    media={lead}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {product.badges?.length ? (
-                    <div className="absolute top-8 left-8">
-                      <ProductBadges badges={product.badges} />
-                    </div>
-                  ) : null}
-                </div>
-                {supporting.length ? (
-                  <div className="grid grid-cols-2 gap-4">
-                    {supporting.slice(0, 4).map((m) => (
-                      <div key={m.src} className="aspect-square overflow-hidden">
-                        <ProductMedia
-                          media={m}
-                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
+                <ProductGallery gallery={gallery} badges={product.badges} />
               </section>
               {/* The Piece */}
               <section className="space-y-8 max-w-2xl reveal">
