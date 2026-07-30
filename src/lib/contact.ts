@@ -30,11 +30,19 @@ export async function createContactMessage(data: {
   if (error) throw new Error("Failed to create message");
 
   // Send confirmation email
-  await sendEmail({
-    to: data.email,
-    subject: `We received your message - ${data.subject}`,
-    html: `<h2>Thank you, ${data.name}!</h2><p>We've received your message and will respond within 24 hours.</p>`,
-  });
+  await sendEmail(
+    data.type === "newsletter"
+      ? {
+          to: data.email,
+          subject: "You're on the list — ByChiStrands",
+          html: `<h2>Welcome to the ByChi family.</h2><p>You'll hear from us with new arrivals, restocks and atelier news.</p>`,
+        }
+      : {
+          to: data.email,
+          subject: `We received your message - ${data.subject}`,
+          html: `<h2>Thank you, ${data.name}!</h2><p>We've received your message and will respond within 24 hours.</p>`,
+        }
+  );
 
   return mapContactMessageFromDB(message);
 }

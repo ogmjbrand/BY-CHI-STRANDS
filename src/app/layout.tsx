@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Mrs_Saint_Delafield } from "next/font/google";
 import { StoreProvider } from "@/context/StoreContext";
 import { QueryProvider } from "@/context/QueryProvider";
 import { site } from "@/lib/site";
@@ -22,6 +22,14 @@ const cormorant = Cormorant_Garamond({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+/** Script accent for the wordmark and rare display flourishes ("Crafted for") — never body copy. */
+const script = Mrs_Saint_Delafield({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-delafield",
   display: "swap",
 });
 
@@ -60,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${cormorant.variable} ${inter.variable}`}
+      className={`scroll-smooth ${cormorant.variable} ${inter.variable} ${script.variable}`}
     >
       {/*
         No typography or colour classes here: each Stitch screen reproduces

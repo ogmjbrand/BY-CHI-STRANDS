@@ -606,6 +606,22 @@
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
+  /*
+   * ── Noir & Gold ───────────────────────────────────────────────
+   * The dark-luxury system layered on top of the Editorial Couture
+   * palette above, not replacing it: existing pages keep reading
+   * bg-surface/text-on-surface unchanged. Sections rebuilt in this
+   * register (starting with the homepage) reach for these directly —
+   * bg-noir for a full black section, bg-cream for the alternating
+   * light "breather" sections, text-gold/border-gold for the accent
+   * that used to be champagne (#c8a75b) and is now richer/warmer.
+   */
+  --color-noir: #0d0b08;
+  --color-noir-high: #17130c;
+  --color-cream: #f8f1e2;
+  --color-gold: #c9a227;
+  --color-gold-light: #e7cf8f;
+
   /* ── Spacing scale ─────────────────────────────────────────── */
   --spacing-unit: 8px;
   --spacing-gutter: 32px;
@@ -640,6 +656,8 @@
   --font-body-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-body-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-label-caps: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Accent script — logotype and rare display flourishes only, never body copy. */
+  --font-script: var(--font-delafield), cursive;
 
   /* ── Type scale ────────────────────────────────────────────── */
   --text-display-lg: 64px;
