@@ -108,15 +108,22 @@ export interface ProductReview {
 }
 
 export async function getProductReviews(productId: string): Promise<ProductReview[]> {
-  const supabase = getSupabaseAdmin();
-  const { data: reviews, error } = await supabase
-    .from("product_reviews")
-    .select()
-    .eq("product_id", productId)
-    .order("created_at", { ascending: false });
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data: reviews, error } = await supabase
+      .from("product_reviews")
+      .select()
+      .eq("product_id", productId)
+      .order("created_at", { ascending: false });
 
-  if (error) return [];
-  return reviews || [];
+    if (error) return [];
+    return reviews || [];
+  } catch {
+    // Statically generated product pages call this at build time, before
+    // Supabase credentials are necessarily available — degrade to "no
+    // reviews yet" rather than failing the build.
+    return [];
+  }
 }
 
 export async function createProductReview(

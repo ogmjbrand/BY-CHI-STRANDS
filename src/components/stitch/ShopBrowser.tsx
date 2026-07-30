@@ -308,7 +308,7 @@ export function ShopBrowser() {
                     <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
                       <Link
                         href={`/shop/${p.slug}`}
-                        className="w-full text-center bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300"
+                        className="w-full text-center bg-white text-noir py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300"
                       >
                         Quick View
                       </Link>
@@ -316,7 +316,7 @@ export function ShopBrowser() {
                     <button
                       onClick={() => toggleWishlist(p.slug)}
                       aria-label={saved ? "Remove from wishlist" : "Save to wishlist"}
-                      className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors z-10"
+                      className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-noir hover:text-primary transition-colors z-10"
                     >
                       <span
                         className={`material-symbols-outlined ${saved ? "text-primary" : ""}`}

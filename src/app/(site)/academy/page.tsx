@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AcademyInquiryForm } from "@/components/stitch/AcademyInquiryForm";
+import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
+import { site } from "@/lib/site";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AcademyPage() {
   return (
-    <div className="scr-academy bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+    <div className="scr-academy theme-noir bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
       {/* Header / TopNavBar (Shared Component) */}
       <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
@@ -41,14 +44,14 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div className="flex items-center space-x-6">
-            <button className="hidden md:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
+            <Link href="/book" className="hidden md:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
               Book Appointment
-            </button>
+            </Link>
             {" "}
             <div className="flex items-center space-x-4">
-              <span className="material-symbols-outlined text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300" data-icon="shopping_bag">
+              <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300">
                 shopping_bag
-              </span>
+              </Link>
               {" "}
               <span className="material-symbols-outlined md:hidden text-on-surface cursor-pointer" data-icon="menu">
                 menu
@@ -96,11 +99,11 @@ export default function AcademyPage() {
             </p>
             {" "}
             <div className="flex flex-col sm:flex-row gap-6">
-              <a className="bg-on-surface text-white px-10 py-5 text-label-caps uppercase tracking-widest text-center btn-primary-interaction" href="#enroll">
+              <a className="bg-on-surface text-surface px-10 py-5 text-label-caps uppercase tracking-widest text-center btn-primary-interaction" href="#enroll">
                 Apply for Intake
               </a>
               {" "}
-              <a className="border border-primary text-primary px-10 py-5 text-label-caps uppercase tracking-widest text-center hover:bg-primary hover:text-white transition-all duration-300" href="#curriculum">
+              <a className="border border-primary text-primary px-10 py-5 text-label-caps uppercase tracking-widest text-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#curriculum">
                 View Curriculum
               </a>
             </div>
@@ -154,7 +157,7 @@ export default function AcademyPage() {
             {/* Card 1 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="A macro close-up of high-quality raw Vietnamese hair bundles being inspected under warm, soft studio lighting. The texture is silky and lustrous, showcasing individual strands with a premium champagne gold glow. Minimalist and editorial style." src="/stitch/img-124.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="A close-up of raw Vietnamese hair bundles under studio lighting" src="/stitch/img-124.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -172,7 +175,7 @@ export default function AcademyPage() {
             {/* Card 2 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="A professional workspace with a minimalist white desk featuring high-end tools for hair grading. There are notebooks, a golden scale, and pristine hair samples neatly arranged. The lighting is crisp and bright, creating a clean editorial aesthetic for a luxury beauty business." src="/stitch/img-087.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="A workspace with tools for hair grading, notebooks and a scale" src="/stitch/img-087.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -190,7 +193,7 @@ export default function AcademyPage() {
             {/* Card 3 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="An elegant, modern office space with large windows, ivory walls, and minimalist gold accents. A person's hands are seen working on a sleek laptop next to a glass of champagne, symbolizing the growth and success of a luxury brand. Soft, diffused daylight fills the room." src="/stitch/img-048.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Hands working on a laptop in a bright, modern office" src="/stitch/img-048.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -208,7 +211,7 @@ export default function AcademyPage() {
             {/* Card 4 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="A high-fashion magazine layout concept featuring ByChi Strands products. The design uses asymmetrical grids, ample white space, and bold serif typography. The lighting is high-key and prestigious, evoking the feeling of a Dior or Chanel advertisement in a luxury hair context." src="/stitch/img-050.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="An editorial magazine-style layout featuring ByChi Strands products" src="/stitch/img-050.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -221,117 +224,6 @@ export default function AcademyPage() {
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
                   The editorial approach to social media and digital presence that attracts high-net-worth clientele.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Social Proof / Testimonials */}
-      <section className="ivory-bg py-section-padding">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="text-center mb-24">
-            <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase block mb-4">
-              The Success Circle
-            </span>
-            {" "}
-            <h2 className="font-display-md text-display-md text-on-surface tracking-[-0.01em]">Trusted by the Best</h2>
-          </div>
-          {" "}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-10 border border-outline-variant/30 flex flex-col justify-between h-full fade-up">
-              <div>
-                <div className="flex text-primary mb-6">
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                </div>
-                {" "}
-                <p className="font-body-md text-body-md italic text-on-surface-variant mb-10 leading-relaxed">
-                  "Before the masterclass, I was struggling with inconsistent quality. ByChi's sourcing secrets changed my business overnight. My salon is now fully stocked with the finest raw hair."
-                </p>
-              </div>
-              {" "}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
-                  <img alt="ByChi Strands Academy graduate" className="w-full h-full object-cover" src="/media/academy/chi-service.jpeg" />
-                </div>
-                {" "}
-                <div>
-                  <p className="font-body-md font-bold text-on-surface text-sm uppercase tracking-widest">Anita M.</p>
-                  {" "}
-                  <p className="font-body-sm text-primary text-xs">Salon Owner, London</p>
-                </div>
-              </div>
-            </div>
-            {/* Testimonial 2 */}
-            <div className="bg-white p-10 border border-outline-variant/30 flex flex-col justify-between h-full fade-up">
-              <div>
-                <div className="flex text-primary mb-6">
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                </div>
-                {" "}
-                <p className="font-body-md text-body-md italic text-on-surface-variant mb-10 leading-relaxed">
-                  "The scaling module was the missing piece. I went from importing 10kg to 100kg a month with total confidence in my supply chain. This is the only training you need."
-                </p>
-              </div>
-              {" "}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
-                  <img alt="ByChi Strands Academy mentor" className="w-full h-full object-cover" src="/media/academy/chi-ceo.jpeg" />
-                </div>
-                {" "}
-                <div>
-                  <p className="font-body-md font-bold text-on-surface text-sm uppercase tracking-widest">Sarah J.</p>
-                  {" "}
-                  <p className="font-body-sm text-primary text-xs">CEO, Crown Luxe</p>
-                </div>
-              </div>
-            </div>
-            {/* Testimonial 3 */}
-            <div className="bg-white p-10 border border-outline-variant/30 flex flex-col justify-between h-full fade-up">
-              <div>
-                <div className="flex text-primary mb-6">
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {" "}
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                </div>
-                {" "}
-                <p className="font-body-md text-body-md italic text-on-surface-variant mb-10 leading-relaxed">
-                  "The marketing strategies taught here are world-class. My brand aesthetic now reflects the high price point of my hair products, and the customers have responded amazingly."
-                </p>
-              </div>
-              {" "}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
-                  <img className="w-full h-full object-cover" data-alt="A portrait of a stylish entrepreneur with a sleek ponytail and minimal, expensive-looking makeup. She is in a high-key studio setting with a clean, ivory-toned background that matches the brand's luxury aesthetic." src="/stitch/img-018.jpg" />
-                </div>
-                {" "}
-                <div>
-                  <p className="font-body-md font-bold text-on-surface text-sm uppercase tracking-widest">Zainab O.</p>
-                  {" "}
-                  <p className="font-body-sm text-primary text-xs">Founder, Strands Global</p>
-                </div>
               </div>
             </div>
           </div>
@@ -375,45 +267,7 @@ export default function AcademyPage() {
               </ul>
             </div>
             {" "}
-            <div className="bg-white p-8 md:p-12 border border-outline-variant/30 luxury-shadow relative z-10 fade-up">
-              <form className="space-y-8">
-                <div>
-                  <label className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Full Name</label>
-                  {" "}
-                  <input className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md" placeholder="Enter your name" type="text" />
-                </div>
-                {" "}
-                <div>
-                  <label className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Email Address</label>
-                  {" "}
-                  <input className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md" placeholder="Enter your email" type="email" />
-                </div>
-                {" "}
-                <div>
-                  <label className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Business Type</label>
-                  {" "}
-                  <select className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md appearance-none">
-                    <option>Aspiring Entrepreneur</option>
-                    {" "}
-                    <option>Salon Owner</option>
-                    {" "}
-                    <option>Retailer / Distributor</option>
-                    {" "}
-                    <option>Other</option>
-                  </select>
-                </div>
-                {" "}
-                <div>
-                  <label className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Message / Goals</label>
-                  {" "}
-                  <textarea className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md" placeholder="What do you hope to achieve?" rows={3}></textarea>
-                </div>
-                {" "}
-                <button className="w-full bg-on-surface text-white py-6 text-label-caps uppercase tracking-widest btn-primary-interaction mt-4" type="submit">
-                  Submit Application
-                </button>
-              </form>
-            </div>
+            <AcademyInquiryForm />
           </div>
         </div>
       </section>
@@ -433,19 +287,19 @@ export default function AcademyPage() {
             {" "}
             <ul className="space-y-4">
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://instagram.com/bychistrands2">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://tiktok.com/@bychistrands">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer">
                   TikTok
                 </a>
               </li>
               {" "}
               <li>
-                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href="https://wa.me/2340000000000">
+                <a className="text-on-surface-variant hover:text-on-surface transition-all font-body-md text-body-sm hover:underline decoration-primary" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
               </li>
@@ -481,18 +335,14 @@ export default function AcademyPage() {
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant mb-6">Receive exclusive updates on masterclasses and inventory arrivals.</p>
             {" "}
-            <div className="flex">
-              <input className="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 text-sm w-full font-body-md" placeholder="Email" type="email" />
-              {" "}
-              <button className="border-b border-outline-variant hover:border-primary transition-colors px-2">
-                <span className="material-symbols-outlined text-primary">arrow_forward</span>
-              </button>
-            </div>
+            <InlineNewsletterField />
           </div>
         </div>
         {" "}
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8 border-t border-outline-variant/10 text-center">
-          <p className="font-body-md text-body-sm text-on-surface-variant/60">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
+          <p className="font-body-md text-body-sm text-on-surface-variant/60">
+            © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
+          </p>
         </div>
       </footer>
     </div>

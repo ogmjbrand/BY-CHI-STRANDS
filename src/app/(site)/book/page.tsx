@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { services } from "@/lib/services";
-import { whatsappLink } from "@/lib/site";
+import { Suspense } from "react";
+import { BookingForm } from "@/components/stitch/BookingForm";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_atelier_service_booking
@@ -14,11 +14,13 @@ export const metadata: Metadata = {
 
 export default function AtelierServiceBookingPage() {
   return (
-    <div className="scr-atelier-service-booking bg-background text-on-surface font-body-md selection:bg-primary-container/30">
+    <div className="scr-atelier-service-booking theme-noir bg-background text-on-surface font-body-md selection:bg-primary-container/30">
       {/* Top Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
         <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
-          <div className="font-display-md text-[24px] tracking-widest text-primary uppercase">ByChi Strands</div>
+          <Link href="/" className="font-display-md text-[24px] tracking-widest text-primary uppercase">
+            ByChi Strands
+          </Link>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
             <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest" href="/services">
@@ -35,9 +37,13 @@ export default function AtelierServiceBookingPage() {
           </div>
           {" "}
           <div className="flex items-center space-x-6">
-            <span className="material-symbols-outlined cursor-pointer hover:opacity-70">shopping_bag</span>
+            <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined cursor-pointer hover:opacity-70">
+              shopping_bag
+            </Link>
             {" "}
-            <span className="material-symbols-outlined cursor-pointer hover:opacity-70">person</span>
+            <Link href="/account" aria-label="Your account" className="material-symbols-outlined cursor-pointer hover:opacity-70">
+              person
+            </Link>
           </div>
         </nav>
       </header>
@@ -51,213 +57,9 @@ export default function AtelierServiceBookingPage() {
           </p>
         </header>
         {" "}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-          {/* Left Column: Form Sections */}
-          <div className="lg:col-span-8 space-y-24">
-            {/* 01 Service Selection */}
-            <section id="services">
-              <div className="flex items-baseline space-x-4 mb-10">
-                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">01</span>
-                {" "}
-                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
-                  Curated Services
-                </h2>
-              </div>
-              {" "}
-              <div className="space-y-6">
-                {services.map((s, i) => (
-                  <div
-                    key={s.slug}
-                    className="group relative bg-white p-8 hover:bg-surface-container transition-all duration-500 cursor-pointer border border-transparent hover:border-outline-variant/20"
-                  >
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                      <div className="max-w-md">
-                        <h3 className="font-headline-lg text-xl mb-2 text-on-surface">{s.name}</h3>
-                        {" "}
-                        <p className="font-body-sm text-on-surface-variant opacity-80 leading-relaxed">
-                          {s.short}
-                        </p>
-                      </div>
-                      {" "}
-                      <div className="mt-4 md:mt-0 text-right">
-                        <span className="block font-label-caps text-primary mb-1">
-                          {s.duration.toUpperCase()}
-                        </span>
-                        {" "}
-                        <span className="block font-body-md font-semibold text-on-surface">
-                          BY CONSULTATION
-                        </span>
-                      </div>
-                    </div>
-                    {" "}
-                    <input
-                      defaultChecked={i === 0}
-                      className="absolute inset-0 opacity-0 cursor-pointer"
-                      name="service"
-                      type="radio"
-                    />
-                    {" "}
-                    <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
-                  </div>
-                ))}
-              </div>
-            </section>
-            {/* 02 Master Artisan */}
-            <section id="artisans">
-              <div className="flex items-baseline space-x-4 mb-10">
-                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">02</span>
-                {" "}
-                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
-                  Your Appointment
-                </h2>
-              </div>
-              {" "}
-              <div className="bg-white p-8 flex items-start md:items-center gap-6 luxury-shadow">
-                <span className="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
-                {" "}
-                <div>
-                  <h4 className="font-headline-lg text-lg mb-1">Handled by our in-house team</h4>
-                  {" "}
-                  <p className="font-body-sm text-on-surface-variant">
-                    Every appointment is matched to whoever is best suited to your service. Note any
-                    stylist preference or hair history in the notes below.
-                  </p>
-                </div>
-              </div>
-            </section>
-            {/* 03 Calendar & Time */}
-            <section id="schedule">
-              <div className="flex items-baseline space-x-4 mb-10">
-                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">03</span>
-                {" "}
-                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
-                  Date & Time
-                </h2>
-              </div>
-              {" "}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                  <label className="block font-label-caps text-[10px] text-on-surface-variant mb-2">
-                    PREFERRED DATE
-                  </label>
-                  {" "}
-                  <input
-                    className="w-full bg-white p-4 luxury-shadow font-body-md focus:outline-none focus:ring-1 focus:ring-primary"
-                    type="date"
-                  />
-                </div>
-                {/* Time Slots */}
-                <div className="space-y-4">
-                  <p className="font-label-caps text-on-surface-variant mb-4">PREFERRED TIME</p>
-                  {" "}
-                  <div className="grid grid-cols-2 gap-3">
-                    <button className="py-4 border border-outline-variant/30 font-body-sm hover:border-primary transition-all">
-                      09:00 AM
-                    </button>
-                    {" "}
-                    <button className="py-4 border border-outline-variant/30 font-body-sm hover:border-primary transition-all">11:30 AM</button>
-                    {" "}
-                    <button className="py-4 border border-outline-variant/30 font-body-sm hover:border-primary transition-all">
-                      01:45 PM
-                    </button>
-                    {" "}
-                    <button className="py-4 border border-outline-variant/30 font-body-sm hover:border-primary transition-all">
-                      04:15 PM
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-            {/* 04 Concierge Notes */}
-            <section id="notes">
-              <div className="flex items-baseline space-x-4 mb-10">
-                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">04</span>
-                {" "}
-                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
-                  Concierge Notes
-                </h2>
-              </div>
-              {" "}
-              <div className="relative">
-                <label className="block font-label-caps text-[10px] text-on-surface-variant mb-2">PARTICULAR NEEDS OR HAIR HISTORY</label>
-                {" "}
-                <textarea className="w-full bg-transparent border-b border-outline-variant py-4 resize-none transition-all placeholder:italic placeholder:opacity-50" placeholder="Please describe any sensitivities or specific requests for your appointment..." rows={4}></textarea>
-              </div>
-            </section>
-            {/* 05 Style Inspiration */}
-            <section id="inspiration">
-              <div className="flex items-baseline space-x-4 mb-10">
-                <span className="font-label-caps text-label-caps text-primary tracking-[0.15em]">05</span>
-                {" "}
-                <h2 className="font-display-md text-headline-lg border-b border-outline-variant/30 pb-2 w-full">
-                  Style Inspiration
-                </h2>
-              </div>
-              {" "}
-              <div className="bg-white p-8 luxury-shadow">
-                <p className="font-body-sm text-on-surface-variant opacity-80 mb-6 max-w-lg">
-                  Bring a reference photo to your appointment, or start with this one — a style saved for inspiration, not a ByChiStrands client photo. Mention it in your notes above if it's close to what you want.
-                </p>
-                <div className="max-w-xs aspect-[3/4] overflow-hidden bg-surface-container">
-                  <img
-                    src="/inspiration/updo-reference-01.jpg"
-                    alt="Reference photo of a curled updo style, saved for client inspiration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </section>
-          </div>
-          {/* Right Column: Sticky Summary */}
-          <aside className="lg:col-span-4">
-            <div className="sticky top-[120px] bg-white p-10 luxury-shadow flex flex-col h-fit">
-              <h3 className="font-display-md text-2xl mb-8">Booking Summary</h3>
-              {" "}
-              <div className="space-y-8 flex-grow">
-                <div>
-                  <span className="font-label-caps text-[10px] text-primary block mb-2">SERVICE</span>
-                  {" "}
-                  <p className="font-headline-lg text-lg leading-tight">{services[0].name}</p>
-                  {" "}
-                  <span className="font-body-sm text-on-surface-variant">{services[0].duration}</span>
-                </div>
-                {" "}
-                <div className="flex justify-between items-start">
-                  <div>
-                    <span className="font-label-caps text-[10px] text-primary block mb-2">DATE & TIME</span>
-                    {" "}
-                    <p className="font-headline-lg text-lg">Selected at booking</p>
-                    {" "}
-                    <span className="font-body-sm text-on-surface-variant">Confirmed once we reply</span>
-                  </div>
-                  {" "}
-                  <span className="material-symbols-outlined text-outline-variant cursor-pointer">edit</span>
-                </div>
-                {" "}
-                <div className="pt-8 border-t border-outline-variant/20 flex justify-between items-end">
-                  <div>
-                    <span className="font-label-caps text-[10px] text-on-surface-variant block mb-1">SERVICE FEE</span>
-                    {" "}
-                    <p className="font-display-md text-2xl">Confirmed after consultation</p>
-                  </div>
-                </div>
-              </div>
-              {" "}
-              <a
-                href={whatsappLink(
-                  "Hi ByChi Strands — I'd like to book an appointment."
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-12 w-full text-center block bg-primary text-white py-6 font-label-caps text-sm tracking-[0.2em] hover:bg-[#C8A75B] transition-colors duration-400"
-              >
-                REQUEST ON WHATSAPP
-              </a>
-              {" "}
-              <p className="text-center mt-6 font-body-sm text-on-surface-variant opacity-60 text-[11px]">A 30% deposit is required to confirm your appointment, deductible from the final service fee.</p>
-            </div>
-          </aside>
-        </div>
+        <Suspense fallback={null}>
+          <BookingForm />
+        </Suspense>
       </main>
       {/* Footer */}
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
@@ -285,7 +87,9 @@ export default function AtelierServiceBookingPage() {
               </Link>
             </div>
             {" "}
-            <p className="font-body-sm text-on-surface-variant opacity-40 text-[10px]">© 2024 ByChi Strands. ALL RIGHTS RESERVED.</p>
+            <p className="font-body-sm text-on-surface-variant opacity-40 text-[10px]">
+              © {new Date().getFullYear()} ByChi Strands. ALL RIGHTS RESERVED.
+            </p>
           </div>
         </div>
       </footer>

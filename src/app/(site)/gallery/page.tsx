@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AuraStoriesGalleryPage() {
   return (
-    <div className="scr-aura-stories-gallery bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <div className="scr-aura-stories-gallery theme-noir bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Shell */}
       <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 ease-in-out">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
@@ -39,11 +39,11 @@ export default function AuraStoriesGalleryPage() {
               Academy
             </Link>
             {" "}
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="shopping_bag">
+            <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">
               shopping_bag
-            </span>
+            </Link>
             {" "}
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="menu">
+            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform md:hidden">
               menu
             </span>
           </div>
@@ -66,16 +66,16 @@ export default function AuraStoriesGalleryPage() {
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding reveal-on-scroll">
           <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer">
             <div className="absolute inset-0 image-zoom-container">
-              <img className="w-full h-full object-cover" data-alt="A cinematic, high-fashion portrait of a woman with impeccably smooth, lustrous silk hair draped over her shoulders. The lighting is dramatic, high-contrast chiaroscuro, highlighting the golden reflections and fluid movement of the hair. She is set against a minimalist, warm-toned studio background that exudes quiet luxury and editorial sophistication." src="/stitch/img-095.jpg" />
+              <img className="w-full h-full object-cover" alt="A high-fashion portrait of a woman with smooth, lustrous silk hair" src="/stitch/img-095.jpg" />
             </div>
             {" "}
             <div className="absolute inset-0 hero-gradient flex flex-col justify-end p-12">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div className="max-w-2xl">
-                  <h2 className="font-display-md text-display-md text-surface mb-4 tracking-[-0.01em]">The Silk Transformation of Julianne V.</h2>
+                  <h2 className="font-display-md text-display-md text-surface mb-4 tracking-[-0.01em]">The Silk Transformation</h2>
                   {" "}
                   <blockquote className="italic font-headline-lg text-surface-container-low opacity-90 border-l-2 border-primary-fixed-dim pl-6">
-                    "In the silence of the Atelier, I found the most vibrant version of myself. My hair wasn't just styled; it was reborn."
+                    "Hair wasn't just styled; it was reborn." — from the Atelier floor.
                   </blockquote>
                 </div>
                 {" "}
@@ -150,23 +150,26 @@ export default function AuraStoriesGalleryPage() {
             {/* Vertical Tile */}
             <div className="md:col-span-4 group reveal-on-scroll">
               <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" data-alt="A portrait-oriented artistic shot of a model with voluminous, glossy hair catching the golden hour light. The shot focus is on the intricate textures and waves of the hair, styled in a contemporary yet classic bob. The aesthetic is high-end editorial, with soft shadows and a warm, glowing color palette that emphasizes healthy hair vitality." src="/stitch/img-026.jpg" />
+                <img className="w-full h-full object-cover" alt="A model with voluminous, glossy hair styled in a bob, catching golden hour light" src="/stitch/img-026.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-2">Elena S.</h3>
+              <h3 className="font-headline-lg text-2xl mb-2">The Signature Silk Bob</h3>
               {" "}
-              <p className="font-label-caps text-xs text-primary mb-4">Selection: Signature Silk Bob</p>
+              <p className="font-label-caps text-xs text-primary mb-4">Atelier Selection</p>
               {" "}
-              <button className="w-full py-4 border border-outline-variant hover:bg-on-surface hover:text-surface transition-all duration-500 font-label-caps text-xs uppercase tracking-widest">
-                Explore Profile
-              </button>
+              <Link
+                href="/shop"
+                className="block w-full text-center py-4 border border-outline-variant hover:bg-on-surface hover:text-surface transition-all duration-500 font-label-caps text-xs uppercase tracking-widest"
+              >
+                Shop The Look
+              </Link>
             </div>
             {/* Horizontal Tile */}
             <div className="md:col-span-4 group reveal-on-scroll">
               <div className="relative aspect-[1/1] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" data-alt="Close-up of hair styling tools and silk hair products arranged on a minimalist marble surface. Soft sunlight filters through a nearby window, casting delicate shadows. The scene is clean, organized, and exudes a sense of premium atelier craftsmanship, with gold accents on the product labels shining subtly." src="/stitch/img-045.jpg" />
+                <img className="w-full h-full object-cover" alt="Hair styling tools and products arranged on a marble surface" src="/stitch/img-045.jpg" />
               </div>
               {" "}
               <h3 className="font-headline-lg text-2xl mb-2">The Alchemist’s Kit</h3>
@@ -179,22 +182,23 @@ export default function AuraStoriesGalleryPage() {
             <div className="md:col-span-8 group reveal-on-scroll bg-surface-container-low p-12 flex flex-col justify-center rounded-lg border border-outline-variant/10">
               <span className="font-label-caps text-primary mb-6">Academy Spotlight</span>
               {" "}
-              <h3 className="font-display-md text-4xl mb-8 leading-tight">Mastering the Fluidity: A Student’s Journey Through the Academy</h3>
+              <h3 className="font-display-md text-4xl mb-8 leading-tight">The Art of the Source: Vietnam Masterclass</h3>
               {" "}
               <p className="font-body-xl text-on-surface-variant mb-12 max-w-xl">
-                "The Academy taught me that silk is more than a texture—it's a language of light and movement. My three-month residency was the most challenging and rewarding experience of my career."
+                A hands-on training for entrepreneurs who want to import, grade and build a luxury
+                hair brand with the same standard ByChi Strands sources by.
               </p>
               {" "}
               <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
-                  <img className="w-full h-full object-cover" data-alt="Professional headshot of a young, stylish hair stylist with a sharp, minimalist aesthetic. Soft lighting, neutral background, looking confidently at the camera." src="/stitch/img-084.jpg" />
-                </div>
-                {" "}
-                <div>
-                  <p className="font-label-caps text-sm">Marcus Thorne</p>
-                  {" "}
-                  <p className="text-xs text-on-surface-variant">Class of '23 Senior Resident</p>
-                </div>
+                <Link
+                  href="/academy"
+                  className="font-label-caps text-primary flex items-center gap-2 group/link"
+                >
+                  Explore The Academy
+                  <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                </Link>
                 {" "}
                 <div className="ml-auto">
                   <span className="material-symbols-outlined text-primary text-4xl hover-lift cursor-pointer" data-icon="menu_book">
@@ -250,7 +254,7 @@ export default function AuraStoriesGalleryPage() {
               ByChi Strands
             </h2>
             {" "}
-            <p className="font-body-sm text-on-surface-variant mt-2">Crafting timeless legacies since 1984.</p>
+            <p className="font-body-sm text-on-surface-variant mt-2">Luxury Vietnamese hair, crafted for confidence.</p>
           </div>
           {" "}
           <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
@@ -271,7 +275,9 @@ export default function AuraStoriesGalleryPage() {
             </Link>
           </div>
           {" "}
-          <p className="font-body-sm text-secondary-fixed-dim">© 2024 ByChi Strands. All rights reserved.</p>
+          <p className="font-body-sm text-secondary-fixed-dim">
+            © {new Date().getFullYear()} ByChi Strands. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>

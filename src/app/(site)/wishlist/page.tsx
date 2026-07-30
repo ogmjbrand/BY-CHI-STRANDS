@@ -5,13 +5,14 @@ import { useStore } from "@/context/StoreContext";
 import { getProduct, priceFor } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
 import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
+import { posterFor } from "@/lib/media";
 
 export default function WishlistPage() {
   const { wishlist, toggleWishlist, hydrated } = useStore();
   const items = wishlist.map(getProduct).filter(Boolean);
 
   return (
-    <div className="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <div className="scr-wishlist theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
       <StitchHeader />
       <header className="pt-40 pb-16 md:pt-60 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
@@ -44,7 +45,7 @@ export default function WishlistPage() {
           </div>
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
-            {items.map((product, i) => (
+            {items.map((product) => (
               <div key={product!.slug} className="group">
                 <Link href={`/shop/${product!.slug}`}>
                   <div className="aspect-[4/5] overflow-hidden bg-surface-dim mb-8">
@@ -52,7 +53,7 @@ export default function WishlistPage() {
                     <img
                       alt={product!.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      src={`/stitch/img-${String((i % 60) + 1).padStart(3, "0")}.jpg`}
+                      src={posterFor(product!.slug)}
                     />
                   </div>
                   <h2 className="font-display-md text-headline-lg mb-2">

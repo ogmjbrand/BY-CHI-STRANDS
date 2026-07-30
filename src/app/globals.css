@@ -606,6 +606,22 @@
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
+  /*
+   * ── Noir & Gold ───────────────────────────────────────────────
+   * The dark-luxury system layered on top of the Editorial Couture
+   * palette above, not replacing it: existing pages keep reading
+   * bg-surface/text-on-surface unchanged. Sections rebuilt in this
+   * register (starting with the homepage) reach for these directly —
+   * bg-noir for a full black section, bg-cream for the alternating
+   * light "breather" sections, text-gold/border-gold for the accent
+   * that used to be champagne (#c8a75b) and is now richer/warmer.
+   */
+  --color-noir: #0d0b08;
+  --color-noir-high: #17130c;
+  --color-cream: #f8f1e2;
+  --color-gold: #c9a227;
+  --color-gold-light: #e7cf8f;
+
   /* ── Spacing scale ─────────────────────────────────────────── */
   --spacing-unit: 8px;
   --spacing-gutter: 32px;
@@ -640,6 +656,8 @@
   --font-body-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-body-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-label-caps: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Accent script — logotype and rare display flourishes only, never body copy. */
+  --font-script: var(--font-delafield), cursive;
 
   /* ── Type scale ────────────────────────────────────────────── */
   --text-display-lg: 64px;
@@ -673,6 +691,72 @@
   --text-label-caps: 12px;
   --text-label-caps--line-height: 1;
   --text-label-caps--font-weight: 600;
+}
+
+/*
+ * ── .theme-noir ─────────────────────────────────────────────────
+ * Every compiled bg-surface/text-on-surface/border-outline utility
+ * resolves through the CSS custom properties set in @theme above
+ * (confirmed in the compiled output: `.text-primary{color:var(--color-primary)}`),
+ * so re-declaring the same variable names inside a scoped class lets
+ * an already-built page (PDP, Shop, Collections, Services, Booking)
+ * flip from the cream Editorial Couture palette to the noir/gold one
+ * the client's reference specifies by adding one class to its root
+ * element — no need to touch every className. Literal Tailwind colors
+ * (bg-white/40, text-black, etc.) don't route through variables and
+ * still need a manual look wherever they show up inside a noir page.
+ */
+.theme-noir {
+  --color-background: var(--color-noir);
+  --color-on-background: #ffffff;
+
+  --color-surface: var(--color-noir);
+  --color-surface-dim: var(--color-noir);
+  --color-surface-bright: var(--color-noir-high);
+  --color-surface-container-lowest: var(--color-noir);
+  --color-surface-container-low: var(--color-noir-high);
+  --color-surface-container: var(--color-noir-high);
+  --color-surface-container-high: #211c12;
+  --color-surface-container-highest: var(--color-gold);
+  --color-surface-variant: var(--color-noir-high);
+  --color-surface-tint: #ffffff;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #c9c2b0;
+  --color-inverse-surface: var(--color-cream);
+  --color-inverse-on-surface: var(--color-noir);
+
+  --color-outline: var(--color-gold);
+  --color-outline-variant: #332c1c;
+
+  --color-primary: var(--color-gold);
+  --color-on-primary: var(--color-noir);
+  --color-primary-container: var(--color-gold);
+  --color-on-primary-container: var(--color-noir);
+  --color-inverse-primary: var(--color-noir);
+  --color-primary-fixed: var(--color-gold-light);
+  --color-primary-fixed-dim: var(--color-gold);
+  --color-on-primary-fixed: var(--color-noir);
+  --color-on-primary-fixed-variant: #4a4238;
+
+  --color-secondary: var(--color-gold-light);
+  --color-on-secondary: var(--color-noir);
+  --color-secondary-container: var(--color-noir-high);
+  --color-on-secondary-container: var(--color-gold-light);
+  --color-secondary-fixed: var(--color-gold-light);
+  --color-secondary-fixed-dim: var(--color-gold);
+  --color-on-secondary-fixed: var(--color-noir);
+  --color-on-secondary-fixed-variant: #6b5b3a;
+
+  --color-tertiary: #b8a06a;
+  --color-on-tertiary: var(--color-noir);
+  --color-tertiary-container: var(--color-noir-high);
+  --color-on-tertiary-container: #ddd0b8;
+  --color-tertiary-fixed: var(--color-noir-high);
+  --color-tertiary-fixed-dim: #ddd0b8;
+  --color-on-tertiary-fixed: var(--color-noir);
+  --color-on-tertiary-fixed-variant: #4a4238;
+
+  background-color: var(--color-noir);
 }
 
 /* ═══════════════════════════════════════════════════════════════

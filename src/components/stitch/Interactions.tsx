@@ -70,37 +70,6 @@ export function Interactions() {
       });
     });
 
-    /* ── radio groups highlight their chosen card (Booking) ──────── */
-    const groups = new Set<string>();
-    document
-      .querySelectorAll<HTMLInputElement>('input[type="radio"][name]')
-      .forEach((r) => groups.add(r.name));
-
-    groups.forEach((name) => {
-      const radios = Array.from(
-        document.querySelectorAll<HTMLInputElement>(`input[type="radio"][name="${name}"]`)
-      );
-      const paint = () => {
-        radios.forEach((r) => {
-          const card = r.closest<HTMLElement>(".group");
-          if (card) {
-            card.classList.toggle("bg-surface-container", r.checked);
-            card.classList.toggle("border-primary/20", r.checked);
-          }
-          // artisan portraits desaturate unless chosen
-          const img = r.previousElementSibling as HTMLElement | null;
-          if (img?.tagName === "IMG" || img?.querySelector?.("img")) {
-            img.classList.toggle("grayscale", !r.checked);
-          }
-        });
-      };
-      radios.forEach((r) => {
-        r.addEventListener("change", paint);
-        cleanups.push(() => r.removeEventListener("change", paint));
-      });
-      paint();
-    });
-
     /* ── tab rows (Resource Library) ─────────────────────────────── */
     document
       .querySelectorAll<HTMLElement>("[data-tabs], .tab-row")
