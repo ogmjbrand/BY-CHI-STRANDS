@@ -40,7 +40,7 @@ export function Cta(props: ButtonProps | LinkProps) {
   if ("href" in props && props.href) {
     const { href, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
     return (
-      <Link href={href} className={cls} {...anchorRest}>
+      <Link href={href as string} className={cls} {...anchorRest}>
         {children}
       </Link>
     );

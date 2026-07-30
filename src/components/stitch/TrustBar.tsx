@@ -3,32 +3,30 @@
 import { motion } from "framer-motion";
 
 /**
- * A slim credibility strip, distinct from the "Three Pillars" storytelling
- * section further down the page — this one is transactional (grade,
- * traceability, durability, shipping), the facts a buyer checks before
- * paying premium prices. Every claim here already exists elsewhere on the
- * site (FAQs, product copy): nothing new is asserted.
+ * Gold credibility strip directly under the hero. Every claim already exists
+ * elsewhere on the site (site.description, FAQs, product copy) — nothing new
+ * is asserted here.
  */
 const SIGNALS = [
   {
     icon: "workspace_premium",
-    label: "Super Double Drawn",
-    detail: "Full density, root to tip",
+    label: "Vietnamese Human Hair",
+    detail: "Authentic & Premium Quality",
   },
   {
     icon: "fingerprint",
-    label: "Single Donor Traceable",
-    detail: "Every bundle, one source",
+    label: "Single Donor Hair",
+    detail: "One Donor, One Bundle",
   },
   {
-    icon: "history_toggle_off",
-    label: "5+ Years With Care",
-    detail: "Bundles outlast the trend",
+    icon: "eco",
+    label: "Ethically Sourced",
+    detail: "Responsibly & Ethically Sourced",
   },
   {
-    icon: "local_shipping",
-    label: "Lagos & Worldwide",
-    detail: "Same-week local, DHL abroad",
+    icon: "public",
+    label: "Worldwide Shipping",
+    detail: "Fast & Secure Delivery",
   },
 ];
 
@@ -49,23 +47,23 @@ export function TrustBar() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="border-y border-outline-variant/20 bg-surface-container-lowest"
+      className="bg-primary-container"
     >
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-outline-variant/15">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-on-primary-container/15">
           {SIGNALS.map((s) => (
             <motion.div
               key={s.label}
               variants={item}
               className="flex flex-col items-center text-center gap-2 px-4 py-8 md:py-10"
             >
-              <span className="material-symbols-outlined text-primary text-[26px] mb-1">
+              <span className="material-symbols-outlined text-on-primary-container text-[26px] mb-1">
                 {s.icon}
               </span>
-              <span className="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-surface">
+              <span className="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-primary-container">
                 {s.label}
               </span>
-              <span className="font-body-sm text-[12px] text-on-surface-variant">
+              <span className="font-body-sm text-[12px] text-on-primary-container/70">
                 {s.detail}
               </span>
             </motion.div>
