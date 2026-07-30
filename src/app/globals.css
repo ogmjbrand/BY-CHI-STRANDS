@@ -539,61 +539,67 @@
 
 @theme {
   /*
-   * 60/30/10: gold is the dominant surface colour (page backgrounds), black
-   * carries primary/CTA/text emphasis, and the pre-existing white/cream
-   * container scale becomes the "other" 10% that content cards sit on top
-   * of. --color-error and its pair stay untouched — semantic, not brand.
+   * Modern Luxury Editorial Couture — the palette replacing the original
+   * Stitch export's gold-dominant scheme. White/ivory now carries every
+   * surface; champagne gold is demoted to a rare accent role (outline,
+   * badges, CTA container fills) and never used as a section background.
+   * Token *names* are unchanged from the Stitch system on purpose — every
+   * page already styled with bg-surface/text-on-surface/border-outline
+   * inherits the new look immediately without markup changes. Pages with
+   * their own hardcoded hex overrides in stitch-screens.css are unaffected
+   * until that screen is rebuilt. --color-error and its pair stay
+   * untouched — semantic, not brand.
    */
 
   /* ── Colour roles ──────────────────────────────────────────── */
-  --color-background: #c8a75b;
-  --color-on-background: #141414;
+  --color-background: #ffffff;
+  --color-on-background: #121212;
 
-  --color-surface: #c8a75b;
-  --color-surface-dim: #ad8a3f;
-  --color-surface-bright: #dac085;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f3eee4;
+  --color-surface-bright: #ffffff;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f8f3e7;
-  --color-surface-container: #f1e6cc;
-  --color-surface-container-high: #e9d8b0;
-  --color-surface-container-highest: #e0c994;
-  --color-surface-variant: #e0c994;
-  --color-surface-tint: #141414;
-  --color-on-surface: #141414;
-  --color-on-surface-variant: #3a2f17;
-  --color-inverse-surface: #141414;
-  --color-inverse-on-surface: #f1e6cc;
+  --color-surface-container-low: #f8f6f2;
+  --color-surface-container: #f1ece1;
+  --color-surface-container-high: #e9e0cd;
+  --color-surface-container-highest: #c8a75b;
+  --color-surface-variant: #f1ece1;
+  --color-surface-tint: #121212;
+  --color-on-surface: #121212;
+  --color-on-surface-variant: #4a4238;
+  --color-inverse-surface: #121212;
+  --color-inverse-on-surface: #f8f6f2;
 
-  --color-outline: #5c4a24;
-  --color-outline-variant: #a98a4c;
+  --color-outline: #c8a75b;
+  --color-outline-variant: #e5dcc8;
 
-  --color-primary: #141414;
+  --color-primary: #121212;
   --color-on-primary: #ffffff;
   --color-primary-container: #c8a75b;
-  --color-on-primary-container: #141414;
-  --color-inverse-primary: #e5c273;
-  --color-primary-fixed: #ffdf9a;
-  --color-primary-fixed-dim: #e5c273;
-  --color-on-primary-fixed: #141414;
-  --color-on-primary-fixed-variant: #3a2f17;
+  --color-on-primary-container: #121212;
+  --color-inverse-primary: #c8a75b;
+  --color-primary-fixed: #efdfb8;
+  --color-primary-fixed-dim: #c8a75b;
+  --color-on-primary-fixed: #121212;
+  --color-on-primary-fixed-variant: #4a4238;
 
-  --color-secondary: #8a6d3a;
+  --color-secondary: #c8a75b;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #f1e6cc;
-  --color-on-secondary-container: #3a2f17;
-  --color-secondary-fixed: #f8e0ab;
-  --color-secondary-fixed-dim: #dbc491;
-  --color-on-secondary-fixed: #141414;
-  --color-on-secondary-fixed-variant: #55451d;
+  --color-secondary-container: #f8f6f2;
+  --color-on-secondary-container: #4a4238;
+  --color-secondary-fixed: #f1e4c7;
+  --color-secondary-fixed-dim: #ddc08a;
+  --color-on-secondary-fixed: #121212;
+  --color-on-secondary-fixed-variant: #6b5b3a;
 
-  --color-tertiary: #565048;
+  --color-tertiary: #a08a63;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #e0c994;
-  --color-on-tertiary-container: #141414;
-  --color-tertiary-fixed: #f1e6cc;
-  --color-tertiary-fixed-dim: #e0c994;
-  --color-on-tertiary-fixed: #141414;
-  --color-on-tertiary-fixed-variant: #3a2f17;
+  --color-tertiary-container: #f1ece1;
+  --color-on-tertiary-container: #121212;
+  --color-tertiary-fixed: #f1ece1;
+  --color-tertiary-fixed-dim: #ddd0b8;
+  --color-on-tertiary-fixed: #121212;
+  --color-on-tertiary-fixed-variant: #4a4238;
 
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
@@ -626,14 +632,14 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   /* ── Font families ─────────────────────────────────────────── */
-  --font-display-lg: var(--font-playfair), Georgia, serif;
-  --font-display-md: var(--font-playfair), Georgia, serif;
-  --font-headline-lg: var(--font-playfair), Georgia, serif;
-  --font-headline-lg-mobile: var(--font-playfair), Georgia, serif;
-  --font-body-xl: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-body-md: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-body-sm: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-label-caps: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display-lg: var(--font-cormorant), Georgia, serif;
+  --font-display-md: var(--font-cormorant), Georgia, serif;
+  --font-headline-lg: var(--font-cormorant), Georgia, serif;
+  --font-headline-lg-mobile: var(--font-cormorant), Georgia, serif;
+  --font-body-xl: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-label-caps: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   /* ── Type scale ────────────────────────────────────────────── */
   --text-display-lg: 64px;

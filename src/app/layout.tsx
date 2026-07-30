@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { StoreProvider } from "@/context/StoreContext";
 import { site } from "@/lib/site";
 import "./globals.css";
 
 /*
- * Playfair is self-hosted from globals.css under two family names — the
- * screens disagree on whether the italic axis is loaded, and next/font would
- * register both instances as "Playfair Display", leaking the real italic
- * into screens whose export synthesises oblique instead.
+ * Modern Luxury Editorial Couture typography: Cormorant Garamond for
+ * headlines (Canela's the aspirational reference but it's a paid Colophon
+ * Foundry licence — this is the freely-hostable substitute in the same
+ * token slot, swap-in-place if the client licenses Canela later), Inter for
+ * body copy, replacing the Stitch export's self-hosted Playfair/Manrope.
  */
-const manrope = Manrope({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -52,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${manrope.variable}`}
+      className={`scroll-smooth ${cormorant.variable} ${inter.variable}`}
     >
       {/*
         No typography or colour classes here: each Stitch screen reproduces
