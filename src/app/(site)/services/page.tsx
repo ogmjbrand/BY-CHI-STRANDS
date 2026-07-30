@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function SignatureServices1Page() {
   return (
-    <div className="scr-signature-services-1 bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <div className="scr-signature-services-1 theme-noir bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
       {/* Top Navigation Bar */}
-      <nav className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
+      <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
-            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
+            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface" href="/">
               ByChi Strands
             </Link>
             {" "}
@@ -98,7 +98,7 @@ export default function SignatureServices1Page() {
               <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="The ByChi Strands founder wearing a burgundy lace-front unit styled in soft waves" src="/services/ceo-portrait-1.jpeg" />
             </div>
             {/* Floating Detail Card */}
-            <div className="absolute -bottom-8 -left-8 glass-card p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
+            <div className="absolute -bottom-8 -left-8 glass-card text-noir p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
               <p className="font-label-caps text-primary text-[10px] mb-2">Signature Finish</p>
               {" "}
               <p className="font-headline-lg text-[18px] mb-2 leading-tight">Vietnamese Raw Hair Specialists</p>
@@ -166,7 +166,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=hair-laundry"
                   aria-label="Book Hair Laundry"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -196,7 +196,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=frontal-installation"
                   aria-label="Book Frontal Installation"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -224,7 +224,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=wig-making"
                   aria-label="Book Wig Making"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -252,7 +252,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=ventilation"
                   aria-label="Book Ventilation"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -280,7 +280,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=hair-importation-service"
                   aria-label="Book Hair Importation Service"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -309,7 +309,7 @@ export default function SignatureServices1Page() {
                   href={whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </a>
@@ -345,7 +345,7 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=training"
                   aria-label="Book Training"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 >
                   north_east
                 </Link>
@@ -365,25 +365,25 @@ export default function SignatureServices1Page() {
                 </p>
                 {" "}
                 <div className="space-y-8">
-                  <div className="flex items-center gap-6 p-6 glass-card rounded-lg border-l-4 border-primary">
+                  <div className="flex items-center gap-6 p-6 glass-card text-noir rounded-lg border-l-4 border-primary">
                     <span className="material-symbols-outlined text-primary text-3xl">verified_user</span>
                     {" "}
                     <div>
                       <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h4>
                       {" "}
-                      <p className="font-body-sm text-on-surface-variant">
+                      <p className="font-body-sm text-noir/70">
                         We only work with premium Vietnamese raw hair and professional-grade products.
                       </p>
                     </div>
                   </div>
                   {" "}
-                  <div className="flex items-center gap-6 p-6 glass-card rounded-lg">
+                  <div className="flex items-center gap-6 p-6 glass-card text-noir rounded-lg">
                     <span className="material-symbols-outlined text-primary text-3xl">lock</span>
                     {" "}
                     <div>
                       <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Secured Deposits</h4>
                       {" "}
-                      <p className="font-body-sm text-on-surface-variant">
+                      <p className="font-body-sm text-noir/70">
                         A 30% deposit is required to confirm your slot, deductible from the final service fee.
                       </p>
                     </div>
@@ -391,9 +391,9 @@ export default function SignatureServices1Page() {
                 </div>
               </div>
               {/* Booking CTA — the real form (service, date, time, notes) lives at /book */}
-              <div className="glass-card p-10 rounded-xl shadow-xl reveal-up" style={{ transitionDelay: "200ms" }}>
+              <div className="glass-card text-noir p-10 rounded-xl shadow-xl reveal-up" style={{ transitionDelay: "200ms" }}>
                 <h3 className="font-headline-lg text-2xl mb-4">Ready when you are</h3>
-                <p className="font-body-md text-on-surface-variant mb-10">
+                <p className="font-body-md text-noir/70 mb-10">
                   Pick a service, your preferred date and time on the full booking form — we confirm
                   every slot personally over WhatsApp.
                 </p>
@@ -420,7 +420,7 @@ export default function SignatureServices1Page() {
         </section>
       </main>
       {/* Footer */}
-      <footer className="bg-surface-container-low dark:bg-surface-container-highest">
+      <footer className="bg-surface-container-low">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-1">
             <h3 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h3>
@@ -431,7 +431,7 @@ export default function SignatureServices1Page() {
             {" "}
             <div className="flex gap-4">
               <a
-                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -441,7 +441,7 @@ export default function SignatureServices1Page() {
               </a>
               {" "}
               <a
-                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
                 href={site.socials.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"

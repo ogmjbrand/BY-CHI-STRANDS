@@ -12,6 +12,8 @@ import { getProductReviews } from "@/lib/product-api";
 import { formatPrice } from "@/lib/utils";
 import { testimonials } from "@/lib/testimonials";
 import { site, whatsappLink } from "@/lib/site";
+import { SiteHeader } from "@/components/stitch/SiteHeader";
+import { WishlistHeart } from "@/components/stitch/WishlistHeart";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -85,20 +87,21 @@ export default async function ProductPage({
   return (
     <>
       {/* Mobile design (Stitch: digital_flagship_mobile_signature_wigs_pdp) */}
-      <div className="md:hidden scr-mobile-signature-wigs-pdp bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+      <div className="md:hidden scr-mobile-signature-wigs-pdp theme-noir bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
         {/* Header / Navigation */}
-        <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-outline-variant/30 transition-all duration-300">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-noir/90 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300">
           <div className="flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max mx-auto">
             <button className="p-2 -ml-2 hover:opacity-70 transition-opacity">
               <span className="material-symbols-outlined text-[24px]">menu</span>
             </button>
-            <Link className="font-display-md text-[24px] font-bold tracking-tighter text-on-surface" href="/">
-              ByChi Strands
+            <Link href="/" className="flex items-center gap-1.5 leading-none">
+              <span className="font-display-md text-[20px] tracking-[0.08em] text-white">ByChi</span>
+              <span className="font-script text-2xl text-gold-light -mt-1">Strands</span>
             </Link>
             <div className="flex items-center gap-4">
-              <button className="p-2 -mr-2 hover:opacity-70 transition-opacity">
-                <span className="material-symbols-outlined text-[24px]" data-icon="shopping_bag">shopping_bag</span>
-              </button>
+              <Link href="/cart" aria-label="Your bag" className="p-2 -mr-2 hover:opacity-70 transition-opacity">
+                <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
+              </Link>
             </div>
           </div>
         </header>
@@ -123,9 +126,7 @@ export default async function ProductPage({
             <div className="space-y-2">
               <div className="flex justify-between items-start">
                 <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">{product.name}</h2>
-                <button className="p-2 hover:text-primary transition-colors">
-                  <span className="material-symbols-outlined">favorite</span>
-                </button>
+                <WishlistHeart slug={product.slug} />
               </div>
               {avgRating !== null ? (
                 <div className="flex items-center gap-2 text-secondary">
@@ -139,7 +140,7 @@ export default async function ProductPage({
               )}
             </div>
             <div className="h-px bg-outline-variant/30"></div>
-            <div className="space-y-8">
+            <div id="configure" className="space-y-8 scroll-mt-24">
               <ProductConfigurator product={product} variant="mobile" />
             </div>
           </section>
@@ -168,7 +169,7 @@ export default async function ProductPage({
           ) : null}
         </main>
         {/* Sticky Add to Bag CTA */}
-        <div className="fixed bottom-0 left-0 right-0 p-margin-mobile glass-header border-t border-outline-variant/30 z-50">
+        <div className="fixed bottom-0 left-0 right-0 p-margin-mobile bg-noir/95 backdrop-blur-xl border-t border-outline-variant/30 z-50">
           <div className="max-w-container-max mx-auto flex items-center gap-4">
             <a
               href={whatsappLink(`Hi ByChiStrands — I have a question about the ${product.name}.`)}
@@ -178,55 +179,20 @@ export default async function ProductPage({
             >
               <span className="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
             </a>
-            <button className="flex-1 bg-[#111111] text-white py-4 font-label-caps rounded-lg uppercase tracking-widest hover:bg-primary transition-all duration-400 active:scale-95 luxury-shadow">
-              Add to Bag
-            </button>
+            <a
+              href="#configure"
+              className="flex-1 text-center bg-gold text-noir py-4 font-label-caps rounded-lg uppercase tracking-widest hover:bg-gold-light transition-all duration-400 active:scale-95"
+            >
+              Choose Options
+            </a>
           </div>
         </div>
       </div>
 
       {/* Desktop design (Stitch: digital_flagship_signature_wigs_pdp_with_reviews) */}
-      <div className="hidden md:block scr-signature-wigs-pdp-with-reviews font-body-md overflow-x-hidden">
+      <div className="hidden md:block scr-signature-wigs-pdp-with-reviews theme-noir font-body-md overflow-x-hidden bg-noir text-white">
         <div className="custom-cursor hidden md:block" id="cursor"></div>
-        {/* TopNavBar */}
-        <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
-          <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
-            <div className="flex items-center gap-gutter">
-              <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
-                ByChi Strands
-              </Link>
-              <nav className="hidden md:flex gap-8">
-                <Link className="text-primary font-semibold border-b border-primary pb-1" href="/shop">Shop</Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
-                  Collections
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
-                  Services
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
-                  Academy
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-                  About
-                </Link>
-              </nav>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/book"
-                className="hidden md:block bg-on-surface text-surface px-6 py-3 font-label-caps text-xs scale-95 active:scale-100 transition-transform duration-300 hover:bg-primary transition-colors"
-              >
-                Book Appointment
-              </Link>
-              <div className="flex gap-4 items-center">
-                <span className="material-symbols-outlined text-2xl cursor-pointer hover:text-primary transition-colors">
-                  shopping_bag
-                </span>
-                <span className="material-symbols-outlined text-2xl md:hidden cursor-pointer">menu</span>
-              </div>
-            </div>
-          </div>
-        </header>
+        <SiteHeader dark />
         <main className="max-w-container-max mx-auto px-margin-desktop py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
             {/* Editorial Left Column (Storytelling & Assets) */}
@@ -314,7 +280,7 @@ export default async function ProductPage({
               </section>
             </div>
             {/* Sticky Sidebar */}
-            <aside className="lg:col-span-5 lg:sticky lg:top-32 h-fit space-y-10 bg-white/40 backdrop-blur-sm lg:p-8 luxury-shadow border border-white/50">
+            <aside className="lg:col-span-5 lg:sticky lg:top-32 h-fit space-y-10 bg-noir-high/60 backdrop-blur-sm lg:p-8 luxury-shadow border border-white/10">
               <div className="space-y-2">
                 <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">HAND-TIED COLLECTIONS</p>
                 <h1 className="font-display-lg text-4xl lg:text-5xl leading-tight lg:leading-[1]">{product.name}</h1>
@@ -379,7 +345,7 @@ export default async function ProductPage({
           </section>
         ) : null}
         {/* Footer */}
-        <footer className="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant/30">
+        <footer className="bg-surface-container-low border-t border-outline-variant/30">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div className="space-y-6">
               <div className="font-display-md text-headline-lg text-primary">ByChi Strands</div>

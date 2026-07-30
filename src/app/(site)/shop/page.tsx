@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function ShopAllPage() {
   return (
-    <div className="scr-shop-all bg-surface text-on-surface">
-      <SiteHeader />
+    <div className="scr-shop-all theme-noir bg-surface text-on-surface">
+      <SiteHeader dark />
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
         {/* Editorial Header */}
         <header className="mb-20 reveal">
@@ -36,7 +36,7 @@ export default function ShopAllPage() {
         </div>
       </main>
       {/* Footer */}
-      <footer className="bg-surface-container-low dark:bg-surface-container-highest full-width border-t border-outline-variant/30">
+      <footer className="bg-surface-container-low full-width border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
             <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h2>

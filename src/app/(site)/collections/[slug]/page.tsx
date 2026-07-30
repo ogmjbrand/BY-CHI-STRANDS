@@ -37,32 +37,34 @@ export default async function CollectionPage({
   const items = collectionProducts(slug);
 
   return (
-    <StitchPageShell
-      eyebrow={collection.tagline}
-      title={collection.name}
-      lede={collection.description}
-    >
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
-        {items.map((product, i) => (
-          <Link
-            key={product.slug}
-            href={`/shop/${product.slug}`}
-            className="group reveal"
-            style={{ transitionDelay: `${(i % 3) * 150}ms` }}
-          >
-            <div className="aspect-[4/5] overflow-hidden bg-surface-dim mb-8">
-              <ProductMedia
-                media={heroFor(product.slug)}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <h2 className="font-display-md text-headline-lg mb-2">{product.name}</h2>
-            <p className="font-body-md text-body-sm text-on-surface-variant uppercase tracking-widest">
-              {formatPrice(priceFor(product))}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </StitchPageShell>
+    <div className="theme-noir bg-background">
+      <StitchPageShell
+        eyebrow={collection.tagline}
+        title={collection.name}
+        lede={collection.description}
+      >
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
+          {items.map((product, i) => (
+            <Link
+              key={product.slug}
+              href={`/shop/${product.slug}`}
+              className="group reveal"
+              style={{ transitionDelay: `${(i % 3) * 150}ms` }}
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-surface-dim mb-8">
+                <ProductMedia
+                  media={heroFor(product.slug)}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h2 className="font-display-md text-headline-lg mb-2">{product.name}</h2>
+              <p className="font-body-md text-body-sm text-on-surface-variant uppercase tracking-widest">
+                {formatPrice(priceFor(product))}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </StitchPageShell>
+    </div>
   );
 }

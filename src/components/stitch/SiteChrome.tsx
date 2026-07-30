@@ -127,7 +127,7 @@ function Column({
 
 export function StitchFooter() {
   return (
-    <footer className="bg-surface-container-low dark:bg-surface-container-highest">
+    <footer className="bg-surface-container-low">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
         <div className="col-span-1 md:col-span-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}

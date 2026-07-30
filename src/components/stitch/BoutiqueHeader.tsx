@@ -51,7 +51,7 @@ export function BoutiqueHeader() {
           >
             <span className="material-symbols-outlined align-middle">shopping_bag</span>
             {hydrated && cartCount > 0 ? (
-              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-white">
+              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-on-primary">
                 {cartCount}
               </span>
             ) : null}

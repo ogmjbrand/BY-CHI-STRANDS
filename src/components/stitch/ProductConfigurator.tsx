@@ -103,7 +103,7 @@ export function ProductConfigurator({
               aria-pressed={l === length}
               className={
                 l === length
-                  ? "border border-primary bg-primary text-white px-6 py-2 text-xs font-label-caps"
+                  ? "border border-primary bg-primary text-on-primary px-6 py-2 text-xs font-label-caps"
                   : "border border-outline-variant hover:border-primary px-6 py-2 text-xs font-label-caps transition-colors"
               }
             >
@@ -158,7 +158,7 @@ export function ProductConfigurator({
               href={enquiry}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-colors duration-500 flex items-center justify-center gap-3"
+              className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 flex items-center justify-center gap-3"
             >
               ENQUIRE ON WHATSAPP
               <span className="material-symbols-outlined text-lg">trending_flat</span>
@@ -168,7 +168,7 @@ export function ProductConfigurator({
           <MagneticButton className="w-full" strength={10}>
             <button
               onClick={add}
-              className="w-full bg-on-surface text-surface py-5 font-label-caps tracking-widest text-sm hover:bg-primary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
+              className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
             >
               ADD TO ATELIER BAG
               <span className="material-symbols-outlined text-lg">trending_flat</span>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function TheBoutiquePage() {
   return (
-    <div className="scr-the-boutique bg-background font-body-md text-on-background">
+    <div className="scr-the-boutique theme-noir bg-background font-body-md text-on-background">
       <BoutiqueHeader />
       {/* Editorial Hero */}
       <header className="pt-40 pb-20 md:pt-60 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
@@ -99,7 +99,7 @@ export default function TheBoutiquePage() {
               {" "}
               <Link
                 href="/shop"
-                className="inline-block bg-primary text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all duration-300"
+                className="inline-block bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all duration-300"
               >
                 Shop House Favourites
               </Link>
@@ -187,7 +187,7 @@ export default function TheBoutiquePage() {
             </Link>
           </div>
           {" "}
-          <div className="text-secondary dark:text-secondary-fixed font-body-sm text-body-sm tracking-wide">
+          <div className="text-secondary font-body-sm text-body-sm tracking-wide">
             © {new Date().getFullYear()} ByChi Strands. ALL RIGHTS RESERVED.
           </div>
         </div>

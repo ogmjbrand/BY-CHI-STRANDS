@@ -79,16 +79,16 @@ export function BookingForm() {
               return (
                 <label
                   key={s.slug}
-                  className={`group relative block bg-white p-8 transition-all duration-500 cursor-pointer border ${
+                  className={`group relative block p-8 transition-all duration-500 cursor-pointer border ${
                     on
                       ? "border-primary bg-surface-container"
-                      : "border-transparent hover:border-outline-variant/20 hover:bg-surface-container"
+                      : "border-transparent bg-white text-noir hover:border-outline-variant/20 hover:bg-surface-container hover:text-on-surface"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                     <div className="max-w-md">
-                      <h3 className="font-headline-lg text-xl mb-2 text-on-surface">{s.name}</h3>
-                      <p className="font-body-sm text-on-surface-variant opacity-80 leading-relaxed">
+                      <h3 className="font-headline-lg text-xl mb-2">{s.name}</h3>
+                      <p className="font-body-sm opacity-70 leading-relaxed">
                         {s.short}
                       </p>
                     </div>
@@ -96,7 +96,7 @@ export function BookingForm() {
                       <span className="block font-label-caps text-primary mb-1">
                         {s.duration.toUpperCase()}
                       </span>
-                      <span className="block font-body-md font-semibold text-on-surface">
+                      <span className="block font-body-md font-semibold">
                         BY CONSULTATION
                       </span>
                     </div>
@@ -126,11 +126,11 @@ export function BookingForm() {
               Your Appointment
             </h2>
           </div>
-          <div className="bg-white p-8 flex items-start md:items-center gap-6 luxury-shadow">
+          <div className="bg-white text-noir p-8 flex items-start md:items-center gap-6 luxury-shadow">
             <span className="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
             <div>
               <h4 className="font-headline-lg text-lg mb-1">Handled by our in-house team</h4>
-              <p className="font-body-sm text-on-surface-variant">
+              <p className="font-body-sm text-noir/70">
                 Every appointment is matched to whoever is best suited to your service. Note any
                 stylist preference or hair history in the notes below.
               </p>
@@ -154,7 +154,7 @@ export function BookingForm() {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 min={new Date().toISOString().slice(0, 10)}
-                className="w-full bg-white p-4 luxury-shadow font-body-md focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full bg-white text-noir p-4 luxury-shadow font-body-md focus:outline-none focus:ring-1 focus:ring-primary"
                 type="date"
               />
             </div>
@@ -169,7 +169,7 @@ export function BookingForm() {
                     aria-pressed={time === slot}
                     className={`py-4 border font-body-sm transition-all ${
                       time === slot
-                        ? "border-primary bg-primary text-white"
+                        ? "border-primary bg-primary text-on-primary"
                         : "border-outline-variant/30 hover:border-primary"
                     }`}
                   >
@@ -209,8 +209,8 @@ export function BookingForm() {
               Style Inspiration
             </h2>
           </div>
-          <div className="bg-white p-8 luxury-shadow">
-            <p className="font-body-sm text-on-surface-variant opacity-80 mb-6 max-w-lg">
+          <div className="bg-white text-noir p-8 luxury-shadow">
+            <p className="font-body-sm text-noir/70 mb-6 max-w-lg">
               Bring a reference photo to your appointment, or start with this one — a style saved for
               inspiration, not a ByChiStrands client photo. Mention it in your notes above if it&apos;s
               close to what you want.
@@ -227,13 +227,13 @@ export function BookingForm() {
       </div>
       {/* Right Column: Sticky Summary */}
       <aside className="lg:col-span-4">
-        <div className="sticky top-[120px] bg-white p-10 luxury-shadow flex flex-col h-fit">
+        <div className="sticky top-[120px] bg-white text-noir p-10 luxury-shadow flex flex-col h-fit">
           <h3 className="font-display-md text-2xl mb-8">Booking Summary</h3>
           <div className="space-y-8 flex-grow">
             <div>
               <span className="font-label-caps text-[10px] text-primary block mb-2">SERVICE</span>
               <p className="font-headline-lg text-lg leading-tight">{service.name}</p>
-              <span className="font-body-sm text-on-surface-variant">{service.duration}</span>
+              <span className="font-body-sm text-noir/70">{service.duration}</span>
             </div>
             <div>
               <span className="font-label-caps text-[10px] text-primary block mb-2">DATE & TIME</span>
@@ -241,11 +241,11 @@ export function BookingForm() {
                 {date ? formatDate(date) : "Select a date"}
                 {time ? ` · ${time}` : ""}
               </p>
-              <span className="font-body-sm text-on-surface-variant">Confirmed once we reply</span>
+              <span className="font-body-sm text-noir/70">Confirmed once we reply</span>
             </div>
             <div className="pt-8 border-t border-outline-variant/20 flex justify-between items-end">
               <div>
-                <span className="font-label-caps text-[10px] text-on-surface-variant block mb-1">SERVICE FEE</span>
+                <span className="font-label-caps text-[10px] text-noir/70 block mb-1">SERVICE FEE</span>
                 <p className="font-display-md text-2xl">Confirmed after consultation</p>
               </div>
             </div>
@@ -255,11 +255,11 @@ export function BookingForm() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={sendRequest}
-            className="mt-12 w-full text-center block bg-primary text-white py-6 font-label-caps text-sm tracking-[0.2em] hover:bg-[#C8A75B] transition-colors duration-400"
+            className="mt-12 w-full text-center block bg-primary text-on-primary py-6 font-label-caps text-sm tracking-[0.2em] hover:bg-secondary transition-colors duration-400"
           >
             REQUEST ON WHATSAPP
           </a>
-          <p className="text-center mt-6 font-body-sm text-on-surface-variant opacity-60 text-[11px]">
+          <p className="text-center mt-6 font-body-sm text-noir/60 text-[11px]">
             A 30% deposit is required to confirm your appointment, deductible from the final service
             fee.
           </p>

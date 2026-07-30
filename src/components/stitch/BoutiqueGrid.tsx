@@ -89,7 +89,7 @@ export function BoutiqueGrid({
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
                     {p.badges?.includes("limited") ? (
                       <div className="absolute top-6 right-6 bg-white px-4 py-1">
-                        <span className="font-label-caps text-[10px] uppercase tracking-tighter">Limited Edition</span>
+                        <span className="font-label-caps text-[10px] uppercase tracking-tighter text-noir">Limited Edition</span>
                       </div>
                     ) : null}
                   </div>

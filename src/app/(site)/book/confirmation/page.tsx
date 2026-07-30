@@ -66,7 +66,7 @@ export default async function BookingConfirmationPage({
       : null;
 
   return (
-    <div className="scr-atelier-booking-confirmation bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+    <div className="scr-atelier-booking-confirmation theme-noir bg-background text-on-background font-body-md antialiased overflow-x-hidden">
       {/* TopAppBar */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline/20 shadow-sm transition-all duration-500 ease-in-out">
         <div className="flex justify-between items-center w-full px-8 md:px-20 py-4 max-w-[1440px] mx-auto">
@@ -175,7 +175,7 @@ export default async function BookingConfirmationPage({
                 <a
                   href={icsHref}
                   download={`${service?.slug ?? "bychistrands"}-request.ics`}
-                  className="bg-[#111111] text-white px-8 py-4 font-label-caps text-label-caps flex items-center gap-2 hover:bg-[#C8A75B] transition-all duration-400 ease-in-out tracking-[0.15em]"
+                  className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps flex items-center gap-2 hover:bg-secondary transition-all duration-400 ease-in-out tracking-[0.15em]"
                 >
                   <span className="material-symbols-outlined text-[18px]">calendar_add_on</span>
                   ADD TO CALENDAR
@@ -191,7 +191,7 @@ export default async function BookingConfirmationPage({
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary-container hover:text-white transition-all duration-400 tracking-[0.15em]"
+                className="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary-container hover:text-on-primary-container transition-all duration-400 tracking-[0.15em]"
               >
                 MESSAGE US ON WHATSAPP
               </a>

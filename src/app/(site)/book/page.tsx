@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AtelierServiceBookingPage() {
   return (
-    <div className="scr-atelier-service-booking bg-background text-on-surface font-body-md selection:bg-primary-container/30">
+    <div className="scr-atelier-service-booking theme-noir bg-background text-on-surface font-body-md selection:bg-primary-container/30">
       {/* Top Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
         <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
