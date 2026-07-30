@@ -80,6 +80,9 @@ export function SiteHeader() {
             <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
             <CountBadge count={hydrated ? cartCount : 0} />
           </button>
+          <button aria-label="Open menu" className="md:hidden text-on-surface-variant hover:text-on-surface transition-colors">
+            <span className="material-symbols-outlined text-[22px]">menu</span>
+          </button>
         </div>
       </div>
     </header>

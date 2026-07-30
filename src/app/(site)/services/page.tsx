@@ -47,15 +47,17 @@ export default function SignatureServices1Page() {
           </div>
           {" "}
           <div className="flex items-center gap-6">
-            <button className="hidden md:block bg-on-surface text-surface py-3 px-8 text-label-caps hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase tracking-[0.15em]">
+            <Link
+              href="/book"
+              className="hidden md:block bg-on-surface text-surface py-3 px-8 text-label-caps hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase tracking-[0.15em]"
+            >
               Book Appointment
-            </button>
+            </Link>
             {" "}
             <div className="flex gap-4">
-              <span className="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">
+              <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">
                 shopping_bag
-              </span>
-              {" "}
+              </Link>
               <span className="material-symbols-outlined text-on-surface-variant cursor-pointer md:hidden">menu</span>
             </div>
           </div>
@@ -145,7 +147,7 @@ export default function SignatureServices1Page() {
             {/* Service 1 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up shot of a stylist's hands gently treating luxury hair extensions in a minimalist, bright studio setting. Soft focus on water droplets and premium hair products. The aesthetic is clean, ivory-toned, and conveys a sense of artisanal care and meticulous craftsmanship." src="/stitch/img-038.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A stylist's hands treating luxury hair extensions in the studio" src="/stitch/img-038.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -161,15 +163,19 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • 24HR TURNAROUND</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=hair-laundry"
+                  aria-label="Book Hair Laundry"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
             {/* Service 2 */}
             <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro photograph of a perfectly executed frontal installation. The lace is invisible against the skin, blending seamlessly into a natural-looking hairline. High-end lighting captures the subtle gold highlights of the hair and the flawless skin texture. Professional, high-fidelity beauty photography style." src="/stitch/img-075.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A close-up of a frontal installation with an invisible, natural-looking hairline" src="/stitch/img-075.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -187,15 +193,19 @@ export default function SignatureServices1Page() {
                   <p className="font-body-sm text-on-surface-variant mt-2">Home service available on request.</p>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=frontal-installation"
+                  aria-label="Book Frontal Installation"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
             {/* Service 3 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Vibrant luxury hair extensions being hand-colored in a deep plum and mahogany gradient. The color appears rich and multidimensional, with high sheen. The workspace is pristine, with glass jars of pigment and gold-handled tools, reflecting a luxury salon environment." src="/stitch/img-004.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Luxury hair extensions in a deep plum and mahogany gradient" src="/stitch/img-004.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -211,15 +221,19 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • CUSTOM FIT</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=wig-making"
+                  aria-label="Book Wig Making"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
             {/* Service 4 */}
             <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Split screen style imagery showing a before and after restoration of a high-quality human hair wig. The 'after' side shows extremely smooth, tangle-free, and shiny hair that looks brand new. The lighting is high-key and commercial, emphasizing the quality of the restoration work." src="/stitch/img-063.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Before and after restoration of a human hair wig, smooth and tangle-free" src="/stitch/img-063.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -235,9 +249,13 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • HAND FINISHED</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=ventilation"
+                  aria-label="Book Ventilation"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
             {/* Service 5 */}
@@ -259,15 +277,19 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • GUIDED SOURCING</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=hair-importation-service"
+                  aria-label="Book Hair Importation Service"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
             {/* Service 6 */}
             <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A curated flat-lay of professional hair styling tools — combs, clamps and finishing sprays — arranged on a marble surface." src="/stitch/img-070.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A flat-lay of professional hair styling tools — combs, clamps and finishing sprays" src="/stitch/img-070.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -320,9 +342,13 @@ export default function SignatureServices1Page() {
                   <span className="font-label-caps text-primary tracking-widest">SCHEDULED SESSIONS • BY CONSULTATION</span>
                 </div>
                 {" "}
-                <button className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+                <Link
+                  href="/book?service=training"
+                  aria-label="Book Training"
+                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all"
+                >
                   north_east
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -364,81 +390,30 @@ export default function SignatureServices1Page() {
                   </div>
                 </div>
               </div>
-              {/* The Booking Form Shell */}
+              {/* Booking CTA — the real form (service, date, time, notes) lives at /book */}
               <div className="glass-card p-10 rounded-xl shadow-xl reveal-up" style={{ transitionDelay: "200ms" }}>
-                <div className="mb-10">
-                  <div className="flex justify-between mb-4">
-                    <span className="text-label-caps text-on-surface-variant tracking-[0.15em]">Step 1 of 3</span>
-                    {" "}
-                    <span className="text-label-caps text-primary font-bold uppercase tracking-[0.15em]">Select Details</span>
-                  </div>
-                  {" "}
-                  <div className="h-1 bg-outline-variant/30 w-full overflow-hidden">
-                    <div className="h-full bg-primary w-1/3 transition-all duration-700"></div>
-                  </div>
+                <h3 className="font-headline-lg text-2xl mb-4">Ready when you are</h3>
+                <p className="font-body-md text-on-surface-variant mb-10">
+                  Pick a service, your preferred date and time on the full booking form — we confirm
+                  every slot personally over WhatsApp.
+                </p>
+                <div className="space-y-4">
+                  <Link
+                    href="/book"
+                    className="w-full block text-center bg-on-surface text-surface py-5 font-label-caps hover:bg-primary transition-all duration-500 shadow-lg active:scale-95"
+                  >
+                    Start Your Booking
+                  </Link>
+                  <a
+                    href={whatsappLink("Hi ByChiStrands — I'd like to book a service.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 border border-outline py-5 font-label-caps hover:bg-surface-container transition-all duration-500"
+                  >
+                    Or Message Us Directly
+                    <span className="material-symbols-outlined text-[18px]">chat</span>
+                  </a>
                 </div>
-                {" "}
-                <form className="space-y-8">
-                  <div>
-                    <label className="font-label-caps text-[10px] mb-2 block text-on-surface-variant">Select Service Category</label>
-                    {" "}
-                    <select className="w-full bg-transparent border-b border-outline py-3 font-body-md focus:border-primary focus:ring-0 outline-none transition-all appearance-none cursor-pointer">
-                      <option>Hair Laundry</option>
-                      {" "}
-                      <option>Hair Importation Service</option>
-                      {" "}
-                      <option>Wig Making</option>
-                      {" "}
-                      <option>Ventilation</option>
-                      {" "}
-                      <option>Frontal Installation</option>
-                      {" "}
-                      <option>Sales of Hair Tools</option>
-                      {" "}
-                      <option>Training</option>
-                    </select>
-                  </div>
-                  {" "}
-                  <div className="grid grid-cols-2 gap-8">
-                    <div>
-                      <label className="font-label-caps text-[10px] mb-2 block text-on-surface-variant">Preferred Date</label>
-                      {" "}
-                      <input className="w-full bg-transparent border-b border-outline py-3 font-body-md focus:border-primary focus:ring-0 outline-none" type="date" />
-                    </div>
-                    {" "}
-                    <div>
-                      <label className="font-label-caps text-[10px] mb-2 block text-on-surface-variant">Select Time</label>
-                      {" "}
-                      <select className="w-full bg-transparent border-b border-outline py-3 font-body-md focus:border-primary focus:ring-0 outline-none">
-                        <option>09:00 AM</option>
-                        {" "}
-                        <option>11:30 AM</option>
-                        {" "}
-                        <option>02:00 PM</option>
-                        {" "}
-                        <option>04:30 PM</option>
-                      </select>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pt-8 space-y-4">
-                    <div className="flex justify-between items-center text-body-sm text-on-surface-variant italic">
-                      <span>Service Fee</span>
-                      {" "}
-                      <span>Confirmed after consultation</span>
-                    </div>
-                    {" "}
-                    <div className="flex justify-between items-center text-body-md font-bold">
-                      <span>Deposit</span>
-                      {" "}
-                      <span className="text-primary">30% to confirm your slot</span>
-                    </div>
-                  </div>
-                  {" "}
-                  <button className="w-full bg-on-surface text-surface py-5 font-label-caps hover:bg-primary transition-all duration-500 mt-6 shadow-lg active:scale-95" type="submit">
-                    Continue to Secure Payment
-                  </button>
-                </form>
               </div>
             </div>
           </div>
@@ -455,11 +430,23 @@ export default function SignatureServices1Page() {
             </p>
             {" "}
             <div className="flex gap-4">
-              <a className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+              <a
+                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                href={site.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
                 <span className="material-symbols-outlined text-[18px]">share</span>
               </a>
               {" "}
-              <a className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+              <a
+                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                href={site.socials.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <span className="material-symbols-outlined text-[18px]">camera</span>
               </a>
             </div>
@@ -468,9 +455,9 @@ export default function SignatureServices1Page() {
           <div className="flex flex-col gap-4">
             <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Company</h4>
             {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">
+            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/about">
               About Our Craft
-            </a>
+            </Link>
             {" "}
             <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/collections">
               Collections
@@ -512,7 +499,9 @@ export default function SignatureServices1Page() {
               WhatsApp
             </a>
             {" "}
-            <p className="font-body-md text-body-sm text-on-surface-variant mt-6">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
+            <p className="font-body-md text-body-sm text-on-surface-variant mt-6">
+              © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
+            </p>
           </div>
         </div>
       </footer>

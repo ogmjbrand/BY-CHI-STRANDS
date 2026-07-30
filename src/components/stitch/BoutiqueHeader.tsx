@@ -56,6 +56,9 @@ export function BoutiqueHeader() {
               </span>
             ) : null}
           </button>
+          <button aria-label="Open menu" className="md:hidden material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+            menu
+          </button>
         </div>
       </div>
     </nav>
