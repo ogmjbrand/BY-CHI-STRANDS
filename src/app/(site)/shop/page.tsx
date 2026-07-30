@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShopBrowser } from "@/components/stitch/ShopBrowser";
 import { TextureGuide } from "@/components/stitch/TextureGuide";
-import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
 
 /**
@@ -16,11 +15,58 @@ export const metadata: Metadata = {
 
 export default function ShopAllPage() {
   return (
-    <div className="scr-shop-all theme-noir bg-surface text-on-surface">
-      <SiteHeader dark />
+    <div className="scr-shop-all bg-surface text-on-surface">
+      {/* TopNavBar */}
+      <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+          <div className="flex items-center gap-12">
+            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
+              ByChi Strands
+            </Link>
+            {" "}
+            <div className="hidden md:flex gap-8 font-body-md text-body-sm uppercase tracking-widest">
+              <Link className="text-primary font-semibold border-b border-primary pb-1" href="/shop">Shop</Link>
+              {" "}
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
+                Collections
+              </Link>
+              {" "}
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
+                Services
+              </Link>
+              {" "}
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
+                Academy
+              </Link>
+              {" "}
+              <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
+                About
+              </Link>
+            </div>
+          </div>
+          {" "}
+          <div className="flex items-center gap-6">
+            <button className="hidden lg:block font-body-md text-body-sm uppercase tracking-widest text-on-surface hover:text-primary transition-all">
+              Book Appointment
+            </button>
+            {" "}
+            <button className="relative hover:scale-95 transition-transform duration-300">
+              <span className="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</span>
+              {" "}
+              <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                0
+              </span>
+            </button>
+            {" "}
+            <button className="md:hidden">
+              <span className="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+            </button>
+          </div>
+        </nav>
+      </header>
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
         {/* Editorial Header */}
-        <header className="mb-20 reveal">
+        <header className="mb-20">
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 tracking-[-0.02em]">The Collection</h1>
           {" "}
           <p className="font-body-xl text-body-xl text-on-surface-variant max-w-2xl">
@@ -28,18 +74,16 @@ export default function ShopAllPage() {
           </p>
         </header>
         {" "}
-        <div className="reveal">
-          <TextureGuide />
-        </div>
+        <TextureGuide />
         <div className="flex flex-col lg:flex-row gap-gutter">
           <ShopBrowser />
         </div>
       </main>
       {/* Footer */}
-      <footer className="bg-surface-container-low full-width border-t border-outline-variant/30">
+      <footer className="bg-surface-container-low dark:bg-surface-container-highest full-width border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi <span className="font-script">Strands</span></h2>
+            <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h2>
             {" "}
             <p className="font-body-sm text-body-sm text-on-surface-variant mb-8">
               Defining the pinnacle of Vietnamese hair artistry. Timeless, sophisticated, and uncompromising in quality.
@@ -57,15 +101,15 @@ export default function ShopAllPage() {
               </li>
               {" "}
               <li>
-                <Link className="hover:underline decoration-primary transition-all" href="/services">Services</Link>
+                <Link className="hover:underline decoration-primary transition-all" href="/collections/colour-editions">Colour Editions</Link>
               </li>
               {" "}
               <li>
-                <Link className="hover:underline decoration-primary transition-all" href="/academy">Academy</Link>
+                <Link className="hover:underline decoration-primary transition-all" href="/collections/pixie-collection">Pixie Collection</Link>
               </li>
               {" "}
               <li>
-                <Link className="hover:underline decoration-primary transition-all" href="/aftercare">Care Guide</Link>
+                <Link className="hover:underline decoration-primary transition-all" href="/wishlist">Wishlist</Link>
               </li>
             </ul>
           </div>
@@ -108,7 +152,7 @@ export default function ShopAllPage() {
             {" "}
             <div className="flex gap-4">
               <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
                 href={site.socials.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -118,7 +162,7 @@ export default function ShopAllPage() {
               </a>
               {" "}
               <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
                 href={site.socials.tiktok.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -126,24 +170,24 @@ export default function ShopAllPage() {
               >
                 <span className="material-symbols-outlined text-xl" data-icon="videocam">videocam</span>
               </a>
+            </div>
+            {" "}
+            <div className="mt-8">
+              <p className="font-label-caps text-[10px] text-on-surface-variant mb-2">Newsletter</p>
               {" "}
-              <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
-                href={site.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-              >
-                <span className="material-symbols-outlined text-xl" data-icon="chat">chat</span>
-              </a>
+              <div className="relative">
+                <input className="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary font-body-sm text-body-sm" placeholder="Email Address" type="email" />
+                {" "}
+                <button className="absolute right-0 bottom-2">
+                  <span className="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         {" "}
         <div className="px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 text-center">
-          <p className="font-body-sm text-[12px] text-on-surface-variant opacity-60">
-            © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
-          </p>
+          <p className="font-body-sm text-[12px] text-on-surface-variant opacity-60">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
         </div>
       </footer>
     </div>
