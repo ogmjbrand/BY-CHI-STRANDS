@@ -25,7 +25,7 @@ function CountBadge({ count }: { count: number }) {
   );
 }
 
-export function HomeHeader() {
+export function SiteHeader() {
   const pathname = usePathname();
   const { wishlist, cartCount, hydrated } = useStore();
   const { openCart } = useCartUi();

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HomeHeader } from "@/components/stitch/HomeHeader";
+import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { HomeHero } from "@/components/stitch/HomeHero";
 import { TrustBar } from "@/components/stitch/TrustBar";
 import { HomeBestSellers } from "@/components/stitch/HomeBestSellers";
@@ -21,7 +21,7 @@ import { site } from "@/lib/site";
 export default function HomePage() {
   return (
     <div className="bg-background text-on-surface font-body-md">
-      <HomeHeader />
+      <SiteHeader />
       <main>
         <HomeHero />
         <TrustBar />

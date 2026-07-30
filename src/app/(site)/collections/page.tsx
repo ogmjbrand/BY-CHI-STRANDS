@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { products, priceFrom, ORIGINS } from "@/lib/products";
+import { products } from "@/lib/products";
 import { collections } from "@/lib/collections";
+import { BoutiqueHeader } from "@/components/stitch/BoutiqueHeader";
+import { BoutiqueGrid } from "@/components/stitch/BoutiqueGrid";
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
+import { priceFrom } from "@/lib/products";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 
 /**
@@ -18,50 +21,7 @@ export const metadata: Metadata = {
 export default function TheBoutiquePage() {
   return (
     <div className="scr-the-boutique bg-background font-body-md text-on-background">
-      {/* Top Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
-        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="hidden md:flex gap-8">
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
-              Atelier
-            </Link>
-            {" "}
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1" href="/collections">
-              The Boutique
-            </Link>
-            {" "}
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
-              Academy
-            </Link>
-            {" "}
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/aftercare">
-              Aftercare
-            </Link>
-            {" "}
-            <Link className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-              The Maison
-            </Link>
-          </div>
-          {" "}
-          <Link className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]" href="/">
-            ByChi Strands
-          </Link>
-          {" "}
-          <div className="flex items-center gap-6">
-            <button className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
-              search
-            </button>
-            {" "}
-            <button className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
-              person
-            </button>
-            {" "}
-            <button className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
-              shopping_bag
-            </button>
-          </div>
-        </div>
-      </nav>
+      <BoutiqueHeader />
       {/* Editorial Hero */}
       <header className="pt-40 pb-20 md:pt-60 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -78,85 +38,7 @@ export default function TheBoutiquePage() {
           </p>
         </div>
       </header>
-      {/* Refined Navigation & Filters */}
-      <section className="sticky top-[88px] z-40 bg-surface/90 backdrop-blur-md border-y border-outline-variant/20 mb-16">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-wrap justify-center gap-8">
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-widest border-b-2 border-primary pb-1">
-              All Creations
-            </span>
-            {" "}
-            {collections.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/collections/${c.slug}`}
-                className="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary tracking-widest transition-colors"
-              >
-                {c.name}
-              </Link>
-            ))}
-          </div>
-          {" "}
-          <div className="flex items-center gap-4">
-            <span className="font-label-caps text-label-caps uppercase text-outline tracking-[0.15em]">Sort By:</span>
-            {" "}
-            <select className="bg-transparent border-none font-label-caps text-label-caps uppercase text-on-surface focus:ring-0 cursor-pointer tracking-[0.15em]">
-              <option>Featured</option>
-              {" "}
-              <option>Newest Arrivals</option>
-              {" "}
-              <option>Investment: High to Low</option>
-              {" "}
-              <option>Investment: Low to High</option>
-            </select>
-          </div>
-        </div>
-      </section>
-      {/* Curated Product Grid */}
-      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
-          {products.map((p) => {
-            const price = priceFrom(p);
-            return (
-              <Link key={p.slug} href={`/shop/${p.slug}`} className="group cursor-pointer">
-                <article>
-                  <div className="relative overflow-hidden mb-8 aspect-[3/4] bg-surface-container">
-                    <ProductMedia
-                      media={heroFor(p.slug)}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {" "}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-                    {p.badges?.includes("limited") ? (
-                      <div className="absolute top-6 right-6 bg-white px-4 py-1">
-                        <span className="font-label-caps text-[10px] uppercase tracking-tighter">Limited Edition</span>
-                      </div>
-                    ) : null}
-                  </div>
-                  {" "}
-                  <div className="text-center md:text-left">
-                    <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                      {ORIGINS[p.origin]} SDD
-                    </span>
-                    {" "}
-                    <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
-                      {p.name}
-                    </h3>
-                    {" "}
-                    <p className="font-body-md text-primary font-semibold mb-6">
-                      {price === null ? "Price on request" : formatPrice(price)}
-                    </p>
-                    {" "}
-                    <span className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
-                      View Piece
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            );
-          })}
-        </div>
-      </main>
+      <BoutiqueGrid collectionLinks={collections} />
       {/* Artisan Curation Section */}
       <section className="bg-surface-container-low py-section-padding">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -164,7 +46,11 @@ export default function TheBoutiquePage() {
             <div className="relative order-2 lg:order-1">
               <div className="absolute -top-10 -left-10 w-40 h-40 border border-primary/20 -z-10"></div>
               {" "}
-              <img className="w-full aspect-square object-cover shadow-2xl" data-alt="A portrait of a skilled master artisan at work in a bright, modern atelier. The artisan is delicately hand-tying individual hair strands onto a fine lace base. The environment is organized and minimalist, with spools of fine thread and luxury hair samples nearby. The lighting is focused and warm, emphasizing the meticulous detail and craftsmanship involved in creating a masterpiece." src="/stitch/img-014.jpg" />
+              <img
+                className="w-full aspect-square object-cover shadow-2xl"
+                alt="A master artisan hand-tying individual hair strands onto a fine lace base in the atelier"
+                src="/stitch/img-014.jpg"
+              />
               {" "}
               <div className="absolute bottom-8 -right-8 bg-surface p-8 max-w-xs shadow-xl hidden md:block">
                 <p className="font-headline-lg text-primary italic">Hand-tied, strand by strand, in our atelier.</p>
@@ -302,7 +188,7 @@ export default function TheBoutiquePage() {
           </div>
           {" "}
           <div className="text-secondary dark:text-secondary-fixed font-body-sm text-body-sm tracking-wide">
-            © 2024 ByChi Strands. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} ByChi Strands. ALL RIGHTS RESERVED.
           </div>
         </div>
       </footer>

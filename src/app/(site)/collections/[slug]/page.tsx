@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { collections, getCollection, collectionProducts } from "@/lib/collections";
 import { priceFor } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
+import { heroFor } from "@/lib/media";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { StitchPageShell } from "@/components/stitch/SiteChrome";
 
 export function generateStaticParams() {
@@ -49,11 +51,9 @@ export default async function CollectionPage({
             style={{ transitionDelay: `${(i % 3) * 150}ms` }}
           >
             <div className="aspect-[4/5] overflow-hidden bg-surface-dim mb-8">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt={product.name}
+              <ProductMedia
+                media={heroFor(product.slug)}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src={`/stitch/img-${String((i % 60) + 1).padStart(3, "0")}.jpg`}
               />
             </div>
             <h2 className="font-display-md text-headline-lg mb-2">{product.name}</h2>
