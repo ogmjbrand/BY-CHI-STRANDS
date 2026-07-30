@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -6,6 +7,15 @@ import Link from "next/link";
  * are used by the routes the design links to but does not itself specify
  * (legal, contact, journal, wishlist).
  */
+
+function Wordmark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`flex items-center gap-1.5 leading-none ${className}`}>
+      <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
+      <span className="font-script text-2xl text-gold-light -mt-1">Strands</span>
+    </span>
+  );
+}
 
 export function StitchHeader() {
   return (
@@ -35,12 +45,7 @@ export function StitchHeader() {
         </div>
         <div className="flex items-center">
           <Link href="/">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="ByChi Strands Logo"
-              className="h-12 w-auto object-contain"
-              src="/stitch/img-022.jpg"
-            />
+            <Wordmark className="text-on-surface" />
           </Link>
         </div>
         <div className="flex items-center gap-8">
@@ -130,24 +135,35 @@ export function StitchFooter() {
     <footer className="bg-surface-container-low">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
         <div className="col-span-1 md:col-span-1">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt="ByChi Strands Logo"
-            className="h-10 w-auto object-contain mb-8"
-            src="/stitch/img-022.jpg"
-          />
+          <Wordmark className="text-on-surface mb-8" />
           <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
             Timeless Vietnamese artistry meet&apos;s modern luxury. Defined by
             authenticity and ethical sourcing.
           </p>
           <div className="flex gap-4">
-            <a className="text-on-surface-variant hover:text-primary transition-all" href="#">
-              <span className="material-symbols-outlined">public</span>
+            <a
+              className="text-on-surface-variant hover:text-primary transition-all"
+              href={site.socials.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <span className="material-symbols-outlined">camera</span>
             </a>
-            <a className="text-on-surface-variant hover:text-primary transition-all" href="#">
-              <span className="material-symbols-outlined">share</span>
+            <a
+              className="text-on-surface-variant hover:text-primary transition-all"
+              href={site.socials.tiktok.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <span className="material-symbols-outlined">videocam</span>
             </a>
-            <a className="text-on-surface-variant hover:text-primary transition-all" href="#">
+            <a
+              className="text-on-surface-variant hover:text-primary transition-all"
+              href={`mailto:${site.email}`}
+              aria-label="Email"
+            >
               <span className="material-symbols-outlined">mail</span>
             </a>
           </div>
@@ -158,16 +174,31 @@ export function StitchFooter() {
       </div>
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-body-md text-body-sm text-on-surface-variant">
-          © 2024 ByChi Strands. Timeless Vietnamese Artistry.
+          © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
         </p>
         <div className="flex gap-8">
-          <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+          <a
+            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
+            href={site.socials.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Instagram
           </a>
-          <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+          <a
+            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
+            href={site.socials.tiktok.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             TikTok
           </a>
-          <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all" href="#">
+          <a
+            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
+            href={site.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             WhatsApp
           </a>
         </div>
@@ -192,7 +223,7 @@ export function StitchPageShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <div className="theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
       <StitchHeader />
       <header className="pt-40 pb-16 md:pt-60 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="max-w-4xl">

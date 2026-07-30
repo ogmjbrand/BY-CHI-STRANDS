@@ -6,10 +6,14 @@ import { useReducedMotion } from "framer-motion";
 
 /**
  * Ports the IntersectionObserver every Stitch screen ships in its inline
- * <script>: elements carrying `.reveal` or `.reveal-up` gain `.active` once
- * 10% visible, which each screen's own CSS transition (stitch-screens.css /
- * globals.css) then animates — `.fade-in-up` is a separate, self-playing
- * CSS `animation`, not gated behind `.active`, so it's deliberately not
+ * <script>: elements carrying `.reveal`, `.reveal-up` or `.fade-up` gain a
+ * trigger class once 10% visible, which each screen's own CSS transition
+ * (stitch-screens.css / globals.css) then animates. Different screens gate
+ * on different class names for the same mechanism — `.reveal`/`.reveal-up`
+ * check for `.active`, `.scr-academy`'s `.fade-up` checks for `.visible` —
+ * so both are added on intersect; an unused one is simply never read by
+ * that screen's CSS. `.fade-in-up` is a separate, self-playing CSS
+ * `animation`, not gated behind a class at all, so it's deliberately not
  * queried here. Mounted once per page from the site layout, and re-scans on
  * every route change (like Interactions/MotionSystem) since client-side
  * navigation swaps in a new page's DOM without remounting this component.
@@ -24,11 +28,13 @@ export function RevealObserver() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const nodes = Array.from(document.querySelectorAll<HTMLElement>(".reveal, .reveal-up"));
+    const nodes = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal, .reveal-up, .fade-up")
+    );
     if (!nodes.length) return;
 
     if (reduceMotion) {
-      nodes.forEach((n) => n.classList.add("active"));
+      nodes.forEach((n) => n.classList.add("active", "visible"));
       return;
     }
 
@@ -38,7 +44,7 @@ export function RevealObserver() {
           if (!entry.isIntersecting) return;
           const target = entry.target as HTMLElement;
           observer.unobserve(target);
-          target.classList.add("active");
+          target.classList.add("active", "visible");
         });
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
