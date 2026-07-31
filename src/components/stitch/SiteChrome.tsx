@@ -10,7 +10,11 @@ import { site } from "@/lib/site";
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <span className={`flex items-center gap-1.5 leading-none ${className}`}>
+    <span className={`flex items-center gap-2 leading-none ${className}`}>
+      <span className="h-8 w-8 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
+      </span>
       <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
       <span className="font-script text-2xl text-gold-light -mt-1">Strands</span>
     </span>

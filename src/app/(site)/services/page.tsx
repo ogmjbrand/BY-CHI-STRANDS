@@ -19,7 +19,11 @@ export default function SignatureServices1Page() {
       <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
-            <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface" href="/">
+            <Link className="flex items-center gap-2.5 font-display-lg text-display-md font-bold tracking-tighter text-on-surface" href="/">
+              <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
+              </span>
               ByChi <span className="font-script">Strands</span>
             </Link>
             {" "}

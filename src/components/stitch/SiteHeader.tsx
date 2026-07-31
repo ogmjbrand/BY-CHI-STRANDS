@@ -46,7 +46,15 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
       }`}
     >
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2 leading-none shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 leading-none shrink-0">
+          <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logo-mark.jpg"
+              alt="ByChi Strands"
+              className="h-full w-full object-cover scale-125"
+            />
+          </span>
           <span
             className={`font-display-md text-lg md:text-2xl tracking-[0.08em] ${dark ? "text-white" : "text-on-surface"}`}
           >

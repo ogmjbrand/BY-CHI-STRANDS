@@ -34,8 +34,14 @@ export function BoutiqueHeader() {
             The Maison
           </Link>
         </div>
-        <Link className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]" href="/">
-          ByChi Strands
+        <Link className="flex items-center gap-2.5" href="/">
+          <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
+          </span>
+          <span className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]">
+            ByChi <span className="font-script">Strands</span>
+          </span>
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/shop" aria-label="Browse the catalogue" className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">

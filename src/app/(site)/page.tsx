@@ -52,7 +52,11 @@ export default function HomePage() {
       <footer className="bg-noir text-white/70 border-t border-white/10">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter">
           <div className="flex flex-col gap-6">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2.5">
+              <span className="h-10 w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
+              </span>
               <span className="font-display-md text-headline-lg text-white tracking-[0.06em]">ByChi</span>
               <span className="font-script text-3xl text-gold-light -mt-1">Strands</span>
             </span>
