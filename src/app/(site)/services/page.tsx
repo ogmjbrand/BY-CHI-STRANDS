@@ -322,7 +322,7 @@ export default function SignatureServices1Page() {
                     poster: "/services/mentorship.jpeg",
                     alt: "A trainee receiving her certificate of attendance at a ByChi Strands mentorship session",
                   }}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { Media } from "@/lib/media";
 
 /**
@@ -19,20 +19,6 @@ export function ProductMedia({
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-
-  // React's `muted` JSX prop doesn't always land as the DOM attribute before
-  // the browser's autoplay-permission check runs, which silently aborts the
-  // video's own network request (no error, just NETWORK_NO_SOURCE) instead
-  // of playing. Setting the properties directly on mount closes that race.
-  useEffect(() => {
-    if (!autoPlay) return;
-    const el = ref.current;
-    if (!el) return;
-    el.muted = true;
-    el.defaultMuted = true;
-    const p = el.play();
-    if (p) p.catch(() => {});
-  }, [autoPlay]);
 
   if (media.type === "image") {
     return (
@@ -64,7 +50,7 @@ export function ProductMedia({
         ref={ref}
         className={className}
         poster={media.poster}
-        preload={autoPlay ? "auto" : "none"}
+        preload={autoPlay ? "metadata" : "none"}
         muted
         loop
         playsInline
