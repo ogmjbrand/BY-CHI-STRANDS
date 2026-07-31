@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useStore, linePrice } from "@/context/StoreContext";
+import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
@@ -78,7 +78,7 @@ export function CheckoutSummary() {
                   </div>
                 </div>
                 <p className="text-body-md font-semibold text-primary mt-4">
-                  {formatPrice(linePrice(line) * line.qty)}
+                  {lineIsQuote(line) ? "Quoted after order" : formatPrice(linePrice(line) * line.qty)}
                 </p>
               </div>
             </div>
@@ -104,6 +104,12 @@ export function CheckoutSummary() {
             {formatPrice(cartTotal)}
           </span>
         </div>
+        {cart.some(lineIsQuote) ? (
+          <p className="text-right text-body-sm text-outline italic">
+            Plus {cart.filter(lineIsQuote).length} piece
+            {cart.filter(lineIsQuote).length === 1 ? "" : "s"} quoted after order
+          </p>
+        ) : null}
       </div>
     </>
   );
@@ -182,7 +188,7 @@ export function MobileCheckoutSummary() {
                         </p>
                       </div>
                       <span className="font-label-caps text-label-caps tracking-[0.15em] shrink-0">
-                        {formatPrice(linePrice(line) * line.qty)}
+                        {lineIsQuote(line) ? "Quoted" : formatPrice(linePrice(line) * line.qty)}
                       </span>
                     </div>
                   );
@@ -206,6 +212,12 @@ export function MobileCheckoutSummary() {
                     {formatPrice(cartTotal)}
                   </span>
                 </div>
+                {cart.some(lineIsQuote) ? (
+                  <p className="text-right text-body-sm text-on-surface-variant italic">
+                    Plus {cart.filter(lineIsQuote).length} piece
+                    {cart.filter(lineIsQuote).length === 1 ? "" : "s"} quoted after order
+                  </p>
+                ) : null}
               </div>
             </>
           )}

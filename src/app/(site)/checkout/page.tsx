@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { CheckoutSummary, MobileCheckoutSummary } from "@/components/stitch/CheckoutSummary";
-import { useStore, linePrice } from "@/context/StoreContext";
-import { getProduct } from "@/lib/products";
+import { useStore, lineIsQuote } from "@/context/StoreContext";
+import { getProduct, priceFor } from "@/lib/products";
 import { useToast } from "@/components/stitch/Toast";
 import type { OrderItem } from "@/types/orders";
 
@@ -49,7 +49,7 @@ export default function CheckoutPage() {
           productId: product.slug,
           name: product.name,
           quantity: line.qty,
-          price: linePrice(line),
+          price: priceFor(product, line.length, line.lace),
           variant: {
             length: `${line.length}"`,
             texture: line.density,
@@ -215,6 +215,9 @@ export default function CheckoutPage() {
                 We don&apos;t take card payments on-site. Once you place your order, our concierge
                 team will reach out by email to confirm shipping and arrange payment — the same
                 bespoke process every ByChiStrands piece goes through.
+                {cart.some(lineIsQuote)
+                  ? " Any piece in your bag marked “Quoted after order” has no listed price yet — the concierge email will include that quote before payment is arranged."
+                  : ""}
               </p>
             </section>
 

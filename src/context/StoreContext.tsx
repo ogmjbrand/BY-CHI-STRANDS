@@ -49,8 +49,15 @@ export function lineProduct(line: CartLine): Product | undefined {
 
 export function linePrice(line: CartLine): number {
   const p = getProduct(line.slug);
-  // Enquiry-only pieces never reach the bag, so a null price contributes 0.
+  // Quote-request pieces can now reach the bag; they contribute 0 to the
+  // running total (see lineIsQuote) rather than a fabricated figure.
   return p ? priceFor(p, line.length, line.lace) ?? 0 : 0;
+}
+
+/** True when this line's price is quoted on request rather than listed. */
+export function lineIsQuote(line: CartLine): boolean {
+  const p = getProduct(line.slug);
+  return p ? priceFor(p, line.length, line.lace) === null : false;
 }
 
 export function StoreProvider({ children }: { children: ReactNode }) {

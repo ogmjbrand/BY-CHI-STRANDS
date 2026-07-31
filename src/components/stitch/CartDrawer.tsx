@@ -11,7 +11,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { useStore, linePrice } from "@/context/StoreContext";
+import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 
@@ -220,7 +220,7 @@ function CartDrawer() {
 
                         <div className="text-right">
                           <p className="font-body-md font-semibold text-on-surface">
-                            {money(linePrice(line) * line.qty)}
+                            {lineIsQuote(line) ? "Quoted after order" : money(linePrice(line) * line.qty)}
                           </p>
                           <button
                             onClick={() => removeLine(i)}
@@ -272,6 +272,12 @@ function CartDrawer() {
                   {money(cartTotal)}
                 </span>
               </div>
+              {cart.some(lineIsQuote) ? (
+                <p className="text-right font-body-sm text-[11px] text-tertiary italic">
+                  Plus {cart.filter(lineIsQuote).length} piece
+                  {cart.filter(lineIsQuote).length === 1 ? "" : "s"} quoted after order
+                </p>
+              ) : null}
             </div>
 
             <Link

@@ -130,7 +130,9 @@ function OrderConfirmationContent() {
                       </div>
                     </div>
                     <p className="font-body-md font-semibold text-primary mt-4">
-                      {formatPrice(item.price * item.quantity)}
+                      {item.price === null
+                        ? "Quoted after order"
+                        : formatPrice(item.price * item.quantity)}
                     </p>
                   </div>
                 </div>
@@ -151,6 +153,13 @@ function OrderConfirmationContent() {
               <span>Total</span>
               <span className="text-primary">{formatPrice(order.total)}</span>
             </div>
+            {order.items.some((item) => item.price === null) ? (
+              <p className="text-body-sm text-on-surface-variant italic">
+                One or more pieces above are quoted on request — the total
+                shown covers only the priced items; your concierge email will
+                include the confirmed price for the rest.
+              </p>
+            ) : null}
             <div className="pt-4 border-t border-outline-variant/10">
               <p className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.15em] mb-2">
                 Shipping Address

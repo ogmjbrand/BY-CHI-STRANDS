@@ -8,7 +8,7 @@ interface OrderConfirmationProps {
   items: Array<{
     name: string;
     quantity: number;
-    price: number;
+    price: number | null;
   }>;
   subtotal: number;
   tax: number;
@@ -76,7 +76,7 @@ export function OrderConfirmation({
                 <span>
                   {item.name} x {item.quantity}
                 </span>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>{item.price === null ? "Quoted after order" : `$${(item.price * item.quantity).toFixed(2)}`}</span>
               </div>
             ))}
           </div>
