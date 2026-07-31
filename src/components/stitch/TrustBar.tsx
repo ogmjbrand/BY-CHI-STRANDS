@@ -1,30 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { IconStrand, IconSingleThread, IconLeaf, IconGlobeRoute } from "./BrandIcons";
 
 /**
  * Gold credibility strip directly under the hero. Every claim already exists
  * elsewhere on the site (site.description, FAQs, product copy) — nothing new
- * is asserted here.
+ * is asserted here. Icons are the custom set in BrandIcons, not the default
+ * Material Symbols glyphs — a stock icon kit reads off-brand next to a
+ * custom luxury build.
  */
 const SIGNALS = [
   {
-    icon: "workspace_premium",
+    Icon: IconStrand,
     label: "Vietnamese Human Hair",
     detail: "Authentic & Premium Quality",
   },
   {
-    icon: "fingerprint",
+    Icon: IconSingleThread,
     label: "Single Donor Hair",
     detail: "One Donor, One Bundle",
   },
   {
-    icon: "eco",
+    Icon: IconLeaf,
     label: "Ethically Sourced",
     detail: "Responsibly & Ethically Sourced",
   },
   {
-    icon: "public",
+    Icon: IconGlobeRoute,
     label: "Worldwide Shipping",
     detail: "Fast & Secure Delivery",
   },
@@ -57,9 +60,7 @@ export function TrustBar() {
               variants={item}
               className="flex flex-col items-center text-center gap-2 px-4 py-8 md:py-10"
             >
-              <span className="material-symbols-outlined text-on-primary-container text-[26px] mb-1">
-                {s.icon}
-              </span>
+              <s.Icon className="w-[26px] h-[26px] text-on-primary-container mb-1" />
               <span className="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-primary-container">
                 {s.label}
               </span>

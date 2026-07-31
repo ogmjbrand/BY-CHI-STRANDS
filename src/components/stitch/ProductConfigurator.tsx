@@ -9,6 +9,7 @@ import { priceFor, lengthsOf, lacesOf, type Product } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
 import { whatsappLink } from "@/lib/site";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { IconAuthTag, IconShipInsured, IconExchange } from "./BrandIcons";
 
 /**
  * The PDP sidebar — length and lace selection driving a live price and the Add
@@ -191,17 +192,15 @@ export function ProductConfigurator({
 
         <div className="grid grid-cols-3 gap-2 pt-2 border-t border-outline-variant/20">
           {[
-            { icon: "verified_user", label: "Authenticity Tag" },
-            { icon: "local_shipping", label: "Insured Shipping" },
-            { icon: "sync", label: "7-Day Exchange" },
+            { Icon: IconAuthTag, label: "Authenticity Tag" },
+            { Icon: IconShipInsured, label: "Insured Shipping" },
+            { Icon: IconExchange, label: "7-Day Exchange" },
           ].map((badge) => (
             <div
               key={badge.label}
               className="flex flex-col items-center gap-1.5 text-center pt-3"
             >
-              <span className="material-symbols-outlined text-primary text-lg">
-                {badge.icon}
-              </span>
+              <badge.Icon className="w-[18px] h-[18px] text-primary" />
               <span className="text-[9px] uppercase tracking-wider text-on-surface-variant leading-tight">
                 {badge.label}
               </span>
