@@ -6,6 +6,7 @@ export interface Article {
   date: string;
   readTime: string;
   tone: "noir" | "espresso" | "copper" | "honey" | "burgundy";
+  image: string;
   body: { heading?: string; text: string }[];
 }
 
@@ -19,6 +20,7 @@ export const articles: Article[] = [
     date: "2026-06-12",
     readTime: "6 min read",
     tone: "noir",
+    image: "/products/IMG-20260727-WA0045.jpg",
     body: [
       {
         text: "Every importer has an origin story they tell. Ours began with a test: we bought hair from six countries, washed each bundle forty times, coloured half of them to level 9, and wore the rest daily for a year. The Vietnamese bundles were the only ones that finished the experiment looking substantially the way they started.",
@@ -46,6 +48,7 @@ export const articles: Article[] = [
     date: "2026-05-28",
     readTime: "5 min read",
     tone: "espresso",
+    image: "/products/IMG-20260726-WA0015.jpg",
     body: [
       {
         text: "Most damage we see in the atelier doesn't come from wear — it comes from wash day. Hot water, harsh sulphates and rough handling will age a unit faster than a year of daily styling. Here is the exact protocol our Hair Laundry service follows, adapted for home.",
@@ -77,6 +80,7 @@ export const articles: Article[] = [
     date: "2026-05-02",
     readTime: "7 min read",
     tone: "honey",
+    image: "/services/frontal-installation-1.jpg",
     body: [
       {
         text: "You can spot an average install from across a room, and you can miss an excellent one from a metre away. The difference is rarely the hair — it is the ninety minutes of customisation that happens before the unit ever touches adhesive.",
@@ -104,6 +108,7 @@ export const articles: Article[] = [
     date: "2026-04-15",
     readTime: "8 min read",
     tone: "copper",
+    image: "/services/hair-importation-2.jpeg",
     body: [
       {
         text: "Every month, our Academy welcomes women who tried importing alone first. Their stories rhyme: a vendor found on social media, a convincing video call, a payment sent — and a box of blended, processed hair that smells of corn chips and silicone. These are the five mistakes behind almost every loss.",
@@ -139,6 +144,7 @@ export const articles: Article[] = [
     date: "2026-03-20",
     readTime: "6 min read",
     tone: "burgundy",
+    image: "/products/IMG-20260726-WA0019.jpg",
     body: [
       {
         text: "Wedding hair should be decided calmly, months out — never in the frantic fortnight before the day. This is the timeline we walk every ByChiStrands bride through, refined across hundreds of weddings.",
@@ -170,6 +176,7 @@ export const articles: Article[] = [
     date: "2026-02-10",
     readTime: "4 min read",
     tone: "noir",
+    image: "/products/IMG-20260727-WA0017.jpg",
     body: [
       {
         text: "The most expensive hair our clients ever buy is the cheap hair they bought first. It is a line we hear weekly in the atelier, and the arithmetic behind it deserves to be written down.",
