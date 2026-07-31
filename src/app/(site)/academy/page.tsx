@@ -19,7 +19,13 @@ export default function AcademyPage() {
       {/* Header / TopNavBar (Shared Component) */}
       <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
-          <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface">ByChi <span className="font-script">Strands</span></div>
+          <div className="flex items-center gap-2.5 font-display-lg text-display-md font-bold tracking-tighter text-on-surface">
+            <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
+            </span>
+            ByChi <span className="font-script">Strands</span>
+          </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">

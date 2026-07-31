@@ -31,7 +31,13 @@ export default function AuraStoriesGalleryPage() {
           </div>
           {" "}
           <div className="flex-shrink-0">
-            <h1 className="font-display-md text-display-md text-primary tracking-tight leading-none">ByChi <span className="font-script">Strands</span></h1>
+            <h1 className="flex items-center gap-2.5 font-display-md text-display-md text-primary tracking-tight leading-none">
+              <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
+              </span>
+              ByChi <span className="font-script">Strands</span>
+            </h1>
           </div>
           {" "}
           <div className="flex-1 flex justify-end items-center gap-6">

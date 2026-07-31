@@ -70,7 +70,11 @@ export default async function BookingConfirmationPage({
       {/* TopAppBar */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline/20 shadow-sm transition-all duration-500 ease-in-out">
         <div className="flex justify-between items-center w-full px-8 md:px-20 py-4 max-w-[1440px] mx-auto">
-          <Link href="/" className="font-display-md text-[24px] md:text-display-md text-primary tracking-tighter md:tracking-[-0.01em]">
+          <Link href="/" className="flex items-center gap-2.5 font-display-md text-[24px] md:text-display-md text-primary tracking-tighter md:tracking-[-0.01em]">
+            <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
+            </span>
             ByChi <span className="font-script">Strands</span>
           </Link>
           <nav className="hidden md:flex gap-8 items-center">

@@ -18,7 +18,11 @@ export default function AtelierServiceBookingPage() {
       {/* Top Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
         <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
-          <Link href="/" className="font-display-md text-[24px] tracking-widest text-primary uppercase">
+          <Link href="/" className="flex items-center gap-2.5 font-display-md text-[24px] tracking-widest text-primary uppercase">
+            <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5 normal-case">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
+            </span>
             ByChi <span className="font-script normal-case">Strands</span>
           </Link>
           {" "}
