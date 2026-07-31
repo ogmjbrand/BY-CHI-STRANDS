@@ -27,7 +27,7 @@ export function HomeBestSellers() {
               Best Sellers
             </span>
             <h2 className="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface tracking-[-0.01em]">
-              Loved By Thousands Of Beautiful Women
+              The Pieces Clients Reorder Most
             </h2>
           </div>
           <Link

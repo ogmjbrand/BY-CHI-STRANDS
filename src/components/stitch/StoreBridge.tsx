@@ -69,7 +69,7 @@ export function StoreBridge() {
         badge = existing ?? document.createElement("span");
         if (!existing) {
           badge.className =
-            "absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center";
+            "absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center";
           host.appendChild(badge);
         }
         badge.setAttribute("data-cart-badge", "1");
