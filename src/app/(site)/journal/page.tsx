@@ -14,34 +14,42 @@ export default function JournalPage() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
         {articles.map((article, i) => (
-          <article
+          <Link
             key={article.slug}
-            className="group reveal border border-outline-variant/30 bg-surface-container-lowest p-10 hover:border-primary-container transition-colors duration-500 flex flex-col"
+            href={`/journal/${article.slug}`}
+            className="group reveal relative flex flex-col justify-end aspect-[3/4] overflow-hidden"
             style={{ transitionDelay: `${(i % 3) * 150}ms` }}
           >
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-widest mb-6 block">
-              {article.category}
-            </span>
-            <h2 className="font-headline-lg text-headline-lg mb-4">
-              <Link href={`/journal/${article.slug}`}>{article.title}</Link>
-            </h2>
-            <p className="font-body-md text-on-surface-variant mb-8 grow">
-              {article.excerpt}
-            </p>
-            <div className="flex items-center justify-between font-body-md text-body-sm text-on-surface-variant uppercase tracking-widest">
-              <span>{article.date}</span>
-              <span>{article.readTime}</span>
-            </div>
-            <Link
-              className="mt-8 font-label-caps text-primary tracking-widest flex items-center gap-2"
-              href={`/journal/${article.slug}`}
-            >
-              READ ARTICLE
-              <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-2">
-                arrow_forward
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={article.image}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+            <div className="relative z-10 p-8 flex flex-col">
+              <span className="font-label-caps text-label-caps uppercase text-gold-light tracking-widest mb-4 block">
+                {article.category}
               </span>
-            </Link>
-          </article>
+              <h2 className="font-headline-lg text-headline-lg text-white mb-4">
+                {article.title}
+              </h2>
+              <p className="font-body-md text-white/70 mb-8 line-clamp-3">
+                {article.excerpt}
+              </p>
+              <div className="flex items-center justify-between font-body-md text-body-sm text-white/60 uppercase tracking-widest">
+                <span>{article.date}</span>
+                <span>{article.readTime}</span>
+              </div>
+              <span className="mt-6 font-label-caps text-gold-light tracking-widest flex items-center gap-2">
+                READ ARTICLE
+                <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-2">
+                  arrow_forward
+                </span>
+              </span>
+            </div>
+          </Link>
         ))}
       </div>
     </StitchPageShell>
