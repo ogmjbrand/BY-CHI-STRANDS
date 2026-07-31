@@ -37,12 +37,16 @@ export const faqGroups: FaqGroup[] = [
         a: "Worldwide. Lagos same-week courier, nationwide Nigeria in 2–4 business days, and international delivery via DHL Express in 3–7 business days, fully tracked and insured.",
       },
       {
+        q: "What currency are prices shown in?",
+        a: "All prices on the site are listed in Nigerian Naira (₦). If you're ordering from outside Nigeria, your card or bank converts the charge to your local currency at checkout — our concierge can also confirm the estimated cost in your currency before you order.",
+      },
+      {
         q: "How is my order packaged?",
         a: "Every order arrives in our signature packaging: silk-wrapped hair inside a rigid gift box, with a care card and authentication tag. Wig units ship on a protective form to preserve the lace.",
       },
       {
         q: "Can I pay in instalments?",
-        a: "Yes — split payment plans are available on orders above $300. A 50% deposit secures your hair or begins your custom unit; the balance is due before dispatch.",
+        a: "Yes — split payment plans are available on orders above ₦200,000. A 50% deposit secures your hair or begins your custom unit; the balance is due before dispatch.",
       },
       {
         q: "What is your returns policy?",

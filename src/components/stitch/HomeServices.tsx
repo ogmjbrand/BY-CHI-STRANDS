@@ -20,7 +20,7 @@ export function HomeServices() {
             Luxury Services
           </span>
           <h2 className="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface tracking-[-0.01em] mb-8">
-            Excellence In Every Strand
+            From Sourcing To Styling
           </h2>
           <Link
             href="/services"

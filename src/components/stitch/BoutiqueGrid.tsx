@@ -101,7 +101,7 @@ export function BoutiqueGrid({
                       {p.name}
                     </h3>
                     <p className="font-body-md text-primary font-semibold mb-6">
-                      {price === null ? "Price on request" : formatPrice(price)}
+                      {price === null ? "Enquire for Price" : formatPrice(price)}
                     </p>
                     <span className="font-label-caps text-label-caps uppercase border-b border-outline group-hover:border-primary group-hover:text-primary transition-all tracking-widest pb-1">
                       View Piece

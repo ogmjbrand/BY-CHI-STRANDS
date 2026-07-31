@@ -347,7 +347,7 @@ export function ShopBrowser() {
                     </p>
                     <p className="font-body-md text-body-md font-semibold text-secondary pt-2">
                       {priceFrom(p) === null
-                        ? "Price on request"
+                        ? "Enquire for Price"
                         : `From ${formatPrice(priceFrom(p))}`}
                     </p>
                   </div>

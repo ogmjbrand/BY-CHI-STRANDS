@@ -26,7 +26,7 @@ export function formatPrice(
   amount: number | null,
   currency: string = "NGN"
 ): string {
-  if (amount === null) return "Price on request";
+  if (amount === null) return "Enquire for Price";
   return new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency,

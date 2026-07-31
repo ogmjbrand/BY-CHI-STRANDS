@@ -40,7 +40,7 @@ export default function HomePage() {
               In Their Words
             </span>
             <h2 className="font-display-md text-headline-lg-mobile md:text-display-md text-on-surface tracking-[-0.01em] mb-14">
-              Echoes of Elegance
+              Real Clients, On Camera
             </h2>
             <ClientTestimonialsCarousel />
           </div>

@@ -9,7 +9,7 @@ function fromPrice(slug: string): string {
   const prices = collectionProducts(slug)
     .map(priceFrom)
     .filter((p): p is number => p !== null);
-  return prices.length ? `From ${formatPrice(Math.min(...prices))}` : "Price on request";
+  return prices.length ? `From ${formatPrice(Math.min(...prices))}` : "Enquire for Price";
 }
 
 export function HomeCollections() {

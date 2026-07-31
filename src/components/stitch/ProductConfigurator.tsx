@@ -189,6 +189,26 @@ export function ProductConfigurator({
           {saved ? "SAVED" : "SAVE FOR LATER"}
         </button>
 
+        <div className="grid grid-cols-3 gap-2 pt-2 border-t border-outline-variant/20">
+          {[
+            { icon: "verified_user", label: "Authenticity Tag" },
+            { icon: "local_shipping", label: "Insured Shipping" },
+            { icon: "sync", label: "7-Day Exchange" },
+          ].map((badge) => (
+            <div
+              key={badge.label}
+              className="flex flex-col items-center gap-1.5 text-center pt-3"
+            >
+              <span className="material-symbols-outlined text-primary text-lg">
+                {badge.icon}
+              </span>
+              <span className="text-[9px] uppercase tracking-wider text-on-surface-variant leading-tight">
+                {badge.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
         <p className="text-center text-[10px] text-on-surface-variant tracking-wider uppercase">
           Nationwide delivery from Lagos · Worldwide on request
         </p>

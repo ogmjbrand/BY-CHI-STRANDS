@@ -9,8 +9,12 @@ import { CircularTestimonials } from "@/components/ui/circular-testimonials";
  */
 const carouselTestimonials = testimonials.map((t, index) => ({
   quote: t.caption,
-  name: index === 0 ? "Princess" : "ByChiStrands Client",
-  designation: t.context,
+  // Only one clip has a name attached (Princess) — the rest are real
+  // clients whose names we don't have on file, so each is labelled by
+  // what the clip actually shows rather than repeating a generic
+  // placeholder name across every other card.
+  name: index === 0 ? "Princess" : t.context,
+  designation: index === 0 ? t.context : "ByChiStrands Client",
   src: t.clip.poster ?? t.clip.src,
 }));
 
