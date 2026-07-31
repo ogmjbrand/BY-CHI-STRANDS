@@ -172,34 +172,30 @@ export default function SignatureServices1Page() {
                 </Link>
               </div>
             </div>
-            {/* Service 2 */}
-            <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
-              <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A close-up of a frontal installation with an invisible, natural-looking hairline" src="/stitch/img-075.jpg" />
-                {" "}
-                <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              {" "}
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">Frontal Installation</h3>
-                  {" "}
-                  <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
-                    Bespoke scalp-mimicking techniques for a seamless, undetectable finish. Includes personalized hairline customization and secure bonding.
-                  </p>
-                  {" "}
-                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • EXCLUSIVE BOOKING</span>
-                  {" "}
-                  <p className="font-body-sm text-on-surface-variant mt-2">Home service available on request.</p>
-                </div>
-                {" "}
+            {/* Service 2 — cinematic treatment: text overlaid on the image, not stacked below it */}
+            <div className="reveal-up" style={{ transitionDelay: "150ms" }}>
+              <div className="relative aspect-[4/5] md:aspect-video overflow-hidden bg-surface-container group">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt="An elegant lace-parted updo with soft curls, styled by ByChi Strands"
+                  src="/services/frontal-installation-1.jpg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5"></div>
                 <Link
                   href="/book?service=frontal-installation"
                   aria-label="Book Frontal Installation"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                  className="absolute top-6 right-6 material-symbols-outlined text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
                 >
                   north_east
                 </Link>
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <h3 className="font-headline-lg text-headline-lg text-white mb-2">Frontal Installation</h3>
+                  <p className="font-body-md text-white/80 max-w-sm mb-3">
+                    Bespoke scalp-mimicking techniques for a seamless, undetectable finish. Includes personalized hairline customization and secure bonding.
+                  </p>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • EXCLUSIVE BOOKING</span>
+                  <p className="font-body-sm text-white/70 mt-2">Home service available on request.</p>
+                </div>
               </div>
             </div>
             {/* Service 3 */}
@@ -230,32 +226,33 @@ export default function SignatureServices1Page() {
                 </Link>
               </div>
             </div>
-            {/* Service 4 */}
-            <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
-              <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Before and after restoration of a human hair wig, smooth and tangle-free" src="/stitch/img-063.jpg" />
-                {" "}
-                <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              {" "}
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">Ventilation</h3>
-                  {" "}
-                  <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
-                    Precision hand ventilation that creates natural direction, realistic density and a refined finish for your custom unit.
-                  </p>
-                  {" "}
-                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • HAND FINISHED</span>
-                </div>
-                {" "}
+            {/* Service 4 — cinematic treatment: real ventilation footage, text overlaid on a black gradient */}
+            <div className="reveal-up" style={{ transitionDelay: "150ms" }}>
+              <div className="relative aspect-[4/5] md:aspect-video overflow-hidden bg-surface-container group">
+                <ProductMedia
+                  media={{
+                    type: "video",
+                    src: "/services/ventilation-1.mp4",
+                    alt: "ByChi Strands hand ventilation service in progress",
+                  }}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5 pointer-events-none"></div>
                 <Link
                   href="/book?service=ventilation"
                   aria-label="Book Ventilation"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                  className="absolute top-6 right-6 material-symbols-outlined text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
                 >
                   north_east
                 </Link>
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 pointer-events-none">
+                  <h3 className="font-headline-lg text-headline-lg text-white mb-2">Ventilation</h3>
+                  <p className="font-body-md text-white/80 max-w-sm mb-3">
+                    Precision hand ventilation that creates natural direction, realistic density and a refined finish for your custom unit.
+                  </p>
+                  <span className="font-label-caps text-primary tracking-widest">BY CONSULTATION • HAND FINISHED</span>
+                </div>
               </div>
             </div>
             {/* Service 5 */}

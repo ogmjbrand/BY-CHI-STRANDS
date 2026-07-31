@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Media } from "@/lib/media";
 
 /**
@@ -20,6 +20,20 @@ export function ProductMedia({
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
+  // React's `muted` JSX prop doesn't always land as the DOM attribute before
+  // the browser's autoplay-permission check runs, which silently aborts the
+  // video's own network request (no error, just NETWORK_NO_SOURCE) instead
+  // of playing. Setting the properties directly on mount closes that race.
+  useEffect(() => {
+    if (!autoPlay) return;
+    const el = ref.current;
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    const p = el.play();
+    if (p) p.catch(() => {});
+  }, [autoPlay]);
+
   if (media.type === "image") {
     return (
       // eslint-disable-next-line @next/next/no-img-element
@@ -34,6 +48,10 @@ export function ProductMedia({
   };
 
   const pause = () => {
+    // Autoplaying background clips (cinematic cards) should keep looping
+    // regardless of cursor position — only the hover-to-play grid videos
+    // pause when the mouse leaves.
+    if (autoPlay) return;
     const el = ref.current;
     if (!el) return;
     el.pause();
@@ -46,7 +64,7 @@ export function ProductMedia({
         ref={ref}
         className={className}
         poster={media.poster}
-        preload="none"
+        preload={autoPlay ? "auto" : "none"}
         muted
         loop
         playsInline
