@@ -55,7 +55,7 @@ export function HomeHero() {
   };
 
   return (
-    <section id="home-hero" className="relative min-h-[94vh] overflow-hidden bg-noir text-white">
+    <section id="home-hero" className="relative min-h-[100svh] overflow-hidden bg-noir text-white snap-start">
       <AnimatePresence mode="sync">
         <motion.div
           key={SLIDES[active].src}

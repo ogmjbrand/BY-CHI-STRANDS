@@ -25,7 +25,7 @@ export default function HomePage() {
     <div className="bg-background text-on-surface font-body-md">
       <AnnouncementBar />
       <SiteHeader dark />
-      <main>
+      <main className="snap-y snap-proximity">
         <HomeHero />
         <TrustBar />
         <HomeBestSellers />
