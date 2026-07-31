@@ -23,7 +23,7 @@ export default async function AdminSectionPage({ params }: Props) {
           <h1 className="mt-3 font-serif text-4xl">{data.title}</h1>
           <p className="mt-2 text-sm font-light text-stone">{data.blurb}</p>
         </div>
-        <button className="eyebrow h-11 bg-ink px-6 text-[0.6rem] text-white transition-colors hover:bg-gold">
+        <button className="eyebrow h-11 bg-ink px-6 text-[0.6rem] text-white transition-colors hover:bg-gold hover:text-ink">
           + New {data.title.replace(/s$/, "").replace("Academy Enrollment", "Enrollment")}
         </button>
       </header>

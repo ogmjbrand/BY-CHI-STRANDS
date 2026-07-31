@@ -108,7 +108,7 @@ export default function ShopAllPage() {
             {" "}
             <div className="flex gap-4">
               <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
                 href={site.socials.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -118,7 +118,7 @@ export default function ShopAllPage() {
               </a>
               {" "}
               <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
                 href={site.socials.tiktok.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -128,7 +128,7 @@ export default function ShopAllPage() {
               </a>
               {" "}
               <a
-                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
