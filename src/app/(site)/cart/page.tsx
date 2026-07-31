@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
-import { useStore, linePrice } from "@/context/StoreContext";
+import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 
@@ -122,7 +122,7 @@ export default function ShoppingBagPage() {
 
                         <div className="text-right">
                           <p className="font-body-md font-semibold text-on-surface">
-                            {money(linePrice(line) * line.qty)}
+                            {lineIsQuote(line) ? "Quoted after order" : money(linePrice(line) * line.qty)}
                           </p>
                           <button
                             onClick={() => removeLine(i)}
@@ -167,6 +167,12 @@ export default function ShoppingBagPage() {
                     {money(cartTotal)}
                   </span>
                 </div>
+                {cart.some(lineIsQuote) ? (
+                  <p className="text-right font-body-sm text-[11px] text-tertiary italic">
+                    Plus {cart.filter(lineIsQuote).length} piece
+                    {cart.filter(lineIsQuote).length === 1 ? "" : "s"} quoted after order
+                  </p>
+                ) : null}
               </div>
 
               <Link

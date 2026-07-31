@@ -2,7 +2,8 @@ export interface OrderItem {
   productId: string;
   name: string;
   quantity: number;
-  price: number;
+  /** null means this piece is quoted on request — the concierge confirms a price after the order is placed. */
+  price: number | null;
   variant?: {
     texture?: string;
     tone?: string;

@@ -2,6 +2,7 @@ import "server-only";
 import type { Order } from "@/types/orders";
 import type { Enrollment } from "@/types/enrollments";
 import type { ServiceBooking } from "@/types/bookings";
+import { formatPrice } from "./utils";
 
 const BASE_STYLES =
   'font-family: "system-ui", "-apple-system", "sans-serif"; max-width: 600px; margin: 0 auto; padding: 20px;';
@@ -11,12 +12,14 @@ const FOOTER =
   '<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999;"><p style="margin: 0 0 10px 0;">© 2026 BY CHI STRANDS. All rights reserved.</p><p style="margin: 0;">Luxury Vietnamese Hair. Crafted for Confidence.</p></div>';
 
 export function renderOrderConfirmationHTML(order: Order): string {
+  const hasQuoteItems = order.items.some((item) => item.price === null);
+
   const itemsHtml = order.items
     .map(
       (item) =>
         `<div style="display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #eee; font-size: 14px; margin-bottom: 10px;">
         <span>${item.name} x ${item.quantity}</span>
-        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        <span>${item.price === null ? "Quoted after order" : formatPrice(item.price * item.quantity)}</span>
       </div>`
     )
     .join("");
@@ -42,20 +45,21 @@ export function renderOrderConfirmationHTML(order: Order): string {
   <div style="margin-bottom: 30px; border-top: 2px solid #1a1a1a; padding-top: 15px;">
     <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px;">
       <span>Subtotal:</span>
-      <span>$${order.subtotal.toFixed(2)}</span>
-    </div>
-    <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px;">
-      <span>Tax:</span>
-      <span>$${order.tax.toFixed(2)}</span>
+      <span>${formatPrice(order.subtotal)}</span>
     </div>
     <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px;">
       <span>Shipping:</span>
-      <span>$${order.shipping.toFixed(2)}</span>
+      <span>Quoted after order</span>
     </div>
     <div style="display: flex; justify-content: space-between; font-size: 16px; font-weight: bold; margin-top: 12px;">
       <span>Total:</span>
-      <span>$${order.total.toFixed(2)}</span>
+      <span>${formatPrice(order.total)}</span>
     </div>
+    ${
+      hasQuoteItems
+        ? `<p style="font-size: 12px; color: #999; margin-top: 12px;">One or more pieces above are quoted on request — the total shown covers only the priced items. We'll confirm the rest in a follow-up email.</p>`
+        : ""
+    }
   </div>
 
   <p style="font-size: 14px; color: #666; line-height: 1.6;">You can track your order at any time by visiting your account dashboard.</p>

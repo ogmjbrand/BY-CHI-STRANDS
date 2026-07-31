@@ -15,8 +15,9 @@ import { IconAuthTag, IconShipInsured, IconExchange } from "./BrandIcons";
  * The PDP sidebar — length and lace selection driving a live price and the Add
  * to Atelier Bag action. Markup mirrors the screen; `variant` picks the desktop
  * sidebar or the compact mobile sheet. Configurations the house quotes on
- * enquiry swap the bag button for a pre-filled WhatsApp message rather than
- * showing an invented figure.
+ * request still go through the real bag/checkout flow with a null price
+ * (never an invented figure); "Ask on WhatsApp" is a separate, always-present
+ * option for shoppers who'd rather check first.
  */
 
 export function ProductConfigurator({
@@ -82,8 +83,10 @@ export function ProductConfigurator({
         </AnimatePresence>
         {total === null ? (
           <p className="font-body-sm text-body-sm text-on-surface-variant">
-            This piece is quoted on enquiry — message us and we&apos;ll send the
-            price and availability straight back.
+            This piece is quoted on request — add it to your bag with the
+            length and closure you want and our concierge will confirm the
+            price by email, or ask us on WhatsApp first if you&apos;d rather
+            check before ordering.
           </p>
         ) : null}
       </div>
@@ -153,42 +156,39 @@ export function ProductConfigurator({
 
       {/* CTA */}
       <div className="pt-4 space-y-4">
-        {total === null ? (
-          <MagneticButton className="w-full" strength={10}>
-            <a
-              href={enquiry}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 flex items-center justify-center gap-3"
-            >
-              ENQUIRE ON WHATSAPP
-              <span className="material-symbols-outlined text-lg">trending_flat</span>
-            </a>
-          </MagneticButton>
-        ) : (
-          <MagneticButton className="w-full" strength={10}>
-            <button
-              onClick={add}
-              className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
-            >
-              ADD TO ATELIER BAG
-              <span className="material-symbols-outlined text-lg">trending_flat</span>
-            </button>
-          </MagneticButton>
-        )}
-
-        <button
-          onClick={() => toggleWishlist(product.slug)}
-          className="w-full border border-outline-variant py-4 font-label-caps tracking-widest text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2"
-        >
-          <span
-            className={`material-symbols-outlined text-base ${saved ? "text-primary" : ""}`}
-            style={{ fontVariationSettings: saved ? "'FILL' 1" : "'FILL' 0" }}
+        <MagneticButton className="w-full" strength={10}>
+          <button
+            onClick={add}
+            className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
           >
-            favorite
-          </span>
-          {saved ? "SAVED" : "SAVE FOR LATER"}
-        </button>
+            {total === null ? "PLACE ORDER REQUEST" : "ADD TO ATELIER BAG"}
+            <span className="material-symbols-outlined text-lg">trending_flat</span>
+          </button>
+        </MagneticButton>
+
+        <div className="grid grid-cols-2 gap-3">
+          <a
+            href={enquiry}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-outline-variant py-4 font-label-caps tracking-widest text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2 text-center"
+          >
+            <span className="material-symbols-outlined text-base">chat_bubble</span>
+            ASK ON WHATSAPP
+          </a>
+          <button
+            onClick={() => toggleWishlist(product.slug)}
+            className="border border-outline-variant py-4 font-label-caps tracking-widest text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2"
+          >
+            <span
+              className={`material-symbols-outlined text-base ${saved ? "text-primary" : ""}`}
+              style={{ fontVariationSettings: saved ? "'FILL' 1" : "'FILL' 0" }}
+            >
+              favorite
+            </span>
+            {saved ? "SAVED" : "SAVE"}
+          </button>
+        </div>
 
         <div className="grid grid-cols-3 gap-2 pt-2 border-t border-outline-variant/20">
           {[
@@ -209,13 +209,13 @@ export function ProductConfigurator({
         </div>
 
         <div className="space-y-4 pt-4 border-t border-outline-variant/20">
-          {total !== null ? (
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
-              <strong className="text-on-surface">Order this yourself, right now</strong> —
-              add to bag, enter your shipping address at checkout, and our
-              concierge confirms payment by email. No need to message us first.
-            </p>
-          ) : null}
+          <p className="font-body-sm text-body-sm text-on-surface-variant">
+            <strong className="text-on-surface">Order this yourself, right now</strong> —
+            add to bag with the length and closure above, enter your shipping
+            address at checkout, and our concierge confirms{" "}
+            {total === null ? "the price and " : ""}payment by email. No need
+            to message us first.
+          </p>
           <div className="flex gap-3">
             <span className="material-symbols-outlined text-primary text-lg shrink-0">local_shipping</span>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
