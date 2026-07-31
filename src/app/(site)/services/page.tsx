@@ -20,7 +20,7 @@ export default function SignatureServices1Page() {
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
           <div className="flex items-center gap-12">
             <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface" href="/">
-              ByChi Strands
+              ByChi <span className="font-script">Strands</span>
             </Link>
             {" "}
             <div className="hidden md:flex gap-8 items-center">
@@ -420,7 +420,7 @@ export default function SignatureServices1Page() {
       <footer className="bg-surface-container-low">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="md:col-span-1">
-            <h3 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h3>
+            <h3 className="font-display-md text-headline-lg text-primary mb-6">ByChi <span className="font-script">Strands</span></h3>
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
               Crafting confidence through elite artistry and authentic raw hair sourcing.

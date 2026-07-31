@@ -19,7 +19,7 @@ export default function AtelierServiceBookingPage() {
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl luxury-shadow">
         <nav className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
           <Link href="/" className="font-display-md text-[24px] tracking-widest text-primary uppercase">
-            ByChi Strands
+            ByChi <span className="font-script normal-case">Strands</span>
           </Link>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -65,7 +65,7 @@ export default function AtelierServiceBookingPage() {
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary scale-75 origin-left mb-8 md:mb-0 tracking-[-0.01em]">
-            ByChi Strands
+            ByChi <span className="font-script">Strands</span>
           </div>
           {" "}
           <div className="flex flex-col items-center md:items-end space-y-4">

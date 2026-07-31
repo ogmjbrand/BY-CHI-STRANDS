@@ -39,7 +39,7 @@ export default function ShopAllPage() {
       <footer className="bg-surface-container-low full-width border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h2>
+            <h2 className="font-display-md text-headline-lg text-primary mb-6">ByChi <span className="font-script">Strands</span></h2>
             {" "}
             <p className="font-body-sm text-body-sm text-on-surface-variant mb-8">
               Defining the pinnacle of Vietnamese hair artistry. Timeless, sophisticated, and uncompromising in quality.

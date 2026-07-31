@@ -31,7 +31,7 @@ export default function AuraStoriesGalleryPage() {
           </div>
           {" "}
           <div className="flex-shrink-0">
-            <h1 className="font-display-md text-display-md text-primary tracking-tight leading-none">ByChi Strands</h1>
+            <h1 className="font-display-md text-display-md text-primary tracking-tight leading-none">ByChi <span className="font-script">Strands</span></h1>
           </div>
           {" "}
           <div className="flex-1 flex justify-end items-center gap-6">
@@ -251,7 +251,7 @@ export default function AuraStoriesGalleryPage() {
         <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
           <div className="mb-8 md:mb-0">
             <h2 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-none tracking-[-0.02em]">
-              ByChi Strands
+              ByChi <span className="font-script">Strands</span>
             </h2>
             {" "}
             <p className="font-body-sm text-on-surface-variant mt-2">Luxury Vietnamese hair, crafted for confidence.</p>
