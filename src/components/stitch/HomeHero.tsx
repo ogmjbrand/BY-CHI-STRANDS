@@ -55,7 +55,7 @@ export function HomeHero() {
   };
 
   return (
-    <section id="home-hero" className="relative min-h-[94vh] overflow-hidden bg-noir text-white">
+    <section id="home-hero" className="relative min-h-[100svh] overflow-hidden bg-noir text-white snap-start">
       <AnimatePresence mode="sync">
         <motion.div
           key={SLIDES[active].src}
@@ -101,7 +101,7 @@ export function HomeHero() {
             {...fadeUp(0)}
             className="font-label-caps text-[11px] uppercase tracking-[0.3em] text-gold-light mb-6 block"
           >
-            100% Authentic · Ethically Sourced · Timeless Beauty
+            100% Authentic · Ethically Sourced · Hand-Tied In Lagos
           </motion.span>
 
           <motion.h1

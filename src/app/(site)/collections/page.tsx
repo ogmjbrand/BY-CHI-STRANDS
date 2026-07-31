@@ -89,7 +89,7 @@ export default function TheBoutiquePage() {
                           </h4>
                           {" "}
                           <span className="text-primary font-semibold">
-                            {price === null ? "Price on request" : formatPrice(price)}
+                            {price === null ? "Enquire for Price" : formatPrice(price)}
                           </span>
                         </div>
                       </Link>

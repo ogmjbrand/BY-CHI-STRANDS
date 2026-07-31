@@ -34,6 +34,10 @@ export function ProductMedia({
   };
 
   const pause = () => {
+    // Autoplaying background clips (cinematic cards) should keep looping
+    // regardless of cursor position — only the hover-to-play grid videos
+    // pause when the mouse leaves.
+    if (autoPlay) return;
     const el = ref.current;
     if (!el) return;
     el.pause();
@@ -46,7 +50,7 @@ export function ProductMedia({
         ref={ref}
         className={className}
         poster={media.poster}
-        preload="none"
+        preload={autoPlay ? "metadata" : "none"}
         muted
         loop
         playsInline
