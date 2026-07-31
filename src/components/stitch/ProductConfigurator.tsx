@@ -208,9 +208,32 @@ export function ProductConfigurator({
           ))}
         </div>
 
-        <p className="text-center text-[10px] text-on-surface-variant tracking-wider uppercase">
-          Nationwide delivery from Lagos · Worldwide on request
-        </p>
+        <div className="space-y-4 pt-4 border-t border-outline-variant/20">
+          {total !== null ? (
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              <strong className="text-on-surface">Order this yourself, right now</strong> —
+              add to bag, enter your shipping address at checkout, and our
+              concierge confirms payment by email. No need to message us first.
+            </p>
+          ) : null}
+          <div className="flex gap-3">
+            <span className="material-symbols-outlined text-primary text-lg shrink-0">local_shipping</span>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              Lagos same-week courier, nationwide Nigeria in 2–4 business days,
+              international via DHL Express in 3–7 business days — fully
+              tracked and insured.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <span className="material-symbols-outlined text-primary text-lg shrink-0">package_2</span>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              Every order arrives in our signature packaging: silk-wrapped
+              hair inside a rigid gift box, with a care card and
+              authentication tag. Wig units ship on a protective form to
+              preserve the lace.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
