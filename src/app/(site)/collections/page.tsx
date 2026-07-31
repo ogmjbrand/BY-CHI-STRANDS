@@ -22,20 +22,29 @@ export default function TheBoutiquePage() {
   return (
     <div className="scr-the-boutique theme-noir bg-background font-body-md text-on-background">
       <BoutiqueHeader />
-      {/* Editorial Hero */}
-      <header className="pt-40 pb-20 md:pt-60 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 fade-in-up" style={{ animationDelay: "0.1s" }}>
-            The Art of Hair
-          </span>
-          {" "}
-          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 fade-in-up md:tracking-[-0.02em]" style={{ animationDelay: "0.2s" }}>
-            The Boutique
-          </h1>
-          {" "}
-          <p className="font-body-xl text-body-xl text-on-surface-variant max-w-2xl fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Curated masterpieces for the discerning collector. Each piece is a testament to the artisan's hand, crafted with the world's most exquisite silk-grade hair.
-          </p>
+      {/* Editorial Hero — real curl-unit lineup as the full-bleed background */}
+      <header className="relative isolate min-h-[70vh] flex items-end overflow-hidden pt-24">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/products/boutique-lineup-1.jpg"
+          alt="Curly lace-front units shown at 12, 14, 16 and 18 inches on studio stands"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-noir/20" />
+        <div className="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-20 md:pb-28">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 fade-in-up" style={{ animationDelay: "0.1s" }}>
+              The Art of Hair
+            </span>
+            {" "}
+            <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8 fade-in-up md:tracking-[-0.02em]" style={{ animationDelay: "0.2s" }}>
+              The Boutique
+            </h1>
+            {" "}
+            <p className="font-body-xl text-body-xl text-white/70 max-w-2xl fade-in-up" style={{ animationDelay: "0.3s" }}>
+              Curated masterpieces for the discerning collector. Each piece is a testament to the artisan's hand, crafted with the world's most exquisite silk-grade hair.
+            </p>
+          </div>
         </div>
       </header>
       <BoutiqueGrid collectionLinks={collections} />
