@@ -164,7 +164,7 @@ export default function TheBoutiquePage() {
       <footer className="bg-background border-t border-outline-variant/20">
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-[32px] text-primary">ByChi Strands</span>
+            <span className="font-display-lg text-[32px] text-primary">ByChi <span className="font-script">Strands</span></span>
             {" "}
             <p className="font-body-sm text-on-surface-variant text-center md:text-left">Redefining the standard of luxury hair through artisan excellence.</p>
           </div>

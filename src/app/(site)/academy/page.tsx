@@ -19,7 +19,7 @@ export default function AcademyPage() {
       {/* Header / TopNavBar (Shared Component) */}
       <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
-          <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface">ByChi Strands</div>
+          <div className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface">ByChi <span className="font-script">Strands</span></div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
@@ -275,7 +275,7 @@ export default function AcademyPage() {
       <footer className="bg-surface-container-low border-t border-outline-variant/20 pt-section-padding pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi Strands</div>
+            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi <span className="font-script">Strands</span></div>
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
               Elevating the hair industry through education and premium Vietnamese sourcing.

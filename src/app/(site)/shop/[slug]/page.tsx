@@ -348,7 +348,7 @@ export default async function ProductPage({
         <footer className="bg-surface-container-low border-t border-outline-variant/30">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div className="space-y-6">
-              <div className="font-display-md text-headline-lg text-primary">ByChi Strands</div>
+              <div className="font-display-md text-headline-lg text-primary">ByChi <span className="font-script">Strands</span></div>
               <p className="font-body-sm text-on-surface-variant max-w-xs">
                 Vietnamese human hair, hand-built onto lace in our atelier.
               </p>
