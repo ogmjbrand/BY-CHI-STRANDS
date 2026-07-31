@@ -10,7 +10,6 @@ import { HomeLifestyle } from "@/components/stitch/HomeLifestyle";
 import { StatsBand } from "@/components/stitch/StatsBand";
 import { HomeServices } from "@/components/stitch/HomeServices";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
-import { InstagramStrip } from "@/components/stitch/InstagramStrip";
 import { site } from "@/lib/site";
 
 /**
@@ -47,7 +46,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <InstagramStrip />
         <Newsletter />
       </main>
 
