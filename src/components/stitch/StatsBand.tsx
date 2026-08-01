@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { ORIGINS, TEXTURES, products } from "@/lib/products";
 
 /**
@@ -34,24 +35,48 @@ export function StatsBand() {
         <div className="absolute -right-24 top-1/4 h-96 w-96 rounded-full bg-primary-container/10 blur-3xl" />
       </div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        className="relative max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8"
-      >
-        {STATS.map((s) => (
-          <motion.div key={s.label} variants={rise} className="text-center md:text-left">
-            <p className="font-display-lg text-[13vw] leading-none tracking-[-0.03em] text-primary-container md:text-6xl">
-              {s.value}
+      <div className="relative mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
+        <div className="mb-10 flex flex-col gap-4 border-b border-white/10 pb-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-3 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary-container/80">
+              The House at a Glance
             </p>
-            <p className="font-label-caps text-[11px] uppercase tracking-[0.18em] text-surface/70 mt-3">
-              {s.label}
-            </p>
-          </motion.div>
-        ))}
-      </motion.div>
+            <h2 className="max-w-2xl font-display-lg text-3xl leading-[1.02] tracking-[-0.02em] text-white md:text-4xl">
+              An inventory shaped by scarcity, craft, and a precise point of view.
+            </h2>
+          </div>
+          <a
+            href="/collections"
+            className="group inline-flex items-center gap-3 font-label-caps text-[11px] uppercase tracking-[0.25em] text-white/75 transition-colors hover:text-white"
+          >
+            Browse the edit
+            <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+          </a>
+        </div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-8"
+        >
+          {STATS.map((s) => (
+            <motion.div
+              key={s.label}
+              variants={rise}
+              className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 text-center md:text-left"
+            >
+              <p className="font-display-lg text-[13vw] leading-none tracking-[-0.03em] text-primary-container md:text-6xl">
+                {s.value}
+              </p>
+              <p className="mt-3 font-label-caps text-[11px] uppercase tracking-[0.18em] text-surface/70">
+                {s.label}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

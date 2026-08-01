@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight, Menu } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 
@@ -23,56 +24,64 @@ export function FlagshipHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 mix-blend-difference">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-16 h-20 md:h-24 flex items-center justify-between text-white">
+    <header className="fixed inset-x-0 top-0 z-50 mix-blend-difference">
+      <div className="mx-auto flex h-20 max-w-[1800px] items-center justify-between px-6 text-white md:h-24 md:px-16">
         <button
-          className="md:hidden font-label-caps text-[11px] tracking-[0.2em] uppercase"
+          className="rounded-full border border-white/15 p-2.5 transition-colors hover:border-white/35 md:hidden"
           onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
         >
-          Menu
+          <Menu className="h-4 w-4" />
         </button>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden items-center gap-10 md:flex">
           {LINKS.slice(0, 2).map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-label-caps text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
+              className="font-label-caps text-[11px] uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <Link href="/" className="font-display-md text-xl md:text-2xl tracking-[0.15em] uppercase">
+        <Link href="/" className="font-display-md text-xl uppercase tracking-[0.15em] md:text-2xl">
           ByChi Strands
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden items-center gap-8 md:flex">
           {LINKS.slice(2).map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-label-caps text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
+              className="font-label-caps text-[11px] uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
             >
               {l.label}
             </Link>
           ))}
           <Link
+            href="/book"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-2 font-label-caps text-[11px] uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-[#050505]"
+          >
+            Book
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          <Link
             href="/cart"
-            className="font-label-caps text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
+            className="font-label-caps text-[11px] uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
           >
             Bag{cartCount > 0 ? ` (${cartCount})` : ""}
           </Link>
         </nav>
 
-        <Link href="/cart" className="md:hidden font-label-caps text-[11px] tracking-[0.2em] uppercase">
+        <Link href="/cart" className="font-label-caps text-[11px] uppercase tracking-[0.2em] md:hidden">
           Bag{cartCount > 0 ? ` (${cartCount})` : ""}
         </Link>
       </div>
 
       {open ? (
-        <div className="md:hidden bg-on-surface text-white px-6 py-10 space-y-6">
+        <div className="space-y-6 bg-on-surface px-6 py-10 text-white md:hidden">
           {LINKS.map((l) => (
             <Link
               key={l.href}
@@ -83,6 +92,10 @@ export function FlagshipHeader() {
               {l.label}
             </Link>
           ))}
+          <Link href="/book" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 font-label-caps text-[11px] uppercase tracking-[0.2em]">
+            Book an appointment
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       ) : null}
     </header>

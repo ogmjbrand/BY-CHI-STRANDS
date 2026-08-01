@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { ImageReveal } from "@/components/ui/image-reveal";
 import { posterFor } from "@/lib/media";
 
@@ -19,23 +20,23 @@ export function BrandStoryEditorial() {
   return (
     <section id="brand-story" className="bg-surface">
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-7 aspect-[4/5] lg:aspect-auto lg:h-[110vh]">
-          <ImageReveal className="w-full h-full">
+        <div className="aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:h-[110vh]">
+          <ImageReveal className="h-full w-full">
             <img
               src={posterFor("sdd-vietnam-bone-straight")}
               alt="A ByChi Strands unit on a studio stand"
-              className="w-full h-full object-cover grayscale-[15%]"
+              className="h-full w-full object-cover grayscale-[15%]"
             />
           </ImageReveal>
         </div>
 
-        <div className="lg:col-span-5 flex flex-col justify-center px-6 md:px-16 py-24 md:py-0">
+        <div className="flex flex-col justify-center px-6 py-24 md:px-16 md:py-0 lg:col-span-5">
           <motion.p
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
-            className="font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary mb-8"
+            className="mb-8 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary"
           >
             Brand Story
           </motion.p>
@@ -45,9 +46,9 @@ export function BrandStoryEditorial() {
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="font-display-lg text-4xl md:text-6xl leading-[1.05] tracking-[-0.02em] mb-10"
+            className="mb-10 font-display-lg text-4xl leading-[0.95] tracking-[-0.02em] md:text-6xl"
           >
-            One donor. One strand. One promise kept.
+            One donor. One strand. One promise carried through every detail.
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -55,35 +56,45 @@ export function BrandStoryEditorial() {
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="font-body-xl text-lg text-on-surface-variant max-w-md mb-12"
+            className="mb-12 max-w-md text-lg leading-8 text-on-surface-variant"
           >
             Every unit begins in the highlands of Vietnam, collected with fair trade principles from a single
-            individual so the cuticle never has to be untangled from another donor&apos;s hair. It is then hand-sewn,
-            length by length, in our Lagos atelier.
+            individual so the cuticle is never forced into compromise. It is then hand-sewn, length by length,
+            in our Lagos atelier for a softer, more elevated finish.
           </motion.p>
 
-          <motion.ol
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.3 }}
-            className="space-y-6"
+            className="rounded-[2rem] border border-outline-variant/20 bg-white/60 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.04)]"
           >
-            {[
-              ["01", "Ethically Sourced", "Fair trade collection, village by village."],
-              ["02", "Single Donor", "Cuticle alignment kept intact from root to tip."],
-              ["03", "Artisan Crafted", "Hand-tied in the studio, never machine-wefted."],
-            ].map(([n, title, body]) => (
-              <li key={n} className="flex gap-6 border-t border-outline-variant/20 pt-6">
-                <span className="font-display-md text-primary text-sm pt-1">{n}</span>
-                <div>
-                  <p className="font-headline-lg text-lg">{title}</p>
-                  <p className="font-body-sm text-on-surface-variant mt-1">{body}</p>
-                </div>
-              </li>
-            ))}
-          </motion.ol>
+            <ol className="space-y-6">
+              {[
+                ["01", "Ethically Sourced", "Fair trade collection, village by village."],
+                ["02", "Single Donor", "Cuticle alignment kept intact from root to tip."],
+                ["03", "Artisan Crafted", "Hand-tied in the studio, never machine-wefted."],
+              ].map(([n, title, body]) => (
+                <li key={n} className="flex gap-6 border-t border-outline-variant/20 pt-6 first:border-t-0 first:pt-0">
+                  <span className="pt-1 font-display-md text-sm text-primary">{n}</span>
+                  <div>
+                    <p className="font-headline-lg text-lg">{title}</p>
+                    <p className="mt-1 font-body-sm text-on-surface-variant">{body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <a
+              href="/about"
+              className="mt-8 inline-flex items-center gap-3 font-label-caps text-[11px] uppercase tracking-[0.25em] text-on-surface transition-colors hover:text-primary"
+            >
+              Read the full story
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

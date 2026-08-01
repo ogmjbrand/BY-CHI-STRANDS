@@ -35,16 +35,16 @@ export function FlagshipHero() {
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-16 md:pb-24">
-        <div className="max-w-5xl">
-          <p className="mb-4 font-label-caps text-[11px] uppercase tracking-[0.35em] text-white/70">
-            ByChi Strands · Atelier Edition
+        <div className="max-w-6xl">
+          <p className="mb-4 font-label-caps text-[11px] uppercase tracking-[0.35em] text-[#d4af37]/90">
+            ByChi Strands · Luxury Hair, Reimagined
           </p>
           <WordsPullUp
-            text="An Atelier of Silk"
-            className="font-display-lg text-[15vw] leading-[0.9] tracking-[-0.02em] text-white md:text-[8.2vw]"
+            text="Quiet Luxury, Worn Beautifully"
+            className="font-display-lg text-[13vw] leading-[0.9] tracking-[-0.02em] text-white md:text-[8vw]"
           />
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
-            Vietnamese human hair, hand-tied in Lagos. Every strand is traceable, sculpted, and styled to feel as rare as it looks.
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/75 md:text-xl">
+            Refined texture, private craftsmanship, and a finish that carries presence from the first glance to the final movement.
           </p>
         </div>
 
@@ -52,14 +52,14 @@ export function FlagshipHero() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#brand-story"
-              className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-white hover:text-[#060606]"
+              className="group inline-flex items-center gap-3 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/15 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-[#f9e8b6] shadow-[0_0_0_1px_rgba(212,175,55,0.15)] transition-all duration-300 hover:bg-[#d4af37] hover:text-[#060606]"
             >
               Discover the story
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#collections"
-              className="inline-flex items-center gap-3 rounded-full border border-white/15 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-white/80 transition-all duration-300 hover:border-white/35 hover:text-white"
+              className="inline-flex items-center gap-3 rounded-full border border-[#d4af37]/25 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-[#f0d98d] transition-all duration-300 hover:border-[#d4af37]/50 hover:bg-[#d4af37]/10 hover:text-[#ffe7a3]"
             >
               <Play className="h-4 w-4" />
               View collections
@@ -67,7 +67,7 @@ export function FlagshipHero() {
           </div>
 
           <div className="max-w-sm text-sm leading-7 text-white/70">
-            Crafted for clients who want presence, softness, and a finish that feels effortless from first glance.
+            Crafted for clients who want softness, structure, and a finish that feels timeless, intentional, and quietly unforgettable.
           </div>
         </div>
       </motion.div>

@@ -9,9 +9,14 @@ import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
 import { JournalEditorial } from "@/components/flagship/JournalEditorial";
 import { FlagshipFooter } from "@/components/flagship/FlagshipFooter";
 import { LuxuryExperienceSection } from "@/components/flagship/LuxuryExperienceSection";
+import { EditorialShowcase } from "@/components/flagship/EditorialShowcase";
+import { LuxuryManifestoSection } from "@/components/flagship/LuxuryManifestoSection";
+import { CinematicRevealSection } from "@/components/flagship/CinematicRevealSection";
+import { HouseMethodSection } from "@/components/flagship/HouseMethodSection";
 import { TextureMarquee } from "@/components/stitch/TextureMarquee";
 import { StatsBand } from "@/components/stitch/StatsBand";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
+import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSection";
 
 /**
  * ByChi Strands flagship homepage — built from scratch as a single
@@ -31,7 +36,11 @@ export default function HomePage() {
       <BrandStoryEditorial />
       <StatsBand />
       <CollectionsEditorial />
+      <EditorialShowcase />
+      <LuxuryManifestoSection />
+      <CinematicRevealSection />
       <LuxuryExperienceSection />
+      <HouseMethodSection />
       <CraftsmanshipFilm />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
@@ -44,6 +53,7 @@ export default function HomePage() {
         <ClientTestimonialsCarousel />
       </section>
 
+      <ClientConciergeSection />
       <AcademyCinematic />
       <JournalEditorial />
       <FlagshipFooter />
