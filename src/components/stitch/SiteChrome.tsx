@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { Newsletter } from "./Newsletter";
+import { SocialStrip } from "./SocialStrip";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -95,7 +97,7 @@ const SHOP = [
 ];
 
 const COMPANY = [
-  { label: "About Our Sourcing", href: "/about" },
+  { label: "Our Craft", href: "/about" },
   { label: "Academy Training", href: "/academy" },
   { label: "Boutique Services", href: "/services" },
   { label: "Contact Us", href: "/contact" },
@@ -137,6 +139,8 @@ function Column({
 export function StitchFooter() {
   return (
     <footer className="bg-surface-container-low">
+      <Newsletter />
+      <SocialStrip />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
         <div className="col-span-1 md:col-span-1">
           <Wordmark className="text-on-surface mb-8" />

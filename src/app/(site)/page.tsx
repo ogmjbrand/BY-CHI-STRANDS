@@ -10,6 +10,7 @@ import { HomeLifestyle } from "@/components/stitch/HomeLifestyle";
 import { StatsBand } from "@/components/stitch/StatsBand";
 import { HomeServices } from "@/components/stitch/HomeServices";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
+import { SocialStrip } from "@/components/stitch/SocialStrip";
 import { site } from "@/lib/site";
 
 /**
@@ -50,6 +51,7 @@ export default function HomePage() {
       </main>
 
       <footer className="bg-noir text-white/70 border-t border-white/10">
+        <SocialStrip dark />
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter">
           <div className="flex flex-col gap-6">
             <span className="flex items-center gap-2.5">
@@ -77,7 +79,7 @@ export default function HomePage() {
             <h5 className="font-label-caps text-label-caps text-gold tracking-[0.15em] uppercase">
               Company
             </h5>
-            <Link className="hover:text-white transition-colors" href="/about">About Our Sourcing</Link>
+            <Link className="hover:text-white transition-colors" href="/about">Our Craft</Link>
             <Link className="hover:text-white transition-colors" href="/journal">Journal</Link>
             <Link className="hover:text-white transition-colors" href="/contact">Contact Us</Link>
             <Link className="hover:text-white transition-colors" href="/faqs">FAQs</Link>

@@ -121,22 +121,22 @@ export default function AcademyPage() {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center items-center">
             <div className="fade-up">
-              <h3 className="font-headline-lg text-headline-lg text-on-surface mb-4">Elite Sourcing</h3>
+              <h3 className="font-headline-lg text-headline-lg text-noir mb-4">Real Sourcing Knowledge</h3>
               {" "}
-              <p className="font-body-md text-body-sm text-on-surface-variant">Uncover the hidden trade routes of premium Vietnamese raw strands.</p>
+              <p className="font-body-md text-body-sm text-noir/70">Taught by the team that sources ByChiStrands&apos; own raw Vietnamese hair.</p>
             </div>
             {" "}
             <div className="fade-up">
-              <div className="w-px h-24 bg-outline-variant/40 mx-auto hidden md:block"></div>
+              <div className="w-px h-24 bg-noir/20 mx-auto hidden md:block"></div>
               {" "}
-              <div className="md:hidden w-24 h-px bg-outline-variant/40 mx-auto my-8"></div>
+              <div className="md:hidden w-24 h-px bg-noir/20 mx-auto my-8"></div>
             </div>
             {" "}
             <div className="fade-up">
-              <h3 className="font-headline-lg text-headline-lg text-on-surface mb-4">Authority Scaling</h3>
+              <h3 className="font-headline-lg text-headline-lg text-noir mb-4">Built For Entrepreneurs</h3>
               {" "}
-              <p className="font-body-md text-body-sm text-on-surface-variant">
-                Transform your importation business into a globally recognized luxury brand.
+              <p className="font-body-md text-body-sm text-noir/70">
+                For anyone serious about importing and selling luxury hair, not just industry hobbyists.
               </p>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function AcademyPage() {
             {/* Card 1 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="A close-up of raw Vietnamese hair bundles under studio lighting" src="/stitch/img-124.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Raw hair bundles inspected at a wholesale supplier" src="/services/hair-importation-1.jpeg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -171,17 +171,17 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 01</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Factory Direct Sourcing</h4>
+                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Sourcing</h4>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
-                  Bypassing the middleman to negotiate directly with the heart of Vietnam's top hair manufacturers.
+                  How the house sources raw Vietnamese hair — supplier selection, what to ask, and planning a confident first order.
                 </p>
               </div>
             </div>
             {/* Card 2 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="A workspace with tools for hair grading, notebooks and a scale" src="/stitch/img-087.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Curly raw hair bundles held up for inspection" src="/services/hair-importation-2.jpeg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -189,17 +189,17 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 02</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Grading Mastery</h4>
+                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Grading</h4>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
-                  Developing the expert eye to distinguish between authentic raw hair and processed imitations.
+                  Developing the hands-on eye to tell raw hair from blended, processed imitations.
                 </p>
               </div>
             </div>
             {/* Card 3 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Hands working on a laptop in a bright, modern office" src="/stitch/img-048.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Finished units at different lengths lined up in the atelier" src="/products/boutique-lineup-1.jpg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -207,17 +207,17 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 03</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Scaling Your Brand</h4>
+                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Scaling</h4>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
-                  Advanced logistics and inventory management strategies for global distribution at scale.
+                  Landed cost, inventory and the logistics decisions that decide your margin as you grow.
                 </p>
               </div>
             </div>
             {/* Card 4 */}
             <div className="group relative overflow-hidden bg-surface-container-low border border-outline-variant/10 luxury-shadow p-unit h-[500px] flex flex-col justify-end fade-up">
               <div className="absolute inset-0 image-hover-scale">
-                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="An editorial magazine-style layout featuring ByChi Strands products" src="/stitch/img-050.jpg" />
+                <img className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="The ByChiStrands founder in a styled portrait" src="/media/academy/chi-ceo.jpeg" />
                 {" "}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
@@ -225,13 +225,38 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 04</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Marketing for Luxury</h4>
+                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Marketing</h4>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
-                  The editorial approach to social media and digital presence that attracts high-net-worth clientele.
+                  Positioning, photography and content that make a new hair brand read as premium from day one.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Real graduate — proof, not a stat */}
+      <section className="py-section-padding bg-surface-container-low border-y border-outline-variant/20">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+          <div className="aspect-[4/5] overflow-hidden fade-up">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/academy/mentorship-masterclass.jpg"
+              alt="A masterclass graduate receiving her certificate of attendance"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="fade-up">
+            <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
+              From The Classroom
+            </span>
+            <h2 className="font-display-md text-display-md text-on-surface mb-8 tracking-[-0.01em]">
+              A real graduate, a real certificate.
+            </h2>
+            <p className="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+              Every masterclass ends with a certificate of attendance — the same one this
+              graduate is holding here, presented in person by the ByChiStrands team.
+            </p>
           </div>
         </div>
       </section>
@@ -243,32 +268,37 @@ export default function AcademyPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
             <div className="fade-up">
               <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
-                Limited Intake
+                Enroll
               </span>
               {" "}
-              <h2 className="font-display-md text-display-md text-on-surface mb-8 tracking-[-0.01em]">Secure Your Legacy</h2>
+              <h2 className="font-display-md text-display-md text-on-surface mb-8 tracking-[-0.01em]">Apply to the Academy</h2>
               {" "}
               <p className="font-body-xl text-body-xl text-on-surface-variant mb-12 max-w-lg leading-relaxed">
-                To maintain our standard of excellence, we accept only 12 students per intake. Apply now to be considered for the next session.
+                Share your details below and our team will confirm your intake by email — the
+                same real enrollment that starts at{" "}
+                <Link href="/academy/enroll" className="text-primary hover-underline relative">
+                  /academy/enroll
+                </Link>
+                .
               </p>
               {" "}
               <ul className="space-y-6 mb-12">
                 <li className="flex items-center gap-4">
                   <span className="material-symbols-outlined text-primary">verified</span>
                   {" "}
-                  <span className="font-body-md text-on-surface">Direct Contact with 3 Verified Factories</span>
+                  <span className="font-body-md text-on-surface">The Masterclass — sourcing, grading, marketing and scaling</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
                   <span className="material-symbols-outlined text-primary">verified</span>
                   {" "}
-                  <span className="font-body-md text-on-surface">Lifetime Access to Private Sourcing Community</span>
+                  <span className="font-body-md text-on-surface">Mentorship — a direct session for your own sourcing questions</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
                   <span className="material-symbols-outlined text-primary">verified</span>
                   {" "}
-                  <span className="font-body-md text-on-surface">1-on-1 Branding Strategy Audit</span>
+                  <span className="font-body-md text-on-surface">Direct Access — reach the team on WhatsApp as you build</span>
                 </li>
               </ul>
             </div>
