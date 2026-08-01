@@ -14,13 +14,15 @@ import type { OrderItem } from "@/types/orders";
  * BY CHI STRANDS — Stitch screen: digital_flagship_luxury_checkout
  * "Checkout | ByChi Strands"
  *
- * The house has no live payment gateway — orders are placed as a real
- * request (POST /api/orders/create → Supabase + confirmation email) and
- * payment is settled with the concierge afterward, the same way the
- * atelier actually closes bespoke orders. The original Stitch screen's
- * credit-card capture fields were pure decoration wired to nothing, which
- * would have misled a shopper into thinking a real charge went through —
- * removed rather than left dead.
+ * Two real ways to finish: pay immediately by card via Flutterwave
+ * (POST /api/payments/flutterwave/initiate → redirect to their hosted
+ * checkout → verified server-side on return, never trusted from the
+ * redirect URL alone), or place the order and let the concierge arrange
+ * payment by email — the original path, kept as-is since quote-only pieces
+ * have no confirmed price to charge automatically. The original Stitch
+ * screen's credit-card capture fields were pure decoration wired to
+ * nothing, which would have misled a shopper into thinking a real charge
+ * went through — this replaces that with an actual charge instead.
  */
 export default function CheckoutPage() {
   const router = useRouter();
@@ -35,13 +37,12 @@ export default function CheckoutPage() {
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("Nigeria");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [method, setMethod] = useState<"concierge" | "flutterwave">("concierge");
 
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (status === "loading" || cart.length === 0) return;
-    setStatus("loading");
+  const hasQuoteItems = cart.some(lineIsQuote);
 
-    const items: OrderItem[] = cart.flatMap((line) => {
+  const buildItems = (): OrderItem[] =>
+    cart.flatMap((line) => {
       const product = getProduct(line.slug);
       if (!product) return [];
       return [
@@ -59,29 +60,62 @@ export default function CheckoutPage() {
       ];
     });
 
-    try {
-      const res = await fetch("/api/orders/create", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customerName: name,
-          customerEmail: email,
-          items,
-          subtotal: cartTotal,
-          tax: 0,
-          shipping: 0,
-          total: cartTotal,
-          shippingAddress: { street, city, state, zip, country },
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error ?? "Failed to place order");
+  const orderPayload = () => ({
+    customerName: name,
+    customerEmail: email,
+    items: buildItems(),
+    subtotal: cartTotal,
+    tax: 0,
+    shipping: 0,
+    total: cartTotal,
+    shippingAddress: { street, city, state, zip, country },
+  });
 
-      clearCart();
-      router.push(`/order-confirmation?order=${data.order.id}`);
-    } catch {
+  const placeOrder = async () => {
+    const res = await fetch("/api/orders/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderPayload()),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data?.error ?? "Failed to place order");
+
+    clearCart();
+    router.push(`/order-confirmation?order=${data.order.id}`);
+  };
+
+  const payNow = async () => {
+    const res = await fetch("/api/payments/flutterwave/initiate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderPayload()),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.paymentLink) {
+      throw new Error(data?.error ?? "Failed to start payment");
+    }
+
+    clearCart();
+    window.location.href = data.paymentLink as string;
+  };
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === "loading" || cart.length === 0) return;
+    setStatus("loading");
+
+    try {
+      if (method === "flutterwave" && !hasQuoteItems) {
+        await payNow();
+      } else {
+        await placeOrder();
+      }
+    } catch (err) {
       setStatus("error");
-      notify("Something went wrong", "Please try again or reach us on WhatsApp.");
+      notify(
+        "Something went wrong",
+        err instanceof Error ? err.message : "Please try again or reach us on WhatsApp."
+      );
     }
   };
 
@@ -208,16 +242,30 @@ export default function CheckoutPage() {
 
             <section className="bg-surface-container-low p-8 border border-outline-variant/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="material-symbols-outlined text-primary">lock_open</span>
-                <h3 className="font-headline-lg text-headline-lg">White-Glove Concierge Payment</h3>
+                <span className="material-symbols-outlined text-primary">
+                  {hasQuoteItems ? "lock_open" : "lock"}
+                </span>
+                <h3 className="font-headline-lg text-headline-lg">
+                  {hasQuoteItems ? "White-Glove Concierge Payment" : "Pay Now, Or By Arrangement"}
+                </h3>
               </div>
               <p className="text-body-md text-outline leading-relaxed">
-                We don&apos;t take card payments on-site. Once you place your order, our concierge
-                team will reach out by email to confirm shipping and arrange payment — the same
-                bespoke process every ByChiStrands piece goes through.
-                {cart.some(lineIsQuote)
-                  ? " Any piece in your bag marked “Quoted after order” has no listed price yet — the concierge email will include that quote before payment is arranged."
-                  : ""}
+                {hasQuoteItems ? (
+                  <>
+                    We don&apos;t take card payments on-site for quote-only pieces. Once you place
+                    your order, our concierge team will reach out by email to confirm the price,
+                    shipping and payment — the same bespoke process every ByChiStrands piece goes
+                    through. Any piece in your bag marked &ldquo;Quoted after order&rdquo; has no
+                    listed price yet — the concierge email will include that quote before payment
+                    is arranged.
+                  </>
+                ) : (
+                  <>
+                    Pay by card right now via Flutterwave&apos;s secure checkout, or place your
+                    order and our concierge will reach out by email to arrange payment instead —
+                    the same bespoke process every ByChiStrands piece goes through.
+                  </>
+                )}
               </p>
             </section>
 
@@ -237,15 +285,30 @@ export default function CheckoutPage() {
             <div className="hidden lg:block sticky top-32 space-y-12 bg-white text-noir border border-outline-variant/20 p-8 shadow-sm">
               <CheckoutSummary />
               <div className="space-y-4">
+                {!hasQuoteItems ? (
+                  <button
+                    type="submit"
+                    onClick={() => setMethod("flutterwave")}
+                    disabled={status === "loading"}
+                    className="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-secondary transition-all duration-500 hover:scale-[1.02] active:scale-100 uppercase disabled:opacity-60"
+                  >
+                    {status === "loading" && method === "flutterwave" ? "Redirecting…" : "Pay Now"}
+                  </button>
+                ) : null}
                 <button
                   type="submit"
+                  onClick={() => setMethod("concierge")}
                   disabled={status === "loading"}
                   className="w-full bg-on-surface text-surface py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-500 hover:scale-[1.02] active:scale-100 uppercase disabled:opacity-60"
                 >
-                  {status === "loading" ? "Placing Order…" : "Place Order"}
+                  {status === "loading" && method === "concierge"
+                    ? "Placing Order…"
+                    : hasQuoteItems
+                      ? "Place Order"
+                      : "Place Order — Pay Later"}
                 </button>
                 <p className="text-center text-[10px] text-outline px-4 leading-relaxed">
-                  By placing your order, you agree to the ByChiStrands{" "}
+                  By continuing, you agree to the ByChiStrands{" "}
                   <Link href="/terms" className="underline">
                     Terms of Service
                   </Link>{" "}
@@ -258,13 +321,28 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <div className="lg:hidden mt-4">
+            <div className="lg:hidden mt-4 space-y-4">
+              {!hasQuoteItems ? (
+                <button
+                  type="submit"
+                  onClick={() => setMethod("flutterwave")}
+                  disabled={status === "loading"}
+                  className="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-secondary transition-all duration-500 uppercase disabled:opacity-60"
+                >
+                  {status === "loading" && method === "flutterwave" ? "Redirecting…" : "Pay Now"}
+                </button>
+              ) : null}
               <button
                 type="submit"
+                onClick={() => setMethod("concierge")}
                 disabled={status === "loading"}
                 className="w-full bg-on-surface text-surface py-5 font-label-caps text-label-caps tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase disabled:opacity-60"
               >
-                {status === "loading" ? "Placing Order…" : "Place Order"}
+                {status === "loading" && method === "concierge"
+                  ? "Placing Order…"
+                  : hasQuoteItems
+                    ? "Place Order"
+                    : "Place Order — Pay Later"}
               </button>
             </div>
           </div>

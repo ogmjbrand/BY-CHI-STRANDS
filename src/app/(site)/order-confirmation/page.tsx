@@ -21,19 +21,35 @@ import type { Order } from "@/types/orders";
  * the same way a guest-checkout receipt link works.
  */
 function OrderConfirmationContent() {
-  const orderId = useSearchParams().get("order");
+  const params = useSearchParams();
+  const orderId = params.get("order");
+  const transactionId = params.get("transaction_id");
   const [order, setOrder] = useState<Order | null | undefined>(undefined);
+  const [payment, setPayment] = useState<"none" | "checking" | "verified" | "failed">("none");
 
   useEffect(() => {
     if (!orderId) {
       setOrder(null);
       return;
     }
+
+    if (transactionId) {
+      setPayment("checking");
+      fetch(`/api/payments/flutterwave/verify?order=${orderId}&transaction_id=${transactionId}`)
+        .then((res) => (res.ok ? res.json() : Promise.reject()))
+        .then((data) => {
+          setOrder(data.order);
+          setPayment(data.verified ? "verified" : "failed");
+        })
+        .catch(() => setOrder(null));
+      return;
+    }
+
     fetch(`/api/orders/${orderId}`)
       .then((res) => (res.ok ? res.json() : Promise.reject()))
       .then((data) => setOrder(data.order))
       .catch(() => setOrder(null));
-  }, [orderId]);
+  }, [orderId, transactionId]);
 
   if (order === undefined) {
     return (
@@ -78,17 +94,36 @@ function OrderConfirmationContent() {
     <main className="flex-1">
       <section className="relative pt-24 pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <span className="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block">
-          ORDER CONFIRMED
+          {payment === "failed" ? "PAYMENT NOT CONFIRMED" : "ORDER CONFIRMED"}
         </span>
         <h1 className="font-display-lg text-display-lg text-on-background mb-8 leading-tight tracking-[-0.02em]">
           Thank You, <br />
           <span className="italic font-light">{order.customerName}</span>
         </h1>
-        <p className="font-body-xl text-on-surface-variant max-w-xl">
-          Your order <span className="font-bold text-on-background">#{order.orderNumber}</span>{" "}
-          has been received. Our concierge will email you at {order.customerEmail} shortly to
-          confirm payment and shipping.
-        </p>
+        {payment === "checking" ? (
+          <p className="font-body-xl text-on-surface-variant max-w-xl">
+            Confirming your payment with Flutterwave — one moment.
+          </p>
+        ) : payment === "verified" ? (
+          <p className="font-body-xl text-on-surface-variant max-w-xl">
+            Your order <span className="font-bold text-on-background">#{order.orderNumber}</span>{" "}
+            has been received and your payment is confirmed. A receipt is on its way to{" "}
+            {order.customerEmail}.
+          </p>
+        ) : payment === "failed" ? (
+          <p className="font-body-xl text-on-surface-variant max-w-xl">
+            We couldn&apos;t confirm payment for order{" "}
+            <span className="font-bold text-on-background">#{order.orderNumber}</span> yet. If
+            you completed checkout on Flutterwave, message us on WhatsApp and we&apos;ll verify it
+            directly — no need to pay twice.
+          </p>
+        ) : (
+          <p className="font-body-xl text-on-surface-variant max-w-xl">
+            Your order <span className="font-bold text-on-background">#{order.orderNumber}</span>{" "}
+            has been received. Our concierge will email you at {order.customerEmail} shortly to
+            confirm payment and shipping.
+          </p>
+        )}
       </section>
 
       <section className="bg-surface-container-low py-section-padding">
