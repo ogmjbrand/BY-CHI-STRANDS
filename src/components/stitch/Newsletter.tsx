@@ -35,7 +35,16 @@ export function Newsletter() {
   return (
     <section className="bg-noir text-white py-section-padding px-margin-mobile md:px-margin-desktop">
       <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="hidden md:block aspect-[16/9] bg-noir-high border border-gold/20" />
+        {/* Real catalogue photography — was an empty bordered placeholder. */}
+        <div className="hidden md:block aspect-[16/9] overflow-hidden border border-gold/20">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/products/IMG-20260727-WA0045.jpg"
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div>
           <h2 className="font-display-md text-headline-lg-mobile md:text-display-md mb-4 tracking-[-0.01em]">
             Join The ByChi Family
