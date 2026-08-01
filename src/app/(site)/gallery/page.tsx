@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { testimonials } from "@/lib/testimonials";
+import { ProductMedia } from "@/components/stitch/ProductMedia";
 
 /**
- * BY CHI STRANDS — Stitch screen: digital_flagship_aura_stories_gallery
- * "Aura Stories | ByChi Strands Digital Flagship"
+ * BY CHI STRANDS — Gallery. Every clip here is the house's own client
+ * footage (the same set used on the homepage/PDP testimonial rails) with
+ * captions that describe what's shown rather than an invented quote or a
+ * generic stock-photo "story" — see the fabricated-content fixes on
+ * /aftercare for why that distinction matters on this site.
  */
 
 export const metadata: Metadata = {
-  title: "Aura Stories",
+  title: "Gallery",
 };
 
-export default function AuraStoriesGalleryPage() {
+const [featured, ...rest] = testimonials;
+
+export default function GalleryPage() {
   return (
     <div className="scr-aura-stories-gallery theme-noir bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Shell */}
@@ -22,7 +29,7 @@ export default function AuraStoriesGalleryPage() {
             </Link>
             {" "}
             <Link className="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary/30 pb-1" href="/gallery">
-              Stories
+              Gallery
             </Link>
             {" "}
             <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/services">
@@ -59,193 +66,86 @@ export default function AuraStoriesGalleryPage() {
         {/* Editorial Header */}
         <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 reveal-on-scroll">
           <div className="max-w-4xl">
-            <p className="font-label-caps text-label-caps text-primary mb-4 tracking-[0.15em]">The Digital Archive</p>
+            <p className="font-label-caps text-label-caps text-primary mb-4 tracking-[0.15em]">Client Footage</p>
             {" "}
-            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 tracking-[-0.02em]">Aura Stories</h1>
+            <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 tracking-[-0.02em]">Gallery</h1>
             {" "}
             <p className="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
-              A cinematic testament to the heritage of transformation. Within these narratives lies the intersection of personal identity and the master craft of silk artistry. Explore the journeys that define our legacy.
+              Real installs and real client footage, filmed by the women who wore them — not staged campaign photography.
             </p>
           </div>
         </header>
-        {/* Featured Narrative */}
+        {/* Featured Clip */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding reveal-on-scroll">
-          <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer">
-            <div className="absolute inset-0 image-zoom-container">
-              <img className="w-full h-full object-cover" alt="A high-fashion portrait of a woman with smooth, lustrous silk hair" src="/stitch/img-095.jpg" />
-            </div>
-            {" "}
-            <div className="absolute inset-0 hero-gradient flex flex-col justify-end p-12">
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                <div className="max-w-2xl">
-                  <h2 className="font-display-md text-display-md text-surface mb-4 tracking-[-0.01em]">The Silk Transformation</h2>
-                  {" "}
-                  <blockquote className="italic font-headline-lg text-surface-container-low opacity-90 border-l-2 border-primary-fixed-dim pl-6">
-                    "Hair wasn't just styled; it was reborn." — from the Atelier floor.
-                  </blockquote>
-                </div>
-                {" "}
-                <div className="flex items-center gap-4">
-                  <div className="w-20 h-20 rounded-full border border-surface/30 flex items-center justify-center backdrop-blur-md group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
-                    <span className="material-symbols-outlined text-surface text-4xl" data-icon="play_arrow" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      play_arrow
-                    </span>
-                  </div>
-                  {" "}
-                  <span className="font-label-caps text-surface uppercase tracking-[0.2em] text-sm">Watch Narrative</span>
-                </div>
+          <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer bg-surface-container">
+            <ProductMedia media={featured.clip} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 hero-gradient flex flex-col justify-end p-12 pointer-events-none">
+              <div className="max-w-2xl">
+                <h2 className="font-display-md text-display-md text-surface mb-3 tracking-[-0.01em]">
+                  {featured.caption}
+                </h2>
+                <p className="font-label-caps text-primary-fixed uppercase tracking-[0.2em] text-sm">
+                  {featured.context}
+                </p>
               </div>
             </div>
           </div>
         </section>
-        {/* Narrative Filter */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 reveal-on-scroll">
-          <div className="flex flex-wrap items-center gap-12 border-b border-outline-variant/30 pb-6">
-            <button className="font-label-caps text-primary border-b-2 border-primary pb-6 -mb-[26px] tracking-widest">
-              All Stories
-            </button>
-            {" "}
-            <button className="font-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] tracking-widest">
-              Atelier Transformations
-            </button>
-            {" "}
-            <button className="font-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] tracking-widest">
-              Academy Journeys
-            </button>
-            {" "}
-            <button className="font-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] tracking-widest">
-              Seasonal Editorials
-            </button>
-          </div>
-        </section>
-        {/* Stories Grid */}
+        {/* Client Clips Grid */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
-            {/* Large Editorial Tile */}
-            <div className="md:col-span-8 group reveal-on-scroll">
-              <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" src="/stitch/img-003.jpg" />
-                {" "}
-                <div className="absolute top-6 left-6 bg-surface/90 backdrop-blur px-4 py-2">
-                  <span className="font-label-caps text-[10px] uppercase tracking-widest">Atelier Journey</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {rest.map((t) => (
+              <div key={t.clip.src} className="group reveal-on-scroll">
+                <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-lg bg-surface-container">
+                  <ProductMedia media={t.clip} className="w-full h-full object-cover" />
                 </div>
-                {" "}
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-surface text-6xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-75 group-hover:scale-100" data-icon="play_circle" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    play_circle
-                  </span>
-                </div>
+                <h3 className="font-headline-lg text-xl mb-1">{t.caption}</h3>
+                <p className="font-label-caps text-xs text-primary uppercase tracking-widest">{t.context}</p>
               </div>
-              {" "}
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-display-md text-3xl mb-2 text-on-surface">The Executive Presence</h3>
-                  {" "}
-                  <p className="font-body-md text-on-surface-variant italic">Refined by Chi Strands</p>
-                </div>
-                {" "}
-                <button className="font-label-caps text-primary flex items-center gap-2 group/btn">
-                  Play Narrative
-                  {" "}
-                  <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">
-                    arrow_forward
-                  </span>
-                </button>
-              </div>
-            </div>
-            {/* Vertical Tile */}
-            <div className="md:col-span-4 group reveal-on-scroll">
-              <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" alt="A model with voluminous, glossy hair styled in a bob, catching golden hour light" src="/stitch/img-026.jpg" />
-                {" "}
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              {" "}
-              <h3 className="font-headline-lg text-2xl mb-2">The Signature Silk Bob</h3>
-              {" "}
-              <p className="font-label-caps text-xs text-primary mb-4">Atelier Selection</p>
-              {" "}
-              <Link
-                href="/shop"
-                className="block w-full text-center py-4 border border-outline-variant hover:bg-on-surface hover:text-surface transition-all duration-500 font-label-caps text-xs uppercase tracking-widest"
-              >
-                Shop The Look
-              </Link>
-            </div>
-            {/* Horizontal Tile */}
-            <div className="md:col-span-4 group reveal-on-scroll">
-              <div className="relative aspect-[1/1] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" alt="Hair styling tools and products arranged on a marble surface" src="/stitch/img-045.jpg" />
-              </div>
-              {" "}
-              <h3 className="font-headline-lg text-2xl mb-2">The Alchemist’s Kit</h3>
-              {" "}
-              <p className="font-body-sm text-on-surface-variant line-clamp-2">
-                Behind the scenes of the Atelier's chemical-free transformation protocol.
+            ))}
+          </div>
+        </section>
+        {/* Academy teaser — real copy, mirrors the Academy page's own hero */}
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
+          <div className="bg-surface-container-low p-12 flex flex-col md:flex-row md:items-center gap-10 rounded-lg border border-outline-variant/10">
+            <div className="flex-1">
+              <span className="font-label-caps text-primary mb-4 block">The Academy</span>
+              <h3 className="font-display-md text-3xl md:text-4xl mb-6 leading-tight">
+                The Art of the Source: Vietnam
+              </h3>
+              <p className="font-body-xl text-on-surface-variant max-w-xl">
+                A hands-on masterclass for entrepreneurs who want to import, grade and build a
+                luxury hair brand with the same standard ByChi Strands sources by.
               </p>
             </div>
-            {/* Text-Rich Narrative Tile */}
-            <div className="md:col-span-8 group reveal-on-scroll bg-surface-container-low p-12 flex flex-col justify-center rounded-lg border border-outline-variant/10">
-              <span className="font-label-caps text-primary mb-6">Academy Spotlight</span>
-              {" "}
-              <h3 className="font-display-md text-4xl mb-8 leading-tight">The Art of the Source: Vietnam Masterclass</h3>
-              {" "}
-              <p className="font-body-xl text-on-surface-variant mb-12 max-w-xl">
-                A hands-on training for entrepreneurs who want to import, grade and build a luxury
-                hair brand with the same standard ByChi Strands sources by.
-              </p>
-              {" "}
-              <div className="flex items-center gap-6">
-                <Link
-                  href="/academy"
-                  className="font-label-caps text-primary flex items-center gap-2 group/link"
-                >
-                  Explore The Academy
-                  <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </Link>
-                {" "}
-                <div className="ml-auto">
-                  <span className="material-symbols-outlined text-primary text-4xl hover-lift cursor-pointer" data-icon="menu_book">
-                    menu_book
-                  </span>
-                </div>
-              </div>
-            </div>
-            {/* Featured Collection Integration */}
-            <div className="md:col-span-12 group reveal-on-scroll mt-8">
-              <div className="relative aspect-[21/9] mb-6 overflow-hidden rounded-lg image-zoom-container bg-surface-container">
-                <img className="w-full h-full object-cover" src="/stitch/img-017.jpg" />
-                {" "}
-                <div className="absolute inset-0 flex items-center justify-center bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                  <div className="text-center">
-                    <p className="font-label-caps text-surface mb-2">Curated for Narratives</p>
-                    {" "}
-                    <h3 className="font-display-md text-surface text-4xl">The Package Series</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/academy"
+              className="shrink-0 font-label-caps text-primary flex items-center gap-2 group/link"
+            >
+              Explore The Academy
+              <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </Link>
           </div>
         </section>
         {/* CTA Section */}
         <section className="bg-surface-container-lowest py-section-padding border-t border-outline-variant/30 reveal-on-scroll">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
             <div className="max-w-2xl mx-auto">
-              <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">Share Your Narrative</h2>
+              <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">Share Your Install</h2>
               {" "}
               <p className="font-body-xl text-on-surface-variant mb-12">
-                Every transformation is a unique story waiting to be told. Join our archive and inspire the next generation of silk seekers.
+                Wearing a ByChiStrands piece? Send us your footage and we may feature it here.
               </p>
               {" "}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link className="px-10 py-5 bg-on-surface text-surface font-label-caps uppercase tracking-widest text-sm hover:bg-primary transition-colors duration-500 rounded-sm" href="/reviews/new">
-                  Submit Story
+                  Submit Your Story
                 </Link>
                 {" "}
                 <Link className="px-10 py-5 border border-primary text-primary font-label-caps uppercase tracking-widest text-sm hover:bg-primary-fixed transition-all duration-500 rounded-sm" href="/contact">
-                  Inquiry Atelier
+                  Contact The Atelier
                 </Link>
               </div>
             </div>
@@ -277,7 +177,7 @@ export default function AuraStoriesGalleryPage() {
             </Link>
             {" "}
             <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/about">
-              Press
+              About
             </Link>
           </div>
           {" "}
