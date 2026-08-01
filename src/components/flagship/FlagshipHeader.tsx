@@ -48,11 +48,51 @@ export function FlagshipHeader() {
       className={`fixed top-0 inset-x-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         solid
           ? "bg-noir/90 backdrop-blur-xl border-b border-white/10"
-          : "bg-transparent border-b border-transparent mix-blend-difference"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
+      {/*
+       * A top scrim keeps the mast legible over bright imagery. This replaces
+       * mix-blend-difference, which inverts colour and would have turned the
+       * gold script and the white logo seal into muddy negatives.
+       */}
+      {!solid ? (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/55 to-transparent"
+        />
+      ) : null}
+
+      {/*
+       * Announcement bar, restored — it existed but was orphaned by the
+       * flagship rebuild. Lives inside the fixed mast so the two can't
+       * overlap, and collapses on scroll to keep the bar compact.
+       */}
       <div
-        className={`max-w-[1800px] mx-auto px-6 md:px-16 flex items-center justify-between text-white transition-[height] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`relative overflow-hidden border-b transition-[max-height,opacity,border-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          solid ? "max-h-0 opacity-0 border-transparent" : "max-h-12 opacity-100 border-white/10"
+        }`}
+      >
+        <div className="max-w-[1800px] mx-auto px-6 md:px-16 py-2.5 flex items-center justify-center md:justify-between gap-6 text-white/80">
+          <span className="font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap md:hidden">
+            Ships Worldwide From Lagos, Nigeria
+          </span>
+          {[
+            "Ships Worldwide From Lagos, Nigeria",
+            "100% Authentic Vietnamese Hair",
+            "Hand-Tied In Our Lagos Atelier",
+          ].map((m) => (
+            <span
+              key={m}
+              className="hidden md:inline font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap"
+            >
+              {m}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div
+        className={`relative max-w-[1800px] mx-auto px-6 md:px-16 flex items-center justify-between text-white transition-[height] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           solid ? "h-16 md:h-20" : "h-20 md:h-24"
         }`}
       >
@@ -73,13 +113,38 @@ export function FlagshipHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/"
-          className={`font-display-md tracking-[0.15em] uppercase transition-[font-size] duration-700 ${
-            solid ? "text-lg md:text-xl" : "text-xl md:text-2xl"
-          }`}
-        >
-          ByChi Strands
+        {/*
+         * The house wordmark: logo seal + "ByChi" + the gold script
+         * "Strands". The flagship rebuild had flattened this to plain
+         * uppercase text, dropping the brand's own accent.
+         */}
+        <Link href="/" className="flex items-center gap-2.5 leading-none shrink-0">
+          <span
+            className={`rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5 transition-[width,height] duration-700 ${
+              solid ? "h-8 w-8" : "h-9 w-9 md:h-10 md:w-10"
+            }`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logo-mark.jpg"
+              alt=""
+              className="h-full w-full object-cover scale-125"
+            />
+          </span>
+          <span
+            className={`font-display-md tracking-[0.08em] transition-[font-size] duration-700 ${
+              solid ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+            }`}
+          >
+            ByChi
+          </span>
+          <span
+            className={`font-script text-gold-light -mt-1 transition-[font-size] duration-700 ${
+              solid ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"
+            }`}
+          >
+            Strands
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
