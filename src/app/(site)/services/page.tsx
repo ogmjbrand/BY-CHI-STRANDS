@@ -62,7 +62,9 @@ export default function SignatureServices1Page() {
               <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">
                 shopping_bag
               </Link>
-              <span className="material-symbols-outlined text-on-surface-variant cursor-pointer md:hidden">menu</span>
+              <button className="md:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
+                <span className="material-symbols-outlined">menu</span>
+              </button>
             </div>
           </div>
         </div>

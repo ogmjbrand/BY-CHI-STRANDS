@@ -130,7 +130,7 @@ export function MobileCheckoutSummary() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="w-full flex items-center justify-between py-5 border-y border-outline-variant/20 focus:outline-none"
+        className="w-full flex items-center justify-between py-5 border-y border-outline-variant/20"
       >
         <div className="flex items-center gap-3">
           <span className="material-symbols-outlined text-primary">

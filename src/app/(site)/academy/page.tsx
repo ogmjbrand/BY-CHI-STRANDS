@@ -59,9 +59,11 @@ export default function AcademyPage() {
                 shopping_bag
               </Link>
               {" "}
-              <span className="material-symbols-outlined md:hidden text-on-surface cursor-pointer" data-icon="menu">
-                menu
-              </span>
+              <button className="md:hidden text-on-surface cursor-pointer" aria-label="Open menu">
+                <span className="material-symbols-outlined" data-icon="menu">
+                  menu
+                </span>
+              </button>
             </div>
           </div>
         </div>
