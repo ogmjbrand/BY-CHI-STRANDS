@@ -88,12 +88,12 @@ export const faqGroups: FaqGroup[] = [
         a: "Anyone serious about building a hair business: aspiring importers, stylists adding retail, and existing sellers who want direct Vietnamese supply. No prior experience is required — cohorts start from first principles.",
       },
       {
-        q: "Is the vendor list included?",
-        a: "Graduates receive our vetted vendor framework and introductions to verified suppliers — plus, more importantly, the skills to vet any vendor themselves. A list without judgement is how people get scammed; we teach both.",
+        q: "Is a vendor list included?",
+        a: "No static list — those go stale. The masterclass teaches you how to vet, grade and negotiate with any vendor yourself, which protects you long after any single contact sheet would have gone out of date.",
       },
       {
         q: "Is there a certificate?",
-        a: "Yes. Graduates receive the ByChiStrands Academy certificate, lifetime access to course updates, and admission to the private alumni network where sourcing intelligence is shared.",
+        a: "Yes — every graduate receives a ByChiStrands Academy certificate of attendance, presented in person at the end of the masterclass.",
       },
     ],
   },
