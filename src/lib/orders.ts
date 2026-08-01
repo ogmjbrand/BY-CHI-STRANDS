@@ -74,6 +74,31 @@ export async function getOrderByEmail(email: string): Promise<Order[]> {
   return orders.map(mapOrderFromDB);
 }
 
+/**
+ * Looks up a single order by its order number *and* the email it was placed
+ * with. Both must match: the order number alone is guessable-ish and the
+ * email alone would let anyone enumerate another customer's address, so
+ * tracking requires the pair — the standard guest-tracking pattern.
+ */
+export async function getOrderForTracking(
+  orderNumber: string,
+  email: string
+): Promise<Order | null> {
+  const supabase = getSupabaseAdmin();
+
+  const { data: order, error } = await supabase
+    .from("orders")
+    .select()
+    .eq("order_number", orderNumber.trim())
+    .ilike("customer_email", email.trim())
+    .maybeSingle();
+
+  if (error) return null;
+  if (!order) return null;
+
+  return mapOrderFromDB(order);
+}
+
 function mapOrderFromDB(order: any): Order {
   return {
     id: order.id,

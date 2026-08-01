@@ -217,16 +217,16 @@ function OrderConfirmationContent() {
           <h3 className="font-display-md text-display-md mb-8 tracking-[-0.01em]">What follows next?</h3>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <Link
-              href="/shop"
+              href="/track"
               className="w-full md:w-auto px-12 py-5 bg-on-background text-surface font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-400 ease-in-out uppercase tracking-[0.2em]"
             >
-              Continue Browsing
+              Track This Order
             </Link>
             <Link
-              href="/academy"
+              href="/shop"
               className="group relative py-2 font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]"
             >
-              Visit the Academy
+              Continue Browsing
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-400 group-hover:w-full" />
             </Link>
           </div>

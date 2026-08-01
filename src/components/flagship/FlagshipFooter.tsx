@@ -41,6 +41,7 @@ export function FlagshipFooter() {
       <div className="px-6 md:px-16 py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 font-body-sm text-xs">
         <p>© 2026 ByChi Strands. Timeless Vietnamese Artistry.</p>
         <div className="flex gap-8">
+          <Link href="/track" className="hover:text-white transition-colors">Track Order</Link>
           <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
           <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           <Link href="/shipping" className="hover:text-white transition-colors">Shipping</Link>
