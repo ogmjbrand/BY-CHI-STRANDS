@@ -5,6 +5,7 @@ import { CollectionsEditorial } from "@/components/flagship/CollectionsEditorial
 import { CraftsmanshipFilm } from "@/components/flagship/CraftsmanshipFilm";
 import { LuxuryServicesEditorial } from "@/components/flagship/LuxuryServicesEditorial";
 import { TransformationMosaic } from "@/components/flagship/TransformationMosaic";
+import { CinematicScene } from "@/components/flagship/CinematicScene";
 import { OurPromise } from "@/components/flagship/OurPromise";
 import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
 import { JournalEditorial } from "@/components/flagship/JournalEditorial";
@@ -33,6 +34,7 @@ export default function HomePage() {
       <StatsBand />
       <CollectionsEditorial />
       <LuxuryExperienceSection />
+      <CinematicScene />
       <CraftsmanshipFilm />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
