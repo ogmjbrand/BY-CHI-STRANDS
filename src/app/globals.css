@@ -622,12 +622,16 @@
   --color-gold: #c9a227;
   --color-gold-light: #e7cf8f;
 
-  /* ── Spacing scale ─────────────────────────────────────────── */
+  /* ── Spacing scale ─────────────────────────────────────────────
+   * Whitespace is the other half of the luxury register: sections breathe
+   * rather than stack. section-padding and the desktop margin are fluid so
+   * the extra room appears on large screens without squeezing phones.
+   */
   --spacing-unit: 8px;
-  --spacing-gutter: 32px;
+  --spacing-gutter: clamp(2rem, 3vw, 3rem); /* 32px → 48px */
   --spacing-margin-mobile: 24px;
-  --spacing-margin-desktop: 80px;
-  --spacing-section-padding: 120px;
+  --spacing-margin-desktop: clamp(4rem, 6.5vw, 7rem); /* 64px → 112px */
+  --spacing-section-padding: clamp(5rem, 9.5vw, 10.5rem); /* 80px → 168px */
   --spacing-container-max: 1440px;
 
   /* max-w-container-max resolves through the container scale */
@@ -659,38 +663,52 @@
   /* Accent script — logotype and rare display flourishes only, never body copy. */
   --font-script: var(--font-delafield), cursive;
 
-  /* ── Type scale ────────────────────────────────────────────── */
-  --text-display-lg: 64px;
-  --text-display-lg--line-height: 1.1;
-  --text-display-lg--font-weight: 700;
+  /* ── Type scale ────────────────────────────────────────────────
+   * Editorial-luxury register: display type is set LIGHT (300) and large,
+   * the way Cormorant Garamond is drawn to be used — the previous 700/600
+   * display weights were what made an elegant serif read as ordinary
+   * ecommerce. Sizes are fluid via clamp() so headlines get genuinely big
+   * on desktop without overflowing narrow phones, and display tracking is
+   * baked into the token instead of being re-applied ad hoc with
+   * `tracking-[-0.02em]` at every call site.
+   */
+  --text-display-lg: clamp(2.75rem, 6.4vw, 6.5rem); /* 44px → 104px */
+  --text-display-lg--line-height: 1.02;
+  --text-display-lg--font-weight: 300;
+  --text-display-lg--letter-spacing: -0.03em;
 
-  --text-display-md: 48px;
-  --text-display-md--line-height: 1.2;
-  --text-display-md--font-weight: 600;
+  --text-display-md: clamp(2.125rem, 4.2vw, 4rem); /* 34px → 64px */
+  --text-display-md--line-height: 1.06;
+  --text-display-md--font-weight: 300;
+  --text-display-md--letter-spacing: -0.02em;
 
-  --text-headline-lg: 32px;
-  --text-headline-lg--line-height: 1.3;
-  --text-headline-lg--font-weight: 500;
+  --text-headline-lg: clamp(1.5rem, 2.1vw, 2.25rem); /* 24px → 36px */
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 400;
+  --text-headline-lg--letter-spacing: -0.01em;
 
-  --text-headline-lg-mobile: 28px;
-  --text-headline-lg-mobile--line-height: 1.3;
-  --text-headline-lg-mobile--font-weight: 600;
+  --text-headline-lg-mobile: clamp(1.5rem, 5.5vw, 2rem); /* 24px → 32px */
+  --text-headline-lg-mobile--line-height: 1.15;
+  --text-headline-lg-mobile--font-weight: 400;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
 
-  --text-body-xl: 20px;
-  --text-body-xl--line-height: 1.6;
+  /* Body copy gains air — luxury reads slower and looser. */
+  --text-body-xl: clamp(1.0625rem, 1.15vw, 1.375rem); /* 17px → 22px */
+  --text-body-xl--line-height: 1.7;
   --text-body-xl--font-weight: 300;
 
   --text-body-md: 16px;
-  --text-body-md--line-height: 1.6;
+  --text-body-md--line-height: 1.75;
   --text-body-md--font-weight: 400;
 
   --text-body-sm: 14px;
-  --text-body-sm--line-height: 1.5;
+  --text-body-sm--line-height: 1.65;
   --text-body-sm--font-weight: 400;
 
   --text-label-caps: 12px;
   --text-label-caps--line-height: 1;
-  --text-label-caps--font-weight: 600;
+  --text-label-caps--font-weight: 500;
+  --text-label-caps--letter-spacing: 0.18em;
 }
 
 /*
