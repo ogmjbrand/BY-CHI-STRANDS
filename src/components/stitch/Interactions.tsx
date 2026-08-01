@@ -13,7 +13,6 @@ export function Interactions() {
 
   useEffect(() => {
     const cleanups: Array<() => void> = [];
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     /* ── sticky header gains a shadow once scrolled ──────────────── */
     const header = document.querySelector<HTMLElement>("header, nav");
@@ -90,45 +89,8 @@ export function Interactions() {
         });
       });
 
-    /* ── the gold trailing cursor on the product pages ───────────── */
-    const cursorHost = document.querySelector<HTMLElement>(".custom-cursor");
-    if (cursorHost && !reduced && window.matchMedia("(pointer: fine)").matches) {
-      let raf = 0;
-      let x = 0;
-      let y = 0;
-      const move = (e: MouseEvent) => {
-        x = e.clientX;
-        y = e.clientY;
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          cursorHost.style.left = `${x}px`;
-          cursorHost.style.top = `${y}px`;
-          raf = 0;
-        });
-      };
-      document.addEventListener("mousemove", move, { passive: true });
-      cleanups.push(() => {
-        document.removeEventListener("mousemove", move);
-        if (raf) cancelAnimationFrame(raf);
-      });
-
-      document.querySelectorAll("a, button, img").forEach((el) => {
-        const enter = () => {
-          cursorHost.style.transform = "translate(-50%, -50%) scale(2)";
-          cursorHost.style.backgroundColor = "rgba(200, 167, 91, 0.1)";
-        };
-        const leave = () => {
-          cursorHost.style.transform = "translate(-50%, -50%) scale(1)";
-          cursorHost.style.backgroundColor = "transparent";
-        };
-        el.addEventListener("mouseenter", enter);
-        el.addEventListener("mouseleave", leave);
-        cleanups.push(() => {
-          el.removeEventListener("mouseenter", enter);
-          el.removeEventListener("mouseleave", leave);
-        });
-      });
-    }
+    // Global cursor is now <LuxuryCursor /> (src/components/stitch/LuxuryCursor.tsx),
+    // mounted once in the site layout instead of this per-page ".custom-cursor" stub.
 
     return () => cleanups.forEach((fn) => fn());
   }, [pathname]);

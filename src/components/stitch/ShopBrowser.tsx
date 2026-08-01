@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   products,
+  getProduct,
   priceFrom,
   lengthsOf,
   lacesOf,
-  CATEGORIES,
   TEXTURES,
   ORIGINS,
   type Origin,
@@ -18,13 +18,9 @@ import {
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { ProductMedia } from "./ProductMedia";
+import { ProductBadges } from "./ProductBadges";
+import { QuickView } from "./QuickView";
 import { useStore } from "@/context/StoreContext";
-
-const BADGE_LABEL: Record<string, string> = {
-  bestseller: "Bestseller",
-  new: "New Arrival",
-  limited: "Limited",
-};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -69,7 +65,16 @@ export function ShopBrowser() {
   const [laceOpen, setLaceOpen] = useState(false);
   const [lace, setLace] = useState<string | null>(null);
 
-  const { wishlist, toggleWishlist, hydrated } = useStore();
+  const { wishlist, toggleWishlist, hydrated, recentlyViewed } = useStore();
+  const [quickViewSlug, setQuickViewSlug] = useState<string | null>(null);
+
+  const recent = useMemo(
+    () =>
+      recentlyViewed
+        .map((slug) => getProduct(slug))
+        .filter((p): p is Product => Boolean(p)),
+    [recentlyViewed]
+  );
 
   const textures = useMemo(
     () => Array.from(new Set(products.map((p) => p.texture))),
@@ -293,30 +298,19 @@ export function ShopBrowser() {
                         className="w-full h-full object-cover transition-transform duration-700"
                       />
                     </Link>
-                    {p.badges?.length ? (
-                      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-                        {p.badges.map((b) => (
-                          <span
-                            key={b}
-                            className="bg-on-surface text-surface text-[10px] uppercase tracking-[0.14em] px-3 py-1.5 font-label-caps"
-                          >
-                            {BADGE_LABEL[b]}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
+                    <ProductBadges badges={p.badges} className="absolute top-4 left-4 z-10" />
                     <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
-                      <Link
-                        href={`/shop/${p.slug}`}
-                        className="w-full text-center bg-white text-noir py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300"
+                      <button
+                        onClick={() => setQuickViewSlug(p.slug)}
+                        className="w-full text-center bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300"
                       >
                         Quick View
-                      </Link>
+                      </button>
                     </div>
                     <button
                       onClick={() => toggleWishlist(p.slug)}
                       aria-label={saved ? "Remove from wishlist" : "Save to wishlist"}
-                      className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-noir hover:text-primary transition-colors z-10"
+                      className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-on-surface hover:text-primary transition-colors z-10"
                     >
                       <span
                         className={`material-symbols-outlined ${saved ? "text-primary" : ""}`}
@@ -347,7 +341,7 @@ export function ShopBrowser() {
                     </p>
                     <p className="font-body-md text-body-md font-semibold text-secondary pt-2">
                       {priceFrom(p) === null
-                        ? "Enquire for Price"
+                        ? "Price on request"
                         : `From ${formatPrice(priceFrom(p))}`}
                     </p>
                   </div>
@@ -356,7 +350,29 @@ export function ShopBrowser() {
             })}
           </div>
         )}
+
+        {hydrated && recent.length ? (
+          <div className="mt-24 pt-16 border-t border-outline-variant/20">
+            <h3 className="font-label-caps text-label-caps uppercase text-primary mb-8 tracking-[0.15em]">
+              Recently Viewed
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+              {recent.map((p) => (
+                <Link key={p.slug} href={`/shop/${p.slug}`} className="group">
+                  <div className="aspect-[3/4] overflow-hidden mb-3 bg-surface-container-low">
+                    <ProductMedia
+                      media={heroFor(p.slug)}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <p className="font-body-sm text-body-sm group-hover:text-primary transition-colors">{p.name}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
+      <QuickView slug={quickViewSlug} onClose={() => setQuickViewSlug(null)} />
     </>
   );
 }
