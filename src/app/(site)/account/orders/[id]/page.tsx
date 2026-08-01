@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
+import { OrderTimeline } from "@/components/stitch/OrderTimeline";
 import { getOrder } from "@/lib/orders";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
@@ -92,6 +93,44 @@ export default async function OrderDetailsPage({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 space-y-8">
+              <section className="bg-white text-noir border border-outline-variant/20 p-8">
+                <h2 className="font-label-caps text-on-surface mb-8 border-b border-outline-variant/20 pb-4">
+                  PROGRESS
+                </h2>
+                <OrderTimeline status={order.status} />
+
+                {order.trackingNumber || order.carrier || order.estimatedDelivery ? (
+                  <div className="mt-8 pt-6 border-t border-outline-variant/20 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {order.carrier ? (
+                      <div>
+                        <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
+                          CARRIER
+                        </p>
+                        <p className="font-body-md text-on-surface">{order.carrier}</p>
+                      </div>
+                    ) : null}
+                    {order.trackingNumber ? (
+                      <div>
+                        <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
+                          TRACKING NUMBER
+                        </p>
+                        <p className="font-body-md text-on-surface break-all">
+                          {order.trackingNumber}
+                        </p>
+                      </div>
+                    ) : null}
+                    {order.estimatedDelivery ? (
+                      <div>
+                        <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
+                          ESTIMATED DELIVERY
+                        </p>
+                        <p className="font-body-md text-on-surface">{order.estimatedDelivery}</p>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+              </section>
+
               {order.items.map((item, i) => {
                 const product = getProduct(item.productId);
                 return (

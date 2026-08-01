@@ -81,6 +81,7 @@ export default function HomePage() {
             </h5>
             <Link className="hover:text-white transition-colors" href="/about">Our Craft</Link>
             <Link className="hover:text-white transition-colors" href="/journal">Journal</Link>
+            <Link className="hover:text-white transition-colors" href="/track">Track Your Order</Link>
             <Link className="hover:text-white transition-colors" href="/contact">Contact Us</Link>
             <Link className="hover:text-white transition-colors" href="/faqs">FAQs</Link>
           </div>
