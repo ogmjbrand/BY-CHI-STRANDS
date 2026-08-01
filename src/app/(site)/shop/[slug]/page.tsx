@@ -91,7 +91,7 @@ export default async function ProductPage({
         {/* Header / Navigation */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-noir/90 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300">
           <div className="flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max mx-auto">
-            <button className="p-2 -ml-2 hover:opacity-70 transition-opacity">
+            <button className="p-2 -ml-2 hover:opacity-70 transition-opacity" aria-label="Open menu">
               <span className="material-symbols-outlined text-[24px]">menu</span>
             </button>
             <Link href="/" className="flex items-center gap-1.5 leading-none">

@@ -56,9 +56,9 @@ export default function GalleryPage() {
               shopping_bag
             </Link>
             {" "}
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform md:hidden">
-              menu
-            </span>
+            <button className="md:hidden text-primary cursor-pointer hover:scale-110 transition-transform" aria-label="Open menu">
+              <span className="material-symbols-outlined">menu</span>
+            </button>
           </div>
         </div>
       </nav>
