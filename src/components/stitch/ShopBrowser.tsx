@@ -15,7 +15,7 @@ import {
   type Texture,
   type Product,
 } from "@/lib/products";
-import { heroFor } from "@/lib/media";
+import { heroFor, mediaFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { ProductMedia } from "./ProductMedia";
 import { ProductBadges } from "./ProductBadges";
@@ -295,14 +295,35 @@ export function ShopBrowser() {
                     <Link href={`/shop/${p.slug}`} className="block w-full h-full">
                       <ProductMedia
                         media={heroFor(p.slug)}
-                        className="w-full h-full object-cover transition-transform duration-700"
+                        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                       />
+                      {/*
+                       * Second catalogue asset cross-fades in on hover — the
+                       * standard luxury-retail "alternate view" reveal. Only
+                       * rendered when the piece genuinely has a second shot;
+                       * never a duplicate of the hero.
+                       */}
+                      {(() => {
+                        const alt = mediaFor(p.slug)[1];
+                        if (!alt || alt.src === heroFor(p.slug).src) return null;
+                        return (
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                          >
+                            <ProductMedia
+                              media={alt}
+                              className="w-full h-full object-cover scale-[1.06]"
+                            />
+                          </span>
+                        );
+                      })()}
                     </Link>
                     <ProductBadges badges={p.badges} className="absolute top-4 left-4 z-10" />
                     <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
                       <button
                         onClick={() => setQuickViewSlug(p.slug)}
-                        className="w-full text-center bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300"
+                        className="w-full text-center bg-white text-on-surface py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300"
                       >
                         Quick View
                       </button>
@@ -338,10 +359,15 @@ export function ShopBrowser() {
                           ? `${ls[0]}–${ls[ls.length - 1]}"`
                           : `${ls[0]}"`;
                       })()}
+                      {/* Real density, shown only where the catalogue records it. */}
+                      {(() => {
+                        const grams = p.variants.find((v) => v.grams)?.grams;
+                        return grams ? ` · ${grams}g` : "";
+                      })()}
                     </p>
                     <p className="font-body-md text-body-md font-semibold text-secondary pt-2">
                       {priceFrom(p) === null
-                        ? "Price on request"
+                        ? "Enquire for Price"
                         : `From ${formatPrice(priceFrom(p))}`}
                     </p>
                   </div>
