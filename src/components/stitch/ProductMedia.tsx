@@ -73,7 +73,13 @@ export function ProductMedia({
           aria-hidden="true"
           className="pointer-events-none absolute bottom-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/85 backdrop-blur"
         >
-          <span className="material-symbols-outlined text-[18px] text-on-surface">
+          {/*
+           * text-noir, not text-on-surface: the chip behind it is always
+           * white, but on-surface is a near-white token inside .theme-noir,
+           * which is everywhere now — so the glyph was white on white and
+           * every video tile showed a blank disc instead of a play arrow.
+           */}
+          <span className="material-symbols-outlined text-[18px] text-noir">
             play_arrow
           </span>
         </span>

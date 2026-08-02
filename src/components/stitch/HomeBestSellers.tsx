@@ -51,7 +51,7 @@ export function HomeBestSellers() {
                 <ProductBadges badges={p.badges} className="absolute top-3 left-3 z-10" />
                 <button
                   aria-label="Save to wishlist"
-                  className="absolute top-3 right-3 w-9 h-9 bg-white/85 backdrop-blur rounded-full flex items-center justify-center text-on-surface z-10"
+                  className="absolute top-3 right-3 w-9 h-9 bg-white/85 backdrop-blur rounded-full flex items-center justify-center text-noir z-10"
                 >
                   <span
                     className="material-symbols-outlined text-[18px]"
