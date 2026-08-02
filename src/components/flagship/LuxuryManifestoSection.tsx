@@ -63,16 +63,22 @@ export function LuxuryManifestoSection() {
         {/*
          * Principles as a hairline-ruled row rather than a card grid: the brief
          * asks for elegant dividers over boxed ecommerce components.
+         *
+         * divide-* rather than gap-px — a 1px grid gap only reads as a rule
+         * when the parent paints a colour behind it, and this section is
+         * transparent over the photograph, so the gaps rendered as nothing.
+         * Rules run horizontally while the items are stacked, then switch to
+         * vertical once they sit side by side.
          */}
         <motion.dl
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 grid max-w-5xl gap-px overflow-hidden border-y border-gold/20 md:grid-cols-3"
+          className="mt-16 grid max-w-5xl divide-y divide-gold/20 border-y border-gold/20 md:grid-cols-3 md:divide-x md:divide-y-0"
         >
           {principles.map((p) => (
-            <div key={p.title} className="py-7 md:px-8 md:first:pl-0">
+            <div key={p.title} className="py-7 md:px-8 md:py-8 md:first:pl-0">
               <dt className="font-display-md text-xl text-white md:text-2xl">{p.title}</dt>
               <dd className="mt-3 max-w-xs text-sm leading-7 text-white/65">{p.body}</dd>
             </div>
