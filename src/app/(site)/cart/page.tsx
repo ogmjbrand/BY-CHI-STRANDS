@@ -18,11 +18,23 @@ export default function ShoppingBagPage() {
   const { cart, cartTotal, hydrated, updateQty, removeLine } = useStore();
 
   return (
-    <div className="scr-shopping-bag-sidebar bg-surface text-on-surface font-body-md min-h-screen">
+    /*
+     * theme-noir: without it this page fell back to the light Editorial
+     * Couture cream while every other page — including the checkout it hands
+     * off to — is noir, so the bag was a white interruption mid-funnel.
+     */
+    <div className="scr-shopping-bag-sidebar theme-noir bg-surface text-on-surface font-body-md min-h-screen">
       <header className="border-b border-outline-variant/30 px-margin-mobile md:px-margin-desktop py-6">
         <div className="max-w-container-max mx-auto flex items-center justify-between">
-          <Link href="/" className="font-display-md text-2xl tracking-tighter">
-            ByChi Strands
+          {/* The house lockup, not a flat wordmark — the funnel keeps the
+              minimal header but not at the cost of the brand's own mark. */}
+          <Link href="/" className="flex items-center gap-2 leading-none">
+            <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-black/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full scale-125 object-cover" />
+            </span>
+            <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
+            <span className="-mt-1 font-script text-2xl text-gold-light">Strands</span>
           </Link>
           <Link href="/shop" className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">
             Continue Shopping
@@ -35,16 +47,52 @@ export default function ShoppingBagPage() {
         <p className="font-body-sm text-on-surface-variant mb-12">Private concierge experience.</p>
 
         {!hydrated ? null : cart.length === 0 ? (
-          <div className="border border-outline-variant/30 bg-surface-container-lowest p-16 text-center">
-            <p className="font-body-xl text-body-xl text-on-surface-variant mb-8">
-              Your bag is empty.
+          /*
+           * The empty bag is a real moment, not a dead end: a way into the
+           * catalogue, a way to be guided to a piece, and a way to reach a
+           * person. All three destinations exist.
+           */
+          <div className="border-t border-outline-variant/25 pt-16 md:pt-20">
+            <p className="font-display-md text-2xl leading-snug text-on-surface md:text-3xl">
+              Nothing chosen yet.
             </p>
-            <Link
-              href="/shop"
-              className="inline-block bg-on-surface text-surface px-10 py-4 font-label-caps tracking-widest hover:bg-primary transition-all duration-500 uppercase"
-            >
-              Explore the Collection
-            </Link>
+            <p className="mt-5 max-w-md font-body-md leading-relaxed text-on-surface-variant">
+              Every piece is imported raw and finished by hand in Lagos, so the
+              collection is deliberately small. Start with a texture, or let us
+              narrow it for you.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/shop"
+                className="bg-primary px-9 py-4 text-center font-label-caps text-[11px] uppercase tracking-[0.2em] text-on-primary transition-opacity hover:opacity-90"
+              >
+                Explore the Collection
+              </Link>
+              <Link
+                href="/hair-finder"
+                className="border border-outline/40 px-9 py-4 text-center font-label-caps text-[11px] uppercase tracking-[0.2em] text-on-surface transition-colors hover:border-primary hover:text-primary"
+              >
+                Take the Hair Finder
+              </Link>
+            </div>
+
+            <div className="mt-14 border-t border-outline-variant/25 pt-10">
+              <p className="font-label-caps text-[11px] uppercase tracking-[0.25em] text-primary">
+                Not sure what you need?
+              </p>
+              <p className="mt-4 max-w-md font-body-md leading-relaxed text-on-surface-variant">
+                Tell the concierge your texture, your length and how you wear it,
+                and we will tell you honestly what suits — including when the
+                answer is nothing we currently stock.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-block w-fit border-b border-primary pb-1 font-label-caps text-[11px] uppercase tracking-[0.2em] text-primary"
+              >
+                Ask the Concierge
+              </Link>
+            </div>
           </div>
         ) : (
           <>

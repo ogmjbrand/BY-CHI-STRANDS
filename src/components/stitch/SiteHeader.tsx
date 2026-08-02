@@ -101,10 +101,15 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
           >
             <span className="material-symbols-outlined text-[22px]">search</span>
           </button>
-          <Link href="/account" aria-label="Your account" className={`transition-colors ${iconColor}`}>
+          {/*
+           * Account and wishlist are hidden on the narrowest screens: five
+           * icons plus the wordmark did not fit at 390px. Both sit in the
+           * mobile drawer, which is one tap away.
+           */}
+          <Link href="/account" aria-label="Your account" className={`hidden md:inline transition-colors ${iconColor}`}>
             <span className="material-symbols-outlined text-[22px]">account_circle</span>
           </Link>
-          <Link href="/wishlist" aria-label="Your wishlist" className={`relative transition-colors ${iconColor}`}>
+          <Link href="/wishlist" aria-label="Your wishlist" className={`relative hidden sm:inline transition-colors ${iconColor}`}>
             <span className="material-symbols-outlined text-[22px]">favorite</span>
             <CountBadge count={hydrated ? wishlist.length : 0} dark={dark} />
           </Link>

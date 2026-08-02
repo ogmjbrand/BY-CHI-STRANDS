@@ -10,6 +10,7 @@ import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { ProductBadges } from "@/components/stitch/ProductBadges";
 import { ImageReveal } from "@/components/ui/image-reveal";
 import { site, whatsappLink } from "@/lib/site";
+import { SiteHeader } from "@/components/stitch/SiteHeader";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -54,25 +55,27 @@ export default async function ProductPage({
 
   return (
     <>
+      {/*
+       * This page ships two full trees — a mobile one and a desktop one —
+       * and both are in the DOM at once, so the document needs exactly one
+       * <h1> that neither tree owns. The mobile tree used to make the
+       * wordmark its <h1> and the product name an <h2>, which meant the page
+       * announced itself as "ByChi Strands" on a phone and as the product on
+       * a desktop. This single hidden heading is the page's real title; both
+       * trees now render the visible product name as an <h2>.
+       */}
+      <h1 className="sr-only">{product.name}</h1>
+
       {/* Mobile design (Stitch: digital_flagship_mobile_signature_wigs_pdp) */}
-      <div className="md:hidden scr-mobile-signature-wigs-pdp bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
-        {/* Header / Navigation */}
-        <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-outline-variant/30 transition-all duration-300">
-          <div className="flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max mx-auto">
-            <button className="p-2 -ml-2 hover:opacity-70 transition-opacity">
-              <span className="material-symbols-outlined text-[24px]">menu</span>
-            </button>
-            {" "}
-            <h1 className="font-display-md text-[24px] font-bold tracking-tighter text-on-surface">ByChi Strands</h1>
-            {" "}
-            <div className="flex items-center gap-4">
-              <Link href="/cart" className="p-2 -mr-2 hover:opacity-70 transition-opacity">
-                <span className="material-symbols-outlined text-[24px]" data-icon="shopping_bag">shopping_bag</span>
-              </Link>
-            </div>
-          </div>
-        </header>
-        <main className="pt-16 pb-32">
+      <div className="md:hidden scr-mobile-signature-wigs-pdp theme-noir bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+        {/*
+         * The screen's own header had no search, no wishlist, and a menu
+         * button that opened nothing. SiteHeader is the site's real chrome
+         * and is sticky rather than fixed, so the main below needs no
+         * clearance padding.
+         */}
+        <SiteHeader />
+        <main className="pb-32">
           {/* Image Gallery (Mobile Focused) */}
           <section className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low">
             <div className="flex snap-x snap-mandatory overflow-x-auto h-full scroll-smooth" id="gallery">
@@ -299,7 +302,7 @@ export default async function ProductPage({
             <aside className="lg:col-span-5 lg:sticky lg:top-32 h-fit space-y-10 bg-white/40 backdrop-blur-sm lg:p-8 luxury-shadow border border-white/50">
               <div className="space-y-2">
                 <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">HAND-TIED COLLECTIONS</p>
-                <h1 className="font-display-lg text-4xl lg:text-5xl leading-tight lg:leading-[1]">{product.name}</h1>
+                <h2 className="font-display-lg text-4xl lg:text-5xl leading-tight lg:leading-[1]">{product.name}</h2>
               </div>
               <div className="space-y-8">
                 <ProductConfigurator product={product} />
