@@ -4,62 +4,95 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+/**
+ * The philosophy chapter — one statement, made once.
+ *
+ * This replaces three near-identical sections (an "editorial finish" card row,
+ * a "signature finish" panel and an earlier manifesto) that each restated the
+ * same abstractions — quiet luxury, refined finish, sculpted texture — in
+ * boxed cards. Saying it three times in adjectives read as template; saying it
+ * once, full-bleed, and anchoring each principle to something verifiable reads
+ * as a house. The detail behind these three lines lives in HairOriginsSection
+ * and CraftsmanshipFilm rather than being paraphrased here.
+ */
+const principles = [
+  {
+    title: "Traceable",
+    body: "One donor, one braid, documented — not blended from floor collections.",
+  },
+  {
+    title: "Hand-finished",
+    body: "Wefted and tied by hand in the Lagos atelier, never machine-pressed.",
+  },
+  {
+    title: "Worn, not displayed",
+    body: "Built for five years of real wear, not for a single photograph.",
+  },
+];
+
 export function LuxuryManifestoSection() {
   return (
-    <section className="relative overflow-hidden bg-noir text-white">
+    <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-noir text-white">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/media/posters/imgi_482_769b96d9696a394e413091dbbbe82e8a.jpg"
+        src="/media/posters/imgi_10_0d5ce3f9eaf2c51beb8e723133b28a8e.jpg"
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[75%_center] opacity-40"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[72%_center] opacity-75"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,_rgba(13,11,8,0.97)_0%,_rgba(13,11,8,0.9)_35%,_rgba(13,11,8,0.55)_70%,_rgba(13,11,8,0.35)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,162,39,0.22),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(201,162,39,0.14),_transparent_40%)]" />
+      {/* Directional scrim: dense where the type sits, clear where the hair reads. */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,_rgba(8,7,5,0.96)_0%,_rgba(8,7,5,0.82)_38%,_rgba(8,7,5,0.35)_68%,_rgba(8,7,5,0.15)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,_rgba(8,7,5,0.7)_0%,_rgba(8,7,5,0)_30%,_rgba(8,7,5,0.55)_100%)]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-24 md:px-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-32">
+      <div className="relative w-full px-6 pb-20 pt-32 md:px-16 md:pb-28 md:pt-44">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl"
         >
-          <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.35em] text-gold">
-            The manifesto
+          <p className="mb-8 font-label-caps text-[11px] uppercase tracking-[0.35em] text-gold">
+            The house philosophy
           </p>
-          <h2 className="max-w-3xl font-display-lg text-4xl leading-[0.95] tracking-[-0.02em] md:text-6xl">
-            Hair should feel like an extension of presence, not an afterthought.
-          </h2>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-white/70">
-            Every detail is designed to feel considered: quiet luxury, refined texture, and a finish that turns ordinary moments into something unforgettable.
+          <p className="font-display-lg text-[8vw] leading-[0.98] tracking-[-0.025em] md:text-[4.6vw]">
+            Hair should feel like an extension of presence —
+            <span className="text-gold-light"> never an afterthought.</span>
           </p>
-          <Link
-            href="/shop"
-            className="mt-10 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/15 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-gold-light shadow-[0_0_0_1px_rgba(201,162,39,0.18)] transition-all duration-300 hover:bg-gold hover:text-noir"
-          >
-            Enter the collection
-            <ArrowRight className="h-4 w-4" />
-          </Link>
         </motion.div>
 
-        <motion.div
+        {/*
+         * Principles as a hairline-ruled row rather than a card grid: the brief
+         * asks for elegant dividers over boxed ecommerce components.
+         */}
+        <motion.dl
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-[2rem] border border-gold/20 bg-noir-high/80 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.9, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-16 grid max-w-5xl gap-px overflow-hidden border-y border-gold/20 md:grid-cols-3"
         >
-          <div className="space-y-6">
-            {[
-              ["Traceable", "Origin stories are clear, documented, and elevated by design."],
-              ["Sculpted", "Every finish is tailored for movement, softness, and confidence."],
-              ["Uncompromising", "Luxury is measured in the detail, not in excess."],
-            ].map(([title, body]) => (
-              <div key={title} className="border-b border-gold/15 pb-5 last:border-b-0 last:pb-0">
-                <p className="text-[11px] uppercase tracking-[0.3em] text-gold">{title}</p>
-                <p className="mt-3 text-base leading-7 text-white/75">{body}</p>
-              </div>
-            ))}
-          </div>
+          {principles.map((p) => (
+            <div key={p.title} className="py-7 md:px-8 md:first:pl-0">
+              <dt className="font-display-md text-xl text-white md:text-2xl">{p.title}</dt>
+              <dd className="mt-3 max-w-xs text-sm leading-7 text-white/65">{p.body}</dd>
+            </div>
+          ))}
+        </motion.dl>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12"
+        >
+          <Link
+            href="/collections"
+            className="group inline-flex items-center gap-3 bg-gold px-9 py-4 font-label-caps text-[11px] uppercase tracking-[0.25em] text-noir transition-colors duration-500 hover:bg-gold-light"
+          >
+            Enter the collection
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>

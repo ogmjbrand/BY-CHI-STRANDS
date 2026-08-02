@@ -11,9 +11,7 @@ import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
 import { JournalEditorial } from "@/components/flagship/JournalEditorial";
 import { FlagshipFooter } from "@/components/flagship/FlagshipFooter";
 import { LuxuryExperienceSection } from "@/components/flagship/LuxuryExperienceSection";
-import { EditorialShowcase } from "@/components/flagship/EditorialShowcase";
 import { LuxuryManifestoSection } from "@/components/flagship/LuxuryManifestoSection";
-import { CinematicRevealSection } from "@/components/flagship/CinematicRevealSection";
 import { HouseMethodSection } from "@/components/flagship/HouseMethodSection";
 import { TextureMarquee } from "@/components/stitch/TextureMarquee";
 import { StatsBand } from "@/components/stitch/StatsBand";
@@ -51,8 +49,6 @@ export default function HomePage() {
       <HouseMethodSection />
       <CinematicScene />
       <CollectionsEditorial />
-      <EditorialShowcase />
-      <CinematicRevealSection />
       <LuxuryExperienceSection />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
