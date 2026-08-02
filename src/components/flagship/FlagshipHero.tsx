@@ -47,7 +47,8 @@ export function FlagshipHero() {
        * justify-end column overflows upward and the eyebrow line collides
        * with the navigation on short viewports.
        */}
-      <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 pt-32 md:px-16 md:pb-24 md:pt-40">
+      {/* pb clears the scroll cue that sits at the foot of the frame. */}
+      <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end px-6 pb-24 pt-32 md:px-16 md:pb-24 md:pt-40">
         <div className="max-w-5xl">
           <p className="mb-5 font-label-caps text-[11px] uppercase tracking-[0.35em] text-gold-light">
             100% Authentic · Ethically Sourced · Hand-Tied In Lagos
@@ -85,26 +86,36 @@ export function FlagshipHero() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 md:mt-12 md:flex-row md:items-end md:justify-between md:gap-8">
-          <div className="flex flex-wrap gap-3">
+        <div className="mt-9 flex flex-col gap-6 md:mt-12 md:flex-row md:items-end md:justify-between md:gap-8">
+          {/*
+           * Two equal columns on a phone rather than wrapped inline pills:
+           * at 390px the padded buttons broke onto separate rows at unequal
+           * widths, which read as a mistake rather than a pair.
+           */}
+          <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap">
             {/* Solid champagne-gold primary — the house CTA, not a ghost pill. */}
             <Link
               href="/collections"
-              className="group inline-flex items-center gap-3 bg-gold px-9 py-4 font-label-caps text-[11px] uppercase tracking-[0.25em] text-noir transition-colors duration-500 hover:bg-gold-light"
+              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap bg-gold px-3 py-4 font-label-caps text-[9px] uppercase tracking-[0.1em] text-noir transition-colors duration-500 hover:bg-gold-light md:justify-start md:gap-3 md:px-9 md:text-[11px] md:tracking-[0.25em]"
             >
               Shop Collection
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/about"
-              className="group inline-flex items-center gap-3 border border-white/40 px-9 py-4 font-label-caps text-[11px] uppercase tracking-[0.25em] text-white transition-colors duration-500 hover:border-gold hover:text-gold-light"
+              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap border border-white/40 px-3 py-4 font-label-caps text-[9px] uppercase tracking-[0.1em] text-white transition-colors duration-500 hover:border-gold hover:text-gold-light md:justify-start md:gap-3 md:px-9 md:text-[11px] md:tracking-[0.25em]"
             >
               Our Story
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="max-w-sm text-sm leading-7 text-white/70">
+          {/*
+           * The closing line is desktop-only. On a phone it pushed the CTAs
+           * above the fold boundary and duplicated the register of the
+           * subhead directly above it.
+           */}
+          <div className="hidden max-w-sm text-sm leading-7 text-white/70 md:block">
             Crafted for clients who want presence, softness, and a finish that feels effortless from first glance.
           </div>
         </div>
@@ -119,13 +130,13 @@ export function FlagshipHero() {
       <motion.div
         style={{ opacity }}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-7 z-10 hidden justify-center md:flex"
+        className="pointer-events-none absolute inset-x-0 bottom-4 z-10 flex justify-center md:bottom-7"
       >
-        <div className="flex flex-col items-center gap-3">
-          <span className="font-label-caps text-[10px] uppercase tracking-[0.3em] text-white/50">
+        <div className="flex flex-col items-center gap-2 md:gap-3">
+          <span className="font-label-caps text-[9px] uppercase tracking-[0.3em] text-white/50 md:text-[10px]">
             Scroll
           </span>
-          <span className="relative block h-14 w-px overflow-hidden bg-white/15">
+          <span className="relative block h-8 w-px overflow-hidden bg-white/15 md:h-14">
             <motion.span
               className="absolute inset-x-0 top-0 block h-1/2 bg-gold"
               animate={{ y: ["-100%", "200%"] }}

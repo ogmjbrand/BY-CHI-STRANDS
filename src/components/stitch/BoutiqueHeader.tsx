@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
+import { SiteSearch } from "./SiteSearch";
 
 /**
  * The Boutique (collections listing) screen's own nav voice — "Atelier",
@@ -13,6 +15,7 @@ import { useCartUi } from "./CartDrawer";
 export function BoutiqueHeader() {
   const { cartCount, hydrated } = useStore();
   const { openCart } = useCartUi();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
@@ -44,9 +47,15 @@ export function BoutiqueHeader() {
           </span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/shop" aria-label="Browse the catalogue" className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+          {/* Was a link to /shop dressed as search; now it opens real search. */}
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search the catalogue"
+            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+          >
             search
-          </Link>
+          </button>
           <Link href="/account" aria-label="Your account" className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
             person
           </Link>
@@ -67,6 +76,8 @@ export function BoutiqueHeader() {
           </button>
         </div>
       </div>
+
+      <SiteSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
     </nav>
   );
 }

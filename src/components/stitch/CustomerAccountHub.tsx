@@ -82,7 +82,12 @@ export function CustomerAccountHub() {
   };
 
   return (
-    <div className="min-h-screen bg-surface text-on-surface">
+    /*
+     * theme-noir: the hub already rendered SiteHeader in its dark variant,
+     * but the body underneath fell back to the light Editorial Couture cream
+     * — a noir mast sitting on a cream page.
+     */
+    <div className="theme-noir min-h-screen bg-surface text-on-surface">
       <SiteHeader dark />
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-margin-mobile py-14 md:px-margin-desktop md:py-20">

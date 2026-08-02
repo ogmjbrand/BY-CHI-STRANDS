@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
+import { SiteSearch } from "./SiteSearch";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -34,6 +36,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
   const pathname = usePathname();
   const { wishlist, cartCount, hydrated } = useStore();
   const { openCart } = useCartUi();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const iconColor = dark
     ? "text-white/80 hover:text-white"
@@ -89,13 +92,24 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
         </nav>
 
         <div className="flex items-center gap-4 md:gap-5 shrink-0">
-          <Link href="/shop" aria-label="Search the catalogue" className={`transition-colors ${iconColor}`}>
+          {/* Was a link to /shop dressed as search; now it opens real search. */}
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search the catalogue"
+            className={`transition-colors ${iconColor}`}
+          >
             <span className="material-symbols-outlined text-[22px]">search</span>
-          </Link>
-          <Link href="/account" aria-label="Your account" className={`transition-colors ${iconColor}`}>
+          </button>
+          {/*
+           * Account and wishlist are hidden on the narrowest screens: five
+           * icons plus the wordmark did not fit at 390px. Both sit in the
+           * mobile drawer, which is one tap away.
+           */}
+          <Link href="/account" aria-label="Your account" className={`hidden md:inline transition-colors ${iconColor}`}>
             <span className="material-symbols-outlined text-[22px]">account_circle</span>
           </Link>
-          <Link href="/wishlist" aria-label="Your wishlist" className={`relative transition-colors ${iconColor}`}>
+          <Link href="/wishlist" aria-label="Your wishlist" className={`relative hidden sm:inline transition-colors ${iconColor}`}>
             <span className="material-symbols-outlined text-[22px]">favorite</span>
             <CountBadge count={hydrated ? wishlist.length : 0} dark={dark} />
           </Link>
@@ -112,6 +126,8 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
           </button>
         </div>
       </div>
+
+      <SiteSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
