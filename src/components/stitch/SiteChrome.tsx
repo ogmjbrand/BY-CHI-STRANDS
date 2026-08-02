@@ -2,6 +2,8 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { Newsletter } from "./Newsletter";
 import { SocialStrip } from "./SocialStrip";
+import { HeaderUtilities } from "./HeaderUtilities";
+import { MenuButton } from "./MenuButton";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -26,8 +28,9 @@ function Wordmark({ className = "" }: { className?: string }) {
 export function StitchHeader() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-surface/80 nav-blur border-b border-outline-variant/30">
-      <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
-        <div className="flex items-center gap-8">
+      <div className="flex justify-between items-center gap-2 w-full px-4 md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+        <div className="flex flex-1 items-center gap-8">
+          <MenuButton className="-ml-2 md:hidden" />
           <nav className="hidden md:flex gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
@@ -49,12 +52,12 @@ export function StitchHeader() {
             </Link>
           </nav>
         </div>
-        <div className="flex items-center">
+        <div className="flex shrink-0 items-center">
           <Link href="/">
             <Wordmark className="text-on-surface" />
           </Link>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex flex-1 items-center justify-end gap-8">
           <nav className="hidden md:flex gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
@@ -69,15 +72,15 @@ export function StitchHeader() {
               About
             </Link>
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
+            <HeaderUtilities />
+            {/*
+             * The booking CTA is desktop-only: at 390px it crowded out the
+             * utility rail entirely. Booking stays one tap away from the
+             * mobile drawer, which leads with it.
+             */}
             <Link
-              className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
-              href="/cart"
-            >
-              shopping_bag
-            </Link>
-            <Link
-              className="bg-on-surface text-surface px-6 py-2 rounded-lg font-label-caps hover:bg-primary transition-all duration-300"
+              className="hidden md:inline-block bg-on-surface text-surface px-6 py-2 rounded-lg font-label-caps hover:bg-primary transition-all duration-300"
               href="/book"
             >
               Book Appointment

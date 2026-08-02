@@ -51,14 +51,21 @@ export function MobileMenu() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  /* bind every `menu` glyph the screens draw */
+  /*
+   * Bind every `menu` glyph the screens draw, plus anything marked
+   * `data-open-menu`. The glyph scan only reaches chrome that happens to use
+   * Material Symbols; the explicit attribute lets components drawn with the
+   * house icon set (StitchHeader) open the same drawer without smuggling in
+   * a hidden glyph purely to be found.
+   */
   useEffect(() => {
     const icons = Array.from(
       document.querySelectorAll<HTMLElement>(".material-symbols-outlined")
     ).filter((el) => el.textContent?.trim() === "menu");
+    const tagged = Array.from(document.querySelectorAll<HTMLElement>("[data-open-menu]"));
 
     const cleanups: Array<() => void> = [];
-    for (const icon of icons) {
+    for (const icon of [...icons, ...tagged]) {
       const trigger = (icon.closest("button,a") as HTMLElement | null) ?? icon;
       if (trigger.dataset.menuBound === "1") continue;
       trigger.dataset.menuBound = "1";
@@ -96,7 +103,7 @@ export function MobileMenu() {
             ? { duration: 0 }
             : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
         }
-        className="fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col md:hidden"
+        className="theme-noir fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col md:hidden"
       >
         <div className="flex justify-between items-center px-margin-mobile pt-10 pb-6 border-b border-outline-variant/10">
           <span className="font-display-md text-headline-lg tracking-widest text-primary uppercase">

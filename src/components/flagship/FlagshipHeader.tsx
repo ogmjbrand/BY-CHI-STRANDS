@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { useStore } from "@/context/StoreContext";
 import { SiteSearch } from "@/components/stitch/SiteSearch";
+import { useCartUi } from "@/components/stitch/CartDrawer";
 
 const LINKS = [
   { label: "Shop", href: "/shop" },
@@ -34,6 +35,7 @@ const DRAWER_SECONDARY = [
  */
 export function FlagshipHeader() {
   const { cartCount, wishlist, hydrated } = useStore();
+  const { openCart } = useCartUi();
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -211,14 +213,16 @@ export function FlagshipHeader() {
                 <User className="h-5 w-5" strokeWidth={1.5} />
               </Link>
 
-              <Link
-                href="/cart"
+              {/* Opens the bag drawer, as every other header on the site does. */}
+              <button
+                type="button"
+                onClick={openCart}
                 className={iconClass}
                 aria-label={bagCount > 0 ? `Bag, ${bagCount} items` : "Bag"}
               >
                 <ShoppingBag className="h-5 w-5" strokeWidth={1.5} />
                 {bagCount > 0 ? <CountBadge value={bagCount} /> : null}
-              </Link>
+              </button>
             </div>
           </div>
         </div>

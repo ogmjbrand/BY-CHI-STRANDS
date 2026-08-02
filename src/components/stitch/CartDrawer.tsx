@@ -108,7 +108,7 @@ function CartDrawer() {
             ? { duration: 0 }
             : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
         }
-        className="fixed right-0 top-0 h-full w-full md:w-[500px] lg:w-[550px] bg-surface z-[60] shadow-[0px_20px_50px_rgba(0,0,0,0.04)] border-l border-outline-variant/30 flex flex-col"
+        className="theme-noir fixed right-0 top-0 h-full w-full md:w-[500px] lg:w-[550px] bg-surface z-[60] shadow-[0px_20px_50px_rgba(0,0,0,0.04)] border-l border-outline-variant/30 flex flex-col"
       >
         <header className="flex justify-between items-center px-6 md:px-10 pt-10 md:pt-12 pb-6 border-b border-outline-variant/10">
           <div>
