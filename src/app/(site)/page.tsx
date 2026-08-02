@@ -1,5 +1,6 @@
 import { FlagshipHeader } from "@/components/flagship/FlagshipHeader";
 import { FlagshipHero } from "@/components/flagship/FlagshipHero";
+import { AssuranceStrip } from "@/components/flagship/AssuranceStrip";
 import { BrandStoryEditorial } from "@/components/flagship/BrandStoryEditorial";
 import { CollectionsEditorial } from "@/components/flagship/CollectionsEditorial";
 import { CraftsmanshipFilm } from "@/components/flagship/CraftsmanshipFilm";
@@ -42,6 +43,8 @@ export default function HomePage() {
       <FlagshipHeader />
       <FlagshipHero />
       <TextureMarquee />
+      {/* Answers the practical questions before the storytelling starts. */}
+      <AssuranceStrip />
       <BrandStoryEditorial />
       <StatsBand />
       <LuxuryManifestoSection />
