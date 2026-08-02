@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useStore, linePrice } from "@/context/StoreContext";
+import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
@@ -98,7 +98,9 @@ export default function ShoppingBagPage() {
                         </div>
                         <div className="flex items-center gap-6">
                           <p className="font-body-md font-semibold text-primary">
-                            {formatPrice(linePrice(line) * line.qty)}
+                            {lineIsQuote(line)
+                              ? "Quoted after order"
+                              : formatPrice(linePrice(line) * line.qty)}
                           </p>
                           <button
                             onClick={() => removeLine(i)}

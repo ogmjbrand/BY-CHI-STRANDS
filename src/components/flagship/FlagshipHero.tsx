@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { WordsPullUp } from "@/components/ui/words-pull-up";
 
@@ -35,39 +36,49 @@ export function FlagshipHero() {
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-16 md:pb-24">
-        <div className="max-w-6xl">
-          <p className="mb-4 font-label-caps text-[11px] uppercase tracking-[0.35em] text-[#d4af37]/90">
-            ByChi Strands · Luxury Hair, Reimagined
+        <div className="max-w-5xl">
+          <p className="mb-5 font-label-caps text-[11px] uppercase tracking-[0.35em] text-gold-light">
+            100% Authentic · Ethically Sourced · Hand-Tied In Lagos
           </p>
           <WordsPullUp
-            text="Quiet Luxury, Worn Beautifully"
-            className="font-display-lg text-[13vw] leading-[0.9] tracking-[-0.02em] text-white md:text-[8vw]"
+            text="Luxury Vietnamese Hair."
+            className="font-display-lg text-[13.5vw] leading-[0.92] tracking-[-0.02em] text-white md:text-[7.4vw]"
           />
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/75 md:text-xl">
-            Refined texture, private craftsmanship, and a finish that carries presence from the first glance to the final movement.
+          {/* The house's signature gold script line — the brand's own accent,
+              not a generic all-white editorial mast. */}
+          <p className="-mt-1 font-script text-[16vw] leading-[0.85] text-gold-light md:text-[8vw]">
+            Crafted for
+          </p>
+          <WordsPullUp
+            text="Confidence."
+            className="font-display-lg text-[13.5vw] leading-[0.92] tracking-[-0.02em] text-white md:text-[7.4vw]"
+          />
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
+            Vietnamese human hair, hand-tied in Lagos. Every strand is traceable, sculpted, and styled to feel as rare as it looks.
           </p>
         </div>
 
         <div className="mt-10 flex flex-col gap-6 md:mt-12 md:flex-row md:items-end md:justify-between md:gap-8">
           <div className="flex flex-wrap gap-3">
-            <a
-              href="#brand-story"
-              className="group inline-flex items-center gap-3 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/15 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-[#f9e8b6] shadow-[0_0_0_1px_rgba(212,175,55,0.15)] transition-all duration-300 hover:bg-[#d4af37] hover:text-[#060606]"
+            {/* Solid champagne-gold primary — the house CTA, not a ghost pill. */}
+            <Link
+              href="/collections"
+              className="group inline-flex items-center gap-3 bg-gold px-9 py-4 font-label-caps text-[11px] uppercase tracking-[0.25em] text-noir transition-colors duration-500 hover:bg-gold-light"
             >
-              Discover the story
+              Shop Collection
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#collections"
-              className="inline-flex items-center gap-3 rounded-full border border-[#d4af37]/25 px-5 py-3 text-[11px] uppercase tracking-[0.25em] text-[#f0d98d] transition-all duration-300 hover:border-[#d4af37]/50 hover:bg-[#d4af37]/10 hover:text-[#ffe7a3]"
+            </Link>
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-3 border border-white/40 px-9 py-4 font-label-caps text-[11px] uppercase tracking-[0.25em] text-white transition-colors duration-500 hover:border-gold hover:text-gold-light"
             >
-              <Play className="h-4 w-4" />
-              View collections
-            </a>
+              Our Story
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           <div className="max-w-sm text-sm leading-7 text-white/70">
-            Crafted for clients who want softness, structure, and a finish that feels timeless, intentional, and quietly unforgettable.
+            Crafted for clients who want presence, softness, and a finish that feels effortless from first glance.
           </div>
         </div>
       </motion.div>

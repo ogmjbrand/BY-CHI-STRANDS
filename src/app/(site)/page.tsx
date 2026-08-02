@@ -5,6 +5,8 @@ import { CollectionsEditorial } from "@/components/flagship/CollectionsEditorial
 import { CraftsmanshipFilm } from "@/components/flagship/CraftsmanshipFilm";
 import { LuxuryServicesEditorial } from "@/components/flagship/LuxuryServicesEditorial";
 import { TransformationMosaic } from "@/components/flagship/TransformationMosaic";
+import { CinematicScene } from "@/components/flagship/CinematicScene";
+import { OurPromise } from "@/components/flagship/OurPromise";
 import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
 import { JournalEditorial } from "@/components/flagship/JournalEditorial";
 import { FlagshipFooter } from "@/components/flagship/FlagshipFooter";
@@ -41,9 +43,11 @@ export default function HomePage() {
       <CinematicRevealSection />
       <LuxuryExperienceSection />
       <HouseMethodSection />
+      <CinematicScene />
       <CraftsmanshipFilm />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
+      <OurPromise />
 
       <section className="overflow-hidden bg-surface-container-low px-6 py-32 text-center md:px-16 md:py-48">
         <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary">In Their Words</p>
