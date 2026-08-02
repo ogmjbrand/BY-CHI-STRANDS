@@ -128,7 +128,7 @@ export function HairFinder() {
                     {STEPS[step].eyebrow}
                   </p>
                   <span className="h-px flex-1 max-w-24 bg-white/20" />
-                  <p className="font-label-caps text-[11px] tracking-[0.2em] text-white/40">
+                  <p className="font-label-caps text-[11px] tracking-[0.2em] text-white/60">
                     {step + 1} / {STEPS.length}
                   </p>
                 </div>

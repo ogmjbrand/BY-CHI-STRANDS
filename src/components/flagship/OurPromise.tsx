@@ -57,7 +57,7 @@ export function OurPromise() {
         <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-16 md:gap-y-24">
           {PROMISES.map((p) => (
             <li key={p.n} className="flex gap-8 md:gap-10">
-              <span className="font-display-md text-primary/40 text-3xl md:text-4xl leading-none shrink-0 tabular-nums">
+              <span className="font-display-md text-primary/75 text-3xl md:text-4xl leading-none shrink-0 tabular-nums">
                 {p.n}
               </span>
               <div>

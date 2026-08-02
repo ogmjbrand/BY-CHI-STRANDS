@@ -251,7 +251,9 @@ export default async function OrderDetailsPage({
                   href={whatsappLink(`Hi ByChiStrands — question about order #${order.orderNumber}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-4 bg-white text-primary font-label-caps rounded hover:bg-surface-container-highest transition-colors active:scale-95"
+                  /* text-noir, not text-primary: primary is gold in the noir
+                     scope, and gold on a white button is barely legible. */
+                  className="block w-full py-4 bg-white text-noir font-label-caps rounded hover:bg-gold-light transition-colors active:scale-95"
                 >
                   CONTACT CONCIERGE
                 </a>

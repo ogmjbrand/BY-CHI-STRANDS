@@ -104,7 +104,7 @@ export default function SignatureServices1Page() {
               <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="The ByChi Strands founder wearing a burgundy lace-front unit styled in soft waves" src="/services/ceo-portrait-1.jpeg" />
             </div>
             {/* Floating Detail Card */}
-            <div className="absolute -bottom-8 -left-8 glass-card text-noir p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
+            <div className="absolute -bottom-8 -left-8 glass-card text-on-surface p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
               <p className="font-label-caps text-primary text-[10px] mb-2">Signature Finish</p>
               {" "}
               <p className="font-headline-lg text-[18px] mb-2 leading-tight">Vietnamese Raw Hair Specialists</p>
@@ -368,25 +368,25 @@ export default function SignatureServices1Page() {
                 </p>
                 {" "}
                 <div className="space-y-8">
-                  <div className="flex items-center gap-6 p-6 glass-card text-noir rounded-lg border-l-4 border-primary">
+                  <div className="flex items-center gap-6 p-6 glass-card text-on-surface rounded-lg border-l-4 border-primary">
                     <span className="material-symbols-outlined text-primary text-3xl">verified_user</span>
                     {" "}
                     <div>
                       <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h4>
                       {" "}
-                      <p className="font-body-sm text-noir/70">
+                      <p className="font-body-sm text-on-surface-variant">
                         We only work with premium Vietnamese raw hair and professional-grade products.
                       </p>
                     </div>
                   </div>
                   {" "}
-                  <div className="flex items-center gap-6 p-6 glass-card text-noir rounded-lg">
+                  <div className="flex items-center gap-6 p-6 glass-card text-on-surface rounded-lg">
                     <span className="material-symbols-outlined text-primary text-3xl">lock</span>
                     {" "}
                     <div>
                       <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Secured Deposits</h4>
                       {" "}
-                      <p className="font-body-sm text-noir/70">
+                      <p className="font-body-sm text-on-surface-variant">
                         A 30% deposit is required to confirm your slot, deductible from the final service fee.
                       </p>
                     </div>
@@ -394,9 +394,9 @@ export default function SignatureServices1Page() {
                 </div>
               </div>
               {/* Booking CTA — the real form (service, date, time, notes) lives at /book */}
-              <div className="glass-card text-noir p-10 rounded-xl shadow-xl reveal-up" style={{ transitionDelay: "200ms" }}>
+              <div className="glass-card text-on-surface p-10 rounded-xl shadow-xl reveal-up" style={{ transitionDelay: "200ms" }}>
                 <h3 className="font-headline-lg text-2xl mb-4">Ready when you are</h3>
-                <p className="font-body-md text-noir/70 mb-10">
+                <p className="font-body-md text-on-surface-variant mb-10">
                   Pick a service, your preferred date and time on the full booking form — we confirm
                   every slot personally over WhatsApp.
                 </p>

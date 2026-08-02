@@ -62,7 +62,7 @@ export function CollectionsEditorial() {
               {/* text-outline-variant is #332c1c in the noir scope — all but
                   invisible on the noir panel. The numeral is an accent, so it
                   takes the accent colour at reduced weight. */}
-              <span className="mb-6 font-display-md text-sm tabular-nums text-primary/60">
+              <span className="mb-6 font-display-md text-sm tabular-nums text-primary/80">
                 0{i + 1}
               </span>
               <h3 className="mb-5 font-display-lg text-3xl leading-tight tracking-[-0.01em] md:text-5xl">
@@ -75,7 +75,7 @@ export function CollectionsEditorial() {
                 <span>
                   {pieces.length} {pieces.length === 1 ? "piece" : "pieces"}
                 </span>
-                <span aria-hidden="true" className="text-outline-variant">
+                <span aria-hidden="true" className="text-on-surface-variant/50">
                   ·
                 </span>
                 <span className="text-primary">

@@ -1162,8 +1162,10 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
             background: #d0c5b3;
             border-radius: 10px;
         }
+/* The screen shipped a white frosted panel; the page is noir now, so four
+   light-grey blocks were interrupting it. Same frosted idea, house palette. */
 :where(.scr-signature-services-1) .glass-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(217, 194, 143, 0.2);
         }

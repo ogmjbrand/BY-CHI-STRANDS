@@ -124,7 +124,9 @@ export function FlagshipFooter() {
         </div>
       </div>
 
-      <div className="px-6 md:px-16 py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 font-body-sm text-xs">
+      {/* white/40 on noir is 3.8:1 — under AA for text this small, and this
+          row holds the legal and order-tracking links. */}
+      <div className="px-6 md:px-16 py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 font-body-sm text-xs">
         <p>© {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.</p>
         <div className="flex gap-8">
           <Link href="/track" className="hover:text-white transition-colors">Track Order</Link>
