@@ -66,7 +66,7 @@ export function HomeFaqSection() {
                     className="group flex w-full items-start justify-between gap-6 py-7 text-left"
                   >
                     <span className="flex-1">
-                      <span className="mb-2 block font-label-caps text-[10px] uppercase tracking-[0.28em] text-gold/70">
+                      <span className="mb-2 block font-label-caps text-[10px] uppercase tracking-[0.28em] text-gold/85">
                         {faq.group}
                       </span>
                       <span className="font-display-md text-xl leading-[1.25] text-white transition-colors duration-300 group-hover:text-gold-light md:text-2xl">

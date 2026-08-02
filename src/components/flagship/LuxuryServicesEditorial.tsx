@@ -33,7 +33,7 @@ export function LuxuryServicesEditorial() {
             transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline py-10 border-t border-outline-variant/20 last:border-b"
           >
-            <span className="md:col-span-1 font-display-md text-outline-variant text-lg">
+            <span className="md:col-span-1 font-display-md text-primary/85 text-lg tabular-nums">
               {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="md:col-span-4 font-display-lg text-2xl md:text-3xl group-hover:text-primary transition-colors">

@@ -77,14 +77,24 @@ export default function GalleryPage() {
         </header>
         {/* Featured Clip */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding reveal-on-scroll">
-          <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer bg-surface-container">
+          {/*
+           * 21:9 is 167px tall at 390px wide — the caption at display size
+           * with p-12 overflowed the tile and spilled over the footage
+           * above it. The phone gets a portrait crop and type that fits.
+           */}
+          <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden rounded-lg group cursor-pointer bg-surface-container">
             <ProductMedia media={featured.clip} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 hero-gradient flex flex-col justify-end p-12 pointer-events-none">
+            <div className="absolute inset-0 hero-gradient flex flex-col justify-end p-6 md:p-12 pointer-events-none">
               <div className="max-w-2xl">
-                <h2 className="font-display-md text-display-md text-surface mb-3 tracking-[-0.01em]">
+                {/*
+                 * text-white, not text-surface: surface is the noir page
+                 * background inside .theme-noir, so this caption was dark
+                 * text laid over dark footage.
+                 */}
+                <h2 className="font-display-md text-2xl md:text-display-md text-white mb-3 tracking-[-0.01em]">
                   {featured.caption}
                 </h2>
-                <p className="font-label-caps text-primary-fixed uppercase tracking-[0.2em] text-sm">
+                <p className="font-label-caps text-gold-light uppercase tracking-[0.2em] text-xs md:text-sm">
                   {featured.context}
                 </p>
               </div>
