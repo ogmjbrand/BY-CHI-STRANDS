@@ -28,8 +28,15 @@ const pillars = [
 
 export function HouseMethodSection() {
   return (
-    <section className="relative overflow-hidden bg-[#040404] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.18),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(212,175,55,0.12),_transparent_30%)]" />
+    <section className="relative overflow-hidden bg-noir text-white">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/media/posters/imgi_63_3205cd12704a2671c63e2f9419cba1ef.jpg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-30"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(100deg,_rgba(4,4,4,0.96)_0%,_rgba(4,4,4,0.85)_45%,_rgba(4,4,4,0.6)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(201,162,39,0.18),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(201,162,39,0.12),_transparent_30%)]" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-16 md:py-36">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <motion.div
@@ -39,7 +46,7 @@ export function HouseMethodSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.35em] text-[#d4af37]/90">
+            <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.35em] text-gold">
               The House Method
             </p>
             <h2 className="font-display-lg text-4xl leading-[0.95] tracking-[-0.02em] text-white md:text-6xl">
@@ -50,7 +57,7 @@ export function HouseMethodSection() {
             </p>
             <a
               href="/book"
-              className="mt-10 inline-flex items-center gap-3 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/15 px-5 py-3 text-sm uppercase tracking-[0.25em] text-[#f9e8b6] shadow-[0_0_0_1px_rgba(212,175,55,0.18)] transition-all duration-300 hover:bg-[#d4af37] hover:text-[#060606]"
+              className="mt-10 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/15 px-5 py-3 text-sm uppercase tracking-[0.25em] text-gold-light shadow-[0_0_0_1px_rgba(201,162,39,0.18)] transition-all duration-300 hover:bg-gold hover:text-noir"
             >
               Begin your consultation
               <ArrowRight className="h-4 w-4" />
@@ -62,7 +69,7 @@ export function HouseMethodSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[2rem] border border-[#d4af37]/20 bg-[linear-gradient(135deg,_rgba(255,255,255,0.08),_rgba(212,175,55,0.08))] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-8"
+            className="rounded-[2rem] border border-gold/20 bg-noir-high/85 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.4)] backdrop-blur-xl md:p-8"
           >
             <div className="space-y-4">
               {pillars.map((pillar) => {
@@ -70,10 +77,10 @@ export function HouseMethodSection() {
                 return (
                   <div
                     key={pillar.title}
-                    className="rounded-2xl border border-[#d4af37]/20 bg-black/20 p-5 transition-transform duration-300 hover:-translate-y-1"
+                    className="rounded-2xl border border-gold/20 bg-black/25 p-5 transition-transform duration-300 hover:-translate-y-1"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="mt-1 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10 p-2 text-[#d4af37]">
+                      <div className="mt-1 rounded-full border border-gold/30 bg-gold/10 p-2 text-gold">
                         <Icon className="h-4 w-4" />
                       </div>
                       <div>
