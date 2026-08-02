@@ -41,7 +41,7 @@ export function JournalEditorial() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[2rem] border border-outline-variant/20 bg-white/70 p-8 shadow-[0_20px_70px_rgba(0,0,0,0.04)] lg:col-span-7 lg:p-10"
+            className="rounded-[2rem] border border-outline-variant/30 bg-white/[0.04] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:col-span-7 lg:p-10"
           >
             <Link href={`/journal/${lead.slug}`} className="group block">
               <p className="mb-4 font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">
@@ -72,7 +72,7 @@ export function JournalEditorial() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="rounded-[1.5rem] border border-outline-variant/20 bg-white/60 p-6"
+              className="rounded-[1.5rem] border border-outline-variant/30 bg-white/[0.03] p-6"
             >
               <Link href={`/journal/${a.slug}`} className="group block">
                 <p className="mb-3 font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">

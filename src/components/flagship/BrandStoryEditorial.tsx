@@ -69,7 +69,7 @@ export function BrandStoryEditorial() {
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.3 }}
-            className="rounded-[2rem] border border-outline-variant/20 bg-white/60 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.04)]"
+            className="rounded-[2rem] border border-outline-variant/30 bg-white/[0.04] p-6 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl"
           >
             <ol className="space-y-6">
               {[

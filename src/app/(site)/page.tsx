@@ -19,6 +19,8 @@ import { TextureMarquee } from "@/components/stitch/TextureMarquee";
 import { StatsBand } from "@/components/stitch/StatsBand";
 import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
 import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSection";
+import { HairOriginsSection } from "@/components/flagship/HairOriginsSection";
+import { HomeFaqSection } from "@/components/flagship/HomeFaqSection";
 
 /**
  * ByChi Strands flagship homepage — built from scratch as a single
@@ -31,20 +33,27 @@ import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSec
  */
 export default function HomePage() {
   return (
-    <>
+    /*
+     * theme-noir flips every surface/on-surface/outline token to the noir &
+     * gold palette in one place (see globals.css). Without it the homepage
+     * fell back to the light Editorial Couture cream, which left the majority
+     * of the page white — the opposite of the house's dark-luxury register.
+     */
+    <div className="theme-noir bg-surface text-on-surface">
       <FlagshipHeader />
       <FlagshipHero />
       <TextureMarquee />
       <BrandStoryEditorial />
       <StatsBand />
-      <CollectionsEditorial />
-      <EditorialShowcase />
       <LuxuryManifestoSection />
-      <CinematicRevealSection />
-      <LuxuryExperienceSection />
+      <HairOriginsSection />
+      <CraftsmanshipFilm />
       <HouseMethodSection />
       <CinematicScene />
-      <CraftsmanshipFilm />
+      <CollectionsEditorial />
+      <EditorialShowcase />
+      <CinematicRevealSection />
+      <LuxuryExperienceSection />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
       <OurPromise />
@@ -57,10 +66,11 @@ export default function HomePage() {
         <ClientTestimonialsCarousel />
       </section>
 
+      <HomeFaqSection />
       <ClientConciergeSection />
       <AcademyCinematic />
       <JournalEditorial />
       <FlagshipFooter />
-    </>
+    </div>
   );
 }

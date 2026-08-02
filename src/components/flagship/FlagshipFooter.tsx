@@ -15,7 +15,7 @@ import { SocialStrip } from "@/components/stitch/SocialStrip";
  */
 export function FlagshipFooter() {
   return (
-    <footer className="bg-on-surface text-white">
+    <footer className="bg-noir text-white">
       {/* Manifesto */}
       <div className="px-6 md:px-16 pt-section-padding pb-20 md:pb-28 border-b border-white/10">
         <div className="max-w-4xl">

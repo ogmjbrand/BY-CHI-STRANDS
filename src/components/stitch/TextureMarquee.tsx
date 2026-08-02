@@ -9,10 +9,10 @@ const ITEMS = [...Object.values(CATEGORIES).map((c) => c.label), ...Object.value
  */
 export function TextureMarquee() {
   return (
-    <div className="bg-on-surface text-surface-container-lowest py-6 overflow-hidden">
+    <div className="bg-noir text-white py-6 overflow-hidden">
       <Marquee
         items={ITEMS}
-        className="font-display-md text-2xl md:text-3xl tracking-tight text-surface-container-lowest/90"
+        className="font-display-md text-2xl md:text-3xl tracking-tight text-white/90"
       />
     </div>
   );

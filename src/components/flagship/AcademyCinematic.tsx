@@ -10,7 +10,7 @@ import { WordsPullUp } from "@/components/ui/words-pull-up";
  */
 export function AcademyCinematic() {
   return (
-    <section className="relative overflow-hidden bg-on-surface px-6 py-40 text-white md:px-16 md:py-56">
+    <section className="relative overflow-hidden bg-noir px-6 py-40 text-white md:px-16 md:py-56">
       <div className="absolute -right-24 -top-24 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.06)_0%,_transparent_45%,_rgba(255,255,255,0.04)_100%)]" />
 
@@ -28,7 +28,7 @@ export function AcademyCinematic() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-12 max-w-lg font-body-xl text-lg text-surface-variant"
+            className="mb-12 max-w-lg font-body-xl text-lg text-white/70"
           >
             Training in importation, quality assessment and business scaling for luxury hair entrepreneurs —
             taught by the house that imports its own.

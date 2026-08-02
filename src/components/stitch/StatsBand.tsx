@@ -29,7 +29,7 @@ const rise = {
 
 export function StatsBand() {
   return (
-    <section className="relative overflow-hidden bg-on-surface py-20 md:py-28">
+    <section className="relative overflow-hidden bg-noir py-20 md:py-28">
       <div className="pointer-events-none absolute inset-0 opacity-[0.4]">
         <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary-container/20 blur-3xl" />
         <div className="absolute -right-24 top-1/4 h-96 w-96 rounded-full bg-primary-container/10 blur-3xl" />
@@ -70,7 +70,7 @@ export function StatsBand() {
               <p className="font-display-lg text-[13vw] leading-none tracking-[-0.03em] text-primary-container md:text-6xl">
                 {s.value}
               </p>
-              <p className="mt-3 font-label-caps text-[11px] uppercase tracking-[0.18em] text-surface/70">
+              <p className="mt-3 font-label-caps text-[11px] uppercase tracking-[0.18em] text-white/70">
                 {s.label}
               </p>
             </motion.div>

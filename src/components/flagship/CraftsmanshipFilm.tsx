@@ -14,7 +14,7 @@ import { showcaseItems } from "@/components/stitch/ProductServiceShowcase";
  */
 export function CraftsmanshipFilm() {
   return (
-    <section className="overflow-hidden bg-on-surface py-32 text-white md:py-48">
+    <section className="overflow-hidden bg-noir py-32 text-white md:py-48">
       <div className="mx-auto mb-16 flex max-w-7xl flex-col gap-8 px-6 md:mb-24 md:flex-row md:items-end md:justify-between md:px-16">
         <div className="max-w-3xl">
           <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary-fixed-dim">
@@ -34,7 +34,7 @@ export function CraftsmanshipFilm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-body-xl text-lg text-surface-variant"
+            className="font-body-xl text-lg text-white/70"
           >
             Your lace is tinted, plucked, and melted to your hairline by stylists who install units every single day.
             There is no template for a hairline — every install is drawn by hand.
