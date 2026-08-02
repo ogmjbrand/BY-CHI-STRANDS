@@ -101,6 +101,7 @@ export function FlagshipFooter() {
       <div className="px-6 md:px-16 pb-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
         <nav className="flex flex-wrap gap-x-10 gap-y-4 font-label-caps text-[11px] uppercase tracking-[0.2em] text-white/70">
           <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
+          <Link href="/hair-finder" className="hover:text-white transition-colors">Hair Finder</Link>
           <Link href="/collections" className="hover:text-white transition-colors">Collections</Link>
           <Link href="/services" className="hover:text-white transition-colors">Services</Link>
           <Link href="/academy" className="hover:text-white transition-colors">Academy</Link>
