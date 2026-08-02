@@ -177,6 +177,7 @@ export function FlagshipHeader() {
           ))}
           <div className="pt-8 border-t border-white/10 space-y-5">
             {[
+              { label: "Hair Finder", href: "/hair-finder" },
               { label: "Track Order", href: "/track" },
               { label: "Journal", href: "/journal" },
               { label: "Contact", href: "/contact" },
