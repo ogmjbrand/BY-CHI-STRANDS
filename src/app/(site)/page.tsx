@@ -19,6 +19,7 @@ import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonia
 import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSection";
 import { HairOriginsSection } from "@/components/flagship/HairOriginsSection";
 import { HomeFaqSection } from "@/components/flagship/HomeFaqSection";
+import { FounderSection } from "@/components/flagship/FounderSection";
 
 /**
  * ByChi Strands flagship homepage — built from scratch as a single
@@ -52,6 +53,7 @@ export default function HomePage() {
       <LuxuryExperienceSection />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
+      <FounderSection />
       <OurPromise />
 
       <section className="overflow-hidden bg-surface-container-low px-6 py-32 text-center md:px-16 md:py-48">
