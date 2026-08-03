@@ -41,9 +41,25 @@ export function JournalEditorial() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[2rem] border border-outline-variant/30 bg-white/[0.04] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:col-span-7 lg:p-10"
+            className="overflow-hidden rounded-[2rem] border border-outline-variant/30 bg-white/[0.04] shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:col-span-7"
           >
             <Link href={`/journal/${lead.slug}`} className="group block">
+              {/*
+               * Every article already carries a real photograph (lib/journal
+               * `image`). The index was showing none of them, so the section
+               * ran as three paragraphs of grey text on a page that is
+               * otherwise carried by its photography.
+               */}
+              <span className="block aspect-[16/10] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={lead.image}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                />
+              </span>
+              <span className="block p-8 lg:p-10">
               <p className="mb-4 font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">
                 {lead.category}
               </p>
@@ -60,6 +76,7 @@ export function JournalEditorial() {
                   <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
+              </span>
             </Link>
           </motion.div>
         ) : null}
@@ -72,16 +89,29 @@ export function JournalEditorial() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="rounded-[1.5rem] border border-outline-variant/30 bg-white/[0.03] p-6"
+              className="overflow-hidden rounded-[1.5rem] border border-outline-variant/30 bg-white/[0.03]"
             >
-              <Link href={`/journal/${a.slug}`} className="group block">
-                <p className="mb-3 font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">
-                  {a.category}
-                </p>
-                <h4 className="mb-3 font-headline-lg text-xl transition-colors duration-300 group-hover:text-primary">
-                  {a.title}
-                </h4>
-                <p className="font-body-sm text-on-surface-variant">{a.excerpt}</p>
+              <Link href={`/journal/${a.slug}`} className="group flex gap-5 p-5">
+                <span className="block h-24 w-20 shrink-0 overflow-hidden rounded-[0.75rem] sm:h-28 sm:w-24">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={a.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
+                  />
+                </span>
+                <span className="min-w-0">
+                  <span className="mb-2 block font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">
+                    {a.category}
+                  </span>
+                  <span className="mb-2 block font-headline-lg text-lg leading-snug transition-colors duration-300 group-hover:text-primary">
+                    {a.title}
+                  </span>
+                  <span className="block font-body-sm text-on-surface-variant line-clamp-3">
+                    {a.excerpt}
+                  </span>
+                </span>
               </Link>
             </motion.div>
           ))}

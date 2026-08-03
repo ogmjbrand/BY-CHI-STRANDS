@@ -21,6 +21,8 @@ import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSec
 import { HairOriginsSection } from "@/components/flagship/HairOriginsSection";
 import { HomeFaqSection } from "@/components/flagship/HomeFaqSection";
 import { FounderSection } from "@/components/flagship/FounderSection";
+import { BrandSeal } from "@/components/flagship/BrandSeal";
+import { HouseSignature } from "@/components/flagship/HouseSignature";
 
 /**
  * ByChi Strands flagship homepage — built from scratch as a single
@@ -52,8 +54,15 @@ export default function HomePage() {
       <CraftsmanshipFilm />
       <HouseMethodSection />
       <CinematicScene />
+
+      {/* The mark, stamped between chapters — see BrandSeal. */}
+      <BrandSeal label="The Collections" />
       <CollectionsEditorial />
+
+      <HouseSignature />
+
       <LuxuryExperienceSection />
+      <BrandSeal label="The Atelier" />
       <LuxuryServicesEditorial />
       <TransformationMosaic />
       <FounderSection />
@@ -70,6 +79,7 @@ export default function HomePage() {
       <HomeFaqSection />
       <ClientConciergeSection />
       <AcademyCinematic />
+      <BrandSeal label="The Journal" />
       <JournalEditorial />
       <FlagshipFooter />
     </div>
