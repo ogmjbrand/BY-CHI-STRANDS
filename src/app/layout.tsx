@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { StoreProvider } from "@/context/StoreContext";
-import { QueryProvider } from "@/context/QueryProvider";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -68,9 +67,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         deliberately leave the font or background unset.
       */}
       <body>
-        <QueryProvider>
-          <StoreProvider>{children}</StoreProvider>
-        </QueryProvider>
+        {/*
+          There is no QueryProvider here any more. It wrapped every page in
+          the app and nothing in the codebase ever called useQuery,
+          useMutation, or any other hook from it — the data this site shows is
+          either static or fetched once in a server component.
+
+          It was not costing the client bundle: grepping the built chunks
+          before removal found no TanStack code shipped, so Next was already
+          excluding it. This is dead code and a dependency, not weight on the
+          page. If a client-side cache is needed later, the provider is four
+          lines.
+        */}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

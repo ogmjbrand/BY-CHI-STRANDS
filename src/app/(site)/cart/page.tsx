@@ -110,7 +110,7 @@ export default function ShoppingBagPage() {
                         src={posterFor(product.slug)}
                       />
                     </Link>
-                    <div className="flex-1 flex flex-col justify-between py-1">
+                    <div className="min-w-0 flex-1 flex flex-col justify-between py-1">
                       <div>
                         <Link href={`/shop/${product.slug}`} className="font-display-md text-xl hover:text-primary transition-colors">
                           {product.name}
@@ -120,7 +120,7 @@ export default function ShoppingBagPage() {
                           {line.lace ? <p>Cap: {line.lace}</p> : null}
                         </div>
                       </div>
-                      <div className="flex items-end justify-between mt-6">
+                      <div className="mt-6 flex flex-wrap items-end justify-between gap-x-4 gap-y-4">
                         <div className="flex items-center border border-outline-variant/40">
                           <button
                             onClick={() => updateQty(i, line.qty - 1)}
@@ -138,7 +138,7 @@ export default function ShoppingBagPage() {
                             +
                           </button>
                         </div>
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-4 sm:gap-6">
                           <p className="font-body-md font-semibold text-primary">
                             {lineIsQuote(line)
                               ? "Quoted after order"
