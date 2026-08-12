@@ -10,6 +10,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     return NextResponse.json({ success: true, reviews }, { status: 200 });
   } catch (error) {
+    console.error("[api/products/[id]/reviews] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch reviews" }, { status: 500 });
   }
 }
@@ -34,8 +35,9 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
 
     return NextResponse.json({ success: true, review }, { status: 201 });
   } catch (error) {
+    console.error("[api/products/[id]/reviews] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create review" },
+      { error: "Failed to create review" },
       { status: 500 }
     );
   }

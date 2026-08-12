@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, addresses: user.addresses }, { status: 200 });
   } catch (error) {
+    console.error("[api/users/addresses] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch addresses" }, { status: 500 });
   }
 }
@@ -27,8 +28,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, addresses: user.addresses }, { status: 201 });
   } catch (error) {
+    console.error("[api/users/addresses] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to add address" },
+      { error: "Failed to add address" },
       { status: 500 }
     );
   }
@@ -44,8 +46,9 @@ export async function DELETE(request: NextRequest) {
 
     return NextResponse.json({ success: true, message: "Address deleted" }, { status: 200 });
   } catch (error) {
+    console.error("[api/users/addresses] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to delete address" },
+      { error: "Failed to delete address" },
       { status: 500 }
     );
   }

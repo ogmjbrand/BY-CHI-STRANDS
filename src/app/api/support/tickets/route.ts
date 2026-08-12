@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, tickets }, { status: 200 });
   } catch (error) {
+    console.error("[api/support/tickets] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch tickets" }, { status: 500 });
   }
 }
@@ -34,8 +35,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, ticket }, { status: 201 });
   } catch (error) {
+    console.error("[api/support/tickets] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create ticket" },
+      { error: "Failed to create ticket" },
       { status: 500 }
     );
   }

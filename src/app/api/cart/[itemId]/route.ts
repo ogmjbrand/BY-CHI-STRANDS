@@ -17,8 +17,9 @@ export async function PATCH(
 
     return NextResponse.json({ success: true, cart }, { status: 200 });
   } catch (error) {
+    console.error("[api/cart/[itemId]] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to update item" },
+      { error: "Failed to update item" },
       { status: 500 }
     );
   }

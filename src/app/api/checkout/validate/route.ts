@@ -26,8 +26,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, ...results }, { status: 200 });
   } catch (error) {
+    console.error("[api/checkout/validate] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Validation failed" },
+      { error: "Validation failed" },
       { status: 500 }
     );
   }

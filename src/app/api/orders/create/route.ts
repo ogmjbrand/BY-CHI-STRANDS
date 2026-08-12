@@ -45,7 +45,10 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Order creation failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create order" },
+      {
+        error:
+          "We could not place your order just now. Nothing has been charged — please try again, or message the concierge and we will take it from there.",
+      },
       { status: 500 }
     );
   }
