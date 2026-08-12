@@ -13,6 +13,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
+import { whatsappLink } from "@/lib/site";
 import { posterFor } from "@/lib/media";
 import { Icon } from "@/components/ui/icon";
 
@@ -242,10 +243,40 @@ function CartDrawer() {
                   Concierge Notes
                 </h4>
               </div>
-              <textarea
-                className="w-full bg-surface-bright border border-outline-variant/30 p-4 font-body-sm focus:border-primary-container focus:ring-0 transition-colors placeholder:text-outline/50 resize-none h-24"
-                placeholder="Add special requests for your stylist or concierge..."
-              />
+              {/*
+                This was a textarea with no value, no onChange and no reader.
+                Anything a client typed into "special requests for your
+                stylist" was discarded the moment the drawer closed — neither
+                the checkout form nor the order record has anywhere to put it.
+                A field that looks like it collects a request and quietly
+                throws it away is worse than no field.
+
+                Rather than promise storage the order schema cannot keep, this
+                opens the concierge channel the house actually answers on,
+                with the bag already written into the message.
+              */}
+              <p className="font-body-sm text-on-surface-variant">
+                Special requests — a length check, a colour match, a date you
+                need it by — go straight to the concierge.
+              </p>
+              <a
+                href={whatsappLink(
+                  `Hi ByChiStrands — a request about my selection:\n${cart
+                    .map((line) => {
+                      const product = getProduct(line.slug);
+                      return `• ${product?.name ?? line.slug} — ${line.length}"${
+                        line.lace ? `, ${line.lace}` : ""
+                      } ×${line.qty}`;
+                    })
+                    .join("\n")}\n\n`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border-b border-primary pb-1 font-label-caps text-[11px] uppercase tracking-[0.2em] text-primary"
+              >
+                <Icon name="chat" className="text-[15px]" />
+                Message the concierge
+              </a>
             </section>
           ) : null}
         </div>

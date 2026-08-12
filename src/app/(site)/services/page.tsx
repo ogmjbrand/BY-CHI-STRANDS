@@ -292,6 +292,7 @@ export default function SignatureServices1Page() {
                   href={whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools.")}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Ask about professional hair tools on WhatsApp"
                   className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
                 ><Icon name="north_east" /></a>
               </div>

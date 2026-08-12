@@ -181,6 +181,7 @@ export default async function ProductPage({
               href={whatsappLink(`Hi ByChiStrands — I have a question about the ${product.name}.`)}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Ask about the ${product.name} on WhatsApp`}
               className="p-4 border border-outline-variant rounded-lg active:scale-95 transition-transform"
             >
               <Icon name="chat_bubble" className="text-on-surface-variant" />
