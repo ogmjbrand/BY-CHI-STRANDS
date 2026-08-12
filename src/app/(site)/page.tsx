@@ -23,6 +23,7 @@ import { HomeFaqSection } from "@/components/flagship/HomeFaqSection";
 import { FounderSection } from "@/components/flagship/FounderSection";
 import { BrandSeal } from "@/components/flagship/BrandSeal";
 import { HouseSignature } from "@/components/flagship/HouseSignature";
+import { EditorialBand } from "@/components/flagship/EditorialBand";
 
 /**
  * ByChi Strands flagship homepage — built from scratch as a single
@@ -60,6 +61,7 @@ export default function HomePage() {
       <CollectionsEditorial />
 
       <HouseSignature />
+      <EditorialBand />
 
       <LuxuryExperienceSection />
       <BrandSeal label="The Atelier" />
