@@ -6,7 +6,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { CheckoutSummary, MobileCheckoutSummary } from "@/components/stitch/CheckoutSummary";
 import { useStore, lineIsQuote } from "@/context/StoreContext";
-import { getProduct, priceFor } from "@/lib/products";
+import { getProduct, priceFor, TONES, TEXTURES } from "@/lib/products";
 import { useToast } from "@/components/stitch/Toast";
 import type { OrderItem } from "@/types/orders";
 
@@ -51,10 +51,19 @@ export default function CheckoutPage() {
           name: product.name,
           quantity: line.qty,
           price: priceFor(product, line.length, line.lace),
+          /*
+           * The closure size was being written into `tone`, which means
+           * colour — so every order recorded "2x4 Closure" as the shade and
+           * left the real colour out entirely. `texture` was taking
+           * line.density, which nothing on the site ever sets, so it was
+           * always undefined. Both now carry the product's real values and
+           * the lace size has its own field.
+           */
           variant: {
             length: `${line.length}"`,
-            texture: line.density,
-            tone: line.lace,
+            lace: line.lace,
+            tone: TONES[product.tone].label,
+            texture: TEXTURES[product.texture],
           },
         },
       ];
@@ -289,7 +298,7 @@ export default function CheckoutPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="hidden lg:block sticky top-32 space-y-12 bg-white text-noir border border-outline-variant/20 p-8 shadow-sm">
+            <div className="hidden lg:block sticky top-32 space-y-12 bg-surface-container-lowest text-on-surface border border-outline-variant/20 p-8">
               <CheckoutSummary />
               <div className="space-y-4">
                 {!hasQuoteItems ? (

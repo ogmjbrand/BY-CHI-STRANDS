@@ -93,7 +93,7 @@ export default async function OrderDetailsPage({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 space-y-8">
-              <section className="bg-white text-noir border border-outline-variant/20 p-8">
+              <section className="bg-surface-container-lowest text-on-surface border border-outline-variant/20 p-8">
                 <h2 className="font-label-caps text-on-surface mb-8 border-b border-outline-variant/20 pb-4">
                   PROGRESS
                 </h2>
@@ -136,7 +136,7 @@ export default async function OrderDetailsPage({
                 return (
                   <div
                     key={`${item.productId}-${i}`}
-                    className="bg-white text-noir border border-outline-variant/20 p-8 flex gap-8"
+                    className="bg-surface-container-lowest text-on-surface border border-outline-variant/20 p-8 flex gap-8"
                   >
                     {product ? (
                       <Link
@@ -171,7 +171,7 @@ export default async function OrderDetailsPage({
                           {item.variant?.texture ? (
                             <div>
                               <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
-                                DENSITY
+                                TEXTURE
                               </p>
                               <p className="font-body-md text-on-surface">
                                 {item.variant.texture}
@@ -181,9 +181,17 @@ export default async function OrderDetailsPage({
                           {item.variant?.tone ? (
                             <div>
                               <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
-                                CAP
+                                COLOUR
                               </p>
                               <p className="font-body-md text-on-surface">{item.variant.tone}</p>
+                            </div>
+                          ) : null}
+                          {item.variant?.lace ? (
+                            <div>
+                              <p className="font-label-caps text-on-surface-variant text-[10px] mb-1">
+                                LACE
+                              </p>
+                              <p className="font-body-md text-on-surface">{item.variant.lace}</p>
                             </div>
                           ) : null}
                           <div>
@@ -201,7 +209,7 @@ export default async function OrderDetailsPage({
             </div>
 
             <div className="lg:col-span-4 space-y-8">
-              <div className="bg-white text-noir border border-outline-variant/20 p-8">
+              <div className="bg-surface-container-lowest text-on-surface border border-outline-variant/20 p-8">
                 <div className="mb-10">
                   <h5 className="font-label-caps text-on-surface mb-6 border-b border-outline-variant/20 pb-4">
                     SHIPPING ADDRESS
@@ -253,7 +261,7 @@ export default async function OrderDetailsPage({
                   rel="noopener noreferrer"
                   /* text-noir, not text-primary: primary is gold in the noir
                      scope, and gold on a white button is barely legible. */
-                  className="block w-full py-4 bg-white text-noir font-label-caps rounded hover:bg-gold-light transition-colors active:scale-95"
+                  className="block w-full py-4 bg-surface-container-lowest text-on-surface font-label-caps rounded hover:bg-gold-light transition-colors active:scale-95"
                 >
                   CONTACT CONCIERGE
                 </a>
