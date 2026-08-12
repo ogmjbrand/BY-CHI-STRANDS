@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { GalleryMasonry } from "@/components/stitch/GalleryMasonry";
 import { Icon } from "@/components/ui/icon";
 
 /**
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Gallery",
 };
 
-const [featured, ...rest] = testimonials;
+const [featured] = testimonials;
 
 export default function GalleryPage() {
   return (
@@ -102,19 +103,9 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
-        {/* Client Clips Grid */}
+        {/* The wall — see GalleryMasonry for why this is columns, not a grid. */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {rest.map((t) => (
-              <div key={t.clip.src} className="group reveal-on-scroll">
-                <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-lg bg-surface-container">
-                  <ProductMedia media={t.clip} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="font-headline-lg text-xl mb-1">{t.caption}</h3>
-                <p className="font-label-caps text-xs text-primary uppercase tracking-widest">{t.context}</p>
-              </div>
-            ))}
-          </div>
+          <GalleryMasonry />
         </section>
         {/* Academy teaser — real copy, mirrors the Academy page's own hero */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
