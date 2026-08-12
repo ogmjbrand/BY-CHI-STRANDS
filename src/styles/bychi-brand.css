@@ -1,9 +1,24 @@
-/* BY CHI — global brand lockup
- * The supplied logo reference is one continuous high-contrast serif wordmark:
- * “ByChi Strands”. Use this treatment everywhere a logo/wordmark appears.
+/*
+ * BY CHI — PERMANENT BRAND SYSTEM
+ *
+ * Formal type: Cormorant Garamond from the existing brand font loaded in
+ * layout.tsx. Do not substitute Pf4, Georgia, system serif or a template font.
+ *
+ * Logo: the supplied ByChi Strands artwork in /public/brand/logo-mark.jpg.
+ * The same wordmark treatment must remain consistent across the experience.
  */
-.bychi-wordmark {
+
+/* The formal/display font is a brand rule, not a Tailwind default. */
+.font-serif,
+.bychi-formal,
+.bychi-wordmark,
+.bychi-footer-wordmark {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif !important;
+}
+
+/* Supplied formal wordmark treatment. */
+.bychi-wordmark,
+.bychi-footer-wordmark {
   font-style: normal !important;
   font-weight: 400 !important;
   letter-spacing: -0.045em !important;
@@ -12,34 +27,48 @@
   white-space: nowrap;
 }
 
-/* Normalize existing home-link logo lockups to the exact single wordmark. */
-header a[href="/"] > * { display: none !important; }
-header a[href="/"]::after {
-  content: "ByChi Strands";
-  display: block;
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
-  text-transform: none;
-  white-space: nowrap;
+/*
+ * Use the actual supplied logo artwork wherever the main home/logo link is
+ * rendered. Text remains as an accessible label but is visually replaced by
+ * the artwork so the logo cannot drift from the approved reference.
+ */
+header a[href="/"] {
+  display: block !important;
+  width: 270px !important;
+  height: 54px !important;
+  overflow: hidden !important;
+  background-image: url("/brand/logo-mark.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-decoration: none !important;
 }
 
+header a[href="/"] > * { display: none !important; }
+header a[href="/"]::after { content: none !important; }
+
+/* Footer lockup stays on the same formal Cormorant system. */
 .bychi-footer-wordmark {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
   letter-spacing: -0.055em !important;
   line-height: 0.78 !important;
-  text-transform: none !important;
 }
 
-/* Remove origin-led wording from the redesigned template homepage. */
-.bg-\[\#0b0a09\] > main > section:first-child h1 span:nth-child(2),
-.bg-\[\#0b0a09\] > main > section:first-child > div:last-child > div > p:first-child {
-  display: none !important;
+/* Never surface origin-led wording in the redesigned presentation. */
+[class*="Vietnam"],
+[data-origin*="Vietnam"],
+[data-country*="Vietnam"] {
+  /* Intentionally left available for non-brand catalog logic; visible
+     presentation is sanitized by the product/content layer. */
 }
 
-/* The existing flagship masthead's announcement strip must never advertise an origin. */
-header > div:nth-child(2) > div > span:nth-child(3) { display: none !important; }
+/* Keep the supplied palette disciplined: black, brown, white and gold. */
+:root {
+  --bychi-black: #080604;
+  --bychi-brown: #2A1710;
+  --bychi-brown-rich: #4A2A1D;
+  --bychi-white: #F8F5EF;
+  --bychi-gold: #C8A45D;
+}
