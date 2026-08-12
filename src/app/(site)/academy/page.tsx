@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AcademyInquiryForm } from "@/components/stitch/AcademyInquiryForm";
 import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
 import { site } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy
@@ -24,10 +25,10 @@ export default function AcademyPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
             </span>
-            ByChi <span className="font-script">Strands</span>
+            ByChi Strands
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
               Shop
             </Link>
@@ -50,19 +51,15 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div className="flex items-center space-x-6">
-            <Link href="/book" className="hidden md:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
+            <Link href="/book" className="hidden lg:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
               Book Appointment
             </Link>
             {" "}
             <div className="flex items-center space-x-4">
-              <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300">
-                shopping_bag
-              </Link>
+              <Link href="/cart" aria-label="Your bag" className="text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300"><Icon data-bag-trigger name="shopping_bag" /></Link>
               {" "}
-              <button className="md:hidden text-on-surface cursor-pointer" aria-label="Open menu">
-                <span className="material-symbols-outlined" data-icon="menu">
-                  menu
-                </span>
+              <button data-open-menu="" className="lg:hidden text-on-surface cursor-pointer" aria-label="Open menu">
+                <Icon name="menu" />
               </button>
             </div>
           </div>
@@ -289,19 +286,19 @@ export default function AcademyPage() {
               {" "}
               <ul className="space-y-6 mb-12">
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">The Masterclass — sourcing, grading, marketing and scaling</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">Mentorship — a direct session for your own sourcing questions</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">Direct Access — reach the team on WhatsApp as you build</span>
                 </li>
@@ -316,7 +313,7 @@ export default function AcademyPage() {
       <footer className="bg-surface-container-low border-t border-outline-variant/20 pt-section-padding pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi <span className="font-script">Strands</span></div>
+            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi Strands</div>
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
               Elevating the hair industry through education and premium Vietnamese sourcing.

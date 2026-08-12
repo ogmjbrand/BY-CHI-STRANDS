@@ -4,10 +4,11 @@ import { products } from "@/lib/products";
 import { collections } from "@/lib/collections";
 import { BoutiqueHeader } from "@/components/stitch/BoutiqueHeader";
 import { BoutiqueGrid } from "@/components/stitch/BoutiqueGrid";
-import { heroFor } from "@/lib/media";
+import { heroFor, scene } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { priceFrom } from "@/lib/products";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_the_boutique
@@ -57,8 +58,8 @@ export default function TheBoutiquePage() {
               {" "}
               <img
                 className="w-full aspect-square object-cover shadow-2xl"
-                alt="A master artisan hand-tying individual hair strands onto a fine lace base in the atelier"
-                src="/stitch/img-014.jpg"
+                alt={scene("collections-sourcing").alt}
+                src={scene("collections-sourcing").src}
               />
               {" "}
               <div className="absolute bottom-8 -right-8 bg-surface p-8 max-w-xs shadow-xl hidden md:block">
@@ -130,7 +131,7 @@ export default function TheBoutiquePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             <div className="text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-primary text-3xl">verified</span>
+                <Icon name="verified" className="text-primary text-3xl" />
               </div>
               {" "}
               <h3 className="font-headline-lg text-2xl mb-4">Super Double Drawn</h3>
@@ -143,7 +144,7 @@ export default function TheBoutiquePage() {
             {" "}
             <div className="text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-primary text-3xl">eco</span>
+                <Icon name="eco" className="text-primary text-3xl" />
               </div>
               {" "}
               <h3 className="font-headline-lg text-2xl mb-4">Vietnam, China & Mexico</h3>
@@ -156,7 +157,7 @@ export default function TheBoutiquePage() {
             {" "}
             <div className="text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-primary text-3xl">front_hand</span>
+                <Icon name="front_hand" className="text-primary text-3xl" />
               </div>
               {" "}
               <h3 className="font-headline-lg text-2xl mb-4">Hand-Finished In Atelier</h3>
@@ -173,12 +174,12 @@ export default function TheBoutiquePage() {
       <footer className="bg-background border-t border-outline-variant/20">
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-[32px] text-primary">ByChi <span className="font-script">Strands</span></span>
+            <span className="font-display-lg text-[32px] text-primary">ByChi Strands</span>
             {" "}
             <p className="font-body-sm text-on-surface-variant text-center md:text-left">Redefining the standard of luxury hair through artisan excellence.</p>
           </div>
           {" "}
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
               Privacy Policy
             </Link>

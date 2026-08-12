@@ -9,6 +9,7 @@ import { useStore, lineIsQuote } from "@/context/StoreContext";
 import { getProduct, priceFor, TONES, TEXTURES } from "@/lib/products";
 import { useToast } from "@/components/stitch/Toast";
 import type { OrderItem } from "@/types/orders";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_luxury_checkout
@@ -136,9 +137,8 @@ export default function CheckoutPage() {
           {/* The empty branch returns before the checkout heading, so it needs
               its own — a page with no h1 has no announced title. */}
           <h1 className="sr-only">Checkout</h1>
-          <span className="material-symbols-outlined text-primary text-5xl mb-8 opacity-40">
-            shopping_bag
-          </span>
+          {/* Decorative empty state, not an affordance — see CartDrawer. */}
+          <Icon name="shopping_bag" className="text-primary text-5xl mb-8 opacity-40" />
           <p className="font-body-xl text-body-xl text-tertiary mb-10">
             Your bag is empty — there is nothing to check out yet.
           </p>
@@ -258,9 +258,7 @@ export default function CheckoutPage() {
 
             <section className="bg-surface-container-low p-8 border border-outline-variant/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="material-symbols-outlined text-primary">
-                  {hasQuoteItems ? "lock_open" : "lock"}
-                </span>
+                <Icon name={hasQuoteItems ? "lock_open" : "lock"} className="text-primary" />
                 <h3 className="font-headline-lg text-headline-lg">
                   {hasQuoteItems ? "White-Glove Concierge Payment" : "Pay Now, Or By Arrangement"}
                 </h3>
@@ -287,11 +285,11 @@ export default function CheckoutPage() {
 
             <div className="flex flex-wrap gap-8 items-center py-6 border-y border-outline-variant/20">
               <div className="flex items-center gap-2 text-outline">
-                <span className="material-symbols-outlined text-primary text-[20px]">verified</span>
+                <Icon name="verified" className="text-primary text-[20px]" />
                 <span className="text-label-caps tracking-[0.15em]">Atelier Guarantee</span>
               </div>
               <div className="flex items-center gap-2 text-outline">
-                <span className="material-symbols-outlined text-primary text-[20px]">package_2</span>
+                <Icon name="package_2" className="text-primary text-[20px]" />
                 <span className="text-label-caps tracking-[0.15em]">Discrete Packaging</span>
               </div>
             </div>

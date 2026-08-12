@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
 import { formatPrice } from "@/lib/utils";
 import type { Order } from "@/types/orders";
+import { Icon } from "@/components/ui/icon";
 
 interface CustomerProfile {
   fullName: string;
@@ -264,14 +265,14 @@ export function CustomerAccountHub() {
                 className="flex items-center justify-between rounded-[1.25rem] border border-outline-variant/20 bg-surface px-5 py-4 transition-colors hover:border-primary/50"
               >
                 <span className="font-label-caps text-[10px] uppercase tracking-[0.24em]">Message WhatsApp concierge</span>
-                <span className="material-symbols-outlined text-primary">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-primary" />
               </a>
               <Link
                 href="/checkout"
                 className="flex items-center justify-between rounded-[1.25rem] border border-outline-variant/20 bg-surface px-5 py-4 transition-colors hover:border-primary/50"
               >
                 <span className="font-label-caps text-[10px] uppercase tracking-[0.24em]">Continue to secure checkout</span>
-                <span className="material-symbols-outlined text-primary">lock</span>
+                <Icon name="lock" className="text-primary" />
               </Link>
             </div>
             <footer className="mt-10 border-t border-outline-variant/20 pt-6 text-center text-sm text-on-surface-variant">

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { services, getService } from "@/lib/services";
 import { whatsappLink } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 const TIME_SLOTS = ["09:00 AM", "11:30 AM", "01:45 PM", "04:15 PM"];
 
@@ -135,7 +136,7 @@ export function BookingForm() {
           </div>
           {/* Was bg-white on a noir page — a white slab with gold labels at 2.4:1. */}
           <div className="bg-surface-container-lowest text-on-surface border border-outline-variant/15 p-8 flex items-start md:items-center gap-6">
-            <span className="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
+            <Icon name="verified_user" className="text-primary text-4xl shrink-0" />
             <div>
               <h3 className="font-headline-lg text-lg mb-1">Handled by our in-house team</h3>
               <p className="font-body-sm text-on-surface-variant">

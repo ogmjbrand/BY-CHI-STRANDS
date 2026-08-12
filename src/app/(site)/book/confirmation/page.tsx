@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getService } from "@/lib/services";
 import { site, whatsappLink } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_atelier_booking_confirmation
@@ -75,7 +76,7 @@ export default async function BookingConfirmationPage({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
             </span>
-            ByChi <span className="font-script">Strands</span>
+            ByChi Strands
           </Link>
           <nav className="hidden md:flex gap-8 items-center">
             <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
@@ -90,10 +91,10 @@ export default async function BookingConfirmationPage({
           </nav>
           <div className="flex items-center gap-6">
             <Link href="/cart" aria-label="Your bag" className="hover:opacity-70 transition-opacity duration-300 text-primary">
-              <span className="material-symbols-outlined">shopping_bag</span>
+              <Icon data-bag-trigger name="shopping_bag" />
             </Link>
             <Link href="/account" aria-label="Your account" className="hover:opacity-70 transition-opacity duration-300 text-primary">
-              <span className="material-symbols-outlined">person</span>
+              <Icon name="person" />
             </Link>
           </div>
         </div>
@@ -128,7 +129,7 @@ export default async function BookingConfirmationPage({
                   </h2>
                   {service ? (
                     <p className="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px]">schedule</span>
+                      <Icon name="schedule" className="text-[18px]" />
                       {service.duration}
                     </p>
                   ) : null}
@@ -162,7 +163,7 @@ export default async function BookingConfirmationPage({
                 <div className="space-y-4 md:col-span-2 border-t border-outline-variant/10 pt-8">
                   <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase">LOCATION</span>
                   <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary mt-1">location_on</span>
+                    <Icon name="location_on" className="text-primary mt-1" />
                     <div>
                       <p className="font-headline-lg text-body-xl leading-tight">{site.address}</p>
                       <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -181,7 +182,7 @@ export default async function BookingConfirmationPage({
                   download={`${service?.slug ?? "bychistrands"}-request.ics`}
                   className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps flex items-center gap-2 hover:bg-secondary transition-all duration-400 ease-in-out tracking-[0.15em]"
                 >
-                  <span className="material-symbols-outlined text-[18px]">calendar_add_on</span>
+                  <Icon name="calendar_add_on" className="text-[18px]" />
                   ADD TO CALENDAR
                 </a>
               ) : null}
@@ -257,7 +258,7 @@ export default async function BookingConfirmationPage({
       <footer className="w-full relative border-t border-outline-variant/30 bg-surface">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-8 md:px-20 py-24 max-w-[1440px] mx-auto">
           <div className="lg:col-span-1">
-            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi <span className="font-script">Strands</span></div>
+            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi Strands</div>
             <p className="font-body-sm text-on-surface-variant/70 max-w-xs">
               Elevating the art of hair through scientific precision and editorial excellence.
             </p>
@@ -289,10 +290,10 @@ export default async function BookingConfirmationPage({
           <div className="flex flex-col justify-between items-start md:items-end lg:items-end">
             <div className="flex gap-4 mb-8 md:mb-0">
               <a className="hover:text-primary transition-colors" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <span className="material-symbols-outlined">camera</span>
+                <Icon name="camera" />
               </a>
               <a className="hover:text-primary transition-colors" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <span className="material-symbols-outlined">videocam</span>
+                <Icon name="videocam" />
               </a>
             </div>
             <p className="font-body-sm text-[12px] text-on-surface-variant/50">

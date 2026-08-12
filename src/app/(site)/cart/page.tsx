@@ -5,6 +5,7 @@ import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
+import { Wordmark } from "@/components/brand/Wordmark";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shopping_bag_sidebar
@@ -26,15 +27,8 @@ export default function ShoppingBagPage() {
     <div className="scr-shopping-bag-sidebar theme-noir bg-surface text-on-surface font-body-md min-h-screen">
       <header className="border-b border-outline-variant/30 px-margin-mobile md:px-margin-desktop py-6">
         <div className="max-w-container-max mx-auto flex items-center justify-between">
-          {/* The house lockup, not a flat wordmark — the funnel keeps the
-              minimal header but not at the cost of the brand's own mark. */}
-          <Link href="/" className="flex items-center gap-2 leading-none">
-            <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-black/5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full scale-125 object-cover" />
-            </span>
-            <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
-            <span className="-mt-1 font-script text-2xl text-gold-light">Strands</span>
+          <Link href="/">
+            <Wordmark size="sm" withSeal />
           </Link>
           <Link href="/shop" className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">
             Continue Shopping

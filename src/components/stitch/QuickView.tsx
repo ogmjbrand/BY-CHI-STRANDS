@@ -8,6 +8,7 @@ import { heroFor } from "@/lib/media";
 import { ProductMedia } from "./ProductMedia";
 import { ProductConfigurator } from "./ProductConfigurator";
 import { ProductBadges } from "./ProductBadges";
+import { Icon } from "@/components/ui/icon";
 
 interface QuickViewProps {
   slug: string | null;
@@ -55,7 +56,7 @@ export function QuickView({ slug, onClose }: QuickViewProps) {
               aria-label="Close quick view"
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors"
             >
-              <span className="material-symbols-outlined">close</span>
+              <Icon name="close" />
             </button>
             <div className="relative aspect-[4/5] md:aspect-auto md:h-full bg-surface-container-low">
               <ProductMedia media={heroFor(product.slug)} className="w-full h-full object-cover" />

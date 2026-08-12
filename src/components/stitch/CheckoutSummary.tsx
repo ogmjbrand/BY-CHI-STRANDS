@@ -6,6 +6,7 @@ import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The checkout order summary, driven by the real bag. Markup follows the
@@ -133,9 +134,11 @@ export function MobileCheckoutSummary() {
         className="w-full flex items-center justify-between py-5 border-y border-outline-variant/20"
       >
         <div className="flex items-center gap-3">
-          <span className="material-symbols-outlined text-primary">
-            shopping_bag
-          </span>
+          {/* Emphatically not a bag trigger. StoreBridge binds the nearest
+              button/anchor ancestor, which here is the Show/Hide Summary
+              disclosure — so marking this icon made tapping "Show Summary"
+              open the cart drawer instead of expanding the summary. */}
+          <Icon name="shopping_bag" className="text-primary" />
           <span className="font-label-caps text-label-caps uppercase tracking-[0.15em]">
             {open ? "Hide Summary" : "Show Summary"}
           </span>
@@ -144,12 +147,7 @@ export function MobileCheckoutSummary() {
           <span className="font-headline-lg-mobile text-headline-lg-mobile text-primary">
             {formatPrice(cartTotal)}
           </span>
-          <span
-            className="material-symbols-outlined transition-transform duration-300"
-            style={{ transform: open ? "rotate(180deg)" : "none" }}
-          >
-            expand_more
-          </span>
+          <Icon name="expand_more" className="transition-transform duration-300" style={{ transform: open ? "rotate(180deg)" : "none" }} />
         </div>
       </button>
 

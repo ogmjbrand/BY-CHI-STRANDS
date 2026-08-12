@@ -4,6 +4,8 @@ import { Newsletter } from "./Newsletter";
 import { SocialStrip } from "./SocialStrip";
 import { HeaderUtilities } from "./HeaderUtilities";
 import { MenuButton } from "./MenuButton";
+import { Wordmark } from "@/components/brand/Wordmark";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -12,26 +14,13 @@ import { MenuButton } from "./MenuButton";
  * (legal, contact, journal, wishlist).
  */
 
-function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span className={`flex items-center gap-2 leading-none ${className}`}>
-      <span className="h-8 w-8 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
-      </span>
-      <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
-      <span className="font-script text-2xl text-gold-light -mt-1">Strands</span>
-    </span>
-  );
-}
-
 export function StitchHeader() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-surface/80 nav-blur border-b border-outline-variant/30">
       <div className="flex justify-between items-center gap-2 w-full px-4 md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
         <div className="flex flex-1 items-center gap-8">
-          <MenuButton className="-ml-2 md:hidden" />
-          <nav className="hidden md:flex gap-8">
+          <MenuButton className="-ml-2 lg:hidden" />
+          <nav className="hidden lg:flex gap-6 xl:gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
               href="/shop"
@@ -52,13 +41,20 @@ export function StitchHeader() {
             </Link>
           </nav>
         </div>
-        <div className="flex shrink-0 items-center">
+        {/*
+          The margin guarantees the mark's clearance. Both rails are flex-1,
+          but the right one carries a nav, the utility rail and the booking
+          CTA, so it settles at its content width and stops sharing the free
+          space — leaving the mark shoved off centre and 8px from "Academy"
+          while the nav links themselves sat 32px apart.
+        */}
+        <div className="flex shrink-0 items-center mx-4 lg:mx-8">
           <Link href="/">
-            <Wordmark className="text-on-surface" />
+            <Wordmark size="sm" withSeal className="text-on-surface" />
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end gap-8">
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden lg:flex gap-6 xl:gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
               href="/academy"
@@ -149,7 +145,7 @@ export function StitchFooter() {
       <SocialStrip />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
         <div className="col-span-1 md:col-span-1">
-          <Wordmark className="text-on-surface mb-8" />
+          <Wordmark size="sm" withSeal className="text-on-surface mb-8" />
           <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
             Timeless Vietnamese artistry meets modern luxury. Defined by
             authenticity and ethical sourcing.
@@ -162,7 +158,7 @@ export function StitchFooter() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <span className="material-symbols-outlined">camera</span>
+              <Icon name="camera" />
             </a>
             <a
               className="text-on-surface-variant hover:text-primary transition-all"
@@ -171,14 +167,14 @@ export function StitchFooter() {
               rel="noopener noreferrer"
               aria-label="TikTok"
             >
-              <span className="material-symbols-outlined">videocam</span>
+              <Icon name="videocam" />
             </a>
             <a
               className="text-on-surface-variant hover:text-primary transition-all"
               href={`mailto:${site.email}`}
               aria-label="Email"
             >
-              <span className="material-symbols-outlined">mail</span>
+              <Icon name="mail" />
             </a>
           </div>
         </div>
@@ -190,7 +186,7 @@ export function StitchFooter() {
         <p className="font-body-md text-body-sm text-on-surface-variant">
           © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
         </p>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
           <a
             className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
             href={site.socials.instagram.url}

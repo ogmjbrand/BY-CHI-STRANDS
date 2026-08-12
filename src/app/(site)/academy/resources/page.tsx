@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy_resource_library
@@ -41,27 +42,21 @@ export default function AcademyResourcesPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-padding">
           <div className="border border-outline-variant/20 p-8 text-center">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6 block">
-              school
-            </span>
+            <Icon name="school" className="text-primary text-4xl mb-6 block" />
             <h3 className="font-headline-lg text-headline-lg mb-2">The Masterclass</h3>
             <p className="font-body-sm text-on-surface-variant">
               Sourcing, grading, marketing, and scaling — the full curriculum.
             </p>
           </div>
           <div className="border border-outline-variant/20 p-8 text-center">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6 block">
-              diversity_1
-            </span>
+            <Icon name="diversity_1" className="text-primary text-4xl mb-6 block" />
             <h3 className="font-headline-lg text-headline-lg mb-2">Mentorship</h3>
             <p className="font-body-sm text-on-surface-variant">
               A direct session to work through your own sourcing or scaling questions.
             </p>
           </div>
           <div className="border border-outline-variant/20 p-8 text-center">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6 block">
-              support_agent
-            </span>
+            <Icon name="support_agent" className="text-primary text-4xl mb-6 block" />
             <h3 className="font-headline-lg text-headline-lg mb-2">Direct Access</h3>
             <p className="font-body-sm text-on-surface-variant">
               Reach the team on WhatsApp with questions as you build.

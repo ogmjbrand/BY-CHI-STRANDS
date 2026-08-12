@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
+import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = { title: "Our Craft" };
 
@@ -92,9 +93,7 @@ export default function AboutPage() {
               className="font-label-caps text-primary flex items-center gap-2 group w-fit"
             >
               See the Atelier Services
-              <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
+              <Icon name="arrow_forward" className="text-sm group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </section>
@@ -151,9 +150,7 @@ export default function AboutPage() {
               className="font-label-caps text-primary flex items-center gap-2 group w-fit mt-6"
             >
               Get in Touch
-              <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
+              <Icon name="arrow_forward" className="text-sm group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div>
@@ -169,9 +166,7 @@ export default function AboutPage() {
               className="font-label-caps text-primary flex items-center gap-2 group w-fit"
             >
               Explore The Academy
-              <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
+              <Icon name="arrow_forward" className="text-sm group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </section>

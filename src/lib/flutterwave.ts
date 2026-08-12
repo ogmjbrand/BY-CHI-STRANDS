@@ -1,13 +1,43 @@
+/*
+ * Flutterwave Standard.
+ *
+ * `server-only` is load-bearing: importing this from a client component is a
+ * build error, not a runtime surprise. The secret is read from the
+ * environment on each call and never returned, logged, or embedded in a
+ * response — and the variable deliberately has no NEXT_PUBLIC_ prefix, so
+ * Next cannot inline it into the client bundle even by accident.
+ *
+ * Standard means Flutterwave hosts the card form: we exchange an order for a
+ * redirect link and the shopper enters their card on Flutterwave's domain.
+ * Card numbers never touch this server, which is the whole reason to use it.
+ *
+ * FLUTTERWAVE_SECRET_KEY must be set in the Vercel project's environment
+ * variables. Until it is, `isConfigured()` returns false and checkout falls
+ * back to the concierge flow rather than failing mid-payment.
+ */
 import "server-only";
 
 const FLW_BASE = "https://api.flutterwave.com/v3";
 
+/**
+ * Whether card payment can be attempted at all.
+ *
+ * Callers should check this *before* doing any work with side effects.
+ * Without it the missing-key error surfaces from inside `initiate...`, which
+ * runs after the order row has already been written — leaving an orphan
+ * pending order behind on every attempt.
+ */
+export function isFlutterwaveConfigured(): boolean {
+  return Boolean(process.env.FLUTTERWAVE_SECRET_KEY);
+}
+
 function secretKey(): string {
   const key = process.env.FLUTTERWAVE_SECRET_KEY;
   if (!key) {
-    throw new Error(
-      "Card payment isn't configured yet — FLUTTERWAVE_SECRET_KEY is missing."
-    );
+    // Reaching here means a caller skipped isFlutterwaveConfigured(). The
+    // message names the variable because it is for the server log, and it
+    // must not be forwarded to the shopper.
+    throw new Error("FLUTTERWAVE_SECRET_KEY is not set");
   }
   return key;
 }

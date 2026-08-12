@@ -6,6 +6,8 @@ import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
 import { SiteSearch } from "./SiteSearch";
+import { Wordmark } from "@/components/brand/Wordmark";
+import { Icon } from "@/components/ui/icon";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -49,26 +51,11 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
       }`}
     >
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 leading-none shrink-0">
-          <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/logo-mark.jpg"
-              alt="ByChi Strands"
-              className="h-full w-full object-cover scale-125"
-            />
-          </span>
-          <span
-            className={`font-display-md text-lg md:text-2xl tracking-[0.08em] ${dark ? "text-white" : "text-on-surface"}`}
-          >
-            ByChi
-          </span>
-          <span className={`font-script text-2xl md:text-3xl -mt-1 ${dark ? "text-gold-light" : "text-primary-container"}`}>
-            Strands
-          </span>
+        <Link href="/" className="shrink-0">
+          <Wordmark size="md" withSeal className={dark ? "text-white" : "text-on-surface"} />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-7">
           {NAV.map((n) => {
             const active = n.href === "/" ? pathname === "/" : pathname?.startsWith(n.href);
             const activeColor = dark ? "text-gold-light border-gold-light" : "text-primary-container border-primary-container";
@@ -99,7 +86,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
             aria-label="Search the catalogue"
             className={`transition-colors ${iconColor}`}
           >
-            <span className="material-symbols-outlined text-[22px]">search</span>
+            <Icon name="search" className="text-[22px]" />
           </button>
           {/*
            * Account and wishlist are hidden on the narrowest screens: five
@@ -107,10 +94,13 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
            * mobile drawer, which is one tap away.
            */}
           <Link href="/account" aria-label="Your account" className={`hidden md:inline transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">account_circle</span>
+            <Icon name="account_circle" className="text-[22px]" />
           </Link>
           <Link href="/wishlist" aria-label="Your wishlist" className={`relative hidden sm:inline transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">favorite</span>
+            {/* Navigation to the wishlist page, not a save-toggle — so no
+                data-wishlist-trigger. (StoreBridge skipped it anyway: it can
+                only bind a heart it can resolve a product slug for.) */}
+            <Icon name="favorite" className="text-[22px]" />
             <CountBadge count={hydrated ? wishlist.length : 0} dark={dark} />
           </Link>
           <button
@@ -118,11 +108,11 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
             aria-label="Your bag"
             className={`relative transition-colors ${iconColor}`}
           >
-            <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+            <Icon data-bag-trigger name="shopping_bag" className="text-[22px]" />
             <CountBadge count={hydrated ? cartCount : 0} dark={dark} />
           </button>
-          <button aria-label="Open menu" className={`md:hidden transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">menu</span>
+          <button data-open-menu="" aria-label="Open menu" className={`xl:hidden transition-colors ${iconColor}`}>
+            <Icon name="menu" className="text-[22px]" />
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { Wordmark } from "@/components/brand/Wordmark";
 
 /**
  * A full-bleed brand statement — the house logotype set at scale over a
@@ -48,18 +49,11 @@ export function HouseSignature() {
           The House Signature
         </p>
 
-        {/*
-         * The lockup at editorial scale. Each line owns its own block: the
-         * Delafield script overflows its line box well past the em, so
-         * sharing one with the display words would let the glyphs collide.
-         */}
-        <h2 className="max-w-4xl">
-          <span className="block font-display-lg text-[14vw] leading-[0.92] tracking-[-0.03em] text-white md:text-[7vw]">
-            ByChi
-          </span>
-          <span className="-mt-2 block font-script text-[17vw] leading-[1] text-gold md:-mt-4 md:text-[8.5vw]">
-            Strands
-          </span>
+        {/* The logotype at editorial scale — one family, per the logo
+            reference. Renders through the shared Wordmark so the identity
+            has a single definition. */}
+        <h2 className="max-w-5xl text-white">
+          <Wordmark size="display" />
         </h2>
 
         <p className="mt-8 max-w-md font-body-xl leading-relaxed text-white/80">

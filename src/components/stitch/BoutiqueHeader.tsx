@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
 import { SiteSearch } from "./SiteSearch";
+import { Wordmark } from "@/components/brand/Wordmark";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The Boutique (collections listing) screen's own nav voice — "Atelier",
@@ -37,14 +39,8 @@ export function BoutiqueHeader() {
             The Maison
           </Link>
         </div>
-        <Link className="flex items-center gap-2.5" href="/">
-          <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
-          </span>
-          <span className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]">
-            ByChi <span className="font-script">Strands</span>
-          </span>
+        <Link href="/">
+          <Wordmark size="md" withSeal className="text-on-surface" />
         </Link>
         <div className="flex items-center gap-6">
           {/* Was a link to /shop dressed as search; now it opens real search. */}
@@ -52,28 +48,24 @@ export function BoutiqueHeader() {
             type="button"
             onClick={() => setSearchOpen(true)}
             aria-label="Search the catalogue"
-            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+            className="text-on-surface-variant hover:text-primary transition-colors"
           >
-            search
+            <Icon name="search" />
           </button>
-          <Link href="/account" aria-label="Your account" className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
-            person
-          </Link>
+          <Link href="/account" aria-label="Your account" className="text-on-surface-variant hover:text-primary transition-colors"><Icon name="person" /></Link>
           <button
             onClick={openCart}
             aria-label="Your bag"
             className="relative text-on-surface-variant hover:text-primary transition-colors"
           >
-            <span className="material-symbols-outlined align-middle">shopping_bag</span>
+            <Icon data-bag-trigger name="shopping_bag" className="align-middle" />
             {hydrated && cartCount > 0 ? (
               <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-on-primary">
                 {cartCount}
               </span>
             ) : null}
           </button>
-          <button aria-label="Open menu" className="md:hidden material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
-            menu
-          </button>
+          <button data-open-menu="" aria-label="Open menu" className="md:hidden text-on-surface-variant hover:text-primary transition-colors"><Icon name="menu" /></button>
         </div>
       </div>
 

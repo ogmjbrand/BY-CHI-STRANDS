@@ -10,6 +10,7 @@ import { formatPrice } from "@/lib/utils";
 import { whatsappLink } from "@/lib/site";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { IconAuthTag, IconShipInsured, IconExchange } from "./BrandIcons";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The PDP sidebar — length and lace selection driving a live price and the Add
@@ -162,7 +163,7 @@ export function ProductConfigurator({
             className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
           >
             {total === null ? "PLACE ORDER REQUEST" : "ADD TO ATELIER BAG"}
-            <span className="material-symbols-outlined text-lg">trending_flat</span>
+            <Icon name="trending_flat" className="text-lg" />
           </button>
         </MagneticButton>
 
@@ -173,19 +174,19 @@ export function ProductConfigurator({
             rel="noopener noreferrer"
             className="border border-outline-variant py-4 font-label-caps tracking-widest text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2 text-center"
           >
-            <span className="material-symbols-outlined text-base">chat_bubble</span>
+            <Icon name="chat_bubble" className="text-base" />
             ASK ON WHATSAPP
           </a>
           <button
             onClick={() => toggleWishlist(product.slug)}
             className="border border-outline-variant py-4 font-label-caps tracking-widest text-xs hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2"
           >
-            <span
-              className={`material-symbols-outlined text-base ${saved ? "text-primary" : ""}`}
-              style={{ fontVariationSettings: saved ? "'FILL' 1" : "'FILL' 0" }}
-            >
-              favorite
-            </span>
+            <Icon
+              data-wishlist-trigger
+              name="favorite"
+              filled={saved}
+              className={`text-base ${saved ? "text-primary" : ""}`}
+            />
             {saved ? "SAVED" : "SAVE"}
           </button>
         </div>
@@ -217,7 +218,7 @@ export function ProductConfigurator({
             to message us first.
           </p>
           <div className="flex gap-3">
-            <span className="material-symbols-outlined text-primary text-lg shrink-0">local_shipping</span>
+            <Icon name="local_shipping" className="text-primary text-lg shrink-0" />
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               Lagos same-week courier, nationwide Nigeria in 2–4 business days,
               international via DHL Express in 3–7 business days — fully
@@ -225,7 +226,7 @@ export function ProductConfigurator({
             </p>
           </div>
           <div className="flex gap-3">
-            <span className="material-symbols-outlined text-primary text-lg shrink-0">package_2</span>
+            <Icon name="package_2" className="text-primary text-lg shrink-0" />
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               Every order arrives in our signature packaging: silk-wrapped
               hair inside a rigid gift box, with a care card and

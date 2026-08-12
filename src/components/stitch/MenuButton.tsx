@@ -9,8 +9,7 @@ import { Menu } from "lucide-react";
  * reach the rest of the site.
  *
  * No state and no handler of its own: MobileMenu binds every element marked
- * `data-open-menu`, the same way it binds the Material Symbols `menu` glyphs
- * the older screen exports draw. That keeps this a server component.
+ * `data-open-menu`. That keeps this a server component.
  */
 export function MenuButton({ className = "" }: { className?: string }) {
   return (

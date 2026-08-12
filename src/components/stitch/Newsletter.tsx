@@ -66,12 +66,12 @@ export function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-1 bg-white/5 border border-white/20 px-5 py-4 font-body-md text-white placeholder:text-white/40 focus:outline-none focus:border-gold transition-colors"
+              className="min-w-0 flex-1 bg-white/5 border border-white/20 px-5 py-4 font-body-md text-white placeholder:text-white/40 focus:outline-none focus:border-gold transition-colors"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="bg-gold text-noir px-8 py-4 font-label-caps text-label-caps uppercase tracking-[0.15em] hover:bg-gold-light transition-colors disabled:opacity-60"
+              className="shrink-0 bg-gold text-noir px-8 py-4 font-label-caps text-label-caps uppercase tracking-[0.15em] hover:bg-gold-light transition-colors disabled:opacity-60"
             >
               {status === "loading" ? "Sending…" : "Subscribe"}
             </button>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { services } from "@/lib/services";
 import { posterFor } from "@/lib/media";
+import { Icon } from "@/components/ui/icon";
 
 /*
  * One photograph per featured service. Only the frontal installation has a
@@ -85,7 +86,7 @@ export function LuxuryServicesEditorial() {
                 className="inline-flex items-center gap-2 font-label-caps text-[11px] uppercase tracking-[0.2em]"
               >
                 Reserve
-                <span className="material-symbols-outlined text-sm">north_east</span>
+                <Icon name="north_east" className="text-sm" />
               </Link>
             </div>
           </motion.div>

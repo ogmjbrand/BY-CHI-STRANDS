@@ -11,6 +11,7 @@ import { ProductBadges } from "@/components/stitch/ProductBadges";
 import { ImageReveal } from "@/components/ui/image-reveal";
 import { site, whatsappLink } from "@/lib/site";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -117,7 +118,7 @@ export default async function ProductPage({
             <ul className="space-y-2">
               {product.details.map((d) => (
                 <li key={d} className="flex gap-3 font-body-sm text-on-surface-variant">
-                  <span className="material-symbols-outlined text-primary text-base">check</span>
+                  <Icon name="check" className="text-primary text-base" />
                   {d}
                 </li>
               ))}
@@ -182,7 +183,7 @@ export default async function ProductPage({
               rel="noopener noreferrer"
               className="p-4 border border-outline-variant rounded-lg active:scale-95 transition-transform"
             >
-              <span className="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
+              <Icon name="chat_bubble" className="text-on-surface-variant" />
             </a>
           </div>
         </div>
@@ -227,9 +228,7 @@ export default async function ProductPage({
                 Book Appointment
               </Link>
               <div className="flex gap-4 items-center">
-                <Link href="/cart" className="material-symbols-outlined text-2xl cursor-pointer hover:text-primary transition-colors">
-                  shopping_bag
-                </Link>
+                <Link href="/cart" className="text-2xl cursor-pointer hover:text-primary transition-colors"><Icon data-bag-trigger name="shopping_bag" /></Link>
               </div>
             </div>
           </div>
@@ -273,13 +272,13 @@ export default async function ProductPage({
               {/* Details */}
               <section className="bg-surface-container-low p-12 space-y-8">
                 <div className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary scale-125">spa</span>
+                  <Icon name="spa" className="text-primary scale-125" />
                   <h3 className="font-headline-lg text-headline-lg uppercase tracking-widest text-sm">What Makes It</h3>
                 </div>
                 <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4">
                   {product.details.map((d) => (
                     <li key={d} className="flex gap-3 font-body-sm text-body-sm text-on-surface-variant">
-                      <span className="material-symbols-outlined text-primary text-base">check</span>
+                      <Icon name="check" className="text-primary text-base" />
                       {d}
                     </li>
                   ))}
@@ -372,15 +371,9 @@ export default async function ProductPage({
                 Elevating human beauty through timeless Vietnamese artistry and meticulous hand-tied craftsmanship.
               </p>
               <div className="flex gap-4">
-                <a href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer" className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" aria-label="Instagram">
-                  photo_camera
-                </a>
-                <a href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer" className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" aria-label="TikTok">
-                  music_note
-                </a>
-                <a href={`mailto:${site.email}`} className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" aria-label="Email">
-                  mail
-                </a>
+                <a href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-primary transition-colors" aria-label="Instagram"><Icon name="photo_camera" /></a>
+                <a href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-primary transition-colors" aria-label="TikTok"><Icon name="music_note" /></a>
+                <a href={`mailto:${site.email}`} className="cursor-pointer hover:text-primary transition-colors" aria-label="Email"><Icon name="mail" /></a>
               </div>
             </div>
             <div className="space-y-6">
@@ -422,7 +415,7 @@ export default async function ProductPage({
               <p className="font-body-sm text-on-surface-variant">Receive exclusive access to new atelier releases.</p>
               <div className="flex border-b border-outline-variant pb-2">
                 <input className="bg-transparent border-none focus:ring-0 w-full text-xs font-label-caps" placeholder="YOUR EMAIL" type="email" />
-                <button className="material-symbols-outlined text-primary">chevron_right</button>
+                <button className="text-primary"><Icon name="chevron_right" /></button>
               </div>
             </div>
           </div>

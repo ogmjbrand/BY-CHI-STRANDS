@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_aftercare_portal
@@ -98,7 +99,7 @@ export default function AftercarePage() {
                 className="inline-flex items-center gap-2 bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors"
               >
                 Book Hair Laundry
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-[18px]" />
               </Link>
             </div>
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -126,7 +127,7 @@ export default function AftercarePage() {
             className="inline-flex items-center gap-2 border border-primary text-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors"
           >
             View Hair Tools
-            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            <Icon name="arrow_forward" className="text-[18px]" />
           </Link>
         </section>
 
@@ -149,7 +150,7 @@ export default function AftercarePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors"
             >
-              <span className="material-symbols-outlined text-sm">chat_bubble</span>
+              <Icon name="chat_bubble" className="text-sm" />
               Message the Concierge
             </a>
           </div>

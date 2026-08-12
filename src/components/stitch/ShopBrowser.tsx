@@ -21,6 +21,7 @@ import { ProductMedia } from "./ProductMedia";
 import { ProductBadges } from "./ProductBadges";
 import { QuickView } from "./QuickView";
 import { useStore } from "@/context/StoreContext";
+import { Icon } from "@/components/ui/icon";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -197,12 +198,7 @@ export function ShopBrowser() {
               className="w-full text-left font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all flex justify-between items-center"
             >
               Lace Type
-              <span
-                className="material-symbols-outlined transition-transform duration-300"
-                style={{ transform: laceOpen ? "rotate(180deg)" : "none" }}
-              >
-                expand_more
-              </span>
+              <Icon name="expand_more" className="transition-transform duration-300" style={{ transform: laceOpen ? "rotate(180deg)" : "none" }} />
             </button>
             {laceOpen ? (
               <div className="space-y-3 mt-5">
@@ -335,12 +331,12 @@ export function ShopBrowser() {
                       aria-label={saved ? "Remove from wishlist" : "Save to wishlist"}
                       className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-noir hover:text-primary transition-colors z-10"
                     >
-                      <span
-                        className={`material-symbols-outlined ${saved ? "text-primary" : ""}`}
-                        style={{ fontVariationSettings: saved ? "'FILL' 1" : "'FILL' 0" }}
-                      >
-                        favorite
-                      </span>
+                      <Icon
+                        data-wishlist-trigger
+                        name="favorite"
+                        filled={saved}
+                        className={saved ? "text-primary" : ""}
+                      />
                     </button>
                   </div>
 

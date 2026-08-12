@@ -385,9 +385,6 @@
 }
 
 /* ═══ digital_flagship_academy ═══ */
-:where(.scr-academy) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-academy) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -421,9 +418,6 @@
 
 
 /* ═══ digital_flagship_academy_enrollment ═══ */
-:where(.scr-academy-enrollment) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-academy-enrollment) .luxury-shadow {
   box-shadow: 0px 20px 50px rgba(0,0,0,0.04);
         }
@@ -451,9 +445,6 @@
 
 
 /* ═══ digital_flagship_academy_live_session_1 ═══ */
-:where(.scr-academy-live-session-1) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-academy-live-session-1) .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
@@ -491,10 +482,6 @@
 
 
 /* ═══ digital_flagship_academy_live_session_2 ═══ */
-:where(.scr-academy-live-session-2) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            transition: all 0.3s ease;
-        }
 :where(.scr-academy-live-session-2) .active-tab { border-bottom: 2px solid #755b15; color: #755b15; }
 :where(.scr-academy-live-session-2) .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
 :where(.scr-academy-live-session-2) .hide-scrollbar::-webkit-scrollbar { display: none; }
@@ -505,9 +492,6 @@
 
 
 /* ═══ digital_flagship_academy_live_session_3 ═══ */
-:where(.scr-academy-live-session-3) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-academy-live-session-3) .live-pulse {
             animation: pulse_digitalflagshipacademylivesession3 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -527,9 +511,6 @@
 
 
 /* ═══ digital_flagship_academy_resource_library ═══ */
-:where(.scr-academy-resource-library) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-academy-resource-library) .luxury-gradient {
             background: linear-gradient(180deg, rgba(252, 249, 248, 0) 0%, rgba(252, 249, 248, 1) 100%);
         }
@@ -549,9 +530,6 @@
 :where(.scr-aftercare-portal) .glass-effect {
             backdrop-filter: blur(20px);
             background: rgba(255, 255, 255, 0.8);
-        }
-:where(.scr-aftercare-portal) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 :where(.scr-aftercare-portal) .silk-border-hover {
             position: relative;
@@ -577,9 +555,6 @@
 
 
 /* ═══ digital_flagship_atelier_booking_confirmation ═══ */
-:where(.scr-atelier-booking-confirmation) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-atelier-booking-confirmation) .text-shadow-subtle {
             text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
         }
@@ -599,10 +574,6 @@
 
 
 /* ═══ digital_flagship_atelier_service_booking ═══ */
-:where(.scr-atelier-service-booking) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
 :where(.scr-atelier-service-booking) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -637,10 +608,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_aura_stories_gallery ═══ */
-:where(.scr-aura-stories-gallery) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-            transition: all 0.3s ease;
-        }
 :where(.scr-aura-stories-gallery) .hero-gradient {
             background: linear-gradient(180deg, rgba(28, 27, 27, 0) 0%, rgba(28, 27, 27, 0.6) 100%);
         }
@@ -679,9 +646,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_book_mentorship_popup ═══ */
-:where(.scr-book-mentorship-popup) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-book-mentorship-popup) .luxury-gradient {
             background: linear-gradient(180deg, rgba(252, 249, 248, 0) 0%, rgba(252, 249, 248, 1) 100%);
         }
@@ -693,9 +657,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_client_profile ═══ */
-:where(.scr-client-profile) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-client-profile) .text-label-caps { text-transform: uppercase; letter-spacing: 0.15em; }
 :where(.scr-client-profile) .glass-effect { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 :where(.scr-client-profile) .hover-gold-underline::after {
@@ -720,9 +681,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_customer_dashboard ═══ */
-:where(.scr-customer-dashboard) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-customer-dashboard) .fade-in { animation: fadeIn_digitalflagshipcustomerdashboard 0.8s ease-out forwards; }
 
         @keyframes fadeIn_digitalflagshipcustomerdashboard {
@@ -746,7 +704,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 /* ═══ digital_flagship_homepage ═══ */
 :where(.scr-homepage) .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 :where(.scr-homepage) .reveal.active { opacity: 1; transform: translateY(0); }
-:where(.scr-homepage) .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 :where(.scr-homepage) .hero-gradient { background: linear-gradient(to bottom, rgba(252,249,248,0) 0%, rgba(252,249,248,1) 100%); }
 :where(.scr-homepage) .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 :where(.scr-homepage) .hover-underline::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s ease; }
@@ -758,7 +715,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 /* ═══ digital_flagship_homepage_with_client_narratives ═══ */
 :where(.scr-homepage-with-client-narratives) .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 :where(.scr-homepage-with-client-narratives) .reveal.active { opacity: 1; transform: translateY(0); }
-:where(.scr-homepage-with-client-narratives) .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 :where(.scr-homepage-with-client-narratives) .hero-gradient { background: linear-gradient(to bottom, rgba(252,249,248,0) 0%, rgba(252,249,248,1) 100%); }
 :where(.scr-homepage-with-client-narratives) .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 :where(.scr-homepage-with-client-narratives) .hover-underline::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s ease; }
@@ -768,9 +724,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_luxury_checkout ═══ */
-:where(.scr-luxury-checkout) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-luxury-checkout) .fade-in {
             animation: fadeIn_digitalflagshipluxurycheckout 0.8s ease-out forwards;
         }
@@ -801,9 +754,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mentorship_confirmation ═══ */
-:where(.scr-mentorship-confirmation) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-mentorship-confirmation) .silk-gradient {
             background: linear-gradient(135deg, rgba(252,249,248,1) 0%, rgba(240,237,236,1) 100%);
         }
@@ -826,9 +776,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mobile_homepage ═══ */
-:where(.scr-mobile-homepage) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-mobile-homepage) .backdrop-blur-luxury {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -854,10 +801,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mobile_luxury_checkout ═══ */
-:where(.scr-mobile-luxury-checkout) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
 :where(.scr-mobile-luxury-checkout) .step-active {
         }
 :where(.scr-mobile-luxury-checkout) .step-inactive {
@@ -885,9 +828,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mobile_order_confirmation ═══ */
-:where(.scr-mobile-order-confirmation) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 
         @keyframes fadeInScale_digitalflagshipmobileorderconfirmation {
 
@@ -909,16 +849,13 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mobile_review_submission_form ═══ */
-:where(.scr-mobile-review-submission-form) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
 :where(.scr-mobile-review-submission-form) .silk-gradient {
             background: linear-gradient(135deg, #fcf9f8 0%, #f6f3f2 100%);
         }
 :where(.scr-mobile-review-submission-form) .star-active {
-            font-variation-settings: 'FILL' 1 !important;
+            /* was `font-variation-settings: 'FILL' 1` — a variable-font axis.
+               The stars are SVG paths now, so filling one is a paint. */
+            fill: currentColor;
             color: #755b15;
         }
 :where(.scr-mobile-review-submission-form) input:focus,
@@ -943,9 +880,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_mobile_signature_wigs_pdp ═══ */
-:where(.scr-mobile-signature-wigs-pdp) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-mobile-signature-wigs-pdp) .snap-x::-webkit-scrollbar { display: none; }
 :where(.scr-mobile-signature-wigs-pdp) .glass-header {
             background: rgba(252, 249, 248, 0.8);
@@ -980,9 +914,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_order_confirmation ═══ */
-:where(.scr-order-confirmation) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-order-confirmation) .editorial-reveal {
             animation: revealUp_digitalflagshiporderconfirmation 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -1004,9 +935,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_order_details ═══ */
-:where(.scr-order-details) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-order-details) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -1022,9 +950,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_post_purchase_concierge ═══ */
-:where(.scr-post-purchase-concierge) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-post-purchase-concierge) .text-label-caps {
             font-family: var(--font-inter), sans-serif;
             text-transform: uppercase;
@@ -1069,14 +994,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_review_submission_form ═══ */
-:where(.scr-review-submission-form) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-:where(.scr-review-submission-form) .star-rating .material-symbols-outlined {
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
 :where(.scr-review-submission-form) .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
@@ -1109,10 +1026,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 /* ═══ digital_flagship_shop_all ═══ */
 :where(.scr-shop-all) { font-family: var(--font-inter), sans-serif; background-color: #fcf9f8; }
-:where(.scr-shop-all) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
 :where(.scr-shop-all) .luxury-shadow { box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04); }
 :where(.scr-shop-all) .clip-path-oblique { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
 :where(.scr-shop-all) .product-card-overlay {
@@ -1126,9 +1039,6 @@ html:has(.scr-atelier-service-booking)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_shopping_bag_sidebar ═══ */
-:where(.scr-shopping-bag-sidebar) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-shopping-bag-sidebar) .bag-overlay-active {
             opacity: 1;
             pointer-events: auto;
@@ -1153,11 +1063,6 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_signature_services_1 ═══ */
-:where(.scr-signature-services-1) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
 :where(.scr-signature-services-1) .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
@@ -1186,9 +1091,6 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
 
 
 /* ═══ digital_flagship_signature_services_2 ═══ */
-:where(.scr-signature-services-2) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-signature-services-2) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -1227,9 +1129,6 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
             color: #1c1b1b;
             -webkit-font-smoothing: antialiased;
         }
-:where(.scr-signature-wigs-pdp) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-signature-wigs-pdp) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -1260,9 +1159,6 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
             color: #1c1b1b;
             -webkit-font-smoothing: antialiased;
         }
-:where(.scr-signature-wigs-pdp-with-reviews) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-signature-wigs-pdp-with-reviews) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
@@ -1289,8 +1185,7 @@ html:has(.scr-shopping-bag-sidebar)::-webkit-scrollbar-thumb {
 
 /* ═══ digital_flagship_student_dashboard ═══ */
 :where(.scr-student-dashboard) { background-color: #fcf9f8; }
-:where(.scr-student-dashboard) .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-:where(.scr-student-dashboard) .active-tab { font-variation-settings: 'FILL' 1; }
+:where(.scr-student-dashboard) .active-tab { fill: currentColor; }
 :where(.scr-student-dashboard) .luxury-shadow { box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04); }
 :where(.scr-student-dashboard) .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 :where(.scr-student-dashboard) .transition-soft { transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1); }
@@ -1308,9 +1203,6 @@ html:has(.scr-student-dashboard)::-webkit-scrollbar-thumb { background: #d0c5b3;
 
 
 /* ═══ digital_flagship_student_welcome_kit ═══ */
-:where(.scr-student-welcome-kit) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
 :where(.scr-student-welcome-kit) .hero-gradient {
             background: linear-gradient(180deg, rgba(252,249,248,0) 0%, rgba(252,249,248,1) 100%);
         }
@@ -1332,9 +1224,6 @@ html:has(.scr-student-dashboard)::-webkit-scrollbar-thumb { background: #d0c5b3;
             background-color: #fcf9f8;
             color: #1c1b1b;
             -webkit-font-smoothing: antialiased;
-        }
-:where(.scr-the-boutique) .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 :where(.scr-the-boutique) .glass-nav {
             backdrop-filter: blur(20px);

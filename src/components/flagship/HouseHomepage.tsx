@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowRight, Menu, Search, ShoppingBag } from "lucide-react";
 import { useRef } from "react";
+import { TransformationReveal } from "./TransformationReveal";
 
 const collections = [
   { name: "Bone Straight", label: "THE SIGNATURE", image: "/products/IMG-20260726-WA0015.jpg", href: "/collections" },
@@ -124,6 +125,11 @@ export function HouseHomepage() {
         </section>
 
         <section className="bg-[#f5f0e8] px-5 py-24 text-[#0b0907] md:px-10 md:py-36"><div className="mx-auto max-w-[1760px]"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#8b6244]">05 / The Pieces</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">Made to be<br /><i>remembered.</i></h2></div><Link href="/shop" className="border-b border-[#c8a45d] pb-2 text-[8px] uppercase tracking-[.35em] text-[#8b6244]">Shop all</Link></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[...collections, { name: "Colour Editions", label: "PRIVATE EDIT", image: "/products/IMG-20260727-WA0045.jpg", href: "/collections" }].map((item) => <Link key={item.name} href={item.href} className="group"><div className="relative aspect-[4/5] overflow-hidden bg-[#e6ddd0]"><Image src={item.image} alt={item.name} fill sizes="25vw" className="object-cover transition duration-1000 group-hover:scale-[1.04]" /></div><div className="flex items-start justify-between gap-4 pt-4"><div><p className="text-[8px] uppercase tracking-[.35em] text-[#8b6244]">{item.label}</p><h3 className="mt-2 font-serif text-2xl">{item.name}</h3></div><ArrowRight size={17} className="mt-2 text-[#c8a45d] transition group-hover:translate-x-1" /></div></Link>)}</div></div></section>
+
+
+        {/* 06 — the before/after chapter. See TransformationReveal for why the
+            starting frame is a marked placeholder rather than a photograph. */}
+        <TransformationReveal />
 
         <section className="relative overflow-hidden bg-black px-5 py-28 md:px-10 md:py-44"><div className="absolute inset-0 opacity-45"><Image src="/products/IMG-20260727-WA0045.jpg" alt="" fill sizes="100vw" className="object-cover" /></div><div className="absolute inset-0 bg-black/65" /><div className="relative z-10 mx-auto max-w-[1760px] text-center"><p className="mb-7 text-[8px] uppercase tracking-[.6em] text-[#c8a45d]">The ByChi House</p><h2 className="font-serif text-[clamp(4rem,10vw,12rem)] leading-[.68] tracking-[-.07em]">Your hair.<br /><i className="text-[#c8a45d]">Your standard.</i></h2><p className="mx-auto mt-10 max-w-xl text-sm leading-7 text-white/60">Choose your piece, speak with a concierge, or step inside the House in Lagos.</p><div className="mx-auto mt-10 flex max-w-xl flex-col gap-3 sm:flex-row"><Link href="/collections" className="flex flex-1 items-center justify-center bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907]">Shop the House</Link><Link href="/book" className="flex flex-1 items-center justify-center border border-white/30 px-6 py-5 text-[9px] uppercase tracking-[.32em] text-white">Book Concierge</Link></div></div></section>
       </main>

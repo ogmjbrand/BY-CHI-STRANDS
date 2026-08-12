@@ -75,6 +75,10 @@ const BLOCKS: PolicyBlock[] = [
     body: [
       "Orders, bookings, Academy enrolments, enquiries, reviews and mailing-list entries are stored in our database, hosted by Supabase. Access is limited to the people running the house.",
     ],
+    pending: [
+      "How long each kind of record is kept before deletion has not been fixed yet, so no retention period is stated on this page.",
+      "Rather than publish a number we do not hold ourselves to, the position is the one below: ask, and we delete what we are not legally required to keep.",
+    ],
   },
   {
     heading: "Who else sees it",
@@ -107,6 +111,10 @@ const BLOCKS: PolicyBlock[] = [
     heading: "How to ask",
     body: [
       `Write to ${site.email} or message the concierge on WhatsApp. Requests are answered within one business day, and acted on as quickly as the request allows. Tell us the email address you used at checkout so we can find your records.`,
+    ],
+    pending: [
+      "The registered data controller — the legal entity accountable for these records — is not named on this page yet, and nor is a supervisory authority to escalate to.",
+      "The concierge address above reaches the people who actually hold the data, and works for any request in the meantime.",
     ],
   },
 ];

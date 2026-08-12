@@ -9,6 +9,17 @@ export interface PolicyBlock {
   rows?: { term: string; detail: string }[];
   /** Optional bullet list. */
   points?: string[];
+  /**
+   * Information the house has to supply before this section is complete —
+   * a registered entity name, a governing jurisdiction, a retention period.
+   *
+   * Rendered as a visibly marked panel rather than folded into the prose.
+   * A legal page that quietly omits its jurisdiction reads as finished; one
+   * that says "this is not settled yet" is honest, and a reader relying on
+   * it can see exactly where the gap is. Nothing here is ever invented to
+   * fill the space.
+   */
+  pending?: string[];
 }
 
 /**
@@ -78,6 +89,24 @@ export function PolicyBody({
                   </li>
                 ))}
               </ul>
+            ) : null}
+
+            {b.pending ? (
+              <div className="mt-8 border-l-2 border-primary/60 bg-surface-container-low/60 px-6 py-5">
+                <p className="font-label-caps text-[10px] uppercase tracking-[0.22em] text-primary">
+                  To be confirmed
+                </p>
+                <ul className="mt-4 space-y-2.5">
+                  {b.pending.map((pt) => (
+                    <li
+                      key={pt}
+                      className="font-body-sm leading-relaxed text-on-surface-variant/85"
+                    >
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ) : null}
           </section>
         ))}

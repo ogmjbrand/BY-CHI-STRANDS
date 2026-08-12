@@ -14,6 +14,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useStore, linePrice, lineIsQuote } from "@/context/StoreContext";
 import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
+import { Icon } from "@/components/ui/icon";
 
 /* ── open/close state, shared with the header bag icons ─────────── */
 
@@ -120,18 +121,18 @@ function CartDrawer() {
             </p>
           </div>
           <button onClick={close} className="group p-2 -mr-2" aria-label="Close bag">
-            <span className="material-symbols-outlined text-tertiary group-hover:text-primary transition-colors duration-300">
-              close
-            </span>
+            <Icon name="close" className="text-tertiary group-hover:text-primary transition-colors duration-300" />
           </button>
         </header>
 
         <div className="flex-1 overflow-y-auto px-6 md:px-10 py-8 space-y-12">
           {!hydrated ? null : cart.length === 0 ? (
             <div className="text-center py-16">
-              <span className="material-symbols-outlined text-primary text-5xl mb-8 block opacity-40">
-                shopping_bag
-              </span>
+              {/* No data-bag-trigger: this is the empty-state illustration
+                  inside the open drawer, not a way in. Marking it would have
+                  StoreBridge bind "open the cart" to the cart, and staple a
+                  live count badge onto a decorative graphic. */}
+              <Icon name="shopping_bag" className="text-primary text-5xl mb-8 block opacity-40" />
               <p className="font-body-xl text-body-xl text-tertiary mb-10">
                 Your selection is empty.
               </p>
@@ -200,9 +201,7 @@ function CartDrawer() {
                             className="w-8 h-8 flex items-center justify-center text-tertiary hover:text-primary transition-colors"
                             aria-label="Decrease quantity"
                           >
-                            <span className="material-symbols-outlined text-sm">
-                              remove
-                            </span>
+                            <Icon name="remove" className="text-sm" />
                           </button>
                           <span className="w-8 text-center font-body-sm tabular-nums">
                             {line.qty}
@@ -212,9 +211,7 @@ function CartDrawer() {
                             className="w-8 h-8 flex items-center justify-center text-tertiary hover:text-primary transition-colors"
                             aria-label="Increase quantity"
                           >
-                            <span className="material-symbols-outlined text-sm">
-                              add
-                            </span>
+                            <Icon name="add" className="text-sm" />
                           </button>
                         </div>
 
@@ -240,9 +237,7 @@ function CartDrawer() {
           {cart.length > 0 ? (
             <section className="space-y-4">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-tertiary text-sm">
-                  auto_awesome
-                </span>
+                <Icon name="auto_awesome" className="text-tertiary text-sm" />
                 <h4 className="font-label-caps text-on-surface-variant">
                   Concierge Notes
                 </h4>

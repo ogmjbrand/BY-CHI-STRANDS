@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { getProduct } from "@/lib/products";
 import { useToast } from "@/components/stitch/Toast";
 import { site } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_review_submission_form
@@ -60,7 +61,8 @@ function ReviewFormContent() {
   if (status === "done") {
     return (
       <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-32">
-        <span className="material-symbols-outlined text-primary text-5xl mb-8">favorite</span>
+        {/* Decorative thank-you mark, not an affordance. */}
+        <Icon name="favorite" className="text-primary text-5xl mb-8" />
         <h1 className="font-display-md text-headline-lg mb-4">Thank you for sharing.</h1>
         <p className="font-body-md text-on-surface-variant max-w-md mb-10">
           Your story has been sent to our team. We read every one, and may feature yours in our
@@ -135,12 +137,11 @@ function ReviewFormContent() {
                 aria-label={`${n} star${n === 1 ? "" : "s"}`}
                 className="transition-transform duration-200 hover:scale-110"
               >
-                <span
-                  className="material-symbols-outlined text-4xl text-primary"
-                  style={{ fontVariationSettings: (hoverRating || rating) >= n ? "'FILL' 1" : "'FILL' 0" }}
-                >
-                  star
-                </span>
+                <Icon
+                  name="star"
+                  filled={(hoverRating || rating) >= n}
+                  className="text-4xl text-primary"
+                />
               </button>
             ))}
           </div>
