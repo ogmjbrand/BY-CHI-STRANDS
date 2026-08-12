@@ -1,88 +1,73 @@
 import { FlagshipHeader } from "@/components/flagship/FlagshipHeader";
 import { FlagshipHero } from "@/components/flagship/FlagshipHero";
-import { AssuranceStrip } from "@/components/flagship/AssuranceStrip";
 import { BrandStoryEditorial } from "@/components/flagship/BrandStoryEditorial";
 import { CollectionsEditorial } from "@/components/flagship/CollectionsEditorial";
 import { CraftsmanshipFilm } from "@/components/flagship/CraftsmanshipFilm";
-import { LuxuryServicesEditorial } from "@/components/flagship/LuxuryServicesEditorial";
 import { TransformationMosaic } from "@/components/flagship/TransformationMosaic";
-import { CinematicScene } from "@/components/flagship/CinematicScene";
+import { FounderSection } from "@/components/flagship/FounderSection";
 import { OurPromise } from "@/components/flagship/OurPromise";
-import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
+import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
 import { JournalEditorial } from "@/components/flagship/JournalEditorial";
 import { FlagshipFooter } from "@/components/flagship/FlagshipFooter";
-import { LuxuryExperienceSection } from "@/components/flagship/LuxuryExperienceSection";
-import { LuxuryManifestoSection } from "@/components/flagship/LuxuryManifestoSection";
-import { HouseMethodSection } from "@/components/flagship/HouseMethodSection";
 import { TextureMarquee } from "@/components/stitch/TextureMarquee";
-import { StatsBand } from "@/components/stitch/StatsBand";
-import { ClientTestimonialsCarousel } from "@/components/stitch/ClientTestimonialsCarousel";
-import { ClientConciergeSection } from "@/components/flagship/ClientConciergeSection";
-import { HairOriginsSection } from "@/components/flagship/HairOriginsSection";
-import { HomeFaqSection } from "@/components/flagship/HomeFaqSection";
-import { FounderSection } from "@/components/flagship/FounderSection";
 import { BrandSeal } from "@/components/flagship/BrandSeal";
-import { HouseSignature } from "@/components/flagship/HouseSignature";
-import { EditorialBand } from "@/components/flagship/EditorialBand";
 
 /**
- * ByChi Strands flagship homepage — built from scratch as a single
- * responsive component tree, not a restyled Stitch export. No mobile/desktop
- * duplication, no boxed ecommerce trust-bars or pricing cards: every section
- * is bespoke editorial composition (cinematic hero, asymmetric brand story,
- * alternating collection panels, a craftsmanship film strip, a numbered
- * services list, an immersive testimonial mosaic) built on real catalogue,
- * service, journal and testimonial data throughout.
+ * ByChi Strands — immersive flagship homepage.
+ *
+ * The homepage is intentionally paced like a luxury campaign rather than a
+ * conventional ecommerce template: hero -> statement -> texture -> story ->
+ * craft -> collections -> transformation -> founder -> social proof -> journal.
+ * Existing commerce, account and checkout routes remain untouched.
  */
 export default function HomePage() {
   return (
-    /*
-     * theme-noir flips every surface/on-surface/outline token to the noir &
-     * gold palette in one place (see globals.css). Without it the homepage
-     * fell back to the light Editorial Couture cream, which left the majority
-     * of the page white — the opposite of the house's dark-luxury register.
-     */
     <div className="theme-noir bg-surface text-on-surface">
       <FlagshipHeader />
-      <FlagshipHero />
-      <TextureMarquee />
-      {/* Answers the practical questions before the storytelling starts. */}
-      <AssuranceStrip />
-      <BrandStoryEditorial />
-      <StatsBand />
-      <LuxuryManifestoSection />
-      <HairOriginsSection />
-      <CraftsmanshipFilm />
-      <HouseMethodSection />
-      <CinematicScene />
 
-      {/* The mark, stamped between chapters — see BrandSeal. */}
-      <BrandSeal label="The Collections" />
-      <CollectionsEditorial />
+      <main>
+        <FlagshipHero />
 
-      <HouseSignature />
-      <EditorialBand />
+        {/* Quiet editorial pause after the hero: texture becomes the bridge. */}
+        <TextureMarquee />
 
-      <LuxuryExperienceSection />
-      <BrandSeal label="The Atelier" />
-      <LuxuryServicesEditorial />
-      <TransformationMosaic />
-      <FounderSection />
-      <OurPromise />
+        <BrandStoryEditorial />
 
-      <section className="overflow-hidden bg-surface-container-low px-6 py-32 text-center md:px-16 md:py-48">
-        <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary">In Their Words</p>
-        <h2 className="mb-16 font-display-lg text-4xl leading-[1.05] tracking-[-0.02em] md:mb-24 md:text-6xl">
-          Echoes of elegance.
-        </h2>
-        <ClientTestimonialsCarousel />
-      </section>
+        <section className="overflow-hidden bg-surface px-6 py-28 md:px-16 md:py-44">
+          <div className="mx-auto max-w-[1500px]">
+            <p className="mb-7 font-label-caps text-[10px] uppercase tracking-[0.34em] text-primary">
+              The ByChi standard
+            </p>
+            <h2 className="max-w-6xl font-display-lg text-[clamp(2.8rem,7vw,7.5rem)] leading-[0.9] tracking-[-0.035em]">
+              Hair should move like it belongs to you.
+            </h2>
+          </div>
+        </section>
 
-      <HomeFaqSection />
-      <ClientConciergeSection />
-      <AcademyCinematic />
-      <BrandSeal label="The Journal" />
-      <JournalEditorial />
+        <CraftsmanshipFilm />
+
+        <BrandSeal label="The Collections" />
+        <CollectionsEditorial />
+
+        <TransformationMosaic />
+
+        <FounderSection />
+        <OurPromise />
+
+        <section className="overflow-hidden bg-surface-container-low px-6 py-28 text-center md:px-16 md:py-40">
+          <p className="mb-6 font-label-caps text-[10px] uppercase tracking-[0.34em] text-primary">
+            In their words
+          </p>
+          <h2 className="mx-auto mb-16 max-w-4xl font-display-lg text-[clamp(2.6rem,6vw,6rem)] leading-[0.92] tracking-[-0.03em] md:mb-24">
+            Confidence leaves an impression.
+          </h2>
+          <ClientTestimonialsCarousel />
+        </section>
+
+        <BrandSeal label="The Journal" />
+        <JournalEditorial />
+      </main>
+
       <FlagshipFooter />
     </div>
   );
