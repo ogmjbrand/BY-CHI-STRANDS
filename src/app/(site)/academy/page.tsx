@@ -28,7 +28,7 @@ export default function AcademyPage() {
             ByChi Strands
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
               Shop
             </Link>
@@ -51,14 +51,14 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div className="flex items-center space-x-6">
-            <Link href="/book" className="hidden md:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
+            <Link href="/book" className="hidden lg:block bg-on-surface text-surface px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all duration-300 scale-95 active:scale-100">
               Book Appointment
             </Link>
             {" "}
             <div className="flex items-center space-x-4">
               <Link href="/cart" aria-label="Your bag" className="text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300"><Icon data-bag-trigger name="shopping_bag" /></Link>
               {" "}
-              <button data-open-menu="" className="md:hidden text-on-surface cursor-pointer" aria-label="Open menu">
+              <button data-open-menu="" className="lg:hidden text-on-surface cursor-pointer" aria-label="Open menu">
                 <Icon name="menu" />
               </button>
             </div>

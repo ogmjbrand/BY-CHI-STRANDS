@@ -29,7 +29,7 @@ export default function SignatureServices1Page() {
               ByChi Strands
             </Link>
             {" "}
-            <div className="hidden md:flex gap-8 items-center">
+            <div className="hidden lg:flex gap-8 items-center">
               <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
                 Shop
               </Link>
@@ -55,14 +55,14 @@ export default function SignatureServices1Page() {
           <div className="flex items-center gap-6">
             <Link
               href="/book"
-              className="hidden md:block bg-on-surface text-surface py-3 px-8 text-label-caps hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase tracking-[0.15em]"
+              className="hidden lg:block bg-on-surface text-surface py-3 px-8 text-label-caps hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase tracking-[0.15em]"
             >
               Book Appointment
             </Link>
             {" "}
             <div className="flex gap-4">
               <Link href="/cart" aria-label="Your bag" className="text-on-surface-variant cursor-pointer hover:text-primary transition-all"><Icon data-bag-trigger name="shopping_bag" /></Link>
-              <button data-open-menu="" className="md:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
+              <button data-open-menu="" className="lg:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
                 <Icon name="menu" />
               </button>
             </div>
@@ -333,7 +333,7 @@ export default function SignatureServices1Page() {
           </div>
         </section>
         {/* Interactive Booking Widget */}
-        <section className="py-section-padding bg-surface-container-low md:mx-[-80px] px-margin-mobile md:px-margin-desktop mb-section-padding" id="booking">
+        <section className="py-section-padding bg-surface-container-low md:mx-[calc(var(--spacing-margin-desktop)*-1)] px-margin-mobile md:px-margin-desktop mb-section-padding" id="booking">
           <div className="max-w-container-max mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div className="reveal-up">

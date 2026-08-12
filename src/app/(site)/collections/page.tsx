@@ -179,7 +179,7 @@ export default function TheBoutiquePage() {
             <p className="font-body-sm text-on-surface-variant text-center md:text-left">Redefining the standard of luxury hair through artisan excellence.</p>
           </div>
           {" "}
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
               Privacy Policy
             </Link>

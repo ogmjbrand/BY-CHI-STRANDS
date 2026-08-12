@@ -19,8 +19,8 @@ export function StitchHeader() {
     <header className="fixed top-0 left-0 w-full z-50 bg-surface/80 nav-blur border-b border-outline-variant/30">
       <div className="flex justify-between items-center gap-2 w-full px-4 md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
         <div className="flex flex-1 items-center gap-8">
-          <MenuButton className="-ml-2 md:hidden" />
-          <nav className="hidden md:flex gap-8">
+          <MenuButton className="-ml-2 lg:hidden" />
+          <nav className="hidden lg:flex gap-6 xl:gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
               href="/shop"
@@ -41,13 +41,20 @@ export function StitchHeader() {
             </Link>
           </nav>
         </div>
-        <div className="flex shrink-0 items-center">
+        {/*
+          The margin guarantees the mark's clearance. Both rails are flex-1,
+          but the right one carries a nav, the utility rail and the booking
+          CTA, so it settles at its content width and stops sharing the free
+          space — leaving the mark shoved off centre and 8px from "Academy"
+          while the nav links themselves sat 32px apart.
+        */}
+        <div className="flex shrink-0 items-center mx-4 lg:mx-8">
           <Link href="/">
             <Wordmark size="sm" withSeal className="text-on-surface" />
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end gap-8">
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden lg:flex gap-6 xl:gap-8">
             <Link
               className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
               href="/academy"
@@ -179,7 +186,7 @@ export function StitchFooter() {
         <p className="font-body-md text-body-sm text-on-surface-variant">
           © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
         </p>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
           <a
             className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
             href={site.socials.instagram.url}

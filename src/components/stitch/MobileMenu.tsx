@@ -10,6 +10,12 @@ import { Icon } from "@/components/ui/icon";
  * The screens draw a `menu` icon at small sizes but ship no drawer behind it.
  * This supplies one in the same idiom as the bag sidebar: full-height panel,
  * 700ms slide, blurred scrim, page locked behind it.
+ *
+ * The panel and its scrim are hidden at `xl`, not at `md`, because that is
+ * the widest breakpoint any trigger survives to: SiteHeader carries eight nav
+ * links and keeps its menu button until 1280. Gating the panel narrower than
+ * the button that opens it is invisible in code and obvious in use — the
+ * button responds, state flips, and nothing appears.
  */
 
 const PRIMARY = [
@@ -100,7 +106,7 @@ export function MobileMenu() {
         initial={false}
         animate={{ opacity: open ? 1 : 0 }}
         transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[65] md:hidden ${
+        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[65] xl:hidden ${
           open ? "" : "pointer-events-none"
         }`}
       />
@@ -115,7 +121,7 @@ export function MobileMenu() {
             ? { duration: 0 }
             : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
         }
-        className="theme-noir fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col md:hidden"
+        className="theme-noir fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col xl:hidden"
       >
         <div className="flex justify-between items-center px-margin-mobile pt-10 pb-6 border-b border-outline-variant/10">
           <span className="font-display-md text-headline-lg tracking-widest text-primary uppercase">

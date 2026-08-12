@@ -55,7 +55,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
           <Wordmark size="md" withSeal className={dark ? "text-white" : "text-on-surface"} />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-7">
           {NAV.map((n) => {
             const active = n.href === "/" ? pathname === "/" : pathname?.startsWith(n.href);
             const activeColor = dark ? "text-gold-light border-gold-light" : "text-primary-container border-primary-container";
@@ -111,7 +111,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
             <Icon data-bag-trigger name="shopping_bag" className="text-[22px]" />
             <CountBadge count={hydrated ? cartCount : 0} dark={dark} />
           </button>
-          <button data-open-menu="" aria-label="Open menu" className={`md:hidden transition-colors ${iconColor}`}>
+          <button data-open-menu="" aria-label="Open menu" className={`xl:hidden transition-colors ${iconColor}`}>
             <Icon name="menu" className="text-[22px]" />
           </button>
         </div>

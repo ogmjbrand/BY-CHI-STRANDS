@@ -101,8 +101,14 @@ export function FlagshipHeader() {
             solid ? "max-h-0 opacity-0 border-transparent" : "max-h-12 opacity-100 border-white/10"
           }`}
         >
-          <div className="max-w-[1800px] mx-auto px-6 md:px-16 py-2.5 flex items-center justify-center md:justify-between gap-6 text-white/80">
-            <span className="font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap md:hidden">
+          {/*
+            Three nowrap messages need about 700px of text alone; inside
+            px-16 they did not fit at 768 and pushed the document wider than
+            the viewport. They spread out at lg, and below that a single
+            message sits centred.
+          */}
+          <div className="max-w-[1800px] mx-auto px-6 md:px-16 py-2.5 flex items-center justify-center lg:justify-between gap-6 text-white/80">
+            <span className="font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap lg:hidden">
               Ships Worldwide From Lagos, Nigeria
             </span>
             {[
@@ -112,7 +118,7 @@ export function FlagshipHeader() {
             ].map((m) => (
               <span
                 key={m}
-                className="hidden md:inline font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap"
+                className="hidden lg:inline font-label-caps text-[10px] uppercase tracking-[0.18em] whitespace-nowrap"
               >
                 {m}
               </span>
@@ -128,7 +134,7 @@ export function FlagshipHeader() {
           {/* Left: menu on mobile, the first half of the nav on desktop. */}
           <div className="flex flex-1 items-center justify-start gap-10">
             <button
-              className={`${iconClass} md:hidden -ml-2`}
+              className={`${iconClass} lg:hidden -ml-2`}
               onClick={() => setOpen(true)}
               aria-expanded={open}
               aria-label="Open menu"
@@ -136,7 +142,7 @@ export function FlagshipHeader() {
               <Menu className="h-5 w-5" strokeWidth={1.5} />
             </button>
 
-            <nav className="hidden md:flex items-center gap-10">
+            <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
               {LINKS.slice(0, 2).map((l) => (
                 <Link key={l.href} href={l.href} className={linkClass}>
                   {l.label}
@@ -145,14 +151,24 @@ export function FlagshipHeader() {
             </nav>
           </div>
 
-          {/* The mast shrinks on scroll, so the mark steps down a size. */}
-          <Link href="/" className="shrink-0">
+          {/*
+            The mast shrinks on scroll, so the mark steps down a size.
+
+            The horizontal margin is not decoration. The two rails either side
+            are flex-1 but the right one carries the nav, four icons and the
+            booking button, so it bottoms out at its content width and stops
+            sharing the free space — which pushed the mark off centre and left
+            it flush against "Academy" with 8px of air at every desktop width,
+            while nav items sat 32px apart. This guarantees the gap regardless
+            of how the rails settle.
+          */}
+          <Link href="/" className="shrink-0 mx-4 lg:mx-8">
             <Wordmark size={solid ? "sm" : "md"} withSeal />
           </Link>
 
           {/* Right: the rest of the nav on desktop, then the utility rail. */}
           <div className="flex flex-1 items-center justify-end gap-10">
-            <nav className="hidden md:flex items-center gap-10">
+            <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
               {LINKS.slice(2).map((l) => (
                 <Link key={l.href} href={l.href} className={linkClass}>
                   {l.label}
@@ -206,7 +222,7 @@ export function FlagshipHeader() {
        * height on phones with a floating URL bar (svh, not vh).
        */}
       {open ? (
-        <div className="fixed inset-0 z-[110] flex flex-col bg-noir text-white md:hidden">
+        <div className="fixed inset-0 z-[110] flex flex-col bg-noir text-white lg:hidden">
           <div className="flex h-20 shrink-0 items-center justify-between px-4">
             <button
               className={`${iconClass} -ml-2`}
