@@ -13,3 +13,5 @@ next-env.d.ts
 
 .vercel
 .env*
+# ...except the template, which lists variable names and never their values.
+!.env.example

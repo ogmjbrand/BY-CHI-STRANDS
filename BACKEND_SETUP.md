@@ -103,7 +103,9 @@ src/
 
 ## Environment Variables
 
-Required:
+`.env.example` in the repo root is the authoritative list, with a note on each
+variable. Copy it to `.env.local` for local work — `.env.local` is gitignored.
+
 ```env
 # Supabase (already set)
 NEXT_PUBLIC_SUPABASE_URL=https://xjcovmbmqutugxqpbudi.supabase.co
@@ -115,7 +117,45 @@ RESEND_API_KEY=re_xxxxxxxxxxxxx
 
 # Site URL (for email links)
 NEXT_PUBLIC_SITE_URL=https://bychistrands.com
+
+# Flutterwave — see "Card payment" below
+FLUTTERWAVE_SECRET_KEY=
 ```
+
+### Card payment — action required
+
+**`FLUTTERWAVE_SECRET_KEY` is not set in production yet, and only you can set
+it.** The code is complete and waiting on it.
+
+Get the key from the Flutterwave dashboard under **Settings → API Keys**, then
+add it in **Vercel → by-chi-strands → Settings → Environment Variables** for
+Production, Preview and Development. Redeploy afterwards: environment changes
+don't reach deployments that already exist.
+
+Do not paste it into a chat, a commit, a screenshot, or a support ticket. If it
+is ever exposed, roll it in the Flutterwave dashboard — a rolled key is an
+inconvenience, an exposed one authorises charges against the ByChi account.
+
+Never prefix it with `NEXT_PUBLIC_`. That prefix instructs Next.js to inline
+the value into the JavaScript bundle served to every visitor.
+
+**How it's wired:**
+
+- `src/lib/flutterwave.ts` is marked `server-only`, so importing it from a
+  client component is a build error rather than a runtime leak.
+- The key is read from `process.env` per call and never returned, logged, or
+  placed in a response body.
+- Integration is Flutterwave **Standard**: the server exchanges an order for a
+  hosted checkout link and redirects the shopper there, so **card numbers
+  never reach this server**.
+- Payment is confirmed by calling Flutterwave's verify endpoint and checking
+  amount, currency and `tx_ref` against the order — the redirect's query
+  params are shopper-controllable and are not trusted on their own.
+
+**Behaviour while it's unset:** `/api/payments/flutterwave/initiate` returns
+`503` with a message pointing the shopper at the concierge flow, and logs the
+reason server-side. No order row is written, and the shopper is never shown
+the variable name. Nothing else on the site is affected.
 
 ## Key Features Implemented
 

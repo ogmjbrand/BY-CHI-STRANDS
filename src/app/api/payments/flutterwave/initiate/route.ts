@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createOrder } from "@/lib/orders";
-import { initiateFlutterwavePayment } from "@/lib/flutterwave";
+import { initiateFlutterwavePayment, isFlutterwaveConfigured } from "@/lib/flutterwave";
 import { site } from "@/lib/site";
 import type { CreateOrderRequest } from "@/types/orders";
 
@@ -39,6 +39,27 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Nothing to charge." }, { status: 400 });
     }
 
+    /*
+     * Checked before createOrder, not after. initiateFlutterwavePayment would
+     * throw on the missing key anyway, but by then the pending order row
+     * exists — so every attempt while the key is unset left an orphan order
+     * behind. The shopper is told what to do next; the reason lives in the
+     * server log, because "FLUTTERWAVE_SECRET_KEY is missing" is our problem
+     * to fix, not something to show someone trying to buy hair.
+     */
+    if (!isFlutterwaveConfigured()) {
+      console.error(
+        "Card payment attempted but FLUTTERWAVE_SECRET_KEY is not set in this environment."
+      );
+      return NextResponse.json(
+        {
+          error:
+            "Card payment is unavailable right now. Please place your order and our concierge will arrange payment with you directly.",
+        },
+        { status: 503 }
+      );
+    }
+
     const order = await createOrder(body);
 
     const origin = request.headers.get("origin") ?? new URL(request.url).origin;
@@ -56,13 +77,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ order: { id: order.id }, paymentLink: link });
   } catch (error) {
+    // Logged in full, reported in general terms. The thrown message can carry
+    // Flutterwave's own API text or our configuration state; neither belongs
+    // in a response to the shopper.
     console.error("Flutterwave payment initiation failed:", error);
     return NextResponse.json(
       {
         error:
-          error instanceof Error
-            ? error.message
-            : "Card payment is unavailable right now — please place your order and we'll arrange payment by email.",
+          "Card payment is unavailable right now — please place your order and we'll arrange payment by email.",
       },
       { status: 500 }
     );
