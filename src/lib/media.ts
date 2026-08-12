@@ -91,6 +91,67 @@ export function posterFor(slug: string): string {
   return m.type === "video" ? (m.poster ?? FALLBACK.src) : m.src;
 }
 
+/* ────────────────────────────────────────────────────────────────────────
+ * Editorial scenes
+ *
+ * Product media above is keyed by catalogue slug. The stills a *section*
+ * needs — the sourcing story, the atelier, the services rail — are not tied
+ * to any one product, and they were previously hard-coded as raw paths at
+ * the point of use. Four of them pointed at `/stitch/img-0NN.jpg` files that
+ * were never committed and had been 404ing in production.
+ *
+ * So sections ask for a named scene instead of a path. When the campaign
+ * photography arrives, every swap happens in this one table: change `src`
+ * and `alt`, drop `placeholder`, and no section markup is touched.
+ *
+ * `alt` describes what the frame actually shows. Several of these are
+ * working photographs from the store and the supplier trip rather than
+ * styled campaign shots, and the alt text says so plainly rather than
+ * narrating a luxury scene the image does not contain.
+ * ──────────────────────────────────────────────────────────────────────── */
+
+export interface Scene {
+  src: string;
+  alt: string;
+  /**
+   * True while the slot is filled by stand-in photography — a real ByChi
+   * photo, but not the shot this composition was designed around. Grep this
+   * flag to find everything the campaign shoot still has to replace.
+   */
+  placeholder?: boolean;
+}
+
+const SCENES = {
+  /** Services — the finished work. A real client install, not a stock studio shot. */
+  "services-install": {
+    src: "/services/frontal-installation-1.jpg",
+    alt: "A finished ByChiStrands frontal install styled into a curled updo",
+  },
+  /** Services — colour range. Genuinely shows the wine and espresso units. */
+  "services-colour-range": {
+    src: "/products/IMG-20260727-WA0045.jpg",
+    alt: "Copper, wine and espresso lace-front units on stands in the ByChiStrands store",
+  },
+  /** Services — the working bench. Stand-in: no styling-tools still exists yet. */
+  "services-atelier": {
+    src: "/services/mentorship.jpeg",
+    alt: "A ByChiStrands mentorship session working on a unit",
+    placeholder: true,
+  },
+  /** Collections — how the hair is chosen. The real sourcing trip. */
+  "collections-sourcing": {
+    src: "/services/hair-importation-1.jpeg",
+    alt: "Chi selecting curly hair bundles by hand at the supplier warehouse",
+  },
+} satisfies Record<string, Scene>;
+
+export type SceneName = keyof typeof SCENES;
+
+/** The still a section should render. See the note above before changing one. */
+export function scene(name: SceneName): Scene {
+  return SCENES[name];
+}
+
 /** Client footage for the testimonial rail. */
 export const testimonyClips: Media[] = [
   vid("testimony", "reviews from Princess", "Princess reviewing her ByChiStrands unit to camera"),

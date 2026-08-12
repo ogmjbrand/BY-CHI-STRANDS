@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, whatsappLink } from "@/lib/site";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { Icon } from "@/components/ui/icon";
+import { scene } from "@/lib/media";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_signature_services_1
@@ -59,11 +61,9 @@ export default function SignatureServices1Page() {
             </Link>
             {" "}
             <div className="flex gap-4">
-              <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">
-                shopping_bag
-              </Link>
-              <button className="md:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
-                <span className="material-symbols-outlined">menu</span>
+              <Link href="/cart" aria-label="Your bag" className="text-on-surface-variant cursor-pointer hover:text-primary transition-all"><Icon data-bag-trigger name="shopping_bag" /></Link>
+              <button data-open-menu="" className="md:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
+                <Icon name="menu" />
               </button>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function SignatureServices1Page() {
               <a className="flex items-center gap-2 border border-outline px-10 py-5 font-label-caps hover:bg-surface-container transition-all duration-500" href={whatsappLink("Hi ByChiStrands — I'd like a consultation about your services.")} target="_blank" rel="noopener noreferrer">
                 Consultation via WhatsApp
                 {" "}
-                <span className="material-symbols-outlined text-[18px]">chat</span>
+                <Icon name="chat" className="text-[18px]" />
               </a>
             </div>
           </div>
@@ -110,25 +110,15 @@ export default function SignatureServices1Page() {
               <p className="font-headline-lg text-[18px] mb-2 leading-tight">Vietnamese Raw Hair Specialists</p>
               {" "}
               <div className="flex gap-1">
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  star
-                </span>
+                <Icon name="star" className="text-primary text-sm" filled />
                 {" "}
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  star
-                </span>
+                <Icon name="star" className="text-primary text-sm" filled />
                 {" "}
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  star
-                </span>
+                <Icon name="star" className="text-primary text-sm" filled />
                 {" "}
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  star
-                </span>
+                <Icon name="star" className="text-primary text-sm" filled />
                 {" "}
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  star
-                </span>
+                <Icon name="star" className="text-primary text-sm" filled />
               </div>
             </div>
           </div>
@@ -153,7 +143,7 @@ export default function SignatureServices1Page() {
             {/* Service 1 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A stylist's hands treating luxury hair extensions in the studio" src="/stitch/img-038.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={scene("services-install").alt} src={scene("services-install").src} />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -172,10 +162,8 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=hair-laundry"
                   aria-label="Book Hair Laundry"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                ><Icon name="north_east" /></Link>
               </div>
             </div>
             {/* Service 2 — cinematic treatment: text overlaid on the image, not stacked below it */}
@@ -190,10 +178,8 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=frontal-installation"
                   aria-label="Book Frontal Installation"
-                  className="absolute top-6 right-6 material-symbols-outlined text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="absolute top-6 right-6 text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
+                ><Icon name="north_east" /></Link>
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                   <h3 className="font-headline-lg text-headline-lg text-white mb-2">Frontal Installation</h3>
                   <p className="font-body-md text-white/80 max-w-sm mb-3">
@@ -207,7 +193,7 @@ export default function SignatureServices1Page() {
             {/* Service 3 */}
             <div className="flex flex-col gap-6 reveal-up">
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Luxury hair extensions in a deep plum and mahogany gradient" src="/stitch/img-004.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={scene("services-colour-range").alt} src={scene("services-colour-range").src} />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -226,10 +212,8 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=wig-making"
                   aria-label="Book Wig Making"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                ><Icon name="north_east" /></Link>
               </div>
             </div>
             {/* Service 4 — cinematic treatment: real ventilation footage, text overlaid on a black gradient */}
@@ -248,10 +232,8 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=ventilation"
                   aria-label="Book Ventilation"
-                  className="absolute top-6 right-6 material-symbols-outlined text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="absolute top-6 right-6 text-white border border-white/30 bg-black/20 backdrop-blur-sm p-4 hover:bg-primary hover:text-on-primary hover:border-primary transition-all"
+                ><Icon name="north_east" /></Link>
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 pointer-events-none">
                   <h3 className="font-headline-lg text-headline-lg text-white mb-2">Ventilation</h3>
                   <p className="font-body-md text-white/80 max-w-sm mb-3">
@@ -283,16 +265,14 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=hair-importation-service"
                   aria-label="Book Hair Importation Service"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                ><Icon name="north_east" /></Link>
               </div>
             </div>
             {/* Service 6 */}
             <div className="flex flex-col gap-6 reveal-up" style={{ transitionDelay: "150ms" }}>
               <div className="aspect-video overflow-hidden bg-surface-container relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A flat-lay of professional hair styling tools — combs, clamps and finishing sprays" src="/stitch/img-070.jpg" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={scene("services-atelier").alt} src={scene("services-atelier").src} />
                 {" "}
                 <div className="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -312,10 +292,8 @@ export default function SignatureServices1Page() {
                   href={whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  north_east
-                </a>
+                  className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                ><Icon name="north_east" /></a>
               </div>
             </div>
             {/* Service 7 */}
@@ -348,10 +326,8 @@ export default function SignatureServices1Page() {
                 <Link
                   href="/book?service=training"
                   aria-label="Book Training"
-                  className="material-symbols-outlined text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
-                >
-                  north_east
-                </Link>
+                  className="text-on-surface-variant border border-outline-variant p-4 hover:bg-primary hover:text-on-primary transition-all"
+                ><Icon name="north_east" /></Link>
               </div>
             </div>
           </div>
@@ -369,7 +345,7 @@ export default function SignatureServices1Page() {
                 {" "}
                 <div className="space-y-8">
                   <div className="flex items-center gap-6 p-6 glass-card text-on-surface rounded-lg border-l-4 border-primary">
-                    <span className="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                    <Icon name="verified_user" className="text-primary text-3xl" />
                     {" "}
                     <div>
                       <h3 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h3>
@@ -381,7 +357,7 @@ export default function SignatureServices1Page() {
                   </div>
                   {" "}
                   <div className="flex items-center gap-6 p-6 glass-card text-on-surface rounded-lg">
-                    <span className="material-symbols-outlined text-primary text-3xl">lock</span>
+                    <Icon name="lock" className="text-primary text-3xl" />
                     {" "}
                     <div>
                       <h3 className="font-headline-lg text-body-md font-bold uppercase mb-1">Secured Deposits</h3>
@@ -414,7 +390,7 @@ export default function SignatureServices1Page() {
                     className="w-full flex items-center justify-center gap-2 border border-outline py-5 font-label-caps hover:bg-surface-container transition-all duration-500"
                   >
                     Or Message Us Directly
-                    <span className="material-symbols-outlined text-[18px]">chat</span>
+                    <Icon name="chat" className="text-[18px]" />
                   </a>
                 </div>
               </div>
@@ -440,7 +416,7 @@ export default function SignatureServices1Page() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
               >
-                <span className="material-symbols-outlined text-[18px]">share</span>
+                <Icon name="share" className="text-[18px]" />
               </a>
               {" "}
               <a
@@ -450,7 +426,7 @@ export default function SignatureServices1Page() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <span className="material-symbols-outlined text-[18px]">camera</span>
+                <Icon name="camera" className="text-[18px]" />
               </a>
             </div>
           </div>
