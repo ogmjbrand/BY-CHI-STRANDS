@@ -151,7 +151,7 @@ export function StitchFooter() {
         <div className="col-span-1 md:col-span-1">
           <Wordmark className="text-on-surface mb-8" />
           <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
-            Timeless Vietnamese artistry meet&apos;s modern luxury. Defined by
+            Timeless Vietnamese artistry meets modern luxury. Defined by
             authenticity and ethical sourcing.
           </p>
           <div className="flex gap-4">
