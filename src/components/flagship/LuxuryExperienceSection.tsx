@@ -52,13 +52,25 @@ export function LuxuryExperienceSection() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_25px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-8"
+          {/* See AcademyCinematic: no entrance fade on a card that carries a
+              photograph, because the fade stopped firing once the image was
+              added and stranded the card at opacity 0. */}
+          <div
+            className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_25px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl"
           >
+            {/* The finish the three pillars describe, rather than three
+                icons describing it on their own. */}
+            <span className="block aspect-[16/10] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/posters/imgi_60_83e96f8d0f02e98b77984a0fbf1851b9.jpg"
+                alt="A hand-finished body-wave unit in a warm brown, photographed from above"
+                loading="lazy"
+                className="h-full w-full object-cover object-[center_30%]"
+              />
+            </span>
+
+            <div className="p-6 md:p-8">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-[#d4af37]/90">
               <Sparkles className="h-4 w-4 text-[#d4af37]" />
               Crafted for modern luxury
@@ -87,7 +99,8 @@ export function LuxuryExperienceSection() {
                 );
               })}
             </div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
