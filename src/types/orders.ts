@@ -5,9 +5,14 @@ export interface OrderItem {
   /** null means this piece is quoted on request — the concierge confirms a price after the order is placed. */
   price: number | null;
   variant?: {
+    /** Texture label, e.g. "Bone Straight". */
     texture?: string;
+    /** Colour label, e.g. "Wine · Dark Root". */
     tone?: string;
+    /** Length in inches, formatted. */
     length?: string;
+    /** Closure or frontal size, e.g. "5x5 Closure". */
+    lace?: string;
   };
 }
 

@@ -137,7 +137,7 @@ function OrderConfirmationContent() {
               return (
                 <div
                   key={`${item.productId}-${i}`}
-                  className="bg-white text-noir p-6 border border-outline-variant/20 flex gap-6"
+                  className="bg-surface-container-lowest text-on-surface p-6 border border-outline-variant/20 flex gap-6"
                 >
                   {product ? (
                     <Link
@@ -159,8 +159,9 @@ function OrderConfirmationContent() {
                       </h3>
                       <div className="space-y-1 text-body-sm text-on-surface-variant">
                         {item.variant?.length ? <p>Length: {item.variant.length}</p> : null}
-                        {item.variant?.texture ? <p>Density: {item.variant.texture}</p> : null}
-                        {item.variant?.tone ? <p>Cap: {item.variant.tone}</p> : null}
+                        {item.variant?.texture ? <p>Texture: {item.variant.texture}</p> : null}
+                        {item.variant?.tone ? <p>Colour: {item.variant.tone}</p> : null}
+                        {item.variant?.lace ? <p>Lace: {item.variant.lace}</p> : null}
                         <p>Qty: {item.quantity}</p>
                       </div>
                     </div>
@@ -175,7 +176,7 @@ function OrderConfirmationContent() {
             })}
           </div>
 
-          <div className="max-w-md mx-auto mt-16 bg-white text-noir p-8 border border-outline-variant/20 space-y-4">
+          <div className="max-w-md mx-auto mt-16 bg-surface-container-lowest text-on-surface p-8 border border-outline-variant/20 space-y-4">
             <div className="flex justify-between font-body-md">
               <span className="text-on-surface-variant">Subtotal</span>
               <span>{formatPrice(order.subtotal)}</span>
