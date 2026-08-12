@@ -54,6 +54,26 @@ export function OurPromise() {
           </p>
         </div>
 
+        {/*
+         * Raw hair in the hand, before it is anything else — the subject of
+         * promise 01, and the only image on the page that shows the product
+         * in the state the house actually buys it in.
+         */}
+        <figure className="mb-20 overflow-hidden md:mb-28">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/media/posters/imgi_294_4ea45f9fd196fcbaab9785c468b6eaec.0000000.jpg"
+            alt="A length of raw straight hair held out by hand against a plain wall"
+            loading="lazy"
+            /*
+             * Cropped below the supplier's own hangtag, which is legible at
+             * a centred crop. Another house's mark has no business sitting
+             * above this section's first promise.
+             */
+            className="aspect-[4/3] w-full object-cover object-[center_78%] md:aspect-[21/9]"
+          />
+        </figure>
+
         <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-16 md:gap-y-24">
           {PROMISES.map((p) => (
             <li key={p.n} className="flex gap-8 md:gap-10">

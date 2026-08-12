@@ -57,13 +57,32 @@ export function AcademyCinematic() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_25px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+        {/*
+         * No entrance fade on this card. It reveals a photograph, and the
+         * whileInView it used to carry stopped firing once that photograph
+         * was added — leaving the whole card at opacity 0 even when parked
+         * in the middle of the viewport for seconds. A fade that can strand
+         * content is worth less than the content.
+         */}
+        <div
+          className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-[0_25px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl"
         >
+          {/*
+           * A real Academy graduate with her certificate, from the house's
+           * own media. The card described the training in words alone; the
+           * photograph is the evidence that the training happens.
+           */}
+          <span className="block aspect-[4/3] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/academy/mentorship-masterclass.jpg"
+              alt="An Academy graduate holding her ByChiStrands certificate of attendance"
+              loading="lazy"
+              className="h-full w-full object-cover object-[center_30%]"
+            />
+          </span>
+
+          <div className="p-8">
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-white/60">
             <GraduationCap className="h-4 w-4 text-primary" />
             The educational arm of the house
@@ -96,7 +115,8 @@ export function AcademyCinematic() {
               </div>
             </div>
           </div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
