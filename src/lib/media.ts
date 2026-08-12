@@ -80,6 +80,20 @@ export function mediaFor(slug: string): Media[] {
   return MEDIA[slug] ?? [FALLBACK];
 }
 
+/**
+ * Every catalogue asset, in catalogue order, tagged with the product it
+ * belongs to.
+ *
+ * The gallery was drawing on the six testimonial clips alone while thirty
+ * pieces of real house footage sat unused behind the product pages. This is
+ * the whole set, so a gallery can be a gallery rather than a short rail.
+ */
+export function allProductMedia(): Array<{ slug: string; media: Media }> {
+  return Object.entries(MEDIA).flatMap(([slug, items]) =>
+    items.map((media) => ({ slug, media }))
+  );
+}
+
 export function heroFor(slug: string): Media {
   return mediaFor(slug)[0] ?? FALLBACK;
 }
