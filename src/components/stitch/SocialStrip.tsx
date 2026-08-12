@@ -35,12 +35,13 @@ export function SocialStrip({ dark = false }: { dark?: boolean }) {
           </a>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-1">
-          {PHOTOS.map((src) => (
+          {PHOTOS.map((src, i) => (
             <a
               key={src}
               href={site.socials.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Photograph ${i + 1} of ${PHOTOS.length} — open ${site.socials.instagram.handle} on Instagram`}
               className="aspect-square overflow-hidden group block"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

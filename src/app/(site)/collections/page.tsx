@@ -93,9 +93,9 @@ export default function TheBoutiquePage() {
                         </div>
                         {" "}
                         <div>
-                          <h4 className="font-label-caps text-label-caps uppercase mb-1 tracking-[0.15em] group-hover:text-primary transition-colors">
+                          <h3 className="font-label-caps text-label-caps uppercase mb-1 tracking-[0.15em] group-hover:text-primary transition-colors">
                             {String(i + 1).padStart(2, "0")}. {p.name}
-                          </h4>
+                          </h3>
                           {" "}
                           <span className="text-primary font-semibold">
                             {price === null ? "Enquire for Price" : formatPrice(price)}

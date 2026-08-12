@@ -372,7 +372,7 @@ export default function SignatureServices1Page() {
                     <span className="material-symbols-outlined text-primary text-3xl">verified_user</span>
                     {" "}
                     <div>
-                      <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h4>
+                      <h3 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h3>
                       {" "}
                       <p className="font-body-sm text-on-surface-variant">
                         We only work with premium Vietnamese raw hair and professional-grade products.
@@ -384,7 +384,7 @@ export default function SignatureServices1Page() {
                     <span className="material-symbols-outlined text-primary text-3xl">lock</span>
                     {" "}
                     <div>
-                      <h4 className="font-headline-lg text-body-md font-bold uppercase mb-1">Secured Deposits</h4>
+                      <h3 className="font-headline-lg text-body-md font-bold uppercase mb-1">Secured Deposits</h3>
                       {" "}
                       <p className="font-body-sm text-on-surface-variant">
                         A 30% deposit is required to confirm your slot, deductible from the final service fee.
@@ -456,7 +456,7 @@ export default function SignatureServices1Page() {
           </div>
           {" "}
           <div className="flex flex-col gap-4">
-            <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Company</h4>
+            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Company</h3>
             {" "}
             <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/about">
               About Our Craft
@@ -472,7 +472,7 @@ export default function SignatureServices1Page() {
           </div>
           {" "}
           <div className="flex flex-col gap-4">
-            <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Customer Care</h4>
+            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Customer Care</h3>
             {" "}
             <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shipping">
               Shipping & Returns
@@ -488,7 +488,7 @@ export default function SignatureServices1Page() {
           </div>
           {" "}
           <div className="flex flex-col gap-4">
-            <h4 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Connect</h4>
+            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Connect</h3>
             {" "}
             <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">
               Instagram

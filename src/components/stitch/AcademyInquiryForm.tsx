@@ -59,30 +59,35 @@ export function AcademyInquiryForm() {
     <div className="bg-white text-noir p-8 md:p-12 border border-outline-variant/30 luxury-shadow relative z-10 fade-up">
       <form className="space-y-8" onSubmit={submit}>
         <div>
-          <label className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Full Name</label>
+          <label htmlFor="academy-name" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Full Name</label>
           <input
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md"
             placeholder="Enter your name"
+            id="academy-name"
+            autoComplete="name"
             type="text"
           />
         </div>
         <div>
-          <label className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Email Address</label>
+          <label htmlFor="academy-email" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Email Address</label>
           <input
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md"
             placeholder="Enter your email"
+            id="academy-email"
+            autoComplete="email"
             type="email"
           />
         </div>
         <div>
-          <label className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Business Type</label>
+          <label htmlFor="academy-business" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Business Type</label>
           <select
+            id="academy-business"
             value={businessType}
             onChange={(e) => setBusinessType(e.target.value)}
             className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md appearance-none"
@@ -94,8 +99,9 @@ export function AcademyInquiryForm() {
           </select>
         </div>
         <div>
-          <label className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Message / Goals</label>
+          <label htmlFor="academy-message" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Message / Goals</label>
           <textarea
+            id="academy-message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-4 transition-all duration-300 font-body-md"

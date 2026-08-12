@@ -121,6 +121,9 @@ export default function AcademyPage() {
       {/* Academy Ethos / Subtle Branding */}
       <section className="ivory-bg py-section-padding border-y border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          {/* The three cards are h3; the section needs its own h2 so the
+              outline does not skip a level after the page h1. */}
+          <h2 className="sr-only">What the Academy teaches</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center items-center">
             <div className="fade-up">
               <h3 className="font-headline-lg text-headline-lg text-noir mb-4">Real Sourcing Knowledge</h3>
@@ -173,7 +176,7 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 01</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Sourcing</h4>
+                <h3 className="font-headline-lg text-headline-lg text-white mb-4">Sourcing</h3>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
                   How the house sources raw Vietnamese hair — supplier selection, what to ask, and planning a confident first order.
@@ -191,7 +194,7 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 02</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Grading</h4>
+                <h3 className="font-headline-lg text-headline-lg text-white mb-4">Grading</h3>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
                   Developing the hands-on eye to tell raw hair from blended, processed imitations.
@@ -209,7 +212,7 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 03</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Scaling</h4>
+                <h3 className="font-headline-lg text-headline-lg text-white mb-4">Scaling</h3>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
                   Landed cost, inventory and the logistics decisions that decide your margin as you grow.
@@ -227,7 +230,7 @@ export default function AcademyPage() {
               <div className="relative z-10 p-margin-mobile">
                 <span className="text-white/70 font-label-caps text-xs tracking-widest mb-2 block">MODULE 04</span>
                 {" "}
-                <h4 className="font-headline-lg text-headline-lg text-white mb-4">Marketing</h4>
+                <h3 className="font-headline-lg text-headline-lg text-white mb-4">Marketing</h3>
                 {" "}
                 <p className="font-body-md text-body-sm text-white/80 group-hover:translate-y-[-4px] transition-transform duration-300">
                   Positioning, photography and content that make a new hair brand read as premium from day one.
@@ -321,7 +324,7 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div>
-            <h5 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Navigation</h5>
+            <h3 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Navigation</h3>
             {" "}
             <ul className="space-y-4">
               <li>
@@ -345,7 +348,7 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div>
-            <h5 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Legal</h5>
+            <h3 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Legal</h3>
             {" "}
             <ul className="space-y-4">
               <li>
@@ -369,7 +372,7 @@ export default function AcademyPage() {
           </div>
           {" "}
           <div>
-            <h5 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Connect</h5>
+            <h3 className="font-label-caps text-xs tracking-widest text-on-surface uppercase mb-8">Connect</h3>
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant mb-6">Receive exclusive updates on masterclasses and inventory arrivals.</p>
             {" "}

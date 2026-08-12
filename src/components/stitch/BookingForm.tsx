@@ -137,7 +137,7 @@ export function BookingForm() {
           <div className="bg-surface-container-lowest text-on-surface border border-outline-variant/15 p-8 flex items-start md:items-center gap-6">
             <span className="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
             <div>
-              <h4 className="font-headline-lg text-lg mb-1">Handled by our in-house team</h4>
+              <h3 className="font-headline-lg text-lg mb-1">Handled by our in-house team</h3>
               <p className="font-body-sm text-on-surface-variant">
                 Every appointment is matched to whoever is best suited to your service. Note any
                 stylist preference or hair history in the notes below.
@@ -155,10 +155,11 @@ export function BookingForm() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <label className="block font-label-caps text-[10px] text-on-surface-variant mb-2">
+              <label htmlFor="booking-date" className="block font-label-caps text-[10px] text-on-surface-variant mb-2">
                 PREFERRED DATE
               </label>
               <input
+                id="booking-date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 min={new Date().toISOString().slice(0, 10)}
@@ -197,10 +198,11 @@ export function BookingForm() {
             </h2>
           </div>
           <div className="relative">
-            <label className="block font-label-caps text-[10px] text-on-surface-variant mb-2">
+            <label htmlFor="booking-notes" className="block font-label-caps text-[10px] text-on-surface-variant mb-2">
               PARTICULAR NEEDS OR HAIR HISTORY
             </label>
             <textarea
+              id="booking-notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className="w-full bg-transparent border-b border-outline-variant py-4 resize-none transition-all placeholder:italic placeholder:opacity-50"

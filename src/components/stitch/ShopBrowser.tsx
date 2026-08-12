@@ -245,10 +245,12 @@ export function ShopBrowser() {
             Showing {visible.length} of {products.length} results
           </p>
           <div className="flex items-center gap-4">
-            <span className="font-body-sm text-body-sm text-on-surface-variant">
+            {/* Was a <span>, so the control had no accessible name. */}
+            <label htmlFor="shop-sort" className="font-body-sm text-body-sm text-on-surface-variant">
               Sort by:
-            </span>
+            </label>
             <select
+              id="shop-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
               className="border-none bg-transparent font-body-sm text-body-sm focus:ring-0 cursor-pointer"
@@ -292,7 +294,7 @@ export function ShopBrowser() {
                       featured ? "aspect-[16/10] md:aspect-[21/9]" : "aspect-[3/4]"
                     }`}
                   >
-                    <Link href={`/shop/${p.slug}`} className="block w-full h-full">
+                    <Link href={`/shop/${p.slug}`} aria-label={p.name} className="block w-full h-full">
                       <ProductMedia
                         media={heroFor(p.slug)}
                         className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"

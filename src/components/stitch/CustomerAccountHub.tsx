@@ -189,7 +189,13 @@ export function CustomerAccountHub() {
             </div>
 
             <form onSubmit={submitLookup} className="flex flex-col gap-4 md:flex-row">
+              {/* The field had only a placeholder, which is not an accessible name. */}
+              <label htmlFor="account-email-lookup" className="sr-only">
+                Email address used at checkout
+              </label>
               <input
+                id="account-email-lookup"
+                autoComplete="email"
                 required
                 type="email"
                 value={emailLookup}

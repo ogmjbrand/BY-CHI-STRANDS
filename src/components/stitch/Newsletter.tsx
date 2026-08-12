@@ -53,8 +53,15 @@ export function Newsletter() {
             Exclusive offers, new arrivals and hair tips delivered straight to your inbox.
           </p>
           <form onSubmit={submit} className="flex flex-col sm:flex-row gap-4 max-w-lg">
+            {/* A placeholder is not a label: it disappears on focus and is
+                not announced as the field's name. */}
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="newsletter-email"
               type="email"
+              autoComplete="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}

@@ -124,6 +124,9 @@ export default function CheckoutPage() {
       <div className="scr-luxury-checkout theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
         <SiteHeader dark />
         <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-24">
+          {/* The empty branch returns before the checkout heading, so it needs
+              its own — a page with no h1 has no announced title. */}
+          <h1 className="sr-only">Checkout</h1>
           <span className="material-symbols-outlined text-primary text-5xl mb-8 opacity-40">
             shopping_bag
           </span>
@@ -145,6 +148,10 @@ export default function CheckoutPage() {
     <div className="scr-luxury-checkout theme-noir bg-surface font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col">
       <SiteHeader dark />
       <main className="flex-1 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+        {/* The page opened on "Shipping Address" with no h1 above it. */}
+        <h1 className="font-display-md text-3xl md:text-4xl text-on-surface mb-10 tracking-[-0.01em]">
+          Checkout
+        </h1>
         <div className="lg:hidden mb-10">
           <MobileCheckoutSummary />
         </div>
