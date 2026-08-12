@@ -59,6 +59,51 @@ export async function updateOrderStatus(
   if (error) throw new Error(`Failed to update order: ${error.message}`);
 }
 
+/**
+ * Order history for the account page, authorised by a pair.
+ *
+ * getOrderByEmail below takes an email and nothing else. That is safe to call
+ * from trusted server code, and it was also being served straight out of a
+ * public GET — so anyone who knew or guessed a customer's email address got
+ * her full order history back, shipping street included. Email addresses are
+ * not secret.
+ *
+ * The rule this site already applies to guest tracking applies here too, in
+ * getOrderForTracking's own words: "the email alone would let anyone
+ * enumerate another customer's address, so tracking requires the pair". One
+ * order number proves the caller actually placed an order, and only then is
+ * the rest of that email's history returned — trimmed to what a list needs,
+ * with no address in it at all.
+ */
+export interface OrderSummary {
+  id: string;
+  orderNumber: string;
+  status: Order["status"];
+  total: number;
+  itemCount: number;
+  createdAt: string;
+}
+
+export async function getOrderHistory(
+  orderNumber: string,
+  email: string
+): Promise<OrderSummary[] | null> {
+  // the pair is the authorisation
+  const proof = await getOrderForTracking(orderNumber, email);
+  if (!proof) return null;
+
+  const orders = await getOrderByEmail(proof.customerEmail);
+  return orders.map((o) => ({
+    id: o.id,
+    orderNumber: o.orderNumber,
+    status: o.status,
+    total: o.total,
+    itemCount: o.items.length,
+    createdAt: o.createdAt,
+  }));
+}
+
+/** Server-side only. See getOrderHistory before exposing this to a request. */
 export async function getOrderByEmail(email: string): Promise<Order[]> {
   const supabase = getSupabaseAdmin();
 

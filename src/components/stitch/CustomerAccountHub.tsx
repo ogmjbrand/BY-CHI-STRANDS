@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
 import { formatPrice } from "@/lib/utils";
-import type { Order } from "@/types/orders";
+import type { OrderSummary } from "@/lib/orders";
 import { Icon } from "@/components/ui/icon";
 
 interface CustomerProfile {
@@ -24,7 +24,14 @@ export function CustomerAccountHub() {
   });
   const [savedProfile, setSavedProfile] = useState<CustomerProfile | null>(null);
   const [emailLookup, setEmailLookup] = useState("");
-  const [orders, setOrders] = useState<Order[]>([]);
+  /*
+   * The email alone used to be enough to pull someone's whole order history.
+   * One order number proves the person asking actually placed an order — the
+   * same pair guest tracking requires, and for the same reason.
+   */
+  const [orderNumberLookup, setOrderNumberLookup] = useState("");
+  const [lookupError, setLookupError] = useState("");
+  const [orders, setOrders] = useState<OrderSummary[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -65,18 +72,29 @@ export function CustomerAccountHub() {
 
   const submitLookup = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (status === "loading" || !emailLookup) return;
+    if (status === "loading" || !emailLookup || !orderNumberLookup) return;
 
     setStatus("loading");
     setMessage("");
+    setLookupError("");
 
     try {
-      const res = await fetch(`/api/orders/lookup?email=${encodeURIComponent(emailLookup)}`);
-      if (!res.ok) throw new Error("Lookup failed");
+      const res = await fetch("/api/orders/lookup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: emailLookup, orderNumber: orderNumberLookup }),
+      });
       const data = await res.json();
+      if (!res.ok) {
+        setLookupError(data?.error ?? "We could not look that up. Please try again.");
+        setStatus("error");
+        setOrders([]);
+        return;
+      }
       setOrders(data.orders ?? []);
       setStatus("done");
     } catch {
+      setLookupError("We could not reach the server. Please try again.");
       setStatus("error");
       setOrders([]);
     }
@@ -192,7 +210,12 @@ export function CustomerAccountHub() {
               </div>
             </div>
 
-            <form onSubmit={submitLookup} className="flex flex-col gap-4 md:flex-row">
+            <p className="mb-4 max-w-xl text-sm text-on-surface-variant">
+              Enter your email and any one of your order numbers. We ask for both
+              so that nobody can pull up your history from an email address alone.
+            </p>
+
+            <form onSubmit={submitLookup} className="flex flex-col gap-4 md:flex-row md:items-end">
               {/* The field had only a placeholder, which is not an accessible name. */}
               <label htmlFor="account-email-lookup" className="sr-only">
                 Email address used at checkout
@@ -205,7 +228,19 @@ export function CustomerAccountHub() {
                 value={emailLookup}
                 onChange={(event) => setEmailLookup(event.target.value)}
                 placeholder="you@email.com"
-                className="flex-1 border-0 border-b border-outline-variant/40 bg-transparent py-3 text-body-md outline-none focus:border-primary"
+                className="min-w-0 flex-1 border-0 border-b border-outline-variant/40 bg-transparent py-3 text-body-md outline-none focus:border-primary"
+              />
+              <label htmlFor="account-order-lookup" className="sr-only">
+                Any one of your order numbers
+              </label>
+              <input
+                id="account-order-lookup"
+                required
+                type="text"
+                value={orderNumberLookup}
+                onChange={(event) => setOrderNumberLookup(event.target.value)}
+                placeholder="Order number"
+                className="min-w-0 flex-1 border-0 border-b border-outline-variant/40 bg-transparent py-3 text-body-md outline-none focus:border-primary"
               />
               <button
                 type="submit"
@@ -217,12 +252,12 @@ export function CustomerAccountHub() {
             </form>
 
             {status === "error" ? (
-              <p className="mt-4 text-sm text-error">We could not find anything for that email. Please try again.</p>
+              <p className="mt-4 text-sm text-error">{lookupError}</p>
             ) : null}
 
             {status === "done" && orders.length === 0 ? (
               <div className="mt-8 rounded-[1.25rem] border border-outline-variant/20 bg-surface p-6 text-center">
-                <p className="font-body-md text-on-surface-variant">No orders were found for that email yet.</p>
+                <p className="font-body-md text-on-surface-variant">No orders found yet.</p>
               </div>
             ) : null}
 
@@ -238,7 +273,7 @@ export function CustomerAccountHub() {
                       <div>
                         <p className="font-label-caps text-[10px] uppercase tracking-[0.24em] text-primary">{order.orderNumber}</p>
                         <p className="mt-1 text-body-md text-on-surface">
-                          {order.items.length} item{order.items.length === 1 ? "" : "s"}
+                          {order.itemCount} item{order.itemCount === 1 ? "" : "s"}
                         </p>
                       </div>
                       <div className="text-right">
