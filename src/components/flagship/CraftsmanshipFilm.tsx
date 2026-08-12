@@ -7,68 +7,76 @@ import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { showcaseItems } from "@/components/stitch/ProductServiceShowcase";
 
 /**
- * Cinematic craftsmanship section: one large dark narrative panel (real
- * Frontal Installation copy from services.ts, paraphrased here as brand
- * voice), then a horizontal scroll-snap film strip of the same real footage
- * ProductServiceShowcase uses elsewhere — no bordered thumbnail grid.
+ * Editorial craftsmanship chapter. The footage is treated as campaign media,
+ * not as a conventional thumbnail/card grid.
  */
 export function CraftsmanshipFilm() {
   return (
-    <section className="overflow-hidden bg-noir py-32 text-white md:py-48">
-      <div className="mx-auto mb-16 flex max-w-7xl flex-col gap-8 px-6 md:mb-24 md:flex-row md:items-end md:justify-between md:px-16">
-        <div className="max-w-3xl">
-          <p className="mb-6 font-label-caps text-[11px] uppercase tracking-[0.3em] text-primary-fixed-dim">
-            Craftsmanship
-          </p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-8 font-display-lg text-4xl leading-[1.05] tracking-[-0.02em] md:text-6xl"
-          >
-            Melted, not placed.
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-body-xl text-lg text-white/70"
-          >
-            Your lace is tinted, plucked, and melted to your hairline by stylists who install units every single day.
-            There is no template for a hairline — every install is drawn by hand.
-          </motion.p>
+    <section className="relative overflow-hidden bg-noir py-28 text-white md:py-44">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-16">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <p className="mb-6 font-label-caps text-[10px] uppercase tracking-[0.34em] text-primary-fixed-dim">
+              The craft
+            </p>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-6xl font-display-lg text-[clamp(3.5rem,8vw,8.5rem)] leading-[0.88] tracking-[-0.045em]"
+            >
+              Melted, not placed.
+            </motion.h2>
+          </div>
+          <div className="lg:col-span-4 lg:pb-2">
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-md text-base leading-8 text-white/65 md:text-lg"
+            >
+              Your lace is tinted, plucked, and melted to your hairline by stylists who install units every day. Every finish is drawn by hand.
+            </motion.p>
+            <Link
+              href="/services"
+              className="group mt-8 inline-flex items-center gap-3 font-label-caps text-[10px] uppercase tracking-[0.28em] text-white/85 transition-colors hover:text-primary-fixed-dim"
+            >
+              View services
+              <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
-
-        <a
-          href="/services"
-          className="group inline-flex items-center gap-3 font-label-caps text-[11px] uppercase tracking-[0.25em] text-white/80 transition-colors hover:text-white"
-        >
-          View services
-          <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-        </a>
       </div>
 
-      <div className="flex gap-3 overflow-x-auto px-6 pb-4 snap-x snap-mandatory no-scrollbar md:gap-4 md:px-16">
-        {showcaseItems.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className="group relative aspect-[3/4] w-[70vw] shrink-0 snap-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 md:w-[26vw]"
-          >
-            <ProductMedia
-              media={{ type: "video", src: item.video, poster: item.poster, alt: item.label }}
-              className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <p className="font-label-caps text-[11px] uppercase tracking-[0.2em] text-white/90">
-                {item.label}
-              </p>
-            </div>
-          </Link>
-        ))}
+      <div className="mt-20 overflow-x-auto no-scrollbar md:mt-28">
+        <div className="flex min-w-max gap-5 px-6 md:gap-8 md:px-16">
+          {showcaseItems.map((item, index) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="group relative w-[82vw] shrink-0 md:w-[43vw] lg:w-[31vw]"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-white/5">
+                <ProductMedia
+                  media={{ type: "video", src: item.video, poster: item.poster, alt: item.label }}
+                  className="h-full w-full object-cover grayscale transition duration-[1200ms] ease-out group-hover:scale-[1.035] group-hover:grayscale-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent opacity-80" />
+                <div className="absolute left-5 top-5 font-label-caps text-[10px] uppercase tracking-[0.25em] text-white/55 md:left-7 md:top-7">
+                  0{index + 1}
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <p className="font-display-md text-2xl tracking-[-0.02em] md:text-3xl">{item.label}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 font-label-caps text-[9px] uppercase tracking-[0.25em] text-white/70 transition-colors group-hover:text-white">
+                    Explore <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

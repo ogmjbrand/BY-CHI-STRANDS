@@ -1,0 +1,31 @@
+.system {
+  --bychi-black: #080604;
+  --bychi-gold: #C8A45D;
+  --bychi-white: #F8F5EF;
+  --bychi-brown: #2A1710;
+}
+
+/* Global brand tokens only. Section backgrounds belong to the section itself so
+   editorial rhythm is not flattened by a page-level override. */
+.system :global(.text-\[\#C8A45D\]) {
+  color: var(--bychi-gold) !important;
+}
+
+.system :global(.bg-\[\#C8A45D\]) {
+  background-color: var(--bychi-gold) !important;
+}
+
+.system :global(.bg-\[\#2A1710\]),
+.system :global(.bg-\[\#4A2A1D\]) {
+  background-color: var(--bychi-brown) !important;
+}
+
+.system :global(.font-serif) {
+  font-family: var(--font-cormorant), Cormorant Garamond, Georgia, serif !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .system :global(*) {
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,242 @@
+/*
+ * BY CHI — PERMANENT BRAND SYSTEM
+ *
+ * Formal type: Cormorant Garamond from the existing brand font loaded in
+ * layout.tsx. Do not substitute Pf4, Georgia, system serif or a template font.
+ *
+ * Brand lockup: use the supplied ByChi Strands artwork in
+ * /public/brand/logo-mark.jpg whenever the full brand name is presented as a
+ * visual logo/wordmark. Never recreate the approved lockup with another font.
+ */
+
+/* The formal/display font is a brand rule, not a Tailwind default. */
+.font-serif,
+.bychi-formal,
+.bychi-wordmark,
+.bychi-footer-wordmark,
+.bychi-brand-name {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif !important;
+}
+
+/* Formal brand-name text: use this class whenever the written brand name
+   appears as typography rather than the image lockup. */
+.bychi-brand-name {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.9 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+/* Approved visual wordmark treatment. */
+.bychi-wordmark,
+.bychi-footer-wordmark {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.9 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+/* Full brand-name lockups use the exact supplied artwork, not a substitute
+   font. This preserves the proportions and letterforms in the approved logo. */
+.bychi-wordmark,
+.bychi-footer-wordmark,
+.bychi-brand-logo {
+  display: block !important;
+  background-image: url("/brand/logo-mark.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.bychi-wordmark { width: 270px !important; height: 54px !important; }
+.bychi-footer-wordmark { width: 310px !important; height: 72px !important; }
+.bychi-brand-logo { width: 270px !important; height: 54px !important; }
+
+.bychi-wordmark > *,
+.bychi-footer-wordmark > *,
+.bychi-brand-logo > * { display: none !important; }
+
+/* Existing homepage header lockup: force the supplied artwork even if the
+   component contains fallback text for accessibility. */
+header a[href="/"] {
+  display: block !important;
+  width: 270px !important;
+  height: 54px !important;
+  overflow: hidden !important;
+  background-image: url("/brand/logo-mark.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-decoration: none !important;
+}
+
+header a[href="/"] > * { display: none !important; }
+header a[href="/"]::after { content: none !important; }
+
+/* Footer lockup stays on the same approved visual identity. */
+.bychi-footer-wordmark {
+  letter-spacing: -0.055em !important;
+  line-height: 0.78 !important;
+}
+
+/* Never surface origin-led wording in the redesigned presentation. */
+[class*="Vietnam"],
+[data-origin*="Vietnam"],
+[data-country*="Vietnam"] {
+  /* Intentionally left available for non-brand catalog logic; visible
+     presentation is sanitized by the product/content layer. */
+}
+
+/* Keep the supplied palette disciplined: black, brown, white and gold. */
+:root {
+  --bychi-black: #080604;
+  --bychi-brown: #2A1710;
+  --bychi-brown-rich: #4A2A1D;
+  --bychi-white: #F8F5EF;
+  --bychi-gold: #C8A45D;
+}
+
+/* -------------------------------------------------------------------------
+   MOBILE / SMALL-SCREEN EXPERIENCE
+   The desktop art direction stays intact; below 768px the layouts become
+   intentionally single-column, touch-friendly and viewport-safe.
+   ------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  main,
+  main > section,
+  main section > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Keep the approved lockup elegant without letting it consume the mobile
+     header. */
+  header a[href="/"] {
+    width: 148px !important;
+    height: 40px !important;
+    max-width: 48vw !important;
+  }
+
+  .bychi-wordmark,
+  .bychi-brand-logo {
+    width: 148px !important;
+    height: 40px !important;
+    max-width: 48vw !important;
+  }
+
+  .bychi-footer-wordmark {
+    width: min(230px, 78vw) !important;
+    height: 58px !important;
+  }
+
+  /* The third homepage section is the editorial collection mosaic. Its
+     desktop grid has explicit rows, so mobile needs a real intrinsic height. */
+  main > section:nth-of-type(3) a.group.relative.overflow-hidden {
+    display: block;
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+  }
+
+  /* The fifth homepage section contains the video mosaic. Give every video
+     tile a mobile frame instead of relying on desktop grid rows. */
+  main > section:nth-of-type(5) .group.relative.overflow-hidden {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+  }
+
+  main > section:nth-of-type(5) .group.relative.overflow-hidden video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Hero type remains dramatic but is prevented from becoming wider than the
+     viewport when long words are rendered on narrow phones. */
+  main h1,
+  main h2,
+  main h3,
+  main p,
+  main a {
+    overflow-wrap: break-word;
+  }
+
+  /* Keep editorial display headings readable on 320–390px devices. */
+  main h1 {
+    font-size: clamp(3.35rem, 17vw, 5rem) !important;
+  }
+
+  /* Reduce oversized vertical gaps while preserving the luxury whitespace. */
+  main > section {
+    scroll-margin-top: 84px;
+  }
+
+  /* Full-width CTA controls are easier to tap and never overflow. */
+  main a[class*="px-6"][class*="py-5"] {
+    min-height: 52px;
+  }
+
+  /* Mobile product/editorial media should never exceed the viewport. */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  /* Disable hover-only transforms on touch devices; motion should come from
+     scroll/entrance animation, not from a stuck :hover state. */
+  @media (hover: none) {
+    .group:hover img,
+    .group:hover video,
+    .group:hover > div {
+      transform: none !important;
+    }
+  }
+}
+
+/* Very narrow phones: preserve the composition rather than allowing buttons
+   and navigation to collide. */
+@media (max-width: 374px) {
+  header {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  header > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  header a[href="/"] {
+    width: 128px !important;
+    max-width: 43vw !important;
+  }
+
+  main h1 {
+    font-size: clamp(3rem, 16vw, 4.25rem) !important;
+  }
+}
