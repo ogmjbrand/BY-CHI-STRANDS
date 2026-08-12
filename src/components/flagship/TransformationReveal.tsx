@@ -80,7 +80,7 @@ export function TransformationReveal() {
       <section className="bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
         <div className="mx-auto max-w-[1760px]">
           <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-            06 / Transformation
+            07 / Transformation
           </p>
           <h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
             One strand.
@@ -185,7 +185,7 @@ export function TransformationReveal() {
           <div className="absolute inset-0 flex flex-col justify-between px-5 py-10 md:px-10 md:py-16">
             <div className="flex items-start justify-between gap-6">
               <p className="text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-                06 / Transformation
+                07 / Transformation
               </p>
               <p className="text-[8px] uppercase tracking-[.45em] text-white/45">
                 {pct < 50 ? "Before" : "After"}
