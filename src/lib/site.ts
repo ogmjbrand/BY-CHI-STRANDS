@@ -1,9 +1,9 @@
 export const site = {
   name: "ByChiStrands",
-  tagline: "Luxury Vietnamese Hair. Crafted for Confidence.",
+  tagline: "Luxury Human Hair. Crafted for Confidence.",
   motto: "We'll style while you smile.",
   description:
-    "ByChiStrands imports, crafts and cares for authentic Vietnamese human hair — raw bundles, single-donor collections, luxury wigs, closures and frontals — alongside atelier services and importation education.",
+    "ByChiStrands sources, crafts and cares for exceptional human hair — raw bundles, single-donor collections, luxury wigs, closures and frontals — alongside atelier services and importation education.",
   url: "https://bychistrands.com",
   email: "concierge@bychistrands.com",
   phone: "+234 902 647 5176",
