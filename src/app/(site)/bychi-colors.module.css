@@ -1,0 +1,30 @@
+.system {
+  --bychi-black: #080604;
+  --bychi-gold: #C8A45D;
+  --bychi-white: #F8F5EF;
+  --bychi-brown: #2A1710;
+}
+
+/* ByChi's permanent visual ratio: Black 40% · Gold 45% · White 10% · Brown 5%. */
+.system :global(main > section:nth-of-type(1)) { background: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(2)) { background: var(--bychi-gold) !important; color: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(3)) { background: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(4)) { background: var(--bychi-gold) !important; color: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(5)) { background: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(6)) { background: var(--bychi-gold) !important; color: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(7)) { background: var(--bychi-black) !important; }
+.system :global(main > section:nth-of-type(8)) { background: var(--bychi-gold) !important; color: var(--bychi-black) !important; }
+
+/* Brown is reserved for small editorial accents rather than becoming a competing base color. */
+.system :global(.bg-\[\#2A1710\]) { background-color: var(--bychi-brown) !important; }
+.system :global(.bg-\[\#4A2A1D\]) { background-color: var(--bychi-brown) !important; }
+
+/* Gold is the dominant accent/material throughout the experience. */
+.system :global(.text-\[\#C8A45D\]),
+.system :global(.border-\[\#C8A45D\]),
+.system :global(.border-\[\#C8A45D\]\/35),
+.system :global(.border-\[\#C8A45D\]\/25),
+.system :global(.border-\[\#C8A45D\]\/10) { color: var(--bychi-gold) !important; border-color: var(--bychi-gold) !important; }
+
+/* Preserve the formal ByChi typography while applying the new palette. */
+.system :global(.font-serif) { font-family: var(--font-cormorant), Cormorant Garamond, Georgia, serif !important; }
