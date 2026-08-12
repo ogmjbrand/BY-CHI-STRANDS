@@ -66,6 +66,9 @@ export default function AftercarePage() {
 
         {/* Rituals */}
         <section className="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          {/* The ritual cards are h3; without this the outline jumps straight
+              from the page h1 to h3 and the group has no announced name. */}
+          <h2 className="sr-only">The care rituals</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {RITUALS.map((r) => (
               <div key={r.title} className="border border-outline-variant/20 p-10">

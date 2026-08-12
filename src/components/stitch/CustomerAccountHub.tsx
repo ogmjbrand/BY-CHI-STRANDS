@@ -133,6 +133,7 @@ export function CustomerAccountHub() {
                   Full name
                 </span>
                 <input
+                  autoComplete="name"
                   required
                   value={profile.fullName}
                   onChange={(event) => setProfile((current) => ({ ...current, fullName: event.target.value }))}
@@ -145,6 +146,7 @@ export function CustomerAccountHub() {
                   Email address
                 </span>
                 <input
+                  autoComplete="email"
                   required
                   type="email"
                   value={profile.email}
@@ -158,6 +160,7 @@ export function CustomerAccountHub() {
                   Phone number
                 </span>
                 <input
+                  autoComplete="tel"
                   value={profile.phone}
                   onChange={(event) => setProfile((current) => ({ ...current, phone: event.target.value }))}
                   className="w-full border-0 border-b border-outline-variant/40 bg-transparent py-3 text-body-md outline-none focus:border-primary"

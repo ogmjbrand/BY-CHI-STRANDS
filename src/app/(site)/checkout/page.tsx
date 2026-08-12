@@ -171,10 +171,12 @@ export default function CheckoutPage() {
               <h2 className="font-headline-lg text-headline-lg text-on-surface mb-8">Shipping Address</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-6">
                 <div className="md:col-span-2">
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-name" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     Full Name
                   </label>
                   <input
+                    id="co-name"
+                    autoComplete="name"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -183,10 +185,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-email" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     Email
                   </label>
                   <input
+                    id="co-email"
+                    autoComplete="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -195,10 +199,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-street" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     Street Address
                   </label>
                   <input
+                    id="co-street"
+                    autoComplete="street-address"
                     required
                     value={street}
                     onChange={(e) => setStreet(e.target.value)}
@@ -207,10 +213,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-city" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     City
                   </label>
                   <input
+                    id="co-city"
+                    autoComplete="address-level2"
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
@@ -219,10 +227,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-state" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     State
                   </label>
                   <input
+                    id="co-state"
+                    autoComplete="address-level1"
                     required
                     value={state}
                     onChange={(e) => setState(e.target.value)}
@@ -231,10 +241,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-zip" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     Postal Code
                   </label>
                   <input
+                    id="co-zip"
+                    autoComplete="postal-code"
                     value={zip}
                     onChange={(e) => setZip(e.target.value)}
                     className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-2 transition-all duration-300"
@@ -242,10 +254,12 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
+                  <label htmlFor="co-country" className="block text-label-caps text-outline mb-2 uppercase tracking-widest">
                     Country
                   </label>
                   <input
+                    id="co-country"
+                    autoComplete="country-name"
                     required
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}

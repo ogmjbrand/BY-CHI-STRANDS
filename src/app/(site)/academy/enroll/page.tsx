@@ -77,10 +77,12 @@ export default function AcademyEnrollmentPage() {
 
         <form onSubmit={submit} className="space-y-10">
           <div>
-            <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+            <label htmlFor="enroll-name" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
               Full Name
             </label>
             <input
+              id="enroll-name"
+              autoComplete="name"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -89,10 +91,12 @@ export default function AcademyEnrollmentPage() {
             />
           </div>
           <div>
-            <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+            <label htmlFor="enroll-email" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
               Email Address
             </label>
             <input
+              id="enroll-email"
+              autoComplete="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -101,10 +105,11 @@ export default function AcademyEnrollmentPage() {
             />
           </div>
           <div>
-            <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+            <label htmlFor="enroll-date" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
               Preferred Start Date
             </label>
             <input
+              id="enroll-date"
               required
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}

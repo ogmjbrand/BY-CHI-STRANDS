@@ -53,7 +53,14 @@ export default function StudentDashboardPage() {
         </header>
 
         <form onSubmit={submit} className="flex gap-4 mb-16">
+          {/* A placeholder is not a label: it disappears on focus and is not
+              announced as the field's name. */}
+          <label htmlFor="dashboard-email" className="sr-only">
+            Email address you enrolled with
+          </label>
           <input
+            id="dashboard-email"
+            autoComplete="email"
             required
             type="email"
             value={email}

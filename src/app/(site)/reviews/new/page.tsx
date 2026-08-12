@@ -97,10 +97,11 @@ function ReviewFormContent() {
       <form onSubmit={submit} className="space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+            <label htmlFor="review-name" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
               Your Name
             </label>
             <input
+            id="review-name"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -109,10 +110,11 @@ function ReviewFormContent() {
             />
           </div>
           <div>
-            <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+            <label htmlFor="review-email" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
               Email
             </label>
             <input
+            id="review-email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -148,10 +150,11 @@ function ReviewFormContent() {
         </div>
 
         <div>
-          <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+          <label htmlFor="review-subject" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
             Subject
           </label>
           <input
+            id="review-subject"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder="e.g., A Timeless Transformation"
@@ -161,10 +164,11 @@ function ReviewFormContent() {
         </div>
 
         <div>
-          <label className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
+          <label htmlFor="review-story" className="font-label-caps text-label-caps text-on-surface-variant block mb-2 tracking-widest">
             Your Story
           </label>
           <textarea
+            id="review-story"
             required
             value={content}
             onChange={(e) => setContent(e.target.value)}

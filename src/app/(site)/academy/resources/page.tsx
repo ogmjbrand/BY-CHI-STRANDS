@@ -40,6 +40,9 @@ export default function AcademyResourcesPage() {
           </p>
         </header>
 
+        {/* The three cards are h3; without this the outline jumps from the
+            page h1 straight to h3 and the group has no announced name. */}
+        <h2 className="sr-only">What the Academy gives you</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-padding">
           <div className="border border-outline-variant/20 p-8 text-center">
             <Icon name="school" className="text-primary text-4xl mb-6 block" />
