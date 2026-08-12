@@ -5,7 +5,7 @@ export function ClientConciergeSection() {
     <section className="relative overflow-hidden bg-noir px-6 py-24 text-white md:px-16 md:py-32">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/media/posters/imgi_43_497f33f33d93c247e1bd680d9bef091f.jpg"
+        src="/media/posters/imgi_69_497f33f33d93c247e1bd680d9bef091f.jpg"
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-25"
       />
