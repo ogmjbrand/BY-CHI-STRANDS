@@ -52,7 +52,7 @@ export default function StudentDashboardPage() {
           </p>
         </header>
 
-        <form onSubmit={submit} className="flex gap-4 mb-16">
+        <form onSubmit={submit} className="flex flex-col gap-4 mb-16 sm:flex-row">
           {/* A placeholder is not a label: it disappears on focus and is not
               announced as the field's name. */}
           <label htmlFor="dashboard-email" className="sr-only">
@@ -66,7 +66,7 @@ export default function StudentDashboardPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
-            className="flex-1 bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-3 font-body-md placeholder:text-on-surface-variant/40"
+            className="min-w-0 flex-1 bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-3 font-body-md placeholder:text-on-surface-variant/40"
           />
           <button
             type="submit"

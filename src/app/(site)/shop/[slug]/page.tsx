@@ -12,6 +12,7 @@ import { ImageReveal } from "@/components/ui/image-reveal";
 import { site, whatsappLink } from "@/lib/site";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { Icon } from "@/components/ui/icon";
+import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -356,7 +357,7 @@ export default async function ProductPage({
                   <div className="overflow-hidden mb-6 aspect-[3/4]">
                     <ProductMedia media={heroFor(p.slug)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
-                  <h4 className="font-display-md text-lg">{p.name}</h4>
+                  <h3 className="font-display-md text-lg">{p.name}</h3>
                   <p className="text-primary text-sm mt-1">{formatPrice(priceFrom(p))}</p>
                 </Link>
               ))}
@@ -378,7 +379,7 @@ export default async function ProductPage({
               </div>
             </div>
             <div className="space-y-6">
-              <h5 className="font-label-caps text-primary text-xs">The Atelier</h5>
+              <h3 className="font-label-caps text-primary text-xs">The Atelier</h3>
               <ul className="space-y-4 font-body-sm text-on-surface-variant">
                 <li>
                   <Link className="hover:text-primary transition-colors" href="/about">Our Story</Link>
@@ -395,7 +396,7 @@ export default async function ProductPage({
               </ul>
             </div>
             <div className="space-y-6">
-              <h5 className="font-label-caps text-primary text-xs">Concierge</h5>
+              <h3 className="font-label-caps text-primary text-xs">Concierge</h3>
               <ul className="space-y-4 font-body-sm text-on-surface-variant">
                 <li>
                   <Link className="hover:text-primary transition-colors" href="/shipping">Shipping & Returns</Link>
@@ -412,12 +413,15 @@ export default async function ProductPage({
               </ul>
             </div>
             <div className="space-y-6">
-              <h5 className="font-label-caps text-primary text-xs">Mailing List</h5>
+              <h3 className="font-label-caps text-primary text-xs">Mailing List</h3>
               <p className="font-body-sm text-on-surface-variant">Receive exclusive access to new atelier releases.</p>
-              <div className="flex border-b border-outline-variant pb-2">
-                <input className="bg-transparent border-none focus:ring-0 w-full text-xs font-label-caps" placeholder="YOUR EMAIL" type="email" />
-                <button className="text-primary"><Icon name="chevron_right" /></button>
-              </div>
+              {/*
+                Was a bare input and an arrow button with no label, no name,
+                no state and no handler — a subscribe box that dropped every
+                address typed into it. This is the same real field the Academy
+                footer uses, posting to /api/contact.
+              */}
+              <InlineNewsletterField />
             </div>
           </div>
           <div className="max-w-container-max mx-auto px-margin-desktop py-unit border-t border-outline-variant/10 text-center md:text-left text-[10px] text-on-surface-variant uppercase tracking-widest">
