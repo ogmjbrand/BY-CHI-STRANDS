@@ -126,21 +126,21 @@ export default function AcademyPage() {
           <h2 className="sr-only">What the Academy teaches</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center items-center">
             <div className="fade-up">
-              <h3 className="font-headline-lg text-headline-lg text-noir mb-4">Real Sourcing Knowledge</h3>
+              <h3 className="font-headline-lg text-headline-lg text-on-surface mb-4">Real Sourcing Knowledge</h3>
               {" "}
-              <p className="font-body-md text-body-sm text-noir/70">Taught by the team that sources ByChiStrands&apos; own raw Vietnamese hair.</p>
+              <p className="font-body-md text-body-sm text-on-surface-variant">Taught by the team that sources ByChiStrands&apos; own raw Vietnamese hair.</p>
             </div>
             {" "}
             <div className="fade-up">
-              <div className="w-px h-24 bg-noir/20 mx-auto hidden md:block"></div>
+              <div className="w-px h-24 bg-primary/25 mx-auto hidden md:block"></div>
               {" "}
-              <div className="md:hidden w-24 h-px bg-noir/20 mx-auto my-8"></div>
+              <div className="md:hidden w-24 h-px bg-primary/25 mx-auto my-8"></div>
             </div>
             {" "}
             <div className="fade-up">
-              <h3 className="font-headline-lg text-headline-lg text-noir mb-4">Built For Entrepreneurs</h3>
+              <h3 className="font-headline-lg text-headline-lg text-on-surface mb-4">Built For Entrepreneurs</h3>
               {" "}
-              <p className="font-body-md text-body-sm text-noir/70">
+              <p className="font-body-md text-body-sm text-on-surface-variant">
                 For anyone serious about importing and selling luxury hair, not just industry hobbyists.
               </p>
             </div>
