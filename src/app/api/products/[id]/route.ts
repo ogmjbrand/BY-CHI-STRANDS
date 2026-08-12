@@ -21,7 +21,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   } catch (error) {
     console.error("Failed to fetch product:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to fetch product" },
+      { error: "Failed to fetch product" },
       { status: 500 }
     );
   }

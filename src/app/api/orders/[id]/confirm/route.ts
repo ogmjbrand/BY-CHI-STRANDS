@@ -58,7 +58,7 @@ export async function POST(
   } catch (error) {
     console.error("Order confirmation failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to confirm order" },
+      { error: "Failed to confirm order" },
       { status: 500 }
     );
   }

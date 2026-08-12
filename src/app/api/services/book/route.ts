@@ -60,7 +60,10 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Service booking failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create service booking" },
+      {
+        error:
+          "We could not save that booking request. Please try again, or send us the details on WhatsApp and we will hold the slot.",
+      },
       { status: 500 }
     );
   }

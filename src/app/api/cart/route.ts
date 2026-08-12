@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
     const cart = await getCart(userId);
     return NextResponse.json({ success: true, cart }, { status: 200 });
   } catch (error) {
+    console.error("[api/cart] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch cart" }, { status: 500 });
   }
 }
@@ -25,8 +26,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, cart }, { status: 200 });
   } catch (error) {
+    console.error("[api/cart] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to add to cart" },
+      { error: "Failed to add to cart" },
       { status: 500 }
     );
   }
@@ -47,8 +49,9 @@ export async function DELETE(request: NextRequest) {
     const cart = await removeFromCart(userId, body.itemId);
     return NextResponse.json({ success: true, cart }, { status: 200 });
   } catch (error) {
+    console.error("[api/cart] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to update cart" },
+      { error: "Failed to update cart" },
       { status: 500 }
     );
   }

@@ -45,7 +45,10 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Enrollment creation failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create enrollment" },
+      {
+        error:
+          "We could not record that application. Please try again, or email the concierge and we will add you to the cohort list.",
+      },
       { status: 500 }
     );
   }

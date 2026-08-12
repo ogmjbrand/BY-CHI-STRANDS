@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, user }, { status: 200 });
   } catch (error) {
+    console.error("[api/users/profile] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch profile" }, { status: 500 });
   }
 }
@@ -27,8 +28,9 @@ export async function PATCH(request: NextRequest) {
 
     return NextResponse.json({ success: true, user }, { status: 200 });
   } catch (error) {
+    console.error("[api/users/profile] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to update profile" },
+      { error: "Failed to update profile" },
       { status: 500 }
     );
   }

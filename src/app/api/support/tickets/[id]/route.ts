@@ -24,6 +24,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     return NextResponse.json({ success: true, ticket }, { status: 200 });
   } catch (error) {
+    console.error("[api/support/tickets/[id]] request failed:", error);
     return NextResponse.json({ error: "Failed to fetch ticket" }, { status: 500 });
   }
 }
@@ -41,8 +42,9 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
 
     return NextResponse.json({ success: true, message: "Response added" }, { status: 201 });
   } catch (error) {
+    console.error("[api/support/tickets/[id]] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to add response" },
+      { error: "Failed to add response" },
       { status: 500 }
     );
   }
@@ -60,8 +62,9 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
 
     return NextResponse.json({ success: true, message: "Status updated" }, { status: 200 });
   } catch (error) {
+    console.error("[api/support/tickets/[id]] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to update status" },
+      { error: "Failed to update status" },
       { status: 500 }
     );
   }

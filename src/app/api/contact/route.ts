@@ -33,8 +33,12 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
+    console.error("[api/contact] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to send message" },
+      {
+        error:
+          "We could not send that message. Please try again, or reach us directly on WhatsApp.",
+      },
       { status: 500 }
     );
   }

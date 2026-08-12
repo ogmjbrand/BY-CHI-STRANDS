@@ -25,8 +25,9 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
+    console.error("[api/checkout/payment-intent] request failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to create payment intent" },
+      { error: "Failed to create payment intent" },
       { status: 500 }
     );
   }
