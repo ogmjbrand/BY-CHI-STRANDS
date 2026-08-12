@@ -61,8 +61,12 @@ export function BoutiqueGrid({
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <span className="font-label-caps text-label-caps uppercase text-outline tracking-[0.15em]">Sort By:</span>
+            {/* Was a <span>, so the control had no accessible name. */}
+            <label htmlFor="boutique-sort" className="font-label-caps text-label-caps uppercase text-outline tracking-[0.15em]">
+              Sort By:
+            </label>
             <select
+              id="boutique-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
               className="bg-transparent border-none font-label-caps text-label-caps uppercase text-on-surface focus:ring-0 cursor-pointer tracking-[0.15em]"
@@ -75,6 +79,9 @@ export function BoutiqueGrid({
         </div>
       </section>
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
+        {/* The cards are h3; without this the outline jumps from the page h1
+            straight past h2, which is what screen-reader users navigate by. */}
+        <h2 className="sr-only">All pieces</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
           {sorted.map((p) => {
             const price = priceFrom(p);

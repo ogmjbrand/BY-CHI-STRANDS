@@ -49,6 +49,10 @@ export function AssuranceStrip() {
       aria-label="What every order includes"
       className="border-y border-white/10 bg-noir px-6 py-14 md:px-16 md:py-20"
     >
+      {/* The pillar labels are h3, so the section needs its own h2 or the
+          outline jumps from the hero h1 straight to h3. */}
+      <h2 className="sr-only">What every order includes</h2>
+
       {/* Two up on a phone: stacked, the four pillars ran to most of a
           viewport before the storytelling had started. */}
       <ul className="mx-auto grid max-w-[1800px] grid-cols-2 gap-x-6 gap-y-10 md:gap-x-12 lg:grid-cols-4">

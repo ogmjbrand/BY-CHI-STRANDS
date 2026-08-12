@@ -38,7 +38,13 @@ export function InlineNewsletterField() {
 
   return (
     <form className="flex" onSubmit={submit}>
+      {/* A placeholder is not an accessible name. */}
+      <label htmlFor="inline-newsletter-email" className="sr-only">
+        Email address
+      </label>
       <input
+        id="inline-newsletter-email"
+        autoComplete="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}

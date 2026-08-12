@@ -123,7 +123,9 @@ function Column({
 }) {
   return (
     <div>
-      <h4 className="font-label-caps text-on-surface mb-8">{title}</h4>
+      {/* h3, not h4: these sit under the footer's h2 and skipping a level
+          breaks the outline screen-reader users navigate by. */}
+      <h3 className="font-label-caps text-on-surface mb-8">{title}</h3>
       <ul className="space-y-4">
         {links.map((l) => (
           <li key={l.label}>

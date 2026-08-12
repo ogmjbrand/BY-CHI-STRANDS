@@ -29,9 +29,11 @@ export default function AboutPage() {
           <span className="font-label-caps text-label-caps uppercase text-gold-light tracking-[0.3em] mb-6 block">
             Our Craft
           </span>
-          <p className="font-display-lg text-headline-lg-mobile md:text-display-lg text-white max-w-3xl leading-tight">
+          {/* The page had no h1 at all — this line is the page's title, so
+              it should be marked up as one rather than as body copy. */}
+          <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-white max-w-3xl leading-tight">
             &ldquo;{site.motto}&rdquo;
-          </p>
+          </h1>
         </div>
       </header>
 
