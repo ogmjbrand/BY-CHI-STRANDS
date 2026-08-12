@@ -46,9 +46,9 @@ export function AcademyInquiryForm() {
 
   if (status === "done") {
     return (
-      <div className="bg-white text-noir p-8 md:p-12 border border-outline-variant/30 luxury-shadow relative z-10 fade-up text-center">
+      <div className="bg-surface-container-lowest text-on-surface p-8 md:p-12 border border-outline-variant/20 relative z-10 fade-up text-center">
         <p className="font-headline-lg text-xl mb-2">Application received.</p>
-        <p className="font-body-md text-noir/70">
+        <p className="font-body-md text-on-surface-variant">
           We&apos;ll follow up by email to confirm your intake details.
         </p>
       </div>
@@ -56,10 +56,12 @@ export function AcademyInquiryForm() {
   }
 
   return (
-    <div className="bg-white text-noir p-8 md:p-12 border border-outline-variant/30 luxury-shadow relative z-10 fade-up">
+    // Was bg-white on a theme-noir page — the last light panel on /academy.
+    <div
+      className="bg-surface-container-lowest text-on-surface p-8 md:p-12 border border-outline-variant/20 relative z-10 fade-up">
       <form className="space-y-8" onSubmit={submit}>
         <div>
-          <label htmlFor="academy-name" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Full Name</label>
+          <label htmlFor="academy-name" className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Full Name</label>
           <input
             required
             value={name}
@@ -72,7 +74,7 @@ export function AcademyInquiryForm() {
           />
         </div>
         <div>
-          <label htmlFor="academy-email" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Email Address</label>
+          <label htmlFor="academy-email" className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Email Address</label>
           <input
             required
             value={email}
@@ -85,7 +87,7 @@ export function AcademyInquiryForm() {
           />
         </div>
         <div>
-          <label htmlFor="academy-business" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Business Type</label>
+          <label htmlFor="academy-business" className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Business Type</label>
           <select
             id="academy-business"
             value={businessType}
@@ -99,7 +101,7 @@ export function AcademyInquiryForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="academy-message" className="block text-label-caps text-noir/70 mb-2 uppercase tracking-widest">Message / Goals</label>
+          <label htmlFor="academy-message" className="block text-label-caps text-on-surface-variant mb-2 uppercase tracking-widest">Message / Goals</label>
           <textarea
             id="academy-message"
             value={message}

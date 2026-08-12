@@ -391,8 +391,11 @@
 :where(.scr-academy) .luxury-shadow {
             box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
         }
+/* Was #F9F7F3 — a cream band left over from the light design, interrupting
+   an otherwise noir page. Kept as a distinct "breath" between chapters, but
+   in the house palette rather than against it. */
 :where(.scr-academy) .ivory-bg {
-            background-color: #F9F7F3;
+            background-color: var(--color-surface-container-lowest);
         }
 :where(.scr-academy) .fade-up {
             opacity: 0;
