@@ -66,8 +66,8 @@ const MEDIA: Record<string, Media[]> = {
   "sdd-honey-deep-curls": [
     img("IMG-20260727-WA0017", "Honey deep curl frontal unit on a studio stand"),
   ],
-  "sdd-vietnam-pixie-curls": [
-    vid("products", "VID-20260727-WA0049", "Client wearing the Vietnam pixie curl unit"),
+  "sdd-china-bold-pixie-curls": [
+    vid("products", "VID-20260727-WA0049", "SDD China Bold Pixie Curls — natural colour, 5x5 closure"),
   ],
   "rose-bob-wig": [
     vid("products", "VID-20260726-WA0020", "Client wearing the rose pink blunt bob"),
@@ -80,18 +80,15 @@ export function mediaFor(slug: string): Media[] {
   return MEDIA[slug] ?? [FALLBACK];
 }
 
-/** Lead asset for cards and cart lines. */
 export function heroFor(slug: string): Media {
   return mediaFor(slug)[0] ?? FALLBACK;
 }
 
-/** Still image for contexts that cannot host a video element. */
 export function posterFor(slug: string): string {
   const m = heroFor(slug);
   return m.type === "video" ? (m.poster ?? FALLBACK.src) : m.src;
 }
 
-/** Client footage for the testimonial rail. */
 export const testimonyClips: Media[] = [
   vid("testimony", "reviews from Princess", "Princess reviewing her ByChiStrands unit to camera"),
   vid("testimony", "VID-20260727-WA0052", "Client showing her finished install"),
