@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
@@ -21,6 +21,34 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 export function CinematicScene() {
   const track = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+
+  /*
+   * The footage is 6.7 MB and this section sits some 8,500px down the page,
+   * yet an autoplaying <video> with a src starts downloading on first paint —
+   * so a visitor who never scrolled this far still paid for it. The src is
+   * attached only once the track is within a viewport of the fold; until
+   * then the poster carries the frame, which is what it is for.
+   */
+  const [armed, setArmed] = useState(false);
+
+  useEffect(() => {
+    const node = track.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setArmed(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setArmed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100% 0px" }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: track,
@@ -62,18 +90,30 @@ export function CinematicScene() {
     <div ref={track} className="relative h-[320svh] bg-noir">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <motion.div style={{ clipPath }} className="absolute inset-0">
-          <motion.video
-            style={{ scale }}
-            className="h-full w-full object-cover"
-            src="/products/VID-20260727-WA0041.mp4"
-            poster="/media/posters/VID-20260727-WA0041.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          />
+          {/* Poster underneath, so the frame is never empty while the
+              footage is still unarmed or buffering. */}
+          <motion.div style={{ scale }} className="absolute inset-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/posters/VID-20260727-WA0041.jpg"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+          {armed ? (
+            <motion.video
+              style={{ scale }}
+              className="absolute inset-0 h-full w-full object-cover"
+              src="/products/VID-20260727-WA0041.mp4"
+              poster="/media/posters/VID-20260727-WA0041.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+          ) : null}
           <motion.div style={{ opacity: veil }} className="absolute inset-0 bg-noir" />
           {/*
            * The footage brightens as the mask opens, so a fixed veil alone

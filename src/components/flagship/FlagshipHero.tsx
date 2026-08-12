@@ -30,6 +30,12 @@ export function FlagshipHero() {
           muted
           loop
           playsInline
+          /*
+           * Without this the attribute defaults to "auto" and Chromium pulls
+           * the whole 5.1 MB file before first paint. The poster carries the
+           * frame while the footage streams in behind it.
+           */
+          preload="metadata"
         />
         {/*
          * Two scrims, not one: a vertical wash for the mast and lower copy,
