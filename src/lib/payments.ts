@@ -1,4 +1,6 @@
 import "server-only";
+
+import { site } from "./site";
 import { getSupabaseAdmin } from "./supabase/admin";
 
 export async function getShippingRates(zipCode: string): Promise<any[]> {
@@ -79,7 +81,9 @@ export async function createPaymentIntent(orderId: string, amount: number): Prom
     .insert({
       order_id: orderId,
       amount,
-      currency: "USD",
+      // Was hard-coded "USD" while every price on this site is Naira, so any
+      // row this wrote recorded the right number against the wrong currency.
+      currency: site.currency,
       status: "pending",
       client_secret: clientSecret,
     })
