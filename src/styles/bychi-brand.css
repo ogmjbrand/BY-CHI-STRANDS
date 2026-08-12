@@ -36,5 +36,10 @@ header a[href="/"]::after {
 }
 
 /* Remove origin-led wording from the redesigned template homepage. */
-.bychi-template-home .bychi-origin-label,
-.bychi-template-home .bychi-origin-word { display: none !important; }
+.bg-\[\#0b0a09\] > main > section:first-child h1 span:nth-child(2),
+.bg-\[\#0b0a09\] > main > section:first-child > div:last-child > div > p:first-child {
+  display: none !important;
+}
+
+/* The existing flagship masthead's announcement strip must never advertise an origin. */
+header > div:nth-child(2) > div > span:nth-child(3) { display: none !important; }
