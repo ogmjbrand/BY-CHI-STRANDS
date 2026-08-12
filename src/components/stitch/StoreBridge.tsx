@@ -23,14 +23,16 @@ export function StoreBridge() {
   useEffect(() => {
     if (!hydrated) return;
 
-    // `startsWith`, not `===`: on screens where the icon itself is the
-    // clickable trigger (no separate button/anchor wrapper), the badge is
-    // appended as the icon's own child, so its textContent becomes
-    // "shopping_bag1" etc. An exact-match filter would drop that icon from
-    // every future pass, freezing its badge at whatever count it first got.
+    /*
+     * This used to find bag icons by reading their text: every icon was a
+     * Material Symbols ligature whose textContent was literally
+     * "shopping_bag", so a glyph scan was the only handle available. The icons
+     * are lucide SVGs now and carry no text at all, so each one marks itself
+     * with data-bag-trigger and the scan is gone.
+     */
     const icons = Array.from(
-      document.querySelectorAll<HTMLElement>(".material-symbols-outlined")
-    ).filter((el) => (el.textContent?.trim() ?? "").startsWith("shopping_bag"));
+      document.querySelectorAll<HTMLElement>("[data-bag-trigger]")
+    );
 
     for (const icon of icons) {
       // the clickable ancestor the design already provides, or the icon itself
@@ -85,12 +87,10 @@ export function StoreBridge() {
   useEffect(() => {
     if (!hydrated) return;
 
+    // Marked by the component, same as the bag above.
     const hearts = Array.from(
-      document.querySelectorAll<HTMLElement>(".material-symbols-outlined")
-    ).filter((el) => {
-      const t = el.textContent?.trim();
-      return t === "favorite" || t === "favorite_border";
-    });
+      document.querySelectorAll<HTMLElement>("[data-wishlist-trigger]")
+    );
 
     const cleanups: Array<() => void> = [];
 
@@ -107,7 +107,10 @@ export function StoreBridge() {
 
       const paint = () => {
         const on = wishlist.includes(slug);
-        icon.style.fontVariationSettings = on ? "'FILL' 1" : "'FILL' 0";
+        // The heart used to be a variable font glyph, filled by axis:
+        // `fontVariationSettings = "'FILL' 1"`. It is an SVG path now, so the
+        // fill is a paint, not a font feature.
+        icon.style.fill = on ? "currentColor" : "none";
         icon.classList.toggle("text-primary", on);
       };
       paint();
@@ -122,7 +125,14 @@ export function StoreBridge() {
       };
       trigger.addEventListener("click", onClick);
       trigger.style.cursor = "pointer";
-      cleanups.push(() => trigger.removeEventListener("click", onClick));
+      cleanups.push(() => {
+        trigger.removeEventListener("click", onClick);
+        // Must clear the flag too. This effect re-runs on every wishlist
+        // change; without the reset, the cleanup strips the listener and the
+        // next run sees the flag and skips rebinding — the heart would go
+        // dead the moment you used it once. Same hazard MobileMenu documents.
+        delete trigger.dataset.wishBound;
+      });
     }
 
     return () => cleanups.forEach((fn) => fn());

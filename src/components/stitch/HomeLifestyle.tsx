@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * Full-bleed swipe section — real client photo fills the viewport, the
@@ -36,7 +37,7 @@ export function HomeLifestyle() {
           className="inline-flex items-center gap-2 bg-gold text-noir px-8 py-4 font-label-caps text-label-caps uppercase tracking-[0.15em] hover:bg-gold-light transition-colors"
         >
           Our Story
-          <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+          <Icon name="arrow_forward" className="text-[18px]" />
         </Link>
       </div>
     </section>

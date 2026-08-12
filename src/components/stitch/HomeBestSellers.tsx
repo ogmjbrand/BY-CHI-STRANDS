@@ -4,6 +4,7 @@ import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { ProductMedia } from "./ProductMedia";
 import { ProductBadges } from "./ProductBadges";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * Bestsellers first, then the rest of the catalogue — priced pieces before
@@ -53,12 +54,7 @@ export function HomeBestSellers() {
                   aria-label="Save to wishlist"
                   className="absolute top-3 right-3 w-9 h-9 bg-white/85 backdrop-blur rounded-full flex items-center justify-center text-noir z-10"
                 >
-                  <span
-                    className="material-symbols-outlined text-[18px]"
-                    style={{ fontVariationSettings: "'FILL' 0" }}
-                  >
-                    favorite
-                  </span>
+                  <Icon data-wishlist-trigger name="favorite" className="text-[18px]" />
                 </button>
               </div>
               <h3 className="font-headline-lg text-body-md md:text-body-xl text-on-surface">

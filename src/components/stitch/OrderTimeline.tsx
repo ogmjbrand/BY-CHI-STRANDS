@@ -1,4 +1,5 @@
 import type { Order } from "@/types/orders";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * Order progress rail. Steps come from the real `status` enum the orders
@@ -40,9 +41,7 @@ export function OrderTimeline({ status }: { status: Order["status"] }) {
   if (status === "cancelled") {
     return (
       <div className="border border-outline-variant/30 p-8 text-center">
-        <span className="material-symbols-outlined text-on-surface-variant text-[32px] mb-3 block">
-          cancel
-        </span>
+        <Icon name="cancel" className="text-on-surface-variant text-[32px] mb-3 block" />
         <p className="font-headline-lg text-xl mb-2">This order was cancelled</p>
         <p className="font-body-md text-on-surface-variant">
           If that looks wrong, message our concierge and we&apos;ll sort it out.
@@ -83,9 +82,7 @@ export function OrderTimeline({ status }: { status: Order["status"] }) {
                     : "bg-transparent border-outline-variant/50 text-on-surface-variant/50"
               }`}
             >
-              <span className="material-symbols-outlined text-[16px]">
-                {done ? "check" : active ? "radio_button_checked" : "radio_button_unchecked"}
-              </span>
+              <Icon name={done ? "check" : active ? "radio_button_checked" : "radio_button_unchecked"} className="text-[16px]" />
             </span>
 
             <div className={upcoming ? "opacity-45" : ""}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AcademyInquiryForm } from "@/components/stitch/AcademyInquiryForm";
 import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
 import { site } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy
@@ -55,14 +56,10 @@ export default function AcademyPage() {
             </Link>
             {" "}
             <div className="flex items-center space-x-4">
-              <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300">
-                shopping_bag
-              </Link>
+              <Link href="/cart" aria-label="Your bag" className="text-on-surface cursor-pointer scale-95 active:scale-100 transition-transform duration-300"><Icon data-bag-trigger name="shopping_bag" /></Link>
               {" "}
-              <button className="md:hidden text-on-surface cursor-pointer" aria-label="Open menu">
-                <span className="material-symbols-outlined" data-icon="menu">
-                  menu
-                </span>
+              <button data-open-menu="" className="md:hidden text-on-surface cursor-pointer" aria-label="Open menu">
+                <Icon name="menu" />
               </button>
             </div>
           </div>
@@ -289,19 +286,19 @@ export default function AcademyPage() {
               {" "}
               <ul className="space-y-6 mb-12">
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">The Masterclass — sourcing, grading, marketing and scaling</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">Mentorship — a direct session for your own sourcing questions</span>
                 </li>
                 {" "}
                 <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">verified</span>
+                  <Icon name="verified" className="text-primary" />
                   {" "}
                   <span className="font-body-md text-on-surface">Direct Access — reach the team on WhatsApp as you build</span>
                 </li>

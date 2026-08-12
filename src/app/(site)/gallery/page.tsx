@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Gallery. Every clip here is the house's own client
@@ -54,12 +55,10 @@ export default function GalleryPage() {
               Academy
             </Link>
             {" "}
-            <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">
-              shopping_bag
-            </Link>
+            <Link href="/cart" aria-label="Your bag" className="text-primary cursor-pointer hover:scale-110 transition-transform"><Icon data-bag-trigger name="shopping_bag" /></Link>
             {" "}
-            <button className="md:hidden text-primary cursor-pointer hover:scale-110 transition-transform" aria-label="Open menu">
-              <span className="material-symbols-outlined">menu</span>
+            <button data-open-menu="" className="md:hidden text-primary cursor-pointer hover:scale-110 transition-transform" aria-label="Open menu">
+              <Icon name="menu" />
             </button>
           </div>
         </div>
@@ -135,9 +134,7 @@ export default function GalleryPage() {
               className="shrink-0 font-label-caps text-primary flex items-center gap-2 group/link"
             >
               Explore The Academy
-              <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
+              <Icon name="arrow_forward" className="text-sm group-hover/link:translate-x-1 transition-transform" />
             </Link>
           </div>
         </section>

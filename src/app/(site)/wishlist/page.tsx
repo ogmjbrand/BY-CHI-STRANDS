@@ -6,6 +6,7 @@ import { getProduct, priceFor } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
 import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
 import { posterFor } from "@/lib/media";
+import { Icon } from "@/components/ui/icon";
 
 export default function WishlistPage() {
   const { wishlist, toggleWishlist, hydrated } = useStore();
@@ -30,9 +31,8 @@ export default function WishlistPage() {
       <main className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-padding">
         {!hydrated ? null : items.length === 0 ? (
           <div className="border border-outline-variant/30 bg-surface-container-lowest p-16 text-center">
-            <span className="material-symbols-outlined text-primary text-5xl mb-8 block">
-              favorite
-            </span>
+            {/* Decorative empty state, not an affordance. */}
+            <Icon name="favorite" className="text-primary text-5xl mb-8 block" />
             <p className="font-body-xl text-body-xl text-on-surface-variant mb-10">
               Nothing saved yet.
             </p>

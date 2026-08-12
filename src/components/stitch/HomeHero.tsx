@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GoldSeal } from "./GoldSeal";
 import { ProductMedia } from "./ProductMedia";
 import type { Media } from "@/lib/media";
+import { Icon } from "@/components/ui/icon";
 
 const fadeUp = (delay: number) => ({
   initial: { y: 20, opacity: 0 },
@@ -139,9 +140,7 @@ export function HomeHero() {
               className="group inline-flex items-center gap-2 border border-white/40 text-white px-8 py-4 font-label-caps text-label-caps uppercase tracking-[0.15em] hover:border-gold hover:text-gold transition-colors"
             >
               Our Story
-              <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">
-                arrow_forward
-              </span>
+              <Icon name="arrow_forward" className="text-[18px] transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </div>
@@ -158,7 +157,7 @@ export function HomeHero() {
           Scroll to Discover
         </span>
         <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40">
-          <span className="material-symbols-outlined text-[16px]">arrow_downward</span>
+          <Icon name="arrow_downward" className="text-[16px]" />
         </span>
       </button>
     </section>

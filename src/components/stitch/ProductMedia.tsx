@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import type { Media } from "@/lib/media";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * Renders a catalogue asset. Videos are muted, loop and play on hover (or on
@@ -79,9 +80,7 @@ export function ProductMedia({
            * which is everywhere now — so the glyph was white on white and
            * every video tile showed a blank disc instead of a play arrow.
            */}
-          <span className="material-symbols-outlined text-[18px] text-noir">
-            play_arrow
-          </span>
+          <Icon name="play_arrow" className="text-[18px] text-noir" />
         </span>
       ) : null}
     </span>

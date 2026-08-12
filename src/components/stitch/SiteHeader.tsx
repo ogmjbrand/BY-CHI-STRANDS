@@ -7,6 +7,7 @@ import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
 import { SiteSearch } from "./SiteSearch";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { Icon } from "@/components/ui/icon";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -85,7 +86,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
             aria-label="Search the catalogue"
             className={`transition-colors ${iconColor}`}
           >
-            <span className="material-symbols-outlined text-[22px]">search</span>
+            <Icon name="search" className="text-[22px]" />
           </button>
           {/*
            * Account and wishlist are hidden on the narrowest screens: five
@@ -93,10 +94,13 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
            * mobile drawer, which is one tap away.
            */}
           <Link href="/account" aria-label="Your account" className={`hidden md:inline transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">account_circle</span>
+            <Icon name="account_circle" className="text-[22px]" />
           </Link>
           <Link href="/wishlist" aria-label="Your wishlist" className={`relative hidden sm:inline transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">favorite</span>
+            {/* Navigation to the wishlist page, not a save-toggle — so no
+                data-wishlist-trigger. (StoreBridge skipped it anyway: it can
+                only bind a heart it can resolve a product slug for.) */}
+            <Icon name="favorite" className="text-[22px]" />
             <CountBadge count={hydrated ? wishlist.length : 0} dark={dark} />
           </Link>
           <button
@@ -104,11 +108,11 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
             aria-label="Your bag"
             className={`relative transition-colors ${iconColor}`}
           >
-            <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+            <Icon data-bag-trigger name="shopping_bag" className="text-[22px]" />
             <CountBadge count={hydrated ? cartCount : 0} dark={dark} />
           </button>
-          <button aria-label="Open menu" className={`md:hidden transition-colors ${iconColor}`}>
-            <span className="material-symbols-outlined text-[22px]">menu</span>
+          <button data-open-menu="" aria-label="Open menu" className={`md:hidden transition-colors ${iconColor}`}>
+            <Icon name="menu" className="text-[22px]" />
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The screens draw a `menu` icon at small sizes but ship no drawer behind it.
@@ -52,21 +53,19 @@ export function MobileMenu() {
   }, [open]);
 
   /*
-   * Bind every `menu` glyph the screens draw, plus anything marked
-   * `data-open-menu`. The glyph scan only reaches chrome that happens to use
-   * Material Symbols; the explicit attribute lets components drawn with the
-   * house icon set (StitchHeader) open the same drawer without smuggling in
-   * a hidden glyph purely to be found.
+   * Bind anything marked `data-open-menu`. This used to also scan the DOM for
+   * Material Symbols `menu` glyphs, because the screen exports drew the icon
+   * as text and there was nothing else to key on. The icon set is lucide SVGs
+   * now, so the glyph scan matched nothing and every marker is explicit —
+   * which is the better arrangement anyway: the trigger declares itself
+   * instead of being discovered by reading an element's text content.
    */
   useEffect(() => {
-    const icons = Array.from(
-      document.querySelectorAll<HTMLElement>(".material-symbols-outlined")
-    ).filter((el) => el.textContent?.trim() === "menu");
     const tagged = Array.from(document.querySelectorAll<HTMLElement>("[data-open-menu]"));
 
     const cleanups: Array<() => void> = [];
-    for (const icon of [...icons, ...tagged]) {
-      const trigger = (icon.closest("button,a") as HTMLElement | null) ?? icon;
+    for (const marker of tagged) {
+      const trigger = (marker.closest("button,a") as HTMLElement | null) ?? marker;
       if (trigger.dataset.menuBound === "1") continue;
       trigger.dataset.menuBound = "1";
       const onClick = (e: Event) => {
@@ -75,7 +74,20 @@ export function MobileMenu() {
       };
       trigger.addEventListener("click", onClick);
       trigger.style.cursor = "pointer";
-      cleanups.push(() => trigger.removeEventListener("click", onClick));
+      cleanups.push(() => {
+        trigger.removeEventListener("click", onClick);
+        /*
+         * Clearing the flag is the whole point. Without it the guard above
+         * and this cleanup deadlock each other: the first run binds and sets
+         * the flag, the cleanup strips the listener, and the next run sees
+         * the flag and skips — leaving the button flagged as bound with
+         * nothing listening. React's development double-invoke makes that
+         * happen on every mount, so the menu button did nothing at all.
+         * StoreBridge documents the same hazard and sidesteps it by never
+         * tearing its listener down; here the flag is simply reset.
+         */
+        delete trigger.dataset.menuBound;
+      });
     }
     return () => cleanups.forEach((fn) => fn());
   }, [pathname]);
@@ -114,9 +126,7 @@ export function MobileMenu() {
             className="group p-2 -mr-2"
             aria-label="Close menu"
           >
-            <span className="material-symbols-outlined text-tertiary group-hover:text-primary transition-colors duration-300">
-              close
-            </span>
+            <Icon name="close" className="text-tertiary group-hover:text-primary transition-colors duration-300" />
           </button>
         </div>
 

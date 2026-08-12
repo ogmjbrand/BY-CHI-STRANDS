@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * A quiet confirmation strip, styled to the design system's ambient-shadow
@@ -62,9 +63,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             }
             className="w-full bg-surface-container-lowest border border-outline-variant/40 shadow-[0px_20px_50px_rgba(0,0,0,0.08)] px-6 py-4 flex items-center gap-4"
           >
-            <span className="material-symbols-outlined text-primary text-xl shrink-0">
-              check_circle
-            </span>
+            <Icon name="check_circle" className="text-primary text-xl shrink-0" />
             <div className="min-w-0">
               <p className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface truncate">
                 {n.message}

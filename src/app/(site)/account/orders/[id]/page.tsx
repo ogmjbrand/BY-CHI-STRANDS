@@ -7,6 +7,7 @@ import { getProduct } from "@/lib/products";
 import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { site, whatsappLink } from "@/lib/site";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_order_details
@@ -36,9 +37,7 @@ export default async function OrderDetailsPage({
 
       {!order ? (
         <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-32">
-          <span className="material-symbols-outlined text-primary text-5xl mb-8 opacity-40">
-            receipt_long
-          </span>
+          <Icon name="receipt_long" className="text-primary text-5xl mb-8 opacity-40" />
           <h1 className="font-display-md text-headline-lg mb-4">Order not found</h1>
           <p className="font-body-md text-on-surface-variant max-w-md mb-10">
             We couldn&apos;t find an order with that link. Try looking it up again with your
@@ -69,9 +68,7 @@ export default async function OrderDetailsPage({
                 href="/account"
                 className="flex items-center gap-2 text-primary font-label-caps mb-6 group w-fit"
               >
-                <span className="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">
-                  arrow_back
-                </span>
+                <Icon name="arrow_back" className="text-[16px] group-hover:-translate-x-1 transition-transform" />
                 BACK TO ORDERS
               </Link>
               <h1 className="font-display-md text-display-md text-on-surface mb-2 tracking-[-0.01em]">
@@ -244,12 +241,7 @@ export default async function OrderDetailsPage({
               </div>
 
               <div className="bg-primary text-on-primary p-8 text-center">
-                <span
-                  className="material-symbols-outlined text-[48px] mb-4 block"
-                  style={{ fontVariationSettings: "'wght' 200" }}
-                >
-                  support_agent
-                </span>
+                <Icon name="support_agent" className="text-[48px] mb-4 block" strokeWidth={1} />
                 <h5 className="font-headline-lg text-[20px] mb-2">Personal Concierge</h5>
                 <p className="font-body-sm opacity-80 mb-8 px-4">
                   Questions about payment, shipping, or your order status — our team replies fast

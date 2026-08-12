@@ -9,6 +9,7 @@ import { posterFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { site, whatsappLink } from "@/lib/site";
 import type { Order } from "@/types/orders";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_order_confirmation
@@ -62,9 +63,7 @@ function OrderConfirmationContent() {
   if (!order) {
     return (
       <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-32">
-        <span className="material-symbols-outlined text-primary text-5xl mb-8 opacity-40">
-          receipt_long
-        </span>
+        <Icon name="receipt_long" className="text-primary text-5xl mb-8 opacity-40" />
         <h1 className="font-display-md text-headline-lg mb-4">We couldn&apos;t find that order</h1>
         <p className="font-body-md text-on-surface-variant max-w-md mb-10">
           The link may have expired. If you just checked out and this looks wrong, reach us on

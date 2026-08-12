@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useToast } from "./Toast";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * A compact single-line newsletter field for footers — same real
@@ -58,7 +59,7 @@ export function InlineNewsletterField() {
         aria-label="Subscribe"
         className="border-b border-outline-variant hover:border-primary transition-colors px-2 disabled:opacity-60"
       >
-        <span className="material-symbols-outlined text-primary">arrow_forward</span>
+        <Icon name="arrow_forward" className="text-primary" />
       </button>
     </form>
   );

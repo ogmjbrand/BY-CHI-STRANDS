@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { Icon } from "@/components/ui/icon";
 
 interface Frame {
   id: number
@@ -168,12 +169,7 @@ function FrameComponent({
           className="absolute inset-x-0 bottom-0 z-[3] flex items-center justify-between gap-3 p-5 bg-gradient-to-t from-black/70 to-transparent text-white"
         >
           <span className="font-label-caps text-label-caps tracking-widest">{label}</span>
-          <span
-            className="material-symbols-outlined text-[18px] transition-transform duration-300"
-            style={{ transform: isHovered ? "translate(2px, -2px)" : "none" }}
-          >
-            north_east
-          </span>
+          <Icon name="north_east" className="text-[18px] transition-transform duration-300" style={{ transform: isHovered ? "translate(2px, -2px)" : "none" }} />
         </Link>
       </div>
     </div>

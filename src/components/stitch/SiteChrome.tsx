@@ -5,6 +5,7 @@ import { SocialStrip } from "./SocialStrip";
 import { HeaderUtilities } from "./HeaderUtilities";
 import { MenuButton } from "./MenuButton";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -150,7 +151,7 @@ export function StitchFooter() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <span className="material-symbols-outlined">camera</span>
+              <Icon name="camera" />
             </a>
             <a
               className="text-on-surface-variant hover:text-primary transition-all"
@@ -159,14 +160,14 @@ export function StitchFooter() {
               rel="noopener noreferrer"
               aria-label="TikTok"
             >
-              <span className="material-symbols-outlined">videocam</span>
+              <Icon name="videocam" />
             </a>
             <a
               className="text-on-surface-variant hover:text-primary transition-all"
               href={`mailto:${site.email}`}
               aria-label="Email"
             >
-              <span className="material-symbols-outlined">mail</span>
+              <Icon name="mail" />
             </a>
           </div>
         </div>

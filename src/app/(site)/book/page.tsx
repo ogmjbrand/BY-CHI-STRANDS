@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { BookingForm } from "@/components/stitch/BookingForm";
+import { Icon } from "@/components/ui/icon";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_atelier_service_booking
@@ -41,13 +42,9 @@ export default function AtelierServiceBookingPage() {
           </div>
           {" "}
           <div className="flex items-center space-x-6">
-            <Link href="/cart" aria-label="Your bag" className="material-symbols-outlined cursor-pointer hover:opacity-70">
-              shopping_bag
-            </Link>
+            <Link href="/cart" aria-label="Your bag" className="cursor-pointer hover:opacity-70"><Icon data-bag-trigger name="shopping_bag" /></Link>
             {" "}
-            <Link href="/account" aria-label="Your account" className="material-symbols-outlined cursor-pointer hover:opacity-70">
-              person
-            </Link>
+            <Link href="/account" aria-label="Your account" className="cursor-pointer hover:opacity-70"><Icon name="person" /></Link>
           </div>
         </nav>
       </header>

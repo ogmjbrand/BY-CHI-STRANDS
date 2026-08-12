@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/ui/icon";
 
 export function ClientConciergeSection() {
   return (
@@ -42,7 +43,7 @@ export function ClientConciergeSection() {
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-white text-noir px-5 py-3 font-label-caps text-[11px] uppercase tracking-[0.24em] transition-colors hover:bg-gold-light"
             >
               Open account page
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              <Icon name="arrow_forward" className="text-[16px]" />
             </Link>
           </div>
 
@@ -62,7 +63,7 @@ export function ClientConciergeSection() {
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 font-label-caps text-[11px] uppercase tracking-[0.24em] text-noir transition-colors hover:bg-gold-light"
               >
                 Go to checkout
-                <span className="material-symbols-outlined text-[16px]">lock</span>
+                <Icon name="lock" className="text-[16px]" />
               </Link>
               <Link
                 href="/shop"

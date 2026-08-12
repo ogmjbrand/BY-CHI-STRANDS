@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/journal";
 import { StitchPageShell } from "@/components/stitch/SiteChrome";
+import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = { title: "The Journal" };
 
@@ -44,9 +45,7 @@ export default function JournalPage() {
               </div>
               <span className="mt-6 font-label-caps text-gold-light tracking-widest flex items-center gap-2">
                 READ ARTICLE
-                <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-2">
-                  arrow_forward
-                </span>
+                <Icon name="arrow_forward" className="text-sm transition-transform group-hover:translate-x-2" />
               </span>
             </div>
           </Link>
