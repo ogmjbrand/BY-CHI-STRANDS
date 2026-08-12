@@ -3,23 +3,38 @@ import { dashboardStats, revenueByMonth, getAdminSection } from "@/lib/admin";
 import { AdminTable } from "@/components/admin/AdminTable";
 
 export default function AdminDashboard() {
-  const max = Math.max(...revenueByMonth.map((m) => m.value));
+  // guard: Math.max of an empty array is -Infinity
+  const max = revenueByMonth.length ? Math.max(...revenueByMonth.map((m) => m.value)) : 0;
   const orders = getAdminSection("orders")!;
 
   return (
     <div className="p-6 lg:p-10">
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="eyebrow text-[0.55rem] text-gold-deep">The House · July 2026</p>
+          <p className="eyebrow text-[0.55rem] text-gold-deep">
+            The House ·{" "}
+            {new Date().toLocaleDateString("en-NG", { month: "long", year: "numeric" })}
+          </p>
           <h1 className="mt-3 font-serif text-4xl">Good morning, Chi.</h1>
         </div>
-        <p className="text-sm font-light text-stone">
-          Preview data — connects to Supabase in production.
+        <p className="max-w-sm text-sm font-light leading-6 text-stone">
+          Not connected to Supabase yet. The figures that used to sit here were
+          invented, so they have been removed rather than left to be mistaken
+          for trading.
         </p>
       </header>
 
       {/* Stats */}
       <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        {dashboardStats.length === 0 ? (
+          <div className="border border-hairline bg-white p-6 shadow-whisper sm:col-span-2 xl:col-span-4">
+            <p className="eyebrow text-[0.52rem] text-mist">Headline figures</p>
+            <p className="mt-3 max-w-xl text-sm font-light leading-6 text-stone">
+              Revenue, orders, appointments and Academy applications appear here
+              once the dashboard reads from Supabase.
+            </p>
+          </div>
+        ) : null}
         {dashboardStats.map((s) => (
           <div key={s.label} className="border border-hairline bg-white p-6 shadow-whisper">
             <p className="eyebrow text-[0.52rem] text-mist">{s.label}</p>
@@ -36,6 +51,12 @@ export default function AdminDashboard() {
             <h2 className="font-serif text-xl">Revenue</h2>
             <p className="eyebrow text-[0.5rem] text-mist">Last 6 months</p>
           </div>
+          {revenueByMonth.length === 0 ? (
+            <p className="mt-8 max-w-md text-sm font-light leading-6 text-stone">
+              No revenue history to chart. This reads from real orders once the
+              dashboard is connected.
+            </p>
+          ) : null}
           <div className="mt-8 flex items-end gap-3">
             {revenueByMonth.map((m) => (
               <div key={m.month} className="group flex flex-1 flex-col items-center justify-end gap-2">
@@ -63,7 +84,7 @@ export default function AdminDashboard() {
             </Link>
           </div>
           <div className="mt-5">
-            <AdminTable columns={orders.columns} rows={orders.rows.slice(0, 5)} />
+            <AdminTable columns={orders.columns} rows={orders.rows.slice(0, 5)} empty={orders.empty} />
           </div>
         </section>
       </div>

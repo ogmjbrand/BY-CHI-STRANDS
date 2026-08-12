@@ -1,5 +1,7 @@
 "use client";
 
+import { site } from "@/lib/site";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -53,7 +55,7 @@ export function AdminNav() {
       <div className="hidden border-t border-surface/10 px-6 py-5 lg:block">
         <p className="font-body-md text-body-sm text-surface/40">
           Signed in as{" "}
-          <span className="text-surface/70">chi@bychistrands.com</span>
+          <span className="text-surface/70">{site.email}</span>
         </p>
         <Link
           href="/"

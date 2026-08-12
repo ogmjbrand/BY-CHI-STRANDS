@@ -23,12 +23,15 @@ export default async function AdminSectionPage({ params }: Props) {
           <h1 className="mt-3 font-serif text-4xl">{data.title}</h1>
           <p className="mt-2 text-sm font-light text-stone">{data.blurb}</p>
         </div>
-        <button className="eyebrow h-11 bg-ink px-6 text-[0.6rem] text-white transition-colors hover:bg-gold hover:text-ink">
-          + New {data.title.replace(/s$/, "").replace("Academy Enrollment", "Enrollment")}
-        </button>
+        {/*
+          There was a "+ New …" button here with no handler and nothing behind
+          it. Creating records needs the Supabase write path this dashboard is
+          not wired to yet, and a button that looks like it creates something
+          and does nothing is worse than no button.
+        */}
       </header>
       <div className="mt-8">
-        <AdminTable columns={data.columns} rows={data.rows} />
+        <AdminTable columns={data.columns} rows={data.rows} empty={data.empty} />
       </div>
       <p className="mt-6 text-xs font-light text-mist">
         Showing {data.rows.length} records · Preview data — full CRUD activates

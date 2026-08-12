@@ -14,199 +14,29 @@ export interface AdminSection {
   blurb: string;
   columns: string[];
   rows: Cell[][];
+  /** Shown instead of the table when there is genuinely nothing to list. */
+  empty?: string;
 }
 
-const orders: Cell[][] = [
-  [
-    { text: "BCS-482913" },
-    { text: "Adaeze Okafor" },
-    { text: "Chi Signature Wig · 24\"" },
-    { text: "$660", tone: "gold" },
-    { text: "In transit", tone: "warn" },
-  ],
-  [
-    { text: "BCS-482907" },
-    { text: "Tomi Adeyemi" },
-    { text: "Raw Body Wave × 4 · 26\"" },
-    { text: "$700", tone: "gold" },
-    { text: "Processing", tone: "warn" },
-  ],
-  [
-    { text: "BCS-482886" },
-    { text: "Sarah Kalu" },
-    { text: "HD Frontal 13x6 · 18\"" },
-    { text: "$254", tone: "gold" },
-    { text: "Delivered", tone: "success" },
-  ],
-  [
-    { text: "BCS-482871" },
-    { text: "Chidinma Eze (Salon)" },
-    { text: "Wholesale — 24 bundles" },
-    { text: "$2,180", tone: "gold" },
-    { text: "Delivered", tone: "success" },
-  ],
-  [
-    { text: "BCS-482860" },
-    { text: "Amara Nwosu" },
-    { text: "Velvet Bob · 12\" · 200%" },
-    { text: "$425", tone: "gold" },
-    { text: "Delivered", tone: "success" },
-  ],
-  [
-    { text: "BCS-482842" },
-    { text: "Funke Bello" },
-    { text: "Copper Muse · 22\" · 250%" },
-    { text: "$630", tone: "gold" },
-    { text: "Refund requested", tone: "warn" },
-  ],
-];
 
-const customers: Cell[][] = [
-  [
-    { text: "Adaeze Okafor" },
-    { text: "adaeze@example.com" },
-    { text: "Lagos, NG" },
-    { text: "7 orders" },
-    { text: "$3,890", tone: "gold" },
-  ],
-  [
-    { text: "Chidinma Eze" },
-    { text: "chidinma@salonluxe.ng" },
-    { text: "Abuja, NG" },
-    { text: "14 orders" },
-    { text: "$18,240", tone: "gold" },
-  ],
-  [
-    { text: "Tomi Adeyemi" },
-    { text: "tomi@example.com" },
-    { text: "London, UK" },
-    { text: "5 orders" },
-    { text: "$2,410", tone: "gold" },
-  ],
-  [
-    { text: "Sarah Kalu" },
-    { text: "sarahk@example.com" },
-    { text: "Houston, US" },
-    { text: "3 orders" },
-    { text: "$1,105", tone: "gold" },
-  ],
-  [
-    { text: "Amara Nwosu" },
-    { text: "amara@example.com" },
-    { text: "Lagos, NG" },
-    { text: "4 orders" },
-    { text: "$1,720", tone: "gold" },
-  ],
-];
 
-const appointments: Cell[][] = [
-  [
-    { text: "Aug 2 · 12:00" },
-    { text: "Adaeze Okafor" },
-    { text: "Frontal Installation" },
-    { text: "$40 deposit paid", tone: "success" },
-    { text: "Confirmed", tone: "success" },
-  ],
-  [
-    { text: "Aug 2 · 15:00" },
-    { text: "Bisi Adaramola" },
-    { text: "Hair Laundry" },
-    { text: "$15 deposit paid", tone: "success" },
-    { text: "Confirmed", tone: "success" },
-  ],
-  [
-    { text: "Aug 3 · 9:00" },
-    { text: "Ngozi Umeh" },
-    { text: "Wig Colouring — copper ref" },
-    { text: "Awaiting deposit", tone: "warn" },
-    { text: "Pending", tone: "warn" },
-  ],
-  [
-    { text: "Aug 4 · 13:30" },
-    { text: "Tola Bankole" },
-    { text: "Wig Revamping" },
-    { text: "$30 deposit paid", tone: "success" },
-    { text: "Confirmed", tone: "success" },
-  ],
-  [
-    { text: "Aug 6 · 10:30" },
-    { text: "Kemi Alade (Bridal)" },
-    { text: "Styling — trial session" },
-    { text: "$20 deposit paid", tone: "success" },
-    { text: "Confirmed", tone: "success" },
-  ],
-];
 
-const enrollments: Cell[][] = [
-  [
-    { text: "Funke Bello" },
-    { text: "Cohort 6" },
-    { text: "The Masterclass" },
-    { text: "Paid in full", tone: "success" },
-    { text: "Onboarded", tone: "success" },
-  ],
-  [
-    { text: "Grace Mensah" },
-    { text: "Cohort 6" },
-    { text: "The Masterclass" },
-    { text: "Plan 2 of 3", tone: "warn" },
-    { text: "Onboarded", tone: "success" },
-  ],
-  [
-    { text: "Yemi Salako" },
-    { text: "Cohort 6" },
-    { text: "The Private Intensive" },
-    { text: "Paid in full", tone: "success" },
-    { text: "Session 1 booked", tone: "gold" },
-  ],
-  [
-    { text: "Ada Nwachukwu" },
-    { text: "Cohort 7 (waitlist)" },
-    { text: "The Foundation" },
-    { text: "—", tone: "muted" },
-    { text: "Application review", tone: "warn" },
-  ],
-];
 
-const inventory: Cell[][] = products.slice(0, 10).map((p) => {
-  const stock = (p.slug.length * 7) % 40;
-  return [
-    { text: p.name },
-    { text: CATEGORIES[p.category].label, tone: "muted" as CellTone },
-    { text: priceFor(p) === null ? "On request" : `₦${priceFor(p)!.toLocaleString("en-NG")}+` },
-    { text: `${stock} in stock` },
-    stock < 8
-      ? { text: "Reorder", tone: "warn" as CellTone }
-      : { text: "Healthy", tone: "success" as CellTone },
-  ];
-});
+/*
+ * The catalogue is real; the stock counts were not. This previously derived
+ * a quantity from the *length of the product slug* — `(p.slug.length * 7) % 40`
+ * — printed it as "N in stock", and used it to flag a piece "Reorder" or
+ * "Healthy". Those are numbers someone would act on, invented by arithmetic
+ * on a string. The catalogue columns stay; stock is not tracked anywhere yet,
+ * so it is not reported.
+ */
+const inventory: Cell[][] = products.map((p) => [
+  { text: p.name },
+  { text: CATEGORIES[p.category].label, tone: "muted" as CellTone },
+  { text: priceFor(p) === null ? "On request" : `₦${priceFor(p)!.toLocaleString("en-NG")}+` },
+  { text: ORIGINS[p.origin], tone: "muted" as CellTone },
+]);
 
-const coupons: Cell[][] = [
-  [
-    { text: "INNERCIRCLE10" },
-    { text: "10% off first order" },
-    { text: "412 uses" },
-    { text: "Active", tone: "success" },
-  ],
-  [
-    { text: "BRIDE2026" },
-    { text: "$50 off bridal packages" },
-    { text: "38 uses" },
-    { text: "Active", tone: "success" },
-  ],
-  [
-    { text: "ACADEMY100" },
-    { text: "$100 off Masterclass" },
-    { text: "61 uses" },
-    { text: "Expires Aug 31", tone: "warn" },
-  ],
-  [
-    { text: "LAUNDRYDAY" },
-    { text: "2-for-1 hair laundry" },
-    { text: "89 uses" },
-    { text: "Expired", tone: "muted" },
-  ],
-];
 
 export const adminSections: AdminSection[] = [
   {
@@ -214,7 +44,9 @@ export const adminSections: AdminSection[] = [
     title: "Orders",
     blurb: "Every order, from placed to silk-wrapped to delivered.",
     columns: ["Reference", "Client", "Items", "Total", "Status"],
-    rows: orders,
+    rows: [],
+    empty:
+      "Orders are written to Supabase at checkout. This table reads from there once the dashboard is connected.",
   },
   {
     slug: "products",
@@ -241,27 +73,33 @@ export const adminSections: AdminSection[] = [
     title: "Customers",
     blurb: "The client book — lifetime value and location.",
     columns: ["Client", "Email", "Location", "Orders", "Lifetime value"],
-    rows: customers,
+    rows: [],
+    empty:
+      "The client book is built from real orders. Nothing is shown until the dashboard reads from Supabase.",
   },
   {
     slug: "appointments",
     title: "Appointments",
     blurb: "The atelier calendar for the next seven days.",
     columns: ["Slot", "Client", "Service", "Deposit", "Status"],
-    rows: appointments,
+    rows: [],
+    empty:
+      "Booking requests arrive by WhatsApp and the bookings table. This calendar reads from there once connected.",
   },
   {
     slug: "enrollments",
     title: "Academy Enrollments",
     blurb: "Students by cohort, tier and payment standing.",
     columns: ["Student", "Cohort", "Tier", "Payment", "Status"],
-    rows: enrollments,
+    rows: [],
+    empty:
+      "Academy enrolments are stored in Supabase. This roll reads from there once connected.",
   },
   {
     slug: "inventory",
     title: "Inventory",
-    blurb: "Stock health across the catalogue.",
-    columns: ["Product", "Category", "Price", "Stock", "Health"],
+    blurb: "The live catalogue. Stock levels are not tracked yet.",
+    columns: ["Product", "Category", "Price", "Origin"],
     rows: inventory,
   },
   {
@@ -269,7 +107,9 @@ export const adminSections: AdminSection[] = [
     title: "Coupons",
     blurb: "Live incentives and their uptake.",
     columns: ["Code", "Offer", "Usage", "Status"],
-    rows: coupons,
+    rows: [],
+    empty:
+      "No promotions have been created yet.",
   },
   {
     slug: "journal",
@@ -301,18 +141,19 @@ export function getAdminSection(slug: string) {
   return adminSections.find((s) => s.slug === slug);
 }
 
-export const revenueByMonth = [
-  { month: "Feb", value: 18_400 },
-  { month: "Mar", value: 22_100 },
-  { month: "Apr", value: 19_800 },
-  { month: "May", value: 27_600 },
-  { month: "Jun", value: 31_900 },
-  { month: "Jul", value: 36_450 },
-];
+/**
+ * Revenue history, once the dashboard reads from Supabase.
+ *
+ * This used to hold six months of invented figures — 18,400 through 36,450 —
+ * rendered as a chart with no indication they were made up. A number on a
+ * dashboard is read as fact, and a fabricated one is worse than an empty
+ * chart because it cannot be told apart from a real one.
+ */
+export const revenueByMonth: Array<{ month: string; value: number }> = [];
 
-export const dashboardStats = [
-  { label: "Revenue · July", value: "$36,450", delta: "+14.2% vs June" },
-  { label: "Orders · July", value: "128", delta: "+9.4% vs June" },
-  { label: "Appointments booked", value: "64", delta: "92% deposit conversion" },
-  { label: "Academy applications", value: "31", delta: "Cohort 7 waitlist open" },
-];
+/**
+ * Headline figures. Empty for the same reason as revenueByMonth: these were
+ * invented ("$36,450", "+14.2% vs June", "128 orders", "Cohort 7 waitlist
+ * open") and presented as the house's actual trading.
+ */
+export const dashboardStats: Array<{ label: string; value: string; delta: string }> = [];
