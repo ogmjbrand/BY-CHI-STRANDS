@@ -6,6 +6,8 @@ import { CollectionsEditorial } from "@/components/flagship/CollectionsEditorial
 import { CraftsmanshipFilm } from "@/components/flagship/CraftsmanshipFilm";
 import { LuxuryServicesEditorial } from "@/components/flagship/LuxuryServicesEditorial";
 import { TransformationMosaic } from "@/components/flagship/TransformationMosaic";
+import { TransformationReveal } from "@/components/flagship/TransformationReveal";
+import { FindYourSignature } from "@/components/flagship/FindYourSignature";
 import { CinematicScene } from "@/components/flagship/CinematicScene";
 import { OurPromise } from "@/components/flagship/OurPromise";
 import { AcademyCinematic } from "@/components/flagship/AcademyCinematic";
@@ -66,6 +68,9 @@ export default function HomePage() {
       <LuxuryExperienceSection />
       <BrandSeal label="The Atelier" />
       <LuxuryServicesEditorial />
+
+      {/* The transformation chapter: the statement first, then the evidence. */}
+      <TransformationReveal />
       <TransformationMosaic />
       <FounderSection />
       <OurPromise />
@@ -83,6 +88,9 @@ export default function HomePage() {
       <AcademyCinematic />
       <BrandSeal label="The Journal" />
       <JournalEditorial />
+
+      {/* The last word before the sitemap — see FindYourSignature. */}
+      <FindYourSignature />
       <FlagshipFooter />
     </div>
   );
