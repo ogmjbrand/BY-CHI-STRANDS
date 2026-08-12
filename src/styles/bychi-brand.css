@@ -4,19 +4,32 @@
  * Formal type: Cormorant Garamond from the existing brand font loaded in
  * layout.tsx. Do not substitute Pf4, Georgia, system serif or a template font.
  *
- * Logo: the supplied ByChi Strands artwork in /public/brand/logo-mark.jpg.
- * The same wordmark treatment must remain consistent across the experience.
+ * Brand lockup: use the supplied ByChi Strands artwork in
+ * /public/brand/logo-mark.jpg whenever the full brand name is presented as a
+ * visual logo/wordmark. Never recreate the approved lockup with another font.
  */
 
 /* The formal/display font is a brand rule, not a Tailwind default. */
 .font-serif,
 .bychi-formal,
 .bychi-wordmark,
-.bychi-footer-wordmark {
+.bychi-footer-wordmark,
+.bychi-brand-name {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif !important;
 }
 
-/* Supplied formal wordmark treatment. */
+/* Formal brand-name text: use this class whenever the written brand name
+   appears as typography rather than the image lockup. */
+.bychi-brand-name {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.9 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+/* Approved visual wordmark treatment. */
 .bychi-wordmark,
 .bychi-footer-wordmark {
   font-style: normal !important;
@@ -27,11 +40,33 @@
   white-space: nowrap;
 }
 
-/*
- * Use the actual supplied logo artwork wherever the main home/logo link is
- * rendered. Text remains as an accessible label but is visually replaced by
- * the artwork so the logo cannot drift from the approved reference.
- */
+/* Full brand-name lockups use the exact supplied artwork, not a substitute
+   font. This preserves the proportions and letterforms in the approved logo. */
+.bychi-wordmark,
+.bychi-footer-wordmark,
+.bychi-brand-logo {
+  display: block !important;
+  background-image: url("/brand/logo-mark.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.bychi-wordmark { width: 270px !important; height: 54px !important; }
+.bychi-footer-wordmark { width: 310px !important; height: 72px !important; }
+.bychi-brand-logo { width: 270px !important; height: 54px !important; }
+
+.bychi-wordmark > *,
+.bychi-footer-wordmark > *,
+.bychi-brand-logo > * { display: none !important; }
+
+/* Existing homepage header lockup: force the supplied artwork even if the
+   component contains fallback text for accessibility. */
 header a[href="/"] {
   display: block !important;
   width: 270px !important;
@@ -50,7 +85,7 @@ header a[href="/"] {
 header a[href="/"] > * { display: none !important; }
 header a[href="/"]::after { content: none !important; }
 
-/* Footer lockup stays on the same formal Cormorant system. */
+/* Footer lockup stays on the same approved visual identity. */
 .bychi-footer-wordmark {
   letter-spacing: -0.055em !important;
   line-height: 0.78 !important;
