@@ -45,7 +45,7 @@ export default function GalleryPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
               </span>
-              ByChi <span className="font-script">Strands</span>
+              ByChi Strands
             </span>
           </div>
           {" "}
@@ -169,7 +169,7 @@ export default function GalleryPage() {
         <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
           <div className="mb-8 md:mb-0">
             <h2 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-none tracking-[-0.02em]">
-              ByChi <span className="font-script">Strands</span>
+              ByChi Strands
             </h2>
             {" "}
             <p className="font-body-sm text-on-surface-variant mt-2">Luxury Vietnamese hair, crafted for confidence.</p>

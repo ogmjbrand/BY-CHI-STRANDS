@@ -660,8 +660,11 @@
   --font-body-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-body-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-label-caps: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  /* Accent script — logotype and rare display flourishes only, never body copy. */
-  --font-script: var(--font-delafield), cursive;
+  /*
+   * The logotype is set in the display serif — see components/brand/Wordmark.
+   * The Mrs Saint Delafield script it used to pair with is gone: nothing on
+   * the site renders in it any more, so the font request went with it.
+   */
 
   /* ── Type scale ────────────────────────────────────────────────
    * Editorial-luxury register: display type is set LIGHT (300) and large,

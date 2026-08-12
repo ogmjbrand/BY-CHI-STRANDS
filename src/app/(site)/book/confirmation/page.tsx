@@ -75,7 +75,7 @@ export default async function BookingConfirmationPage({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
             </span>
-            ByChi <span className="font-script">Strands</span>
+            ByChi Strands
           </Link>
           <nav className="hidden md:flex gap-8 items-center">
             <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
@@ -257,7 +257,7 @@ export default async function BookingConfirmationPage({
       <footer className="w-full relative border-t border-outline-variant/30 bg-surface">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-8 md:px-20 py-24 max-w-[1440px] mx-auto">
           <div className="lg:col-span-1">
-            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi <span className="font-script">Strands</span></div>
+            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi Strands</div>
             <p className="font-body-sm text-on-surface-variant/70 max-w-xs">
               Elevating the art of hair through scientific precision and editorial excellence.
             </p>

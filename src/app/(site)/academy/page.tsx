@@ -24,7 +24,7 @@ export default function AcademyPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
             </span>
-            ByChi <span className="font-script">Strands</span>
+            ByChi Strands
           </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -316,7 +316,7 @@ export default function AcademyPage() {
       <footer className="bg-surface-container-low border-t border-outline-variant/20 pt-section-padding pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
           <div className="col-span-1 md:col-span-1">
-            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi <span className="font-script">Strands</span></div>
+            <div className="font-display-md text-headline-lg text-primary mb-8">ByChi Strands</div>
             {" "}
             <p className="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
               Elevating the hair industry through education and premium Vietnamese sourcing.

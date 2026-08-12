@@ -17,7 +17,7 @@ export function GoldSeal({ className = "" }: { className?: string }) {
           {words}
         </textPath>
       </text>
-      <text x="100" y="94" textAnchor="middle" fontSize="20" fill="currentColor" className="font-script">
+      <text x="100" y="94" textAnchor="middle" fontSize="20" fill="currentColor" className="font-display-md">
         Est.
       </text>
       <text x="100" y="118" textAnchor="middle" fontSize="13" letterSpacing="3" fill="currentColor">

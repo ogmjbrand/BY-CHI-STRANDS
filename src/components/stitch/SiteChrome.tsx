@@ -4,6 +4,7 @@ import { Newsletter } from "./Newsletter";
 import { SocialStrip } from "./SocialStrip";
 import { HeaderUtilities } from "./HeaderUtilities";
 import { MenuButton } from "./MenuButton";
+import { Wordmark } from "@/components/brand/Wordmark";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -11,19 +12,6 @@ import { MenuButton } from "./MenuButton";
  * are used by the routes the design links to but does not itself specify
  * (legal, contact, journal, wishlist).
  */
-
-function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span className={`flex items-center gap-2 leading-none ${className}`}>
-      <span className="h-8 w-8 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
-      </span>
-      <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
-      <span className="font-script text-2xl text-gold-light -mt-1">Strands</span>
-    </span>
-  );
-}
 
 export function StitchHeader() {
   return (
@@ -54,7 +42,7 @@ export function StitchHeader() {
         </div>
         <div className="flex shrink-0 items-center">
           <Link href="/">
-            <Wordmark className="text-on-surface" />
+            <Wordmark size="sm" withSeal className="text-on-surface" />
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end gap-8">
@@ -149,7 +137,7 @@ export function StitchFooter() {
       <SocialStrip />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
         <div className="col-span-1 md:col-span-1">
-          <Wordmark className="text-on-surface mb-8" />
+          <Wordmark size="sm" withSeal className="text-on-surface mb-8" />
           <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
             Timeless Vietnamese artistry meets modern luxury. Defined by
             authenticity and ethical sourcing.

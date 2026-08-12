@@ -6,6 +6,7 @@ import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { useStore } from "@/context/StoreContext";
 import { SiteSearch } from "@/components/stitch/SiteSearch";
 import { useCartUi } from "@/components/stitch/CartDrawer";
+import { Wordmark } from "@/components/brand/Wordmark";
 
 const LINKS = [
   { label: "Shop", href: "/shop" },
@@ -144,38 +145,9 @@ export function FlagshipHeader() {
             </nav>
           </div>
 
-          {/*
-           * The house wordmark: logo seal + "ByChi" + the gold script
-           * "Strands". The flagship rebuild had flattened this to plain
-           * uppercase text, dropping the brand's own accent.
-           */}
-          <Link href="/" className="flex items-center gap-2 md:gap-2.5 leading-none shrink-0">
-            <span
-              className={`rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5 transition-[width,height] duration-700 ${
-                solid ? "h-7 w-7 md:h-8 md:w-8" : "h-8 w-8 md:h-10 md:w-10"
-              }`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brand/logo-mark.jpg"
-                alt=""
-                className="h-full w-full object-cover scale-125"
-              />
-            </span>
-            <span
-              className={`font-display-md tracking-[0.08em] transition-[font-size] duration-700 ${
-                solid ? "text-base md:text-xl" : "text-lg md:text-2xl"
-              }`}
-            >
-              ByChi
-            </span>
-            <span
-              className={`font-script text-gold-light -mt-1 transition-[font-size] duration-700 ${
-                solid ? "text-xl md:text-3xl" : "text-2xl md:text-4xl"
-              }`}
-            >
-              Strands
-            </span>
+          {/* The mast shrinks on scroll, so the mark steps down a size. */}
+          <Link href="/" className="shrink-0">
+            <Wordmark size={solid ? "sm" : "md"} withSeal />
           </Link>
 
           {/* Right: the rest of the nav on desktop, then the utility rail. */}
@@ -243,10 +215,7 @@ export function FlagshipHeader() {
             >
               <X className="h-5 w-5" strokeWidth={1.5} />
             </button>
-            <span className="flex items-center gap-2 leading-none">
-              <span className="font-display-md text-lg tracking-[0.08em]">ByChi</span>
-              <span className="-mt-1 font-script text-2xl text-gold-light">Strands</span>
-            </span>
+<Wordmark size="sm" />
             <span className="w-10" aria-hidden="true" />
           </div>
 

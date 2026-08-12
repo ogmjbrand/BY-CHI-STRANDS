@@ -62,10 +62,8 @@ export function FlagshipHero() {
 
           {/*
            * Each line gets its own block. WordsPullUp is itself an inline-flex,
-           * so stacking the three lockup lines directly would let them share a
-           * line box — and the Delafield script, whose glyphs overflow their
-           * line box well beyond the em, would then sit on top of the display
-           * words either side of it. Honest leading, no negative margin.
+           * so stacking the three lines directly would let them share a line
+           * box. Honest leading, no negative margin.
            */}
           <h1 className="sr-only">Luxury Vietnamese Hair. Crafted for Confidence.</h1>
 
@@ -76,7 +74,7 @@ export function FlagshipHero() {
                 className="font-display-lg text-[10.5vw] leading-[1.02] tracking-[-0.02em] text-white md:text-[5.4vw]"
               />
             </div>
-            <p className="font-script text-[13vw] leading-[1.05] text-gold-light md:text-[6.2vw]">
+            <p className="font-display-lg text-[10.5vw] italic leading-[1.05] tracking-[-0.02em] text-gold-light md:text-[5.4vw]">
               Crafted for
             </p>
             <div>

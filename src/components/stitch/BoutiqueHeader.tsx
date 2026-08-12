@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
 import { SiteSearch } from "./SiteSearch";
+import { Wordmark } from "@/components/brand/Wordmark";
 
 /**
  * The Boutique (collections listing) screen's own nav voice — "Atelier",
@@ -37,14 +38,8 @@ export function BoutiqueHeader() {
             The Maison
           </Link>
         </div>
-        <Link className="flex items-center gap-2.5" href="/">
-          <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
-          </span>
-          <span className="font-display-md text-display-md-mobile md:text-display-md tracking-tight text-on-surface md:tracking-[-0.01em]">
-            ByChi <span className="font-script">Strands</span>
-          </span>
+        <Link href="/">
+          <Wordmark size="md" withSeal className="text-on-surface" />
         </Link>
         <div className="flex items-center gap-6">
           {/* Was a link to /shop dressed as search; now it opens real search. */}

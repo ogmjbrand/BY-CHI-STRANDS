@@ -23,7 +23,7 @@ export default function AtelierServiceBookingPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
             </span>
-            ByChi <span className="font-script normal-case">Strands</span>
+            ByChi Strands
           </Link>
           {" "}
           <div className="hidden md:flex items-center space-x-12">
@@ -69,7 +69,7 @@ export default function AtelierServiceBookingPage() {
       <footer className="bg-surface-container w-full py-16 border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center">
           <div className="font-display-md text-display-md text-primary scale-75 origin-left mb-8 md:mb-0 tracking-[-0.01em]">
-            ByChi <span className="font-script">Strands</span>
+            ByChi Strands
           </div>
           {" "}
           <div className="flex flex-col items-center md:items-end space-y-4">

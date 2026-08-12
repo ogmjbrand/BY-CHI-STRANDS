@@ -115,7 +115,7 @@ export function HomeHero() {
 
           <motion.p
             {...fadeUp(0.2)}
-            className="font-script text-gold-light text-[40px] md:text-[56px] leading-none -rotate-2 my-4"
+            className="font-display-lg italic text-gold-light text-[40px] md:text-[56px] leading-none my-4"
           >
             Crafted for
           </motion.p>
