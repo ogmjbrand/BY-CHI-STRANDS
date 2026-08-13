@@ -34,7 +34,7 @@ const PILLARS = [
 
 export function HouseFounder() {
   return (
-    <section className="bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+    <section className="bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
       <div className="mx-auto grid max-w-[1760px] items-end gap-12 lg:grid-cols-12 lg:gap-16">
         <motion.figure
           initial={{ opacity: 0, y: 28 }}
