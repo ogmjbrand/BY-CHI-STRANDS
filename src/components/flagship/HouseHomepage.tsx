@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowRight, Menu, Search, ShoppingBag } from "lucide-react";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { TransformationReveal } from "./TransformationReveal";
 import { HouseCraft } from "./HouseCraft";
 import { HouseFounder } from "./HouseFounder";
 import { HouseVoices } from "./HouseVoices";
 import { SectionBackdrop } from "./SectionBackdrop";
+import { HouseHeroCards } from "./HouseHeroCards";
 
 const collections = [
   { name: "Bone Straight", label: "THE SIGNATURE", image: "/products/IMG-20260726-WA0015.jpg", href: "/collections" },
@@ -58,12 +58,6 @@ function MotionVideo({ item, className = "" }: { item: (typeof videos)[number]; 
 }
 
 export function HouseHomepage() {
-  const hero = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: hero, offset: ["start start", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
-
   /*
    * overflow-x-clip below, not overflow-x-hidden. `hidden` on either axis
    * makes an element a scroll container, and a scroll container becomes the
@@ -74,28 +68,8 @@ export function HouseHomepage() {
    */
   return (
     <div className="min-h-screen overflow-x-clip bg-[#0b0907] text-[#f5f0e8] selection:bg-[#c8a45d] selection:text-[#0b0907]">
-<main>
-        <section ref={hero} className="relative min-h-[100svh] overflow-hidden bg-black">
-          <motion.div style={{ scale, y }} className="absolute inset-0">
-            <video className="h-full w-full object-cover" src={videos[0].src} poster={videos[0].poster} autoPlay muted loop playsInline preload="metadata" />
-            <div className="absolute inset-0 bg-black/35" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/35" />
-          </motion.div>
-          <motion.div style={{ opacity }} className="relative z-10 flex min-h-[100svh] items-end px-5 pb-10 md:px-10 md:pb-14 lg:px-16">
-            <div className="grid w-full max-w-[1760px] gap-10 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-9">
-                <p className="mb-6 text-[8px] uppercase tracking-[.6em] text-[#c8a45d]">The House of ByChi · Lagos</p>
-                <h1 className="font-serif text-[clamp(4.2rem,11vw,13rem)] leading-[.68] tracking-[-.075em]"><span className="block">The standard</span><span className="block pl-[8vw] italic text-[#c8a45d]">of</span><span className="block">beautiful hair.</span></h1>
-                <p className="mt-9 max-w-xl text-sm leading-7 text-white/65 md:text-base">Beautiful hair, deliberately selected and finished for women who expect presence without compromise.</p>
-              </div>
-              <div className="md:col-span-3">
-                <Link href="/collections" className="group flex items-center justify-between bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition hover:bg-[#f5f0e8]">Shop the House <ArrowRight size={16} className="transition group-hover:translate-x-1" /></Link>
-                <Link href="/book" className="mt-3 block border border-white/25 px-6 py-5 text-center text-[9px] uppercase tracking-[.32em] text-white/70 transition hover:border-[#c8a45d] hover:text-[#c8a45d]">Private Concierge</Link>
-              </div>
-            </div>
-          </motion.div>
-          <div className="absolute bottom-6 right-8 z-10 hidden items-center gap-3 text-[8px] uppercase tracking-[.45em] text-white/45 md:flex">Scroll <ArrowDown size={13} className="text-[#c8a45d]" /></div>
-        </section>
+      <main>
+        <HouseHeroCards />
 
         <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
           <SectionBackdrop name="backdrop-house" tone="light" />
