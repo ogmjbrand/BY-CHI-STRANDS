@@ -66,10 +66,10 @@ export function HouseCraft() {
   const x = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section ref={ref} className="relative overflow-x-clip bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+    <section ref={ref} className="relative overflow-x-clip bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-craft" />
       <div className="relative mx-auto max-w-[1760px]">
-        <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-8 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">06 / The Craft</p>
             <h2 className="font-serif text-[clamp(3.4rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
@@ -93,7 +93,7 @@ export function HouseCraft() {
         */}
         <motion.div
           style={reduceMotion ? undefined : { x }}
-          className="grid w-full grid-cols-1 gap-px bg-white/10 sm:grid-cols-2 lg:ml-[-5%] lg:w-[110%] lg:grid-cols-4"
+          className="grid w-full grid-cols-2 gap-px bg-white/10 lg:ml-[-5%] lg:w-[110%] lg:grid-cols-4"
         >
           {services.slice(0, 7).map((s, i) => {
             /* hair-tools is the one service whose frame lives outside the
@@ -107,7 +107,7 @@ export function HouseCraft() {
             <Link
               key={s.slug}
               href={`/services#${s.slug}`}
-              className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden bg-[#0b0907] p-7 transition-colors hover:bg-[#181513] md:min-h-[380px] md:p-9"
+              className="group relative flex min-h-[210px] flex-col justify-between overflow-hidden bg-[#0b0907] p-4 transition-colors hover:bg-[#181513] md:min-h-[380px] md:p-9"
             >
               {shot ? (
                 <>
@@ -126,13 +126,13 @@ export function HouseCraft() {
                   />
                 </>
               ) : null}
-              <p className="relative font-serif text-3xl text-[#c8a45d]/80">
+              <p className="relative font-serif text-2xl text-[#c8a45d]/80 md:text-3xl">
                 {String(i + 1).padStart(2, "0")}
               </p>
               <div className="relative">
-                <h3 className="font-serif text-2xl leading-tight md:text-[1.75rem]">{s.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/55">{s.short}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-white/40">
+                <h3 className="font-serif text-lg leading-tight md:text-[1.75rem]">{s.name}</h3>
+                <p className="mt-2 hidden text-sm leading-6 text-white/55 sm:block md:mt-3">{s.short}</p>
+                <span className="mt-3 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-white/40 md:mt-5">
                   Details
                   <ArrowRight size={12} className="text-[#c8a45d] transition group-hover:translate-x-1" />
                 </span>
@@ -148,17 +148,17 @@ export function HouseCraft() {
           */}
           <Link
             href="/services"
-            className="group flex min-h-[240px] flex-col justify-between bg-[#181513] p-7 transition-colors hover:bg-[#221e1b] md:p-9"
+            className="group flex min-h-[210px] flex-col justify-between bg-[#181513] p-4 transition-colors hover:bg-[#221e1b] md:min-h-[240px] md:p-9"
           >
-            <p className="font-serif text-3xl text-[#c8a45d]/70">08</p>
+            <p className="font-serif text-2xl text-[#c8a45d]/70 md:text-3xl">08</p>
             <div>
-              <h3 className="font-serif text-2xl leading-tight md:text-[1.75rem]">
+              <h3 className="font-serif text-lg leading-tight md:text-[1.75rem]">
                 Everything else
               </h3>
-              <p className="mt-3 text-sm leading-6 text-white/55">
+              <p className="mt-2 hidden text-sm leading-6 text-white/55 sm:block md:mt-3">
                 Consultations, home service and the full price list.
               </p>
-              <span className="mt-5 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d]">
+              <span className="mt-3 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d] md:mt-5">
                 All services
                 <ArrowRight size={12} className="transition group-hover:translate-x-1" />
               </span>

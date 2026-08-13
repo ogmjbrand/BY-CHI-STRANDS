@@ -132,12 +132,12 @@ export function TransformationReveal() {
   return (
     <section
       ref={track}
-      className="relative bg-[#0b0907]"
       /* Two and a bit viewports of scroll against one viewport of pinned
          frame: enough travel that the wipe feels deliberate rather than
          snapping past in a flick, without the long dead hold that 300vh
-         left at the end. */
-      style={{ height: "240vh" }}
+         left at the end. Shorter on a phone, where 240vh is a much longer
+         thumb journey for the same one reveal. */
+      className="relative h-[185vh] bg-[#0b0907] md:h-[240vh]"
       aria-label="Client transformation"
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden">

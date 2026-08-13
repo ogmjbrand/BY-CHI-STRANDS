@@ -174,7 +174,7 @@ function AcademyHero() {
 
 function AcademyStatement() {
   return (
-    <section className="relative bg-[#f5f0e8] px-5 py-24 text-[#0b0907] md:px-10 md:py-36">
+    <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-academy-premise" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
@@ -201,7 +201,7 @@ function AcademyStatement() {
           band, not three cards: the same information, without pretending
           each line is an object you can click.
         */}
-        <div className="mt-20 grid border-y border-[#0b0907]/20 md:grid-cols-3">
+        <div className="mt-12 grid border-y border-[#0b0907]/20 md:mt-20 md:grid-cols-3">
           {[
             ["The Masterclass", "Sourcing, grading, marketing and scaling."],
             ["Mentorship", "A direct session on your own sourcing questions."],
@@ -209,10 +209,10 @@ function AcademyStatement() {
           ].map(([title, copy]) => (
             <div
               key={title}
-              className="border-b border-[#0b0907]/15 p-7 last:border-0 md:border-b-0 md:border-r md:p-9 md:last:border-r-0"
+              className="border-b border-[#0b0907]/15 p-5 last:border-0 md:border-b-0 md:border-r md:p-9 md:last:border-r-0"
             >
-              <h3 className="font-serif text-3xl">{title}</h3>
-              <p className="mt-4 text-sm leading-7 text-[#0b0907]/55">{copy}</p>
+              <h3 className="font-serif text-2xl md:text-3xl">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-[#0b0907]/55 md:mt-4 md:leading-7">{copy}</p>
             </div>
           ))}
         </div>
@@ -228,12 +228,12 @@ function AcademyCurriculum() {
   const frames = MODULES.map((m) => scene(m.frame));
 
   return (
-    <section id="curriculum" className="relative bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+    <section id="curriculum" className="relative bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
       {/* No overflow on this section: it holds the pinned frame below, and an
           overflow container would become that frame's containing block. */}
       <SectionBackdrop name="backdrop-academy-curriculum" />
       <div className="relative mx-auto max-w-[1760px]">
-        <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
               02 / The Curriculum
@@ -351,7 +351,7 @@ function ModuleBlock({
       /* The dwell: on wide screens each module holds most of a viewport, so
          the pinned frame beside it has something to hold still for and the
          reader has one idea in front of them at a time. */
-      className={`border-t border-white/12 py-12 md:py-16 lg:flex lg:min-h-[68vh] lg:flex-col lg:justify-center ${
+      className={`border-t border-white/12 py-9 md:py-16 lg:flex lg:min-h-[68vh] lg:flex-col lg:justify-center ${
         last ? "border-b" : ""
       }`}
     >
@@ -359,7 +359,7 @@ function ModuleBlock({
 
       {/* Below lg the pinned frame is not rendered, so the module carries
           its own. */}
-      <div className="mt-7 aspect-[4/3] overflow-hidden bg-[#141110] lg:hidden">
+      <div className="mt-5 aspect-[5/4] overflow-hidden bg-[#141110] lg:hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={frame.src}
@@ -369,7 +369,7 @@ function ModuleBlock({
         />
       </div>
 
-      <h3 className="mt-7 font-serif text-[clamp(2.6rem,4.4vw,4.2rem)] leading-[.95] tracking-[-.04em]">
+      <h3 className="mt-5 font-serif text-[clamp(2.2rem,10vw,4.2rem)] leading-[.95] tracking-[-.04em] md:mt-7">
         {m.title}
       </h3>
       <p className="mt-5 max-w-lg text-sm leading-7 text-white/55 md:text-base">{m.copy}</p>
@@ -381,10 +381,10 @@ function ModuleBlock({
 
 function AcademyClassroom() {
   return (
-    <section className="relative bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+    <section className="relative bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-academy-room" />
       <div className="relative mx-auto max-w-[1760px]">
-        <div className="mb-16">
+        <div className="mb-10 md:mb-16">
           <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
             03 / The Classroom
           </p>
@@ -456,7 +456,7 @@ function AcademyClassroom() {
 
 function AcademyAudience() {
   return (
-    <section className="relative bg-[#f5f0e8] px-5 py-24 text-[#0b0907] md:px-10 md:py-36">
+    <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-voices" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
