@@ -89,7 +89,7 @@ export function TransformationReveal() {
           </h2>
 
           <div className="mt-14 grid grid-cols-1 gap-3 md:grid-cols-2">
-            <figure className="relative aspect-[4/5] overflow-hidden bg-[#1a120d]">
+            <figure className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
               {pair ? (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img
@@ -104,7 +104,7 @@ export function TransformationReveal() {
                 Before
               </figcaption>
             </figure>
-            <figure className="relative aspect-[4/5] overflow-hidden bg-[#1a120d]">
+            <figure className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={after.src} alt={after.alt} className="h-full w-full object-cover" />
               <figcaption className="absolute bottom-5 left-5 text-[8px] uppercase tracking-[.45em] text-white/70">
