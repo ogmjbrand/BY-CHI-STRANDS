@@ -23,48 +23,7 @@ export default function GalleryPage() {
   return (
     <div className="scr-aura-stories-gallery theme-noir bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Shell */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-500 ease-in-out">
-        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
-          <div className="flex-1 hidden md:flex gap-8">
-            <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/collections">
-              Collections
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary/30 pb-1" href="/gallery">
-              Gallery
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/services">
-              Atelier
-            </Link>
-          </div>
-          {" "}
-          <div className="flex-shrink-0">
-            {/* Was an <h1>: the wordmark is chrome, not the page's title, and
-                having it here gave every gallery page two h1s. */}
-            <span className="flex items-center gap-2.5 font-display-md text-display-md text-primary tracking-tight leading-none">
-              <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/logo-mark.jpg" alt="" className="h-full w-full object-cover scale-125" />
-              </span>
-              ByChi Strands
-            </span>
-          </div>
-          {" "}
-          <div className="flex-1 flex justify-end items-center gap-6">
-            <Link className="hidden md:block font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-500" href="/academy">
-              Academy
-            </Link>
-            {" "}
-            <Link href="/cart" aria-label="Your bag" className="text-primary cursor-pointer hover:scale-110 transition-transform"><Icon data-bag-trigger name="shopping_bag" /></Link>
-            {" "}
-            <button data-open-menu="" className="md:hidden text-primary cursor-pointer hover:scale-110 transition-transform" aria-label="Open menu">
-              <Icon name="menu" />
-            </button>
-          </div>
-        </div>
-      </nav>
-      <main className="pt-32">
+<main className="pt-32">
         {/* Editorial Header */}
         <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 reveal-on-scroll">
           <div className="max-w-4xl">
@@ -153,39 +112,6 @@ export default function GalleryPage() {
         </section>
       </main>
       {/* Footer Shell */}
-      <footer className="w-full mt-section-padding bg-surface-container-lowest border-t border-outline-variant/30">
-        <div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
-          <div className="mb-8 md:mb-0">
-            <h2 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-none tracking-[-0.02em]">
-              ByChi Strands
-            </h2>
-            {" "}
-            <p className="font-body-sm text-on-surface-variant mt-2">Luxury Vietnamese hair, crafted for confidence.</p>
-          </div>
-          {" "}
-          <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
-            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/privacy">
-              Privacy Policy
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/terms">
-              Terms of Service
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/contact">
-              Contact
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:underline decoration-primary underline-offset-4" href="/about">
-              About
-            </Link>
-          </div>
-          {" "}
-          <p className="font-body-sm text-secondary-fixed-dim">
-            © {new Date().getFullYear()} ByChi Strands. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
 import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = { title: "Our Craft" };
@@ -15,8 +14,6 @@ export const metadata: Metadata = { title: "Our Craft" };
 export default function AboutPage() {
   return (
     <div className="theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <StitchHeader />
-
       {/* Opening — full-bleed photo, motto as pull-quote */}
       <header className="relative flex items-end min-h-[80vh] px-margin-mobile md:px-margin-desktop pb-16 md:pb-24">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -171,8 +168,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-
-      <StitchFooter />
     </div>
   );
 }

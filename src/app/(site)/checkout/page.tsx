@@ -132,7 +132,6 @@ export default function CheckoutPage() {
   if (hydrated && cart.length === 0) {
     return (
       <div className="scr-luxury-checkout theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-        <SiteHeader dark />
         <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-24">
           {/* The empty branch returns before the checkout heading, so it needs
               its own — a page with no h1 has no announced title. */}
@@ -161,7 +160,6 @@ export default function CheckoutPage() {
    */
   return (
     <div className="scr-luxury-checkout theme-noir bg-surface font-body-md text-on-surface antialiased overflow-x-clip min-h-screen flex flex-col">
-      <SiteHeader dark />
       <main className="flex-1 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-12 md:py-24">
         {/* The page opened on "Shipping Address" with no h1 above it. */}
         <h1 className="font-display-md text-3xl md:text-4xl text-on-surface mb-10 tracking-[-0.01em]">
@@ -382,14 +380,6 @@ export default function CheckoutPage() {
           </div>
         </form>
       </main>
-
-      <footer className="bg-surface-container-low border-t border-outline-variant/20 mt-24">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="text-body-sm text-outline">
-            © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

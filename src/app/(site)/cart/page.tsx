@@ -25,20 +25,22 @@ export default function ShoppingBagPage() {
      * off to — is noir, so the bag was a white interruption mid-funnel.
      */
     <div className="scr-shopping-bag-sidebar theme-noir bg-surface text-on-surface font-body-md min-h-screen">
-      <header className="border-b border-outline-variant/30 px-margin-mobile md:px-margin-desktop py-6">
-        <div className="max-w-container-max mx-auto flex items-center justify-between">
-          <Link href="/">
-            <Wordmark size="sm" withSeal />
-          </Link>
-          <Link href="/shop" className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">
+      <main className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+        {/* The page used to draw a second wordmark bar directly beneath the
+            site header. Only the "continue shopping" escape hatch was worth
+            keeping, so it moves in beside the heading. */}
+        <div className="mb-12 flex items-baseline justify-between gap-6">
+          <div>
+            <h1 className="font-display-lg text-3xl md:text-5xl mb-2">Your Selection</h1>
+            <p className="font-body-sm text-on-surface-variant">Private concierge experience.</p>
+          </div>
+          <Link
+            href="/shop"
+            className="shrink-0 font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
+          >
             Continue Shopping
           </Link>
         </div>
-      </header>
-
-      <main className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
-        <h1 className="font-display-lg text-3xl md:text-5xl mb-2">Your Selection</h1>
-        <p className="font-body-sm text-on-surface-variant mb-12">Private concierge experience.</p>
 
         {!hydrated ? null : cart.length === 0 ? (
           /*

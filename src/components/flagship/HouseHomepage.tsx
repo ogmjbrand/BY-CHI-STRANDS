@@ -74,21 +74,7 @@ export function HouseHomepage() {
    */
   return (
     <div className="min-h-screen overflow-x-clip bg-[#0b0907] text-[#f5f0e8] selection:bg-[#c8a45d] selection:text-[#0b0907]">
-      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6 md:pt-5">
-        <div className="mx-auto flex h-[68px] max-w-[1760px] items-center justify-between border border-white/15 bg-[#0b0907]/65 px-4 backdrop-blur-xl md:h-[76px] md:px-7">
-          <div className="flex items-center gap-7">
-            <Link href="/shop" className="hidden items-center gap-2 text-[9px] uppercase tracking-[.35em] text-white/65 transition hover:text-[#c8a45d] md:flex"><Menu size={14} /> Menu</Link>
-            <Link href="/collections" className="hidden text-[9px] uppercase tracking-[.35em] text-white/65 transition hover:text-[#c8a45d] md:block">Collections</Link>
-          </div>
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 font-serif text-[27px] tracking-[-.05em] md:text-[38px]">ByChi Strands</Link>
-          <div className="ml-auto flex items-center gap-5 text-white/75">
-            <Link href="/shop" aria-label="Search"><Search size={17} /></Link>
-            <Link href="/cart" aria-label="Shopping bag"><ShoppingBag size={17} /></Link>
-          </div>
-        </div>
-      </header>
-
-      <main>
+<main>
         <section ref={hero} className="relative min-h-[100svh] overflow-hidden bg-black">
           <motion.div style={{ scale, y }} className="absolute inset-0">
             <video className="h-full w-full object-cover" src={videos[0].src} poster={videos[0].poster} autoPlay muted loop playsInline preload="metadata" />
@@ -160,8 +146,6 @@ export function HouseHomepage() {
 
         <section className="relative overflow-hidden bg-black px-5 py-20 md:px-10 md:py-44"><div className="absolute inset-0 opacity-45"><Image src="/products/IMG-20260727-WA0045.jpg" alt="" fill sizes="100vw" className="object-cover" /></div><div className="absolute inset-0 bg-black/65" /><div className="relative z-10 mx-auto max-w-[1760px] text-center"><p className="mb-7 text-[8px] uppercase tracking-[.6em] text-[#c8a45d]">The ByChi House</p><h2 className="font-serif text-[clamp(4rem,10vw,12rem)] leading-[.68] tracking-[-.07em]">Your hair.<br /><i className="text-[#c8a45d]">Your standard.</i></h2><p className="mx-auto mt-10 max-w-xl text-sm leading-7 text-white/60">Choose your piece, speak with a concierge, or step inside the House in Lagos.</p><div className="mx-auto mt-10 flex max-w-xl flex-col gap-3 sm:flex-row"><Link href="/collections" className="flex flex-1 items-center justify-center bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907]">Shop the House</Link><Link href="/book" className="flex flex-1 items-center justify-center border border-white/30 px-6 py-5 text-[9px] uppercase tracking-[.32em] text-white">Book Concierge</Link></div></div></section>
       </main>
-
-      <footer className="border-t border-white/10 bg-[#0b0907] px-5 py-12 text-white/55 md:px-10 md:py-16"><div className="mx-auto grid max-w-[1760px] gap-10 md:grid-cols-12"><div className="md:col-span-5"><p className="font-serif text-4xl text-[#f5f0e8]">ByChi Strands</p><p className="mt-5 max-w-sm text-sm leading-7">The House of luxury hair. Lagos · Nigeria.</p></div><div className="grid grid-cols-2 gap-8 text-[8px] uppercase tracking-[.3em] md:col-span-7 md:grid-cols-4"><Link href="/collections">Collections</Link><Link href="/book">Concierge</Link><Link href="/about">The House</Link><Link href="/contact">Contact</Link></div></div></footer>
-    </div>
+</div>
   );
 }

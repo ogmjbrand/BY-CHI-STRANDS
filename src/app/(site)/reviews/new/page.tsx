@@ -177,23 +177,7 @@ function ReviewFormContent() {
             rows={6}
           />
         </div>
-
-        <footer className="pt-6 flex flex-col items-center">
-          <button
-            type="submit"
-            disabled={status === "loading" || !rating}
-            className="w-full py-6 bg-on-surface text-surface font-label-caps text-label-caps tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 disabled:opacity-50"
-          >
-            {status === "loading" ? "Sending…" : "Submit Your Story"}
-          </button>
-          {!rating && status !== "loading" ? (
-            <p className="mt-4 text-[12px] text-on-surface-variant">Please select a rating.</p>
-          ) : null}
-          {status === "error" ? (
-            <p className="mt-4 text-[12px] text-error">Something went wrong — please try again.</p>
-          ) : null}
-        </footer>
-      </form>
+</form>
     </main>
   );
 }
@@ -201,17 +185,9 @@ function ReviewFormContent() {
 export default function ReviewSubmissionFormPage() {
   return (
     <div className="scr-review-submission-form theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
       <Suspense fallback={<div className="flex-1" />}>
         <ReviewFormContent />
       </Suspense>
-      <footer className="border-t border-outline-variant/20 bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name}. The Art of Luxury Hair.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

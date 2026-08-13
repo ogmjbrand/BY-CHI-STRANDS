@@ -40,8 +40,6 @@ export default function StudentDashboardPage() {
 
   return (
     <div className="scr-student-dashboard theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
-
       <main className="flex-1 max-w-2xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-section-padding">
         <header className="mb-12">
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-4 tracking-[-0.02em]">
@@ -152,14 +150,6 @@ export default function StudentDashboardPage() {
           </a>
         </div>
       </main>
-
-      <footer className="bg-surface-container-low border-t border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name} Academy. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

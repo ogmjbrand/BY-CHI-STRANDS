@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ShopBrowser } from "@/components/stitch/ShopBrowser";
 import { TextureGuide } from "@/components/stitch/TextureGuide";
-import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shop_all
@@ -21,7 +20,6 @@ export const metadata: Metadata = {
 export default function ShopAllPage() {
   return (
     <div className="scr-shop-all theme-noir bg-surface text-on-surface">
-      <StitchHeader />
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-40 md:pt-52 pb-section-padding">
         <header className="mb-20">
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 tracking-[-0.02em]">
@@ -39,7 +37,6 @@ export default function ShopAllPage() {
           <ShopBrowser />
         </div>
       </main>
-      <StitchFooter />
     </div>
   );
 }

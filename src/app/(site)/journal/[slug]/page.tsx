@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { articles, getArticle } from "@/lib/journal";
-import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -31,8 +30,6 @@ export default async function ArticlePage({
 
   return (
     <div className="theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <StitchHeader />
-
       <header className="relative flex items-end min-h-[70vh] px-margin-mobile md:px-margin-desktop pb-16 md:pb-24">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -75,8 +72,6 @@ export default async function ArticlePage({
           ))}
         </article>
       </main>
-
-      <StitchFooter />
     </div>
   );
 }

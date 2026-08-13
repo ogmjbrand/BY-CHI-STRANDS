@@ -46,8 +46,6 @@ const RITUALS = [
 export default function AftercarePage() {
   return (
     <div className="scr-aftercare-portal theme-noir bg-surface text-on-surface font-body-md">
-      <SiteHeader dark />
-
       <main>
         {/* Hero */}
         <section className="relative py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
@@ -159,36 +157,6 @@ export default function AftercarePage() {
           </div>
         </section>
       </main>
-
-      <footer className="w-full border-t border-outline-variant/20 bg-surface-container-low">
-        <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-[32px] md:text-display-lg text-primary md:tracking-[-0.02em]">
-              {site.name}
-            </span>
-            <p className="font-body-sm text-on-surface-variant text-center md:text-left">
-              Timeless Vietnamese hair, cared for properly.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-8">
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
-              Privacy Policy
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/terms">
-              Terms of Service
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-              About
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
-              Contact
-            </Link>
-          </div>
-          <p className="font-body-sm text-on-surface-variant opacity-50 uppercase tracking-widest">
-            © {new Date().getFullYear()} {site.name}. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

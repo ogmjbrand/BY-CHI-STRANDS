@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useStore } from "@/context/StoreContext";
 import { getProduct, priceFor } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
-import { StitchHeader, StitchFooter } from "@/components/stitch/SiteChrome";
 import { posterFor } from "@/lib/media";
 import { Icon } from "@/components/ui/icon";
 
@@ -14,7 +13,6 @@ export default function WishlistPage() {
 
   return (
     <div className="scr-wishlist theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <StitchHeader />
       <header className="pt-40 pb-16 md:pt-60 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
           Saved Pieces
@@ -76,8 +74,6 @@ export default function WishlistPage() {
           </div>
         )}
       </main>
-
-      <StitchFooter />
     </div>
   );
 }

@@ -24,8 +24,6 @@ export const metadata: Metadata = {
 export default function AcademyMentorshipPage() {
   return (
     <div className="scr-book-mentorship-popup theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
-
       <main className="flex-1">
         <section className="relative py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
           <span className="font-label-caps text-label-caps text-primary mb-4 block tracking-[0.15em] uppercase">
@@ -72,14 +70,6 @@ export default function AcademyMentorshipPage() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-surface-container-low border-t border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name} Academy. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

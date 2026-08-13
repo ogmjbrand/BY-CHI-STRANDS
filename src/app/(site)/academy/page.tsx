@@ -29,8 +29,6 @@ export const metadata: Metadata = {
 export default function AcademyPage() {
   return (
     <div className="theme-noir bg-[#0b0907] text-[#f5f0e8]">
-      <SiteHeader dark />
-
       <main>
         <AcademyHouse />
 
@@ -75,87 +73,6 @@ export default function AcademyPage() {
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-white/10 bg-[#0b0907] px-5 py-14 text-white/55 md:px-10 md:py-16">
-        <div className="mx-auto grid max-w-[1760px] gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="font-serif text-4xl text-[#f5f0e8]">ByChi Strands</p>
-            <p className="mt-5 max-w-sm text-sm leading-7">
-              The House of luxury hair, and the Academy that teaches how it is
-              sourced. Lagos · Nigeria.
-            </p>
-            <div className="mt-7 max-w-sm">
-              <InlineNewsletterField />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 text-[8px] uppercase tracking-[.3em] md:col-span-7 md:grid-cols-4">
-            <div className="space-y-4">
-              <Link href="/academy/enroll" className="block hover:text-[#c8a45d]">
-                Enrol
-              </Link>
-              <Link href="/academy/mentorship" className="block hover:text-[#c8a45d]">
-                Mentorship
-              </Link>
-              <Link href="/academy/resources" className="block hover:text-[#c8a45d]">
-                Resources
-              </Link>
-            </div>
-            <div className="space-y-4">
-              <Link href="/collections" className="block hover:text-[#c8a45d]">
-                Collections
-              </Link>
-              <Link href="/services" className="block hover:text-[#c8a45d]">
-                Services
-              </Link>
-              <Link href="/about" className="block hover:text-[#c8a45d]">
-                The House
-              </Link>
-            </div>
-            <div className="space-y-4">
-              <a
-                href={site.socials.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-[#c8a45d]"
-              >
-                Instagram
-              </a>
-              <a
-                href={site.socials.tiktok.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-[#c8a45d]"
-              >
-                TikTok
-              </a>
-              <a
-                href={site.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-[#c8a45d]"
-              >
-                WhatsApp
-              </a>
-            </div>
-            <div className="space-y-4">
-              <Link href="/privacy" className="block hover:text-[#c8a45d]">
-                Privacy
-              </Link>
-              <Link href="/terms" className="block hover:text-[#c8a45d]">
-                Terms
-              </Link>
-              <Link href="/shipping" className="block hover:text-[#c8a45d]">
-                Shipping
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <p className="mx-auto mt-12 max-w-[1760px] border-t border-white/10 pt-8 text-[8px] uppercase tracking-[.3em] text-white/35">
-          © {new Date().getFullYear()} {site.name}
-        </p>
-      </footer>
-    </div>
+</div>
   );
 }

@@ -58,8 +58,6 @@ export default function AcademyEnrollmentPage() {
 
   return (
     <div className="scr-academy-enrollment theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
-
       <main className="flex-1 max-w-2xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-16 md:py-24">
         <header className="text-center mb-16 space-y-4">
           <span className="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase block">
@@ -118,44 +116,8 @@ export default function AcademyEnrollmentPage() {
               type="date"
             />
           </div>
-
-          <footer className="pt-6 flex flex-col items-center">
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full py-6 bg-on-surface text-surface font-label-caps text-label-caps tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 disabled:opacity-50"
-            >
-              {status === "loading" ? "Submitting…" : "Submit Application"}
-            </button>
-            {status === "error" ? (
-              <p className="mt-4 text-[12px] text-error">Something went wrong — please try again.</p>
-            ) : null}
-            <p className="mt-6 font-body-sm text-on-surface-variant text-center">
-              Prefer to talk first?{" "}
-              <a
-                href={whatsappLink("Hi ByChiStrands — I'd like to know more about the Academy masterclass.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary underline"
-              >
-                Message us on WhatsApp
-              </a>
-              .
-            </p>
-          </footer>
-        </form>
+</form>
       </main>
-
-      <footer className="bg-surface-container-low border-t border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name} Academy. All Rights Reserved. ·{" "}
-            <Link href="/terms" className="underline hover:text-primary">
-              Terms
-            </Link>
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

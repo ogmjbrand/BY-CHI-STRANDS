@@ -33,8 +33,6 @@ export default async function OrderDetailsPage({
 
   return (
     <div className="scr-order-details theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
-
       {!order ? (
         <main className="flex-1 flex flex-col items-center justify-center text-center px-margin-mobile py-32">
           <Icon name="receipt_long" className="text-primary text-5xl mb-8 opacity-40" />
@@ -262,14 +260,6 @@ export default async function OrderDetailsPage({
           </div>
         </main>
       )}
-
-      <footer className="border-t border-outline-variant/20 bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name}. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }
