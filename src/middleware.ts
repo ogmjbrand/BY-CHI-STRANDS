@@ -64,7 +64,10 @@ export function middleware(request: NextRequest) {
   if (process.env.ADMIN_PREVIEW === "1") return NextResponse.next();
 
   const { pathname } = request.nextUrl;
-  const isApi = GATED_API.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+  const isApi =
+    GATED_API.some((p) => pathname === p || pathname.startsWith(`${p}/`)) ||
+    // one route deep inside a live namespace; see the note above
+    /^\/api\/orders\/[^/]+\/confirm\/?$/.test(pathname);
 
   if (isApi) {
     // A bare 404 for an API path, with no body describing why.
@@ -92,5 +95,6 @@ export const config = {
     "/api/webhooks/:path*",
     "/api/test",
     "/api/health/:path*",
+    "/api/orders/:id/confirm",
   ],
 };
