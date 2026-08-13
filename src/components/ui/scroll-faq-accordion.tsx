@@ -9,6 +9,23 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/*
+ * Registered here, at module scope, and not inside the component.
+ *
+ * It used to be registered in a useEffect while the timeline was built in
+ * useGSAP — and useGSAP runs in a layout effect, which fires first. So every
+ * timeline was created before the plugin existed, and GSAP rejected the
+ * option outright, warning "Invalid property scrollTrigger set to ...".
+ *
+ * Nothing pinned, nothing scrubbed, and each accordion was left as a plain
+ * box the height of its container with the questions sitting at the top —
+ * about 12,600px of empty scrolling on the FAQ page with the answers never
+ * opening on the way down.
+ */
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 interface FAQItem {
   id: number;
   question: string;
@@ -31,12 +48,6 @@ export default function ScrollFAQAccordion({
   const [openItem, setOpenItem] = React.useState<string | null>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const contentRefs = React.useRef<Map<string, HTMLDivElement>>(new Map());
-
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-  }, []);
 
   useGSAP(() => {
     if (!containerRef.current || data.length === 0) return;
@@ -70,10 +81,18 @@ export default function ScrollFAQAccordion({
     };
   }, [data]);
 
+  /*
+   * No height here at all. ScrollTrigger inserts its own pin-spacer worth the
+   * pin duration, so the scroll distance is already accounted for; anything
+   * set here is added on top of it. The original flat `h-[300vh]` reserved
+   * 2,700px per category whether it held two questions or six — five of those
+   * on one page, with the pin silently disabled, is where the FAQ's ~12,600px
+   * of empty scrolling came from.
+   */
   return (
     <div
       ref={containerRef}
-      className={cn("max-w-4xl mx-auto py-16 h-[300vh]", className)}
+      className={cn("max-w-4xl mx-auto py-16", className)}
     >
       <Accordion.Root type="single" collapsible value={openItem || ""}>
         {data.map((item) => (
