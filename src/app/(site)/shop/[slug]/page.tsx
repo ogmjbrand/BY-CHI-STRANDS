@@ -201,7 +201,10 @@ export default async function ProductPage({
       </div>
 
       {/* Desktop design (Stitch: digital_flagship_signature_wigs_pdp_with_reviews) */}
-      <div className="hidden md:block scr-signature-wigs-pdp-with-reviews font-body-md overflow-x-hidden">
+      {/* overflow-x-clip, not -hidden: `hidden` makes this a scroll container,
+          which becomes the containing block for every sticky descendant — the
+          desktop header and the buy panel both stopped sticking because of it. */}
+      <div className="hidden md:block scr-signature-wigs-pdp-with-reviews font-body-md overflow-x-clip">
         {/* TopNavBar */}
         <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
           <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">

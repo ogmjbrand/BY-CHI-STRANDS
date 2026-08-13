@@ -153,8 +153,14 @@ export default function CheckoutPage() {
     );
   }
 
+  /*
+   * overflow-x-clip below, not -hidden. `hidden` on either axis makes this a
+   * scroll container, and a scroll container becomes the containing block for
+   * every `position: sticky` descendant — so the mobile header and the desktop
+   * order summary both stopped sticking. `clip` clips without scrolling.
+   */
   return (
-    <div className="scr-luxury-checkout theme-noir bg-surface font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col">
+    <div className="scr-luxury-checkout theme-noir bg-surface font-body-md text-on-surface antialiased overflow-x-clip min-h-screen flex flex-col">
       <SiteHeader dark />
       <main className="flex-1 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-12 md:py-24">
         {/* The page opened on "Shipping Address" with no h1 above it. */}
