@@ -5,7 +5,8 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
-import { scene, type SceneName } from "@/lib/media";
+import { hasScene, scene, type SceneName } from "@/lib/media";
+import { SectionBackdrop } from "./SectionBackdrop";
 
 /**
  * 07 — The Craft.
@@ -33,9 +34,13 @@ import { scene, type SceneName } from "@/lib/media";
  * than borrowing a picture of something else.
  */
 /*
- * Services with a real frame of their own. Hair tools and the laundry bench
- * have none yet, and a picture of something else would be a picture of
- * something else.
+ * Services with a frame of their own. A picture of something else would be a
+ * picture of something else, so a service without one stays typographic.
+ *
+ * `hair-tools` is in the list but its scene is marked `pending` in lib/media
+ * until a photograph of the tools the house actually sells is committed at
+ * /services/hair-tools.jpg — `hasScene` is what decides, so dropping the file
+ * in is the whole job and nothing here changes.
  */
 const HAS_SHOT = new Set([
   "hair-laundry",
@@ -44,6 +49,7 @@ const HAS_SHOT = new Set([
   "ventilation",
   "frontal-installation",
   "training",
+  "hair-tools",
 ]);
 
 export function HouseCraft() {
@@ -60,8 +66,9 @@ export function HouseCraft() {
   const x = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section ref={ref} className="overflow-hidden bg-[#21150f] px-5 py-24 md:px-10 md:py-36">
-      <div className="mx-auto max-w-[1760px]">
+    <section ref={ref} className="relative overflow-x-clip bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+      <SectionBackdrop name="backdrop-craft" />
+      <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">06 / The Craft</p>
@@ -89,13 +96,18 @@ export function HouseCraft() {
           className="grid w-full grid-cols-1 gap-px bg-white/10 sm:grid-cols-2 lg:ml-[-5%] lg:w-[110%] lg:grid-cols-4"
         >
           {services.slice(0, 7).map((s, i) => {
-            const key = `craft-${s.slug}` as SceneName;
-            const shot = HAS_SHOT.has(s.slug) ? scene(key) : null;
+            /* hair-tools is the one service whose frame lives outside the
+               craft-* group, because it is a product shot rather than a
+               picture of the work being done. */
+            const key = (s.slug === "hair-tools"
+              ? "service-hair-tools"
+              : `craft-${s.slug}`) as SceneName;
+            const shot = HAS_SHOT.has(s.slug) && hasScene(key) ? scene(key) : null;
             return (
             <Link
               key={s.slug}
               href={`/services#${s.slug}`}
-              className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden bg-[#21150f] p-7 transition-colors hover:bg-[#2a1c14] md:min-h-[380px] md:p-9"
+              className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden bg-[#0b0907] p-7 transition-colors hover:bg-[#181513] md:min-h-[380px] md:p-9"
             >
               {shot ? (
                 <>
@@ -110,7 +122,7 @@ export function HouseCraft() {
                       it a ground to sit on. */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-[#1a100b] via-[#1a100b]/55 to-[#1a100b]/20"
+                    className="absolute inset-0 bg-gradient-to-t from-[#0b0907] via-[#0b0907]/55 to-[#0b0907]/20"
                   />
                 </>
               ) : null}
@@ -136,7 +148,7 @@ export function HouseCraft() {
           */}
           <Link
             href="/services"
-            className="group flex min-h-[240px] flex-col justify-between bg-[#2a1c14] p-7 transition-colors hover:bg-[#33231a] md:p-9"
+            className="group flex min-h-[240px] flex-col justify-between bg-[#181513] p-7 transition-colors hover:bg-[#221e1b] md:p-9"
           >
             <p className="font-serif text-3xl text-[#c8a45d]/70">08</p>
             <div>

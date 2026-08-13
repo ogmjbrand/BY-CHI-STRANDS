@@ -43,7 +43,7 @@ export function HouseFounder() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="relative lg:col-span-5"
         >
-          <div className="relative aspect-[4/5] overflow-hidden bg-[#1a120d]">
+          <div className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
             <Image
               src="/services/ceo-portrait-1.jpeg"
               alt="Chi, founder of ByChiStrands, wearing a wine-toned unit from the house"
