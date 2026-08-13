@@ -1,7 +1,7 @@
 /**
  * Client transformations, before and after.
  *
- * THIS LIST IS EMPTY ON PURPOSE.
+ * There is one real pair in here, and the bar it had to clear is below.
  *
  * A before/after is a factual claim: this person's hair looked like *that*,
  * and after our work it looked like *this*. Pairing two unrelated photographs
@@ -48,7 +48,33 @@ export interface BeforeAfterPair {
  * Real, permissioned client pairs. Add them here and the placeholder state
  * disappears on its own. See the note above before adding anything.
  */
-export const beforeAfterPairs: BeforeAfterPair[] = [];
+export const beforeAfterPairs: BeforeAfterPair[] = [
+  {
+    id: "wig-revamp-01",
+    /*
+     * Both frames are stills from the house's own footage —
+     * public/services/ventilation-1.mp4, a clip ByChiStrands filmed and
+     * published itself, captioned on screen "HOW MY CLIENT SENT HER WIG TO US
+     * VS" and ending "You just found the best revamp plug". Same wig, same
+     * session, start and end of the same video, so this is a real result and
+     * not two unrelated photographs put side by side.
+     *
+     * The on-screen captions were cropped off (they sat in a band across the
+     * top of the first frame and the bottom of the last); nothing else about
+     * either frame is altered. The house's own watermark is left in place.
+     */
+    before: {
+      src: "/services/revamp-before.jpg",
+      alt: "A client's wig as it arrived at the atelier — dry, tangled and lifted away from the cap",
+    },
+    after: {
+      src: "/services/revamp-after.jpg",
+      alt: "The same wig after revamping, the curl pattern redefined and the colour evened out",
+    },
+    service: "Wig revamp",
+    note: "Both frames are stills from the same ByChiStrands video, taken at its start and end. The finished shot is lit and angled differently from the arrival shot — it is the same wig on the same stand, filmed as the work was done.",
+  },
+];
 
 /**
  * The finished-work frame the section falls back to while `beforeAfterPairs`

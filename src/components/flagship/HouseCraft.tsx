@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
+import { scene, type SceneName } from "@/lib/media";
 
 /**
  * 07 — The Craft.
@@ -21,7 +22,30 @@ import { services } from "@/lib/services";
  * The numbers count the work, and the row slides horizontally against the
  * scroll on wide screens so the chapter moves laterally where every other
  * section moves down. Under reduced motion it is a static grid.
+ *
+ * Every tile carries a real photograph of that work — the supplier trip, a
+ * client's wig as it arrived, a finished install, a mentorship session. This
+ * section used to be seven text cards on a brown ground, which is the exact
+ * "collection of generic cards" the brief rules out, and it showed none of
+ * the house's own photography while thirty pieces of it sat behind the
+ * product pages. Two services have no photograph of their own yet
+ * (hair tools, and the laundry bench); those tiles stay typographic rather
+ * than borrowing a picture of something else.
  */
+/*
+ * Services with a real frame of their own. Hair tools and the laundry bench
+ * have none yet, and a picture of something else would be a picture of
+ * something else.
+ */
+const HAS_SHOT = new Set([
+  "hair-laundry",
+  "hair-importation-service",
+  "wig-making",
+  "ventilation",
+  "frontal-installation",
+  "training",
+]);
+
 export function HouseCraft() {
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
@@ -64,16 +88,36 @@ export function HouseCraft() {
           style={reduceMotion ? undefined : { x }}
           className="grid w-full grid-cols-1 gap-px bg-white/10 sm:grid-cols-2 lg:ml-[-5%] lg:w-[110%] lg:grid-cols-4"
         >
-          {services.slice(0, 7).map((s, i) => (
+          {services.slice(0, 7).map((s, i) => {
+            const key = `craft-${s.slug}` as SceneName;
+            const shot = HAS_SHOT.has(s.slug) ? scene(key) : null;
+            return (
             <Link
               key={s.slug}
               href={`/services#${s.slug}`}
-              className="group flex min-h-[240px] flex-col justify-between bg-[#21150f] p-7 transition-colors hover:bg-[#2a1c14] md:p-9"
+              className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden bg-[#21150f] p-7 transition-colors hover:bg-[#2a1c14] md:min-h-[380px] md:p-9"
             >
-              <p className="font-serif text-3xl text-[#c8a45d]/70">
+              {shot ? (
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-[1.4s] group-hover:scale-[1.05] group-hover:opacity-60"
+                  />
+                  {/* The type sits on the picture, so the picture has to give
+                      it a ground to sit on. */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-[#1a100b] via-[#1a100b]/55 to-[#1a100b]/20"
+                  />
+                </>
+              ) : null}
+              <p className="relative font-serif text-3xl text-[#c8a45d]/80">
                 {String(i + 1).padStart(2, "0")}
               </p>
-              <div>
+              <div className="relative">
                 <h3 className="font-serif text-2xl leading-tight md:text-[1.75rem]">{s.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/55">{s.short}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-white/40">
@@ -82,7 +126,8 @@ export function HouseCraft() {
                 </span>
               </div>
             </Link>
-          ))}
+            );
+          })}
 
           {/*
             Seven services into a four-column grid leaves one cell empty, and

@@ -63,8 +63,16 @@ export function HouseHomepage() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
 
+  /*
+   * overflow-x-clip below, not overflow-x-hidden. `hidden` on either axis
+   * makes an element a scroll container, and a scroll container becomes the
+   * containing block for every `position: sticky` descendant — so the pinned
+   * frame in the transformation chapter stuck to this wrapper instead of the
+   * viewport and never pinned at all. `clip` does the same job visually
+   * without creating a scroll container.
+   */
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#0b0907] text-[#f5f0e8] selection:bg-[#c8a45d] selection:text-[#0b0907]">
+    <div className="min-h-screen overflow-x-clip bg-[#0b0907] text-[#f5f0e8] selection:bg-[#c8a45d] selection:text-[#0b0907]">
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6 md:pt-5">
         <div className="mx-auto flex h-[68px] max-w-[1760px] items-center justify-between border border-white/15 bg-[#0b0907]/65 px-4 backdrop-blur-xl md:h-[76px] md:px-7">
           <div className="flex items-center gap-7">
