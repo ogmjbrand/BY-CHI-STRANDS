@@ -144,10 +144,14 @@ export function TransformationReveal() {
         <div className="relative h-full w-full">
           {/* The finished work sits underneath, complete. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/* These frames are portrait phone stills in a landscape window.
+              Centred, object-cover lands on the mannequin's canvas and crops
+              the hair out — the one thing the section exists to show. Biased
+              upward so the hair mass stays in frame at every viewport. */}
           <img
             src={after.src}
             alt={after.alt}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[center_28%]"
           />
 
           {/*
@@ -163,7 +167,11 @@ export function TransformationReveal() {
           >
             {pair ? (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={pair.before.src} alt="" className="h-full w-full object-cover" />
+              <img
+                src={pair.before.src}
+                alt=""
+                className="h-full w-full object-cover object-[center_28%]"
+              />
             ) : (
               <BeforePlaceholder />
             )}

@@ -155,6 +155,37 @@ const SCENES = {
     src: "/services/hair-importation-1.jpeg",
     alt: "Chi selecting curly hair bundles by hand at the supplier warehouse",
   },
+  /* ── The Craft: one frame per service, all real house photography ── */
+  /** Wig laundry/revamp — the arrival condition, from the house's own clip. */
+  "craft-hair-laundry": {
+    src: "/services/revamp-before.jpg",
+    alt: "A client's wig on the stand as it arrived at the atelier for revamping",
+  },
+  /** Sourcing — the real supplier trip. */
+  "craft-hair-importation-service": {
+    src: "/services/hair-importation-2.jpeg",
+    alt: "Raw hair bundles held up for inspection at the supplier",
+  },
+  /** Wig making — a finished unit on a studio stand. */
+  "craft-wig-making": {
+    src: "/products/IMG-20260726-WA0015.jpg",
+    alt: "A natural black bone straight closure wig on a studio stand",
+  },
+  /** Ventilation — a frame from the house's own ventilation footage. */
+  "craft-ventilation": {
+    src: "/services/revamp-after.jpg",
+    alt: "A revamped wig with the curl pattern redefined, on the stand",
+  },
+  /** Installation — the finished work on a client. */
+  "craft-frontal-installation": {
+    src: "/services/frontal-installation-1.jpg",
+    alt: "A finished ByChiStrands frontal install styled into a curled updo",
+  },
+  /** Training — a real mentorship session. */
+  "craft-training": {
+    src: "/services/mentorship-video.jpg",
+    alt: "A ByChiStrands mentorship session in progress",
+  },
 } satisfies Record<string, Scene>;
 
 export type SceneName = keyof typeof SCENES;
