@@ -51,7 +51,7 @@ function MotionVideo({ item, className = "" }: { item: (typeof videos)[number]; 
       <div className="absolute inset-x-0 bottom-0 p-4 md:p-8">
         <p className="text-[8px] uppercase tracking-[.45em] text-[#c8a45d]">ByChi Motion</p>
         <h3 className="mt-2 font-serif text-xl text-[#f5f0e8] md:text-4xl">{item.title}</h3>
-        <p className="mt-2 hidden max-w-xs text-xs leading-5 text-white/55 sm:block">{item.copy}</p>
+        <p className="mt-2 max-w-xs text-[11px] leading-4 text-white/55 md:text-xs md:leading-5">{item.copy}</p>
       </div>
       <div className="absolute right-4 top-4 hidden h-9 w-9 rounded-full border border-white/20 bg-black/20 backdrop-blur-sm transition group-hover:border-[#c8a45d]/70 sm:block" />
     </motion.div>
@@ -88,8 +88,8 @@ export function HouseHomepage() {
         <section className="relative bg-[#0b0907] px-4 py-24 md:px-8 md:py-36">
           <SectionBackdrop name="backdrop-collections" />
           <div className="relative mx-auto max-w-[1760px]">
-            <div className="mb-14 flex items-end justify-between px-2 md:px-4"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">02 / Collections</p><h2 className="font-serif text-[clamp(3.6rem,7.5vw,9rem)] leading-[.72] tracking-[-.065em]">The House<br /><i>Edit.</i></h2></div><Link href="/collections" className="hidden border-b border-[#c8a45d]/60 pb-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d] md:block">View all</Link></div>
-            <div className="grid grid-cols-2 gap-2 md:grid-cols-12 md:grid-rows-[300px_300px_300px]">{collections.map((item, i) => <Link key={item.name} href={item.href} className={`group relative aspect-[3/4] overflow-hidden md:aspect-auto ${i === 0 ? "col-span-2 aspect-[4/3] md:col-span-7 md:row-span-3" : i === 1 ? "md:col-span-5 md:row-span-2" : "md:col-span-5"}`}><Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 60vw" className="object-cover transition duration-[1.4s] group-hover:scale-[1.045]" /><div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/10" /><div className="absolute bottom-0 left-0 right-0 p-4 md:p-10"><p className="mb-3 text-[8px] uppercase tracking-[.45em] text-[#c8a45d]">{item.label}</p><h3 className="font-serif text-[clamp(1.75rem,7vw,5.5rem)] leading-none">{item.name}</h3><span className="mt-3 hidden items-center gap-3 text-[8px] uppercase tracking-[.35em] text-white/65 sm:inline-flex md:mt-5">Explore <ArrowRight size={13} className="text-[#c8a45d] transition group-hover:translate-x-1" /></span></div></Link>)}</div>
+            <div className="mb-14 flex items-end justify-between px-2 md:px-4"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">02 / Collections</p><h2 className="font-serif text-[clamp(3.6rem,7.5vw,9rem)] leading-[.72] tracking-[-.065em]">The House<br /><i>Edit.</i></h2></div><Link href="/collections" className="shrink-0 border-b border-[#c8a45d]/60 pb-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d]">View all</Link></div>
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-12 md:grid-rows-[300px_300px_300px]">{collections.map((item, i) => <Link key={item.name} href={item.href} className={`group relative aspect-[3/4] overflow-hidden md:aspect-auto ${i === 0 ? "col-span-2 aspect-[4/3] md:col-span-7 md:row-span-3" : i === 1 ? "md:col-span-5 md:row-span-2" : "md:col-span-5"}`}><Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 60vw" className="object-cover transition duration-[1.4s] group-hover:scale-[1.045]" /><div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/10" /><div className="absolute bottom-0 left-0 right-0 p-4 md:p-10"><p className="mb-3 text-[8px] uppercase tracking-[.45em] text-[#c8a45d]">{item.label}</p><h3 className="font-serif text-[clamp(1.75rem,7vw,5.5rem)] leading-none">{item.name}</h3><span className="mt-3 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.3em] text-white/65 md:mt-5 md:gap-3 md:tracking-[.35em]">Explore <ArrowRight size={13} className="text-[#c8a45d] transition group-hover:translate-x-1" /></span></div></Link>)}</div>
           </div>
         </section>
 
@@ -102,7 +102,7 @@ export function HouseHomepage() {
 
         <section className="relative bg-[#0b0907] px-4 py-24 md:px-8 md:py-36">
           <SectionBackdrop name="backdrop-motion" />
-          <div className="relative mx-auto max-w-[1760px]"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">04 / ByChi Motion</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">See the hair<br /><i>in motion.</i></h2></div><span className="hidden text-[8px] uppercase tracking-[.35em] text-white/35 md:block">Autoplay · Scroll · Discover</span></div><div className="grid grid-cols-2 gap-2 md:grid-cols-12 md:grid-rows-[360px_360px] md:gap-3">{/* The desktop mosaic is one dominant frame with two stacked beside it.
+          <div className="relative mx-auto max-w-[1760px]"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">04 / ByChi Motion</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">See the hair<br /><i>in motion.</i></h2></div><span className="shrink-0 text-[8px] uppercase tracking-[.3em] text-white/35 md:tracking-[.35em]">Autoplay · Scroll</span></div><div className="grid grid-cols-2 gap-2 md:grid-cols-12 md:grid-rows-[360px_360px] md:gap-3">{/* The desktop mosaic is one dominant frame with two stacked beside it.
                  The phone keeps that relationship rather than flattening to a
                  uniform grid: the lead film spans the row, the pair sits under
                  it. */}
@@ -121,7 +121,7 @@ export function HouseHomepage() {
               eyebrow="05 / The Pieces"
               title={<>Made to be<br /><i>remembered.</i></>}
               href="/shop"
-              cta="Shop all pieces"
+              cta="Shop all"
               tone="light"
             />
           </div>

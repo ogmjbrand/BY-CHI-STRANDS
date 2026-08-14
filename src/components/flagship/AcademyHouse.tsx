@@ -163,7 +163,7 @@ function AcademyHero() {
         </div>
       </motion.div>
 
-      <div className="absolute bottom-6 right-8 z-10 hidden items-center gap-3 text-[8px] uppercase tracking-[.45em] text-white/45 md:flex">
+      <div className="absolute bottom-5 right-6 z-10 flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-white/45 md:bottom-6 md:right-8 md:gap-3 md:tracking-[.45em]">
         Scroll <ArrowDown size={13} className="text-[#c8a45d]" />
       </div>
     </section>

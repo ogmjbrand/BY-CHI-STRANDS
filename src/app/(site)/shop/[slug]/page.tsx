@@ -98,6 +98,7 @@ export default async function ProductPage({
           {/* Product Details */}
           <section className="px-margin-mobile pt-8 space-y-6">
             <div className="space-y-2">
+              <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">HAND-TIED COLLECTIONS</p>
               <div className="flex justify-between items-start">
                 <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">{product.name}</h2>
               </div>
@@ -115,6 +116,10 @@ export default async function ProductPage({
           <section className="mt-section-padding px-margin-mobile space-y-6">
             <h3 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">The {originLabel} Origin</h3>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{product.description}</p>
+            <div className="flex items-center gap-3 pt-2">
+              <Icon name="spa" className="text-primary" />
+              <h4 className="font-headline-lg uppercase tracking-widest text-sm">What Makes It</h4>
+            </div>
             <ul className="space-y-2">
               {product.details.map((d) => (
                 <li key={d} className="flex gap-3 font-body-sm text-on-surface-variant">
@@ -126,11 +131,11 @@ export default async function ProductPage({
           </section>
           {/* Care Ritual */}
           <section className="mt-section-padding px-margin-mobile bg-surface-container-low py-12 rounded-t-[32px] space-y-6">
-            <h3 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Care Ritual</h3>
+            <h3 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">The Care Ritual</h3>
             <ol className="space-y-4">
               {product.care.map((c, i) => (
                 <li key={c} className="flex gap-4">
-                  <span className="font-label-caps text-primary shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-label-caps text-primary shrink-0">{String(i + 1).padStart(2, "0")}.</span>
                   <p className="font-body-sm text-on-surface-variant">{c}</p>
                 </li>
               ))}
@@ -139,8 +144,11 @@ export default async function ProductPage({
           {/* Client Voices */}
           <section className="mt-section-padding px-margin-mobile space-y-6">
             <div>
-              <h3 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">From Our Clients</h3>
-              <p className="text-body-sm text-on-surface-variant mt-1">Real footage from the house's own clients.</p>
+              <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">CLIENT EXPERIENCES</p>
+              <h3 className="mt-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">From Our Clients</h3>
+              <p className="text-body-sm text-on-surface-variant mt-1">
+                Real footage from the house&apos;s own clients — no invented quotes, just the work.
+              </p>
             </div>
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-margin-mobile px-margin-mobile no-scrollbar">
               {voices.map((t) => (
@@ -148,6 +156,8 @@ export default async function ProductPage({
                   <ProductMedia media={t.clip} className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
                     <p className="text-white/80 text-[12px]">{t.caption}</p>
+                    {/* The clip's own context line, as on desktop. */}
+                    <p className="text-white/60 text-[9px] uppercase tracking-widest mt-1">{t.context}</p>
                   </div>
                 </div>
               ))}
@@ -272,8 +282,19 @@ export default async function ProductPage({
             </aside>
           </div>
         </main>
+        {/* Footer */}
+</div>
+
+      {/* The related row was trapped inside the desktop-only wrapper, so no
+          phone ever saw "You May Also Like". It is a full-width chapter
+          after the buy panel rather than part of its grid, so lifting it
+          out changes nothing on desktop — the padding and four-up grid
+          there are untouched, and only a mobile gutter, a two-up grid and
+          tighter gaps are added below md. The client-voices chapter beside
+          it stays desktop-only, because the mobile layout already carries
+          its own. */}
         {/* Client Voices */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
+        <section className="hidden md:block max-w-container-max mx-auto px-margin-desktop py-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
             <div className="lg:col-span-4 space-y-8">
               <div className="space-y-4">
@@ -289,11 +310,11 @@ export default async function ProductPage({
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-8 grid md:grid-cols-2 gap-8">
+            <div className="lg:col-span-8 grid grid-cols-2 gap-3 md:gap-8">
               {voices.map((t) => (
                 <div key={t.clip.src} className="relative aspect-[3/4] bg-surface-container overflow-hidden group">
                   <ProductMedia media={t.clip} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black/70 to-transparent">
                     <p className="text-white text-body-sm">{t.caption}</p>
                     <p className="text-white/70 text-[10px] uppercase tracking-widest mt-1">{t.context}</p>
                   </div>
@@ -304,18 +325,18 @@ export default async function ProductPage({
         </section>
         {/* Related products */}
         {relatedProducts.length ? (
-          <section className="max-w-container-max mx-auto px-margin-desktop py-section-padding border-t border-outline-variant/20">
-            <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mb-16">
+          <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-section-padding border-t border-outline-variant/20">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10 md:gap-8 md:mb-16">
               <div className="space-y-4">
                 <p className="font-label-caps text-primary">MORE FROM THE COLLECTION</p>
                 <h2 className="font-display-md text-display-md tracking-[-0.01em]">You May Also Like</h2>
               </div>
               <Link className="font-label-caps text-xs border-b border-primary pb-1" href="/shop">Shop All Pieces</Link>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-gutter">
               {relatedProducts.map((p) => (
                 <Link key={p.slug} href={`/shop/${p.slug}`} className="group cursor-pointer">
-                  <div className="overflow-hidden mb-6 aspect-[3/4]">
+                  <div className="overflow-hidden mb-4 md:mb-6 aspect-[3/4]">
                     <ProductMedia media={heroFor(p.slug)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <h3 className="font-display-md text-lg">{p.name}</h3>
@@ -325,8 +346,6 @@ export default async function ProductPage({
             </div>
           </section>
         ) : null}
-        {/* Footer */}
-</div>
     </>
   );
 }
