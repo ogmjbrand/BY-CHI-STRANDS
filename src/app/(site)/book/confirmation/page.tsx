@@ -69,7 +69,7 @@ export default async function BookingConfirmationPage({
   return (
     <div className="scr-atelier-booking-confirmation theme-noir bg-background text-on-background font-body-md antialiased overflow-x-hidden">
       {/* TopAppBar */}
-<main className="pt-32 pb-section-padding">
+<main className="pt-10 md:pt-16 pb-section-padding">
         {/* Hero Confirmation Section */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 text-center">
           <span className="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-[0.3em]">

@@ -23,7 +23,7 @@ export default function GalleryPage() {
   return (
     <div className="scr-aura-stories-gallery theme-noir bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Top Navigation Shell */}
-<main className="pt-32">
+<main className="pt-10 md:pt-16">
         {/* Editorial Header */}
         <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 reveal-on-scroll">
           <div className="max-w-4xl">

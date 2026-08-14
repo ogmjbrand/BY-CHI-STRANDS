@@ -17,7 +17,7 @@ export default function AtelierServiceBookingPage() {
   return (
     <div className="scr-atelier-service-booking theme-noir bg-background text-on-surface font-body-md selection:bg-primary-container/30">
       {/* Top Navigation */}
-<main className="pt-32 pb-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<main className="pt-10 md:pt-16 pb-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Hero Header */}
         <header className="mb-20 text-center md:text-left">
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-4 text-primary tracking-[-0.02em]">Atelier Services</h1>

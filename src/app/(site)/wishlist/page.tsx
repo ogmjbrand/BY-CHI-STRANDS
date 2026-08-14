@@ -13,7 +13,7 @@ export default function WishlistPage() {
 
   return (
     <div className="scr-wishlist theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <header className="pt-40 pb-16 md:pt-60 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <header className="pt-10 pb-10 md:pt-20 md:pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
           Saved Pieces
         </span>

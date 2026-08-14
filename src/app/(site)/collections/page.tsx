@@ -127,7 +127,7 @@ export default function TheBoutiquePage() {
             <div className="w-20 h-px bg-primary mx-auto"></div>
           </div>
           {" "}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-16">
             <div className="text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
                 <Icon name="verified" className="text-primary text-3xl" />
