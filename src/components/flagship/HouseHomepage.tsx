@@ -11,6 +11,7 @@ import { HouseVoices } from "./HouseVoices";
 import { SectionBackdrop } from "./SectionBackdrop";
 import { HouseHeroCards } from "./HouseHeroCards";
 import { MobileProductRail, houseRailProducts } from "./MobileProductRail";
+import { ShopTheHouse } from "./ShopTheHouse";
 
 const collections = [
   { name: "Bone Straight", label: "THE SIGNATURE", image: "/products/IMG-20260726-WA0015.jpg", href: "/collections" },
@@ -73,6 +74,11 @@ export function HouseHomepage() {
     <div className="min-h-screen overflow-x-clip bg-[#0b0907] text-[#f5f0e8] selection:bg-[#c8a45d] selection:text-[#0b0907]">
       <main>
         <HouseHeroCards />
+
+        {/* Products immediately. The brand story still runs underneath —
+            none of it is cut — it simply no longer stands between arriving
+            and being able to shop. */}
+        <ShopTheHouse />
 
         <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-10 md:py-36">
           <SectionBackdrop name="backdrop-house" tone="light" />
