@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getProduct, products, related, priceFrom, ORIGINS } from "@/lib/products";
+import { getProduct, products, related, priceFrom,} from "@/lib/products";
 import { mediaFor, heroFor } from "@/lib/media";
 import { testimonials } from "@/lib/testimonials";
 import { formatPrice } from "@/lib/utils";
@@ -20,7 +20,7 @@ import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField
  *   mobile:  digital_flagship_mobile_signature_wigs_pdp
  *
  * Rebuilt for Modern Luxury Editorial Couture: large photography, real
- * per-product origin/craft copy (no generic "Vietnamese Origin" block
+ * per-product origin/craft copy (no generic "ese Origin" block
  * regardless of the piece's actual origin), real related() products in
  * place of invented upsell SKUs, and real testimonial clips in place of
  * fabricated reviewer names/ratings.
@@ -51,7 +51,7 @@ export default async function ProductPage({
 
   const gallery = mediaFor(product.slug);
   const [lead, ...supporting] = gallery;
-  const originLabel = ORIGINS[product.origin];
+  const originLabel = "";
   const relatedProducts = related(product, 4);
   const voices = testimonials.slice(0, 2);
 

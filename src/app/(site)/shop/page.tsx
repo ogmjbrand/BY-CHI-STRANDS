@@ -30,7 +30,7 @@ export default function ShopAllPage() {
           </h1>
           <p className="font-body-xl text-body-xl text-on-surface-variant max-w-2xl">
             Elevate your presence with our meticulously curated selection of premium
-            Vietnamese hair. Each strand is a testament to timeless sophistication and
+            raw hair. Each strand is a testament to timeless sophistication and
             editorial excellence.
           </p>
         </header>

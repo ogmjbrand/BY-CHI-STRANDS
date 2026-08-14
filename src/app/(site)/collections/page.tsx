@@ -150,7 +150,7 @@ export default function TheBoutiquePage() {
                 <Icon name="eco" className="text-primary text-3xl" />
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-4">Vietnam, China & Mexico</h3>
+              <h3 className="font-headline-lg text-2xl mb-4">Traced to source</h3>
               {" "}
               <p className="font-body-md text-on-surface-variant">
                 Every unit is graded and traced back to one of our three import origins, named on

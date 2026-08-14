@@ -10,7 +10,7 @@ import { IconStrand, IconSingleThread, IconLeaf, IconGlobeRoute } from "./BrandI
  * (site.description, FAQs, product copy) — nothing new is asserted here.
  */
 const SIGNALS = [
-  { Icon: IconStrand, label: "Vietnamese Human Hair", detail: "Authentic & Premium Quality" },
+  { Icon: IconStrand, label: "ese Human Hair", detail: "Authentic & Premium Quality" },
   { Icon: IconSingleThread, label: "Single Donor Hair", detail: "One Donor, One Bundle" },
   { Icon: IconLeaf, label: "Ethically Sourced", detail: "Responsibly & Ethically Sourced" },
   { Icon: IconGlobeRoute, label: "Worldwide Shipping", detail: "Fast & Secure Delivery" },
@@ -28,7 +28,7 @@ export function TrustBar() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/products/IMG-20260727-WA0045.jpg"
-        alt="Copper, wine and espresso Vietnamese hair units displayed together"
+        alt="Copper, wine and espresso raw hair units displayed together"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-noir/20" />

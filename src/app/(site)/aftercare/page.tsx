@@ -56,7 +56,7 @@ export default function AftercarePage() {
             Keep It Wearing Like Day One
           </h1>
           <p className="font-body-xl text-on-surface-variant max-w-lg">
-            Real Vietnamese human hair rewards real care. Three habits that
+            Real human hair rewards real care. Three habits that
             keep a unit soft, full and tangle-free for its entire life —
             drawn from the same guidance we send with every order.
           </p>

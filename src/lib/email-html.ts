@@ -9,7 +9,7 @@ const BASE_STYLES =
 const BUTTON_STYLES =
   'display: inline-block; background-color: #1a1a1a; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: bold;';
 const FOOTER =
-  '<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999;"><p style="margin: 0 0 10px 0;">© 2026 BY CHI STRANDS. All rights reserved.</p><p style="margin: 0;">Luxury Vietnamese Hair. Crafted for Confidence.</p></div>';
+  '<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999;"><p style="margin: 0 0 10px 0;">© 2026 BY CHI STRANDS. All rights reserved.</p><p style="margin: 0;">Luxury ese Hair. Crafted for Confidence.</p></div>';
 
 export function renderOrderConfirmationHTML(order: Order): string {
   const hasQuoteItems = order.items.some((item) => item.price === null);

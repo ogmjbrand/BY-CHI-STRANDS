@@ -8,8 +8,8 @@ export const faqGroups: FaqGroup[] = [
     title: "Hair & Quality",
     faqs: [
       {
-        q: "What makes Vietnamese hair different from other origins?",
-        a: "Vietnamese hair is naturally thick-cuticled and low-porosity, which means it resists tangling, holds colour longer and keeps its shine without coatings. Ours is additionally raw — cut from a single braid and never chemically processed — so it behaves like healthy growing hair, not a manufactured product.",
+        q: "What makes raw hair different from other origins?",
+        a: "raw hair is naturally thick-cuticled and low-porosity, which means it resists tangling, holds colour longer and keeps its shine without coatings. Ours is additionally raw — cut from a single braid and never chemically processed — so it behaves like healthy growing hair, not a manufactured product.",
       },
       {
         q: "What does 'raw' actually mean?",
@@ -17,7 +17,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Can I bleach or colour the hair?",
-        a: "Yes — raw Vietnamese hair lifts beautifully up to platinum when handled professionally. We recommend our in-house colouring service, where every lift is bond-protected and cuticle-sealed. Home box dye on luxury hair is the one thing we will always talk you out of.",
+        a: "Yes — raw hair lifts beautifully up to platinum when handled professionally. We recommend our in-house colouring service, where every lift is bond-protected and cuticle-sealed. Home box dye on luxury hair is the one thing we will always talk you out of.",
       },
       {
         q: "How long will my hair or unit last?",
@@ -85,7 +85,7 @@ export const faqGroups: FaqGroup[] = [
     faqs: [
       {
         q: "Who is the Hair Importation Masterclass for?",
-        a: "Anyone serious about building a hair business: aspiring importers, stylists adding retail, and existing sellers who want direct Vietnamese supply. No prior experience is required — cohorts start from first principles.",
+        a: "Anyone serious about building a hair business: aspiring importers, stylists adding retail, and existing sellers who want direct ese supply. No prior experience is required — cohorts start from first principles.",
       },
       {
         q: "Is a vendor list included?",

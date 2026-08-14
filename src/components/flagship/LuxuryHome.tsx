@@ -65,7 +65,7 @@ export function LuxuryHome() {
                   <span className="block pl-[10vw] italic text-[#C9A56A]">of</span>
                   <span className="block">hair.</span>
                 </h1>
-                <p className="mt-9 max-w-xl text-sm leading-7 text-white/65 md:text-base">Rare Vietnamese hair. Considered construction. An atelier standard for women who want their presence to arrive first.</p>
+                <p className="mt-9 max-w-xl text-sm leading-7 text-white/65 md:text-base">Rare raw hair. Considered construction. An atelier standard for women who want their presence to arrive first.</p>
               </div>
               <div className="md:col-span-3">
                 <Link href="/collections" className="group flex items-center justify-between bg-[#C9A56A] px-6 py-5 text-[8px] font-semibold uppercase tracking-[.3em] text-[#17110D] transition hover:bg-[#F3EEE5]">Enter the House <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></Link>
@@ -79,7 +79,7 @@ export function LuxuryHome() {
         <section className="bg-[#F3EEE5] px-5 py-24 text-[#17110D] md:px-12 md:py-36">
           <div className="mx-auto max-w-[1800px]">
             <div className="grid gap-10 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-3"><p className="text-[8px] uppercase tracking-[.5em] text-[#7A4A32]">01 / The House</p><p className="mt-8 max-w-xs text-xs leading-6 text-black/50">Vietnamese human hair, selected for density, movement and finish. Crafted in Lagos.</p></div>
+              <div className="md:col-span-3"><p className="text-[8px] uppercase tracking-[.5em] text-[#7A4A32]">01 / The House</p><p className="mt-8 max-w-xs text-xs leading-6 text-black/50">human hair, selected for density, movement and finish. Crafted in Lagos.</p></div>
               <div className="md:col-span-9"><h2 className="font-serif text-[clamp(3.5rem,7.7vw,9rem)] leading-[.76] tracking-[-.065em]">Luxury should feel<br /><i>inevitable.</i></h2></div>
             </div>
             <div className="mt-20 grid border-y border-black/15 md:grid-cols-4">
@@ -99,9 +99,9 @@ export function LuxuryHome() {
 
         <section className="bg-[#D9CCBB] px-5 py-24 text-[#17110D] md:px-12 md:py-36">
           <div className="mx-auto max-w-[1800px]">
-            <div className="grid gap-8 md:grid-cols-12"><p className="text-[8px] uppercase tracking-[.5em] text-[#7A4A32] md:col-span-3">03 / From Vietnam to Lagos</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8.5rem)] leading-[.75] tracking-[-.06em] md:col-span-9">The journey is<br /><i>part of the luxury.</i></h2></div>
+            <div className="grid gap-8 md:grid-cols-12"><p className="text-[8px] uppercase tracking-[.5em] text-[#7A4A32] md:col-span-3">03 / From  to Lagos</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8.5rem)] leading-[.75] tracking-[-.06em] md:col-span-9">The journey is<br /><i>part of the luxury.</i></h2></div>
             <div className="mt-20 grid gap-px bg-black/15 md:grid-cols-4">
-              {[{ n: "01", t: "Selected in Vietnam", d: "We begin with origin, density and the integrity of the strand." }, { n: "02", t: "Graded by hand", d: "The house removes weak or inconsistent strands before construction." }, { n: "03", t: "Finished in Lagos", d: "Every unit receives its final shape and detail in the atelier." }, { n: "04", t: "Delivered with care", d: "Your piece leaves the house with guidance that continues after purchase." }].map((step) => <div key={step.n} className="bg-[#D9CCBB] p-7 md:p-9"><span className="text-[8px] text-[#C9A56A]">{step.n}</span><h3 className="mt-12 font-serif text-2xl md:text-3xl">{step.t}</h3><p className="mt-5 text-xs leading-6 text-black/50">{step.d}</p></div>)}
+              {[{ n: "01", t: "Selected in ", d: "We begin with origin, density and the integrity of the strand." }, { n: "02", t: "Graded by hand", d: "The house removes weak or inconsistent strands before construction." }, { n: "03", t: "Finished in Lagos", d: "Every unit receives its final shape and detail in the atelier." }, { n: "04", t: "Delivered with care", d: "Your piece leaves the house with guidance that continues after purchase." }].map((step) => <div key={step.n} className="bg-[#D9CCBB] p-7 md:p-9"><span className="text-[8px] text-[#C9A56A]">{step.n}</span><h3 className="mt-12 font-serif text-2xl md:text-3xl">{step.t}</h3><p className="mt-5 text-xs leading-6 text-black/50">{step.d}</p></div>)}
             </div>
           </div>
         </section>
@@ -122,7 +122,7 @@ export function LuxuryHome() {
             <div className="grid gap-x-4 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
               {products.slice(0, 4).map((product, i) => <Link key={product.slug} href={`/shop/${product.slug}`} className="group">
                 <div className="relative aspect-[4/5] overflow-hidden bg-[#E4D9CB]"><Image src={i === 0 ? "/products/IMG-20260726-WA0015.jpg" : i === 1 ? "/products/IMG-20260727-WA0017.jpg" : i === 2 ? "/products/IMG-20260727-WA0042.jpg" : "/products/IMG-20260726-WA0019.jpg"} alt={product.name} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><span className="absolute left-3 top-3 border border-black/15 bg-[#F3EEE5]/90 px-3 py-2 text-[7px] uppercase tracking-[.25em]">{product.badges?.[0] ?? "BYCHI"}</span></div>
-                <div className="flex items-start justify-between gap-3 pt-5"><div><p className="text-[8px] uppercase tracking-[.3em] text-[#7A4A32]">{product.collection.replaceAll("-", " ")}</p><h3 className="mt-2 font-serif text-xl md:text-2xl">{product.name}</h3><p className="mt-2 text-[9px] uppercase tracking-[.2em] text-black/45">{product.origin} · {product.texture.replaceAll("-", " ")}</p></div><p className="shrink-0 pt-1 text-[9px] font-medium tracking-[.08em]">{money(priceFrom(product))}</p></div>
+                <div className="flex items-start justify-between gap-3 pt-5"><div><p className="text-[8px] uppercase tracking-[.3em] text-[#7A4A32]">{product.collection.replaceAll("-", " ")}</p><h3 className="mt-2 font-serif text-xl md:text-2xl">{product.name}</h3><p className="mt-2 text-[9px] uppercase tracking-[.2em] text-black/45">{product.texture.replaceAll("-", " ")}</p></div><p className="shrink-0 pt-1 text-[9px] font-medium tracking-[.08em]">{money(priceFrom(product))}</p></div>
               </Link>)}
             </div>
           </div>
@@ -134,7 +134,7 @@ export function LuxuryHome() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 bg-[#17110D] px-5 py-10 text-white/45 md:px-12"><div className="mx-auto flex max-w-[1800px] flex-col gap-6 md:flex-row md:items-center md:justify-between"><p className="font-serif text-2xl text-white">ByChi Strands</p><p className="text-[8px] uppercase tracking-[.35em]">Vietnam · Lagos · Worldwide</p><div className="flex gap-5 text-[8px] uppercase tracking-[.3em]"><Link href="/about">The House</Link><Link href="/contact">Contact</Link><Link href="/faqs">FAQ</Link></div></div></footer>
+      <footer className="border-t border-white/10 bg-[#17110D] px-5 py-10 text-white/45 md:px-12"><div className="mx-auto flex max-w-[1800px] flex-col gap-6 md:flex-row md:items-center md:justify-between"><p className="font-serif text-2xl text-white">ByChi Strands</p><p className="text-[8px] uppercase tracking-[.35em]"> · Lagos · Worldwide</p><div className="flex gap-5 text-[8px] uppercase tracking-[.3em]"><Link href="/about">The House</Link><Link href="/contact">Contact</Link><Link href="/faqs">FAQ</Link></div></div></footer>
     </div>
   );
 }

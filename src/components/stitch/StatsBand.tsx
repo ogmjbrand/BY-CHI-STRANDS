@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { ORIGINS, TEXTURES, products } from "@/lib/products";
+import { TEXTURES, products } from "@/lib/products";
 
 /**
  * Bold, high-contrast numbers pulled straight from the live catalogue data
@@ -11,7 +11,6 @@ import { ORIGINS, TEXTURES, products } from "@/lib/products";
  * navigates); this one is a graphic, editorial "about the house" moment.
  */
 const STATS = [
-  { value: String(Object.keys(ORIGINS).length), label: "Sourcing Origins" },
   { value: String(Object.keys(TEXTURES).length), label: "Signature Textures" },
   { value: `${products.length}+`, label: "Curated Pieces" },
   { value: "Lagos", label: "Studio, Shipped Worldwide" },

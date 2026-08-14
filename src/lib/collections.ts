@@ -10,11 +10,11 @@ export interface Collection {
 
 export const collections: Collection[] = [
   {
-    slug: "vietnam-bone-straight",
-    name: "Vietnam Bone Straight",
+    slug: "bone-straight",
+    name: "Bone Straight",
     tagline: "Flat as glass. Full to the ends.",
     description:
-      "The house staple. Super Double Drawn Vietnamese hair, hand-sorted so the bundle stays as thick at the hemline as it is at the root — which is why it hangs blunt and heavy instead of thinning into wisps.",
+      "The house staple. Super Double Drawn raw hair, hand-sorted so the bundle stays as thick at the hemline as it is at the root — which is why it hangs blunt and heavy instead of thinning into wisps.",
     tone: "noir",
   },
   {
@@ -22,7 +22,7 @@ export const collections: Collection[] = [
     name: "The Pixie Collection",
     tagline: "Curls that need nothing from you.",
     description:
-      "Pixie and kinky curl units that hold their coil without setting, product or patience. Shake them out and wear them — including the original Mexican SDD pixie, the best grade the category has.",
+      "Pixie and kinky curl units that hold their coil without setting, product or patience. Shake them out and wear them — including the original SDD pixie, the best grade the category has.",
     tone: "espresso",
   },
   {

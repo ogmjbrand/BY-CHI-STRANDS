@@ -28,7 +28,7 @@ const img = (file: string, alt: string): Media => ({
 });
 
 const MEDIA: Record<string, Media[]> = {
-  "sdd-vietnam-bone-straight": [
+  "sdd-bone-straight": [
     img("IMG-20260726-WA0015", "Natural black bone straight closure wig on a studio stand"),
     vid("products", "VID-20260727-WA0027", "Bone straight unit combed through to show the blunt hemline"),
     vid("products", "VID-20260727-WA0050", "Client wearing a long bone straight unit"),
@@ -36,17 +36,17 @@ const MEDIA: Record<string, Media[]> = {
     vid("products", "VID-20260727-WA0057", "Bone straight bob worn out"),
     img("IMG-20260726-WA0012", "Client wearing the bone straight bob length"),
   ],
-  "sdd-vietnam-bone-straight-wine": [
+  "sdd-bone-straight-wine": [
     vid("products", "VID-20260727-WA0032", "Wine bone straight unit with a dark root on the stand"),
     vid("products", "VID-20260726-WA0011", "Client wearing the wine and dark root bone straight unit"),
   ],
-  "sdd-china-pixie-curls-burgundy": [
+  "sdd-pixie-curls-burgundy": [
     vid("products", "VID-20260726-WA0016", "Client wearing the burgundy pixie curl unit"),
     vid("products", "VID-20260727-WA0012", "Burgundy pixie curl unit shown on the stand"),
     img("IMG-20260726-WA0019", "Client wearing the burgundy pixie curl unit at an event"),
   ],
-  "luxury-mexican-sdd-pixie": [
-    vid("products", "VID-20260727-WA0019", "Mexican Super Double Drawn pixie curls at full density"),
+  "luxury-sdd-pixie": [
+    vid("products", "VID-20260727-WA0019", "Super Double Drawn pixie curls at full density"),
     img("IMG-20260727-WA0001", "Pixie curl units shown at 12, 14, 16 and 18 inches"),
     vid("products", "VID-20260727-WA0014", "Client wearing the pixie curl volume, shown from the back"),
   ],
@@ -66,15 +66,15 @@ const MEDIA: Record<string, Media[]> = {
   "sdd-honey-deep-curls": [
     img("IMG-20260727-WA0017", "Honey deep curl frontal unit on a studio stand"),
   ],
-  "sdd-china-bold-pixie-curls": [
-    vid("products", "VID-20260727-WA0049", "SDD China Bold Pixie Curls — natural colour, 5x5 closure"),
+  "sdd-bold-pixie-curls": [
+    vid("products", "VID-20260727-WA0049", "SDD Bold Pixie Curls — natural colour, 5x5 closure"),
   ],
   "rose-bob-wig": [
     vid("products", "VID-20260726-WA0020", "Client wearing the rose pink blunt bob"),
   ],
 };
 
-const FALLBACK: Media = MEDIA["sdd-vietnam-bone-straight"][0];
+const FALLBACK: Media = MEDIA["sdd-bone-straight"][0];
 
 export function mediaFor(slug: string): Media[] {
   return MEDIA[slug] ?? [FALLBACK];

@@ -52,7 +52,7 @@ const MODULES: Module[] = [
   {
     n: "01",
     title: "Sourcing",
-    copy: "How the house sources raw Vietnamese hair — finding and vetting a supplier, what to ask before you pay anyone, and planning a first order you can afford to be wrong about.",
+    copy: "How the house sources raw hair — finding and vetting a supplier, what to ask before you pay anyone, and planning a first order you can afford to be wrong about.",
     frame: "academy-sourcing",
   },
   {
@@ -141,7 +141,7 @@ function AcademyHero() {
               <span className="block">source.</span>
             </h1>
             <p className="mt-9 max-w-xl text-sm leading-7 text-white/65 md:text-base">
-              The Vietnam Hair Importation Masterclass — sourcing, grading, scaling
+              The Hair Importation Masterclass — sourcing, grading, scaling
               and marketing, taught by the house that imports its own hair.
             </p>
           </div>

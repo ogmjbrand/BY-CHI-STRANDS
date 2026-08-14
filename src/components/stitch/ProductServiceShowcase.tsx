@@ -13,13 +13,13 @@ export const showcaseItems = [
     video: "/products/VID-20260727-WA0027.mp4",
     poster: "/media/posters/VID-20260727-WA0027.jpg",
     label: "Bone Straight",
-    href: "/shop/sdd-vietnam-bone-straight",
+    href: "/shop/sdd-bone-straight",
   },
   {
     video: "/products/VID-20260727-WA0019.mp4",
     poster: "/media/posters/VID-20260727-WA0019.jpg",
-    label: "Mexican SDD Pixie",
-    href: "/shop/luxury-mexican-sdd-pixie",
+    label: "SDD Pixie",
+    href: "/shop/luxury-sdd-pixie",
   },
   {
     video: "/products/VID-20260727-WA0041.mp4",

@@ -10,7 +10,6 @@ import {
   lengthsOf,
   lacesOf,
   TEXTURES,
-  ORIGINS,
   type Origin,
   type Texture,
   type Product,
@@ -35,7 +34,6 @@ const cardVariants = {
  * and the interactions behind it are live.
  */
 
-const ORIGIN_FILTERS: Origin[] = ["vietnam", "china", "mexico"];
 
 const LENGTHS = [10, 12, 16, 18, 20, 22, 24, 26];
 
@@ -61,7 +59,6 @@ type SortKey = keyof typeof SORTS;
 
 export function ShopBrowser() {
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [origins, setOrigins] = useState<Origin[]>([]);
   const [length, setLength] = useState<number | null>(null);
   const [texture, setTexture] = useState<Texture | null>(null);
   const [sort, setSort] = useState<SortKey>("Newest Arrivals");
@@ -92,29 +89,23 @@ export function ShopBrowser() {
   const visible = useMemo(
     () =>
       products
-        .filter((p) => (origins.length ? origins.includes(p.origin) : true))
         .filter((p) => (length ? lengthsOf(p).includes(length) : true))
         .filter((p) => (texture ? p.texture === texture : true))
         .filter((p) => (lace ? lacesOf(p).includes(lace) : true))
         .slice()
         .sort(SORTS[sort]),
-    [origins, length, texture, lace, sort]
+    [length, texture, lace, sort]
   );
 
-  const toggleOrigin = (o: Origin) =>
-    setOrigins((prev) =>
-      prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]
-    );
 
   const clearAll = () => {
-    setOrigins([]);
     setLength(null);
     setTexture(null);
     setLace(null);
   };
 
   const filtersActive =
-    origins.length > 0 || length !== null || texture !== null || lace !== null;
+    length !== null || texture !== null || lace !== null;
 
   /*
    * Below lg the filter panel is a sheet, not a column.
@@ -126,7 +117,7 @@ export function ShopBrowser() {
    * onto the results.
    */
   const activeCount =
-    origins.length + (length !== null ? 1 : 0) + (texture !== null ? 1 : 0) + (lace !== null ? 1 : 0);
+    (length !== null ? 1 : 0) + (texture !== null ? 1 : 0) + (lace !== null ? 1 : 0);
 
   return (
     <>
@@ -187,30 +178,10 @@ export function ShopBrowser() {
         </div>
 
         <div className="space-y-10 lg:sticky lg:top-28">
-          <div>
-            <h3 className="font-label-caps text-label-caps uppercase text-primary mb-6 tracking-[0.15em]">
-              Origin
-            </h3>
-            <div className="space-y-3">
-              {ORIGIN_FILTERS.map((o) => (
-                <label
-                  key={o}
-                  className="flex items-center gap-3 cursor-pointer group"
-                >
-                  <input
-                    className="rounded-sm border-outline text-primary focus:ring-primary w-4 h-4"
-                    type="checkbox"
-                    checked={origins.includes(o)}
-                    onChange={() => toggleOrigin(o)}
-                  />
-                  <span className="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                    {ORIGINS[o]} SDD
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-
+          {/* The Origin facet is gone with the country language. It existed
+              only to print a country name beside a checkbox; origin is still
+              recorded against each piece, it is simply no longer something a
+              visitor filters or reads. */}
           <div>
             <h3 className="font-label-caps text-label-caps uppercase text-primary mb-6 tracking-[0.15em]">
               Length
@@ -426,7 +397,7 @@ export function ShopBrowser() {
                       <Link href={`/shop/${p.slug}`}>{p.name}</Link>
                     </h3>
                     <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      {ORIGINS[p.origin]} {p.sdd ? "SDD" : ""} ·{" "}
+                      {p.sdd ? "Super Double Drawn" : "Raw hair"} ·{" "}
                       {TEXTURES[p.texture]} ·{" "}
                       {(() => {
                         const ls = lengthsOf(p);

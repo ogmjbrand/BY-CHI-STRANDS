@@ -154,7 +154,7 @@ export function HouseHeroCards() {
 
       {/* The page's actual heading: fixed, accurate, and not on a timer. */}
       <h1 className="sr-only">
-        ByChi Strands — luxury raw Vietnamese hair, sourced and finished in Lagos
+        ByChi Strands — luxury raw hair, sourced and finished in Lagos
       </h1>
 
       {/* The strand, drawn on. Behind the copy, over the image — see
