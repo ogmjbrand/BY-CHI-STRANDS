@@ -69,37 +69,7 @@ export default async function BookingConfirmationPage({
   return (
     <div className="scr-atelier-booking-confirmation theme-noir bg-background text-on-background font-body-md antialiased overflow-x-hidden">
       {/* TopAppBar */}
-      <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline/20 shadow-sm transition-all duration-500 ease-in-out">
-        <div className="flex justify-between items-center w-full px-8 md:px-20 py-4 max-w-[1440px] mx-auto">
-          <Link href="/" className="flex items-center gap-2.5 font-display-md text-[24px] md:text-display-md text-primary tracking-tighter md:tracking-[-0.01em]">
-            <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
-            </span>
-            ByChi Strands
-          </Link>
-          <nav className="hidden md:flex gap-8 items-center">
-            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
-              Atelier
-            </Link>
-            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
-              Academy
-            </Link>
-            <Link className="font-body-sm text-body-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
-              Collections
-            </Link>
-          </nav>
-          <div className="flex items-center gap-6">
-            <Link href="/cart" aria-label="Your bag" className="hover:opacity-70 transition-opacity duration-300 text-primary">
-              <Icon data-bag-trigger name="shopping_bag" />
-            </Link>
-            <Link href="/account" aria-label="Your account" className="hover:opacity-70 transition-opacity duration-300 text-primary">
-              <Icon name="person" />
-            </Link>
-          </div>
-        </div>
-      </header>
-      <main className="pt-32 pb-section-padding">
+<main className="pt-10 md:pt-16 pb-section-padding">
         {/* Hero Confirmation Section */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 text-center">
           <span className="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-[0.3em]">
@@ -255,53 +225,6 @@ export default async function BookingConfirmationPage({
         </section>
       </main>
       {/* Footer */}
-      <footer className="w-full relative border-t border-outline-variant/30 bg-surface">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-8 md:px-20 py-24 max-w-[1440px] mx-auto">
-          <div className="lg:col-span-1">
-            <div className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 tracking-[-0.02em]">ByChi Strands</div>
-            <p className="font-body-sm text-on-surface-variant/70 max-w-xs">
-              Elevating the art of hair through scientific precision and editorial excellence.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <span className="font-label-caps text-label-caps text-primary mb-2 tracking-[0.15em]">DISCOVER</span>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-              Heritage
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
-              Services
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
-              Contact
-            </Link>
-          </div>
-          <div className="flex flex-col gap-4">
-            <span className="font-label-caps text-label-caps text-primary mb-2 tracking-[0.15em]">SUPPORT</span>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
-              Contact
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
-              Privacy
-            </Link>
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shipping">
-              Shipping
-            </Link>
-          </div>
-          <div className="flex flex-col justify-between items-start md:items-end lg:items-end">
-            <div className="flex gap-4 mb-8 md:mb-0">
-              <a className="hover:text-primary transition-colors" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Icon name="camera" />
-              </a>
-              <a className="hover:text-primary transition-colors" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <Icon name="videocam" />
-              </a>
-            </div>
-            <p className="font-body-sm text-[12px] text-on-surface-variant/50">
-              © {new Date().getFullYear()} ByChi Strands. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

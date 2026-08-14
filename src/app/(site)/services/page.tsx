@@ -18,58 +18,7 @@ export default function SignatureServices1Page() {
   return (
     <div className="scr-signature-services-1 theme-noir bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
       {/* Top Navigation Bar */}
-      <nav className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 transition-all duration-300" id="top-nav">
-        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto">
-          <div className="flex items-center gap-12">
-            <Link className="flex items-center gap-2.5 font-display-lg text-display-md font-bold tracking-tighter text-on-surface" href="/">
-              <span className="h-9 w-9 rounded-full bg-white overflow-hidden shrink-0 ring-1 ring-black/5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/logo-mark.jpg" alt="ByChi Strands" className="h-full w-full object-cover scale-125" />
-              </span>
-              ByChi Strands
-            </Link>
-            {" "}
-            <div className="hidden lg:flex gap-8 items-center">
-              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/shop">
-                Shop
-              </Link>
-              {" "}
-              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
-                Collections
-              </Link>
-              {" "}
-              <Link className="font-body-md text-body-sm uppercase tracking-widest text-primary font-semibold border-b border-primary pb-1" href="/services">
-                Services
-              </Link>
-              {" "}
-              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
-                Academy
-              </Link>
-              {" "}
-              <Link className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-                About
-              </Link>
-            </div>
-          </div>
-          {" "}
-          <div className="flex items-center gap-6">
-            <Link
-              href="/book"
-              className="hidden lg:block bg-on-surface text-surface py-3 px-8 text-label-caps hover:bg-primary transition-all duration-500 scale-95 active:scale-100 uppercase tracking-[0.15em]"
-            >
-              Book Appointment
-            </Link>
-            {" "}
-            <div className="flex gap-4">
-              <Link href="/cart" aria-label="Your bag" className="text-on-surface-variant cursor-pointer hover:text-primary transition-all"><Icon data-bag-trigger name="shopping_bag" /></Link>
-              <button data-open-menu="" className="lg:hidden text-on-surface-variant cursor-pointer" aria-label="Open menu">
-                <Icon name="menu" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Hero Editorial Section */}
         <header className="py-section-padding grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-7 reveal-up active">
@@ -400,92 +349,7 @@ export default function SignatureServices1Page() {
         </section>
       </main>
       {/* Footer */}
-      <footer className="bg-surface-container-low">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
-          <div className="md:col-span-1">
-            <h3 className="font-display-md text-headline-lg text-primary mb-6">ByChi Strands</h3>
-            {" "}
-            <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
-              Crafting confidence through elite artistry and authentic raw hair sourcing.
-            </p>
-            {" "}
-            <div className="flex gap-4">
-              <a
-                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
-                href={site.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-              >
-                <Icon name="share" className="text-[18px]" />
-              </a>
-              {" "}
-              <a
-                className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
-                href={site.socials.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <Icon name="camera" className="text-[18px]" />
-              </a>
-            </div>
-          </div>
-          {" "}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Company</h3>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/about">
-              About Our Craft
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/collections">
-              Collections
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/academy">
-              Academy
-            </Link>
-          </div>
-          {" "}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Customer Care</h3>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/shipping">
-              Shipping & Returns
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/privacy">
-              Privacy Policy
-            </Link>
-            {" "}
-            <Link className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="/terms">
-              Terms of Service
-            </Link>
-          </div>
-          {" "}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-label-caps text-on-surface font-bold mb-4 uppercase">Connect</h3>
-            {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer">
-              TikTok
-            </a>
-            {" "}
-            <a className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-            {" "}
-            <p className="font-body-md text-body-sm text-on-surface-variant mt-6">
-              © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
-            </p>
-          </div>
-        </div>
-      </footer>
-      {/* Scripts for simple animations */}
+{/* Scripts for simple animations */}
     </div>
   );
 }

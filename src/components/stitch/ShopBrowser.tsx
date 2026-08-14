@@ -22,6 +22,7 @@ import { ProductBadges } from "./ProductBadges";
 import { QuickView } from "./QuickView";
 import { useStore } from "@/context/StoreContext";
 import { Icon } from "@/components/ui/icon";
+import { SlidersHorizontal } from "lucide-react";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -59,6 +60,7 @@ const SORTS = {
 type SortKey = keyof typeof SORTS;
 
 export function ShopBrowser() {
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [origins, setOrigins] = useState<Origin[]>([]);
   const [length, setLength] = useState<number | null>(null);
   const [texture, setTexture] = useState<Texture | null>(null);
@@ -114,11 +116,77 @@ export function ShopBrowser() {
   const filtersActive =
     origins.length > 0 || length !== null || texture !== null || lace !== null;
 
+  /*
+   * Below lg the filter panel is a sheet, not a column.
+   *
+   * Stacked above the grid it was roughly two phone screens of checkboxes,
+   * length chips and radios before the visitor reached a single product —
+   * on the page whose whole job is showing products. It is now behind a
+   * "Filters" button that carries the active count, and the sheet closes
+   * onto the results.
+   */
+  const activeCount =
+    origins.length + (length !== null ? 1 : 0) + (texture !== null ? 1 : 0) + (lace !== null ? 1 : 0);
+
   return (
     <>
-      {/* Filters Sidebar (Sticky) */}
-      <aside className="w-full lg:w-64 flex-shrink-0">
-        <div className="sticky top-32 space-y-10">
+      {/* The sheet trigger. Only below lg, where the sidebar is not shown. */}
+      <div className="mb-8 flex items-center justify-between gap-4 lg:hidden">
+        <button
+          type="button"
+          onClick={() => setFiltersOpen(true)}
+          aria-expanded={filtersOpen}
+          className="flex shrink-0 items-center gap-3 border border-outline-variant px-4 py-3 sm:px-5 font-label-caps text-label-caps uppercase tracking-widest text-on-surface transition-colors hover:border-primary hover:text-primary"
+        >
+          <SlidersHorizontal size={16} />
+          Filters
+          {activeCount > 0 ? (
+            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-[11px] text-on-primary">
+              {activeCount}
+            </span>
+          ) : null}
+        </button>
+        {/* min-w-0 on both: a flex item defaults to min-width:auto, so the
+            select took its intrinsic width from the longest option ("Price:
+            Low to High") and pushed 18px past the viewport at 320. */}
+        <div className="flex min-w-0 items-center gap-2">
+          <label htmlFor="shop-sort-mobile" className="sr-only">
+            Sort by
+          </label>
+          <select
+            id="shop-sort-mobile"
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortKey)}
+            className="min-w-0 cursor-pointer truncate border-none bg-transparent font-body-sm text-body-sm focus:ring-0"
+          >
+            {Object.keys(SORTS).map((k) => (
+              <option key={k}>{k}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {/* Filters — a sticky column at lg and up, a full-height sheet below it. */}
+      <aside
+        className={
+          filtersOpen
+            ? "fixed inset-0 z-[60] w-full overflow-y-auto bg-surface p-5 lg:static lg:z-auto lg:w-64 lg:flex-shrink-0 lg:overflow-visible lg:bg-transparent lg:p-0"
+            : "hidden w-full lg:block lg:w-64 lg:flex-shrink-0"
+        }
+      >
+        <div className="mb-8 flex items-center justify-between lg:hidden">
+          <h2 className="font-display-lg text-2xl">Filters</h2>
+          <button
+            type="button"
+            onClick={() => setFiltersOpen(false)}
+            aria-label="Close filters"
+            className="text-on-surface-variant transition-colors hover:text-primary"
+          >
+            <Icon name="close" className="text-[26px]" />
+          </button>
+        </div>
+
+        <div className="space-y-10 lg:sticky lg:top-28">
           <div>
             <h3 className="font-label-caps text-label-caps uppercase text-primary mb-6 tracking-[0.15em]">
               Origin
@@ -232,11 +300,20 @@ export function ShopBrowser() {
             </button>
           ) : null}
         </div>
+
+        {/* The way out of the sheet, and what taking it will show. */}
+        <button
+          type="button"
+          onClick={() => setFiltersOpen(false)}
+          className="mt-10 w-full bg-on-surface py-5 font-label-caps text-label-caps uppercase tracking-widest text-surface transition-colors hover:bg-primary hover:text-on-primary lg:hidden"
+        >
+          Show {visible.length} {visible.length === 1 ? "piece" : "pieces"}
+        </button>
       </aside>
 
       {/* Product Grid */}
       <div className="flex-grow">
-        <div className="flex justify-between items-center mb-10">
+        <div className="mb-8 hidden items-center justify-between lg:flex">
           <p className="font-body-sm text-body-sm text-on-surface-variant">
             Showing {visible.length} of {products.length} results
           </p>
@@ -271,7 +348,7 @@ export function ShopBrowser() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-8 md:gap-x-gutter md:gap-y-16 xl:grid-cols-3">
             {visible.map((p, i) => {
               const saved = hydrated && wishlist.includes(p.slug);
               const featured = !filtersActive && i === 0;
@@ -283,7 +360,7 @@ export function ShopBrowser() {
                   whileInView="show"
                   viewport={{ once: true, margin: "-60px" }}
                   data-slug={p.slug}
-                  className={`product-card group relative ${featured ? "md:col-span-2 xl:col-span-2" : ""}`}
+                  className={`product-card group relative ${featured ? "col-span-2 xl:col-span-2" : ""}`}
                 >
                   <div
                     className={`relative overflow-hidden bg-surface-container-low border border-outline-variant/10 ${
@@ -318,10 +395,10 @@ export function ShopBrowser() {
                       })()}
                     </Link>
                     <ProductBadges badges={p.badges} className="absolute top-4 left-4 z-10" />
-                    <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-6">
+                    <div className="product-card-overlay absolute inset-0 bg-black/5 backdrop-blur-[2px] flex flex-col justify-end p-3 md:p-6">
                       <button
                         onClick={() => setQuickViewSlug(p.slug)}
-                        className="w-full text-center bg-white text-noir py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300"
+                        className="w-full text-center bg-white text-noir py-3 md:py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300"
                       >
                         Quick View
                       </button>

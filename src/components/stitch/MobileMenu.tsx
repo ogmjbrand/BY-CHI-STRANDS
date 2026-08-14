@@ -29,6 +29,7 @@ const PRIMARY = [
 ];
 
 const SECONDARY = [
+  { label: "Your Bag", href: "/cart" },
   { label: "Book an Appointment", href: "/book" },
   { label: "My Account", href: "/account" },
   { label: "Wishlist", href: "/wishlist" },
@@ -105,8 +106,8 @@ export function MobileMenu() {
         onClick={() => setOpen(false)}
         initial={false}
         animate={{ opacity: open ? 1 : 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[65] xl:hidden ${
+        transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed inset-0 z-[65] bg-black/70 backdrop-blur-md xl:hidden ${
           open ? "" : "pointer-events-none"
         }`}
       />
@@ -116,46 +117,67 @@ export function MobileMenu() {
         aria-hidden={!open}
         initial={false}
         animate={{ x: open ? "0%" : "-100%" }}
+        /* Slow and weighted rather than springy. A drawer that bounces reads
+           as an app; this one should read as a door. */
         transition={
-          reduceMotion
-            ? { duration: 0 }
-            : { type: "spring", stiffness: 330, damping: 34, mass: 0.72 }
+          reduceMotion ? { duration: 0 } : { duration: 0.62, ease: [0.22, 1, 0.36, 1] }
         }
-        className="theme-noir fixed left-0 top-0 h-full w-[86%] max-w-sm bg-surface z-[66] border-r border-outline-variant/30 flex flex-col xl:hidden"
+        className="fixed left-0 top-0 z-[66] flex h-full w-[88%] max-w-sm flex-col border-r border-white/10 bg-[#0b0907] text-[#f5f0e8] xl:hidden"
       >
-        <div className="flex justify-between items-center px-margin-mobile pt-10 pb-6 border-b border-outline-variant/10">
-          <span className="font-display-md text-headline-lg tracking-widest text-primary uppercase">
+        <div className="flex items-center justify-between px-6 pb-6 pt-7">
+          <Link href="/" className="font-serif text-[22px] tracking-[-.045em]">
             ByChi Strands
-          </span>
+          </Link>
           <button
             onClick={() => setOpen(false)}
-            className="group p-2 -mr-2"
+            className="-mr-2 p-2 text-white/60 transition-colors hover:text-[#c8a45d]"
             aria-label="Close menu"
           >
-            <Icon name="close" className="text-tertiary group-hover:text-primary transition-colors duration-300" />
+            <Icon name="close" className="text-[24px]" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-margin-mobile py-10">
-          <ul className="space-y-6">
-            {PRIMARY.map((l) => (
-              <li key={l.href}>
+        <div className="flex-1 overflow-y-auto px-6 pb-8">
+          <p className="mb-7 flex items-center gap-3 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
+            <span aria-hidden="true" className="h-px w-6 bg-[#c8a45d]" />
+            The House
+          </p>
+
+          <ul className="space-y-0">
+            {PRIMARY.map((l, i) => (
+              <motion.li
+                key={l.href}
+                initial={false}
+                animate={
+                  reduceMotion
+                    ? {}
+                    : { opacity: open ? 1 : 0, y: open ? 0 : 14 }
+                }
+                /* Staggered behind the panel so the links arrive rather than
+                   being carried in with it. */
+                transition={{ duration: 0.45, delay: open ? 0.16 + i * 0.045 : 0, ease: [0.22, 1, 0.36, 1] }}
+                className="border-b border-white/10"
+              >
                 <Link
                   href={l.href}
-                  className="font-display-md text-headline-lg text-on-surface hover:text-primary transition-colors duration-300 block"
+                  className={`block py-4 font-serif text-[1.85rem] leading-none tracking-[-.03em] transition-colors ${
+                    pathname === l.href || pathname?.startsWith(`${l.href}/`)
+                      ? "text-[#c8a45d]"
+                      : "text-[#f5f0e8] hover:text-[#c8a45d]"
+                  }`}
                 >
                   {l.label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
 
-          <ul className="mt-12 pt-10 border-t border-outline-variant/20 space-y-5">
+          <ul className="mt-10 space-y-4">
             {SECONDARY.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300 block"
+                  className="block text-[9px] uppercase tracking-[.32em] text-white/50 transition-colors hover:text-[#c8a45d]"
                 >
                   {l.label}
                 </Link>
@@ -164,12 +186,12 @@ export function MobileMenu() {
           </ul>
         </div>
 
-        <div className="px-margin-mobile pb-10">
+        <div className="border-t border-white/10 px-6 py-6">
           <Link
-            href="/book"
-            className="block w-full text-center bg-on-surface text-surface px-8 py-4 rounded-lg font-label-caps tracking-widest hover:bg-primary transition-all duration-500 uppercase"
+            href="/shop"
+            className="block w-full bg-[#c8a45d] py-4 text-center text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition-colors hover:bg-[#f5f0e8]"
           >
-            Book Appointment
+            Shop the House
           </Link>
         </div>
       </motion.nav>

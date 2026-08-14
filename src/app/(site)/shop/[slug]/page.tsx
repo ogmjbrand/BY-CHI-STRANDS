@@ -76,7 +76,6 @@ export default async function ProductPage({
          * and is sticky rather than fixed, so the main below needs no
          * clearance padding.
          */}
-        <SiteHeader />
         <main className="pb-32">
           {/* Image Gallery (Mobile Focused) */}
           <section className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low">
@@ -190,54 +189,13 @@ export default async function ProductPage({
           </div>
         </div>
         {/* Simple Footer */}
-        <footer className="bg-surface-container-low py-12 px-margin-mobile pb-32 text-center">
-          <h2 className="font-display-md text-[24px] text-primary mb-6">ByChi Strands</h2>
-          <div className="flex justify-center gap-6 mb-8">
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors" href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer">TikTok</a>
-          </div>
-          <p className="text-body-sm text-on-surface-variant/70 italic">© 2024 ByChi Strands. Timeless Vietnamese Artistry.</p>
-        </footer>
-      </div>
+</div>
 
       {/* Desktop design (Stitch: digital_flagship_signature_wigs_pdp_with_reviews) */}
       {/* overflow-x-clip, not -hidden: `hidden` makes this a scroll container,
           which becomes the containing block for every sticky descendant — the
           desktop header and the buy panel both stopped sticking because of it. */}
       <div className="hidden md:block scr-signature-wigs-pdp-with-reviews font-body-md overflow-x-clip">
-        {/* TopNavBar */}
-        <header className="bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl font-body-md text-body-sm uppercase tracking-widest docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
-          <div className="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
-            <div className="flex items-center gap-gutter">
-              <Link className="font-display-lg text-display-md font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="/">
-                ByChi Strands
-              </Link>
-              <nav className="hidden md:flex gap-8">
-                <Link className="text-primary font-semibold border-b border-primary pb-1" href="/shop">Shop</Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/collections">
-                  Collections
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/services">
-                  Services
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/academy">
-                  Academy
-                </Link>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-                  About
-                </Link>
-              </nav>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="/book" className="hidden md:block bg-on-surface text-surface px-6 py-3 font-label-caps text-xs scale-95 active:scale-100 transition-transform duration-300 hover:bg-primary transition-colors">
-                Book Appointment
-              </Link>
-              <div className="flex gap-4 items-center">
-                <Link href="/cart" className="text-2xl cursor-pointer hover:text-primary transition-colors"><Icon data-bag-trigger name="shopping_bag" /></Link>
-              </div>
-            </div>
-          </div>
-        </header>
         <main className="max-w-container-max mx-auto px-margin-desktop py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter relative">
             {/* Editorial Left Column (Storytelling & Assets) */}
@@ -368,70 +326,7 @@ export default async function ProductPage({
           </section>
         ) : null}
         {/* Footer */}
-        <footer className="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant/30">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
-            <div className="space-y-6">
-              <div className="font-display-md text-headline-lg text-primary">ByChi Strands</div>
-              <p className="font-body-sm text-on-surface-variant max-w-xs">
-                Elevating human beauty through timeless Vietnamese artistry and meticulous hand-tied craftsmanship.
-              </p>
-              <div className="flex gap-4">
-                <a href={site.socials.instagram.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-primary transition-colors" aria-label="Instagram"><Icon name="photo_camera" /></a>
-                <a href={site.socials.tiktok.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-primary transition-colors" aria-label="TikTok"><Icon name="music_note" /></a>
-                <a href={`mailto:${site.email}`} className="cursor-pointer hover:text-primary transition-colors" aria-label="Email"><Icon name="mail" /></a>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <h3 className="font-label-caps text-primary text-xs">The Atelier</h3>
-              <ul className="space-y-4 font-body-sm text-on-surface-variant">
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/about">Our Story</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/about">Craftsmanship</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/collections">Collections</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/academy">Academy</Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <h3 className="font-label-caps text-primary text-xs">Concierge</h3>
-              <ul className="space-y-4 font-body-sm text-on-surface-variant">
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/shipping">Shipping & Returns</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/book">Bespoke Consultations</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/aftercare">Care Guide</Link>
-                </li>
-                <li>
-                  <Link className="hover:text-primary transition-colors" href="/contact">Contact Us</Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <h3 className="font-label-caps text-primary text-xs">Mailing List</h3>
-              <p className="font-body-sm text-on-surface-variant">Receive exclusive access to new atelier releases.</p>
-              {/*
-                Was a bare input and an arrow button with no label, no name,
-                no state and no handler — a subscribe box that dropped every
-                address typed into it. This is the same real field the Academy
-                footer uses, posting to /api/contact.
-              */}
-              <InlineNewsletterField />
-            </div>
-          </div>
-          <div className="max-w-container-max mx-auto px-margin-desktop py-unit border-t border-outline-variant/10 text-center md:text-left text-[10px] text-on-surface-variant uppercase tracking-widest">
-            © 2024 ByChi Strands. Timeless Vietnamese Artistry. All Rights Reserved.
-          </div>
-        </footer>
-      </div>
+</div>
     </>
   );
 }

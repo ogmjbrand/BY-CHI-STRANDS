@@ -82,7 +82,9 @@ export function BoutiqueGrid({
         {/* The cards are h3; without this the outline jumps from the page h1
             straight past h2, which is what screen-reader users navigate by. */}
         <h2 className="sr-only">All pieces</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-20">
+        {/* Two across on a phone. One per row put each piece at ~450px tall,
+            so ten pieces was 4,500px of scrolling to see the catalogue. */}
+        <div className="grid grid-cols-2 gap-x-3 gap-y-10 md:gap-x-gutter md:gap-y-20 lg:grid-cols-3">
           {sorted.map((p) => {
             const price = priceFrom(p);
             return (

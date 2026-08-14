@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 export default function HairFinderPage() {
   return (
     <>
-      <FlagshipHeader />
-      <div className="bg-noir pt-32 md:pt-40 px-6 md:px-16">
+      <div className="bg-noir pt-10 md:pt-16 px-6 md:px-16">
         <div className="max-w-[1800px] mx-auto">
           <p className="font-label-caps text-[11px] uppercase tracking-[0.3em] text-gold mb-8">
             Private Consultation
@@ -24,7 +23,6 @@ export default function HairFinderPage() {
         </div>
       </div>
       <HairFinder />
-      <FlagshipFooter />
     </>
   );
 }

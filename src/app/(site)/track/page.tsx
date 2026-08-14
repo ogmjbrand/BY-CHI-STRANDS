@@ -73,8 +73,6 @@ export default function TrackOrderPage() {
 
   return (
     <div className="theme-noir bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
-      <SiteHeader dark />
-
       <main className="flex-1 max-w-3xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-section-padding">
         <header className="mb-14">
           <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
@@ -238,14 +236,6 @@ export default function TrackOrderPage() {
           </section>
         ) : null}
       </main>
-
-      <footer className="bg-surface-container-low border-t border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name}. Timeless Vietnamese Artistry.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

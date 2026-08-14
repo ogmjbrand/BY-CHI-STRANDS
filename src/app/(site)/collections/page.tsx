@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 export default function TheBoutiquePage() {
   return (
     <div className="scr-the-boutique theme-noir bg-background font-body-md text-on-background">
-      <BoutiqueHeader />
       {/* Editorial Hero — real curl-unit lineup as the full-bleed background */}
       <header className="relative isolate min-h-[70vh] flex items-end overflow-hidden pt-24">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -128,7 +127,7 @@ export default function TheBoutiquePage() {
             <div className="w-20 h-px bg-primary mx-auto"></div>
           </div>
           {" "}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-16">
             <div className="text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-6">
                 <Icon name="verified" className="text-primary text-3xl" />
@@ -171,37 +170,6 @@ export default function TheBoutiquePage() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-background border-t border-outline-variant/20">
-        <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop max-w-container-max mx-auto gap-gutter">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-[32px] text-primary">ByChi Strands</span>
-            {" "}
-            <p className="font-body-sm text-on-surface-variant text-center md:text-left">Redefining the standard of luxury hair through artisan excellence.</p>
-          </div>
-          {" "}
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/privacy">
-              Privacy Policy
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/terms">
-              Terms of Service
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">
-              Sustainability
-            </Link>
-            {" "}
-            <Link className="font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="/contact">
-              Contact Atelier
-            </Link>
-          </div>
-          {" "}
-          <div className="text-secondary font-body-sm text-body-sm tracking-wide">
-            © {new Date().getFullYear()} ByChi Strands. ALL RIGHTS RESERVED.
-          </div>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

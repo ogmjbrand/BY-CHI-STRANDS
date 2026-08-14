@@ -242,7 +242,6 @@ function OrderConfirmationContent() {
 export default function OrderConfirmationPage() {
   return (
     <div className="scr-order-confirmation theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
-      <SiteHeader dark />
       <Suspense
         fallback={
           <main className="flex-1 flex items-center justify-center py-32">
@@ -252,13 +251,6 @@ export default function OrderConfirmationPage() {
       >
         <OrderConfirmationContent />
       </Suspense>
-      <footer className="bg-surface-container-low border-t border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto text-center">
-          <p className="font-body-sm text-on-surface-variant">
-            © {new Date().getFullYear()} {site.name}. The Art of Luxury Hair.
-          </p>
-        </div>
-      </footer>
-    </div>
+</div>
   );
 }

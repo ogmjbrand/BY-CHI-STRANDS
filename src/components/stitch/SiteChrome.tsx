@@ -6,6 +6,7 @@ import { HeaderUtilities } from "./HeaderUtilities";
 import { MenuButton } from "./MenuButton";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Icon } from "@/components/ui/icon";
+import { HouseHeader, HouseFooter } from "@/components/flagship/HouseChrome";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -14,78 +15,13 @@ import { Icon } from "@/components/ui/icon";
  * (legal, contact, journal, wishlist).
  */
 
+/**
+ * Kept as a name, not as a design. Fourteen routes import this; rather than
+ * rewrite all of them, it now renders the one house header. The old markup —
+ * a second, differently-typeset fixed bar — is gone.
+ */
 export function StitchHeader() {
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-surface/80 nav-blur border-b border-outline-variant/30">
-      <div className="flex justify-between items-center gap-2 w-full px-4 md:px-margin-desktop py-unit max-w-container-max mx-auto h-20">
-        <div className="flex flex-1 items-center gap-8">
-          <MenuButton className="-ml-2 lg:hidden" />
-          <nav className="hidden lg:flex gap-6 xl:gap-8">
-            <Link
-              className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
-              href="/shop"
-            >
-              Shop
-            </Link>
-            <Link
-              className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
-              href="/collections"
-            >
-              Collections
-            </Link>
-            <Link
-              className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
-              href="/services"
-            >
-              Services
-            </Link>
-          </nav>
-        </div>
-        {/*
-          The margin guarantees the mark's clearance. Both rails are flex-1,
-          but the right one carries a nav, the utility rail and the booking
-          CTA, so it settles at its content width and stops sharing the free
-          space — leaving the mark shoved off centre and 8px from "Academy"
-          while the nav links themselves sat 32px apart.
-        */}
-        <div className="flex shrink-0 items-center mx-4 lg:mx-8">
-          <Link href="/">
-            <Wordmark size="sm" withSeal className="text-on-surface" />
-          </Link>
-        </div>
-        <div className="flex flex-1 items-center justify-end gap-8">
-          <nav className="hidden lg:flex gap-6 xl:gap-8">
-            <Link
-              className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
-              href="/academy"
-            >
-              Academy
-            </Link>
-            <Link
-              className="font-body-md text-body-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
-              href="/about"
-            >
-              About
-            </Link>
-          </nav>
-          <div className="flex items-center gap-2 md:gap-4">
-            <HeaderUtilities />
-            {/*
-             * The booking CTA is desktop-only: at 390px it crowded out the
-             * utility rail entirely. Booking stays one tap away from the
-             * mobile drawer, which leads with it.
-             */}
-            <Link
-              className="hidden md:inline-block bg-on-surface text-surface px-6 py-2 rounded-lg font-label-caps hover:bg-primary transition-all duration-300"
-              href="/book"
-            >
-              Book Appointment
-            </Link>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
+  return <HouseHeader />;
 }
 
 const SHOP = [
@@ -138,83 +74,9 @@ function Column({
   );
 }
 
+/** As StitchHeader: the name survives, the divergent design does not. */
 export function StitchFooter() {
-  return (
-    <footer className="bg-surface-container-low">
-      <Newsletter />
-      <SocialStrip />
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto border-t border-outline-variant/20">
-        <div className="col-span-1 md:col-span-1">
-          <Wordmark size="sm" withSeal className="text-on-surface mb-8" />
-          <p className="font-body-md text-body-sm text-on-surface-variant mb-8 max-w-xs">
-            Timeless Vietnamese artistry meets modern luxury. Defined by
-            authenticity and ethical sourcing.
-          </p>
-          <div className="flex gap-4">
-            <a
-              className="text-on-surface-variant hover:text-primary transition-all"
-              href={site.socials.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <Icon name="camera" />
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-primary transition-all"
-              href={site.socials.tiktok.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-            >
-              <Icon name="videocam" />
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-primary transition-all"
-              href={`mailto:${site.email}`}
-              aria-label="Email"
-            >
-              <Icon name="mail" />
-            </a>
-          </div>
-        </div>
-        <Column title="SHOP" links={SHOP} />
-        <Column title="COMPANY" links={COMPANY} />
-        <Column title="SUPPORT" links={SUPPORT} />
-      </div>
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="font-body-md text-body-sm text-on-surface-variant">
-          © {new Date().getFullYear()} ByChi Strands. Timeless Vietnamese Artistry.
-        </p>
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-          <a
-            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
-            href={site.socials.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
-            href={site.socials.tiktok.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TikTok
-          </a>
-          <a
-            className="font-body-md text-body-sm text-on-surface-variant hover:text-on-surface transition-all"
-            href={site.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
+  return <HouseFooter />;
 }
 
 /**
@@ -234,8 +96,7 @@ export function StitchPageShell({
 }) {
   return (
     <div className="theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <StitchHeader />
-      <header className="pt-40 pb-16 md:pt-60 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <header className="pt-16 pb-12 md:pt-28 md:pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="max-w-4xl">
           <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
             {eyebrow}
@@ -253,7 +114,6 @@ export function StitchPageShell({
       <main className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-padding">
         {children}
       </main>
-      <StitchFooter />
     </div>
   );
 }
