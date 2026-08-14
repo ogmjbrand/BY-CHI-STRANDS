@@ -39,7 +39,7 @@ const SPANS = [
 
 export function HouseVoices() {
   return (
-    <section className="bg-[#f5f0e8] px-4 py-16 text-[#0b0907] md:px-8 md:py-36">
+    <section className="bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-8 md:py-36">
       <div className="mx-auto max-w-[1760px]">
         <div className="mb-12 flex flex-col gap-6 px-2 md:flex-row md:items-end md:justify-between md:px-4">
           <div>

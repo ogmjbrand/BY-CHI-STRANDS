@@ -66,7 +66,7 @@ export function HouseCraft() {
   const x = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section ref={ref} className="relative overflow-x-clip bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
+    <section ref={ref} className="relative overflow-x-clip bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-craft" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-8 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">

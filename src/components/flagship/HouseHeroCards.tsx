@@ -68,7 +68,7 @@ function Frame({ slide, fill }: { slide: (typeof SLIDES)[number]; fill: boolean 
   if (m.type === "video" && fill) {
     return (
       <video
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-[center_28%] md:object-center"
         src={m.src}
         poster={m.poster}
         autoPlay
@@ -85,8 +85,16 @@ function Frame({ slide, fill }: { slide: (typeof SLIDES)[number]; fill: boolean 
     <img
       src={m.type === "video" ? (m.poster ?? slide.poster ?? m.src) : m.src}
       alt=""
-      className="h-full w-full object-cover"
+      /* Art direction, not object-fit. Desktop keeps the centred crop the
+         frame was composed for; the phone biases upward so the hair and face
+         sit above the copy block instead of behind it. */
+      className={
+        fill
+          ? "h-full w-full object-cover object-[center_28%] md:object-center"
+          : "h-full w-full object-cover object-[center_30%]"
+      }
       loading={fill ? undefined : "lazy"}
+      decoding={fill ? undefined : "async"}
     />
   );
 }
@@ -148,13 +156,19 @@ export function HouseHeroCards() {
         ByChi Strands — luxury raw Vietnamese hair, sourced and finished in Lagos
       </h1>
 
-      <div aria-hidden="true" className="absolute inset-0 bg-black/35" />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/30 md:bg-black/35" />
+      {/*
+        A deeper plinth on the phone. The copy is bottom-anchored over a
+        portrait frame where the subject fills the height, so the lower third
+        has to read as a deliberate darkened ground rather than type that
+        happened to land on a face.
+      */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/45"
+        className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/25 md:via-black/20 md:to-black/45"
       />
 
-      <div className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-end px-5 pb-7 pt-12 md:min-h-[calc(100svh-5rem)] md:px-10 md:pb-10 md:pt-16 lg:px-16">
+      <div className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-end px-6 pb-8 pt-12 md:min-h-[calc(100svh-5rem)] md:px-10 md:pb-10 md:pt-16 lg:px-16">
         <div className="mx-auto grid w-full max-w-[1760px] gap-7 lg:grid-cols-12 lg:items-end lg:gap-10">
           {/* The copy for whichever collection is open. */}
           <div className="lg:col-span-7">
@@ -177,31 +191,39 @@ export function HouseHeroCards() {
                   happened to be open. The stable h1 is below, visually
                   hidden; this is the one the design makes dominant.
                 */}
-                <h2 className="font-serif text-[clamp(2.6rem,8vw,7.5rem)] leading-[.8] tracking-[-.06em] text-[#f5f0e8]">
+                <h2 className="font-serif text-[clamp(3rem,11vw,7.5rem)] leading-[.85] tracking-[-.045em] text-[#f5f0e8] md:leading-[.8] md:tracking-[-.06em]">
                   {current.name}
                 </h2>
-                <p className="mt-4 font-serif text-[clamp(1.05rem,2.2vw,1.85rem)] italic leading-tight text-[#c8a45d]">
+                <p className="mt-5 font-serif text-[clamp(1.15rem,4.6vw,1.85rem)] italic leading-snug text-[#c8a45d] md:mt-4">
                   {current.tagline}
                 </p>
-                <p className="mt-5 line-clamp-3 max-w-xl text-sm leading-6 text-white/65 md:line-clamp-none md:leading-7">
+                {/* The long description belongs on the collection page. On a phone the
+                    tagline is the campaign line; retail copy under it makes the
+                    first screen do two jobs badly. */}
+                <p className="mt-6 hidden max-w-xl text-sm leading-7 text-white/65 md:block">
                   {current.description}
                 </p>
               </motion.div>
             </AnimatePresence>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            {/*
+              One primary CTA on a phone. The concierge route stays, but as a
+              quiet line rather than a second full-width button — two of those
+              stacked read as a form, not a campaign.
+            */}
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-9">
               <Link
                 href={current.href}
-                className="group flex items-center justify-between gap-6 bg-[#c8a45d] px-6 py-4 md:py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition hover:bg-[#f5f0e8]"
+                className="group flex items-center justify-between gap-6 bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition hover:bg-[#f5f0e8]"
               >
-                Open this collection
+                Shop this collection
                 <ArrowRight size={16} className="transition group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/book"
-                className="border border-white/25 px-6 py-4 text-center text-[9px] md:py-5 uppercase tracking-[.32em] text-white/70 transition hover:border-[#c8a45d] hover:text-[#c8a45d]"
+                className="w-fit border-b border-white/30 pb-1 text-[9px] uppercase tracking-[.32em] text-white/60 transition hover:border-[#c8a45d] hover:text-[#c8a45d] sm:ml-2"
               >
-                Private Concierge
+                Private concierge
               </Link>
             </div>
           </div>

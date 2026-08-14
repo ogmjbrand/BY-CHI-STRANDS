@@ -174,7 +174,7 @@ function AcademyHero() {
 
 function AcademyStatement() {
   return (
-    <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
+    <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-academy-premise" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
@@ -228,7 +228,7 @@ function AcademyCurriculum() {
   const frames = MODULES.map((m) => scene(m.frame));
 
   return (
-    <section id="curriculum" className="relative bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
+    <section id="curriculum" className="relative bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
       {/* No overflow on this section: it holds the pinned frame below, and an
           overflow container would become that frame's containing block. */}
       <SectionBackdrop name="backdrop-academy-curriculum" />
@@ -381,7 +381,7 @@ function ModuleBlock({
 
 function AcademyClassroom() {
   return (
-    <section className="relative bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
+    <section className="relative bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-academy-room" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-10 md:mb-16">
@@ -456,7 +456,7 @@ function AcademyClassroom() {
 
 function AcademyAudience() {
   return (
-    <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
+    <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-10 md:py-36">
       <SectionBackdrop name="backdrop-voices" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">

@@ -10,6 +10,7 @@ import { HouseFounder } from "./HouseFounder";
 import { HouseVoices } from "./HouseVoices";
 import { SectionBackdrop } from "./SectionBackdrop";
 import { HouseHeroCards } from "./HouseHeroCards";
+import { MobileProductRail, houseRailProducts } from "./MobileProductRail";
 
 const collections = [
   { name: "Bone Straight", label: "THE SIGNATURE", image: "/products/IMG-20260726-WA0015.jpg", href: "/collections" },
@@ -58,6 +59,8 @@ function MotionVideo({ item, className = "" }: { item: (typeof videos)[number]; 
 }
 
 export function HouseHomepage() {
+  const railItems = houseRailProducts();
+
   /*
    * overflow-x-clip below, not overflow-x-hidden. `hidden` on either axis
    * makes an element a scroll container, and a scroll container becomes the
@@ -71,7 +74,7 @@ export function HouseHomepage() {
       <main>
         <HouseHeroCards />
 
-        <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36">
+        <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-10 md:py-36">
           <SectionBackdrop name="backdrop-house" tone="light" />
           <div className="relative mx-auto max-w-[1760px]">
             <div className="grid gap-10 md:grid-cols-12 md:items-end">
@@ -82,7 +85,7 @@ export function HouseHomepage() {
           </div>
         </section>
 
-        <section className="relative bg-[#0b0907] px-4 py-16 md:px-8 md:py-36">
+        <section className="relative bg-[#0b0907] px-4 py-24 md:px-8 md:py-36">
           <SectionBackdrop name="backdrop-collections" />
           <div className="relative mx-auto max-w-[1760px]">
             <div className="mb-14 flex items-end justify-between px-2 md:px-4"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">02 / Collections</p><h2 className="font-serif text-[clamp(3.6rem,7.5vw,9rem)] leading-[.72] tracking-[-.065em]">The House<br /><i>Edit.</i></h2></div><Link href="/collections" className="hidden border-b border-[#c8a45d]/60 pb-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d] md:block">View all</Link></div>
@@ -92,17 +95,34 @@ export function HouseHomepage() {
 
         {/* Was the first of three brown chapters. The ground is noir now and
             the warmth comes from the frame behind it, not from the fill. */}
-        <section className="relative bg-[#0b0907] px-5 py-16 md:px-10 md:py-36">
+        <section className="relative bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
           <SectionBackdrop name="backdrop-standard" />
           <div className="relative mx-auto max-w-[1760px]"><div className="grid gap-12 md:grid-cols-12 md:items-end"><p className="text-[8px] uppercase tracking-[.5em] text-[#c8a45d] md:col-span-2">03 / The Standard</p><div className="md:col-span-10"><h2 className="font-serif text-[clamp(3.5rem,7.5vw,9rem)] leading-[.74] tracking-[-.065em]">Beauty with<br /><i>intention.</i></h2><p className="mt-9 max-w-2xl text-sm leading-7 text-white/55 md:text-base">A complete approach to selection, density, construction, styling and care — built around the finished experience.</p></div></div><div className="mt-14 grid grid-cols-2 gap-px bg-[#c8a45d]/20 md:mt-20 md:grid-cols-4">{standards.map(([n, title, copy]) => <article key={n} className="bg-[#0b0907]/80 p-5 backdrop-blur-[2px] md:p-10"><span className="text-[8px] tracking-[.3em] text-[#c8a45d]">{n}</span><h3 className="mt-8 font-serif text-2xl text-[#f5f0e8] md:mt-16 md:text-3xl">{title}</h3><p className="mt-3 text-[13px] leading-6 text-white/45 md:mt-5 md:text-sm md:leading-7">{copy}</p></article>)}</div></div>
         </section>
 
-        <section className="relative bg-[#0b0907] px-4 py-16 md:px-8 md:py-36">
+        <section className="relative bg-[#0b0907] px-4 py-24 md:px-8 md:py-36">
           <SectionBackdrop name="backdrop-motion" />
           <div className="relative mx-auto max-w-[1760px]"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">04 / ByChi Motion</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">See the hair<br /><i>in motion.</i></h2></div><span className="hidden text-[8px] uppercase tracking-[.35em] text-white/35 md:block">Autoplay · Scroll · Discover</span></div><div className="grid grid-cols-2 gap-2 md:grid-cols-12 md:grid-rows-[360px_360px] md:gap-3"><MotionVideo item={videos[0]} className="aspect-[4/5] md:aspect-auto md:col-span-7 md:row-span-2" /><MotionVideo item={videos[1]} className="aspect-[4/5] md:aspect-auto md:col-span-5" /><MotionVideo item={videos[2]} className="aspect-[4/5] md:aspect-auto md:col-span-5" /></div><div className="mt-2 grid grid-cols-2 gap-2 md:mt-3 md:grid-cols-3 md:gap-3"><MotionVideo item={videos[3]} className="aspect-[4/5]" /><MotionVideo item={videos[4]} className="aspect-[4/5]" /><MotionVideo item={videos[5]} className="aspect-[4/5]" /></div></div>
         </section>
 
-        <section className="relative bg-[#f5f0e8] px-5 py-16 text-[#0b0907] md:px-10 md:py-36"><SectionBackdrop name="backdrop-pieces" tone="light" /><div className="relative mx-auto max-w-[1760px]"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#8b6244]">05 / The Pieces</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">Made to be<br /><i>remembered.</i></h2></div><Link href="/shop" className="border-b border-[#c8a45d] pb-2 text-[8px] uppercase tracking-[.35em] text-[#8b6244]">Shop all</Link></div><div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">{[...collections, { name: "Colour Editions", label: "PRIVATE EDIT", image: "/products/IMG-20260727-WA0045.jpg", href: "/collections" }].map((item) => <Link key={item.name} href={item.href} className="group"><div className="relative aspect-[4/5] overflow-hidden bg-[#e6ddd0]"><Image src={item.image} alt={item.name} fill sizes="25vw" className="object-cover transition duration-1000 group-hover:scale-[1.04]" /></div><div className="flex items-start justify-between gap-4 pt-4"><div><p className="text-[8px] uppercase tracking-[.35em] text-[#8b6244]">{item.label}</p><h3 className="mt-2 font-serif text-xl md:text-2xl">{item.name}</h3></div><ArrowRight size={17} className="mt-2 text-[#c8a45d] transition group-hover:translate-x-1" /></div></Link>)}</div></div></section>
+        <section className="relative bg-[#f5f0e8] py-20 text-[#0b0907] md:px-10 md:py-36">
+          <SectionBackdrop name="backdrop-pieces" tone="light" />
+
+          {/* The phone gets a rail, not a squeezed grid. See MobileProductRail
+              for why: four columns collapsed to two is a list, and a list of
+              luxury goods reads as a marketplace. */}
+          <div className="relative">
+            <MobileProductRail
+              items={railItems}
+              eyebrow="05 / The Pieces"
+              title={<>Made to be<br /><i>remembered.</i></>}
+              href="/shop"
+              cta="Shop all pieces"
+              tone="light"
+            />
+          </div>
+
+          <div className="relative mx-auto hidden max-w-[1760px] px-5 md:block md:px-0"><div className="mb-12 flex items-end justify-between px-2"><div><p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#8b6244]">05 / The Pieces</p><h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">Made to be<br /><i>remembered.</i></h2></div><Link href="/shop" className="border-b border-[#c8a45d] pb-2 text-[8px] uppercase tracking-[.35em] text-[#8b6244]">Shop all</Link></div><div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">{[...collections, { name: "Colour Editions", label: "PRIVATE EDIT", image: "/products/IMG-20260727-WA0045.jpg", href: "/collections" }].map((item) => <Link key={item.name} href={item.href} className="group"><div className="relative aspect-[4/5] overflow-hidden bg-[#e6ddd0]"><Image src={item.image} alt={item.name} fill sizes="25vw" className="object-cover transition duration-1000 group-hover:scale-[1.04]" /></div><div className="flex items-start justify-between gap-4 pt-4"><div><p className="text-[8px] uppercase tracking-[.35em] text-[#8b6244]">{item.label}</p><h3 className="mt-2 font-serif text-xl md:text-2xl">{item.name}</h3></div><ArrowRight size={17} className="mt-2 text-[#c8a45d] transition group-hover:translate-x-1" /></div></Link>)}</div></div></section>
 
 
         {/* 06 — what the house does to hair, before the transformation shows
@@ -118,7 +138,7 @@ export function HouseHomepage() {
         <HouseFounder />
         <HouseVoices />
 
-        <section className="relative overflow-hidden bg-black px-5 py-20 md:px-10 md:py-44"><div className="absolute inset-0 opacity-45"><Image src="/products/IMG-20260727-WA0045.jpg" alt="" fill sizes="100vw" className="object-cover" /></div><div className="absolute inset-0 bg-black/65" /><div className="relative z-10 mx-auto max-w-[1760px] text-center"><p className="mb-7 text-[8px] uppercase tracking-[.6em] text-[#c8a45d]">The ByChi House</p><h2 className="font-serif text-[clamp(4rem,10vw,12rem)] leading-[.68] tracking-[-.07em]">Your hair.<br /><i className="text-[#c8a45d]">Your standard.</i></h2><p className="mx-auto mt-10 max-w-xl text-sm leading-7 text-white/60">Choose your piece, speak with a concierge, or step inside the House in Lagos.</p><div className="mx-auto mt-10 flex max-w-xl flex-col gap-3 sm:flex-row"><Link href="/collections" className="flex flex-1 items-center justify-center bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907]">Shop the House</Link><Link href="/book" className="flex flex-1 items-center justify-center border border-white/30 px-6 py-5 text-[9px] uppercase tracking-[.32em] text-white">Book Concierge</Link></div></div></section>
+        <section className="relative overflow-hidden bg-black px-6 py-28 md:px-10 md:py-44"><div className="absolute inset-0 opacity-45"><Image src="/products/IMG-20260727-WA0045.jpg" alt="" fill sizes="100vw" className="object-cover" /></div><div className="absolute inset-0 bg-black/65" /><div className="relative z-10 mx-auto max-w-[1760px] text-center"><p className="mb-7 text-[8px] uppercase tracking-[.6em] text-[#c8a45d]">The ByChi House</p><h2 className="font-serif text-[clamp(4rem,10vw,12rem)] leading-[.68] tracking-[-.07em]">Your hair.<br /><i className="text-[#c8a45d]">Your standard.</i></h2><p className="mx-auto mt-10 max-w-xl text-sm leading-7 text-white/60">Choose your piece, speak with a concierge, or step inside the House in Lagos.</p><div className="mx-auto mt-10 flex max-w-xl flex-col gap-3 sm:flex-row"><Link href="/collections" className="flex flex-1 items-center justify-center bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907]">Shop the House</Link><Link href="/book" className="flex flex-1 items-center justify-center border border-white/30 px-6 py-5 text-[9px] uppercase tracking-[.32em] text-white">Book Concierge</Link></div></div></section>
       </main>
 </div>
   );

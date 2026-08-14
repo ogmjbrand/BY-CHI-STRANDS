@@ -35,7 +35,7 @@ export default function AcademyPage() {
         {/* 05 — the application. */}
         <section
           id="enroll"
-          className="relative overflow-x-clip bg-[#0b0907] px-5 py-16 md:px-10 md:py-36"
+          className="relative overflow-x-clip bg-[#0b0907] px-6 py-24 md:px-10 md:py-36"
         >
           <SectionBackdrop name="academy-apply" />
           <div className="relative mx-auto max-w-[1760px]">
