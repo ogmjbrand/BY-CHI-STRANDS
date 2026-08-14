@@ -197,10 +197,11 @@ export function HouseHeroCards() {
                 <p className="mt-5 font-serif text-[clamp(1.15rem,4.6vw,1.85rem)] italic leading-snug text-[#c8a45d] md:mt-4">
                   {current.tagline}
                 </p>
-                {/* The long description belongs on the collection page. On a phone the
-                    tagline is the campaign line; retail copy under it makes the
-                    first screen do two jobs badly. */}
-                <p className="mt-6 hidden max-w-xl text-sm leading-7 text-white/65 md:block">
+                {/* Kept on the phone: the desktop composition is eyebrow / name /
+                    tagline / description, and dropping a line of it on mobile
+                    changes the hierarchy rather than scaling it. Three lines,
+                    then the collection page carries the rest. */}
+                <p className="mt-5 line-clamp-3 max-w-xl text-[13px] leading-6 text-white/65 md:mt-6 md:line-clamp-none md:text-sm md:leading-7">
                   {current.description}
                 </p>
               </motion.div>
@@ -211,19 +212,23 @@ export function HouseHeroCards() {
               quiet line rather than a second full-width button — two of those
               stacked read as a form, not a campaign.
             */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-9">
+            {/* Both actions, as on desktop, in the same order and the same
+                relative weight — gold fill primary, outlined secondary. On the
+                phone they share a row at half width each rather than stacking
+                into two full-width slabs. */}
+            <div className="mt-7 grid grid-cols-2 gap-2 md:mt-9 md:flex md:gap-3">
               <Link
                 href={current.href}
-                className="group flex items-center justify-between gap-6 bg-[#c8a45d] px-6 py-5 text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition hover:bg-[#f5f0e8]"
+                className="group flex items-center justify-between gap-3 bg-[#c8a45d] px-4 py-4 text-[8px] font-semibold uppercase tracking-[.24em] text-[#0b0907] transition hover:bg-[#f5f0e8] md:gap-6 md:px-6 md:py-5 md:text-[9px] md:tracking-[.32em]"
               >
-                Shop this collection
-                <ArrowRight size={16} className="transition group-hover:translate-x-1" />
+                Shop the House
+                <ArrowRight size={14} className="shrink-0 transition group-hover:translate-x-1 md:h-4 md:w-4" />
               </Link>
               <Link
                 href="/book"
-                className="w-fit border-b border-white/30 pb-1 text-[9px] uppercase tracking-[.32em] text-white/60 transition hover:border-[#c8a45d] hover:text-[#c8a45d] sm:ml-2"
+                className="flex items-center justify-center border border-white/25 px-4 py-4 text-center text-[8px] uppercase tracking-[.24em] text-white/70 transition hover:border-[#c8a45d] hover:text-[#c8a45d] md:px-6 md:py-5 md:text-[9px] md:tracking-[.32em]"
               >
-                Private concierge
+                Private Concierge
               </Link>
             </div>
           </div>

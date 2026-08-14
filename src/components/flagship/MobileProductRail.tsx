@@ -9,20 +9,19 @@ import { formatPrice } from "@/lib/utils";
 import { ORIGINS, TEXTURES } from "@/lib/products";
 
 /**
- * The product section, as a phone sees it.
+ * The desktop product row, re-flowed for a phone.
  *
- * A four-column desktop grid does not become a good phone layout by dropping
- * to one or two columns — it becomes a list, and a list of luxury goods reads
- * as a marketplace. This is a horizontal rail instead: one card fills the
- * screen and the next one shows at the edge, which is how a swipeable row
- * announces itself without a row of dots or an arrow nobody presses.
+ * The card is the desktop card — same 4:5 frame, same label / name / arrow
+ * beneath it, same serif at the same relative weight. What changes is the
+ * container: four across becomes one and a bit across on a horizontal rail,
+ * so a card stays at the size the design intended rather than shrinking to a
+ * quarter of a phone screen. The partial card at the right edge is the only
+ * affordance the pattern needs — no dots, no arrows.
  *
- * Scroll-snap does the work, so the gesture is the platform's own — momentum,
- * rubber-banding and all — rather than a JS carousel reimplementing it badly.
+ * Native scroll-snap does the gesture, so momentum and rubber-banding are the
+ * platform's own rather than a JS carousel reimplementing them badly.
  *
- * Rendered only below `md`. The desktop grid is untouched and still renders
- * above it; this is a separate composition for a separate screen, not a
- * responsive squeeze of the same one.
+ * Below `md` only. The desktop grid is untouched above it.
  */
 export function MobileProductRail({
   items,
@@ -98,7 +97,14 @@ export function MobileProductRail({
               className="w-[78%] shrink-0 snap-start"
             >
               <Link href={`/shop/${p.slug}`} className="group block">
-                <div className="relative aspect-[3/4] overflow-hidden bg-[#141110]">
+                {/*
+                  The desktop card, at phone width — not a different card.
+                  Same 4:5 frame, same label / name / arrow line beneath it,
+                  same serif. The desktop grid renders this composition four
+                  across; the rail renders it one and a bit across. Nothing
+                  about the card itself changes.
+                */}
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={media.type === "video" ? (media.poster ?? media.src) : media.src}
@@ -107,24 +113,24 @@ export function MobileProductRail({
                     decoding="async"
                     className="h-full w-full object-cover object-[center_25%] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-active:scale-[1.03]"
                   />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
-                  />
                 </div>
 
-                <div className="mt-4">
-                  <p className={`text-[8px] uppercase tracking-[.35em] ${accent}`}>
-                    {ORIGINS[p.origin]} {p.sdd ? "SDD" : ""}
-                  </p>
-                  <h3 className="mt-2 font-serif text-[1.4rem] leading-tight">{p.name}</h3>
-                  <p className={`mt-1.5 text-[13px] leading-6 ${muted}`}>
-                    {TEXTURES[p.texture]}
-                    {lengths ? ` · ${lengths}` : ""}
-                  </p>
-                  <p className={`mt-3 text-[13px] ${accent}`}>
-                    {from !== null ? `From ${formatPrice(from)}` : "Enquire for price"}
-                  </p>
+                <div className="flex items-start justify-between gap-4 pt-4">
+                  <div className="min-w-0">
+                    <p className={`text-[8px] uppercase tracking-[.35em] ${accent}`}>
+                      {ORIGINS[p.origin]} {p.sdd ? "SDD" : ""}
+                    </p>
+                    <h3 className="mt-2 font-serif text-2xl leading-tight">{p.name}</h3>
+                    <p className={`mt-2 text-[13px] leading-6 ${muted}`}>
+                      {TEXTURES[p.texture]}
+                      {lengths ? ` · ${lengths}` : ""}
+                      {from !== null ? ` · from ${formatPrice(from)}` : ""}
+                    </p>
+                  </div>
+                  <ArrowRight
+                    size={17}
+                    className={`mt-2 shrink-0 ${accent} transition group-hover:translate-x-1`}
+                  />
                 </div>
               </Link>
             </motion.li>
