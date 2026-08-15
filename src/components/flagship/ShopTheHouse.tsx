@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { Heart } from "lucide-react";
+import { useStore } from "@/context/StoreContext";
 import { ArrowRight } from "lucide-react";
 import { products, priceFrom, type Product } from "@/lib/products";
 import { heroFor } from "@/lib/media";
@@ -50,6 +52,8 @@ function lengthRange(p: Product): string | null {
 
 function Card({ p, i }: { p: Product; i: number }) {
   const reduceMotion = useReducedMotion();
+  const { wishlist, toggleWishlist, hydrated } = useStore();
+  const saved = hydrated && wishlist.includes(p.slug);
   const media = heroFor(p.slug);
   const from = priceFrom(p);
   const lengths = lengthRange(p);
@@ -60,8 +64,20 @@ function Card({ p, i }: { p: Product; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.75, delay: Math.min(i, 3) * 0.07, ease: EASE }}
-      className="group h-full"
+      className="group relative h-full"
     >
+      {/* Outside the Link: a button nested in an anchor is invalid markup,
+          and saving must not navigate. */}
+      <button
+        type="button"
+        onClick={() => toggleWishlist(p.slug)}
+        aria-pressed={saved}
+        aria-label={saved ? `Remove ${p.name} from your wishlist` : `Save ${p.name} to your wishlist`}
+        className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/35 text-white/85 backdrop-blur-sm transition hover:bg-black/55 hover:text-[#c8a45d]"
+      >
+        <Heart size={17} className={saved ? "fill-[#c8a45d] text-[#c8a45d]" : ""} />
+      </button>
+
       <Link href={`/shop/${p.slug}`} className="flex h-full flex-col">
         <div className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
           {/* eslint-disable-next-line @next/next/no-img-element */}

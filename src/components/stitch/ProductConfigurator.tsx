@@ -42,9 +42,23 @@ export function ProductConfigurator({
     if (!laces.includes(lace)) setLace(laces[0]);
   }, [laces, lace]);
 
+  /*
+   * Gated on `hydrated`, and this is a real bug rather than caution.
+   *
+   * The store loads recentlyViewed from localStorage in its own mount
+   * effect. This effect used to run first, prepend the current piece, and
+   * then be overwritten wholesale when hydration landed — so the stored list
+   * only ever contained the very first product a visitor opened, because
+   * that was the one write that happened against empty storage. Every visit
+   * after it was recorded and immediately thrown away.
+   *
+   * Waiting for hydration means the prepend lands on the restored list
+   * instead of racing it.
+   */
   useEffect(() => {
+    if (!hydrated) return;
     trackView(product.slug);
-  }, [product.slug, trackView]);
+  }, [hydrated, product.slug, trackView]);
 
   const total = useMemo(
     () => priceFor(product, length, lace),

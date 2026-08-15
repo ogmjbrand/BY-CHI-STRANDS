@@ -13,6 +13,7 @@ import { site, whatsappLink } from "@/lib/site";
 import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { Icon } from "@/components/ui/icon";
 import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
+import { RecentlyViewed } from "@/components/flagship/RecentlyViewed";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -346,6 +347,11 @@ export default async function ProductPage({
             </div>
           </section>
         ) : null}
+      {/* The store has tracked this since it was written and nothing has
+          ever shown it. Renders only when there are at least two other
+          pieces to show. */}
+      <RecentlyViewed excludeSlug={product.slug} />
+
     </>
   );
 }
