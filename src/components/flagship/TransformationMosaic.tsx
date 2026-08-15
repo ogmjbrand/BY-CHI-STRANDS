@@ -14,7 +14,7 @@ const SPANS = [
 ];
 
 /**
- * Immersive varying-tile mosaic of the house's own review/install/unboxing
+ * Immersive varying-tile mosaic of ByChi Strands' own review/install/unboxing
  * footage — the visual antithesis of a uniform review-card grid.
  */
 export function TransformationMosaic() {

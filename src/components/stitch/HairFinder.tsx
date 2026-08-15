@@ -244,7 +244,7 @@ export function HairFinder() {
                 </button>
                 <a
                   href={whatsappLink(
-                    "Hi ByChiStrands — I used the Hair Finder and would like help choosing."
+                    "Hi ByChi Strands — I used the Hair Finder and would like help choosing."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -38,6 +38,7 @@ export default async function CollectionPage({
 
   return (
     <StitchPageShell
+      ground="ground-collection-detail"
       eyebrow={collection.tagline}
       title={collection.name}
       lede={collection.description}

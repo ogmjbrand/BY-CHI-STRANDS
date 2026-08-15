@@ -14,6 +14,8 @@ import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { Icon } from "@/components/ui/icon";
 import { InlineNewsletterField } from "@/components/stitch/InlineNewsletterField";
 import { RecentlyViewed } from "@/components/flagship/RecentlyViewed";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 /**
  * BY CHI STRANDS — Stitch screens:
@@ -145,10 +147,10 @@ export default async function ProductPage({
           {/* Client Voices */}
           <section className="mt-section-padding px-margin-mobile space-y-6">
             <div>
-              <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">CLIENT EXPERIENCES</p>
+              <SectionMark label="Client Experiences" />
               <h3 className="mt-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">From Our Clients</h3>
               <p className="text-body-sm text-on-surface-variant mt-1">
-                Real footage from the house&apos;s own clients — no invented quotes, just the work.
+                Real footage from ByChi Strands&apos; own clients — no invented quotes, just the work.
               </p>
             </div>
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-margin-mobile px-margin-mobile no-scrollbar">
@@ -189,7 +191,7 @@ export default async function ProductPage({
         <div className="fixed bottom-0 left-0 right-0 p-margin-mobile glass-header border-t border-outline-variant/30 z-50">
           <div className="max-w-container-max mx-auto flex items-center gap-4">
             <a
-              href={whatsappLink(`Hi ByChiStrands — I have a question about the ${product.name}.`)}
+              href={whatsappLink(`Hi ByChi Strands — I have a question about the ${product.name}.`)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Ask about the ${product.name} on WhatsApp`}
@@ -295,15 +297,16 @@ export default async function ProductPage({
           it stays desktop-only, because the mobile layout already carries
           its own. */}
         {/* Client Voices */}
-        <section className="hidden md:block max-w-container-max mx-auto px-margin-desktop py-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
+        <section className="relative isolate hidden md:block max-w-container-max mx-auto px-margin-desktop py-section-padding border-t border-outline-variant/20 bg-surface-container-lowest">
+          <SectionBackdrop name="ground-product-voices" behind />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
             <div className="lg:col-span-4 space-y-8">
               <div className="space-y-4">
-                <p className="font-label-caps text-primary text-[10px] tracking-[0.3em]">CLIENT EXPERIENCES</p>
+                <SectionMark label="Client Experiences" />
                 <h2 className="font-display-md text-display-md tracking-[-0.01em]">From Our Clients</h2>
               </div>
               <p className="font-body-sm text-on-surface-variant">
-                Real footage from the house's own clients — no invented quotes, just the work.
+                Real footage from ByChi Strands' own clients — no invented quotes, just the work.
               </p>
               <div className="pt-4">
                 <Link href="/reviews/new" className="w-full block text-center border border-on-surface text-on-surface py-4 font-label-caps tracking-widest text-xs hover:bg-on-surface hover:text-surface transition-all duration-300">
@@ -326,10 +329,11 @@ export default async function ProductPage({
         </section>
         {/* Related products */}
         {relatedProducts.length ? (
-          <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-section-padding border-t border-outline-variant/20">
+          <section className="relative isolate max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-section-padding border-t border-outline-variant/20">
+            <SectionBackdrop name="ground-product-detail" behind />
             <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10 md:gap-8 md:mb-16">
               <div className="space-y-4">
-                <p className="font-label-caps text-primary">MORE FROM THE COLLECTION</p>
+                <SectionMark label="More From The Collection" />
                 <h2 className="font-display-md text-display-md tracking-[-0.01em]">You May Also Like</h2>
               </div>
               <Link className="font-label-caps text-xs border-b border-primary pb-1" href="/shop">Shop All Pieces</Link>

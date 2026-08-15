@@ -21,7 +21,7 @@ export type Tone =
 
 /*
  * Origin is still recorded against each piece — it is a true attribute of the
- * stock and the house sorts by it internally — but it is no longer surfaced
+ * stock and ByChi Strands sorts by it internally — but it is no longer surfaced
  * anywhere a visitor reads, and there is no longer a label map, because the
  * only thing a label map was for was printing the country name on the page.
  */
@@ -134,7 +134,7 @@ export const products: Product[] = [
       { length: 16, lace: "5x5 Closure", price: null },
     ],
     badges: ["bestseller"],
-    short: "The house staple — Super Double Drawn raw hair, flat as glass root to tip.",
+    short: "The ByChi Strands staple — Super Double Drawn raw hair, flat as glass root to tip.",
     description: "Super Double Drawn means the short strands are pulled out by hand until the bundle is as thick at the ends as it is at the root. That is why this unit keeps a blunt, heavy hemline instead of thinning into wisps, and why it still hangs full after a year of wear. Imported directly from source and built onto closure lace in the atelier.",
     details: ["Super Double Drawn human hair", "Full from root to tip — no tapering at the ends", "Choice of 2x4, 2x6 or 5x5 closure", "12\" is a 200-gram build for extra density", "Can be washed, straightened and coloured by a professional"],
     care: WIG_CARE,
@@ -213,7 +213,7 @@ export const products: Product[] = [
     sdd: true,
     variants: [{ length: 20, lace: "5x5 Closure", price: null }, { length: 24, lace: "13x4 Frontal", price: null }],
     short: "Molten copper on a bone straight base — the loudest thing in the studio.",
-    description: "Copper is the colour clients photograph most, and it only works on hair that can take a lift without frying. Super Double Drawn raw hair holds the tone bright at the face and deeper through the lengths, with the flat, liquid hang that made bone straight the house signature.",
+    description: "Copper is the colour clients photograph most, and it only works on hair that can take a lift without frying. Super Double Drawn raw hair holds the tone bright at the face and deeper through the lengths, with the flat, liquid hang that made bone straight the ByChi Strands signature.",
     details: ["Super Double Drawn human hair", "Copper lifted and toned on raw hair", "Closure or frontal construction", "Glass-flat hang with a high shine", "Re-tonable in our atelier"],
     care: WIG_CARE,
   },

@@ -1,12 +1,15 @@
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+
 /**
  * Helps a shopper match a texture name to what it actually looks like before
- * they filter the catalogue by it. Both photos are real ByChiStrands stock —
+ * they filter the catalogue by it. Both photos are real ByChi Strands stock —
  * the chart isn't tied to one SKU, so it sits above the browser rather than
  * inside a product card.
  */
 export function TextureGuide() {
   return (
-    <section className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+    <section className="relative isolate mb-16 grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+      <SectionBackdrop name="ground-texture-guide" behind />
       <div className="aspect-[4/3] overflow-hidden bg-surface-container-low">
         <img
           src="/guides/texture-deep-curl-frontal.jpg"

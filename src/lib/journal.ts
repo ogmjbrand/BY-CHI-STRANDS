@@ -147,7 +147,7 @@ export const articles: Article[] = [
     image: "/products/IMG-20260726-WA0019.jpg",
     body: [
       {
-        text: "Wedding hair should be decided calmly, months out — never in the frantic fortnight before the day. This is the timeline we walk every ByChiStrands bride through, refined across hundreds of weddings.",
+        text: "Wedding hair should be decided calmly, months out — never in the frantic fortnight before the day. This is the timeline we walk every ByChi Strands bride through, refined across hundreds of weddings.",
       },
       {
         heading: "Twelve weeks: commission the hair",

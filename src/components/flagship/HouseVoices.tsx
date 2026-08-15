@@ -4,9 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
+import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
- * 09 — Social proof, as a wall of the house's own client footage.
+ * 09 — Social proof, as a wall of ByChi Strands' own client footage.
  *
  * Not five gold stars and a pull-quote. Every tile is a real clip a client
  * filmed — a review to camera, a finished install, an order being opened —
@@ -39,13 +41,12 @@ const SPANS = [
 
 export function HouseVoices() {
   return (
-    <section className="bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-8 md:py-36">
-      <div className="mx-auto max-w-[1760px]">
+    <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-8 md:py-36">
+      <SectionBackdrop name="backdrop-voices" tone="light" />
+      <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-12 flex flex-col gap-6 px-2 md:flex-row md:items-end md:justify-between md:px-4">
           <div>
-            <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#8b6244]">
-              09 / In Their Words
-            </p>
+            <SectionMark label="09 / In Their Words" tone="light" className="mb-4" />
             <h2 className="font-serif text-[clamp(3.4rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
               Filmed by
               <br />

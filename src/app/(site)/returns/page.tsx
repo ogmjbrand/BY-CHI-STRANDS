@@ -70,6 +70,7 @@ const BLOCKS: PolicyBlock[] = [
 export default function ReturnsPage() {
   return (
     <StitchPageShell
+      ground="ground-returns"
       eyebrow="Client Care"
       title="Returns & Exchanges"
       lede="Our policy for exchanges, remakes and returns."

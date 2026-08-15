@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Icon } from "@/components/ui/icon";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 export const metadata: Metadata = { title: "Our Craft" };
 
@@ -24,9 +26,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
         <div className="relative z-10 mx-auto w-full max-w-container-max">
-          <span className="font-label-caps text-label-caps uppercase text-gold-light tracking-[0.3em] mb-6 block">
-            Our Craft
-          </span>
+          <SectionMark label="Our Craft" tone="onImage" className="mb-6" />
           {/* The page had no h1 at all — this line is the page's title, so
               it should be marked up as one rather than as body copy. */}
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-white max-w-3xl leading-tight">
@@ -37,11 +37,10 @@ export default function AboutPage() {
 
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding space-y-section-padding">
         {/* The Source */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+        <section className="relative isolate grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+          <SectionBackdrop name="ground-about-story" behind />
           <div className="md:col-span-5 md:col-start-1 order-2 md:order-1">
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-              The Source
-            </span>
+            <SectionMark label="The Source" className="mb-6" />
             <h2 className="font-display-md text-headline-lg-mobile md:text-display-md mb-8 leading-tight">
               Raw hair, and nothing added to it.
             </h2>
@@ -73,9 +72,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="md:col-span-5 md:col-start-8">
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-              The Craft
-            </span>
+            <SectionMark label="The Craft" className="mb-6" />
             <h2 className="font-display-md text-headline-lg-mobile md:text-display-md mb-8 leading-tight">
               Every unit is hand-tied in Lagos.
             </h2>
@@ -96,10 +93,9 @@ export default function AboutPage() {
         </section>
 
         {/* Why Women Trust Us */}
-        <section className="pt-section-padding border-t border-outline-variant/20">
-          <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-            Why Women Trust Us
-          </span>
+        <section className="relative isolate pt-section-padding border-t border-outline-variant/20">
+          <SectionBackdrop name="ground-about-practice" behind />
+          <SectionMark label="Why Women Trust Us" className="mb-6" />
           <h2 className="font-display-md text-headline-lg-mobile md:text-display-md mb-14 leading-tight max-w-2xl">
             Luxury, without asking you to take our word for it.
           </h2>
@@ -131,11 +127,10 @@ export default function AboutPage() {
         </section>
 
         {/* Visit / Next steps */}
-        <section className="pt-section-padding border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <section className="relative isolate pt-section-padding border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <SectionBackdrop name="ground-about" behind />
           <div>
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-              Visit The Atelier
-            </span>
+            <SectionMark label="Visit The Atelier" className="mb-6" />
             <p className="font-body-xl text-on-surface mb-2">{site.address}</p>
             {site.hours.map((h) => (
               <p key={h.days} className="font-body-md text-on-surface-variant">
@@ -151,12 +146,10 @@ export default function AboutPage() {
             </Link>
           </div>
           <div>
-            <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-              Learn The Craft
-            </span>
+            <SectionMark label="Learn The Craft" className="mb-6" />
             <p className="font-body-xl text-on-surface-variant mb-6 max-w-md">
               We also train entrepreneurs to import, grade and build a luxury hair brand at the
-              ByChiStrands Academy.
+              ByChi Strands Academy.
             </p>
             <Link
               href="/academy"

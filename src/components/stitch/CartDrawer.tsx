@@ -261,7 +261,7 @@ function CartDrawer() {
               </p>
               <a
                 href={whatsappLink(
-                  `Hi ByChiStrands — a request about my selection:\n${cart
+                  `Hi ByChi Strands — a request about my selection:\n${cart
                     .map((line) => {
                       const product = getProduct(line.slug);
                       return `• ${product?.name ?? line.slug} — ${line.length}"${

@@ -8,6 +8,8 @@ import {
   transformationFallbackAfter,
   type BeforeAfterPair,
 } from "@/lib/before-after";
+import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
  * The transformation chapter — full-bleed, scroll-driven.
@@ -77,11 +79,10 @@ export function TransformationReveal() {
 
   if (reduceMotion) {
     return (
-      <section className="bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
-        <div className="mx-auto max-w-[1760px]">
-          <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-            07 / Transformation
-          </p>
+      <section className="relative bg-[#0b0907] px-5 py-24 md:px-10 md:py-36">
+        <SectionBackdrop name="backdrop-transformation" />
+        <div className="relative mx-auto max-w-[1760px]">
+          <SectionMark label="07 / Transformation" className="mb-4" />
           <h2 className="font-serif text-[clamp(3.5rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
             One strand.
             <br />
@@ -192,9 +193,7 @@ export function TransformationReveal() {
 
           <div className="absolute inset-0 flex flex-col justify-between px-5 py-10 md:px-10 md:py-16">
             <div className="flex items-start justify-between gap-6">
-              <p className="text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-                07 / Transformation
-              </p>
+              <SectionMark label="07 / Transformation" tone="onImage" />
               <p className="text-[8px] uppercase tracking-[.45em] text-white/45">
                 {pct < 50 ? "Before" : "After"}
               </p>
@@ -270,7 +269,7 @@ function PlaceholderNote({ className = "" }: { className?: string }) {
         Placeholder
       </span>
       <br />
-      The finished frame is a real ByChiStrands install. The starting frame is
+      The finished frame is a real ByChi Strands install. The starting frame is
       held until we have client before-photographs we have permission to
       publish.
     </p>

@@ -49,7 +49,7 @@ const BLOCKS: PolicyBlock[] = [
   {
     heading: "How your order is packaged",
     body: [
-      "Every order arrives in the house's signature packaging: silk-wrapped hair inside a rigid gift box, with a care card and an authentication tag. Wig units ship on a protective form so the lace holds its shape in transit.",
+      "Every order arrives in the ByChi Strands signature packaging: silk-wrapped hair inside a rigid gift box, with a care card and an authentication tag. Wig units ship on a protective form so the lace holds its shape in transit.",
     ],
   },
   {
@@ -67,6 +67,7 @@ const BLOCKS: PolicyBlock[] = [
 export default function ShippingPage() {
   return (
     <StitchPageShell
+      ground="ground-shipping"
       eyebrow="Client Care"
       title="Shipping & Delivery"
       lede="How and when your pieces travel to you, worldwide."

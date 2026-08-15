@@ -7,17 +7,18 @@ import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
 import { hasScene, scene, type SceneName } from "@/lib/media";
 import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
  * 07 — The Craft.
  *
  * The chapter the flow calls for between the product and the transformation:
- * what the house actually does to hair, rather than what it sells.
+ * what ByChi Strands actually does to hair, rather than what it sells.
  *
  * The steps are the real service list from lib/services — laundry, wig
  * making, ventilation, installation — not an invented factory sequence.
  * A "CUT · SORT · WEFT · BLEACH · FINISH" production line would read well and
- * would be a claim about a manufacturing process the house has not
+ * would be a claim about a manufacturing process ByChi Strands has not
  * documented anywhere; these are capabilities it genuinely offers and prices.
  *
  * The numbers count the work, and the row slides horizontally against the
@@ -28,7 +29,7 @@ import { SectionBackdrop } from "./SectionBackdrop";
  * client's wig as it arrived, a finished install, a mentorship session. This
  * section used to be seven text cards on a brown ground, which is the exact
  * "collection of generic cards" the brief rules out, and it showed none of
- * the house's own photography while thirty pieces of it sat behind the
+ * ByChi Strands' own photography while thirty pieces of it sat behind the
  * product pages. Two services have no photograph of their own yet
  * (hair tools, and the laundry bench); those tiles stay typographic rather
  * than borrowing a picture of something else.
@@ -38,7 +39,7 @@ import { SectionBackdrop } from "./SectionBackdrop";
  * picture of something else, so a service without one stays typographic.
  *
  * `hair-tools` is in the list but its scene is marked `pending` in lib/media
- * until a photograph of the tools the house actually sells is committed at
+ * until a photograph of the tools ByChi Strands actually sells is committed at
  * /services/hair-tools.jpg — `hasScene` is what decides, so dropping the file
  * in is the whole job and nothing here changes.
  */
@@ -71,7 +72,7 @@ export function HouseCraft() {
       <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-8 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">06 / The Craft</p>
+            <SectionMark label="06 / The Craft" className="mb-4" />
             <h2 className="font-serif text-[clamp(3.4rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
               What we do
               <br />

@@ -140,7 +140,7 @@ export function MobileMenu() {
         <div className="flex-1 overflow-y-auto px-6 pb-8">
           <p className="mb-7 flex items-center gap-3 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
             <span aria-hidden="true" className="h-px w-6 bg-[#c8a45d]" />
-            The House
+            ByChi Strands
           </p>
 
           <ul className="space-y-0">
@@ -191,7 +191,7 @@ export function MobileMenu() {
             href="/shop"
             className="block w-full bg-[#c8a45d] py-4 text-center text-[9px] font-semibold uppercase tracking-[.32em] text-[#0b0907] transition-colors hover:bg-[#f5f0e8]"
           >
-            Shop the House
+            Shop ByChi Strands
           </Link>
         </div>
       </motion.nav>

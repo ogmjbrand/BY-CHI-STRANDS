@@ -73,7 +73,7 @@ const BLOCKS: PolicyBlock[] = [
   {
     heading: "Where your information is kept",
     body: [
-      "Orders, bookings, Academy enrolments, enquiries, reviews and mailing-list entries are stored in our database, hosted by Supabase. Access is limited to the people running the house.",
+      "Orders, bookings, Academy enrolments, enquiries, reviews and mailing-list entries are stored in our database, hosted by Supabase. Access is limited to the people running ByChi Strands.",
     ],
     pending: [
       "How long each kind of record is kept before deletion has not been fixed yet, so no retention period is stated on this page.",
@@ -122,6 +122,7 @@ const BLOCKS: PolicyBlock[] = [
 export default function PrivacyPage() {
   return (
     <StitchPageShell
+      ground="ground-privacy"
       eyebrow="Legal"
       title="Privacy Policy"
       lede="What this site collects, where it goes, and how to have it removed."

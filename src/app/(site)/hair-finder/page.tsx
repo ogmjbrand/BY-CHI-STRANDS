@@ -6,7 +6,7 @@ import { HairFinder } from "@/components/stitch/HairFinder";
 export const metadata: Metadata = {
   title: "Hair Finder",
   description:
-    "A guided consultation that narrows the ByChiStrands collection to the pieces that suit your texture, tone and length.",
+    "A guided consultation that narrows the ByChi Strands collection to the pieces that suit your texture, tone and length.",
 };
 
 export default function HairFinderPage() {

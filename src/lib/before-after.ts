@@ -6,7 +6,7 @@
  * A before/after is a factual claim: this person's hair looked like *that*,
  * and after our work it looked like *this*. Pairing two unrelated photographs
  * and captioning them as one client's transformation would be inventing a
- * result the house has not produced, which is the one thing this site never
+ * result ByChi Strands has not produced, which is the one thing this site never
  * does. Stock "before" photos are the same lie with better lighting.
  *
  * So the section that renders these is built, wired and interactive, and it
@@ -52,8 +52,8 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
   {
     id: "wig-revamp-01",
     /*
-     * Both frames are stills from the house's own footage —
-     * public/services/ventilation-1.mp4, a clip ByChiStrands filmed and
+     * Both frames are stills from ByChi Strands' own footage —
+     * public/services/ventilation-1.mp4, a clip ByChi Strands filmed and
      * published itself, captioned on screen "HOW MY CLIENT SENT HER WIG TO US
      * VS" and ending "You just found the best revamp plug". Same wig, same
      * session, start and end of the same video, so this is a real result and
@@ -61,7 +61,7 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
      *
      * The on-screen captions were cropped off (they sat in a band across the
      * top of the first frame and the bottom of the last); nothing else about
-     * either frame is altered. The house's own watermark is left in place.
+     * either frame is altered. ByChi Strands' own watermark is left in place.
      */
     before: {
       src: "/services/revamp-before.jpg",
@@ -72,16 +72,16 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
       alt: "The same wig after revamping, the curl pattern redefined and the colour evened out",
     },
     service: "Wig revamp",
-    note: "Both frames are stills from the same ByChiStrands video, taken at its start and end. The finished shot is lit and angled differently from the arrival shot — it is the same wig on the same stand, filmed as the work was done.",
+    note: "Both frames are stills from the same ByChi Strands video, taken at its start and end. The finished shot is lit and angled differently from the arrival shot — it is the same wig on the same stand, filmed as the work was done.",
   },
 ];
 
 /**
  * The finished-work frame the section falls back to while `beforeAfterPairs`
- * is empty. This is a genuine ByChiStrands install — it is only the *before*
+ * is empty. This is a genuine ByChi Strands install — it is only the *before*
  * half that has no honest source, so only that half is drawn as a placeholder.
  */
 export const transformationFallbackAfter = {
   src: "/services/frontal-installation-1.jpg",
-  alt: "A finished ByChiStrands frontal install styled into a curled updo",
+  alt: "A finished ByChi Strands frontal install styled into a curled updo",
 };

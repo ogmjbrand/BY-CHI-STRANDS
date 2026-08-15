@@ -9,9 +9,11 @@ import { products, priceFrom, type Product } from "@/lib/products";
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { TEXTURES } from "@/lib/products";
+import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
- * Shop the House — products, immediately after the hero.
+ * Shop ByChi Strands — products, immediately after the hero.
  *
  * The commercial problem this fixes: the homepage opened on the hero and
  * then ran roughly nine thousand pixels of brand story before a visitor
@@ -124,15 +126,13 @@ export function ShopTheHouse() {
 
   return (
     <section className="relative bg-[#0b0907] py-24 md:px-10 md:py-36">
-      <div className="mx-auto max-w-[1760px]">
+      <SectionBackdrop name="backdrop-shop" />
+      <div className="relative mx-auto max-w-[1760px]">
         <div className="flex flex-col gap-6 px-6 md:flex-row md:items-end md:justify-between md:gap-8 md:px-0">
           <div>
-            <p className="mb-4 flex items-center gap-3 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-              <span aria-hidden="true" className="h-px w-6 bg-[#c8a45d]" />
-              01 / The Current Edit
-            </p>
+            <SectionMark label="01 / The Current Edit" className="mb-4" />
             <h2 className="font-serif text-[clamp(2.6rem,8vw,6rem)] leading-[.82] tracking-[-.05em]">
-              Shop the House.
+              Shop ByChi Strands.
             </h2>
           </div>
           <Link

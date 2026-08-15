@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "The terms you are agreeing to when you order, book, or enrol with ByChiStrands — pricing, payment, delivery, exchanges and the limits of what we promise.",
+    "The terms you are agreeing to when you order, book, or enrol with ByChi Strands — pricing, payment, delivery, exchanges and the limits of what we promise.",
 };
 
 /**
@@ -32,11 +32,11 @@ const BLOCKS: PolicyBlock[] = [
   {
     heading: "Who these terms are between",
     body: [
-      `These terms cover your use of this website and anything you order, book or enrol in through it. "We" and "the house" mean ${site.name}, trading from ${site.address}, reachable at ${site.email}.`,
+      `These terms cover your use of this website and anything you order, book or enrol in through it. "We" and "ByChi Strands" mean ${site.name}, trading from ${site.address}, reachable at ${site.email}.`,
       "Placing an order, booking an appointment or enrolling in a course means you accept what is written here. If something on this page does not work for you, tell the concierge before you order rather than after.",
     ],
     pending: [
-      "The registered business name and registration number the house trades under are not published here yet.",
+      "The registered business name and registration number ByChi Strands trades under are not published here yet.",
       "Until they are, the contact details above are the formal route for anything that needs a named counterparty.",
     ],
   },
@@ -95,7 +95,7 @@ const BLOCKS: PolicyBlock[] = [
   {
     heading: "Using this site",
     body: [
-      "The photography, video, written copy and design on this site belong to the house. Please do not republish them as your own or use them to sell hair that did not come from us.",
+      "The photography, video, written copy and design on this site belong to ByChi Strands. Please do not republish them as your own or use them to sell hair that did not come from us.",
       "We keep the site available and accurate as best we can, but it is not guaranteed to be uninterrupted or error-free. Prices, stock and copy can be wrong, and where a genuine error affects your order we will correct it rather than hold you to it.",
     ],
   },
@@ -106,7 +106,7 @@ const BLOCKS: PolicyBlock[] = [
       "Nothing in these terms takes away rights you have under Nigerian consumer law. Where anything written here conflicts with those rights, those rights win.",
     ],
     pending: [
-      "A limitation-of-liability clause — what the house's liability is capped at, and which categories of loss are excluded — has not been settled and is not stated here.",
+      "A limitation-of-liability clause — what ByChi Strands' liability is capped at, and which categories of loss are excluded — has not been settled and is not stated here.",
       "Until it is, the position is simply the one above: we stand behind what we supply, and statutory consumer rights are unaffected.",
     ],
   },
@@ -124,7 +124,7 @@ const BLOCKS: PolicyBlock[] = [
   {
     heading: "Changes to these terms",
     body: [
-      "We may revise this page as the house changes how it operates. The review date at the top moves whenever it does, and the terms that apply to your order are the ones published on the day you placed it.",
+      "We may revise this page as ByChi Strands changes how it operates. The review date at the top moves whenever it does, and the terms that apply to your order are the ones published on the day you placed it.",
     ],
   },
 ];
@@ -132,6 +132,7 @@ const BLOCKS: PolicyBlock[] = [
 export default function TermsPage() {
   return (
     <StitchPageShell
+      ground="ground-terms"
       eyebrow="Legal"
       title="Terms of Service"
       lede="What you are agreeing to when you order, book or enrol."
@@ -139,7 +140,7 @@ export default function TermsPage() {
       <PolicyBody
         blocks={BLOCKS}
         updated="August 2026"
-        footnote="This page states the house's actual trading practice. The panels marked “to be confirmed” are legally operative details — registered entity, liability, governing law and dispute procedure — that are still being settled with a legal adviser. They are shown as gaps on purpose: nothing has been drafted to fill the space, and no statement here should be read as a substitute for those clauses once they are published."
+        footnote="This page states the actual trading practice of ByChi Strands. The panels marked “to be confirmed” are legally operative details — registered entity, liability, governing law and dispute procedure — that are still being settled with a legal adviser. They are shown as gaps on purpose: nothing has been drafted to fill the space, and no statement here should be read as a substitute for those clauses once they are published."
       />
     </StitchPageShell>
   );

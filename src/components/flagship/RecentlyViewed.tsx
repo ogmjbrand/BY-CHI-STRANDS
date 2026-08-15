@@ -5,6 +5,8 @@ import { useStore } from "@/context/StoreContext";
 import { getProduct, priceFrom } from "@/lib/products";
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
+import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
  * Recently viewed.
@@ -36,11 +38,10 @@ export function RecentlyViewed({ excludeSlug }: { excludeSlug?: string }) {
   if (items.length < 2) return null;
 
   return (
-    <section className="border-t border-outline-variant/20 py-16 md:py-24">
-      <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
-        <p className="font-label-caps text-[10px] uppercase tracking-[0.3em] text-primary">
-          Picked up where you left off
-        </p>
+    <section className="relative border-t border-outline-variant/20 py-16 md:py-24">
+      <SectionBackdrop name="backdrop-recent" />
+      <div className="relative mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
+        <SectionMark label="Picked up where you left off" />
         <h2 className="mt-3 font-display-md text-2xl tracking-[-0.01em] md:text-4xl">
           Recently Viewed
         </h2>

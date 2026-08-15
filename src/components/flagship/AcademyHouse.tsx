@@ -12,10 +12,11 @@ import {
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { scene, type SceneName } from "@/lib/media";
 import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 import { whatsappLink } from "@/lib/site";
 
 /**
- * The Academy, rebuilt as a chapter sequence in the house's own language.
+ * The Academy, rebuilt as a chapter sequence in ByChi Strands' own language.
  *
  * What it replaced: a hero, a three-column ethos strip, and a 2×2 grid of
  * four 500px cards captioned MODULE 01–04 — the exact "collection of generic
@@ -28,14 +29,14 @@ import { whatsappLink } from "@/lib/site";
  * reading order is the same; nothing is behind a hover.
  *
  * NOTHING HERE IS INVENTED. There is no cohort size, no start date, no
- * duration, no price, no graduate count, no testimonial. The house takes no
+ * duration, no price, no graduate count, no testimonial. ByChi Strands takes no
  * payment through this page and states none. The four modules are the four
  * the masterclass already advertised; the certificate is the one in the
  * photograph; the mentorship session is the one bookable on WhatsApp today.
  *
  * Palette: the literal hex the flagship homepage uses (#0b0907 ground,
  * #c8a45d gold, #f5f0e8 cream), not the theme tokens, so the chapter numbers
- * and type scale read continuously with the rest of the house.
+ * and type scale read continuously with the rest of the site.
  */
 
 const GOLD = "#c8a45d";
@@ -52,7 +53,7 @@ const MODULES: Module[] = [
   {
     n: "01",
     title: "Sourcing",
-    copy: "How the house sources raw hair — finding and vetting a supplier, what to ask before you pay anyone, and planning a first order you can afford to be wrong about.",
+    copy: "How ByChi Strands sources raw hair — finding and vetting a supplier, what to ask before you pay anyone, and planning a first order you can afford to be wrong about.",
     frame: "academy-sourcing",
   },
   {
@@ -142,7 +143,7 @@ function AcademyHero() {
             </h1>
             <p className="mt-9 max-w-xl text-sm leading-7 text-white/65 md:text-base">
               The Hair Importation Masterclass — sourcing, grading, scaling
-              and marketing, taught by the house that imports its own hair.
+              and marketing, taught by ByChi Strands, which imports its own hair.
             </p>
           </div>
           <div className="md:col-span-3">
@@ -178,17 +179,15 @@ function AcademyStatement() {
       <SectionBackdrop name="backdrop-academy-premise" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
-          <p className="text-[8px] uppercase tracking-[.5em] text-[#8b6244] md:col-span-2">
-            01 / The Premise
-          </p>
+          <SectionMark label="01 / The Premise" tone="light" className="md:col-span-2" />
           <div className="md:col-span-10">
             <h2 className="font-serif text-[clamp(3.2rem,7.4vw,9rem)] leading-[.75] tracking-[-.065em]">
               We teach the trade
               <br />
               <i>we work in.</i>
             </h2>
-            <p className="mt-10 max-w-2xl text-sm leading-7 text-[#0b0907]/60 md:text-base">
-              ByChiStrands imports its own raw hair, builds its own units and sells
+            <p className="mt-10 max-w-2xl text-sm leading-7 text-[#0b0907]/75 md:text-base">
+              ByChi Strands imports its own raw hair, builds its own units and sells
               them from its own store. The masterclass is that same route, taught by
               the people who walk it — not a syllabus assembled from someone else&apos;s
               supply chain.
@@ -212,7 +211,7 @@ function AcademyStatement() {
               className="border-b border-[#0b0907]/15 p-5 last:border-0 md:border-b-0 md:border-r md:p-9 md:last:border-r-0"
             >
               <h3 className="font-serif text-2xl md:text-3xl">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-[#0b0907]/55 md:mt-4 md:leading-7">{copy}</p>
+              <p className="mt-2 text-sm leading-6 text-[#0b0907]/75 md:mt-4 md:leading-7">{copy}</p>
             </div>
           ))}
         </div>
@@ -235,9 +234,7 @@ function AcademyCurriculum() {
       <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-10 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-              02 / The Curriculum
-            </p>
+            <SectionMark label="02 / The Curriculum" className="mb-4" />
             <h2 className="font-serif text-[clamp(3.2rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
               Four modules.
               <br />
@@ -385,9 +382,7 @@ function AcademyClassroom() {
       <SectionBackdrop name="backdrop-academy-room" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="mb-10 md:mb-16">
-          <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
-            03 / The Classroom
-          </p>
+          <SectionMark label="03 / The Classroom" className="mb-4" />
           <h2 className="font-serif text-[clamp(3.2rem,7vw,8rem)] leading-[.74] tracking-[-.06em]">
             It ends with
             <br />
@@ -418,7 +413,7 @@ function AcademyClassroom() {
             </div>
             <figcaption className="mt-4 max-w-lg text-sm leading-7 text-white/55">
               A masterclass graduate receiving her certificate of attendance,
-              presented in person by the ByChiStrands team.
+              presented in person by the ByChi Strands team.
             </figcaption>
           </figure>
 
@@ -436,7 +431,7 @@ function AcademyClassroom() {
 
             <a
               href={whatsappLink(
-                "Hi ByChiStrands — I'd like to book a mentorship session."
+                "Hi ByChi Strands — I'd like to book a mentorship session."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -457,19 +452,19 @@ function AcademyClassroom() {
 function AcademyAudience() {
   return (
     <section className="relative bg-[#f5f0e8] px-6 py-24 text-[#0b0907] md:px-10 md:py-36">
-      <SectionBackdrop name="backdrop-voices" tone="light" />
+      {/* Was backdrop-voices, which the homepage also draws — the same frame
+          was arriving on two pages. This one is the Academy's alone. */}
+      <SectionBackdrop name="ground-academy-apply" tone="light" />
       <div className="relative mx-auto max-w-[1760px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
-          <p className="text-[8px] uppercase tracking-[.5em] text-[#8b6244] md:col-span-2">
-            04 / The Room
-          </p>
+          <SectionMark label="04 / The Room" tone="light" className="md:col-span-2" />
           <div className="md:col-span-10">
             <h2 className="font-serif text-[clamp(3.2rem,7.4vw,9rem)] leading-[.75] tracking-[-.065em]">
               Built for people
               <br />
               <i>who intend to sell.</i>
             </h2>
-            <p className="mt-10 max-w-2xl text-sm leading-7 text-[#0b0907]/60 md:text-base">
+            <p className="mt-10 max-w-2xl text-sm leading-7 text-[#0b0907]/75 md:text-base">
               Stylists adding stock, salon owners tired of middlemen, and anyone
               starting a hair business who would rather buy their first shipment with
               their eyes open. Bring the questions you have been unable to get a

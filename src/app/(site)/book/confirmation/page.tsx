@@ -13,7 +13,7 @@ import { Icon } from "@/components/ui/icon";
  * There's no booking database or payment flow wired up (see BookingForm),
  * so the honest state after a WhatsApp request is "sent, pending our
  * reply" — not "secured". This reads the real selections passed from
- * /book and reflects real ByChiStrands contact details instead.
+ * /book and reflects real ByChi Strands contact details instead.
  */
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default async function BookingConfirmationPage({
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
             "BEGIN:VEVENT",
-            `SUMMARY:${service.name} — ByChiStrands`,
+            `SUMMARY:${service.name} — ByChi Strands`,
             `DTSTART:${icsStart}`,
             `DESCRIPTION:Requested via bychistrands.com. Pending confirmation from the atelier.`,
             `LOCATION:${site.address}`,
@@ -159,10 +159,10 @@ export default async function BookingConfirmationPage({
               <a
                 href={whatsappLink(
                   service
-                    ? `Hi ByChiStrands — following up on my ${service.name} request${
+                    ? `Hi ByChi Strands — following up on my ${service.name} request${
                         formattedDate ? ` for ${formattedDate}` : ""
                       }${time ? ` at ${time}` : ""}.`
-                    : "Hi ByChiStrands — I'd like to book an appointment."
+                    : "Hi ByChi Strands — I'd like to book an appointment."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

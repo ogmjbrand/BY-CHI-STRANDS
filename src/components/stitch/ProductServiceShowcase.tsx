@@ -1,7 +1,7 @@
 import { DynamicFrameLayout } from "@/components/ui/dynamic-frame-layout";
 
 /**
- * Real ByChiStrands footage only — no Luma/stock demo clips. Six items are
+ * Real ByChi Strands footage only — no Luma/stock demo clips. Six items are
  * bestselling product footage (matched the same way src/lib/media.ts assigns
  * clips: by viewing the texture/colour, not by index) and three are genuine
  * service footage — a client wearing a finished frontal install, and the

@@ -4,6 +4,8 @@ import { testimonials } from "@/lib/testimonials";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { GalleryMasonry } from "@/components/stitch/GalleryMasonry";
 import { Icon } from "@/components/ui/icon";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 /**
  * BY CHI STRANDS — Gallery. Every clip here is the house's own client
@@ -27,7 +29,7 @@ export default function GalleryPage() {
         {/* Editorial Header */}
         <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 reveal-on-scroll">
           <div className="max-w-4xl">
-            <p className="font-label-caps text-label-caps text-primary mb-4 tracking-[0.15em]">Client Footage</p>
+            <SectionMark label="Client Footage" className="mb-4" />
             {" "}
             <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 tracking-[-0.02em]">Gallery</h1>
             {" "}
@@ -63,14 +65,16 @@ export default function GalleryPage() {
           </div>
         </section>
         {/* The wall — see GalleryMasonry for why this is columns, not a grid. */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
+        <section className="relative isolate max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
+          <SectionBackdrop name="ground-gallery" behind />
+          <SectionMark label="The Wall" className="mb-8" />
           <GalleryMasonry />
         </section>
         {/* Academy teaser — real copy, mirrors the Academy page's own hero */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding">
           <div className="bg-surface-container-low p-12 flex flex-col md:flex-row md:items-center gap-10 rounded-lg border border-outline-variant/10">
             <div className="flex-1">
-              <span className="font-label-caps text-primary mb-4 block">The Academy</span>
+              <SectionMark label="The Academy" className="mb-4" />
               <h3 className="font-display-md text-3xl md:text-4xl mb-6 leading-tight">
                 The Art of the Source: 
               </h3>
@@ -89,13 +93,15 @@ export default function GalleryPage() {
           </div>
         </section>
         {/* CTA Section */}
-        <section className="bg-surface-container-lowest py-section-padding border-t border-outline-variant/30 reveal-on-scroll">
+        <section className="relative isolate bg-surface-container-lowest py-section-padding border-t border-outline-variant/30 reveal-on-scroll">
+          <SectionBackdrop name="ground-gallery-invite" behind />
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
             <div className="max-w-2xl mx-auto">
+              <SectionMark label="Your Turn" align="center" className="mb-6" />
               <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">Share Your Install</h2>
               {" "}
               <p className="font-body-xl text-on-surface-variant mb-12">
-                Wearing a ByChiStrands piece? Send us your footage and we may feature it here.
+                Wearing a ByChi Strands piece? Send us your footage and we may feature it here.
               </p>
               {" "}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

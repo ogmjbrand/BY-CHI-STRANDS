@@ -53,7 +53,7 @@ export default function AcademyMentorshipPage() {
 
           <div className="text-center">
             <a
-              href={whatsappLink("Hi ByChiStrands — I'd like to book a mentorship session.")}
+              href={whatsappLink("Hi ByChi Strands — I'd like to book a mentorship session.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-12 py-5 bg-on-surface text-surface font-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase"

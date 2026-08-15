@@ -10,7 +10,7 @@ const channels = [
     label: "WhatsApp",
     detail: "Fastest reply — usually within the hour during atelier hours.",
     action: "Message on WhatsApp",
-    href: whatsappLink("Hi ByChiStrands — I have a question."),
+    href: whatsappLink("Hi ByChi Strands — I have a question."),
     external: true,
   },
   {
@@ -38,6 +38,7 @@ const socials = [
 export default function ContactPage() {
   return (
     <StitchPageShell
+      ground="ground-contact"
       eyebrow={"Concierge"}
       title={"Contact Us"}
       lede={"Reach the atelier for private consultations, order support and wholesale enquiries."}

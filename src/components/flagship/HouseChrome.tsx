@@ -144,7 +144,7 @@ const FOOTER_COLUMNS: Array<{ heading: string; links: Array<{ label: string; hre
     ],
   },
   {
-    heading: "The House",
+    heading: "ByChi Strands",
     links: [
       { label: "About", href: "/about" },
       { label: "Services", href: "/services" },
@@ -172,7 +172,7 @@ export function HouseFooter() {
             ByChi Strands
           </p>
           <p className="mt-5 max-w-sm text-sm leading-7">
-            The House of luxury hair. Raw hair, sourced, built and
+            ByChi Strands. Luxury raw hair, sourced, built and
             finished in Lagos.
           </p>
           <div className="mt-8 max-w-sm">

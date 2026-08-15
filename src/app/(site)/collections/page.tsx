@@ -9,6 +9,8 @@ import { formatPrice } from "@/lib/utils";
 import { priceFrom } from "@/lib/products";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { Icon } from "@/components/ui/icon";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_the_boutique
@@ -49,7 +51,8 @@ export default function TheBoutiquePage() {
       </header>
       <BoutiqueGrid collectionLinks={collections} />
       {/* Artisan Curation Section */}
-      <section className="bg-surface-container-low py-section-padding">
+      <section className="relative isolate bg-surface-container-low py-section-padding">
+        <SectionBackdrop name="ground-collections-story" behind />
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
             <div className="relative order-2 lg:order-1">
@@ -71,7 +74,7 @@ export default function TheBoutiquePage() {
             </div>
             {" "}
             <div className="order-1 lg:order-2 space-y-8">
-              <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.2em]">Curated Selection</span>
+              <SectionMark label="Curated Selection" />
               {" "}
               <h2 className="font-display-md text-display-md-mobile md:text-display-md leading-tight md:leading-[1.2] md:tracking-[-0.01em]">
                 House Favourites
@@ -121,11 +124,13 @@ export default function TheBoutiquePage() {
         </div>
       </section>
       {/* The ByChi Standard */}
-      <section className="py-section-padding border-t border-outline-variant/30">
+      <section className="relative isolate py-section-padding border-t border-outline-variant/30">
+        <SectionBackdrop name="ground-collections" behind />
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-20">
+            <SectionMark label="The Standard" align="center" className="mb-6" />
             <h2 className="font-display-md text-display-md-mobile md:text-display-md mb-4 md:tracking-[-0.01em]">
-              The ByChi Standard
+              The ByChi Strands Standard
             </h2>
             {" "}
             <div className="w-20 h-px bg-primary mx-auto"></div>

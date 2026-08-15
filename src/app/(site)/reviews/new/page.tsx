@@ -90,7 +90,7 @@ function ReviewFormContent() {
         <p className="font-body-md text-on-surface-variant max-w-xl mx-auto">
           {product
             ? `Tell us about your ${product.name}.`
-            : "Tell us about your experience with ByChiStrands."}
+            : "Tell us about your experience with ByChi Strands."}
         </p>
       </header>
 

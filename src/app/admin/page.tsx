@@ -12,7 +12,7 @@ export default function AdminDashboard() {
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="eyebrow text-[0.55rem] text-gold-deep">
-            The House ·{" "}
+            ByChi Strands ·{" "}
             {new Date().toLocaleDateString("en-NG", { month: "long", year: "numeric" })}
           </p>
           <h1 className="mt-3 font-serif text-4xl">Good morning, Chi.</h1>

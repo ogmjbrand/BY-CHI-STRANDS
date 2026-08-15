@@ -31,7 +31,7 @@ export function AcademyCinematic() {
             className="mb-12 max-w-lg font-body-xl text-lg text-white/70"
           >
             Training in importation, quality assessment and business scaling for luxury hair entrepreneurs —
-            taught by the house that imports its own.
+            taught by ByChi Strands, which imports its own.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -68,7 +68,7 @@ export function AcademyCinematic() {
           className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-[0_25px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl"
         >
           {/*
-           * A real Academy graduate with her certificate, from the house's
+           * A real Academy graduate with her certificate, from ByChi Strands'
            * own media. The card described the training in words alone; the
            * photograph is the evidence that the training happens.
            */}
@@ -76,7 +76,7 @@ export function AcademyCinematic() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/media/academy/mentorship-masterclass.jpg"
-              alt="An Academy graduate holding her ByChiStrands certificate of attendance"
+              alt="An Academy graduate holding her ByChi Strands certificate of attendance"
               loading="lazy"
               className="h-full w-full object-cover object-[center_30%]"
             />
@@ -85,7 +85,7 @@ export function AcademyCinematic() {
           <div className="p-8">
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-white/60">
             <GraduationCap className="h-4 w-4 text-primary" />
-            The educational arm of the house
+            The educational arm of ByChi Strands
           </div>
           <div className="mt-8 space-y-4">
             <div className="rounded-2xl border border-white/10 bg-black/20 p-5">

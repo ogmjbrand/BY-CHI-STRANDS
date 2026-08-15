@@ -14,7 +14,7 @@ const carouselTestimonials = testimonials.map((t, index) => ({
   // what the clip actually shows rather than repeating a generic
   // placeholder name across every other card.
   name: index === 0 ? "Princess" : t.context,
-  designation: index === 0 ? t.context : "ByChiStrands Client",
+  designation: index === 0 ? t.context : "ByChi Strands Client",
   src: t.clip.poster ?? t.clip.src,
 }));
 

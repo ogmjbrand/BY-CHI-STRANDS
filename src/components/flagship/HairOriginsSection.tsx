@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 /**
  * The provenance chapter — the part of the story that actually justifies the
- * price. Every claim here is drawn from the house's own published answers in
+ * price. Every claim here is drawn from ByChi Strands' own published answers in
  * lib/faqs.ts (raw grade, single-braid cut, steam-set texture, low-porosity
  * cuticle) rather than invented luxury adjectives: specifics are what separate
  * a real atelier from a dropshipper, so the copy leans on facts, not mood.
@@ -72,7 +72,7 @@ export function HairOriginsSection() {
                 href="/about"
                 className="inline-flex items-center gap-3 rounded-full bg-gold px-5 py-3 font-label-caps text-[11px] uppercase tracking-[0.25em] text-noir transition-all duration-300 hover:-translate-y-[1px] hover:bg-gold-light"
               >
-                The house standard
+                The ByChi Strands standard
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

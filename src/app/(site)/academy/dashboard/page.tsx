@@ -141,7 +141,7 @@ export default function StudentDashboardPage() {
             Questions about your course, materials, or your next session?
           </p>
           <a
-            href={whatsappLink("Hi ByChiStrands Academy — I have a question about my enrollment.")}
+            href={whatsappLink("Hi ByChi Strands Academy — I have a question about my enrollment.")}
             target="_blank"
             rel="noopener noreferrer"
             className="font-label-caps text-primary tracking-widest uppercase hover:opacity-80 transition-opacity"

@@ -68,7 +68,7 @@ export function ProductConfigurator({
   const saved = hydrated && wishlist.includes(product.slug);
 
   const enquiry = whatsappLink(
-    `Hi ByChiStrands — I'd like a price for the ${product.name}, ${length}" ${lace}.`
+    `Hi ByChi Strands — I'd like a price for the ${product.name}, ${length}" ${lace}.`
   );
 
   const add = () => {
