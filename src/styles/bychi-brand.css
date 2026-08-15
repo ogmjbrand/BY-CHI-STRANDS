@@ -92,9 +92,9 @@ header a[href="/"]::after { content: none !important; }
 }
 
 /* Never surface origin-led wording in the redesigned presentation. */
-[class*="Vietnam"],
-[data-origin*="Vietnam"],
-[data-country*="Vietnam"] {
+[class*=""],
+[data-origin*=""],
+[data-country*=""] {
   /* Intentionally left available for non-brand catalog logic; visible
      presentation is sanitized by the product/content layer. */
 }

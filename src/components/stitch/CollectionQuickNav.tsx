@@ -11,10 +11,10 @@ const TILES = [
     return {
       label: c.name,
       href: `/collections/${c.slug}`,
-      poster: firstProduct ? posterFor(firstProduct.slug) : posterFor("sdd-vietnam-bone-straight"),
+      poster: firstProduct ? posterFor(firstProduct.slug) : posterFor("sdd-bone-straight"),
     };
   }),
-  { label: "Shop All", href: "/shop", poster: posterFor("sdd-vietnam-bone-straight") },
+  { label: "Shop All", href: "/shop", poster: posterFor("sdd-bone-straight") },
 ];
 
 const container = {

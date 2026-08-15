@@ -9,7 +9,6 @@ import {
   lengthsOf,
   TEXTURES,
   TONES,
-  ORIGINS,
   type Texture,
   type Tone,
   type Product,
@@ -224,7 +223,7 @@ export function HairFinder() {
                         {p.name}
                       </h3>
                       <p className="font-body-sm text-white/50 mb-2">
-                        {ORIGINS[p.origin]} · {TEXTURES[p.texture]} · {TONES[p.tone].label}
+                        {""} · {TEXTURES[p.texture]} · {TONES[p.tone].label}
                       </p>
                       <p className="font-body-md text-gold">
                         {priceFrom(p) === null

@@ -88,7 +88,7 @@ export function EnrollmentConfirmation({
             }}
           >
             <p style={{ margin: "0 0 10px 0" }}>© 2026 BY CHI STRANDS. All rights reserved.</p>
-            <p style={{ margin: "0" }}>Luxury Vietnamese Hair. Crafted for Confidence.</p>
+            <p style={{ margin: "0" }}>Luxury ese Hair. Crafted for Confidence.</p>
           </div>
         </div>
       </body>

@@ -72,7 +72,7 @@ export default function GalleryPage() {
             <div className="flex-1">
               <span className="font-label-caps text-primary mb-4 block">The Academy</span>
               <h3 className="font-display-md text-3xl md:text-4xl mb-6 leading-tight">
-                The Art of the Source: Vietnam
+                The Art of the Source: 
               </h3>
               <p className="font-body-xl text-on-surface-variant max-w-xl">
                 A hands-on masterclass for entrepreneurs who want to import, grade and build a

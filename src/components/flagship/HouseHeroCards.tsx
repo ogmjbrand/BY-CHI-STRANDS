@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Pause, Play } from "lucide-react";
 import { collections, collectionProducts } from "@/lib/collections";
 import { heroFor, posterFor } from "@/lib/media";
+import { DrawnStrand, StrandBadges } from "./DrawnStrand";
 
 /**
  * The hero, as a timed card opening.
@@ -153,8 +154,13 @@ export function HouseHeroCards() {
 
       {/* The page's actual heading: fixed, accurate, and not on a timer. */}
       <h1 className="sr-only">
-        ByChi Strands — luxury raw Vietnamese hair, sourced and finished in Lagos
+        ByChi Strands — luxury raw hair, sourced and finished in Lagos
       </h1>
+
+      {/* The strand, drawn on. Behind the copy, over the image — see
+          DrawnStrand for why it is split in two. Phone only: adding a
+          graphic to the desktop hero is a change nobody asked for. */}
+      <DrawnStrand layer="behind" className="z-[1] md:hidden" delay={0.45} />
 
       <div aria-hidden="true" className="absolute inset-0 bg-black/30 md:bg-black/35" />
       {/*
@@ -167,6 +173,8 @@ export function HouseHeroCards() {
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/25 md:via-black/20 md:to-black/45"
       />
+
+      <DrawnStrand layer="front" className="z-20 md:hidden" delay={0.95} />
 
       <div className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-end px-6 pb-8 pt-12 md:min-h-[calc(100svh-5rem)] md:px-10 md:pb-10 md:pt-16 lg:px-16">
         <div className="mx-auto grid w-full max-w-[1760px] gap-7 lg:grid-cols-12 lg:items-end lg:gap-10">
@@ -184,6 +192,16 @@ export function HouseHeroCards() {
                   <span aria-hidden="true" className="h-px w-8 bg-[#c8a45d]" />
                   The House of ByChi · Lagos
                 </p>
+
+                {/* Editorial seals. Small against a large frame on purpose.
+                    Every line is true of every piece in the catalogue —
+                    raw hair, hand-tied construction, Lagos finishing — so
+                    none of it is decorative copy. */}
+                <StrandBadges
+                  items={["Raw hair", "Hand-tied", "Finished in Lagos"]}
+                  className="mb-5 md:hidden"
+                  delay={1.0}
+                />
                 {/*
                   h2, not h1. The page's own heading must not change every
                   six seconds — a screen-reader user landing here and asking

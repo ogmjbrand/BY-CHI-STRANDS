@@ -56,7 +56,7 @@ export default function SignatureServices1Page() {
             <div className="absolute -bottom-8 -left-8 glass-card text-on-surface p-6 rounded-lg shadow-2xl max-w-[240px] hidden lg:block">
               <p className="font-label-caps text-primary text-[10px] mb-2">Signature Finish</p>
               {" "}
-              <p className="font-headline-lg text-[18px] mb-2 leading-tight">Vietnamese Raw Hair Specialists</p>
+              <p className="font-headline-lg text-[18px] mb-2 leading-tight">ese Raw Hair Specialists</p>
               {" "}
               <div className="flex gap-1">
                 <Icon name="star" className="text-primary text-sm" filled />
@@ -301,7 +301,7 @@ export default function SignatureServices1Page() {
                       <h3 className="font-headline-lg text-body-md font-bold uppercase mb-1">Authenticity Guaranteed</h3>
                       {" "}
                       <p className="font-body-sm text-on-surface-variant">
-                        We only work with premium Vietnamese raw hair and professional-grade products.
+                        We only work with premium ese raw hair and professional-grade products.
                       </p>
                     </div>
                   </div>

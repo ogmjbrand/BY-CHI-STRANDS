@@ -172,7 +172,7 @@ export function HouseFooter() {
             ByChi Strands
           </p>
           <p className="mt-5 max-w-sm text-sm leading-7">
-            The House of luxury hair. Raw Vietnamese hair, sourced, built and
+            The House of luxury hair. Raw hair, sourced, built and
             finished in Lagos.
           </p>
           <div className="mt-8 max-w-sm">

@@ -12,22 +12,22 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    slug: "why-raw-vietnamese-hair",
-    title: "Why the World's Best Hair Comes From Vietnam",
+    slug: "why-raw-raw-hair",
+    title: "Why the World's Best Hair Comes From ",
     category: "The Business",
     excerpt:
-      "Diet, water, genetics and a culture of long hair — the quiet reasons Vietnamese hair outperforms every other origin we have tested.",
+      "Diet, water, genetics and a culture of long hair — the quiet reasons raw hair outperforms every other origin we have tested.",
     date: "2026-06-12",
     readTime: "6 min read",
     tone: "noir",
     image: "/products/IMG-20260727-WA0045.jpg",
     body: [
       {
-        text: "Every importer has an origin story they tell. Ours began with a test: we bought hair from six countries, washed each bundle forty times, coloured half of them to level 9, and wore the rest daily for a year. The Vietnamese bundles were the only ones that finished the experiment looking substantially the way they started.",
+        text: "Every importer has an origin story they tell. Ours began with a test: we bought hair from six countries, washed each bundle forty times, coloured half of them to level 9, and wore the rest daily for a year. The ese bundles were the only ones that finished the experiment looking substantially the way they started.",
       },
       {
         heading: "The strand itself is different",
-        text: "Vietnamese hair strands are naturally thick-cuticled and low-porosity. In practice this means the hair resists water damage, holds colour pigment longer, and keeps its shine without silicone coatings. Where thinner-cuticled hair drinks in humidity and frizzes, Vietnamese hair simply sheds it.",
+        text: "raw hair strands are naturally thick-cuticled and low-porosity. In practice this means the hair resists water damage, holds colour pigment longer, and keeps its shine without silicone coatings. Where thinner-cuticled hair drinks in humidity and frizzes, raw hair simply sheds it.",
       },
       {
         heading: "Culture does the conditioning",
@@ -35,7 +35,7 @@ export const articles: Article[] = [
       },
       {
         heading: "What this means for you",
-        text: "A raw Vietnamese bundle is an asset, not a consumable. Cared for properly, it outlives five replacement cycles of processed hair — which is why our clients think of their collection the way they think of jewellery: bought once, worn for years, and worth every naira.",
+        text: "A raw ese bundle is an asset, not a consumable. Cared for properly, it outlives five replacement cycles of processed hair — which is why our clients think of their collection the way they think of jewellery: bought once, worn for years, and worth every naira.",
       },
     ],
   },
@@ -187,7 +187,7 @@ export const articles: Article[] = [
       },
       {
         heading: "The raw alternative",
-        text: "A raw Vietnamese unit at $500, laundered seasonally and revamped yearly, wears beautifully for five years or more. That is under $150 a year including care — with the first-week finish available on demand, indefinitely.",
+        text: "A raw ese unit at $500, laundered seasonally and revamped yearly, wears beautifully for five years or more. That is under $150 a year including care — with the first-week finish available on demand, indefinitely.",
       },
       {
         heading: "Luxury is the honest price",

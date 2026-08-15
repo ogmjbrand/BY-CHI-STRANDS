@@ -27,7 +27,7 @@ export function HomeLifestyle() {
           It&apos;s A Lifestyle.
         </h2>
         <p className="font-body-xl text-body-md md:text-body-xl text-white/70 mb-10 max-w-lg">
-          ByChiStrands imports, crafts and cares for authentic Vietnamese
+          ByChiStrands imports, crafts and cares for authentic ese
           human hair — raw bundles, single-donor collections, luxury wigs,
           closures and frontals — alongside atelier services and
           importation education.

@@ -131,7 +131,7 @@ export function HouseCraft() {
               </p>
               <div className="relative">
                 <h3 className="font-serif text-lg leading-tight md:text-[1.75rem]">{s.name}</h3>
-                <p className="mt-2 hidden text-sm leading-6 text-white/55 sm:block md:mt-3">{s.short}</p>
+                <p className="mt-2 text-[11px] leading-4 text-white/55 md:mt-3 md:text-sm md:leading-6">{s.short}</p>
                 <span className="mt-3 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-white/40 md:mt-5">
                   Details
                   <ArrowRight size={12} className="text-[#c8a45d] transition group-hover:translate-x-1" />
@@ -155,7 +155,7 @@ export function HouseCraft() {
               <h3 className="font-serif text-lg leading-tight md:text-[1.75rem]">
                 Everything else
               </h3>
-              <p className="mt-2 hidden text-sm leading-6 text-white/55 sm:block md:mt-3">
+              <p className="mt-2 text-[11px] leading-4 text-white/55 md:mt-3 md:text-sm md:leading-6">
                 Consultations, home service and the full price list.
               </p>
               <span className="mt-3 inline-flex items-center gap-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d] md:mt-5">

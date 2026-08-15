@@ -7,8 +7,8 @@ import { SiteHeader } from "@/components/stitch/SiteHeader";
 import { site, whatsappLink } from "@/lib/site";
 import { useToast } from "@/components/stitch/Toast";
 
-const COURSE_ID = "vietnam-hair-importation-masterclass";
-const COURSE_NAME = "Vietnam Hair Importation Masterclass";
+const COURSE_ID = "hair-importation-masterclass";
+const COURSE_NAME = "Hair Importation Masterclass";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_academy_enrollment

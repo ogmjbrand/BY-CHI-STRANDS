@@ -19,11 +19,12 @@ export type Tone =
   | "honey"
   | "rose";
 
-export const ORIGINS: Record<Origin, string> = {
-  vietnam: "Vietnam",
-  china: "China",
-  mexico: "Mexico",
-};
+/*
+ * Origin is still recorded against each piece — it is a true attribute of the
+ * stock and the house sorts by it internally — but it is no longer surfaced
+ * anywhere a visitor reads, and there is no longer a label map, because the
+ * only thing a label map was for was printing the country name on the page.
+ */
 
 export const TONES: Record<Tone, { label: string; swatch: string }> = {
   noir: { label: "Natural Black", swatch: "#1c1714" },
@@ -117,10 +118,10 @@ const CURL_CARE = [
 
 export const products: Product[] = [
   {
-    slug: "sdd-vietnam-bone-straight",
-    name: "SDD Vietnam Bone Straight",
+    slug: "sdd-bone-straight",
+    name: "SDD Bone Straight",
     category: "wigs",
-    collection: "vietnam-bone-straight",
+    collection: "bone-straight",
     origin: "vietnam",
     texture: "bone-straight",
     tone: "noir",
@@ -133,14 +134,14 @@ export const products: Product[] = [
       { length: 16, lace: "5x5 Closure", price: null },
     ],
     badges: ["bestseller"],
-    short: "The house staple — Super Double Drawn Vietnamese hair, flat as glass root to tip.",
-    description: "Super Double Drawn means the short strands are pulled out by hand until the bundle is as thick at the ends as it is at the root. That is why this unit keeps a blunt, heavy hemline instead of thinning into wisps, and why it still hangs full after a year of wear. Imported directly from our Vietnam supplier and built onto closure lace in the atelier.",
-    details: ["Super Double Drawn Vietnamese human hair", "Full from root to tip — no tapering at the ends", "Choice of 2x4, 2x6 or 5x5 closure", "12\" is a 200-gram build for extra density", "Can be washed, straightened and coloured by a professional"],
+    short: "The house staple — Super Double Drawn raw hair, flat as glass root to tip.",
+    description: "Super Double Drawn means the short strands are pulled out by hand until the bundle is as thick at the ends as it is at the root. That is why this unit keeps a blunt, heavy hemline instead of thinning into wisps, and why it still hangs full after a year of wear. Imported directly from source and built onto closure lace in the atelier.",
+    details: ["Super Double Drawn human hair", "Full from root to tip — no tapering at the ends", "Choice of 2x4, 2x6 or 5x5 closure", "12\" is a 200-gram build for extra density", "Can be washed, straightened and coloured by a professional"],
     care: WIG_CARE,
   },
   {
-    slug: "sdd-vietnam-bone-straight-wine",
-    name: "SDD Vietnam Bone Straight — Wine & Dark Root",
+    slug: "sdd-bone-straight-wine",
+    name: "SDD Bone Straight — Wine & Dark Root",
     category: "wigs",
     collection: "colour-editions",
     origin: "vietnam",
@@ -151,12 +152,12 @@ export const products: Product[] = [
     badges: ["new"],
     short: "Deep wine through the lengths, shadowed at the root so the colour reads grown-in.",
     description: "The same Super Double Drawn bone straight base, coloured wine and left dark at the root. The shadowed root is what makes it convincing: no hard line at the parting, no flat block of dye — just depth that catches light the way lived-in colour does.",
-    details: ["Super Double Drawn Vietnamese human hair", "Wine lengths with a deliberate dark root", "2x6 closure for a deep, versatile parting", "Coloured on raw hair; the cuticle stays sealed", "Re-tonable in our atelier as it softens"],
+    details: ["Super Double Drawn human hair", "Wine lengths with a deliberate dark root", "2x6 closure for a deep, versatile parting", "Coloured on raw hair; the cuticle stays sealed", "Re-tonable in our atelier as it softens"],
     care: WIG_CARE,
   },
   {
-    slug: "sdd-china-pixie-curls-burgundy",
-    name: "SDD China Pixie Curls — Burgundy",
+    slug: "sdd-pixie-curls-burgundy",
+    name: "SDD Pixie Curls — Burgundy",
     category: "wigs",
     collection: "pixie-collection",
     origin: "china",
@@ -166,12 +167,12 @@ export const products: Product[] = [
     variants: [{ length: 16, lace: "Factory 5x5 Closure", price: null }],
     short: "Tight, springy pixie curls in burgundy on a factory-finished 5x5 closure.",
     description: "Pixie curls hold their coil without setting, which makes this the lowest-effort unit we sell: shake it out and go. The burgundy is factory-applied to the curl before construction, so the colour sits evenly through every coil rather than pooling at the ends.",
-    details: ["Super Double Drawn pixie curl hair, China origin", "Factory 5x5 closure, ready to install", "Burgundy applied before construction for even coverage", "Wash-and-go: the curl returns with water", "Never brush dry — finger-style only"],
+    details: ["Super Double Drawn pixie curl hair", "Factory 5x5 closure, ready to install", "Burgundy applied before construction for even coverage", "Wash-and-go: the curl returns with water", "Never brush dry — finger-style only"],
     care: CURL_CARE,
   },
   {
-    slug: "luxury-mexican-sdd-pixie",
-    name: "Luxury Mexican Super Double Drawn Pixie",
+    slug: "luxury-sdd-pixie",
+    name: "Luxury Super Double Drawn Pixie",
     category: "wigs",
     collection: "pixie-collection",
     origin: "mexico",
@@ -181,8 +182,8 @@ export const products: Product[] = [
     variants: [{ length: 26, lace: "5x5 Closure", grams: 200, price: 575_000 }],
     badges: ["limited"],
     short: "The original SDD pixie — the best grade available, and the one everything else imitates.",
-    description: "This is the piece we hold up as the ceiling of the category. Mexican Super Double Drawn pixie is the original grade: every strand runs the full length, so a 26-inch unit still carries 200 grams of density at the hemline instead of thinning to a point. Nothing else in the shop hangs like it.",
-    details: ["Original Mexican Super Double Drawn pixie — best available grade", "26 inches at a full 200 grams", "5x5 closure, atelier-finished", "Curl holds without product or setting", "Limited allocation per import cycle"],
+    description: "This is the piece we hold up as the ceiling of the category. Super Double Drawn pixie is the original grade: every strand runs the full length, so a 26-inch unit still carries 200 grams of density at the hemline instead of thinning to a point. Nothing else in the shop hangs like it.",
+    details: ["Original Super Double Drawn pixie — best available grade", "26 inches at a full 200 grams", "5x5 closure, atelier-finished", "Curl holds without product or setting", "Limited allocation per import cycle"],
     care: CURL_CARE,
   },
   {
@@ -212,8 +213,8 @@ export const products: Product[] = [
     sdd: true,
     variants: [{ length: 20, lace: "5x5 Closure", price: null }, { length: 24, lace: "13x4 Frontal", price: null }],
     short: "Molten copper on a bone straight base — the loudest thing in the studio.",
-    description: "Copper is the colour clients photograph most, and it only works on hair that can take a lift without frying. Super Double Drawn Vietnamese hair holds the tone bright at the face and deeper through the lengths, with the flat, liquid hang that made bone straight the house signature.",
-    details: ["Super Double Drawn Vietnamese human hair", "Copper lifted and toned on raw hair", "Closure or frontal construction", "Glass-flat hang with a high shine", "Re-tonable in our atelier"],
+    description: "Copper is the colour clients photograph most, and it only works on hair that can take a lift without frying. Super Double Drawn raw hair holds the tone bright at the face and deeper through the lengths, with the flat, liquid hang that made bone straight the house signature.",
+    details: ["Super Double Drawn human hair", "Copper lifted and toned on raw hair", "Closure or frontal construction", "Glass-flat hang with a high shine", "Re-tonable in our atelier"],
     care: WIG_CARE,
   },
   {
@@ -228,7 +229,7 @@ export const products: Product[] = [
     variants: [{ length: 22, lace: "13x4 Frontal", price: null }],
     short: "Warm honey blonde, lifted slowly so the hair keeps its weight.",
     description: "Blonde is where cheap hair gives itself away — it goes brittle and dull the moment it is lifted. This unit is taken up in stages with bond protection between each, so the finished honey stays soft in the hand and keeps the shine that makes it read as real.",
-    details: ["Super Double Drawn Vietnamese human hair", "Gradual bond-protected lift to honey", "13x4 frontal for full parting freedom", "Soft hand-feel; no brittleness at the ends", "Re-tonable in our atelier"],
+    details: ["Super Double Drawn human hair", "Gradual bond-protected lift to honey", "13x4 frontal for full parting freedom", "Soft hand-feel; no brittleness at the ends", "Re-tonable in our atelier"],
     care: WIG_CARE,
   },
   {
@@ -244,12 +245,12 @@ export const products: Product[] = [
     badges: ["new"],
     short: "Long honey curls with serious volume — colour and curl on one unit.",
     description: "Colouring curls without collapsing the pattern is the hardest work our colourists do. Lifted in stages and dried without heat, this unit keeps every coil intact while carrying a warm honey through the lengths. It arrives full, long and ready to wear.",
-    details: ["Super Double Drawn Vietnamese human hair", "Deep curl pattern preserved through the lift", "13x4 frontal construction", "Diffuse or air-dry; the curl needs no setting", "Re-tonable in our atelier"],
+    details: ["Super Double Drawn human hair", "Deep curl pattern preserved through the lift", "13x4 frontal construction", "Diffuse or air-dry; the curl needs no setting", "Re-tonable in our atelier"],
     care: CURL_CARE,
   },
   {
-    slug: "sdd-china-bold-pixie-curls",
-    name: "SDD China Bold Pixie Curls",
+    slug: "sdd-bold-pixie-curls",
+    name: "SDD Bold Pixie Curls",
     category: "wigs",
     collection: "pixie-collection",
     origin: "china",
@@ -267,7 +268,7 @@ export const products: Product[] = [
     badges: ["new"],
     short: "Bold, springy pixie curls in natural colour with a 5x5 closure and serious volume.",
     description: "A single Bold Pixie Curls collection piece, offered in six lengths. The same 5x5 closure construction and natural colour carry through every option, while the 24-inch build increases to 300 grams for the extra density needed at that length. Select one length to see its exact price and volume.",
-    details: ["Super Double Drawn China human hair", "Bold pixie curl pattern with natural colour", "5x5 closure construction across all lengths", "14–22 inches: 200 grams", "24 inches: 300 grams", "One product video shared across all six length variants"],
+    details: ["Super Double Drawn human hair", "Bold pixie curl pattern with natural colour", "5x5 closure construction across all lengths", "14–22 inches: 200 grams", "24 inches: 300 grams", "One product video shared across all six length variants"],
     care: CURL_CARE,
   },
   {
@@ -283,7 +284,7 @@ export const products: Product[] = [
     badges: ["new"],
     short: "A blunt rose-pink bob on transparent frontal lace. Made to be noticed.",
     description: "Pink is unforgiving: it needs a clean, even lift underneath or it turns muddy. This bob is built on Super Double Drawn hair taken to a true pale base first, so the rose sits clear and bright, then cut blunt at the jaw for a hard, graphic line.",
-    details: ["Super Double Drawn Vietnamese human hair", "Rose tone over an even pre-lift", "13x4 frontal, blunt-cut at the jaw", "Personalised at your install appointment", "Re-tonable as the rose softens"],
+    details: ["Super Double Drawn human hair", "Rose tone over an even pre-lift", "13x4 frontal, blunt-cut at the jaw", "Personalised at your install appointment", "Re-tonable as the rose softens"],
     care: WIG_CARE,
   },
 ];

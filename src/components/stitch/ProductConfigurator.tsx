@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useStore } from "@/context/StoreContext";
 import { useCartUi } from "./CartDrawer";
@@ -42,9 +42,23 @@ export function ProductConfigurator({
     if (!laces.includes(lace)) setLace(laces[0]);
   }, [laces, lace]);
 
+  /*
+   * Gated on `hydrated`, and this is a real bug rather than caution.
+   *
+   * The store loads recentlyViewed from localStorage in its own mount
+   * effect. This effect used to run first, prepend the current piece, and
+   * then be overwritten wholesale when hydration landed — so the stored list
+   * only ever contained the very first product a visitor opened, because
+   * that was the one write that happened against empty storage. Every visit
+   * after it was recorded and immediately thrown away.
+   *
+   * Waiting for hydration means the prepend lands on the restored list
+   * instead of racing it.
+   */
   useEffect(() => {
+    if (!hydrated) return;
     trackView(product.slug);
-  }, [product.slug, trackView]);
+  }, [hydrated, product.slug, trackView]);
 
   const total = useMemo(
     () => priceFor(product, length, lace),
@@ -64,6 +78,32 @@ export function ProductConfigurator({
   };
 
   const compact = variant === "mobile";
+
+  /*
+   * The sticky purchase bar, below md only.
+   *
+   * On a phone the buy panel scrolls away and everything after it — details,
+   * care, client clips, related pieces — is read with no way to buy without
+   * scrolling back. The bar carries the live price and the selected length,
+   * so it is never a second button that might disagree with the panel: it is
+   * the same state and the same `add`.
+   *
+   * It appears only once the real CTA has left the viewport, which is why
+   * this is an observer rather than a scroll threshold — the panel's height
+   * varies with the number of lengths a piece comes in.
+   */
+  const ctaRef = useRef<HTMLButtonElement>(null);
+  const [ctaVisible, setCtaVisible] = useState(true);
+
+  useEffect(() => {
+    const el = ctaRef.current;
+    if (!el || !compact) return;
+    const io = new IntersectionObserver(([e]) => setCtaVisible(e.isIntersecting), {
+      rootMargin: "0px 0px -20% 0px",
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [compact]);
 
   return (
     <div className={compact ? "space-y-6" : "space-y-8"}>
@@ -159,6 +199,7 @@ export function ProductConfigurator({
       <div className="pt-4 space-y-4">
         <MagneticButton className="w-full" strength={10}>
           <button
+            ref={ctaRef}
             onClick={add}
             className="w-full bg-primary text-on-primary py-5 font-label-caps tracking-widest text-sm hover:bg-secondary transition-colors duration-500 active:scale-95 flex items-center justify-center gap-3"
           >
@@ -236,6 +277,39 @@ export function ProductConfigurator({
           </div>
         </div>
       </div>
+
+      {/* Sticky purchase bar — phone only, and only once the panel is gone. */}
+      {compact ? (
+        <AnimatePresence>
+          {!ctaVisible ? (
+            <motion.div
+              initial={{ y: "110%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "110%" }}
+              transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-x-0 bottom-[62px] z-30 border-t border-outline-variant/30 bg-surface/95 px-4 py-3 backdrop-blur-xl md:hidden"
+              style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+            >
+              <div className="mx-auto flex max-w-lg items-center gap-3">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant">
+                    {length}&quot; · {lace}
+                  </p>
+                  <p className="mt-0.5 truncate font-body-md text-sm text-on-surface">
+                    {total === null ? "Price on request" : formatPrice(total)}
+                  </p>
+                </div>
+                <button
+                  onClick={add}
+                  className="shrink-0 bg-primary px-6 py-3.5 font-label-caps text-xs uppercase tracking-widest text-on-primary transition-transform active:scale-95"
+                >
+                  {total === null ? "Request" : "Add to bag"}
+                </button>
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      ) : null}
     </div>
   );
 }

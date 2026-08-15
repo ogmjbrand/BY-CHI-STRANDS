@@ -61,7 +61,11 @@ export default function TheBoutiquePage() {
                 src={scene("collections-sourcing").src}
               />
               {" "}
-              <div className="absolute bottom-8 -right-8 bg-surface p-8 max-w-xs shadow-xl hidden md:block">
+              {/* The overlapping caption plate. It was desktop-only because a -32px
+                  right offset would have walked off a phone screen; it now sits
+                  inset on the frame below md and keeps its overhang above it, so
+                  the layered composition survives at every width. */}
+              <div className="absolute bottom-4 right-4 left-4 bg-surface p-5 shadow-xl md:bottom-8 md:-right-8 md:left-auto md:max-w-xs md:p-8">
                 <p className="font-headline-lg text-primary italic">Hand-tied, strand by strand, in our atelier.</p>
               </div>
             </div>
@@ -146,7 +150,7 @@ export default function TheBoutiquePage() {
                 <Icon name="eco" className="text-primary text-3xl" />
               </div>
               {" "}
-              <h3 className="font-headline-lg text-2xl mb-4">Vietnam, China & Mexico</h3>
+              <h3 className="font-headline-lg text-2xl mb-4">Traced to source</h3>
               {" "}
               <p className="font-body-md text-on-surface-variant">
                 Every unit is graded and traced back to one of our three import origins, named on

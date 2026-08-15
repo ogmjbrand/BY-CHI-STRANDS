@@ -18,7 +18,7 @@ import { ArrowRight } from "lucide-react";
 const pillars = [
   {
     title: "Imported directly",
-    body: "Raw Vietnamese hair, bought at source rather than through a middle market.",
+    body: "Raw hair, bought at source rather than through a middle market.",
   },
   {
     title: "Made on the floor",
@@ -73,7 +73,7 @@ export function FounderSection() {
             Founded in Lagos, and still run from the atelier floor.
           </h2>
           <p className="mt-8 max-w-xl text-lg leading-8 text-white/70">
-            ByChi Strands imports raw Vietnamese hair directly, hand-ties every unit in its Lagos
+            ByChi Strands imports raw hair directly, hand-ties every unit in its Lagos
             atelier, and ships worldwide. The work is done in-house — which is why the house can
             say precisely what its hair is, and precisely what it is not.
           </p>

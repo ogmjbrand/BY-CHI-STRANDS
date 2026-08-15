@@ -25,7 +25,7 @@ const chapters = [
   {
     index: "03",
     title: "Thick cuticle, low porosity",
-    body: "Vietnamese hair holds shine without coatings, keeps colour longer, and resists tangling by nature rather than by treatment. The quality is structural, not applied.",
+    body: "raw hair holds shine without coatings, keeps colour longer, and resists tangling by nature rather than by treatment. The quality is structural, not applied.",
   },
   {
     index: "04",
@@ -63,7 +63,7 @@ export function HairOriginsSection() {
               Where the hair comes from is the whole product.
             </h2>
             <p className="mt-8 max-w-md text-lg leading-8 text-white/70">
-              Raw Vietnamese hair, imported directly. The grade is decided long before it reaches
+              Raw hair, imported directly. The grade is decided long before it reaches
               the atelier — which is why we can tell you exactly what it is, and exactly what it is not.
             </p>
 

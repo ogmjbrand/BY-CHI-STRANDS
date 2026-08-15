@@ -18,11 +18,11 @@ const IMAGERY: Record<string, { src: string; alt: string }> = {
     alt: "A frontal installation finished in the Lagos atelier",
   },
   "wig-making": {
-    src: posterFor("sdd-vietnam-bone-straight"),
-    alt: "A Super Double Drawn Vietnamese unit built on closure lace",
+    src: posterFor("sdd-bone-straight"),
+    alt: "A Super Double Drawn ese unit built on closure lace",
   },
   "hair-laundry": {
-    src: posterFor("sdd-vietnam-bone-straight-wine"),
+    src: posterFor("sdd-bone-straight-wine"),
     alt: "A wine and dark-root unit, washed and steam-set",
   },
 };

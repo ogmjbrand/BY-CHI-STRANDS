@@ -13,7 +13,7 @@ export function BrandStoryEditorial() {
       <div className="grid lg:grid-cols-12">
         <div className="relative aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:h-[110vh]">
           <ImageReveal className="h-full w-full">
-            <img src={posterFor("sdd-vietnam-bone-straight")} alt="By Chi Strands hair unit in studio" className="h-full w-full object-cover grayscale-[12%] transition-transform duration-[2s] hover:scale-[1.025]" />
+            <img src={posterFor("sdd-bone-straight")} alt="By Chi Strands hair unit in studio" className="h-full w-full object-cover grayscale-[12%] transition-transform duration-[2s] hover:scale-[1.025]" />
           </ImageReveal>
           <div className="absolute bottom-6 left-6 flex items-center gap-3 text-white md:bottom-10 md:left-10">
             <span className="h-px w-10 bg-gold" />
@@ -29,7 +29,7 @@ export function BrandStoryEditorial() {
             One donor.<br />One strand.<br /><span className="text-on-surface/40">One promise.</span>
           </motion.h2>
           <motion.p variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ delay: 0.16 }} className="mt-10 max-w-md text-base leading-8 text-on-surface-variant md:text-lg">
-            From carefully selected Vietnamese hair to the finished piece, every decision is made for a softer, more natural and more considered result.
+            From carefully selected raw hair to the finished piece, every decision is made for a softer, more natural and more considered result.
           </motion.p>
 
           <motion.ol variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ delay: 0.24 }} className="mt-14 border-t border-outline-variant/30">

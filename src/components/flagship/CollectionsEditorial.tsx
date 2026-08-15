@@ -33,7 +33,7 @@ export function CollectionsEditorial() {
               <div className="relative aspect-[4/3] overflow-hidden lg:col-span-7 lg:aspect-auto lg:min-h-[78vh]">
                 <ImageReveal className="h-full w-full" direction={reverse ? "right" : "left"}>
                   <img
-                    src={product ? posterFor(product.slug) : posterFor("sdd-vietnam-bone-straight")}
+                    src={product ? posterFor(product.slug) : posterFor("sdd-bone-straight")}
                     alt={c.name}
                     className="h-full w-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.025]"
                   />

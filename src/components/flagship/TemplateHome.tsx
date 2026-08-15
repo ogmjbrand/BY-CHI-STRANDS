@@ -27,7 +27,7 @@ const standards = [
   ["04", "Private aftercare", "The relationship continues after purchase through care, restoration and concierge service."],
 ];
 
-const clean = (value: string) => value.replace(/Vietnamese|Vietnam/gi, "").replace(/\s{2,}/g, " ").trim().replace(/^[-—·]\s*/, "");
+const clean = (value: string) => value.replace(/ese|/gi, "").replace(/\s{2,}/g, " ").trim().replace(/^[-—·]\s*/, "");
 
 function money(value: number | null) {
   return value === null ? "PRIVATE ENQUIRY" : `₦${value.toLocaleString("en-NG")}`;

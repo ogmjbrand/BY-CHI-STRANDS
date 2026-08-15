@@ -1,4 +1,4 @@
-import { products, priceFor, CATEGORIES, ORIGINS } from "./products";
+import { products, priceFor, CATEGORIES,} from "./products";
 import { articles } from "./journal";
 import { testimonials } from "./testimonials";
 
@@ -34,7 +34,7 @@ const inventory: Cell[][] = products.map((p) => [
   { text: p.name },
   { text: CATEGORIES[p.category].label, tone: "muted" as CellTone },
   { text: priceFor(p) === null ? "On request" : `₦${priceFor(p)!.toLocaleString("en-NG")}+` },
-  { text: ORIGINS[p.origin], tone: "muted" as CellTone },
+  { text: "", tone: "muted" as CellTone },
 ]);
 
 
@@ -62,7 +62,7 @@ export const adminSections: AdminSection[] = [
             ? "On request"
             : `₦${priceFor(p)!.toLocaleString("en-NG")}`,
       },
-      { text: `${ORIGINS[p.origin]}${p.sdd ? " · SDD" : ""}`, tone: "muted" as CellTone },
+      { text: `${""}${p.sdd ? " · SDD" : ""}`, tone: "muted" as CellTone },
       p.badges?.includes("limited")
         ? { text: "Limited", tone: "warn" as CellTone }
         : { text: "Published", tone: "success" as CellTone },

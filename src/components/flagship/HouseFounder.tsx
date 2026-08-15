@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
 const PILLARS = [
   {
     title: "Imported directly",
-    body: "Raw Vietnamese hair, bought at source rather than through a middle market.",
+    body: "Raw hair, bought at source rather than through a middle market.",
   },
   {
     title: "Made on the floor",

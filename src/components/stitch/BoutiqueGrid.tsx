@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { products, priceFrom, ORIGINS, type Product } from "@/lib/products";
+import { products, priceFrom, type Product } from "@/lib/products";
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
 import { ProductMedia } from "./ProductMedia";
@@ -104,7 +104,7 @@ export function BoutiqueGrid({
                   </div>
                   <div className="text-center md:text-left">
                     <span className="font-label-caps text-label-caps uppercase text-outline mb-2 block tracking-[0.15em]">
-                      {ORIGINS[p.origin]} SDD
+                      {"SDD"}
                     </span>
                     <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 group-hover:text-primary transition-colors">
                       {p.name}

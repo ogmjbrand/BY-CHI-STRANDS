@@ -8,6 +8,7 @@ import { MotionSystem } from "@/components/stitch/MotionSystem";
 import { LuxuryCursor } from "@/components/stitch/LuxuryCursor";
 import { SmoothScroll } from "@/components/stitch/SmoothScroll";
 import { HouseHeader, HouseFooter } from "@/components/flagship/HouseChrome";
+import { MobileTabBar } from "@/components/flagship/MobileTabBar";
 
 /**
  * The chrome lives here, once.
@@ -27,6 +28,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <HouseHeader />
         {children}
         <HouseFooter />
+        <MobileTabBar />
         <RevealObserver />
         <Interactions />
         <StoreBridge />

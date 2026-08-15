@@ -1,6 +1,6 @@
 const MESSAGES = [
   "Ships Worldwide From Lagos, Nigeria",
-  "100% Authentic Vietnamese Hair",
+  "100% Authentic ese Hair",
   "Hand-Tied In Our Lagos Atelier",
 ];
 

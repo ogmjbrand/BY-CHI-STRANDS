@@ -111,7 +111,7 @@ export function HomeHero() {
           >
             Luxury
             <br />
-            Vietnamese Hair.
+            ese Hair.
           </motion.h1>
 
           <motion.p

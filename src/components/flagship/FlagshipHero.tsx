@@ -65,12 +65,12 @@ export function FlagshipHero() {
            * so stacking the three lines directly would let them share a line
            * box. Honest leading, no negative margin.
            */}
-          <h1 className="sr-only">Luxury Vietnamese Hair. Crafted for Confidence.</h1>
+          <h1 className="sr-only">Luxury ese Hair. Crafted for Confidence.</h1>
 
           <div aria-hidden="true">
             <div>
               <WordsPullUp
-                text="Luxury Vietnamese Hair."
+                text="Luxury ese Hair."
                 className="font-display-lg text-[10.5vw] leading-[1.02] tracking-[-0.02em] text-white md:text-[5.4vw]"
               />
             </div>
@@ -86,7 +86,7 @@ export function FlagshipHero() {
           </div>
 
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-            Vietnamese human hair, hand-tied in Lagos. Every strand is traceable, sculpted, and styled to feel as rare as it looks.
+            human hair, hand-tied in Lagos. Every strand is traceable, sculpted, and styled to feel as rare as it looks.
           </p>
         </div>
 

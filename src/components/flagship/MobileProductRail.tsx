@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { products, priceFrom, type Product } from "@/lib/products";
 import { heroFor } from "@/lib/media";
 import { formatPrice } from "@/lib/utils";
-import { ORIGINS, TEXTURES } from "@/lib/products";
+import { TEXTURES } from "@/lib/products";
 
 /**
  * The desktop product row, re-flowed for a phone.
@@ -118,7 +118,7 @@ export function MobileProductRail({
                 <div className="flex items-start justify-between gap-4 pt-4">
                   <div className="min-w-0">
                     <p className={`text-[8px] uppercase tracking-[.35em] ${accent}`}>
-                      {ORIGINS[p.origin]} {p.sdd ? "SDD" : ""}
+                      {p.sdd ? "Super Double Drawn" : "Raw hair"}
                     </p>
                     <h3 className="mt-2 font-serif text-2xl leading-tight">{p.name}</h3>
                     <p className={`mt-2 text-[13px] leading-6 ${muted}`}>
