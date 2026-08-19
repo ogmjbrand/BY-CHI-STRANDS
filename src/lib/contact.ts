@@ -34,7 +34,7 @@ export async function createContactMessage(data: {
     data.type === "newsletter"
       ? {
           to: data.email,
-          subject: "You're on the list — ByChiStrands",
+          subject: "You're on the list — ByChi Strands",
           html: `<h2>Welcome to the ByChi family.</h2><p>You'll hear from us with new arrivals, restocks and atelier news.</p>`,
         }
       : {

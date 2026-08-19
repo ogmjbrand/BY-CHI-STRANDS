@@ -48,7 +48,7 @@ export function BookingForm() {
   const service = getService(serviceSlug) ?? services[0];
 
   const message = useMemo(() => {
-    let m = `Hi ByChiStrands — I'd like to book ${service.name}.`;
+    let m = `Hi ByChi Strands — I'd like to book ${service.name}.`;
     if (date) m += ` Preferred date: ${formatDate(date)}.`;
     if (time) m += ` Preferred time: ${time}.`;
     if (notes.trim()) m += ` Notes: ${notes.trim()}.`;
@@ -223,7 +223,7 @@ export function BookingForm() {
           <div className="bg-surface-container-lowest text-on-surface border border-outline-variant/15 p-8">
             <p className="font-body-sm text-on-surface-variant mb-6 max-w-lg">
               Bring a reference photo to your appointment, or start with this one — a style saved for
-              inspiration, not a ByChiStrands client photo. Mention it in your notes above if it&apos;s
+              inspiration, not a ByChi Strands client photo. Mention it in your notes above if it&apos;s
               close to what you want.
             </p>
             <div className="max-w-xs aspect-[3/4] overflow-hidden bg-surface-container">

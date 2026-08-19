@@ -30,7 +30,7 @@ export function renderOrderConfirmationHTML(order: Order): string {
 <body style="${BASE_STYLES}">
   <h1 style="color: #1a1a1a; margin-bottom: 30px;">Order Confirmed</h1>
   <p style="font-size: 14px; color: #666; line-height: 1.6;">Hi ${order.customerName},</p>
-  <p style="font-size: 14px; color: #666; line-height: 1.6;">Thank you for your order! We're excited to get your ByChiStrands pieces to you. Your order has been confirmed and is being prepared.</p>
+  <p style="font-size: 14px; color: #666; line-height: 1.6;">Thank you for your order! We're excited to get your ByChi Strands pieces to you. Your order has been confirmed and is being prepared.</p>
 
   <div style="background-color: #f8f8f8; padding: 20px; border-radius: 4px; margin-bottom: 30px; margin-top: 30px;">
     <p style="margin: 0 0 20px 0; font-size: 14px; color: #666;"><strong>Order Number:</strong> ${order.orderNumber}</p>

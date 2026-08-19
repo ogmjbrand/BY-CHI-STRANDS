@@ -93,7 +93,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Is there a certificate?",
-        a: "Yes — every graduate receives a ByChiStrands Academy certificate of attendance, presented in person at the end of the masterclass.",
+        a: "Yes — every graduate receives a ByChi Strands Academy certificate of attendance, presented in person at the end of the masterclass.",
       },
     ],
   },

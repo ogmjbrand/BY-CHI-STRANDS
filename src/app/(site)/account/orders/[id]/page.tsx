@@ -49,7 +49,7 @@ export default async function OrderDetailsPage({
               Look Up Orders
             </Link>
             <a
-              href={whatsappLink("Hi ByChiStrands — I have a question about my order.")}
+              href={whatsappLink("Hi ByChi Strands — I have a question about my order.")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase"
@@ -246,7 +246,7 @@ export default async function OrderDetailsPage({
                   on WhatsApp.
                 </p>
                 <a
-                  href={whatsappLink(`Hi ByChiStrands — question about order #${order.orderNumber}.`)}
+                  href={whatsappLink(`Hi ByChi Strands — question about order #${order.orderNumber}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   /* text-noir, not text-primary: primary is gold in the noir

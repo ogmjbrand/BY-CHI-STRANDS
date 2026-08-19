@@ -190,7 +190,7 @@ export function HouseHeroCards() {
               >
                 <p className="mb-4 flex items-center gap-3 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">
                   <span aria-hidden="true" className="h-px w-8 bg-[#c8a45d]" />
-                  The House of ByChi · Lagos
+                  ByChi Strands · Lagos
                 </p>
 
                 {/* Editorial seals. Small against a large frame on purpose.
@@ -239,7 +239,7 @@ export function HouseHeroCards() {
                 href={current.href}
                 className="group flex items-center justify-between gap-3 bg-[#c8a45d] px-4 py-4 text-[8px] font-semibold uppercase tracking-[.24em] text-[#0b0907] transition hover:bg-[#f5f0e8] md:gap-6 md:px-6 md:py-5 md:text-[9px] md:tracking-[.32em]"
               >
-                Shop the House
+                Shop ByChi Strands
                 <ArrowRight size={14} className="shrink-0 transition group-hover:translate-x-1 md:h-4 md:w-4" />
               </Link>
               <Link

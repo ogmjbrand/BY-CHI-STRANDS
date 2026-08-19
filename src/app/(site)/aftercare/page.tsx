@@ -107,7 +107,7 @@ export default function AftercarePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/services/ceo-portrait-1.jpeg"
-                alt="A ByChiStrands unit styled and ready to wear"
+                alt="A ByChi Strands unit styled and ready to wear"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -146,7 +146,7 @@ export default function AftercarePage() {
               team answers directly on WhatsApp.
             </p>
             <a
-              href={whatsappLink("Hi ByChiStrands — I have a care question about my hair.")}
+              href={whatsappLink("Hi ByChi Strands — I have a care question about my hair.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors"

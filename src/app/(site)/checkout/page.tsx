@@ -286,7 +286,7 @@ export default function CheckoutPage() {
                   <>
                     We don&apos;t take card payments on-site for quote-only pieces. Once you place
                     your order, our concierge team will reach out by email to confirm the price,
-                    shipping and payment — the same bespoke process every ByChiStrands piece goes
+                    shipping and payment — the same bespoke process every ByChi Strands piece goes
                     through. Any piece in your bag marked &ldquo;Quoted after order&rdquo; has no
                     listed price yet — the concierge email will include that quote before payment
                     is arranged.
@@ -295,7 +295,7 @@ export default function CheckoutPage() {
                   <>
                     Pay by card right now via Flutterwave&apos;s secure checkout, or place your
                     order and our concierge will reach out by email to arrange payment instead —
-                    the same bespoke process every ByChiStrands piece goes through.
+                    the same bespoke process every ByChi Strands piece goes through.
                   </>
                 )}
               </p>
@@ -340,7 +340,7 @@ export default function CheckoutPage() {
                       : "Place Order — Pay Later"}
                 </button>
                 <p className="text-center text-[10px] text-outline px-4 leading-relaxed">
-                  By continuing, you agree to the ByChiStrands{" "}
+                  By continuing, you agree to the ByChi Strands{" "}
                   <Link href="/terms" className="underline">
                     Terms of Service
                   </Link>{" "}

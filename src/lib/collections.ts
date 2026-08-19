@@ -14,7 +14,7 @@ export const collections: Collection[] = [
     name: "Bone Straight",
     tagline: "Flat as glass. Full to the ends.",
     description:
-      "The house staple. Super Double Drawn raw hair, hand-sorted so the bundle stays as thick at the hemline as it is at the root — which is why it hangs blunt and heavy instead of thinning into wisps.",
+      "The ByChi Strands staple. Super Double Drawn raw hair, hand-sorted so the bundle stays as thick at the hemline as it is at the root — which is why it hangs blunt and heavy instead of thinning into wisps.",
     tone: "noir",
   },
   {

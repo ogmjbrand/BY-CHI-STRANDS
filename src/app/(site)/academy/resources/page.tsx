@@ -73,7 +73,7 @@ export default function AcademyResourcesPage() {
             Apply to the Academy
           </Link>
           <a
-            href={whatsappLink("Hi ByChiStrands — I have a question about the Academy.")}
+            href={whatsappLink("Hi ByChi Strands — I have a question about the Academy.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-12 py-5 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase mt-4 md:mt-0"

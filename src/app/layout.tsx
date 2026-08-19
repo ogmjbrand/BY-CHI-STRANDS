@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "luxury wigs",
     "HD lace frontal",
     "hair importation training",
-    "ByChiStrands",
+    "ByChi Strands",
   ],
   openGraph: {
     type: "website",

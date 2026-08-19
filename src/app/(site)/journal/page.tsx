@@ -9,6 +9,7 @@ export const metadata: Metadata = { title: "The Journal" };
 export default function JournalPage() {
   return (
     <StitchPageShell
+      ground="ground-journal"
       eyebrow="Editorial"
       title="The Journal"
       lede="Notes on craft, care and the business of luxury hair — from the atelier and the Academy."

@@ -1,5 +1,5 @@
 /**
- * Real ByChiStrands media, mapped to the catalogue.
+ * Real ByChi Strands media, mapped to the catalogue.
  *
  * Every entry below was assigned by viewing the footage — colour, texture and
  * construction were matched to the product rather than paired by index. Videos
@@ -144,17 +144,17 @@ const SCENES = {
   /** Services — the finished work. A real client install, not a stock studio shot. */
   "services-install": {
     src: "/services/frontal-installation-1.jpg",
-    alt: "A finished ByChiStrands frontal install styled into a curled updo",
+    alt: "A finished ByChi Strands frontal install styled into a curled updo",
   },
   /** Services — colour range. Genuinely shows the wine and espresso units. */
   "services-colour-range": {
     src: "/products/IMG-20260727-WA0045.jpg",
-    alt: "Copper, wine and espresso lace-front units on stands in the ByChiStrands store",
+    alt: "Copper, wine and espresso lace-front units on stands in the ByChi Strands store",
   },
   /** Services — the working bench. Stand-in: no styling-tools still exists yet. */
   "services-atelier": {
     src: "/services/mentorship.jpeg",
-    alt: "A ByChiStrands mentorship session working on a unit",
+    alt: "A ByChi Strands mentorship session working on a unit",
     placeholder: true,
   },
   /** Collections — how the hair is chosen. The real sourcing trip. */
@@ -186,12 +186,12 @@ const SCENES = {
   /** Installation — the finished work on a client. */
   "craft-frontal-installation": {
     src: "/services/frontal-installation-1.jpg",
-    alt: "A finished ByChiStrands frontal install styled into a curled updo",
+    alt: "A finished ByChi Strands frontal install styled into a curled updo",
   },
   /** Training — a real mentorship session. */
   "craft-training": {
     src: "/services/mentorship-video.jpg",
-    alt: "A ByChiStrands mentorship session in progress",
+    alt: "A ByChi Strands mentorship session in progress",
   },
   /* ── The Academy: one frame per curriculum module ──
    *
@@ -223,13 +223,13 @@ const SCENES = {
    */
   "academy-marketing": {
     src: "/media/academy/chi-ceo.jpeg",
-    alt: "A styled ByChiStrands brand portrait of the kind the house shoots for its own marketing",
+    alt: "A styled ByChi Strands brand portrait of the kind the brand shoots for its own marketing",
     placeholder: true,
   },
   /** The classroom — a graduate holding her certificate of attendance. */
   "academy-certificate": {
     src: "/media/academy/mentorship-masterclass.jpg",
-    alt: "A masterclass graduate holding her ByChiStrands certificate of attendance, standing with a member of the team",
+    alt: "A masterclass graduate holding her ByChi Strands certificate of attendance, standing with a member of the team",
   },
   /**
    * The application chapter's ground. Stand-in: a brand portrait standing in
@@ -237,7 +237,7 @@ const SCENES = {
    */
   "academy-apply": {
     src: "/media/academy/chi-service.jpeg",
-    alt: "A ByChiStrands brand portrait, a wine-toned unit styled into soft waves",
+    alt: "A ByChi Strands brand portrait, a wine-toned unit styled into soft waves",
     placeholder: true,
   },
   /* ── Service tiles ──
@@ -248,34 +248,47 @@ const SCENES = {
    * repository yet, so `hasScene()` reports false and the tile stays
    * typographic rather than rendering a broken image.
    *
-   * When you add it: it must be a photograph of the tools ByChiStrands
+   * When you add it: it must be a photograph of the tools ByChi Strands
    * actually sells. Watermarked stock (PNGTree and the like) cannot ship —
    * the watermark is visible and the licence does not cover resale use.
    */
   "service-hair-tools": {
     src: "/services/hair-tools.jpg",
-    alt: "Professional styling tools stocked by ByChiStrands",
+    alt: "Professional styling tools stocked by ByChi Strands",
     placeholder: true,
     pending: true,
   },
 
   /* ── Section backdrops ──
    *
-   * The AI-generated stand-ins in /media/posters, used as the ground behind
-   * section headings so a chapter opens on an image rather than a flat
-   * fill. Every one is `placeholder: true`: they are illustrative of the
-   * category, not photographs of ByChiStrands stock, so they are never
-   * captioned as a product and never sit next to a price. Their alt text is
-   * empty by design — each one is decoration behind copy that already says
-   * what the chapter is, and describing a stand-in to a screen reader would
-   * announce something the house does not actually own.
+   * The stand-ins in /media/posters, used as the ground behind section
+   * headings so a chapter opens on an image rather than a flat fill. Every
+   * one is `placeholder: true`: they are illustrative of the category, not
+   * photographs of ByChi Strands stock, so they are never captioned as a
+   * product and never sit next to a price. Their alt text is empty by
+   * design — each one is decoration behind copy that already says what the
+   * chapter is, and describing a stand-in to a screen reader would announce
+   * something ByChi Strands does not actually own.
    *
    * Replacing them: change `src` here. Nothing else moves.
    *
-   * Only frames at least ~1000px wide are used; most of the folder is
-   * 236px thumbnails that fall apart across a full-bleed section. Two
-   * otherwise-usable frames (imgi_329, imgi_331) carry a visible
-   * "generated by AI" watermark and are deliberately not referenced.
+   * Every frame in the folder was measured and viewed before being listed.
+   * The rules that decided the roster:
+   *
+   *   - At least ~700px wide. Most of the folder is 236px thumbnails that
+   *     fall apart across a full-bleed section.
+   *   - No watermark. imgi_329 and imgi_331 carry a visible "generated by
+   *     AI" stamp.
+   *   - No other company's branding. imgi_50 has a rival's "…DI'S HAIR"
+   *     box in shot and imgi_294 a "NAKKI" bundle label; both were being
+   *     served before this and are now dropped rather than cropped.
+   *   - Nothing off-category. imgi_375 is a still life of red electronics.
+   *   - No burnt-in caption. imgi_75 has the word "day" set into the frame.
+   *
+   * Each surviving frame is used exactly once. The site was drawing eight
+   * chapters from four pictures, so the same hair arrived behind four
+   * different headings; every entry below is a distinct image, and adding a
+   * chapter means adding a frame rather than reusing one.
    */
   "backdrop-house": {
     src: "/media/posters/imgi_482_769b96d9696a394e413091dbbbe82e8a.jpg",
@@ -317,8 +330,12 @@ const SCENES = {
     alt: "",
     placeholder: true,
   },
+  /**
+   * Was imgi_50, which has a competitor's branded box in the frame. Replaced
+   * with the chocolate straight unit — nothing in shot but hair.
+   */
   "backdrop-academy-curriculum": {
-    src: "/media/posters/imgi_50_1257c0dfd20a5c80a321bbfc7ba316c7.jpg",
+    src: "/media/posters/imgi_52_4a947c71b4cbacd3d13dfed74c635a41.jpg",
     alt: "",
     placeholder: true,
   },
@@ -326,6 +343,155 @@ const SCENES = {
     src: "/media/posters/imgi_69_497f33f33d93c247e1bd680d9bef091f.jpg",
     alt: "",
     placeholder: true,
+  },
+
+  /* The frames added so the chapters below stop borrowing one another's. */
+  /** Shop the House — the first priced chapter. Chocolate body wave, curtain. */
+  "backdrop-shop": {
+    src: "/media/posters/imgi_71_2929e1abda2227c8cb347e05720c9610.jpg",
+    alt: "",
+    placeholder: true,
+  },
+  /** The transformation chapter. Black body wave, warm interior light. */
+  "backdrop-transformation": {
+    src: "/media/posters/imgi_66_d7559ec91326658a0e93803165efe6d2.jpg",
+    alt: "",
+    placeholder: true,
+  },
+  /** The founder chapter. Long jet-black straight against a panelled wall. */
+  "backdrop-founder": {
+    src: "/media/posters/imgi_67_6d4c88274427f39c95a035f9f7fec1be.jpg",
+    alt: "",
+    placeholder: true,
+  },
+  /** The closing chapter. Brown-to-blonde body wave on the stand. */
+  "backdrop-invitation": {
+    src: "/media/posters/imgi_48_a2d12458bf4cf8f5dc74b19e739d9c34.jpg",
+    alt: "",
+    placeholder: true,
+  },
+  /** Recently viewed. Black body wave at bob length. */
+  "backdrop-recent": {
+    src: "/media/posters/imgi_58_0221935d9f358deef46fe3dc2fdd0a36.jpg",
+    alt: "",
+    placeholder: true,
+  },
+  /** Spare, for the next chapter that needs one. Black body wave, salon shelf. */
+  "backdrop-atelier": {
+    src: "/media/posters/imgi_63_3205cd12704a2671c63e2f9419cba1ef.jpg",
+    alt: "",
+    placeholder: true,
+  },
+
+  /* ── Grounds that are ByChi Strands' own photography ──
+   *
+   * Not placeholders. Twenty-one poster frames cut from the house's own
+   * product films sit in /media/posters and had only ever been used as the
+   * still behind their own <video>; the same is true of the store stills in
+   * /products. They are real ByChi Strands hair, which makes them a better
+   * ground for a chapter than any stand-in, so the chapters below are given
+   * one each rather than being handed another scraped frame.
+   *
+   * `placeholder` is deliberately absent on every entry here — nothing in
+   * this block is waiting to be replaced by the campaign shoot.
+   */
+  "ground-shop-index": {
+    src: "/media/posters/VID-20260727-WA0027.jpg",
+    alt: "",
+  },
+  "ground-collections": {
+    src: "/media/posters/VID-20260727-WA0019.jpg",
+    alt: "",
+  },
+  "ground-collections-story": {
+    src: "/media/posters/VID-20260727-WA0041.jpg",
+    alt: "",
+  },
+  "ground-services": {
+    src: "/media/posters/VID-20260727-WA0046.jpg",
+    alt: "",
+  },
+  "ground-services-booking": {
+    src: "/media/posters/VID-20260727-WA0035.jpg",
+    alt: "",
+  },
+  "ground-about": {
+    src: "/services/ceo-portrait-2.jpeg",
+    alt: "",
+  },
+  "ground-about-story": {
+    src: "/media/posters/VID-20260727-WA0004.jpg",
+    alt: "",
+  },
+  "ground-about-practice": {
+    src: "/media/posters/VID-20260726-WA0016.jpg",
+    alt: "",
+  },
+  "ground-gallery": {
+    src: "/media/posters/VID-20260727-WA0052.jpg",
+    alt: "",
+  },
+  "ground-gallery-invite": {
+    src: "/media/posters/VID-20260727-WA0056.jpg",
+    alt: "",
+  },
+  "ground-journal": {
+    src: "/media/posters/VID-20260727-WA0012.jpg",
+    alt: "",
+  },
+  "ground-product-detail": {
+    src: "/media/posters/VID-20260727-WA0050.jpg",
+    alt: "",
+  },
+  "ground-product-voices": {
+    src: "/media/posters/reviews from Princess.jpg",
+    alt: "",
+  },
+  "ground-academy-apply": {
+    src: "/media/posters/VID-20260726-WA0011.jpg",
+    alt: "",
+  },
+  "ground-deep-curl": {
+    src: "/media/posters/deep-curl-frontal.jpg",
+    alt: "",
+  },
+  /* The shared page shell's header ground — one frame per route that uses it,
+     so eight pages do not open on the same picture. */
+  "ground-contact": {
+    src: "/media/posters/VID-20260727-WA0029.jpg",
+    alt: "",
+  },
+  "ground-faqs": {
+    src: "/media/posters/VID-20260727-WA0014.jpg",
+    alt: "",
+  },
+  "ground-shipping": {
+    src: "/media/posters/VID-20260727-WA0057.jpg",
+    alt: "",
+  },
+  "ground-returns": {
+    src: "/media/posters/VID-20260727-WA0054.jpg",
+    alt: "",
+  },
+  "ground-privacy": {
+    src: "/media/posters/VID-20260726-WA0010.jpg",
+    alt: "",
+  },
+  "ground-terms": {
+    src: "/media/posters/VID-20260726-WA0020.jpg",
+    alt: "",
+  },
+  "ground-collection-detail": {
+    src: "/media/posters/VID-20260727-WA0049.jpg",
+    alt: "",
+  },
+  "ground-texture-guide": {
+    src: "/media/posters/VID-20260727-WA0032.jpg",
+    alt: "",
+  },
+  "ground-shop-header": {
+    src: "/media/posters/VID-20260727-WA0036.jpg",
+    alt: "",
   },
 } satisfies Record<string, Scene>;
 
@@ -346,9 +512,9 @@ export function hasScene(name: SceneName): boolean {
 
 /** Client footage for the testimonial rail. */
 export const testimonyClips: Media[] = [
-  vid("testimony", "reviews from Princess", "Princess reviewing her ByChiStrands unit to camera"),
+  vid("testimony", "reviews from Princess", "Princess reviewing her ByChi Strands unit to camera"),
   vid("testimony", "VID-20260727-WA0052", "Client showing her finished install"),
-  vid("testimony", "reviews", "Client unboxing her ByChiStrands order"),
+  vid("testimony", "reviews", "Client unboxing her ByChi Strands order"),
   vid("testimony", "VID-20260726-WA0010", "Client speaking about her wig on camera"),
   vid("testimony", "VID-20260727-WA0036", "Client wearing her honey blonde unit"),
   vid("testimony", "VID-20260727-WA0056", "Client collecting her order in store"),

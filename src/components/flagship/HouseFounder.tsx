@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { SectionBackdrop } from "./SectionBackdrop";
+import { SectionMark } from "./SectionMark";
 
 /**
  * 08 — The Founder.
@@ -28,14 +30,15 @@ const PILLARS = [
   },
   {
     title: "Taught, not gatekept",
-    body: "The house trains entrepreneurs to import and grade hair through the ByChiStrands Academy.",
+    body: "ByChi Strands trains entrepreneurs to import and grade hair through the ByChi Strands Academy.",
   },
 ];
 
 export function HouseFounder() {
   return (
-    <section className="bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
-      <div className="mx-auto grid max-w-[1760px] items-end gap-12 lg:grid-cols-12 lg:gap-16">
+    <section className="relative bg-[#0b0907] px-6 py-24 md:px-10 md:py-36">
+      <SectionBackdrop name="backdrop-founder" />
+      <div className="relative mx-auto grid max-w-[1760px] items-end gap-12 lg:grid-cols-12 lg:gap-16">
         <motion.figure
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +49,7 @@ export function HouseFounder() {
           <div className="relative aspect-[4/5] overflow-hidden bg-[#141110]">
             <Image
               src="/services/ceo-portrait-1.jpeg"
-              alt="Chi, founder of ByChiStrands, wearing a wine-toned unit from the house"
+              alt="Chi, founder of ByChi Strands, wearing a wine-toned unit from the collection"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
@@ -58,11 +61,11 @@ export function HouseFounder() {
         </motion.figure>
 
         <div className="lg:col-span-7">
-          <p className="mb-4 text-[8px] uppercase tracking-[.5em] text-[#c8a45d]">08 / The Founder</p>
+          <SectionMark label="08 / The Founder" className="mb-4" />
           <h2 className="font-serif text-[clamp(3.2rem,6.5vw,7.5rem)] leading-[.74] tracking-[-.06em]">
             This is
             <br />
-            <i>By Chi.</i>
+            <i>ByChi Strands.</i>
           </h2>
 
           <div className="mt-12 grid gap-px bg-white/10 sm:grid-cols-3">
@@ -78,7 +81,7 @@ export function HouseFounder() {
             href="/about"
             className="mt-10 inline-block border-b border-[#c8a45d] pb-2 text-[8px] uppercase tracking-[.35em] text-[#c8a45d]"
           >
-            Inside the house
+            Inside ByChi Strands
           </Link>
         </div>
       </div>

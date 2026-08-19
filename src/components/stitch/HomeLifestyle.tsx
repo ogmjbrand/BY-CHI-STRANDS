@@ -12,7 +12,7 @@ export function HomeLifestyle() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/products/IMG-20260726-WA0019.jpg"
-        alt="ByChiStrands client wearing the burgundy pixie curl unit at an event"
+        alt="ByChi Strands client wearing the burgundy pixie curl unit at an event"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/50 to-transparent" />
@@ -27,7 +27,7 @@ export function HomeLifestyle() {
           It&apos;s A Lifestyle.
         </h2>
         <p className="font-body-xl text-body-md md:text-body-xl text-white/70 mb-10 max-w-lg">
-          ByChiStrands imports, crafts and cares for authentic ese
+          ByChi Strands imports, crafts and cares for authentic ese
           human hair — raw bundles, single-donor collections, luxury wigs,
           closures and frontals — alongside atelier services and
           importation education.

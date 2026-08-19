@@ -26,7 +26,7 @@ const pillars = [
   },
   {
     title: "Taught, not gatekept",
-    body: "The house trains entrepreneurs to import and grade hair through the ByChiStrands Academy.",
+    body: "The house trains entrepreneurs to import and grade hair through the ByChi Strands Academy.",
   },
 ];
 

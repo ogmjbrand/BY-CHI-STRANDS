@@ -183,7 +183,7 @@ export function SiteSearch({ open, onClose }: { open: boolean; onClose: () => vo
                   htmlFor="site-search-field"
                   className="mb-4 block font-label-caps text-[10px] uppercase tracking-[0.3em] text-gold"
                 >
-                  Search the house
+                  Search ByChi Strands
                 </label>
                 <input
                   id="site-search-field"

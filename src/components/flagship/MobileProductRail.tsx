@@ -50,7 +50,7 @@ export function MobileProductRail({
   const light = tone === "light";
   const accent = light ? "text-[#8b6244]" : "text-[#c8a45d]";
   const accentBg = light ? "bg-[#8b6244]" : "bg-[#c8a45d]";
-  const muted = light ? "text-[#0b0907]/55" : "text-white/50";
+  const muted = light ? "text-[#0b0907]/75" : "text-white/50";
   const ctaText = light ? "text-[#0b0907]/70 hover:text-[#8b6244]" : "text-white/70 hover:text-[#c8a45d]";
   const rule = light ? "border-[#0b0907]/20" : "border-white/15";
 

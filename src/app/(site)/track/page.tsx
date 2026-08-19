@@ -218,7 +218,7 @@ export default function TrackOrderPage() {
             <div className="mt-14 flex flex-wrap gap-6">
               <a
                 href={whatsappLink(
-                  `Hi ByChiStrands — a question about order #${order.orderNumber}.`
+                  `Hi ByChi Strands — a question about order #${order.orderNumber}.`
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

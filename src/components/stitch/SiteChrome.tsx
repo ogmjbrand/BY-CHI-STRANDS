@@ -7,6 +7,9 @@ import { MenuButton } from "./MenuButton";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Icon } from "@/components/ui/icon";
 import { HouseHeader, HouseFooter } from "@/components/flagship/HouseChrome";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
+import type { SceneName } from "@/lib/media";
 
 /**
  * The canonical ByChi Strands header and footer, lifted verbatim from the
@@ -87,20 +90,26 @@ export function StitchPageShell({
   eyebrow,
   title,
   lede,
+  ground,
   children,
 }: {
   eyebrow: string;
   title: string;
   lede?: string;
+  /**
+   * The frame the page opens on. Eight routes share this shell, so each one
+   * names its own picture rather than all of them arriving on the same
+   * header. Omit it and the header stays a flat ground.
+   */
+  ground?: SceneName;
   children: React.ReactNode;
 }) {
   return (
     <div className="theme-noir bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <header className="pt-16 pb-12 md:pt-28 md:pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <header className="relative isolate pt-16 pb-12 md:pt-28 md:pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        {ground ? <SectionBackdrop name={ground} behind /> : null}
         <div className="max-w-4xl">
-          <span className="font-label-caps text-label-caps uppercase text-primary tracking-[0.3em] mb-6 block">
-            {eyebrow}
-          </span>
+          <SectionMark label={eyebrow} className="mb-6" />
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8">
             {title}
           </h1>

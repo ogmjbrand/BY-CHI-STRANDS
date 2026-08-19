@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ShopBrowser } from "@/components/stitch/ShopBrowser";
 import { TextureGuide } from "@/components/stitch/TextureGuide";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_shop_all
@@ -24,7 +26,9 @@ export default function ShopAllPage() {
           and takes its own space, so that was 160px of nothing at the top of
           the page whose job is showing product. */}
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-10 md:pt-20 pb-section-padding">
-        <header className="mb-10 md:mb-16">
+        <header className="relative isolate mb-10 md:mb-16">
+          <SectionBackdrop name="ground-shop-header" behind />
+          <SectionMark label="The Collection" className="mb-6" />
           <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 tracking-[-0.02em]">
             The Collection
           </h1>

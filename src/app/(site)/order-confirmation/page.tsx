@@ -77,7 +77,7 @@ function OrderConfirmationContent() {
             Return to Shop
           </Link>
           <a
-            href={whatsappLink("Hi ByChiStrands — I have a question about my order.")}
+            href={whatsappLink("Hi ByChi Strands — I have a question about my order.")}
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase"

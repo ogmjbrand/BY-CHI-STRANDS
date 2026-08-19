@@ -4,6 +4,8 @@ import { site, whatsappLink } from "@/lib/site";
 import { ProductMedia } from "@/components/stitch/ProductMedia";
 import { Icon } from "@/components/ui/icon";
 import { scene } from "@/lib/media";
+import { SectionBackdrop } from "@/components/flagship/SectionBackdrop";
+import { SectionMark } from "@/components/flagship/SectionMark";
 
 /**
  * BY CHI STRANDS — Stitch screen: digital_flagship_signature_services_1
@@ -40,7 +42,7 @@ export default function SignatureServices1Page() {
                 Explore Services
               </a>
               {" "}
-              <a className="flex items-center gap-2 border border-outline px-10 py-5 font-label-caps hover:bg-surface-container transition-all duration-500" href={whatsappLink("Hi ByChiStrands — I'd like a consultation about your services.")} target="_blank" rel="noopener noreferrer">
+              <a className="flex items-center gap-2 border border-outline px-10 py-5 font-label-caps hover:bg-surface-container transition-all duration-500" href={whatsappLink("Hi ByChi Strands — I'd like a consultation about your services.")} target="_blank" rel="noopener noreferrer">
                 Consultation via WhatsApp
                 {" "}
                 <Icon name="chat" className="text-[18px]" />
@@ -73,9 +75,11 @@ export default function SignatureServices1Page() {
           </div>
         </header>
         {/* Service Menu: Editorial Layout */}
-        <section className="py-section-padding border-t border-outline-variant/30" id="services">
+        <section className="relative isolate py-section-padding border-t border-outline-variant/30" id="services">
+          <SectionBackdrop name="ground-services" behind />
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
             <div className="max-w-2xl reveal-up">
+              <SectionMark label="The Service Suite" className="mb-6" />
               <h2 className="font-display-md text-display-md mb-6 tracking-[-0.01em]">The Service Suite</h2>
               {" "}
               <p className="font-body-md text-body-md text-on-surface-variant">
@@ -84,7 +88,7 @@ export default function SignatureServices1Page() {
             </div>
             {" "}
             <div className="reveal-up" style={{ transitionDelay: "100ms" }}>
-              <span className="font-label-caps border-b border-primary pb-2">ByChi Professional Standards</span>
+              <span className="font-label-caps border-b border-primary pb-2">ByChi Strands Professional Standards</span>
             </div>
           </div>
           {" "}
@@ -238,7 +242,7 @@ export default function SignatureServices1Page() {
                 </div>
                 {" "}
                 <a
-                  href={whatsappLink("Hi ByChiStrands — I'd like to shop your professional hair tools.")}
+                  href={whatsappLink("Hi ByChi Strands — I'd like to shop your professional hair tools.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Ask about professional hair tools on WhatsApp"
@@ -283,10 +287,12 @@ export default function SignatureServices1Page() {
           </div>
         </section>
         {/* Interactive Booking Widget */}
-        <section className="py-section-padding bg-surface-container-low md:mx-[calc(var(--spacing-margin-desktop)*-1)] px-margin-mobile md:px-margin-desktop mb-section-padding" id="booking">
+        <section className="relative isolate py-section-padding bg-surface-container-low md:mx-[calc(var(--spacing-margin-desktop)*-1)] px-margin-mobile md:px-margin-desktop mb-section-padding" id="booking">
+          <SectionBackdrop name="ground-services-booking" behind />
           <div className="max-w-container-max mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div className="reveal-up">
+                <SectionMark label="Private Booking" className="mb-8" />
                 <h2 className="font-display-md text-display-md mb-8 tracking-[-0.01em]">Secure Your Private Appointment</h2>
                 {" "}
                 <p className="font-body-xl text-on-surface-variant mb-12">
@@ -334,7 +340,7 @@ export default function SignatureServices1Page() {
                     Start Your Booking
                   </Link>
                   <a
-                    href={whatsappLink("Hi ByChiStrands — I'd like to book a service.")}
+                    href={whatsappLink("Hi ByChi Strands — I'd like to book a service.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 border border-outline py-5 font-label-caps hover:bg-surface-container transition-all duration-500"

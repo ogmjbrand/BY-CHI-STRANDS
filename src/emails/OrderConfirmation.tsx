@@ -38,7 +38,7 @@ export function OrderConfirmation({
           </p>
 
           <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6" }}>
-            Thank you for your order! We're excited to get your ByChiStrands pieces to you. Your order has been
+            Thank you for your order! We're excited to get your ByChi Strands pieces to you. Your order has been
             confirmed and is being prepared.
           </p>
 
